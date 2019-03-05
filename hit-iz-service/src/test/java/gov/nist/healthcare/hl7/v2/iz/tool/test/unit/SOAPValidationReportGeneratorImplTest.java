@@ -3,7 +3,7 @@ package gov.nist.healthcare.hl7.v2.iz.tool.test.unit;
 import static org.junit.Assert.assertNotNull;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStream; 
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;

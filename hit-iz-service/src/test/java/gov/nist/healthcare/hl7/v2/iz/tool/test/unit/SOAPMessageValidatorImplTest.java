@@ -23,7 +23,7 @@ public class SOAPMessageValidatorImplTest {
 		SOAPValidationResult result = (SOAPValidationResult) validator.validate(content, "Testing",
 				IZValidationPhase.submitSingleMessage_Request.toString());
 		assertNotNull(result.getXml());
-	}
+	} 
 
 	@Test
 	public void testInValid() throws IOException, SoapValidationException {
