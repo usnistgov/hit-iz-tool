@@ -968,11 +968,11 @@
         <Trigger>
           <ErrorMessage>Invalid content (based on test case fixed data). The value at ORDER.RXA-5.1
             (Identifier) does not match one of the expected values:
-            '49281-0560-05','49281-0545-15','49281-0510-05'</ErrorMessage>
+            '49281-0560-06','49281-0545-15','49281-0510-05'</ErrorMessage>
           <Assertion>
             <AND>
               <Presence Path="3[1].5[1].1[1]"/>
-              <StringList CSV="49281-0560-05,49281-0545-15,49281-0510-05" IgnoreCase="false"
+              <StringList CSV="49281-0560-06,49281-0545-15,49281-0510-05" IgnoreCase="false"
                 Path="3[1].5[1].1[1]"/>
             </AND>
           </Assertion>
@@ -2480,12 +2480,12 @@
             <Pattern>
               <Trigger>
                 <ErrorMessage>ERROR AN OBX SEGMENT WITH OBX-3.1 = 69764-9 AND OBX-5.1 =
-                  253088698300003511180824 is expected</ErrorMessage>
+                  253088698300003511180825 is expected</ErrorMessage>
                 <Assertion>
                   <AND>
                     <AND>
                       <Presence Path="5[1].1[1]"/>
-                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300003511180824"
+                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300003511180825"
                       />
                     </AND>
                     <AND>
