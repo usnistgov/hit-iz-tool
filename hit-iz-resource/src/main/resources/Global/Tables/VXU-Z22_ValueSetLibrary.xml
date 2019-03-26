@@ -1196,6 +1196,8 @@
 			<ValueElement Value="192" DisplayName="meningococcal AC polysaccharide vaccine (non-US)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="193" DisplayName="hepatitis A and hepatitis B vaccine, pediatric/adolescent (non-US)" CodeSystem="CVX"/>
+			
+			<ValueElement Value="194" DisplayName="Influenza, Southern Hemisphere, unspecified formulation" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 				
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1489,7 +1491,7 @@
 			<ValueElement Value="54868-2219-01" DisplayName="Hep B, adult" CodeSystem="NDC"/>
 			<ValueElement Value="54868-6177-00" DisplayName="Influenza, seasonal, injectable" CodeSystem="NDC"/>
 			
-			<ValueElement Value="49281-718-10" DisplayName="Flublok Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0718-10" DisplayName="Flublok Quadrivalent" CodeSystem="NDC"/>
 			
 			<ValueElement Value="19515-0900-11" DisplayName="Flulaval Quadrivalent Influenza vaccine, quadrivalent (2018-2019)" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0909-52" DisplayName="Flulaval Quadrivalent Influenza vaccine, quadrivalent (2018-2019)" CodeSystem="NDC"/>
@@ -1515,6 +1517,10 @@
 			
 			<ValueElement Value="50090-2883-00" DisplayName="Infanrix" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0250-51" DisplayName="IMOVAX RABIES" CodeSystem="NDC"/>
+			
+			<ValueElement Value="63361-0245-10" DisplayName="Vaxelis (DTaP-IPV-Hib-HepB)" CodeSystem="NDC"/>
+			
+			
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
@@ -1787,7 +1793,7 @@
 			<ValueElement Value="76420-0470-10" DisplayName="INFLUENZA A VIRUS A/CHRISTCHURCH/16/2010 NIB-74 (H1N1) ANTIGEN (PROPIOLACTONE INACTIVATED), INFLUENZ" CodeSystem="NDC"/>
 			<ValueElement Value="76420-0471-01" DisplayName="INFLUENZA A VIRUS A/CHRISTCHURCH/16/2010 NIB-74 (H1N1) ANTIGEN (PROPIOLACTONE INACTIVATED), INFLUENZ" CodeSystem="NDC"/>
 			
-			<ValueElement Value="49281-718-88" DisplayName="Flublok Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0718-88" DisplayName="Flublok Quadrivalent" CodeSystem="NDC"/>
 			
 			<ValueElement Value="19515-0900-01" DisplayName="Flulaval Quadrivalent Influenza vaccine, quadrivalent (2018-2019)" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0909-41" DisplayName="Flulaval Quadrivalent Influenza vaccine, quadrivalent (2018-2019)" CodeSystem="NDC"/>
@@ -1814,6 +1820,8 @@
 			
 			<ValueElement Value="50090-2883-09" DisplayName="Infanrix" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0248-58" DisplayName="IMOVAX RABIES" CodeSystem="NDC"/>
+			
+			<ValueElement Value="63361-0245-58" DisplayName="Vaxelis (DTaP-IPV-Hib-HepB)" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 		
 		
