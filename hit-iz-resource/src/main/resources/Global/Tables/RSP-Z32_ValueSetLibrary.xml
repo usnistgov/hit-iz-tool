@@ -108,7 +108,7 @@
 			<ValueElement Value="207" CodeSystem="HL70357" DisplayName="Application internal error"/>
 			<ValueElement Value="999" CodeSystem="HL70357" DisplayName="Application error"/>
 		</ValueSetDefinition>
-		<ValueSetDefinition BindingIdentifier="HL70215_IZ" Name="Publicity code">
+		<ValueSetDefinition BindingIdentifier="HL70215_IZ" Name="Publicity Code">
 			<ValueElement Value="01" CodeSystem="HL70215" DisplayName="No reminder/recall"/>
 			<ValueElement Value="02" CodeSystem="HL70215" DisplayName="Reminder/recall - any method"/>
 			<ValueElement Value="03" CodeSystem="HL70215" DisplayName="Reminder/recall - no calls"/>
@@ -570,7 +570,7 @@
 		<ValueSetDefinition BindingIdentifier="HL70126_IZ" Name="Quantity limited request ">
 			<ValueElement Value="RD" CodeSystem="HL70126" DisplayName="records"/>
 		</ValueSetDefinition>
-		<ValueSetDefinition BindingIdentifier="HL70064_IZ" Name="Publicity code">
+		<ValueSetDefinition BindingIdentifier="HL70064_IZ" Name="Publicity Code">
 			<ValueElement Value="V01" DisplayName="Not VFC eligible" CodeSystem="HL70064"/>
 			<ValueElement Value="V02" DisplayName="VFC eligible - Medicaid/Medicaid Managed Care" CodeSystem="HL70064"/>
 			<ValueElement Value="V03" DisplayName="VFC eligible - Uninsured" CodeSystem="HL70064"/>
