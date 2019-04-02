@@ -1816,8 +1816,6 @@
 			<ValueElement Value="70461-0318-04" DisplayName="Flucelvax Quadrivalent (2018-2019 flu season)" CodeSystem="NDC"/>
 			<ValueElement Value="70461-0418-11" DisplayName="Flucelvax Quadrivalent (2018-2019 flu season)" CodeSystem="NDC"/>
 			
-			<ValueElement Value="49281-0718-88" DisplayName="Flublok Quadrivalent influenza, quadrivalent, recombinant (2018-2019)" CodeSystem="NDC"/>
-			
 			<ValueElement Value="50090-2883-09" DisplayName="Infanrix" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0248-58" DisplayName="IMOVAX RABIES" CodeSystem="NDC"/>
 			
