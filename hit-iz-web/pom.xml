@@ -27,6 +27,7 @@
 					<version>2.1.1</version>
 					<configuration>
 						<packagingExcludes>WEB-INF/web.xml</packagingExcludes>
+						<packagingExcludes>WEB-INF/lib/log4j-over-slf4j*</packagingExcludes>
 					</configuration>
 				</plugin>  
 				
