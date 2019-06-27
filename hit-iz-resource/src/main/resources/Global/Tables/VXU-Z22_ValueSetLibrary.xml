@@ -949,7 +949,7 @@
 			<ValueElement Value="MA" CodeSystem="MVX" DisplayName="Massachusetts Public Health Biologic Laboratories"/>
 			<ValueElement Value="MBL" CodeSystem="MVX" DisplayName="Massachusetts Biologic Laboratories"/>
 			<ValueElement Value="MCM" CodeSystem="MVX" DisplayName="MCM Vaccine Company"/>
-			<ValueElement Value="MED" CodeSystem="MVX" DisplayName="MedImmune, Inc."/>
+			<ValueElement Value="MED" CodeSystem="MVX" DisplayName="MedImmune, Inc. (AstraZeneca)"/>
 			<ValueElement Value="MIL" CodeSystem="MVX" DisplayName="Miles"/>
 			<ValueElement Value="MIP" CodeSystem="MVX" DisplayName="Emergent BioSolutions"/>
 			<ValueElement Value="MSD" CodeSystem="MVX" DisplayName="Merck and Co., Inc."/>
@@ -1144,7 +1144,7 @@
 			<ValueElement Value="146" DisplayName="DTaP,IPV,Hib,HepB" CodeSystem="CVX"/>
 			<ValueElement Value="147" DisplayName="meningococcal MCV4, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="148" DisplayName="Meningococcal C/Y-HIB PRP" CodeSystem="CVX"/>
-			<ValueElement Value="149" DisplayName="influenza, live, intranasal, quadrivalent" CodeSystem="CVX"/>
+			<ValueElement Value="149" DisplayName="TDVAX" CodeSystem="CVX"/>
 			<ValueElement Value="150" DisplayName="influenza, injectable, quadrivalent, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="151" DisplayName="influenza nasal, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="152" DisplayName="Pneumococcal Conjugate, unspecified formulation" CodeSystem="CVX"/>
@@ -1198,6 +1198,8 @@
 			<ValueElement Value="193" DisplayName="hepatitis A and hepatitis B vaccine, pediatric/adolescent (non-US)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="194" DisplayName="Influenza, Southern Hemisphere, unspecified formulation" CodeSystem="CVX"/>
+			
+			<ValueElement Value="195" DisplayName="Diptheria, Tetanus, Poliomyelitis adsorbed (DT, IPV adsorbed)" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 				
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1247,8 +1249,8 @@
 			<ValueElement Value="00006-4995-41" DisplayName="Hep B, adult" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4999-00" DisplayName="MMRV" CodeSystem="NDC"/>
 			<ValueElement Value="00052-0603-02" DisplayName="BCG" CodeSystem="NDC"/>
-			<ValueElement Value="13533-0131-01" DisplayName="Td (adult), adsorbed" CodeSystem="NDC"/>
-			<ValueElement Value="14362-0111-04" DisplayName="Td (adult), adsorbed" CodeSystem="NDC"/>
+			<ValueElement Value="13533-0131-01" DisplayName="TDVAX" CodeSystem="NDC"/>
+			<ValueElement Value="14362-0111-04" DisplayName="TDVAX" CodeSystem="NDC"/>
 			<ValueElement Value="17478-0131-01" DisplayName="Td (adult), adsorbed" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0845-11" DisplayName="Influenza, seasonal, injectable" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0850-52" DisplayName="Influenza, seasonal, injectable" CodeSystem="NDC"/>
@@ -1554,8 +1556,8 @@
 			<ValueElement Value="00006-4995-01" DisplayName="Hep B, adult" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4999-01" DisplayName="MMRV" CodeSystem="NDC"/>
 			<ValueElement Value="00052-0603-01" DisplayName="BCG" CodeSystem="NDC"/>
-			<ValueElement Value="13533-0131-00" DisplayName="Td (adult), adsorbed" CodeSystem="NDC"/>
-			<ValueElement Value="14362-0111-03" DisplayName="Td (adult), adsorbed" CodeSystem="NDC"/>
+			<ValueElement Value="13533-0131-00" DisplayName="TDVAX" CodeSystem="NDC"/>
+			<ValueElement Value="14362-0111-03" DisplayName="TDVAX" CodeSystem="NDC"/>
 			<ValueElement Value="17478-0131-00" DisplayName="Td (adult), adsorbed" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0845-01" DisplayName="Influenza, seasonal, injectable" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0850-41" DisplayName="Influenza, seasonal, injectable" CodeSystem="NDC"/>
