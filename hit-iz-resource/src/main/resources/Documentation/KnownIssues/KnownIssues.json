@@ -1,5 +1,10 @@
-[	
-{
+[	{
+		"version": "1.9.5",
+		"date": "2018/07/17",
+		"name": "KnownIssues-Immunization_1.9.5 Final.docx",
+		"title": "Known Issues 1.9.5"
+	},
+    {
 		"version": "1.9.2",
 		"date": "2018/12/04",
 		"name": "KnownIssues-Immunization_1.9.2.docx",
