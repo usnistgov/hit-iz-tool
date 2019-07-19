@@ -141,7 +141,10 @@
                 <Predicate ID="[XTN_IZ]4[1]" Target="4[1]" TrueUsage="R" FalseUsage="X">
                     <Description>If the value of XTN.2 (Telecommunication Use Code) is 'NET'.</Description>
                     <Condition>
-                        <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                        <AND>
+                            <Presence Path="2[1]"/>
+                            <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                        </AND>
                     </Condition>
                 </Predicate>
                 <Predicate ID="[XTN_IZ]6[1]" Target="6[1]" TrueUsage="RE" FalseUsage="X">
