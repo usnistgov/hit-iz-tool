@@ -108,7 +108,10 @@
 				<Predicate ID="[XTN_IZ]4[1]" Target="4[1]" TrueUsage="R" FalseUsage="X">
 					<Description>If the value of XTN.2 (Telecommunication Use Code) is 'NET'.</Description>
 					<Condition>
-						<PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+						<AND>
+							<Presence Path="2[1]"/>
+							<PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+						</AND>
 					</Condition>
 				</Predicate>
 				<Predicate ID="[XTN_IZ]6[1]" Target="6[1]" TrueUsage="RE" FalseUsage="X">
@@ -178,13 +181,19 @@
 				<Predicate ID="[PID_IZ 1_5]25[1]" Target="25[1]" TrueUsage="RE" FalseUsage="O">
 					<Description>If the value of PID-24 (Multiple Birth Indicator) is 'Y'.</Description>
 					<Condition>
-						<PlainText Path="24[1]" Text="Y" IgnoreCase="false"/>
+						<AND>
+							<Presence Path="24[1]"/>
+							<PlainText Path="24[1]" Text="Y" IgnoreCase="false"/>
+						</AND>
 					</Condition>
 				</Predicate>
 				<Predicate ID="[PID_IZ 1_5]29[1]" Target="29[1]" TrueUsage="RE" FalseUsage="X">
 					<Description>If the value of PID-30 (Patient Death Indicator) is 'Y'.</Description>
 					<Condition>
-						<PlainText Path="30[1]" Text="Y" IgnoreCase="false"/>
+						<AND>
+							<Presence Path="30[1]"/>
+							<PlainText Path="30[1]" Text="Y" IgnoreCase="false"/>
+						</AND>
 					</Condition>
 				</Predicate>
 			</ByID>
@@ -308,13 +317,19 @@
 				<Predicate ID="[OBX_IZ 1_5]6[1]" Target="6[1]" TrueUsage="R" FalseUsage="O">
 					<Description>If the value of OBX-2 (Value Type) is 'NM'.</Description>
 					<Condition>
-						<PlainText Path="2[1]" Text="NM" IgnoreCase="false"/>
+						<AND>
+							<Presence Path="2[1]"/>
+							<PlainText Path="2[1]" Text="NM" IgnoreCase="false"/>
+						</AND>
 					</Condition>
 				</Predicate>
 				<Predicate ID="[OBX_IZ 1_5]17[1]" Target="17[1]" TrueUsage="RE" FalseUsage="O">
 					<Description>If the value of OBX-3.1 (Identifier) is '64994-7'.</Description>
 					<Condition>
-						<PlainText Path="3[1].1[1]" Text="64994-7" IgnoreCase="false"/>
+						<AND>
+							<Presence Path="3[1].1[1]"/>
+							<PlainText Path="3[1].1[1]" Text="64994-7" IgnoreCase="false"/>
+						</AND>
 					</Condition>
 				</Predicate>
 			</ByID>
@@ -570,7 +585,10 @@
 					<Assertion>
 						<OR>
 							<NOT>
-								<PlainText Path="5[1].1[1]" Text="998" IgnoreCase="false"/>
+								<AND>
+									<Presence Path="5[1].1[1]"/>
+									<PlainText Path="5[1].1[1]" Text="998" IgnoreCase="false"/>									
+								</AND>
 							</NOT>
 							<PlainText Path="6[1]" Text="999" IgnoreCase="false"/>
 						</OR>
@@ -652,8 +670,14 @@
 						<OR>
 							<NOT>
 								<AND>
-									<PlainText Path="3[1].1[1]" Text="64994-7" IgnoreCase="false"/>
-									<PlainText Path="2[1]" Text="CE" IgnoreCase="false"/>
+									<AND>
+										<Presence Path="3[1].1[1]"/>
+										<PlainText Path="3[1].1[1]" Text="64994-7" IgnoreCase="false"/>
+									</AND>
+									<AND>
+										<Presence Path="2[1]"/>
+										<PlainText Path="2[1]" Text="CE" IgnoreCase="false"/>
+									</AND>
 								</AND>
 							</NOT>
 							<ValueSet Path="5[1]" ValueSetID="HL70064_IZ" BindingStrength="R" BindingLocation="1"/>
@@ -666,8 +690,14 @@
 						<OR>
 							<NOT>
 								<AND>
-									<PlainText Path="3[1].1[1]" Text="69764-9" IgnoreCase="false"/>
-									<PlainText Path="2[1]" Text="CE" IgnoreCase="false"/>
+									<AND>
+										<Presence Path="3[1].1[1]"/>
+										<PlainText Path="3[1].1[1]" Text="69764-9" IgnoreCase="false"/>
+									</AND>
+									<AND>
+										<Presence Path="2[1]"/>
+										<PlainText Path="2[1]" Text="CE" IgnoreCase="false"/>
+									</AND>
 								</AND>
 							</NOT>
 							<ValueSet Path="5[1]" ValueSetID="PHVS_VISBarcodes_IIS" BindingStrength="R" BindingLocation="1"/>
@@ -680,8 +710,14 @@
 						<OR>
 							<NOT>
 								<AND>
-									<PlainText Path="3[1].1[1]" Text="30956-7" IgnoreCase="false"/>
-									<PlainText Path="2[1]" Text="CE" IgnoreCase="false"/>
+									<AND>
+										<Presence Path="3[1].1[1]"/>
+										<PlainText Path="3[1].1[1]" Text="30956-7" IgnoreCase="false"/>
+									</AND>
+									<AND>
+										<Presence Path="2[1]"/>
+										<PlainText Path="2[1]" Text="CE" IgnoreCase="false"/>
+									</AND>
 								</AND>
 							</NOT>
 							<ValueSet Path="5[1]" ValueSetID="CVX" BindingStrength="R" BindingLocation="1"/>
