@@ -151,7 +151,10 @@
                     <Description>If the value of XTN.2 (Telecommunication Use Code) is not 'NET'.</Description>
                     <Condition>
                         <NOT>
-                            <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                            <AND>
+                                <Presence Path="2[1]"/>
+                                <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                            </AND>
                         </NOT>
                     </Condition>
                 </Predicate>
@@ -159,7 +162,10 @@
                     <Description>If the value of XTN.2 (Telecommunication Use Code) is not 'NET'.</Description>
                     <Condition>
                         <NOT>
-                            <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                            <AND>
+                                <Presence Path="2[1]"/>
+                                <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                            </AND>
                         </NOT>
                     </Condition>
                 </Predicate>

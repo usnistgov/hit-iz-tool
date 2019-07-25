@@ -138,7 +138,10 @@
                     <Description>If the value of XTN.2 (Telecommunication Use Code) is not 'NET'.</Description>
                     <Condition>
                         <NOT>
-                            <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                            <AND>
+                                <Presence Path="2[1]"/>
+                                <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                            </AND>
                         </NOT>
                     </Condition>
                 </Predicate>
@@ -146,7 +149,10 @@
                     <Description>If the value of XTN.2 (Telecommunication Use Code) is not 'NET'.</Description>
                     <Condition>
                         <NOT>
-                            <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                            <AND>
+                                <Presence Path="2[1]"/>
+                                <PlainText Path="2[1]" Text="NET" IgnoreCase="false"/>
+                            </AND>
                         </NOT>
                     </Condition>
                 </Predicate>
@@ -242,7 +248,10 @@
                     <Description>If the value of RXA-6 (Administered Amount) is not '999'.</Description>
                     <Condition>
                         <NOT>
-                            <PlainText Path="6[1]" Text="999" IgnoreCase="false"/>
+                            <AND>
+                                <Presence Path="6[1]"/>
+                                <PlainText Path="6[1]" Text="999" IgnoreCase="false"/>
+                            </AND>
                         </NOT>
                     </Condition>
                 </Predicate>
@@ -634,7 +643,10 @@
                                         <Presence Path="20[1]"/>
                                     </NOT>
                                     <NOT>
-                                        <StringList Path="20[1]" CSV="CP,PA"/>
+                                        <AND>
+                                            <Presence Path="20[1]"/>
+                                            <StringList Path="20[1]" CSV="CP,PA"/>
+                                        </AND>
                                     </NOT>
                                 </OR>
                             </NOT>
