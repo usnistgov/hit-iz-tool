@@ -985,6 +985,8 @@
 			<ValueElement Value="DSI" CodeSystem="MVX" DisplayName="Dispensing Solutions"/>
 			<ValueElement Value="REB" CodeSystem="MVX" DisplayName="Rebel Distributors"/>
 			<ValueElement Value="VET" CodeSystem="MVX" DisplayName="Vetter Pharma Fertigung GmbH &amp; Co. KG"/>
+			
+			<ValueElement Value="TVA" CodeSystem="MVX" DisplayName="TEVA Pharmaceuticals USA"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="CDCREC_E_IZ" Name="Ethnic Group">
 			<ValueElement Value="2135-2" CodeSystem="CDCREC" DisplayName="Hispanic or Latino"/>
@@ -1200,6 +1202,8 @@
 			<ValueElement Value="194" DisplayName="Influenza, Southern Hemisphere, unspecified formulation" CodeSystem="CVX"/>
 			
 			<ValueElement Value="195" DisplayName="Diptheria, Tetanus, Poliomyelitis adsorbed (DT, IPV adsorbed)" CodeSystem="CVX"/>
+			
+			<ValueElement Value="196" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 				
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1522,6 +1526,27 @@
 			
 			<ValueElement Value="63361-0245-10" DisplayName="Vaxelis (DTaP-IPV-Hib-HepB)" CodeSystem="NDC"/>
 			
+			<ValueElement Value="33332-0219-20" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0319-01" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0419-10" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0019-03" DisplayName="FLUAD" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0896-52" DisplayName="FLUARIX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0719-10" DisplayName="Flublok Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="19515-0897-11" DisplayName="Flulaval Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="19515-0906-52" DisplayName="Flulaval Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0405-65" DisplayName="FLUZONE High-Dose" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0419-10" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0631-15" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0419-50" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0519-25" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			
+			
+			<ValueElement Value="70461-0419-10 " DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0319-03" DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0318-03" DisplayName="FLUCELVAX QUADRIVALENT (PREFILLED SYRINGE)" CodeSystem="NDC"/>
+			
+			<ValueElement Value="66019-0306-10" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0605-01" DisplayName="DENGVAXIA" CodeSystem="NDC"/>
 			
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
@@ -1822,6 +1847,31 @@
 			<ValueElement Value="49281-0248-58" DisplayName="IMOVAX RABIES" CodeSystem="NDC"/>
 			
 			<ValueElement Value="63361-0245-58" DisplayName="Vaxelis (DTaP-IPV-Hib-HepB)" CodeSystem="NDC"/>
+			
+			
+			<ValueElement Value="33332-0219-21" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0319-02" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0419-11" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0019-04" DisplayName="FLUAD" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0896-41" DisplayName="FLUARIX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0719-88" DisplayName="Flublok Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="19515-0897-01" DisplayName="Flulaval Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="19515-0906-41" DisplayName="Flulaval Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0405-88" DisplayName="FLUZONE High-Dose" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0419-58" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0631-78" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0419-88" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0519-00" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			
+			<ValueElement Value="70461-0419-11" DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0319-04" DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0318-04" DisplayName="FLUCELVAX QUADRIVALENT (PREFILLED SYRINGE)" CodeSystem="NDC"/>
+			
+			<ValueElement Value="49281-0548-58" DisplayName="Pentacel" CodeSystem="NDC"/>
+			
+			<ValueElement Value="66019-0306-01" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0606-58" DisplayName="DENGVAXIA" CodeSystem="NDC"/>
+			
 		</ValueSetDefinition>
 		
 		
@@ -1991,6 +2041,17 @@
 			<ValueElement Value="253088698300014111180824" CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccines"/>
 			
 			<ValueElement Value="253088698300005911181012" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine"/>
+			
+			
+			<ValueElement Value="253088698300005911190815" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine VIS"/>
+			<ValueElement Value="253088698300009711190815" CodeSystem="cdcgs1vis" DisplayName="Live Attenuated Influenza Vaccine VIS"/>
+			<ValueElement Value="253088698300010311190815" CodeSystem="cdcgs1vis" DisplayName="Inactivated Influenza Vaccine VIS"/>
+			<ValueElement Value="253088698300011011190815" CodeSystem="cdcgs1vis" DisplayName="Japanese Encephalitis Vaccine VIS"/>
+			<ValueElement Value="253088698300012711190815" CodeSystem="cdcgs1vis" DisplayName="MMR Vaccine VIS"/>
+			<ValueElement Value="253088698300013411190815" CodeSystem="cdcgs1vis" DisplayName="MMRV Vaccine VIS"/>
+			<ValueElement Value="253088698300014111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccine VIS"/>
+			<ValueElement Value="253088698300024011190815" CodeSystem="cdcgs1vis" DisplayName="Varicella Vaccine VIS"/>
+			<ValueElement Value="253088698300030111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
 			<ValueElement Value="VXC40" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the immunization level"/>
