@@ -2127,12 +2127,12 @@
             <Pattern>
               <Trigger>
                 <ErrorMessage>ERROR AN OBX SEGMENT WITH OBX-3.1 = 69764-9 AND OBX-5.1 =
-                  253088698300017211160720 is expected</ErrorMessage>
+                  253088698300017211191030 is expected</ErrorMessage>
                 <Assertion>
                   <AND>
                     <AND>
                       <Presence Path="5[1].1[1]"/>
-                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300017211160720"
+                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300017211191030"
                       />
                     </AND>
                     <AND>
@@ -2304,12 +2304,12 @@
             <Pattern>
               <Trigger>
                 <ErrorMessage>ERROR AN OBX SEGMENT WITH OBX-3.1 = 69764-9 AND OBX-5.1 =
-                  253088698300006611150402 is expected</ErrorMessage>
+                  253088698300006611191030 is expected</ErrorMessage>
                 <Assertion>
                   <AND>
                     <AND>
                       <Presence Path="5[1].1[1]"/>
-                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300006611150402"
+                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300006611191030"
                       />
                     </AND>
                     <AND>
@@ -4077,9 +4077,9 @@
                     TestDataCategorization="Value-Test Case Fixed"/>
                   <Description>Invalid content (based on test case fixed data). The value at
                     ORDER.OBSERVATION.OBX-5.1 (Observation Value) does not match the expected value:
-                    '253088698300019611180223'.</Description>
+                    '253088698300019611191030'.</Description>
                   <Assertion>
-                    <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300019611180223"/>
+                    <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300019611191030"/>
                   </Assertion>
                 </Constraint>
                 <Constraint ID="Content" Target="5[1].2[1]">
@@ -5563,9 +5563,9 @@
                     TestDataCategorization="Value-Test Case Fixed"/>
                   <Description>Invalid content (based on test case fixed data). The value at
                     ORDER.OBSERVATION.OBX-5.1 (Observation Value) does not match the expected value:
-                    '253088698300015811151105'.</Description>
+                    '253088698300015811191030'.</Description>
                   <Assertion>
-                    <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300015811151105"/>
+                    <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300015811191030"/>
                   </Assertion>
                 </Constraint>
                 <Constraint ID="Content" Target="5[1].2[1]">

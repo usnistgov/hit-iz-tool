@@ -1422,6 +1422,17 @@
 			<ValueElement Value="253088698300014111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccine VIS"/>
 			<ValueElement Value="253088698300024011190815" CodeSystem="cdcgs1vis" DisplayName="Varicella Vaccine VIS"/>
 			<ValueElement Value="253088698300030111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
+			
+			<ValueElement Value="253088698300029511191030" CodeSystem="cdcgs1vis" DisplayName="HPV Vaccine VIS"/>
+			<ValueElement Value="253088698300031811191030" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
+			<ValueElement Value="253088698300032511191030" CodeSystem="cdcgs1vis" DisplayName="Recombinant Zoster Vaccine VIS"/>
+			<ValueElement Value="253088698300006611191030" CodeSystem="cdcgs1vis" DisplayName="Hib Vaccine VIS"/>
+			<ValueElement Value="253088698300015811191030" CodeSystem="cdcgs1vis" DisplayName="PCV13 VIS"/>
+			<ValueElement Value="253088698300016511191030" CodeSystem="cdcgs1vis" DisplayName="PPSV23 VIS"/>
+			<ValueElement Value="253088698300017211191030" CodeSystem="cdcgs1vis" DisplayName="Polio Vaccine VIS"/>
+			<ValueElement Value="253088698300019611191030" CodeSystem="cdcgs1vis" DisplayName="Rotavirus Vaccine VIS"/>
+			<ValueElement Value="253088698300020211191030" CodeSystem="cdcgs1vis" DisplayName="Live Zoster Vaccine VIS"/>
+			<ValueElement Value="253088698300023311191030" CodeSystem="cdcgs1vis" DisplayName="Typhoid VIS"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
