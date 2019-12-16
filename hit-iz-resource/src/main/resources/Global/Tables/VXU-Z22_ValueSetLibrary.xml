@@ -1541,7 +1541,7 @@
 			<ValueElement Value="49281-0519-25" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
 			
 			
-			<ValueElement Value="70461-0419-10 " DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0419-10" DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
 			<ValueElement Value="70461-0319-03" DisplayName="FLUCELVAX QUADRIVALENT (PREFILLED SYRINGE)" CodeSystem="NDC"/>
 			
 			<ValueElement Value="66019-0306-10" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
