@@ -1,1 +1,13 @@
-{"hl7v2":{"constraintId":"2decb2ea-0b10-4c4c-9906-14e41392da67","messageId":"aa72383a-7b48-46e5-a74a-82e019591fe7","valueSetLibraryId":"5674a4b2-0e26-4f6a-9dc8-ba78a4727c83"},"name":"IZ-AD-9.1_Send_V04_Z22","description":"Tests the ability to create a valid VXU^V04 message","id":6123967686932069900,"position":1,"type":"TA_INITIATOR","protocols":["soap"]}
+{
+    "hl7v2": {
+        "constraintId": "2decb2ea-0b10-4c4c-9906-14e41392da67",
+        "messageId": "aa72383a-7b48-46e5-a74a-82e019591fe7",
+        "valueSetLibraryId": "5674a4b2-0e26-4f6a-9dc8-ba78a4727c83"
+    },
+    "name": "IZ-AD-9.1_Send_V04_Z22",
+    "description": "Tests the ability to create a valid VXU^V04 message",
+    "id": 6123967686932069900,
+    "position": 1,
+    "type": "SUT_INITIATOR",
+    "protocols": ["soap"]
+}
