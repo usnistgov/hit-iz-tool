@@ -1161,6 +1161,8 @@
 			<ValueElement Value="195" DisplayName="Diptheria, Tetanus, Poliomyelitis adsorbed (DT, IPV adsorbed)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="196" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" CodeSystem="CVX"/>
+			
+			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, preservative free" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
@@ -1254,6 +1256,7 @@
 			<ValueElement Value="278971009" CodeSystem="SCT" DisplayName="Hepatitis A (finding)"/>
 			<ValueElement Value="341112003" CodeSystem="SCT" DisplayName="Mumps (finding)"/>
 		</ValueSetDefinition>
+		
 		<ValueSetDefinition BindingIdentifier="PHVS_VISBarcodes_IIS" Name="PHVS_VISBarcodes_IIS">
 			<ValueElement Value="253088698300031811170706" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
 			<ValueElement Value="253088698300001111110714" CodeSystem="cdcgs1vis" DisplayName="Adenovirus VIS"/>
@@ -1329,6 +1332,7 @@
 			
 			<ValueElement Value="253088698300005911181012" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine"/>
 			
+			
 			<ValueElement Value="253088698300005911190815" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine VIS"/>
 			<ValueElement Value="253088698300009711190815" CodeSystem="cdcgs1vis" DisplayName="Live Attenuated Influenza Vaccine VIS"/>
 			<ValueElement Value="253088698300010311190815" CodeSystem="cdcgs1vis" DisplayName="Inactivated Influenza Vaccine VIS"/>
@@ -1349,6 +1353,10 @@
 			<ValueElement Value="253088698300019611191030" CodeSystem="cdcgs1vis" DisplayName="Rotavirus Vaccine VIS"/>
 			<ValueElement Value="253088698300020211191030" CodeSystem="cdcgs1vis" DisplayName="Live Zoster Vaccine VIS"/>
 			<ValueElement Value="253088698300023311191030" CodeSystem="cdcgs1vis" DisplayName="Typhoid VIS"/>
+			
+			<ValueElement Value="253088698300001111200108" CodeSystem="cdcgs1vis" DisplayName="Adenovirus Vaccine VIS"/>
+			<ValueElement Value="253088698300002811200108" CodeSystem="cdcgs1vis" DisplayName="Anthrax Vaccine VIS"/>
+			<ValueElement Value="253088698300018911200108" CodeSystem="cdcgs1vis" DisplayName="Rabies Vaccine VIS"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">

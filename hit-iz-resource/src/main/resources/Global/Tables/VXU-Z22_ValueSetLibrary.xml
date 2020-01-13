@@ -1204,6 +1204,8 @@
 			<ValueElement Value="195" DisplayName="Diptheria, Tetanus, Poliomyelitis adsorbed (DT, IPV adsorbed)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="196" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" CodeSystem="CVX"/>
+			
+			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, preservative free" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 				
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1547,6 +1549,8 @@
 			<ValueElement Value="66019-0306-10" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0605-01" DisplayName="DENGVAXIA" CodeSystem="NDC"/>
 			
+			<ValueElement Value="49281-0120-65" DisplayName="FLUZONE High-Dose Quadrivalent" CodeSystem="NDC"/>
+			
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
@@ -1870,6 +1874,8 @@
 			<ValueElement Value="66019-0306-01" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0606-58" DisplayName="DENGVAXIA" CodeSystem="NDC"/>
 			
+			<ValueElement Value="49281-0120-88" DisplayName="FLUZONE High-Dose Quadrivalent" CodeSystem="NDC"/>
+			
 		</ValueSetDefinition>
 		
 		
@@ -2061,6 +2067,10 @@
 			<ValueElement Value="253088698300019611191030" CodeSystem="cdcgs1vis" DisplayName="Rotavirus Vaccine VIS"/>
 			<ValueElement Value="253088698300020211191030" CodeSystem="cdcgs1vis" DisplayName="Live Zoster Vaccine VIS"/>
 			<ValueElement Value="253088698300023311191030" CodeSystem="cdcgs1vis" DisplayName="Typhoid VIS"/>
+			
+			<ValueElement Value="253088698300001111200108" CodeSystem="cdcgs1vis" DisplayName="Adenovirus Vaccine VIS"/>
+			<ValueElement Value="253088698300002811200108" CodeSystem="cdcgs1vis" DisplayName="Anthrax Vaccine VIS"/>
+			<ValueElement Value="253088698300018911200108" CodeSystem="cdcgs1vis" DisplayName="Rabies Vaccine VIS"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
 			<ValueElement Value="VXC40" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the immunization level"/>
