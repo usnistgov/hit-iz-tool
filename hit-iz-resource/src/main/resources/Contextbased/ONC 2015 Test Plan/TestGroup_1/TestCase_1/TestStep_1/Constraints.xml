@@ -3188,10 +3188,7 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
-
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
                     ReferencePath="OBX[1].11[1]" Source="TestCase"
@@ -3371,9 +3368,6 @@
 
 
               </Constraints>
-
-
-
             </Pattern>
             <Pattern>
               <Trigger>
@@ -3385,8 +3379,6 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
@@ -3596,9 +3588,6 @@
                   </Assertion>
                 </Constraint>
               </Constraints>
-
-
-
             </Pattern>
             <Pattern>
               <Trigger>
@@ -3610,8 +3599,6 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
@@ -3779,9 +3766,6 @@
                   </Assertion>
                 </Constraint>
               </Constraints>
-
-
-
             </Pattern>
             <Pattern>
               <Trigger>
@@ -3793,8 +3777,6 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
@@ -3929,15 +3911,7 @@
                   </Assertion>
                 </Constraint>
               </Constraints>
-
-
-
             </Pattern>
-
-
-
-
-
           </Context>
         </Contexts>
       </Pattern>
@@ -5279,8 +5253,6 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
@@ -5415,15 +5387,7 @@
                   </Assertion>
                 </Constraint>
               </Constraints>
-
-
-
             </Pattern>
-
-
-
-
-
           </Context>
         </Contexts>
       </Pattern>
