@@ -971,11 +971,11 @@
         <Trigger>
           <ErrorMessage>Invalid content (based on test case fixed data). The value at ORDER.RXA-5.1
             (Identifier) does not match one of the expected values:
-            '49281-0560-05','49281-0545-15','49281-0510-05'</ErrorMessage>
+            '49281-0560-05','49281-0545-15','49281-0510-05', '49281-0544-58', '49281-0561-01', '49281-0511-05'</ErrorMessage>
           <Assertion>
             <AND>
               <Presence Path="3[1].5[1].1[1]"/>
-              <StringList CSV="49281-0560-05,49281-0545-15,49281-0510-05" IgnoreCase="false"
+              <StringList CSV="49281-0560-05,49281-0545-15,49281-0510-05,49281-0544-58,49281-0561-01,49281-0511-05" IgnoreCase="false"
                 Path="3[1].5[1].1[1]"/>
             </AND>
           </Assertion>

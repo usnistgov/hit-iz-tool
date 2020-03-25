@@ -1551,6 +1551,9 @@
 			
 			<ValueElement Value="49281-0120-65" DisplayName="FLUZONE High-Dose Quadrivalent" CodeSystem="NDC"/>
 			
+			<ValueElement Value="49281-0252-51" DisplayName="IMOVAX RABIES" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0511-05" DisplayName="PENTACEL" CodeSystem="NDC"/>
+			
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
@@ -1875,6 +1878,10 @@
 			<ValueElement Value="49281-0606-58" DisplayName="DENGVAXIA" CodeSystem="NDC"/>
 			
 			<ValueElement Value="49281-0120-88" DisplayName="FLUZONE High-Dose Quadrivalent" CodeSystem="NDC"/>
+			
+			<ValueElement Value="49281-0246-58" DisplayName="IMOVAX RABIES" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0544-58" DisplayName="PENTACEL" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0561-01" DisplayName="PENTACEL" CodeSystem="NDC"/>
 			
 		</ValueSetDefinition>
 		
