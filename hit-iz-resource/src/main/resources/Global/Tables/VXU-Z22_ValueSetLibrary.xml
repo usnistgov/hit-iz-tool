@@ -1173,7 +1173,7 @@
 			<ValueElement Value="173" DisplayName="cholera, BivWC" CodeSystem="CVX"/>
 			<ValueElement Value="174" DisplayName="cholera, live attenuated" CodeSystem="CVX"/>
 			<ValueElement Value="175" DisplayName="Rabies - IM Diploid cell culture" CodeSystem="CVX"/>
-			<ValueElement Value="176" DisplayName="Rabies - IM fibroblast culture" CodeSystem="CVX"/>
+			<ValueElement ValPHVS_VISBarcodes_IISue="176" DisplayName="Rabies - IM fibroblast culture" CodeSystem="CVX"/>
 			<ValueElement Value="177" DisplayName="PCV10" CodeSystem="CVX"/>
 			<ValueElement Value="178" DisplayName="OPV bivalent" CodeSystem="CVX"/>
 			<ValueElement Value="179" DisplayName="OPV ,monovalent, unspecified" CodeSystem="CVX"/>
@@ -1206,6 +1206,11 @@
 			<ValueElement Value="196" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" CodeSystem="CVX"/>
 			
 			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, preservative free" CodeSystem="CVX"/>
+			
+			
+			<ValueElement Value="200" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, pediatric 0.25mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="201" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" CodeSystem="CVX"/>
+			<ValueElement Value="202" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, with preservative" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 				
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1554,6 +1559,10 @@
 			<ValueElement Value="49281-0252-51" DisplayName="IMOVAX RABIES" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0511-05" DisplayName="PENTACEL" CodeSystem="NDC"/>
 			
+			<ValueElement Value="49281-0181-25" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0320-50" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0336-15" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
+			<ValueElement Value="63361-0243-10" DisplayName="VAXELIS" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
@@ -1883,6 +1892,11 @@
 			<ValueElement Value="49281-0544-58" DisplayName="PENTACEL" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0561-01" DisplayName="PENTACEL" CodeSystem="NDC"/>
 			
+			
+			<ValueElement Value="49281-0181-00" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0320-88" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0336-78" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
+			<ValueElement Value="63361-0243-58" DisplayName="VAXELIS" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 		
 		
@@ -2078,6 +2092,14 @@
 			<ValueElement Value="253088698300001111200108" CodeSystem="cdcgs1vis" DisplayName="Adenovirus Vaccine VIS"/>
 			<ValueElement Value="253088698300002811200108" CodeSystem="cdcgs1vis" DisplayName="Anthrax Vaccine VIS"/>
 			<ValueElement Value="253088698300018911200108" CodeSystem="cdcgs1vis" DisplayName="Rabies Vaccine VIS"/>
+			
+			
+			<ValueElement Value="253088698300003511200401" CodeSystem="cdcgs1vis" DisplayName="DTaP (Diphtheria, Tetanus, Pertussis) Vaccine VIS"/>
+			<ValueElement Value="253088698300025711200401" CodeSystem="cdcgs1vis" DisplayName="Yellow Fever VIS"/>
+			<ValueElement Value="253088698300026411200401" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
+			<ValueElement Value="253088698300027111200401" CodeSystem="cdcgs1vis" DisplayName="Tetanus, Diphtheria, and Pertussis (Tdap) VIS"/>
+			<ValueElement Value="253088698300028811200401" CodeSystem="cdcgs1vis" DisplayName="Tetanus/Diphtheria (Td) Vaccine VIS"/>
+			
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
 			<ValueElement Value="VXC40" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the immunization level"/>

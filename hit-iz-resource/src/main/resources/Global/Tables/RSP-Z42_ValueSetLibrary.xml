@@ -1163,6 +1163,10 @@
 			<ValueElement Value="196" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" CodeSystem="CVX"/>
 			
 			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, preservative free" CodeSystem="CVX"/>
+			
+			<ValueElement Value="200" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, pediatric 0.25mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="201" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" CodeSystem="CVX"/>
+			<ValueElement Value="202" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, with preservative" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
@@ -1357,6 +1361,12 @@
 			<ValueElement Value="253088698300001111200108" CodeSystem="cdcgs1vis" DisplayName="Adenovirus Vaccine VIS"/>
 			<ValueElement Value="253088698300002811200108" CodeSystem="cdcgs1vis" DisplayName="Anthrax Vaccine VIS"/>
 			<ValueElement Value="253088698300018911200108" CodeSystem="cdcgs1vis" DisplayName="Rabies Vaccine VIS"/>
+			
+			<ValueElement Value="253088698300003511200401" CodeSystem="cdcgs1vis" DisplayName="DTaP (Diphtheria, Tetanus, Pertussis) Vaccine VIS"/>
+			<ValueElement Value="253088698300025711200401" CodeSystem="cdcgs1vis" DisplayName="Yellow Fever VIS"/>
+			<ValueElement Value="253088698300026411200401" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
+			<ValueElement Value="253088698300027111200401" CodeSystem="cdcgs1vis" DisplayName="Tetanus, Diphtheria, and Pertussis (Tdap) VIS"/>
+			<ValueElement Value="253088698300028811200401" CodeSystem="cdcgs1vis" DisplayName="Tetanus/Diphtheria (Td) Vaccine VIS"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
