@@ -2226,13 +2226,13 @@
                     TestDataCategorization="Value-Test Case Fixed"/>
                   <Description>Invalid content (based on test case fixed data). The value at
                     ORDER.OBSERVATION.OBX-5.1 (Observation Value) does not match one of the expected values:
-                    '253088698300017211191030', '253088698300006611191030', '253088698300003511180824'.</Description>
+                    '253088698300017211191030', '253088698300006611191030', '253088698300003511200401'.</Description>
                   <Assertion>
                     <OR>
                       <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300017211191030"/>
                       <OR>
                         <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300006611191030"/>           
-                        <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300003511180824"/>
+                        <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300003511200401"/>
                       </OR>
                     </OR>
                   </Assertion>
