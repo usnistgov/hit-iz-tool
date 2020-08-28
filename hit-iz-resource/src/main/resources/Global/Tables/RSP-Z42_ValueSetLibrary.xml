@@ -1105,7 +1105,7 @@
 			<ValueElement Value="146" DisplayName="DTaP,IPV,Hib,HepB" CodeSystem="CVX"/>
 			<ValueElement Value="147" DisplayName="meningococcal MCV4, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="148" DisplayName="Meningococcal C/Y-HIB PRP" CodeSystem="CVX"/>
-			<ValueElement Value="149" DisplayName="TDVAX" CodeSystem="CVX"/>
+			<ValueElement Value="149" DisplayName="influenza, live, intranasal, quadrivalent" CodeSystem="CVX"/>
 			<ValueElement Value="150" DisplayName="influenza, injectable, quadrivalent, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="151" DisplayName="influenza nasal, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="152" DisplayName="Pneumococcal Conjugate, unspecified formulation" CodeSystem="CVX"/>
@@ -1162,11 +1162,15 @@
 			
 			<ValueElement Value="196" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" CodeSystem="CVX"/>
 			
-			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, .7mL dose, preservative free" CodeSystem="CVX"/>
 			
 			<ValueElement Value="200" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, pediatric 0.25mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="201" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" CodeSystem="CVX"/>
 			<ValueElement Value="202" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, with preservative" CodeSystem="CVX"/>
+			
+			<ValueElement Value="205" DisplayName="influenza, high-dose seasonal, quadrivalent, .7mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine .5mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="206" DisplayName="smallpox monkeypox vaccine, live attenuated, preservative free (National Stockpile)" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
@@ -1367,6 +1371,8 @@
 			<ValueElement Value="253088698300026411200401" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
 			<ValueElement Value="253088698300027111200401" CodeSystem="cdcgs1vis" DisplayName="Tetanus, Diphtheria, and Pertussis (Tdap) VIS"/>
 			<ValueElement Value="253088698300028811200401" CodeSystem="cdcgs1vis" DisplayName="Tetanus/Diphtheria (Td) Vaccine VIS"/>
+			
+			<ValueElement Value="253088698300004211200728" CodeSystem="cdcgs1vis" DisplayName="Hepatitis A Vaccine VIS"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
