@@ -2224,9 +2224,6 @@
 			<ValueElement Value="66019-0306-10" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0605-01" DisplayName="DENGVAXIA" CodeSystem="NDC"/>
 
-			<ValueElement Value="49281-0120-65" DisplayName="FLUZONE High-Dose Quadrivalent"
-				CodeSystem="NDC"/>
-
 			<ValueElement Value="49281-0252-51" DisplayName="IMOVAX RABIES" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0511-05" DisplayName="PENTACEL" CodeSystem="NDC"/>
 
@@ -2832,10 +2829,7 @@
 
 			<ValueElement Value="66019-0306-01" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0606-58" DisplayName="DENGVAXIA" CodeSystem="NDC"/>
-
-			<ValueElement Value="49281-0120-88" DisplayName="FLUZONE High-Dose Quadrivalent"
-				CodeSystem="NDC"/>
-
+			
 			<ValueElement Value="49281-0246-58" DisplayName="IMOVAX RABIES" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0544-58" DisplayName="PENTACEL" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0561-01" DisplayName="PENTACEL" CodeSystem="NDC"/>
