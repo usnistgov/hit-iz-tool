@@ -2,14 +2,13 @@
 <ConformanceContext UUID="2decb2ea-0b10-4c4c-9906-14e41392da67"
 	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<MetaData Name="Z22 Message Constranits" OrgName="NIST" Version="1.0.0" Date="20160219"
+	<MetaData Name="Z22 Message Constranits" OrgName="NIST" Version="1.9.11" Date="20200902"
 		SpecificationName="Implementation Guide for Immunization Messaging, Release 1.5 October 1 2014"/>
 	<Predicates>
 		<Datatype>
 			<ByID ID="XCN_IZ">
 				<Predicate ID="[XCN_IZ]1[1]" Target="1[1]" TrueUsage="R" FalseUsage="RE">
-					<Description>If XCN.2.1 (Surname) and XCN.3 (Given Name) are not
-						valued.</Description>
+					<Description>If XCN.2.1 (Surname) and XCN.3 (Given Name) are not valued.</Description>
 					<Condition>
 						<AND>
 							<NOT>
@@ -110,8 +109,7 @@
 			</ByID>
 			<ByID ID="XTN_IZ">
 				<Predicate ID="[XTN_IZ]4[1]" Target="4[1]" TrueUsage="R" FalseUsage="X">
-					<Description>If the value of XTN.2 (Telecommunication Use Code) is
-						'NET'.</Description>
+					<Description>If the value of XTN.2 (Telecommunication Use Code) is 'NET'.</Description>
 					<Condition>
 						<AND>
 							<Presence Path="2[1]"/>
@@ -120,8 +118,7 @@
 					</Condition>
 				</Predicate>
 				<Predicate ID="[XTN_IZ]6[1]" Target="6[1]" TrueUsage="RE" FalseUsage="X">
-					<Description>If the value of XTN.2 (Telecommunication Use Code) is not
-						'NET'.</Description>
+					<Description>If the value of XTN.2 (Telecommunication Use Code) is not 'NET'.</Description>
 					<Condition>
 						<NOT>
 							<AND>
@@ -132,8 +129,7 @@
 					</Condition>
 				</Predicate>
 				<Predicate ID="[XTN_IZ]7[1]" Target="7[1]" TrueUsage="R" FalseUsage="X">
-					<Description>If the value of XTN.2 (Telecommunication Use Code) is not
-						'NET'.</Description>
+					<Description>If the value of XTN.2 (Telecommunication Use Code) is not 'NET'.</Description>
 					<Condition>
 						<NOT>
 							<AND>
@@ -192,8 +188,7 @@
 		<Segment>
 			<ByID ID="PID_IZ 1_5">
 				<Predicate ID="[PID_IZ 1_5]25[1]" Target="25[1]" TrueUsage="RE" FalseUsage="O">
-					<Description>If the value of PID-24 (Multiple Birth Indicator) is
-						'Y'.</Description>
+					<Description>If the value of PID-24 (Multiple Birth Indicator) is 'Y'.</Description>
 					<Condition>
 						<AND>
 							<Presence Path="24[1]"/>
@@ -202,8 +197,7 @@
 					</Condition>
 				</Predicate>
 				<Predicate ID="[PID_IZ 1_5]29[1]" Target="29[1]" TrueUsage="RE" FalseUsage="X">
-					<Description>If the value of PID-30 (Patient Death Indicator) is
-						'Y'.</Description>
+					<Description>If the value of PID-30 (Patient Death Indicator) is 'Y'.</Description>
 					<Condition>
 						<AND>
 							<Presence Path="30[1]"/>
@@ -234,8 +228,7 @@
 			</ByID>
 			<ByID ID="RXA_IZ 1_5_Z22">
 				<Predicate ID="[RXA_IZ 1_5]7[1]" Target="7[1]" TrueUsage="R" FalseUsage="X">
-					<Description>If the value of RXA-6 (Administered Amount) is not
-						'999'.</Description>
+					<Description>If the value of RXA-6 (Administered Amount) is not '999'.</Description>
 					<Condition>
 						<NOT>
 							<AND>
@@ -246,8 +239,7 @@
 					</Condition>
 				</Predicate>
 				<Predicate ID="[RXA_IZ 1_5]9[1]" Target="9[1]" TrueUsage="R" FalseUsage="O">
-					<Description>If the value of RXA-20 (Completion Status) is one of List Values:
-						'CP','PA'.</Description>
+					<Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
 					<Condition>
 						<AND>
 							<StringList Path="20[1]" CSV="CP,PA"/>
@@ -256,8 +248,7 @@
 					</Condition>
 				</Predicate>
 				<Predicate ID="[RXA_IZ 1_5]10[1]" Target="10[1]" TrueUsage="RE" FalseUsage="O">
-					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if the value of
-						RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
 					<Condition>
 						<AND>
 							<AND>
@@ -272,8 +263,7 @@
 					</Condition>
 				</Predicate>
 				<Predicate ID="[RXA_IZ 1_5]11[1]" Target="11[1]" TrueUsage="RE" FalseUsage="O">
-					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if the value of
-						RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
 					<Condition>
 						<AND>
 							<AND>
@@ -288,10 +278,7 @@
 					</Condition>
 				</Predicate>
 				<Predicate ID="[RXA_IZ 1_5]15[1]" Target="15[1]" TrueUsage="R" FalseUsage="O">
-					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if RXA-9.1
-						(Identifier) is valued AND if the value of RXA-20 (Completion Status) is one
-						of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is
-						valued.</Description>
+					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if RXA-9.1 (Identifier) is valued AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is valued.</Description>
 					<Condition>
 						<AND>
 							<PlainText Path="9[1].1[1]" Text="00" IgnoreCase="false"/>
@@ -312,8 +299,7 @@
 					</Condition>
 				</Predicate>
 				<Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="R" FalseUsage="O">
-					<Description>If RXA-9.1 (Identifier) is valued AND if the value of RXA-9.1
-						(Identifier) is '00'.</Description>
+					<Description>If RXA-9.1 (Identifier) is valued AND if the value of RXA-9.1 (Identifier) is '00'.</Description>
 					<Condition>
 						<AND>
 							<Presence Path="9[1].1[1]"/>
@@ -322,8 +308,7 @@
 					</Condition>
 				</Predicate>
 				<Predicate ID="[RXA_IZ 1_5]18[1]" Target="18[1]" TrueUsage="R" FalseUsage="X">
-					<Description>If RXA-20 (Completion Status) is valued AND if the value of RXA-20
-						(Completion Status) is 'RE'.</Description>
+					<Description>If RXA-20 (Completion Status) is valued AND if the value of RXA-20 (Completion Status) is 'RE'.</Description>
 					<Condition>
 						<AND>
 							<Presence Path="20[1]"/>
@@ -366,10 +351,7 @@
 			<ByID ID="ORC_IZ 1_5">
 				<Predicate ID="[ORC_IZ 1_5]12[1]-Display" Target="12[1]" TrueUsage="RE"
 					FalseUsage="O">
-					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if RXA-9.1
-						(Identifier) is valued AND if the value of RXA-20 (Completion Status) is one
-						of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is
-						valued.</Description>
+					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if RXA-9.1 (Identifier) is valued AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is valued.</Description>
 					<Condition>
 						<OR>
 							<Presence Path="12[1]"/>
@@ -385,10 +367,7 @@
 			<ByName Name="VXU_V04.ORDER">
 				<Predicate ID="[ORC_IZ 1_5]12[1]-Actual" Target="1[1].12[1]" TrueUsage="RE"
 					FalseUsage="O">
-					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if RXA-9.1
-						(Identifier) is valued AND if the value of RXA-20 (Completion Status) is one
-						of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is
-						valued.</Description>
+					<Description>If the value of RXA-9.1 (Identifier) is '00' AND if RXA-9.1 (Identifier) is valued AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is valued.</Description>
 					<Condition>
 						<AND>
 							<PlainText Path="3[1].9[1].1[1]" Text="00" IgnoreCase="false"/>

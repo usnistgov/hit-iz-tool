@@ -1,4 +1,11 @@
-[	{
+[
+    {
+		"version": "1.9.11",
+		"date": "2020/09/02",
+		"name": "KnownIssues-Immunization_1.9.11.docx",
+		"title": "Known Issues 1.9.11"
+	},
+    {
 		"version": "1.9.6",
 		"date": "2020/01/14",
 		"name": "KnownIssues-Immunization_1.9.6.docx",
