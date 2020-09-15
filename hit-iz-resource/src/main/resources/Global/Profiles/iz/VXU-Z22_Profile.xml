@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2015 rel. 3 (x64) (http://www.altova.com) by ww (NIST) -->
 <ConformanceProfile ID="d6d1b7ed-6851-4cc3-9244-a4f79b2e9a79" Type="Constrainable" HL7Version="2.5.1" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/Profile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<MetaData Name="Z22 Message profile" OrgName="NIST" Version="1.0.1" Date="20160328" SpecificationName="Implementation Guide for Immunization Messaging, Release 1.5 October 1 2014"/>
+	<MetaData Name="Z22 Message profile" OrgName="NIST" Version="1.9.11" Date="20200902" SpecificationName="Implementation Guide for Immunization Messaging, Release 1.5 October 1 2014"/>
 	<Encodings>
 		<Encoding>ER7</Encoding>
 		<Encoding>XML</Encoding>
@@ -599,45 +599,7 @@
 		<Segment ID="OBX_IZ 1_5" Label="OBX_IZ 1_5" Name="OBX" Description="Observation/Result">			
 			<DynamicMapping>
 				<Mapping Position="5" Reference="2" SecondReference="3.1">
-					<!--CNI's CE Datatype mapping-->
-					<Case Value="CE" SecondValue="30945-0" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="30963-3" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="30979-9" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="31044-1" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="38890-0" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="59779-9" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="59780-7" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="59781-5" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="59783-1" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="59784-9" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="59785-6" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="75505-8" Datatype="CE_IZ"/>
-					
-					<!--CNI's CE/ST Datatype mapping but just support CE for now-->
-					<Case Value="CE" SecondValue="30982-3" Datatype="CE_IZ"/>
-					
-					<!--CNI's DT Datatype mapping-->
-					<Case Value="DT" SecondValue="30946-8" Datatype="DT"/>
-					<Case Value="DT" SecondValue="30944-3" Datatype="DT"/>
-					<Case Value="DT" SecondValue="29768-9" Datatype="DT"/>
-					<Case Value="DT" SecondValue="29769-7" Datatype="DT"/>
-					<Case Value="DT" SecondValue="30980-7" Datatype="DT"/>
-					<Case Value="DT" SecondValue="59777-3" Datatype="DT"/>
-					<Case Value="DT" SecondValue="59778-1" Datatype="DT"/>
-					<Case Value="DT" SecondValue="46250-7" Datatype="DT"/>
-					<Case Value="DT" SecondValue="30981-5" Datatype="DT"/>
-					
-					<!--CNI's NM Datatype mapping-->
-					<Case Value="NM" SecondValue="30973-2" Datatype="NM"/>
-					<Case Value="NM" SecondValue="59782-3" Datatype="NM"/>
-					
-					<!--CNI's ST Datatype mapping-->
-					<Case Value="ST" SecondValue="46249-9" Datatype="ST"/>
-					
 					<!--Existing Cases-->
-					<Case Value="CE" SecondValue="64994-7" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="69764-9" Datatype="CE_IZ"/>
-					<Case Value="CE" SecondValue="30956-7" Datatype="CE_IZ"/>
 					<Case Value="CE" Datatype="CE_IZ"/>
 					<Case Value="DT" Datatype="DT"/>
 					<Case Value="TS" Datatype="TS"/>
@@ -646,7 +608,6 @@
 					<Case Value="ID" Datatype="ID"/>
 					
 					<!--New Cases added by 0125-->
-					<Case Value="CNE" Datatype="CNE"/>
 					<Case Value="CQ" Datatype="CQ"/>
 					<Case Value="CWE" Datatype="CWE"/>
 					<Case Value="CX" Datatype="CX"/>
@@ -667,9 +628,6 @@
 					
 					<!-- Following DTs were added because of No base DT definition-->
 					<Case Value="LA2" Datatype="LA2"/>
-					<Case Value="ED" Datatype="ED"/>
-					<Case Value="RP" Datatype="RP"/>
-					<Case Value="SN" Datatype="SN"/>
 				</Mapping>
 			</DynamicMapping>
 			<Field Name="Set ID - OBX" Usage="R" Min="1" Max="1" Datatype="SI" MinLength="1" MaxLength="4" ItemNo="00569"/>

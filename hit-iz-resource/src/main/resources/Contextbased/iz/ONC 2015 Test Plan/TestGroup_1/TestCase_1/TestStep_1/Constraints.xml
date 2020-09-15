@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ConformanceContext UUID="7ebd88ab-56fa-4322-9e3c-2cfebf986ca3">
+<ConformanceContext UUID="7ebd88ab-56fa-4322-9e3c-2cfebf986ca3" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MetaData Name="1-1" OrgName="NIST" Version="1.0.0" Date="20200114"
+    SpecificationName="Implementation Guide for Immunization Messaging, Release 1.5 October 1 2014"/>
   <Constraints>
     <Message>
       <ByID ID="aa72383a-7b48-46e5-a74a-82e019591fe7">
@@ -968,11 +971,11 @@
         <Trigger>
           <ErrorMessage>Invalid content (based on test case fixed data). The value at ORDER.RXA-5.1
             (Identifier) does not match one of the expected values:
-            '49281-0560-05','49281-0545-15','49281-0510-05'</ErrorMessage>
+            '49281-0560-05','49281-0545-15','49281-0510-05', '49281-0544-58', '49281-0561-01', '49281-0511-05'</ErrorMessage>
           <Assertion>
             <AND>
               <Presence Path="3[1].5[1].1[1]"/>
-              <StringList CSV="49281-0560-05,49281-0545-15,49281-0510-05" IgnoreCase="false"
+              <StringList CSV="49281-0560-05,49281-0545-15,49281-0510-05,49281-0544-58,49281-0561-01,49281-0511-05" IgnoreCase="false"
                 Path="3[1].5[1].1[1]"/>
             </AND>
           </Assertion>
@@ -1887,9 +1890,6 @@
                   </Assertion>
                 </Constraint>
               </Constraints>
-
-
-
             </Pattern>
             <Pattern>
               <Trigger>
@@ -2113,32 +2113,13 @@
                 </Constraint>
               </Constraints>
             </Pattern>
-
-
-
-
-
-
-
-
-
-
-
-            <Pattern>
+            <Pattern Cardinality="3">
               <Trigger>
-                <ErrorMessage>ERROR AN OBX SEGMENT WITH OBX-3.1 = 69764-9 AND OBX-5.1 =
-                  253088698300017211191030 is expected</ErrorMessage>
+                <ErrorMessage>ERROR AN OBX SEGMENT WITH OBX-3.1 = 69764-9 is expected</ErrorMessage>
                 <Assertion>
                   <AND>
-                    <AND>
-                      <Presence Path="5[1].1[1]"/>
-                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300017211191030"
-                      />
-                    </AND>
-                    <AND>
-                      <Presence Path="3[1].1[1]"/>
-                      <PlainText IgnoreCase="true" Path="3[1].1[1]" Text="69764-9"/>
-                    </AND>
+                    <Presence Path="3[1].1[1]"/>
+                    <PlainText IgnoreCase="true" Path="3[1].1[1]" Text="69764-9"/>
                   </AND>
                 </Assertion>
               </Trigger>
@@ -2238,357 +2219,22 @@
                     <Presence Path="5[1].1[1]"/>
                   </Assertion>
                 </Constraint>
-                <Constraint ID="Content" Target="5[1].2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].5[1].2[1]" Source="TestCase"
-                    TestDataCategorization="Presence-Test Case Proper"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-5.2 (Observation Value) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="5[1].2[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="5[1].3[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].5[1].3[1]" Source="TestCase"
-                    TestDataCategorization="Value-Profile Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-5.3 (Observation Value) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="5[1].3[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="6[1].1[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].6[1].1[1]" Source="TestCase"
-                    TestDataCategorization="NonPresence"/>
-                  <Description>Unexpected content found. The value at ORDER.OBSERVATION.OBX-6.1
-                    (Identifier) is not expected to be valued for test case.</Description>
-                  <Assertion>
-                    <NOT>
-                      <Presence Path="6[1].1[1]"/>
-                    </NOT>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="6[1].2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].6[1].2[1]" Source="TestCase"
-                    TestDataCategorization="NonPresence"/>
-                  <Description>Unexpected content found. The value at ORDER.OBSERVATION.OBX-6.2
-                    (Text) is not expected to be valued for test case.</Description>
-                  <Assertion>
-                    <NOT>
-                      <Presence Path="6[1].2[1]"/>
-                    </NOT>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="6[1].3[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].6[1].3[1]" Source="TestCase"
-                    TestDataCategorization="NonPresence"/>
-                  <Description>Unexpected content found. The value at ORDER.OBSERVATION.OBX-6.3
-                    (Name of Coding System) is not expected to be valued for test
-                    case.</Description>
-                  <Assertion>
-                    <NOT>
-                      <Presence Path="6[1].3[1]"/>
-                    </NOT>
-                  </Assertion>
-                </Constraint>
-              </Constraints>
-            </Pattern>
-
-
-            <Pattern>
-              <Trigger>
-                <ErrorMessage>ERROR AN OBX SEGMENT WITH OBX-3.1 = 69764-9 AND OBX-5.1 =
-                  253088698300006611191030 is expected</ErrorMessage>
-                <Assertion>
-                  <AND>
-                    <AND>
-                      <Presence Path="5[1].1[1]"/>
-                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300006611191030"
-                      />
-                    </AND>
-                    <AND>
-                      <Presence Path="3[1].1[1]"/>
-                      <PlainText IgnoreCase="true" Path="3[1].1[1]" Text="69764-9"/>
-                    </AND>
-                  </AND>
-                </Assertion>
-              </Trigger>
-              <Constraints>
-                <Constraint ID="Content" Target="11[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].11[1]" Source="TestCase"
-                    TestDataCategorization="Value-Profile Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-11 (Observation Result Status) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="11[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="14[1].1[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].14[1].1[1]" Source="TestCase"
-                    TestDataCategorization="Presence-Content Indifferent"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-14.1 (Time) is expected to be present.</Description>
-                  <Assertion>
-                    <Presence Path="14[1].1[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="1[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].1[1]" Source="TestCase"
-                    TestDataCategorization="Value-Profile Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-1 (Set ID - OBX) is expected to be present.</Description>
-                  <Assertion>
-                    <Presence Path="1[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].2[1]" Source="TestCase"
-                    TestDataCategorization="Value-Test Case Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-2 (Value Type) is expected to be present.</Description>
-                  <Assertion>
-                    <Presence Path="2[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].2[1]" Source="TestCase"
-                    TestDataCategorization="Value-Test Case Fixed"/>
-                  <Description>Invalid content (based on test case fixed data). The value at
-                    ORDER.OBSERVATION.OBX-2 (Value Type) does not match the expected value:
-                    'CE'.</Description>
-                  <Assertion>
-                    <PlainText IgnoreCase="true" Path="2[1]" Text="CE"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="3[1].2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].3[1].2[1]" Source="TestCase"
-                    TestDataCategorization="Presence-Test Case Proper"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-3.2 (Text) is expected to be present.</Description>
-                  <Assertion>
-                    <Presence Path="3[1].2[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="3[1].3[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].3[1].3[1]" Source="TestCase"
-                    TestDataCategorization="Value-Profile Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-3.3 (Name of Coding System) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="3[1].3[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="4[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].4[1]" Source="TestCase"
-                    TestDataCategorization="Presence-Test Case Proper"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-4 (Observation Sub-ID) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="4[1]"/>
-                  </Assertion>
-                </Constraint>
+                
                 <Constraint ID="Content" Target="5[1].1[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
                     ReferencePath="OBX[1].5[1].1[1]" Source="TestCase"
                     TestDataCategorization="Value-Test Case Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-5.1 (Observation Value) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="5[1].1[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="5[1].2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].5[1].2[1]" Source="TestCase"
-                    TestDataCategorization="Presence-Test Case Proper"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-5.2 (Observation Value) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="5[1].2[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="5[1].3[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].5[1].3[1]" Source="TestCase"
-                    TestDataCategorization="Value-Profile Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-5.3 (Observation Value) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="5[1].3[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="6[1].1[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].6[1].1[1]" Source="TestCase"
-                    TestDataCategorization="NonPresence"/>
-                  <Description>Unexpected content found. The value at ORDER.OBSERVATION.OBX-6.1
-                    (Identifier) is not expected to be valued for test case.</Description>
-                  <Assertion>
-                    <NOT>
-                      <Presence Path="6[1].1[1]"/>
-                    </NOT>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="6[1].2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].6[1].2[1]" Source="TestCase"
-                    TestDataCategorization="NonPresence"/>
-                  <Description>Unexpected content found. The value at ORDER.OBSERVATION.OBX-6.2
-                    (Text) is not expected to be valued for test case.</Description>
-                  <Assertion>
-                    <NOT>
-                      <Presence Path="6[1].2[1]"/>
-                    </NOT>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="6[1].3[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].6[1].3[1]" Source="TestCase"
-                    TestDataCategorization="NonPresence"/>
-                  <Description>Unexpected content found. The value at ORDER.OBSERVATION.OBX-6.3
-                    (Name of Coding System) is not expected to be valued for test
-                    case.</Description>
-                  <Assertion>
-                    <NOT>
-                      <Presence Path="6[1].3[1]"/>
-                    </NOT>
-                  </Assertion>
-                </Constraint>
-              </Constraints>
-            </Pattern>
-
-            <Pattern>
-              <Trigger>
-                <ErrorMessage>ERROR AN OBX SEGMENT WITH OBX-3.1 = 69764-9 AND OBX-5.1 =
-                  253088698300003511180824 is expected</ErrorMessage>
-                <Assertion>
-                  <AND>
-                    <AND>
-                      <Presence Path="5[1].1[1]"/>
-                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300003511180824"
-                      />
-                    </AND>
-                    <AND>
-                      <Presence Path="3[1].1[1]"/>
-                      <PlainText IgnoreCase="true" Path="3[1].1[1]" Text="69764-9"/>
-                    </AND>
-                  </AND>
-                </Assertion>
-              </Trigger>
-              <Constraints>
-                <Constraint ID="Content" Target="11[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].11[1]" Source="TestCase"
-                    TestDataCategorization="Value-Profile Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-11 (Observation Result Status) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="11[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="14[1].1[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].14[1].1[1]" Source="TestCase"
-                    TestDataCategorization="Presence-Content Indifferent"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-14.1 (Time) is expected to be present.</Description>
-                  <Assertion>
-                    <Presence Path="14[1].1[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="1[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].1[1]" Source="TestCase"
-                    TestDataCategorization="Value-Profile Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-1 (Set ID - OBX) is expected to be present.</Description>
-                  <Assertion>
-                    <Presence Path="1[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].2[1]" Source="TestCase"
-                    TestDataCategorization="Value-Test Case Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-2 (Value Type) is expected to be present.</Description>
-                  <Assertion>
-                    <Presence Path="2[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].2[1]" Source="TestCase"
-                    TestDataCategorization="Value-Test Case Fixed"/>
                   <Description>Invalid content (based on test case fixed data). The value at
-                    ORDER.OBSERVATION.OBX-2 (Value Type) does not match the expected value:
-                    'CE'.</Description>
+                    ORDER.OBSERVATION.OBX-5.1 (Observation Value) does not match one of the expected values:
+                    '253088698300017211191030', '253088698300006611191030', '253088698300003511200401'.</Description>
                   <Assertion>
-                    <PlainText IgnoreCase="true" Path="2[1]" Text="CE"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="3[1].2[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].3[1].2[1]" Source="TestCase"
-                    TestDataCategorization="Presence-Test Case Proper"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-3.2 (Text) is expected to be present.</Description>
-                  <Assertion>
-                    <Presence Path="3[1].2[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="3[1].3[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].3[1].3[1]" Source="TestCase"
-                    TestDataCategorization="Value-Profile Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-3.3 (Name of Coding System) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="3[1].3[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="4[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].4[1]" Source="TestCase"
-                    TestDataCategorization="Presence-Test Case Proper"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-4 (Observation Sub-ID) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="4[1]"/>
-                  </Assertion>
-                </Constraint>
-                <Constraint ID="Content" Target="5[1].1[1]">
-                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
-                    ReferencePath="OBX[1].5[1].1[1]" Source="TestCase"
-                    TestDataCategorization="Value-Test Case Fixed"/>
-                  <Description>Expected content is missing. The empty value at
-                    ORDER.OBSERVATION.OBX-5.1 (Observation Value) is expected to be
-                    present.</Description>
-                  <Assertion>
-                    <Presence Path="5[1].1[1]"/>
+                    <OR>
+                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300017211191030"/>
+                      <OR>
+                        <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300006611191030"/>           
+                        <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300003511200401"/>
+                      </OR>
+                    </OR>
                   </Assertion>
                 </Constraint>
                 <Constraint ID="Content" Target="5[1].2[1]">
@@ -2652,15 +2298,6 @@
                 </Constraint>
               </Constraints>
             </Pattern>
-
-
-
-
-
-
-
-
-
             <Pattern Cardinality="3">
               <Trigger>
                 <ErrorMessage>ERROR AN OBX SEGMENT WITH OBX-3.1 = 29769-7 is expected</ErrorMessage>
@@ -3551,10 +3188,7 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
-
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
                     ReferencePath="OBX[1].11[1]" Source="TestCase"
@@ -3734,9 +3368,6 @@
 
 
               </Constraints>
-
-
-
             </Pattern>
             <Pattern>
               <Trigger>
@@ -3748,8 +3379,6 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
@@ -3959,9 +3588,6 @@
                   </Assertion>
                 </Constraint>
               </Constraints>
-
-
-
             </Pattern>
             <Pattern>
               <Trigger>
@@ -3973,8 +3599,6 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
@@ -4142,9 +3766,6 @@
                   </Assertion>
                 </Constraint>
               </Constraints>
-
-
-
             </Pattern>
             <Pattern>
               <Trigger>
@@ -4156,8 +3777,6 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
@@ -4292,15 +3911,7 @@
                   </Assertion>
                 </Constraint>
               </Constraints>
-
-
-
             </Pattern>
-
-
-
-
-
           </Context>
         </Contexts>
       </Pattern>
@@ -5642,8 +5253,6 @@
                   </AND>
                 </Assertion>
               </Trigger>
-
-
               <Constraints>
                 <Constraint ID="Content" Target="11[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
@@ -5778,15 +5387,7 @@
                   </Assertion>
                 </Constraint>
               </Constraints>
-
-
-
             </Pattern>
-
-
-
-
-
           </Context>
         </Contexts>
       </Pattern>
@@ -6177,11 +5778,12 @@
         </Constraints>
       </Pattern>
     </Context>
-  
+
     <Context List="3[1].3[*]">
       <Pattern>
         <Trigger>
-          <ErrorMessage>ERROR AN repeatable Field (PID-3) WITH PID-3.5 = MR is expected</ErrorMessage>
+          <ErrorMessage>ERROR AN repeatable Field (PID-3) WITH PID-3.5 = MR is
+            expected</ErrorMessage>
           <Assertion>
             <AND>
               <Presence Path="5[1]"/>
@@ -6191,15 +5793,21 @@
         </Trigger>
         <Constraints>
           <Constraint ID="Content" Target="4[1].1[1]">
-            <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="PID[1].3[*].4[1].1[1]" Source="TestCase" TestDataCategorization="Presence-Content Indifferent"/>
-            <Description>Expected content is missing. The empty value at PID-3.4.1 (Namespace ID) is expected to be present.</Description>
+            <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
+              ReferencePath="PID[1].3[*].4[1].1[1]" Source="TestCase"
+              TestDataCategorization="Presence-Content Indifferent"/>
+            <Description>Expected content is missing. The empty value at PID-3.4.1 (Namespace ID) is
+              expected to be present.</Description>
             <Assertion>
               <Presence Path="4[1].1[1]"/>
             </Assertion>
           </Constraint>
           <Constraint ID="Content" Target="5[1]">
-            <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="PID[1].3[*].5[1]" Source="TestCase" TestDataCategorization="Value-Test Case Fixed"/>
-            <Description>Invalid content (based on test case fixed data). The value at PID-3.5 (Identifier Type Code) does not match the expected value: 'MR'.</Description>
+            <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
+              ReferencePath="PID[1].3[*].5[1]" Source="TestCase"
+              TestDataCategorization="Value-Test Case Fixed"/>
+            <Description>Invalid content (based on test case fixed data). The value at PID-3.5
+              (Identifier Type Code) does not match the expected value: 'MR'.</Description>
             <Assertion>
               <PlainText IgnoreCase="true" Path="5[1]" Text="MR"/>
             </Assertion>

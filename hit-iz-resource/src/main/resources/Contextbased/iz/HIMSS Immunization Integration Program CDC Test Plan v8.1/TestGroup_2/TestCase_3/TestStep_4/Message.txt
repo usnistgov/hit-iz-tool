@@ -1,0 +1,8 @@
+MSH|^~\&|Test EHR Application|X68||NIST Test Iz Reg|20190701082240-0500||VXU^V04^VXU_V04|NIST-IZ-001.00|P|2.5.1|||ER|AL|||||Z22^CDCPHINVS|IIPEHRFAC^^^^^IIP-AA-IZ-1^XX^^^100-1|IIPIISFAC^^^^^IIP-AA-IZ-1^XX^^^100-2
+PID|1||123456^^^MYEHR^MR~987633^^^MYIIS^SR||Vazquez^Juana^Mariana^^^^L|Acosta^Maria^Merida^^^^M|201411011105|F||2106-3^White^CDCREC|4345 Standish Way^^Stamford^CT^06903^USA^L||^PRN^CP^^1^203^5551212~^NET^^jmg@gmail.com||eng^English^ISO639|||||||2135-2^Hispanic or Latino^CDCREC
+PD1|||||||||||02^Reminder/Recall - any method^HL70215|N||||A|20150701|20150701
+NK1|1|Vazquez^Joanna^Merida^^^^L|GRP^Grandparent^HL70063|4345 Standish Way^^Stamford^CT^06903^^L|^PRN^PH^^1^203^5551212~^NET^^jmg@gmail.com
+ORC|RE||197028^SP|||||||^Molina^Sandra||^Smith^Frank^^^^^^^L^^^^^^^^^^^MD|||||SP^Shoreline Pediatrics^HL70362||||||||||||||
+RXA|0|1|20191031|20191031|161^Influenza, seasonal, injectable, preservative Free^CVX^49281-0519-00^FLUZONE QUIADRIVALENT^NDC|0.25|mL^^UCUM||00^New immunization record^NIP001|^Molina^Sandra|^^^SP^^^^^400 Shoreline Drive^^Stamford^CT^06901||||8L4B3521|20201231|PMC^Sanofi Pasteur^MVX|||CP|A|||||
+RXR|C28161^Intramuscular^NCIT^IM^Intramuscular^HL70162|LD^Left Deltoid^HL70163||||
+OBX|1|CE|31044-1^Reaction^LN|1|VXC14^Rash within 14 days of dose ^CDCPHINVS||||||F|||20191031|||||||||||
