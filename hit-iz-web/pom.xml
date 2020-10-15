@@ -57,55 +57,27 @@
 
 	</build>
 	
-	
- 
-	
-
 	<dependencies>
 		<dependency>
 			<groupId>gov.nist.hit.core.hl7v2</groupId>
 			<artifactId>hit-core-hl7v2-api</artifactId>
 			<version>${hithl7v2.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.ibm.icu</groupId>
-					<artifactId>icu4j</artifactId>
-				</exclusion>
-			</exclusions> 
 		</dependency>
 		<dependency>
 			<groupId>gov.nist.hit.iz</groupId>
 			<artifactId>hit-iz-service</artifactId>
 			<version>${project.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.ibm.icu</groupId>
-					<artifactId>icu4j</artifactId>
-				</exclusion>
-			</exclusions> 
 		</dependency>
 		<dependency>
 			<groupId>gov.nist.hit.iz</groupId>
 			<artifactId>hit-iz-ws</artifactId>
 			<version>${project.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.ibm.icu</groupId>
-					<artifactId>icu4j</artifactId>
-				</exclusion>
-			</exclusions> 
 		</dependency>
 
 		<dependency>
 			<groupId>gov.nist.hit.iz</groupId>
 			<artifactId>hit-iz-resource</artifactId>
 			<version>${project.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.ibm.icu</groupId>
-					<artifactId>icu4j</artifactId>
-				</exclusion>
-			</exclusions> 
 		</dependency>
  
 		<dependency>
@@ -156,12 +128,6 @@
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>5.1.42</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.ibm.icu</groupId>
-			<artifactId>icu4j</artifactId>
-			<version>67.1</version>
 		</dependency>
 		
 	</dependencies>

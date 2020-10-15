@@ -30,8 +30,19 @@
 			<groupId>gov.nist.hit.core.hl7v2</groupId>
 			<artifactId>hit-core-hl7v2-service</artifactId>
 			<version>${hithl7v2.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.ibm.icu</groupId>
+					<artifactId>icu4j</artifactId>
+				</exclusion>
+			</exclusions> 
 		</dependency>
 		
+		<dependency>
+			<groupId>com.ibm.icu</groupId>
+			<artifactId>icu4j</artifactId>
+			<version>67.1</version>
+		</dependency>
 	</dependencies>
 
 
