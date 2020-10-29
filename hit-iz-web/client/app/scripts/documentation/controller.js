@@ -1095,6 +1095,9 @@ angular.module('doc')
       }, wait);
     };
 
+    $scope.isLink = function (path) {
+        return path && path != null && path.startsWith("http");
+      };
 
     $scope.initDocs(null, 3000);
 
