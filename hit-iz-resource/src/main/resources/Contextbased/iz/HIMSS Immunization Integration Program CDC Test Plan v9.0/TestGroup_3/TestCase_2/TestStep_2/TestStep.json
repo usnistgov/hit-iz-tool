@@ -1,0 +1,1 @@
+{"name":"Orders administration of DTaP vaccine and alerted that the dose is too early","description":"The provider orders a DTaP vaccine (dose 5). The EHR provides an alert that the vaccine dose is too early.","id":-7702410198414770755,"position":2,"type":"SUT_MANUAL"}
