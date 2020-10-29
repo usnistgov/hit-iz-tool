@@ -1,10 +1,4 @@
-{
-	"installationGuide": {
-		"title": "Installation Guide - NIST HL7v2 Validation Tools.docx",
-		"name": "Installation Guide - NIST HL7v2 Validation Tools.docx",
-		"date": "2017/07/12"
-	},
-	"downloads": [
+[
 		{
 			"title": "iztool-1.9.7",
 			"link": "http://hit-prod.nist.gov/wars/iztool-cdc-1.9.7.zip",
@@ -18,4 +12,3 @@
 			"customizable": true
 		}
 	]
-}
