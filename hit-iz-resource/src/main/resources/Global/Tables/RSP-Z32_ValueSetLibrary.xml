@@ -1042,6 +1042,11 @@
 			<ValueElement Value="VET" CodeSystem="MVX" DisplayName="Vetter Pharma Fertigung GmbH &amp; Co. KG"/>
 			
 			<ValueElement Value="TVA" CodeSystem="MVX" DisplayName="TEVA Pharmaceuticals USA"/>
+			
+			<ValueElement Value="MOD" CodeSystem="MVX" DisplayName="Moderna US, Inc."/>
+			<ValueElement Value="PFR" CodeSystem="MVX" DisplayName="Pfizer"/>
+			<ValueElement Value="ASZ" CodeSystem="MVX" DisplayName="AstraZeneca"/>
+			<ValueElement Value="JSN" CodeSystem="MVX" DisplayName="Janssen"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="CVX" Name="Codes for Vaccines administered">
 			<ValueElement Value="01" DisplayName="DTP" CodeSystem="CVX"/>
@@ -1255,6 +1260,9 @@
 			<ValueElement Value="205" DisplayName="influenza, high-dose seasonal, quadrivalent, .7mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine .5mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="206" DisplayName="smallpox monkeypox vaccine, live attenuated, preservative free (National Stockpile)" CodeSystem="CVX"/>
+			
+			<ValueElement Value="207" DisplayName="COVID-19, mRNA, LNP-S, PF, 100 mcg/ 0.5 mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="208" DisplayName="COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>

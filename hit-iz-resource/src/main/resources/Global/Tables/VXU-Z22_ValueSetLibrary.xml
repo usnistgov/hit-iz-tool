@@ -1322,6 +1322,11 @@
 				DisplayName="Vetter Pharma Fertigung GmbH &amp; Co. KG"/>
 
 			<ValueElement Value="TVA" CodeSystem="MVX" DisplayName="TEVA Pharmaceuticals USA"/>
+			
+			<ValueElement Value="MOD" CodeSystem="MVX" DisplayName="Moderna US, Inc."/>
+			<ValueElement Value="PFR" CodeSystem="MVX" DisplayName="Pfizer"/>
+			<ValueElement Value="ASZ" CodeSystem="MVX" DisplayName="AstraZeneca"/>
+			<ValueElement Value="JSN" CodeSystem="MVX" DisplayName="Janssen"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="CDCREC_E_IZ" Name="Ethnic Group">
 			<ValueElement Value="2135-2" CodeSystem="CDCREC" DisplayName="Hispanic or Latino"/>
@@ -1618,6 +1623,11 @@
 			<ValueElement Value="205" DisplayName="influenza, high-dose seasonal, quadrivalent, .7mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine .5mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="206" DisplayName="smallpox monkeypox vaccine, live attenuated, preservative free (National Stockpile)" CodeSystem="CVX"/>
+			
+			<ValueElement Value="207" DisplayName="COVID-19, mRNA, LNP-S, PF, 100 mcg/ 0.5 mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="208" DisplayName="COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose" CodeSystem="CVX"/>
+			
+			
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -2251,6 +2261,12 @@
 			<ValueElement Value="66019-0307-10" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
 			
 			
+			<ValueElement Value="80777-0273-99" DisplayName="Moderna COVID-19 Vaccine; CARTON, 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-1000-02" DisplayName="Pfizer COVID-19 Vaccine; CARTON, 195 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="63361-0243-15" DisplayName="VAXELIS" CodeSystem="NDC"/>
+			<ValueElement Value="50090-5147-00" DisplayName="Shingrix" CodeSystem="NDC"/>
+			
+			
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant"
@@ -2857,6 +2873,11 @@
 			<ValueElement Value="49281-0590-58" DisplayName="MenQuadfi" CodeSystem="NDC"/>
 			
 			<ValueElement Value="66019-0307-01" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
+			
+			<ValueElement Value="80777-0273-10" DisplayName="Moderna COVID-19 Vaccine; MULTI-DOSE VIAL, 10 DOSES" CodeSystem="NDC"/>
+			<ValueElement Value="59267-1000-01" DisplayName="Pfizer COVID-19 Vaccine; MULTI-DOSE VIAL, 5 DOSES" CodeSystem="NDC"/>
+			<ValueElement Value="63361-0243-88" DisplayName="VAXELIS" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0828-01" DisplayName="Shingrix" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 
 
