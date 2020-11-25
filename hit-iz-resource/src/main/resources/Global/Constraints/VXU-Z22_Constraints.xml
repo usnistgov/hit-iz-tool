@@ -852,7 +852,7 @@
 									</AND>
 								</AND>
 								<AND>
-									<Presence Path="3[1].5[1].1[1]"/>
+									<Presence Path="3[1].5[1]"/>
 									<ValueSet ValueSetID="PHVS_VISVaccines_IIS"
 										Path="3[1].5[1].1[1]" BindingLocation="1"
 										BindingStrength="R"/>

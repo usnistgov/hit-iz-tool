@@ -922,7 +922,6 @@
 			<ValueElement Value="OTH" CodeSystem="MVX" DisplayName="Other manufacturer"/>
 			<ValueElement Value="PAX" CodeSystem="MVX" DisplayName="PaxVax"/>
 			<ValueElement Value="PD" CodeSystem="MVX" DisplayName="Parkedale Pharmaceuticals"/>
-			<ValueElement Value="PFR" CodeSystem="MVX" DisplayName="Pfizer, Inc"/>
 			<ValueElement Value="PMC" CodeSystem="MVX" DisplayName="sanofi pasteur"/>
 			<ValueElement Value="PRX" CodeSystem="MVX" DisplayName="Praxis Biologics"/>
 			<ValueElement Value="PSC" CodeSystem="MVX" DisplayName="Protein Sciences"/>
