@@ -847,15 +847,12 @@
 									</AND>
 									<AND>
 										<Presence Path="3[1].9[1].1[1]"/>
-										<PlainText Path="3[1].9[1].1[1]" Text="00"
-											IgnoreCase="false"/>
+										<PlainText Path="3[1].9[1].1[1]" Text="00" IgnoreCase="false"/>
 									</AND>
 								</AND>
 								<AND>
-									<Presence Path="3[1].5[1]"/>
-									<ValueSet ValueSetID="PHVS_VISVaccines_IIS"
-										Path="3[1].5[1].1[1]" BindingLocation="1"
-										BindingStrength="R"/>
+									<Presence Path="3[1].5[1].1[1]"/>
+									<ValueSet ValueSetID="PHVS_VISVaccines_IIS" Path="3[1].5[1]" BindingLocation="1" BindingStrength="R"/>
 								</AND>
 							</AND>
 							<Plugin
