@@ -1626,6 +1626,7 @@
 			<ValueElement Value="207" DisplayName="COVID-19, mRNA, LNP-S, PF, 100 mcg/ 0.5 mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="208" DisplayName="COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose" CodeSystem="CVX"/>
 			
+			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
 			
 		</ValueSetDefinition>
 
@@ -2611,7 +2612,7 @@
 			<ValueElement Value="58160-0826-01" DisplayName="Hep A, adult" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0826-05" DisplayName="Hep A, adult" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0826-43" DisplayName="Hep A, adult" CodeSystem="NDC"/>
-			<ValueElement Value="58160-0828-01" DisplayName="zoster vaccine subunit"
+			<ValueElement Value="58160-0828-01" DisplayName="Shingrix or zoster vaccine subunit"
 				CodeSystem="NDC"/>
 			<ValueElement Value="58160-0828-03" DisplayName="zoster vaccine subunit"
 				CodeSystem="NDC"/>
@@ -2876,7 +2877,6 @@
 			<ValueElement Value="80777-0273-10" DisplayName="Moderna COVID-19 Vaccine; MULTI-DOSE VIAL, 10 DOSES" CodeSystem="NDC"/>
 			<ValueElement Value="59267-1000-01" DisplayName="Pfizer COVID-19 Vaccine; MULTI-DOSE VIAL, 5 DOSES" CodeSystem="NDC"/>
 			<ValueElement Value="63361-0243-88" DisplayName="VAXELIS" CodeSystem="NDC"/>
-			<ValueElement Value="58160-0828-01" DisplayName="Shingrix" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 
 

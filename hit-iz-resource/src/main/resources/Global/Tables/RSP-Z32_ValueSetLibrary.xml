@@ -1262,6 +1262,8 @@
 			
 			<ValueElement Value="207" DisplayName="COVID-19, mRNA, LNP-S, PF, 100 mcg/ 0.5 mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="208" DisplayName="COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose" CodeSystem="CVX"/>
+			
+			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
