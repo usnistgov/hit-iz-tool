@@ -592,6 +592,19 @@
 				</Constraint>
 			</ByID>
 			<ByID ID="RXA_IZ 1_5_Z22">
+				<Constraint ID="NIST-02" Target="5[1]">
+					<Description>The value CVX code 213 "SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" at location Field RXA-5 (Administered Code) is NOT RECOMMENDED for newly administered (RXA-9.1 = "00") COVID-19 vaccines. The CDC highly encourages sending a COVID-19 specified code; not doing so can affect ancillary systems and can negatively impact clinical outcomes.</Description>
+					<Assertion>
+						<NOT>
+							<FORALL>
+								<PlainText Path="5[1].1[1]" Text="213" IgnoreCase="false"/>
+								<PlainText Path="5[1].3[1]" Text="CVX" IgnoreCase="false"/>
+								<PlainText Path="9[1].1[1]" Text="00" IgnoreCase="false"/>
+								<PlainText Path="9[1].3[1]" Text="NIP001" IgnoreCase="false"/>
+							</FORALL>
+						</NOT>
+					</Assertion>
+				</Constraint>
 				<Constraint ID="IZ-28" Target="1[1]">
 					<Description>The value of RXA-1 (Give Sub-ID Counter) SHALL be
 						'0'.</Description>
