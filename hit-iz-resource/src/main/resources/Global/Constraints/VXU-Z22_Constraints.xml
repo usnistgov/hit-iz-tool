@@ -593,7 +593,7 @@
 			</ByID>
 			<ByID ID="RXA_IZ 1_5_Z22">
 				<Constraint ID="NIST-02" Target="5[1]">
-					<Description>The value CVX code 213 "SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" at location Field RXA-5 (Administered Code) is NOT RECOMMENDED for newly administered (RXA-9.1 = "00") COVID-19 vaccines. The CDC highly encourages sending a COVID-19 specified code; not doing so can affect ancillary systems and can negatively impact clinical outcomes.</Description>
+					<Description>The value CVX code 213 "SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" at location Field RXA-5 (Administered Code) is NOT RECOMMENDED by the CDC for newly administered (RXA-9.1 = "00") COVID-19 vaccines. The CDC highly encourages sending a COVID-19 specified code; not doing so can affect ancillary systems and can negatively impact clinical outcomes.</Description>
 					<Assertion>
 						<NOT>
 							<FORALL>
