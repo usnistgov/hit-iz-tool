@@ -3228,6 +3228,10 @@
 				DisplayName="Tetanus/Diphtheria (Td) Vaccine VIS"/>
 			
 			<ValueElement Value="253088698300004211200728" CodeSystem="cdcgs1vis" DisplayName="Hepatitis A Vaccine VIS"/>
+			
+			
+			<ValueElement Value="253088698300033211201201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech Vaccine EUA Recipient-Caregiver Fact Sheet"/>
+			<ValueElement Value="253088698300034911201201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS"
@@ -3286,6 +3290,9 @@
 			<ValueElement Value="24" CodeSystem="CVX" DisplayName="Anthrax VIS"/>
 
 			<ValueElement Value="189" CodeSystem="CVX" DisplayName="HepB-CpG"/>
+			
+			<ValueElement Value="207" CodeSystem="CVX" DisplayName="COVID-19, mRNA, LNP-S, PF, 100 mcg/ 0.5 mL dose"/>
+			<ValueElement Value="208" CodeSystem="CVX" DisplayName="COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
