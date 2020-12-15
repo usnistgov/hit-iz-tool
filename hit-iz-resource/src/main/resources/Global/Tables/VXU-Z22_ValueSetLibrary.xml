@@ -2223,7 +2223,7 @@
 			<ValueElement Value="207" CodeSystem="CVX" DisplayName="COVID-19, mRNA, LNP-S, PF, 100 mcg/ 0.5 mL dose"/>
 			<ValueElement Value="208" CodeSystem="CVX" DisplayName="COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"/>
 			<ValueElement Value="21" CodeSystem="CVX" DisplayName="varicella"/>
-			<ValueElement Value="24" CodeSystem="CVX" DisplayName="Anthrax Vaccine VIS"/>
+			<ValueElement Value="24" CodeSystem="CVX" DisplayName="anthrax"/>
 			<ValueElement Value="25" CodeSystem="CVX" DisplayName="typhoid, oral"/>
 			<ValueElement Value="28" CodeSystem="CVX." DisplayName="DT (pediatric)"/>
 			<ValueElement Value="32" CodeSystem="CVX" DisplayName="meningococcal MPSV4"/>
