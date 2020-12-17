@@ -2225,7 +2225,7 @@
 			<ValueElement Value="21" CodeSystem="CVX" DisplayName="varicella"/>
 			<ValueElement Value="24" CodeSystem="CVX" DisplayName="anthrax"/>
 			<ValueElement Value="25" CodeSystem="CVX" DisplayName="typhoid, oral"/>
-			<ValueElement Value="28" CodeSystem="CVX." DisplayName="DT (pediatric)"/>
+			<ValueElement Value="28" CodeSystem="CVX" DisplayName="DT (pediatric)"/>
 			<ValueElement Value="32" CodeSystem="CVX" DisplayName="meningococcal MPSV4"/>
 			<ValueElement Value="33" CodeSystem="CVX" DisplayName="pneumococcal polysaccharide PPV23"/>
 			<ValueElement Value="35" CodeSystem="CVX" DisplayName="tetanus toxoid, adsorbed"/>
