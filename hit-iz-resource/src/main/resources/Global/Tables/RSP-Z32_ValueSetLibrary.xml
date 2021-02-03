@@ -1559,6 +1559,9 @@
 			<ValueElement Value="62" CodeSystem="CVX" DisplayName="HPV, quadrivalent"/>
 			<ValueElement Value="83" CodeSystem="CVX" DisplayName="Hep A, ped/adol, 2 dose"/>
 			<ValueElement Value="94" CodeSystem="CVX" DisplayName="MMRV"/>
+			
+			<ValueElement Value="210" CodeSystem="CVX" DisplayName="COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL"/>
+			<ValueElement Value="212" CodeSystem="CVX" DisplayName="COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
