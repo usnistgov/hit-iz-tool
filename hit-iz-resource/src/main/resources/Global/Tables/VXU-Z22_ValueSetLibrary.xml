@@ -1228,6 +1228,10 @@
 			<ValueElement Value="210" DisplayName="COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL" CodeSystem="CVX"/>
 			<ValueElement Value="212" DisplayName="COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL" CodeSystem="CVX"/>
 			
+			<ValueElement Value="211" DisplayName="SARS-COV-2 (COVID-19) vaccine, Subunit, recombinant spike protein-nanoparticle+Matrix-M1 Adjuvant, preservative free, 0.5mL per dose" CodeSystem="CVX"/>
+			<ValueElement Value="204" DisplayName="Ebola Zaire vaccine, live, recombinant, 1mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="214" DisplayName="Ebola, unspecified" CodeSystem="CVX"/>
+			
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1605,7 +1609,10 @@
 			
 			<ValueElement Value="62195-0051-01" DisplayName="Japanese Encephalitis IM" CodeSystem="NDC"/>
 			
-			
+			<ValueElement Value="80777-0273-98" DisplayName="Moderna COVID-19 Vaccine; CARTON, 10 MULTI-DOSE VIAL 7 mL EACH" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0182-25" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, PACKAGE, 10 SYRINGE, GLASS" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0321-50" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, PACKAGE, 10 SYRINGE, GLASS" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0337-15" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, PACKAGE, 10 SYRINGE, GLASS" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
@@ -1963,6 +1970,11 @@
 			<ValueElement Value="59676-0580-05" DisplayName="Janssen COVID-19 Vaccine; VIAL, MULTI-DOSE, 2.5mL" CodeSystem="NDC"/>
 			
 			<ValueElement Value="62195-0051-01" DisplayName="Japanese Encephalitis IM" CodeSystem="NDC"/>
+	
+			<ValueElement Value="80777-0273-15" DisplayName="Moderna COVID-19 Vaccine; VIAL, 7 mL, MULTI-DOSE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0182-00" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, Syringe, glass, .25 mL" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0321-88" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, Syringe, glass, .5 mL" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0337-78" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, Vial, 5 mL, MULTI-DOSE" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 
 
@@ -2174,6 +2186,7 @@
 			
 			<ValueElement Value="253088698300036311210201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Janssen Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			<ValueElement Value="253088698300035611210201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 AstraZeneca Vaccine EUA Recipient-Caregiver Fact Sheet"/>
+			<ValueElement Value="253088698300034911210401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">

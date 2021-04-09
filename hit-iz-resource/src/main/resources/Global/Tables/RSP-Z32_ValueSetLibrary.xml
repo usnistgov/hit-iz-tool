@@ -1267,6 +1267,10 @@
 			
 			<ValueElement Value="210" DisplayName="COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL" CodeSystem="CVX"/>
 			<ValueElement Value="212" DisplayName="COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL" CodeSystem="CVX"/>
+			
+			<ValueElement Value="211" DisplayName="SARS-COV-2 (COVID-19) vaccine, Subunit, recombinant spike protein-nanoparticle+Matrix-M1 Adjuvant, preservative free, 0.5mL per dose" CodeSystem="CVX"/>
+			<ValueElement Value="204" DisplayName="Ebola Zaire vaccine, live, recombinant, 1mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="214" DisplayName="Ebola, unspecified" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
@@ -1475,6 +1479,7 @@
 			
 			<ValueElement Value="253088698300036311210201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Janssen Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			<ValueElement Value="253088698300035611210201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 AstraZeneca Vaccine EUA Recipient-Caregiver Fact Sheet"/>
+			<ValueElement Value="253088698300034911210401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
