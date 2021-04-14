@@ -1,0 +1,1 @@
+{"protocol":"soap","name":"IZ-COVID-19_1_Adult_Admin_Moderna","description":"A vaccine reporting application uses the HL7 v2.5.1 Immunization Profile to send COVID-19 vaccination administration record to the IIS for an adult.","id":4260011733681329887,"position":1}

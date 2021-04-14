@@ -9,7 +9,8 @@
 			  	"RSP-Z31_ValueSetLibrary.xml":5,
 			  	"RSP-Z32_ValueSetLibrary.xml":6,
 			  	"RSP-Z33_ValueSetLibrary.xml":7,
-			  	"RSP-Z42_ValueSetLibrary.xml":8
+			  	"RSP-Z42_ValueSetLibrary.xml":8,
+			  	"COVID_ValueSets.xml" : 9
 			  }
 }
 			

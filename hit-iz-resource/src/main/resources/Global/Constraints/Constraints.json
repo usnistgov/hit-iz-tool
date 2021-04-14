@@ -9,7 +9,8 @@
 			  	"RSP-Z31_Constraints.xml":5,
 			  	"RSP-Z32_Constraints.xml":6,
 			  	"RSP-Z33_Constraints.xml":7,
-			  	"RSP-Z42_Constraints.xml":8
+			  	"RSP-Z42_Constraints.xml":8,
+			  	"COVID_Constraints.xml": 9
 			  }
 }
 			

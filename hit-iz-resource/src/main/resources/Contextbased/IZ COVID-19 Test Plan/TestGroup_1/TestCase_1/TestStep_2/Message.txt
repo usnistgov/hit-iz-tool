@@ -1,0 +1,14 @@
+MSH|^~\&|NISTAPP|NISTFAC|IISAPP|IISFAC|20200125101737.232-0500||VXU^V04^VXU_V04|NIST-IZ-1.1-AA_Send_COVID-2M|P|2.5.1|||ER|AL|||||Z22^CDCPHINVS|NISTFAC|IISFAC
+PID|1||89778^^^NIST-MPI-1^MR||Wong^Elise^^^^^L|Xhang^^^^^^M|19880417|F||2028-9^Asian^CDCREC~2131-1^Other Race^CDCREC|89 West 21st Ave^^Birmingham^AL^35203^USA^P||^PRN^PH^^^406^5554019~^NET^^Elise.Wong@isp.com|||||||||2186-5^Not Hispanic or Latino^CDCREC||N|1|||||N
+PD1|||||||||||02^Reminder/recall - any method^HL70215|N|20150624|||A|20031221|20150624
+ORC|RE|9345^NIST-AA-IZ-1|34555^NIST-AA-IZ-1|||||||1919^Shaw^Robert^William^^^^^NIST-PI-1^L^^^PRN||654^Thomas^Wilma^Elizabeth^^^^^NIST-PI-1^L^^^RPH|||||NISTEHRFAC^NISTEHRFacility^HL70362
+RXA|0|1|20210125||80777-0273-99^Moderna COVID-19 Vaccine^NDC^207^COVID-19, mRNA, LNP-S, PF, 100 mcg/ 0.5 mL dose^CVX|0.5|mL^mL^UCUM||00^New Record^NIP001|1919^Shaw^Robert^William^^^^^NIST-PI-1^L^^^PRN|^^^NIST-Clinic-1||||025L32B|20210301|MOD^Moderna US, Inc.^MVX|||CP|A
+RXR|C28161^Intramuscular^NCIT|RD^Right Deltoid^HL70163
+OBX|1|CE|30963-3^Vaccine Funding Source^LN|1|VXC50^Public^CDCPHINVS||||||F|||20210125
+OBX|2|CE|64994-7^Vaccine Funding Program Eligibility^LN|2|V01^Not VFC Eligible^HL70064||||||F|||20210125|||VXC40^Eligibility captured at the immunization level^CDCPHINVS
+OBX|3|CE|69764-9^Document Type^LN|3|253088698300034911210401^COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet^cdcgs1vis||||||F|||20201201
+OBX|4|DT|29769-7^Date Vaccine Information Statement Presented^LN|3|20210125||||||F|||20210125
+OBX|5|ST|30973-2^dose number in series^LN|4|2||||||F|||20210125
+OBX|6|CE|59783-1^Status in immunization series^LN|4|Y^Yes^HL70136||||||F|||20210125
+ORC|RE|5237^NIST-AA-IZ-1|31309^NIST-AA-IZ-1|||||||7824^Jackson^Lily^Suzanne^^^^^NIST-PI-1^L^^^PRN|||||||NISTEHRFAC^NISTEHRFacility^HL70362
+RXA|0|1|20201228||80777-0273-99^Moderna^NDC|0.5|mL^mL^UCUM||01^Historical Administration^NIP001|7824^Jackson^Lily^Suzanne^^^^^NIST-PI-1^L^^^PRN|^^^NIST-Clinic-1||||025L20A|20210205|MOD^Moderna US, Inc.^MVX|||CP|A
