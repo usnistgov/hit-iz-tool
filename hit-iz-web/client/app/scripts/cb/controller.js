@@ -1029,15 +1029,20 @@ angular.module('cb')
           $scope.testPlans = $filter('orderBy')(testPlans, 'position');
           var targetId = null;
           if ($scope.testPlans.length > 0) {
-            if ($scope.testPlans.length === 1) {
-              targetId = $scope.testPlans[0].id;
+            if ($scope.testPlans.length === 1) {            
+              targetId = $scope.testPlans[0].id;           
             } else if (userInfoService.isAuthenticated()) {
               var lastTestPlanPersistenceId = userInfoService.getLastTestPlanPersistenceId();
               var tp = findTPByPersistenceId(lastTestPlanPersistenceId, $scope.testPlans);
               if (tp != null) {
                 targetId = tp.id;
+              }else{// default selected is position #1
+            	  targetId = $scope.testPlans[0].id; 
               }
+            }else{// default selected is position #1
+          	  targetId = $scope.testPlans[0].id; 
             }
+            
             if (targetId == null) {
               var previousTpId = StorageService.get(StorageService.CB_SELECTED_TESTPLAN_ID_KEY);
               targetId = previousTpId == undefined || previousTpId == null ? "" : previousTpId;
