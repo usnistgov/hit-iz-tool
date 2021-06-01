@@ -54,7 +54,7 @@
               <label class="control-label" for="selectedTP">Test Plan: </label>
               <select class="form-control input-sm test-plan-select" style="width:500px;background-color: white" name="selectedTP" id="selectedTP" ng-change="selectTP()" ng-model="selectedTP.id">
                 <option value="">---- Select Test Plan ----</option>
-                <option ng-repeat="tp in testPlans" ng-selected="tp.id == selectedTP.id" value="{{tp.id}}">{{::tp.name}}
+                <option ng-repeat="tp in testPlans | orderBy: 'position'" ng-selected="tp.id == selectedTP.id" value="{{tp.id}}">{{::tp.name}}
                 </option>
               </select>
             </div>

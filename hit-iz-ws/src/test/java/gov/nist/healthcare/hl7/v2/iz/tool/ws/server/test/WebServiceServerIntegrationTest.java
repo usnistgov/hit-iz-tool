@@ -1,8 +1,8 @@
 package gov.nist.healthcare.hl7.v2.iz.tool.ws.server.test;
 
 
-// @RunWith(SpringJUnit4ClassRunner.class)
-// @ContextConfiguration("classpath:/iztool-ws-server-test.xml")
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration("classpath:/iztool-ws-server-test.xml")
 public class WebServiceServerIntegrationTest {
 
   // @Autowired
