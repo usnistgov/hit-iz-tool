@@ -2158,7 +2158,7 @@
 			<ValueElement Value="253088698300013411190815" CodeSystem="cdcgs1vis" DisplayName="MMRV Vaccine VIS"/>
 			<ValueElement Value="253088698300014111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccine VIS"/>
 			<ValueElement Value="253088698300024011190815" CodeSystem="cdcgs1vis" DisplayName="Varicella Vaccine VIS"/>
-			<ValueElement Value="253088698300030111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
+			<ValueElement Value="253088698300030111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
 
 			<ValueElement Value="253088698300029511191030" CodeSystem="cdcgs1vis" DisplayName="HPV Vaccine VIS"/>
 			<ValueElement Value="253088698300031811191030" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
