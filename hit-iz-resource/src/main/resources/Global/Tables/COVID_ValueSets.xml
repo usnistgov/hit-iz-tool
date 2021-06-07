@@ -1572,6 +1572,8 @@
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, PACKAGE, 10 SYRINGE, GLASS" Value="49281-0182-25"/>  
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, PACKAGE, 10 SYRINGE, GLASS" Value="49281-0321-50"/>  
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, PACKAGE, 10 SYRINGE, GLASS" Value="49281-0337-15"/> 
+      
+      <ValueElement Value="80631-0100-10" DisplayName="Novavax COVID-19 vaccine, Subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL, CARTON, 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use"> 
       <ValueElement CodeSystem="NDC" DisplayName="meningococcal B, recombinant" Value="00005-0100-01"/>  
@@ -1912,7 +1914,9 @@
       <ValueElement CodeSystem="NDC" DisplayName="Moderna COVID-19 Vaccine; VIAL, 7 mL, MULTI-DOSE" Value="80777-0273-15"/>  
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, Syringe, glass, .25 mL" Value="49281-0182-00"/>  
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, Syringe, glass, .5 mL" Value="49281-0321-88"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, Vial, 5 mL, MULTI-DOSE" Value="49281-0337-78"/> 
+      <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, Vial, 5 mL, MULTI-DOSE" Value="49281-0337-78"/>
+      
+      <ValueElement Value="80631-0100-01" DisplayName="Novavax COVID-19 vaccine, Subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL, MULTI-DOSE VIAL, 10 DOSES" CodeSystem="NDC"/>
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)"> 
       <ValueElement CodeSystem="CDCPHINVS" DisplayName="Private funds " Value="PHC70"/>  
@@ -2083,7 +2087,7 @@
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="MMRV Vaccine VIS" Value="253088698300013411190815"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccine VIS" Value="253088698300014111190815"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="Varicella Vaccine VIS" Value="253088698300024011190815"/>  
-      <ValueElement CodeSystem="cdcgs1vis" DisplayName="Meningococcal B??Vaccine VIS" Value="253088698300030111190815"/>  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS" Value="253088698300030111190815"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="HPV Vaccine VIS" Value="253088698300029511191030"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS" Value="253088698300031811191030"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="Recombinant Zoster Vaccine VIS" Value="253088698300032511191030"/>  
@@ -2107,7 +2111,9 @@
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet" Value="253088698300034911201201"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Janssen Vaccine EUA Recipient-Caregiver Fact Sheet" Value="253088698300036311210201"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 AstraZeneca Vaccine EUA Recipient-Caregiver Fact Sheet" Value="253088698300035611210201"/>  
-      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet" Value="253088698300034911210401"/> 
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet" Value="253088698300034911210401"/>
+      
+      <ValueElement Value="253088698300033211210501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet"/>
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)"> 
       <ValueElement CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the immunization level" Value="VXC40"/>  
@@ -2192,7 +2198,9 @@
       <ValueElement CodeSystem="CVX" DisplayName="Hep A, ped/adol, 2 dose" Value="83"/>  
       <ValueElement CodeSystem="CVX" DisplayName="MMRV" Value="94"/>  
       <ValueElement CodeSystem="CVX" DisplayName="COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL" Value="210"/>  
-      <ValueElement CodeSystem="CVX" DisplayName="COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL" Value="212"/> 
+      <ValueElement CodeSystem="CVX" DisplayName="COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL" Value="212"/>
+      
+      <ValueElement Value="203" CodeSystem="CVX" DisplayName="Meningococcal ACWY Vaccine VIS"/>
     </ValueSetDefinition> 
   </ValueSetDefinitions>  
   <ValueSetDefinitions Group="HL7" Order="3"> 
