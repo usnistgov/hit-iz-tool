@@ -6,6 +6,12 @@
     },
     "downloads": [
         {
+            "title": "iztool-1.9.16",
+            "link": "https://hit-2015.nist.gov/wars/iztool-1.9.16.zip",
+            "date": "2021/06/09",
+            "customizable": true
+        }
+        ,{
             "title": "iztool-1.9.15",
             "link": "https://hit-2015.nist.gov/wars/iztool-1.9.15.zip",
             "date": "2021/04/19",

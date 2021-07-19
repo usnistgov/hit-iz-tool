@@ -190,5 +190,11 @@
         "date": "2021/04/19",
         "name": "IZ_Release_Notes.1.9.15.docx",
         "title": "Release notes 1.9.15"
+    },
+    {
+        "version": "1.9.16",
+        "date": "2021/06/09",
+        "name": "IZ_Release_Notes.1.9.16.docx",
+        "title": "Release notes 1.9.16"
     }
 ]

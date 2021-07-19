@@ -1365,7 +1365,7 @@
 			<ValueElement Value="253088698300013411190815" CodeSystem="cdcgs1vis" DisplayName="MMRV Vaccine VIS"/>
 			<ValueElement Value="253088698300014111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccine VIS"/>
 			<ValueElement Value="253088698300024011190815" CodeSystem="cdcgs1vis" DisplayName="Varicella Vaccine VIS"/>
-			<ValueElement Value="253088698300030111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
+			<ValueElement Value="253088698300030111190815" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
 			
 			<ValueElement Value="253088698300029511191030" CodeSystem="cdcgs1vis" DisplayName="HPV Vaccine VIS"/>
 			<ValueElement Value="253088698300031811191030" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
@@ -1397,6 +1397,8 @@
 			<ValueElement Value="253088698300035611210201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 AstraZeneca Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			
 			<ValueElement Value="253088698300034911210401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet"/>
+			
+			<ValueElement Value="253088698300033211210501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
@@ -1484,6 +1486,8 @@
 			
 			<ValueElement Value="210" CodeSystem="CVX" DisplayName="COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL"/>
 			<ValueElement Value="212" CodeSystem="CVX" DisplayName="COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL"/>
+			
+			<ValueElement Value="203" CodeSystem="CVX" DisplayName="Meningococcal ACWY Vaccine VIS"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
