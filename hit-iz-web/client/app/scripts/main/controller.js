@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('main').controller('MainCtrl',
-    function ($scope, $rootScope, i18n, $location, userInfoService, $modal, $filter, base64, $http, Idle, Notification, IdleService, StorageService, TestingSettings,Session,AppInfo,User,$templateCache,$window,$sce) {
+    function ($scope, $rootScope, i18n, $location, userInfoService, $modal, $filter, base64, $http, Idle, Notification, IdleService, StorageService, TestingSettings, Session, AppInfo, User, $templateCache, $window, $sce,DomainsManager,$timeout,Transport) {
         //This line fetches the info from the server if the user is currently logged in.
         //If success, the app is updated according to the role.
         $rootScope.loginDialog = null;
         $rootScope.started = false;
 
+        var domainParam = $location.search()['d'] ? decodeURIComponent($location.search()['d']) : null;
 
         $scope.language = function () {
             return i18n.language;
@@ -43,6 +44,11 @@ angular.module('main').controller('MainCtrl',
             $scope.$emit('event:loginRequest', $scope.username, $scope.password);
         };
 
+        $scope.loginAndRedirect = function (path) {
+            $scope.$emit('event:loginRedirectRequest', $scope.username, $scope.password, path);
+        };
+
+
         $scope.loginReq = function () {
             if ($rootScope.loginMessage()) {
                 $rootScope.loginMessage().text = "";
@@ -60,6 +66,7 @@ angular.module('main').controller('MainCtrl',
             $scope.username = $scope.password = null;
             $scope.$emit('event:logoutRequest');
             $location.url('/home');
+            $window.location.reload();
         };
 
         $scope.cancel = function () {
@@ -78,6 +85,11 @@ angular.module('main').controller('MainCtrl',
         $scope.isSupervisor = function () {
             return userInfoService.isSupervisor();
         };
+
+        $scope.isPublisher = function () {
+            return userInfoService.isPublisher();
+        };
+
 
         $scope.isTester = function () {
             return userInfoService.isTester();
@@ -107,8 +119,8 @@ angular.module('main').controller('MainCtrl',
             return '';
         };
 
-        $rootScope.showLoginDialog = function (username, password) {
 
+        $rootScope.showLoginDialog = function (path) {
             if ($rootScope.loginDialog && $rootScope.loginDialog != null && $rootScope.loginDialog.opened) {
                 $rootScope.loginDialog.dismiss('cancel');
             }
@@ -130,12 +142,17 @@ angular.module('main').controller('MainCtrl',
                 if (result) {
                     $scope.username = result.username;
                     $scope.password = result.password;
-                    $scope.login();
+                    if (path !== undefined) {
+                        $scope.loginAndRedirect(path + "&loggedin=true");
+                    } else {
+                        $scope.login();
+                    }
                 } else {
                     $scope.cancel();
                 }
             });
         };
+
 
         $rootScope.started = false;
 
@@ -195,7 +212,7 @@ angular.module('main').controller('MainCtrl',
             }
         });
 
-        $rootScope.$on('Keepalive', function() {
+        $rootScope.$on('Keepalive', function () {
             IdleService.keepAlive();
         });
 
@@ -265,7 +282,8 @@ angular.module('main').controller('MainCtrl',
                         subString: 'Chrome',
                         identity: 'Chrome'
                     },
-                    {   string: navigator.userAgent,
+                    {
+                        string: navigator.userAgent,
                         subString: 'OmniWeb',
                         versionSearch: 'OmniWeb/',
                         identity: 'OmniWeb'
@@ -368,7 +386,6 @@ angular.module('main').controller('MainCtrl',
         $scope.scrollbarWidth = 0;
 
 
-
         $rootScope.showError = function (error) {
             var modalInstance = $modal.open({
                 templateUrl: 'ErrorDlgDetails.html',
@@ -452,6 +469,8 @@ angular.module('main').controller('MainCtrl',
             return $sce.trustAsHtml(content);
             //return  content;
         };
+
+
 
 
         $rootScope.selectTestingType = function (value) {
@@ -549,6 +568,27 @@ angular.module('main').controller('MainCtrl',
             }
         };
 
+        $rootScope.openUnknownDomainDlg = function (domain) {
+            StorageService.clearAll();
+            $modal.open({
+                templateUrl: 'UnknownDomain.html',
+                size: 'lg',
+                backdrop: false,
+                keyboard: 'false',
+                controller: 'UnknownDomainCtrl',
+                resolve: {
+                    domain: function () {
+                        return domain;
+                    }
+                }
+            }).result.then(function (newDomain) {
+                $rootScope.selectDomain(newDomain);
+            }, function () {
+
+            });
+        };
+
+
         $rootScope.openSessionExpiredDlg = function () {
             StorageService.clearAll();
             if (!$rootScope.sessionExpiredModalInstance || $rootScope.sessionExpiredModalInstance === null || !$rootScope.sessionExpiredModalInstance.opened) {
@@ -585,11 +625,6 @@ angular.module('main').controller('MainCtrl',
 
         $rootScope.pettyPrintType = function (type) {
             return type === 'TestStep' ? 'Test Step' : type === 'TestCase' ? 'Test Case' : type;
-        };
-
-
-        $rootScope.reloadPage = function () {
-            $window.location.reload();
         };
 
         $rootScope.openInvalidReqDlg = function () {
@@ -637,6 +672,10 @@ angular.module('main').controller('MainCtrl',
             }
         };
 
+        $rootScope.getDomain = function(){
+            return $rootScope.domain;
+        };
+
 
         $rootScope.nav = function (target) {
             $location.path(target);
@@ -652,6 +691,7 @@ angular.module('main').controller('MainCtrl',
         };
 
         $scope.init = function () {
+
         };
 
         $scope.getFullName = function () {
@@ -662,8 +702,189 @@ angular.module('main').controller('MainCtrl',
         };
 
 
+        $rootScope.isEditable = function(){
+            return (userInfoService.isAuthenticated() && (userInfoService.isAdmin() || userInfoService.isSupervisor()) && $rootScope.domain != null && $rootScope.domain.owner === userInfoService.getUsername());
+        };
+
+        $rootScope.hasWriteAccess = function(){
+            return userInfoService.isAuthenticated() && (userInfoService.isAdmin() || ($rootScope.domain != null && $rootScope.domain.owner === userInfoService.getUsername()));
+        };
+
+
+        $rootScope.canPublish = function(){
+            return userInfoService.isAuthenticated() && userInfoService.isAdmin();
+        };
+
+        $rootScope.createDomain = function () {
+            var modalInstance = $modal.open({
+                templateUrl: 'views/domains/create.html',
+                controller: 'CreateDomainCtrl',
+                size: 'md',
+                backdrop: 'static',
+                keyboard: false,
+                backdropClick: false,
+                resolve: {
+                    scope: function () {
+                        return 'USER'
+                    }
+                }
+            });
+            modalInstance.result.then(
+                function (newDomain) {
+                    if (newDomain) {
+                        $rootScope.selectDomain(newDomain.domain);
+                    }else if($rootScope.domain === null || $rootScope.domain === undefined){
+                        $rootScope.reloadPage();
+                    }
+                }, function(){
+                    $rootScope.reloadPage();
+                });
+
+        };
+
+        $rootScope.domainsByOwner = {
+            'my': [],
+            'others':[]
+        };
+
+
+        $rootScope.initDomainsByOwner = function(){
+            for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
+                if ($rootScope.appInfo.domains[i].owner === userInfoService.getUsername()) {
+                    $rootScope.domainsByOwner['my'].push($rootScope.appInfo.domains[i]);
+                }else{
+                    $rootScope.domainsByOwner['others'].push($rootScope.appInfo.domains[i]);
+                }
+            }
+        };
+
+        AppInfo.get().then(function (appInfo) {
+                $rootScope.loadingDomain = true;
+                $rootScope.appInfo = appInfo;
+//        $rootScope.apiLink = $window.location.protocol + "//" + $window.location.host + getContextPath() + $rootScope.appInfo.apiDocsPath;
+                $rootScope.apiLink = $rootScope.appInfo.url + $rootScope.appInfo.apiDocsPath;
+                httpHeaders.common['rsbVersion'] = appInfo.rsbVersion;
+                var previousToken = StorageService.get(StorageService.APP_STATE_TOKEN);
+                if (previousToken != null && previousToken !== appInfo.rsbVersion) {
+                    $rootScope.openVersionChangeDlg();
+                }
+                StorageService.set(StorageService.APP_STATE_TOKEN, appInfo.rsbVersion);
+
+                if (domainParam != undefined && domainParam != null) {
+                    StorageService.set(StorageService.APP_SELECTED_DOMAIN, domainParam);
+                }
+                var storedDomain = StorageService.get(StorageService.APP_SELECTED_DOMAIN);
+
+                var domainFound = null;
+                $rootScope.domain = null;
+                $rootScope.appInfo.selectedDomain = null;
+                $rootScope.domainsByOwner = {
+                    'my': [],
+                    'others':[]
+                };
+
+
+                DomainsManager.getDomains().then(function (domains) {
+                    $rootScope.appInfo.domains = domains;
+                    if ($rootScope.appInfo.domains != null) {
+                        $rootScope.initDomainsByOwner(domains);
+                        if ($rootScope.appInfo.domains.length === 1) {
+                            domainFound = $rootScope.appInfo.domains[0].domain;
+                        } else if (storedDomain != null) {
+                            $rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position');
+                            for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
+                                if ($rootScope.appInfo.domains[i].domain === storedDomain) {
+                                    domainFound = $rootScope.appInfo.domains[i].domain;
+                                    break;
+                                }
+                            }
+                        }
+
+
+                        if(domainFound == null){
+                            $rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position');
+                            domainFound = $rootScope.appInfo.domains[0].domain;
+                        }
+
+                        if (domainFound == null) {
+                            //$rootScope.openUnknownDomainDlg();
+                            domainFound = "default";
+                        }
+
+                        $rootScope.clearDomainSession();
+                        DomainsManager.getDomainByKey(domainFound).then(function (result) {
+                            $rootScope.appInfo.selectedDomain = result.domain;
+                            StorageService.set(StorageService.APP_SELECTED_DOMAIN, result.domain);
+                            $rootScope.domain = result;
+                            $rootScope.loadingDomain = false;
+                            $timeout(function () {
+                                Transport.configs = {};
+                                Transport.getDomainForms($rootScope.domain.domain).then(function (transportForms) {
+                                    $rootScope.transportSupported = transportForms != null && transportForms.length > 0;
+                                    if ($rootScope.transportSupported) {
+                                        angular.forEach(transportForms, function (transportForm) {
+                                            var protocol = transportForm.protocol;
+                                            if (!Transport.configs[protocol]) {
+                                                Transport.configs[protocol] = {};
+                                            }
+                                            if (!Transport.configs[protocol]['forms']) {
+                                                Transport.configs[protocol]['forms'] = {};
+                                            }
+                                            Transport.configs[protocol]['forms'] = transportForm;
+                                            Transport.configs[protocol]['error'] = null;
+                                            Transport.configs[protocol]['description'] = transportForm.description;
+                                            Transport.configs[protocol]['key'] = transportForm.protocol;
+                                            Transport.getConfigData($rootScope.domain.domain, protocol).then(function (data) {
+                                                Transport.configs[protocol]['data'] = data;
+                                                Transport.configs[protocol]['open'] = {
+                                                    ta: true,
+                                                    sut: false
+                                                };
+                                            }, function (error) {
+                                                Transport.configs[protocol]['error'] = error.data;
+                                            });
+                                        });
+                                    }
+                                }, function (error) {
+                                    //$scope.error = "No transport configs found.";
+                                });
+                            }, 500);
+                        }, function (error) {
+                            $rootScope.loadingDomain = true;
+                            $rootScope.openUnknownDomainDlg();
+                        });
+                    } else {
+                        $rootScope.openCriticalErrorDlg("No Tool scope found. Please contact the administrator");
+                    }
+                }, function (error) {
+                    $rootScope.openCriticalErrorDlg("No Tool scope found. Please contact the administrator");
+                });
+            }
+            , function (error) {
+                $rootScope.loadingDomain = true;
+                $rootScope.appInfo = {};
+                $rootScope.openCriticalErrorDlg("Failed to fetch the server. Please try again");
+            });
+
+
+        $rootScope.displayOwnership = function(dom){
+            return dom.owner === userInfoService.getUsername() ? "My Tool Scopes": "Others Tool Scopes";
+        };
+
+        $rootScope.orderOwnership = function(dom){
+            return dom.owner === userInfoService.getUsername() ? 0: 1;
+        };
+
+
+
+
+
 
     });
+
+
+
+
 
 angular.module('main').controller('LoginCtrl', ['$scope', '$modalInstance', 'user', function ($scope, $modalInstance, user) {
     $scope.user = user;
@@ -673,11 +894,52 @@ angular.module('main').controller('LoginCtrl', ['$scope', '$modalInstance', 'use
     };
 
     $scope.login = function () {
-//        console.log("logging in...");
         $modalInstance.close($scope.user);
     };
+
+
+    $scope.cancelAndRedirect = function (path) {
+        $modalInstance.dismiss('cancel');
+        $location.url(path);
+    }
+
+    $scope.login = function () {
+        $modalInstance.close($scope.user);
+    };
+
+    $scope.loginAndRedirect = function (path) {
+        $modalInstance.close($scope.user);
+        $location.url(path);
+    };
+
+    $scope.loginAndReload = function () {
+        $modalInstance.close($scope.user);
+        $route.reload()
+    };
+
 }]);
 
+
+angular.module('main').controller('UnknownDomainCtrl', ['$scope', '$modalInstance', 'StorageService', '$window', 'domain', 'userInfoService', '$rootScope',
+    function ($scope, $modalInstance, StorageService, $window, error, domain, userInfoService, $rootScope) {
+        $scope.error = error;
+        $scope.domain = domain;
+        $scope.selectedDomain = {domain: null};
+        $scope.selectDomain = function () {
+            StorageService.set(StorageService.APP_SELECTED_DOMAIN, $scope.selectedDomain.domain);
+            $modalInstance.close($scope.selectedDomain.domain);
+        };
+
+        $scope.createNewDomain = function () {
+            $modalInstance.close('New');
+        };
+
+        $scope.loginReq = function () {
+            $scope.$emit('event:loginRequired');
+        };
+
+    }
+]);
 
 angular.module('main').controller('RichTextCtrl', ['$scope', '$modalInstance', 'editorTarget', function ($scope, $modalInstance, editorTarget) {
     $scope.editorTarget = editorTarget;
@@ -715,14 +977,14 @@ angular.module('main').controller('ConfirmLogoutCtrl', ["$scope", "$modalInstanc
 }]);
 
 
-angular.module('main').controller('MessageWithHexadecimalDlgCtrl',  function ($scope, $modalInstance,original,MessageUtil) {
+angular.module('main').controller('MessageWithHexadecimalDlgCtrl', function ($scope, $modalInstance, original, MessageUtil) {
     $scope.showHex = true;
     var messageWithHexadecimal = MessageUtil.toHexadecimal(original);
     $scope.message = messageWithHexadecimal;
 
-    $scope.toggleHexadecimal = function(){
+    $scope.toggleHexadecimal = function () {
         $scope.showHex = !$scope.showHex;
-        $scope.message = $scope.showHex ? messageWithHexadecimal: original;
+        $scope.message = $scope.showHex ? messageWithHexadecimal : original;
     };
 
     $scope.close = function () {
@@ -730,7 +992,6 @@ angular.module('main').controller('MessageWithHexadecimalDlgCtrl',  function ($s
     };
 
 });
-
 
 
 angular.module('main').controller('ValidationResultDetailsCtrl', function ($scope, $modalInstance, selectedElement) {
@@ -747,16 +1008,13 @@ angular.module('main').controller('ValidationResultDetailsCtrl', function ($scop
 });
 
 
-
-
-
 angular.module('main').controller('ConfirmDialogCtrl', function ($scope, $modalInstance) {
-  $scope.confirm = function () {
-    $modalInstance.close(true);
-  };
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
+    $scope.confirm = function () {
+        $modalInstance.close(true);
+    };
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
 });
 
 
