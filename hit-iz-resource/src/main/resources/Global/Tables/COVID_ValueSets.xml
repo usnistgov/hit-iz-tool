@@ -1574,6 +1574,24 @@
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, PACKAGE, 10 SYRINGE, GLASS" Value="49281-0337-15"/> 
       
       <ValueElement Value="80631-0100-10" DisplayName="Novavax COVID-19 vaccine, Subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL, CARTON, 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+    
+    
+      <ValueElement Value="50632-0010-01" DisplayName="RabAvert VIAL, SINGLE-DOSE, 1 mL" CodeSystem="NDC"/>
+      <ValueElement Value="63361-0243-10" DisplayName="Vaxelis (DTaP-IPV-Hib-HepB) PACKAGE, 10 VIAL, SINGLE-DOSE" CodeSystem="NDC"/>
+      <ValueElement Value="63361-0243-15" DisplayName="Vaxelis (DTaP-IPV-Hib-HepB) PACKAGE 10 SYRINGES" CodeSystem="NDC"/>
+      <ValueElement Value="00052-0603-02" DisplayName="BCG VACCINE CARTON" CodeSystem="NDC"/>
+      <ValueElement Value="19515-0818-52" DisplayName="Flulaval Quadrivalent SYRINGE, .5 mL" CodeSystem="NDC"/>
+      <ValueElement Value="49281-0421-10" DisplayName="FLUZONE QUADRIVALENT VIAL, .5 mL, SINGLE-DOSE" CodeSystem="NDC"/>
+      <ValueElement Value="49281-0421-50" DisplayName="FLUZONE QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>
+      <ValueElement Value="58160-0887-52" DisplayName="FLUARIX QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>
+      <ValueElement Value="49281-0635-15" DisplayName="FLUZONE QUADRIVALENT VIAL, 5 mL, MULTI-DOSE" CodeSystem="NDC"/>
+      <ValueElement Value="49281-0521-25" DisplayName="FLUZONE QUADRIVALENT SYRINGE, .25 mL" CodeSystem="NDC"/>
+      <ValueElement Value="70461-0321-03" DisplayName="FLUCELVAX QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>
+      <ValueElement Value="49281-0721-10" DisplayName="Flublok Quadrivalent Northern Hemisphere SYRINGE, .5 mL" CodeSystem="NDC"/>
+      <ValueElement Value="70461-0421-10" DisplayName="FLUCELVAX QUADRIVALENT VIAL, 5 mL, MULTI-DOSE" CodeSystem="NDC"/>
+      <ValueElement Value="49281-0121-65" DisplayName="FLUZONE High-Dose Quadrivalent Northern Hemisphere SYRINGE, .7 mL" CodeSystem="NDC"/>
+      <ValueElement Value="70461-0121-03" DisplayName="FLUAD QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>	
+    
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use"> 
       <ValueElement CodeSystem="NDC" DisplayName="meningococcal B, recombinant" Value="00005-0100-01"/>  
@@ -1917,6 +1935,16 @@
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, Vial, 5 mL, MULTI-DOSE" Value="49281-0337-78"/>
       
       <ValueElement Value="80631-0100-01" DisplayName="Novavax COVID-19 vaccine, Subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL, MULTI-DOSE VIAL, 10 DOSES" CodeSystem="NDC"/>
+    
+      <ValueElement Value="50632-0013-01" DisplayName="RabAvert VIAL, SINGLE-DOSE, 1 mL" CodeSystem="NDC"/>
+      <ValueElement Value="63361-0243-58" DisplayName="Vaxelis Diphtheria and Tetanus Toxoids and Acellular Pertussis Adsorbed, Inactivated Poliovirus, Haemophilus b Conjugate (Meningococcal Protein Conjugate) and Hepatitis B (Recombinant) Vaccine (DTaP-IPV-Hib-HepB dose for 6 wks through 4th yr) VIAL, SINGLE-DOSE" CodeSystem="NDC"/>
+      <ValueElement Value="63361-0243-88" DisplayName="Vaxelis diphtheria and tetanus toxoids and acellular pertussis, inactivated poliovirus, haemophilus b conjugate and hepatitis b vaccine (DTap-IPV-Hib-HepB) SYRINGE, 0.5 mL" CodeSystem="NDC"/>
+      <ValueElement Value="00052-0603-01" DisplayName="BCG VACCINE BACILLUS CALMETTE-GUERIN SUBSTRAIN TICE LIVE ANTIGEN VIAL" CodeSystem="NDC"/>
+      <ValueElement Value="19515-0818-41" DisplayName="Flulaval Quadrivalent SYRINGE, .5 mL" CodeSystem="NDC"/>
+      <ValueElement Value="49281-0421-58" DisplayName="FLUZONE QUADRIVALENT VIAL, .5 mL, SINGLE-DOSE" CodeSystem="NDC"/>
+      <ValueElement Value="49281-0421-88" DisplayName="FLUZONE QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>
+      <ValueElement Value="58160-0887-41" DisplayName="FLUARIX QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>	
+    
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)"> 
       <ValueElement CodeSystem="CDCPHINVS" DisplayName="Private funds " Value="PHC70"/>  
