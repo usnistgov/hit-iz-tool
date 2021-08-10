@@ -898,6 +898,9 @@ angular.module('cb')
 
 
         $scope.toggleTransport = function (disabled) {
+			if(disabled){
+				$scope.abortListening()
+			}
             $scope.transport.disabled = disabled;
             StorageService.set(StorageService.TRANSPORT_DISABLED, disabled);
             if (CB.editor.instance != null) {
@@ -1087,8 +1090,13 @@ angular.module('cb')
                                 var tp = findTPByPersistenceId(lastTestPlanPersistenceId, $scope.testPlans);
                                 if (tp != null) {
                                     targetId = tp.id;
-                                }
-                            }
+                                }else{// default selected is position #1
+            	  					targetId = $scope.testPlans[0].id; 
+                            	}
+				            }else{// default selected is position #1
+				          	  targetId = $scope.testPlans[0].id; 
+							}	
+
                             if (targetId == null) {
                                 var previousTpId = StorageService.get(StorageService.CB_SELECTED_TESTPLAN_ID_KEY);
                                 targetId = previousTpId == undefined || previousTpId == null ? "" : previousTpId;
@@ -1244,7 +1252,7 @@ angular.module('cb')
 
 
 angular.module('cb')
-    .controller('CBValidatorCtrl', ['$scope', '$http', 'CB', '$window', '$timeout', '$modal', 'NewValidationResult', '$rootScope', 'ServiceDelegator', 'StorageService', 'TestExecutionService', 'MessageUtil', 'FileUpload', function ($scope, $http, CB, $window, $timeout, $modal, NewValidationResult, $rootScope, ServiceDelegator, StorageService, TestExecutionService, MessageUtil, FileUpload) {
+    .controller('CBValidatorCtrl', ['$scope', '$http', 'CB', '$window', '$timeout', '$modal', 'NewValidationResult', '$rootScope', 'ServiceDelegator', 'StorageService', 'TestExecutionService', 'MessageUtil', 'FileUpload', 'TestStepService', function ($scope, $http, CB, $window, $timeout, $modal, NewValidationResult, $rootScope, ServiceDelegator, StorageService, TestExecutionService, MessageUtil, FileUpload, TestStepService) {
 
         $scope.cb = CB;
         $scope.testStep = null;
@@ -1449,12 +1457,15 @@ angular.module('cb')
             $scope.nodelay = true;
             $scope.mError = null;
             if ($scope.testStep != null) {
+				var testStepId = StorageService.get(StorageService.CB_LOADED_TESTSTEP_ID_KEY);
+	            TestStepService.clearRecords(testStepId);
                 TestExecutionService.deleteTestStepValidationReport($scope.testStep);
                 TestExecutionService.deleteTestStepMessageTree($scope.testStep);
+				TestExecutionService.deleteTestStepValidationResult($scope.testStep);
             }
             if ($scope.editor) {
                 $scope.editor.doc.setValue('');
-                $scope.execute();
+             //   $scope.execute();
             }
         };
 

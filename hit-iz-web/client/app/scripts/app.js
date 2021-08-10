@@ -380,23 +380,23 @@ app.run(function (Session, $rootScope, $location, $modal, TestingSettings, AppIn
 
 
   $rootScope.clearDomainSession = function () {
-    StorageService.set(StorageService.CF_SELECTED_TESTPLAN_ID_KEY, null);
-    StorageService.set(StorageService.CF_EDITOR_CONTENT_KEY, null);
-    StorageService.set(StorageService.CF_LOADED_TESTCASE_ID_KEY, null);
-    StorageService.set(StorageService.CB_EDITOR_CONTENT_KEY, null);
-    StorageService.set(StorageService.CB_SELECTED_TESTCASE_TYPE_KEY, null);
-    StorageService.set(StorageService.CB_LOADED_TESTCASE_ID_KEY, null);
-    StorageService.set(StorageService.CB_LOADED_TESTCASE_TYPE_KEY, null);
-    StorageService.set(StorageService.CB_LOADED_TESTSTEP_TYPE_KEY, null);
-    StorageService.set(StorageService.CB_LOADED_TESTSTEP_ID_KEY, null);
+  //   StorageService.set(StorageService.CF_SELECTED_TESTPLAN_ID_KEY, null);
+  //  StorageService.set(StorageService.CF_EDITOR_CONTENT_KEY, null);
+  //   StorageService.set(StorageService.CF_LOADED_TESTCASE_ID_KEY, null);
+  //  StorageService.set(StorageService.CB_EDITOR_CONTENT_KEY, null);
+   //  StorageService.set(StorageService.CB_SELECTED_TESTCASE_TYPE_KEY, null);
+   // StorageService.set(StorageService.CB_LOADED_TESTCASE_ID_KEY, null);
+   // StorageService.set(StorageService.CB_LOADED_TESTCASE_TYPE_KEY, null);
+   // StorageService.set(StorageService.CB_LOADED_TESTSTEP_TYPE_KEY, null);
+   // StorageService.set(StorageService.CB_LOADED_TESTSTEP_ID_KEY, null);
     StorageService.set(StorageService.ISOLATED_EDITOR_CONTENT_KEY, null);
     StorageService.set(StorageService.ISOLATED_SELECTED_TESTCASE_TYPE_KEY, null);
     StorageService.set(StorageService.CB_SELECTED_TESTPLAN_ID_KEY, null);
     StorageService.set(StorageService.CB_SELECTED_TESTPLAN_TYPE_KEY, null);
     StorageService.set(StorageService.CB_SELECTED_TESTPLAN_SCOPE_KEY, null);
-    StorageService.set(StorageService.CF_SELECTED_TESTPLAN_SCOPE_KEY, null);
-    StorageService.set(StorageService.CF_SELECTED_TESTPLAN_ID_KEY, null);
-    StorageService.set(StorageService.CF_SELECTED_TESTPLAN_TYPE_KEY, null);
+  // StorageService.set(StorageService.CF_SELECTED_TESTPLAN_SCOPE_KEY, null);
+   // StorageService.set(StorageService.CF_SELECTED_TESTPLAN_ID_KEY, null);
+   // StorageService.set(StorageService.CF_SELECTED_TESTPLAN_TYPE_KEY, null);
     StorageService.set(StorageService.CB_MANAGE_SELECTED_TESTCASE_ID_KEY, null);
     StorageService.set(StorageService.CB_MANAGE_SELECTED_TESTCASE_TYPE_KEY, null);
     StorageService.set(StorageService.CB_MANAGE_LOADED_TESTCASE_ID_KEY, null);
@@ -768,14 +768,29 @@ app.run(function (Session, $rootScope, $location, $modal, TestingSettings, AppIn
   };
 
 
-  $rootScope.isDomainsManagementSupported = function () {
-      return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === "true" || $rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === true) || userInfoService.isAdmin() || userInfoService.isSupervisor() || userInfoService.isDeployer();
-  };
+//  $rootScope.isDomainsManagementSupported = function () {
+//       return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === "true" || $rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === true) || userInfoService.isAdmin() || userInfoService.isSupervisor() || userInfoService.isDeployer();
+//   };
+
+    $rootScope.isDomainsManagementSupported = function () {    	
+        return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === "true" ) || userInfoService.isAdmin() ;
+    };
 
     $rootScope.isLoggedIn = function () {
         return userInfoService.isAuthenticated();
     };
 
+ $rootScope.isDomainSelectionSupported = function () {
+        return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['DOMAIN_SELECTON_SUPPORTED'] === "true");
+    };
+    
+    $rootScope.isUserLoginSupported = function () {
+        return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['USER_LOGIN_SUPPORTED'] === "true");
+    };
+    
+    $rootScope.isReportSavingSupported = function () {    	
+        return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['REPORT_SAVING_SUPPORTED'] === "true");
+    };
 
 
 
