@@ -1,0 +1,15 @@
+{
+	"domains": [
+		{
+			"key": "iz",
+			"position": 1,
+			"rsbVersion"	:"1.9.16",
+    		"version"		: "1.9.16",
+    		"igVersion"		:"",
+    		"scope": "GLOBAL",
+			"name": "Immunization",
+			"homeTitle": "Welcome to the NIST Immunization Test Suite!",
+			"authorUsername":"nico"
+ 		}
+	]
+}

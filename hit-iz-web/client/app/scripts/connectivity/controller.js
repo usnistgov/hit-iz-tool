@@ -132,8 +132,8 @@ angular.module('connectivity')
   }]);
 
 angular.module('connectivity')
-  .controller('ConnectivityExecutionCtrl', ['$scope', '$timeout', '$interval', 'Connectivity', '$rootScope', '$modal', 'Endpoint', '$cookies', 'StorageService', 'TestExecutionClock', 'SOAPConnectivityTransport','SOAPFormatter',
-    function ($scope, $timeout, $interval, Connectivity, $rootScope, $modal, Endpoint, $cookies, StorageService, TestExecutionClock, SOAPConnectivityTransport,SOAPFormatter) {
+  .controller('ConnectivityExecutionCtrl', ['$scope', '$timeout', '$interval', 'Connectivity', '$rootScope', '$modal', 'Endpoint', '$cookies', 'StorageService', 'TestExecutionClock', 'SOAPConnectivityTransport', 'SOAPFormatter',
+    function ($scope, $timeout, $interval, Connectivity, $rootScope, $modal, Endpoint, $cookies, StorageService, TestExecutionClock, SOAPConnectivityTransport, SOAPFormatter) {
 
       $scope.logger = Connectivity.logger;
       $scope.loading = false;
@@ -170,9 +170,9 @@ angular.module('connectivity')
       };
 
       $scope.isValidConfig = function () {
-        var domain = SOAPConnectivityTransport.domain;
+        var domain = $rootScope.domain.domain;
         var protocol = SOAPConnectivityTransport.protocol;
-        var taInitiator = $scope.transport.configs[domain] && $scope.transport.configs[domain] != null && $scope.transport.configs[domain][protocol] && $scope.transport.configs[domain][protocol] != null && $scope.transport.configs[domain][protocol].data && $scope.transport.configs[domain][protocol].data != null ? $scope.transport.configs[domain][protocol].data.taInitiator : null;
+        var taInitiator = $scope.transport.configs && $scope.transport.configs != null && $scope.transport.configs[protocol] && $scope.transport.configs[protocol] != null && $scope.transport.configs[protocol].data && $scope.transport.configs[protocol].data != null ? $scope.transport.configs[protocol].data.taInitiator : null;
         return taInitiator && taInitiator != null && taInitiator.endpoint != null && taInitiator.endpoint != '';
       };
 
@@ -275,14 +275,14 @@ angular.module('connectivity')
         modalInstance.result.then(
           function (config) {
             if (config && config.hl7Message != null && config.hl7Message != '') {
-                var xml =  $scope.generateNewSoapRequest(config);
-                var validator = new SOAPFormatter(xml);
-                validator.then(function (formatted) {
-                  $scope.triggerReqEvent(formatted);
-                }, function (error) {
-                  $scope.triggerReqEvent(xml);
-                });
-             }
+              var xml = $scope.generateNewSoapRequest(config);
+              var formatter = new SOAPFormatter(xml);
+              formatter.then(function (formatted) {
+                $scope.triggerReqEvent(formatted);
+              }, function (error) {
+                $scope.triggerReqEvent(xml);
+              });
+            }
           },
           function (result) {
 
@@ -292,20 +292,18 @@ angular.module('connectivity')
 
       $scope.generateNewSoapRequest = function (config) {
         var message = Connectivity.request.getContent();
-        if(message != null && message != ''){
+        if (message != null && message != '') {
           var x2js = new X2JS();
           var json = x2js.xml_str2json(message);
-          json.Envelope.Body.submitSingleMessage.hl7Message=config.hl7Message;
-          json.Envelope.Body.submitSingleMessage.username=config.username;
-          json.Envelope.Body.submitSingleMessage.password=config.password;
-          json.Envelope.Body.submitSingleMessage.facilityID=config.facilityID;
+          json.Envelope.Body.submitSingleMessage.hl7Message = config.hl7Message;
+          json.Envelope.Body.submitSingleMessage.username = config.username;
+          json.Envelope.Body.submitSingleMessage.password = config.password;
+          json.Envelope.Body.submitSingleMessage.facilityID = config.facilityID;
           var xml = x2js.json2xml_str(json);
           return xml;
         }
         return null;
       };
-
-
 
 
       $scope.hasRequestContent = function () {
@@ -572,15 +570,16 @@ angular.module('connectivity')
   }]);
 
 angular.module('connectivity')
-  .controller('ConnectivityConfigureReceiverCtrl', function ($scope, $sce, $http, Connectivity, $rootScope, $modalInstance, User, SOAPConnectivityTransport, Transport, SOAPEscaper) {
+  .controller('ConnectivityConfigureReceiverCtrl', function ($scope, $sce, $http, Connectivity, $rootScope, $modalInstance, User, SOAPConnectivityTransport, Transport,SOAPEscaper) {
     $scope.testCase = Connectivity.testCase;
     SOAPConnectivityTransport.init();
-    var config = SOAPConnectivityTransport.configs[SOAPConnectivityTransport.domain][SOAPConnectivityTransport.protocol].data;
+    var config = SOAPConnectivityTransport.configs[SOAPConnectivityTransport.protocol].data;
+
     var getHl7Message = function (soapMessage) {
       if (soapMessage != null && soapMessage != '') {
         var x2js = new X2JS();
         var json = x2js.xml_str2json(soapMessage);
-        if(json.Envelope.Body.submitSingleMessage && json.Envelope.Body.submitSingleMessage.hl7Message) {
+        if (json.Envelope.Body.submitSingleMessage && json.Envelope.Body.submitSingleMessage.hl7Message) {
           var hl7Message = SOAPEscaper.decodeXml(json.Envelope.Body.submitSingleMessage.hl7Message.toString());
           return hl7Message;
         }
@@ -591,20 +590,21 @@ angular.module('connectivity')
     $scope.config['hl7Message'] = getHl7Message(Connectivity.request.getContent());
 
 
-    $scope.save = function () {
 
+
+
+    $scope.save = function () {
       var copyConfig = angular.copy($scope.config);
       delete copyConfig.hl7Message;
-
       var data = angular.fromJson({
         "config": copyConfig,
         "userId": User.info.id,
         "type": "TA_INITIATOR",
         "protocol": SOAPConnectivityTransport.protocol,
-        "domain": SOAPConnectivityTransport.domain
+        "domain": $rootScope.domain.domain
       });
       $http.post('api/transport/config/save', data).then(function (result) {
-        SOAPConnectivityTransport.configs[SOAPConnectivityTransport.domain][SOAPConnectivityTransport.protocol].data.taInitiator = $scope.config;
+        SOAPConnectivityTransport.configs[SOAPConnectivityTransport.protocol].data.taInitiator = $scope.config;
         $modalInstance.close($scope.config);
       }, function (error) {
         $scope.error = error.data;
@@ -614,8 +614,6 @@ angular.module('connectivity')
     $scope.cancel = function () {
       $modalInstance.dismiss('cancel');
     };
-
-
   });
 
 
@@ -899,8 +897,8 @@ angular.module('connectivity')
     $scope.warning = null;
     SOAPConnectivityTransport.init();
     $scope.transport = SOAPConnectivityTransport;
-    $scope.config = SOAPConnectivityTransport.configs['iz']['soap'].data.sutInitiator;
-    $scope.domain = SOAPConnectivityTransport.domain;
+    $scope.config = SOAPConnectivityTransport.configs[SOAPConnectivityTransport.protocol].data.sutInitiator;
+    $scope.domain = $rootScope.domain.domain;
     $scope.protocol = SOAPConnectivityTransport.protocol;
 
     $scope.log = function (log) {
@@ -948,7 +946,7 @@ angular.module('connectivity')
           var execute = function () {
             ++$scope.counter;
             $scope.log("Waiting for incoming message....Elapsed time(second):" + $scope.counter + "s");
-            $scope.transport.searchTransaction($scope.testCase.id, SOAPConnectivityTransport.configs[$scope.domain][$scope.protocol].data.sutInitiator, rspMessageId).then(function (transaction) {
+            $scope.transport.searchTransaction($scope.testCase.id, SOAPConnectivityTransport.configs[$scope.protocol].data.sutInitiator, rspMessageId).then(function (transaction) {
               if (transaction != null) {
                 var incoming = transaction.incoming;
                 var outbound = transaction.outgoing;

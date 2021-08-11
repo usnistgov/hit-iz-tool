@@ -1,11 +1,10 @@
 package gov.nist.healthcare.hl7.v2.iz.tool.ws.server.test;
 
 import static org.junit.Assert.assertNotNull;
-import gov.nist.hit.iz.ws.IZWSConstant;
-import gov.nist.hit.iz.ws.client.IZSOAPWebServiceClient;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
+import gov.nist.hit.iz.ws.IZWSConstant;
+import gov.nist.hit.iz.ws.client.IZSOAPWebServiceClient;
+
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/iztool-ws-client-test.xml")
 public class WebServiceClientIntegrationTest {

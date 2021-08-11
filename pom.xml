@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>gov.nist.hit.iz</groupId>
 	<artifactId>hit-iz-tool</artifactId>
-	<version>1.4.0-SNAPSHOT</version>
+	<version>1.5.0-SNAPSHOT</version>
 	<name>hit-iz-tool</name>
 	<description>Immunization tool</description>
 	<packaging>pom</packaging>
@@ -17,8 +17,8 @@
 
 	<properties>
 		<spring.version>4.3.8.RELEASE</spring.version>
-		<hithl7v2.version>1.0.20-SNAPSHOT</hithl7v2.version>
-		<hitcore.version>1.0.25-SNAPSHOT</hitcore.version>
+		<hithl7v2.version>1.0.24.IZTOOLNIST</hithl7v2.version>
+		<!-- <hitcore.version>1.0.28</hitcore.version> -->
 		<core.version>1.0.48</core.version>
 		<java.version>1.8</java.version>		
 		
@@ -29,14 +29,42 @@
 		<dependency>
 			<groupId>gov.nist.hit.core.hl7v2</groupId>
 			<artifactId>hit-core-hl7v2-service</artifactId>
-			<version>${hithl7v2.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.ibm.icu</groupId>
-					<artifactId>icu4j</artifactId>
-				</exclusion>
-			</exclusions> 
+			<version>${hithl7v2.version}</version>			
 		</dependency>
+		
+		
+		
+		<!-- 
+			<dependency>
+			<groupId>gov.nist.hit.core</groupId>
+			<artifactId>hit-core-domain</artifactId>
+			<version>1.0.25-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>gov.nist.hit.core</groupId>
+			<artifactId>hit-core-service</artifactId>
+			<version>1.0.25-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>gov.nist.hit.core</groupId>
+			<artifactId>hit-core-transport</artifactId>
+			<version>1.0.25-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>gov.nist.hit.core</groupId>
+			<artifactId>hit-core-auth-repo</artifactId>
+			<version>1.0.25-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>gov.nist.hit.core</groupId>
+			<artifactId>hit-core-repo</artifactId>
+			<version>1.0.25-SNAPSHOT</version>
+		</dependency> -->
+		
+		
+		
+		
+		
 		
 		<dependency>
 			<groupId>com.ibm.icu</groupId>

@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>gov.nist.hit.iz</groupId>
 		<artifactId>hit-iz-tool</artifactId>
-		<version>1.4.0-SNAPSHOT</version>
+		<version>1.5.0-SNAPSHOT</version>
 	</parent>
 
  	<dependencies>
@@ -73,19 +73,19 @@
 			<version>${project.version}</version>
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
 			<groupId>gov.nist.hit.core</groupId>
 			<artifactId>hit-core-transport</artifactId>
 			<version>${hitcore.version}</version>
 		</dependency>
-		
+		 -->
 		<dependency>
 			<groupId>commons-httpclient</groupId>
 			<artifactId>commons-httpclient</artifactId>
 			<version>3.1</version>
 		</dependency>
 		
-        <dependency>
+       <!--  <dependency>
             <groupId>org.springframework.ws</groupId>
             <artifactId>spring-ws-core-tiger</artifactId>
             <version>1.5.10</version>
@@ -95,7 +95,7 @@
             <groupId>org.springframework.ws</groupId>
             <artifactId>spring-oxm-tiger</artifactId>
             <version>1.5.10</version>
-        </dependency> 
+        </dependency>  -->
         
         <dependency>
 			<groupId>javax.servlet</groupId>
