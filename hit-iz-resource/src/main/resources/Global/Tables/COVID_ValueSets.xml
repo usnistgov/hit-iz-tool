@@ -1260,8 +1260,7 @@
       <ValueElement CodeSystem="NDC" DisplayName="Hep B, dialysis" Value="00006-4992-00"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Hep B, adult" Value="00006-4995-00"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Hep B, adult" Value="00006-4995-41"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="MMRV" Value="00006-4999-00"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="BCG" Value="00052-0603-02"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="MMRV" Value="00006-4999-00"/>
       <ValueElement CodeSystem="NDC" DisplayName="TDVAX" Value="13533-0131-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="TDVAX" Value="14362-0111-04"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Td (adult), adsorbed" Value="17478-0131-01"/>  
@@ -1546,8 +1545,7 @@
       <ValueElement CodeSystem="NDC" DisplayName="PENTACEL" Value="49281-0511-05"/>  
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" Value="49281-0181-25"/>  
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" Value="49281-0320-50"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" Value="49281-0336-15"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="VAXELIS" Value="63361-0243-10"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" Value="49281-0336-15"/>   
       <ValueElement CodeSystem="NDC" DisplayName="Afluria Quadrivalent" Value="33332-0220-20"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Afluria Quadrivalent" Value="33332-0320-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Afluria Quadrivalent" Value="33332-0420-10"/>  
@@ -1563,7 +1561,6 @@
       <ValueElement CodeSystem="NDC" DisplayName="FluMist Quadrivalent" Value="66019-0307-10"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Moderna COVID-19 Vaccine; CARTON, 10 MULTI-DOSE VIALS" Value="80777-0273-99"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer COVID-19 Vaccine; CARTON, 195 MULTI-DOSE VIALS" Value="59267-1000-02"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="VAXELIS" Value="63361-0243-15"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Shingrix" Value="50090-5147-00"/>  
       <ValueElement CodeSystem="NDC" DisplayName="AstraZeneca COVID-19 Vaccine; CARTON, 10 MULTI-DOSE VIALS" Value="00310-1222-15"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Janssen COVID-19 Vaccine; CARTON, 10 MULTI-DOSE VIALS" Value="59676-0580-15"/>  
@@ -1623,8 +1620,7 @@
       <ValueElement CodeSystem="NDC" DisplayName="Hep B, adolescent or pediatric" Value="00006-4981-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Hep B, dialysis" Value="00006-4992-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Hep B, adult" Value="00006-4995-01"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="MMRV" Value="00006-4999-01"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="BCG" Value="00052-0603-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="MMRV" Value="00006-4999-01"/> 
       <ValueElement CodeSystem="NDC" DisplayName="TDVAX" Value="13533-0131-00"/>  
       <ValueElement CodeSystem="NDC" DisplayName="TDVAX" Value="14362-0111-03"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Td (adult), adsorbed" Value="17478-0131-00"/>  
@@ -1908,8 +1904,7 @@
       <ValueElement CodeSystem="NDC" DisplayName="PENTACEL" Value="49281-0561-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" Value="49281-0181-00"/>  
       <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" Value="49281-0320-88"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" Value="49281-0336-78"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="VAXELIS" Value="63361-0243-58"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" Value="49281-0336-78"/>    
       <ValueElement CodeSystem="NDC" DisplayName="Afluria Quadrivalent" Value="33332-0220-21"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Afluria Quadrivalent" Value="33332-0320-02"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Afluria Quadrivalent" Value="33332-0420-11"/>  
@@ -1925,7 +1920,6 @@
       <ValueElement CodeSystem="NDC" DisplayName="FluMist Quadrivalent" Value="66019-0307-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Moderna COVID-19 Vaccine; MULTI-DOSE VIAL, 10 DOSES" Value="80777-0273-10"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer COVID-19 Vaccine; MULTI-DOSE VIAL" Value="59267-1000-01"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="VAXELIS" Value="63361-0243-88"/>  
       <ValueElement CodeSystem="NDC" DisplayName="AstraZeneca COVID-19 Vaccine; VIAL, MULTI-DOSE" Value="00310-1222-10"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Janssen COVID-19 Vaccine; VIAL, MULTI-DOSE, 2.5mL" Value="59676-0580-05"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Japanese Encephalitis IM" Value="62195-0051-01"/>  
@@ -1937,8 +1931,8 @@
       <ValueElement Value="80631-0100-01" DisplayName="Novavax COVID-19 vaccine, Subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL, MULTI-DOSE VIAL, 10 DOSES" CodeSystem="NDC"/>
     
       <ValueElement Value="50632-0013-01" DisplayName="RabAvert VIAL, SINGLE-DOSE, 1 mL" CodeSystem="NDC"/>
-      <ValueElement Value="63361-0243-58" DisplayName="Vaxelis Diphtheria and Tetanus Toxoids and Acellular Pertussis Adsorbed, Inactivated Poliovirus, Haemophilus b Conjugate (Meningococcal Protein Conjugate) and Hepatitis B (Recombinant) Vaccine (DTaP-IPV-Hib-HepB dose for 6 wks through 4th yr) VIAL, SINGLE-DOSE" CodeSystem="NDC"/>
-      <ValueElement Value="63361-0243-88" DisplayName="Vaxelis diphtheria and tetanus toxoids and acellular pertussis, inactivated poliovirus, haemophilus b conjugate and hepatitis b vaccine (DTap-IPV-Hib-HepB) SYRINGE, 0.5 mL" CodeSystem="NDC"/>
+      <ValueElement Value="63361-0243-58" DisplayName="Vaxelis (DTaP-IPV-Hib-HepB dose for 6 wks through 4th yr) VIAL, SINGLE-DOSE" CodeSystem="NDC"/>
+      <ValueElement Value="63361-0243-88" DisplayName="Vaxelis (DTap-IPV-Hib-HepB) SYRINGE, 0.5 mL" CodeSystem="NDC"/>
       <ValueElement Value="00052-0603-01" DisplayName="BCG VACCINE BACILLUS CALMETTE-GUERIN SUBSTRAIN TICE LIVE ANTIGEN VIAL" CodeSystem="NDC"/>
       <ValueElement Value="19515-0818-41" DisplayName="Flulaval Quadrivalent SYRINGE, .5 mL" CodeSystem="NDC"/>
       <ValueElement Value="49281-0421-58" DisplayName="FLUZONE QUADRIVALENT VIAL, .5 mL, SINGLE-DOSE" CodeSystem="NDC"/>
