@@ -920,7 +920,7 @@
 			<ValueElement Value="ORT" CodeSystem="MVX" DisplayName="Ortho-clinical Diagnostics"/>
 			<ValueElement Value="OTC" CodeSystem="MVX" DisplayName="Organon Teknika Corporation"/>
 			<ValueElement Value="OTH" CodeSystem="MVX" DisplayName="Other manufacturer"/>
-			<ValueElement Value="PAX" CodeSystem="MVX" DisplayName="PaxVax"/>
+			<ValueElement Value="PAX" CodeSystem="MVX" DisplayName="Emergent Travel Health, Inc"/>
 			<ValueElement Value="PD" CodeSystem="MVX" DisplayName="Parkedale Pharmaceuticals"/>
 			<ValueElement Value="PMC" CodeSystem="MVX" DisplayName="sanofi pasteur"/>
 			<ValueElement Value="PRX" CodeSystem="MVX" DisplayName="Praxis Biologics"/>
@@ -950,6 +950,10 @@
 			<ValueElement Value="PFR" CodeSystem="MVX" DisplayName="Pfizer"/>
 			<ValueElement Value="ASZ" CodeSystem="MVX" DisplayName="AstraZeneca"/>
 			<ValueElement Value="JSN" CodeSystem="MVX" DisplayName="Janssen"/>
+			
+			<ValueElement Value="MSP" CodeSystem="MVX" DisplayName="MSP Vaccine Company"/>
+			<ValueElement Value="SPH" CodeSystem="MVX" DisplayName="Sinopharm-Biotech"/>
+			<ValueElement Value="SNV" CodeSystem="MVX" DisplayName="Sinovac"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="CDCREC_E_IZ" Name="Ethnic Group">
 			<ValueElement Value="2135-2" CodeSystem="CDCREC" DisplayName="Hispanic or Latino"/>
@@ -1161,12 +1165,15 @@
 			<ValueElement Value="192" DisplayName="meningococcal AC polysaccharide vaccine (non-US)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="193" DisplayName="hepatitis A and hepatitis B vaccine, pediatric/adolescent (non-US)" CodeSystem="CVX"/>
+			
 			<ValueElement Value="194" DisplayName="Influenza, Southern Hemisphere, unspecified formulation" CodeSystem="CVX"/>
+			
 			<ValueElement Value="195" DisplayName="Diptheria, Tetanus, Poliomyelitis adsorbed (DT, IPV adsorbed)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="196" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" CodeSystem="CVX"/>
 			
 			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, .7mL dose, preservative free" CodeSystem="CVX"/>
+			
 			
 			<ValueElement Value="200" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, pediatric 0.25mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="201" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" CodeSystem="CVX"/>
@@ -1176,18 +1183,24 @@
 			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine .5mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="206" DisplayName="smallpox monkeypox vaccine, live attenuated, preservative free (National Stockpile)" CodeSystem="CVX"/>
 			
-			<ValueElement Value="207" DisplayName="COVID-19, mRNA, LNP-S, PF, 100 mcg/ 0.5 mL dose" CodeSystem="CVX"/>
-			<ValueElement Value="208" DisplayName="COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="207" DisplayName="Moderna COVID-19 Vaccine (non-US tradename is Spikevax)" CodeSystem="CVX"/>
+			<ValueElement Value="208" DisplayName="Pfizer-BioNTech COVID-19 Vaccine (Non-US tradename is COMIRNATY)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
 			
-			<ValueElement Value="210" DisplayName="COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL" CodeSystem="CVX"/>
+			<ValueElement Value="210" DisplayName="AstraZeneca COVID-19 Vaccine (Non-US tradenames include VAXZEVRIA, COVISHIELD)" CodeSystem="CVX"/>
 			<ValueElement Value="212" DisplayName="COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL" CodeSystem="CVX"/>
 			
 			<ValueElement Value="211" DisplayName="SARS-COV-2 (COVID-19) vaccine, Subunit, recombinant spike protein-nanoparticle+Matrix-M1 Adjuvant, preservative free, 0.5mL per dose" CodeSystem="CVX"/>
 			<ValueElement Value="204" DisplayName="Ebola Zaire vaccine, live, recombinant, 1mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="214" DisplayName="Ebola, unspecified" CodeSystem="CVX"/>
+			
+			
+			<ValueElement Value="510" DisplayName="Sinopharm (BIBP) COVID-19 Vaccine" CodeSystem="CVX"/>
+			<ValueElement Value="511" DisplayName="Coronavac (Sinovac) COVID-19 Vaccine" CodeSystem="CVX"/>
 		</ValueSetDefinition>
+		
+		
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
 			<ValueElement Value="VXC50" CodeSystem="CDCPHINVS" DisplayName="Public"/>
