@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>gov.nist.hit.iz</groupId>
 	<artifactId>hit-iz-tool</artifactId>
-	<version>2.0.1</version>
+	<version>2.0.1-SNAPSHOT</version>
 	<name>hit-iz-tool</name>
 	<description>Immunization tool</description>
 	<packaging>pom</packaging>
@@ -173,10 +173,9 @@
 		</snapshotRepository>
 	</distributionManagement>
 	<scm>
-		<connection>scm:git:https://haffo@github.com/haffo/hit-iz-tool.git</connection>
-		<url>scm:git:https://haffo@github.com/haffo/hit-iz-tool.git</url>
-		<developerConnection>scm:git:https://haffo@github.com/haffo/hit-iz-tool.git</developerConnection>
-    <tag>hit-iz-tool-2.0.1</tag>
+		<connection>scm:git:https://github.com/usnistgov/hit-iz-tool.git</connection>
+		<url>scm:git:https://github.com/usnistgov/hit-iz-tool.git</url>
+		<developerConnection>scm:git:https://github.com/usnistgov/hit-iz-tool.git</developerConnection>
   </scm>
   
 </project>

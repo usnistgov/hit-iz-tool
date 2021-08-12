@@ -11,7 +11,7 @@
     "angular-resource": "1.4.7",
     "angular-route": "1.4.7",
     "angular-sanitize": "1.4.7",
-    "angular-smart-table": "2.0.1",
+    "angular-smart-table": "2.0.1-SNAPSHOT",
     "es5-shim": "~2.1.0",
     "jquery": "1.11.3",
     "json3": "~3.2.4",
