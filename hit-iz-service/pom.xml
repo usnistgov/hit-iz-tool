@@ -30,7 +30,7 @@
 			 <dependency>
  			<groupId>gov.nist.hit.core.xml</groupId>
  			<artifactId>hit-core-xml-domain</artifactId>
- 			<version>1.0.0-SNAPSHOT</version>
+ 			<version>1.0.0.IZTOOLNIST</version>
 			<exclusions>
 				<exclusion>
 					<groupId>gov.nist.hit.core</groupId>
@@ -92,7 +92,7 @@
 		<dependency>
 			<groupId>gov.nist.healthcare</groupId>
 			<artifactId>schematronValidation</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.0</version>
 		</dependency>
 
 
