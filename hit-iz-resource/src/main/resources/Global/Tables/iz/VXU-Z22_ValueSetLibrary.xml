@@ -1225,7 +1225,7 @@
 			<ValueElement Value="206" DisplayName="smallpox monkeypox vaccine, live attenuated, preservative free (National Stockpile)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="207" DisplayName="Moderna COVID-19 Vaccine (non-US tradename is Spikevax)" CodeSystem="CVX"/>
-			<ValueElement Value="208" DisplayName="Pfizer-BioNTech COVID-19 Vaccine (Non-US tradename is COMIRNATY)" CodeSystem="CVX"/>
+			<ValueElement Value="208" DisplayName="Pfizer-BioNTech COVID-19 Vaccine (COMIRNATY)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
 			
@@ -1236,6 +1236,8 @@
 			<ValueElement Value="204" DisplayName="Ebola Zaire vaccine, live, recombinant, 1mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="214" DisplayName="Ebola, unspecified" CodeSystem="CVX"/>
 			
+			<ValueElement Value="215" DisplayName="VAXNEUVANCE Pneumococcal conjugate vaccine 15-valent (PCV15), polysaccharide CRM197 conjugate, adjuvant, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="216" DisplayName="Prevnar 20, Pneumococcal conjugate vaccine 20-valent (PCV20), polysaccharide CRM197 conjugate, adjuvant, preservative free" CodeSystem="CVX"/>
 			
 			<ValueElement Value="510" DisplayName="Sinopharm (BIBP) COVID-19 Vaccine" CodeSystem="CVX"/>
 			<ValueElement Value="511" DisplayName="Coronavac (Sinovac) COVID-19 Vaccine" CodeSystem="CVX"/>
@@ -1619,23 +1621,31 @@
 			<ValueElement Value="49281-0337-15" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE, PACKAGE, 10 SYRINGE, GLASS" CodeSystem="NDC"/>
 			
 			<ValueElement Value="80631-0100-10" DisplayName="Novavax COVID-19 vaccine, Subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL, CARTON, 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
-		
-		
-			<ValueElement Value="50632-0010-01" DisplayName="RabAvert VIAL, SINGLE-DOSE, 1 mL" CodeSystem="NDC"/>
+
+			<ValueElement Value="50632-0010-01" DisplayName="RabAvert CARTON, I KIT" CodeSystem="NDC"/>
 			<ValueElement Value="63361-0243-10" DisplayName="Vaxelis (DTaP-IPV-Hib-HepB) PACKAGE, 10 VIAL, SINGLE-DOSE" CodeSystem="NDC"/>
 			<ValueElement Value="63361-0243-15" DisplayName="Vaxelis (DTaP-IPV-Hib-HepB) PACKAGE 10 SYRINGES" CodeSystem="NDC"/>
 			<ValueElement Value="00052-0603-02" DisplayName="BCG VACCINE BACILLUS CALMETTE-GUERIN SUBSTRAIN TICE LIVE ANTIGEN CARTON" CodeSystem="NDC"/>
-			<ValueElement Value="19515-0818-52" DisplayName="Flulaval Quadrivalent SYRINGE, .5 mL" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0421-10" DisplayName="FLUZONE QUADRIVALENT VIAL, .5 mL, SINGLE-DOSE" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0421-50" DisplayName="FLUZONE QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>
-			<ValueElement Value="58160-0887-52" DisplayName="FLUARIX QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0635-15" DisplayName="FLUZONE QUADRIVALENT VIAL, 5 mL, MULTI-DOSE" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0521-25" DisplayName="FLUZONE QUADRIVALENT SYRINGE, .25 mL" CodeSystem="NDC"/>
-			<ValueElement Value="70461-0321-03" DisplayName="FLUCELVAX QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0721-10" DisplayName="Flublok Quadrivalent Northern Hemisphere SYRINGE, .5 mL" CodeSystem="NDC"/>
-			<ValueElement Value="70461-0421-10" DisplayName="FLUCELVAX QUADRIVALENT VIAL, 5 mL, MULTI-DOSE" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0121-65" DisplayName="FLUZONE High-Dose Quadrivalent Northern Hemisphere SYRINGE, .7 mL" CodeSystem="NDC"/>
-			<ValueElement Value="70461-0121-03" DisplayName="FLUAD QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>		
+			<ValueElement Value="19515-0818-52" DisplayName="Flulaval Quadrivalent CARTON, 10 SYRINGE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0421-10" DisplayName="FLUZONE QUADRIVALENT PACKAGE, 10 VIAL, SINGLE-DOSE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0421-50" DisplayName="FLUZONE QUADRIVALENT PACKAGE, 10 SYRINGE" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0887-52" DisplayName="FLUARIX QUADRIVALENT CARTON, 10 SYRINGE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0635-15" DisplayName="FLUZONE QUADRIVALENT PACKAGE, 1 VIAL, MULTI-DOSE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0521-25" DisplayName="FLUZONE QUADRIVALENT PACKAGE, 10 SYRINGE" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0321-03" DisplayName="FLUCELVAX QUADRIVALENT CARTON, 10 SYRINGE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0721-10" DisplayName="Flublok Quadrivalent Northern Hemisphere CARTON, 10 SYRINGE" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0421-10" DisplayName="FLUCELVAX QUADRIVALENT CARTON, 1 VIAL, MULTI-DOSE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0121-65" DisplayName="FLUZONE High-Dose Quadrivalent Northern Hemisphere PACKAGE, 10 SYRINGE" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0121-03" DisplayName="FLUAD QUADRIVALENT CARTON, 10 SYRINGE" CodeSystem="NDC"/>
+			
+			<ValueElement Value="66019-0308-10" DisplayName="FluMist Quadrivalent PACKAGE, 10 APPLICATORS" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0321-01" DisplayName="Afluria Quadrivalent CARTON, 10 SYRINGE" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0421-10" DisplayName="Afluria Quadrivalent CARTON, 1 MULTI-DOSE VIAL" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0221-20" DisplayName="Afluria Quadrivalent CARTON, 10 SYRINGE" CodeSystem="NDC"/>
+			<ValueElement Value="00005-2000-10" DisplayName="Prevnar 20" CodeSystem="NDC"/>
+			<ValueElement Value="00005-2000-02" DisplayName="Prevnar 20" CodeSystem="NDC"/>
+			<ValueElement Value="00006-4329-03" DisplayName="VAXNEUVANCE" CodeSystem="NDC"/>
+			<ValueElement Value="00006-4329-02" DisplayName="VAXNEUVANCE" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
@@ -2015,11 +2025,18 @@
 			<ValueElement Value="70461-0421-11" DisplayName="FLUCELVAX QUADRIVALENT VIAL, 5 mL, MULTI-DOSE" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0121-88" DisplayName="FLUZONE High-Dose Quadrivalent Northern Hemisphere SYRINGE, .7 mL" CodeSystem="NDC"/>
 			<ValueElement Value="70461-0121-04" DisplayName="FLUAD QUADRIVALENT SYRINGE, .5 mL" CodeSystem="NDC"/>			
+			
+			<ValueElement Value="66019-0308-01" DisplayName="FluMist Quadrivalent APPLICATOR .2 mL" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0321-02" DisplayName="Afluria Quadrivalent SYRINGE, .5 mL" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0421-11" DisplayName="Afluria Quadrivalent VIAL, 5 mL, MULTI-DOSE" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0221-21" DisplayName="Afluria Quadrivalent SYRINGE, .25 ML" CodeSystem="NDC"/>
+			<ValueElement Value="00005-2000-01" DisplayName="Prevnar 20" CodeSystem="NDC"/>
+			<ValueElement Value="00006-4329-01" DisplayName="VAXNEUVANCE" CodeSystem="NDC"/>			
 		</ValueSetDefinition>
 
 
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
-			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
+			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds"/>
 			<ValueElement Value="VXC50" CodeSystem="CDCPHINVS" DisplayName="Public"/>
 			<ValueElement Value="VXC51" CodeSystem="CDCPHINVS" DisplayName="Public VFC"/>
 			<ValueElement Value="VXC52" CodeSystem="CDCPHINVS" DisplayName="Public non-VFC"/>
@@ -2198,7 +2215,7 @@
 
 			<ValueElement Value="253088698300029511191030" CodeSystem="cdcgs1vis" DisplayName="HPV Vaccine VIS"/>
 			<ValueElement Value="253088698300031811191030" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
-			<ValueElement Value="253088NDC Unit of Sale698300032511191030" CodeSystem="cdcgs1vis" DisplayName="Recombinant Zoster Vaccine VIS"/>
+			<ValueElement Value="253088698300032511191030" CodeSystem="cdcgs1vis" DisplayName="Recombinant Zoster Vaccine VIS"/>
 			<ValueElement Value="253088698300006611191030" CodeSystem="cdcgs1vis" DisplayName="Hib Vaccine VIS"/>
 			<ValueElement Value="253088698300015811191030" CodeSystem="cdcgs1vis" DisplayName="PCV13 VIS"/>
 			<ValueElement Value="253088698300016511191030" CodeSystem="cdcgs1vis" DisplayName="PPSV23 VIS"/>
@@ -2229,7 +2246,21 @@
 			<ValueElement Value="253088698300034911210401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			
 			<ValueElement Value="253088698300033211210501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet"/>
-
+			
+			<ValueElement Value="253088698300003511210806" CodeSystem="cdcgs1vis" DisplayName="DTaP (Diphtheria, Tetanus, Pertussis) Vaccine VIS"/>
+			<ValueElement Value="253088698300006611210806" CodeSystem="cdcgs1vis" DisplayName="Haemophilus Influenzae type b (Hib) Vaccine VIS"/>
+			<ValueElement Value="253088698300009711210806" CodeSystem="cdcgs1vis" DisplayName="Influenza (Flu) Vaccine (Live, Intranasal) VIS"/>
+			<ValueElement Value="253088698300010311210806" CodeSystem="cdcgs1vis" DisplayName="Influenza (Flu) Vaccine (Inactivated or Recombinant) VIS"/>
+			<ValueElement Value="253088698300012711210806" CodeSystem="cdcgs1vis" DisplayName="MMR Vaccine (Measles, Mumps, and Rubella) VIS"/>
+			<ValueElement Value="253088698300013411210806" CodeSystem="cdcgs1vis" DisplayName="MMRV Vaccine (Measles, Mumps, Rubella, and Varicella) VIS"/>
+			<ValueElement Value="253088698300014111210806" CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccine VIS"/>
+			<ValueElement Value="253088698300015811210806" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13) VIS"/>
+			<ValueElement Value="253088698300017211210806" CodeSystem="cdcgs1vis" DisplayName="Polio Vaccine VIS"/>
+			<ValueElement Value="253088698300024011210806" CodeSystem="cdcgs1vis" DisplayName="Varicella (Chickenpox) Vaccine VIS"/>
+			<ValueElement Value="253088698300027111210806" CodeSystem="cdcgs1vis" DisplayName="Tdap (Tetanus, Diphtheria, Pertussis) Vaccine VIS"/>
+			<ValueElement Value="253088698300028811210806" CodeSystem="cdcgs1vis" DisplayName="Td (Tetanus, Diphtheria) Vaccine VIS"/>
+			<ValueElement Value="253088698300029511210806" CodeSystem="cdcgs1vis" DisplayName="HPV (Human Papillomavirus) Vaccine VIS"/>
+			<ValueElement Value="253088698300030111210806" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
 			<ValueElement Value="VXC40" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the immunization level"/>

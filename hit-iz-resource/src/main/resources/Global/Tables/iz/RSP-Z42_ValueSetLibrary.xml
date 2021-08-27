@@ -967,6 +967,7 @@
 			<ValueElement Value="2106-3" CodeSystem="CDCREC" DisplayName="White"/>
 			<ValueElement Value="2131-1" CodeSystem="CDCREC" DisplayName="Other Race"/>
 		</ValueSetDefinition>
+		
 		<ValueSetDefinition BindingIdentifier="CVX" Name="Codes for Vaccines administered">
 			<ValueElement Value="01" DisplayName="DTP" CodeSystem="CVX"/>
 			<ValueElement Value="02" DisplayName="OPV" CodeSystem="CVX"/>
@@ -1184,7 +1185,7 @@
 			<ValueElement Value="206" DisplayName="smallpox monkeypox vaccine, live attenuated, preservative free (National Stockpile)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="207" DisplayName="Moderna COVID-19 Vaccine (non-US tradename is Spikevax)" CodeSystem="CVX"/>
-			<ValueElement Value="208" DisplayName="Pfizer-BioNTech COVID-19 Vaccine (Non-US tradename is COMIRNATY)" CodeSystem="CVX"/>
+			<ValueElement Value="208" DisplayName="Pfizer-BioNTech COVID-19 Vaccine (COMIRNATY)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
 			
@@ -1195,11 +1196,12 @@
 			<ValueElement Value="204" DisplayName="Ebola Zaire vaccine, live, recombinant, 1mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="214" DisplayName="Ebola, unspecified" CodeSystem="CVX"/>
 			
+			<ValueElement Value="215" DisplayName="VAXNEUVANCE Pneumococcal conjugate vaccine 15-valent (PCV15), polysaccharide CRM197 conjugate, adjuvant, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="216" DisplayName="Prevnar 20, Pneumococcal conjugate vaccine 20-valent (PCV20), polysaccharide CRM197 conjugate, adjuvant, preservative free" CodeSystem="CVX"/>
 			
 			<ValueElement Value="510" DisplayName="Sinopharm (BIBP) COVID-19 Vaccine" CodeSystem="CVX"/>
 			<ValueElement Value="511" DisplayName="Coronavac (Sinovac) COVID-19 Vaccine" CodeSystem="CVX"/>
 		</ValueSetDefinition>
-		
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
@@ -1395,6 +1397,7 @@
 			<ValueElement Value="253088698300002811200108" CodeSystem="cdcgs1vis" DisplayName="Anthrax Vaccine VIS"/>
 			<ValueElement Value="253088698300018911200108" CodeSystem="cdcgs1vis" DisplayName="Rabies Vaccine VIS"/>
 			
+			
 			<ValueElement Value="253088698300003511200401" CodeSystem="cdcgs1vis" DisplayName="DTaP (Diphtheria, Tetanus, Pertussis) Vaccine VIS"/>
 			<ValueElement Value="253088698300025711200401" CodeSystem="cdcgs1vis" DisplayName="Yellow Fever VIS"/>
 			<ValueElement Value="253088698300026411200401" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
@@ -1403,17 +1406,32 @@
 			
 			<ValueElement Value="253088698300004211200728" CodeSystem="cdcgs1vis" DisplayName="Hepatitis A Vaccine VIS"/>
 			
+			
 			<ValueElement Value="253088698300033211201201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			<ValueElement Value="253088698300034911201201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			
 			<ValueElement Value="253088698300036311210201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Janssen Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			<ValueElement Value="253088698300035611210201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 AstraZeneca Vaccine EUA Recipient-Caregiver Fact Sheet"/>
-			
 			<ValueElement Value="253088698300034911210401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			
 			<ValueElement Value="253088698300033211210501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet"/>
+			
+			<ValueElement Value="253088698300003511210806" CodeSystem="cdcgs1vis" DisplayName="DTaP (Diphtheria, Tetanus, Pertussis) Vaccine VIS"/>
+			<ValueElement Value="253088698300006611210806" CodeSystem="cdcgs1vis" DisplayName="Haemophilus Influenzae type b (Hib) Vaccine VIS"/>
+			<ValueElement Value="253088698300009711210806" CodeSystem="cdcgs1vis" DisplayName="Influenza (Flu) Vaccine (Live, Intranasal) VIS"/>
+			<ValueElement Value="253088698300010311210806" CodeSystem="cdcgs1vis" DisplayName="Influenza (Flu) Vaccine (Inactivated or Recombinant) VIS"/>
+			<ValueElement Value="253088698300012711210806" CodeSystem="cdcgs1vis" DisplayName="MMR Vaccine (Measles, Mumps, and Rubella) VIS"/>
+			<ValueElement Value="253088698300013411210806" CodeSystem="cdcgs1vis" DisplayName="MMRV Vaccine (Measles, Mumps, Rubella, and Varicella) VIS"/>
+			<ValueElement Value="253088698300014111210806" CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccine VIS"/>
+			<ValueElement Value="253088698300015811210806" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13) VIS"/>
+			<ValueElement Value="253088698300017211210806" CodeSystem="cdcgs1vis" DisplayName="Polio Vaccine VIS"/>
+			<ValueElement Value="253088698300024011210806" CodeSystem="cdcgs1vis" DisplayName="Varicella (Chickenpox) Vaccine VIS"/>
+			<ValueElement Value="253088698300027111210806" CodeSystem="cdcgs1vis" DisplayName="Tdap (Tetanus, Diphtheria, Pertussis) Vaccine VIS"/>
+			<ValueElement Value="253088698300028811210806" CodeSystem="cdcgs1vis" DisplayName="Td (Tetanus, Diphtheria) Vaccine VIS"/>
+			<ValueElement Value="253088698300029511210806" CodeSystem="cdcgs1vis" DisplayName="HPV (Human Papillomavirus) Vaccine VIS"/>
+			<ValueElement Value="253088698300030111210806" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
 		</ValueSetDefinition>
-		
+
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
 			<ValueElement Value="VXC40" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the immunization level"/>
 			<ValueElement Value="VXC41" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the visit level"/>
