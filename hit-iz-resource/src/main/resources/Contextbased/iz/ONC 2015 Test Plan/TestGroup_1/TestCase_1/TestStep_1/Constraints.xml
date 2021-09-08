@@ -2226,13 +2226,13 @@
                     TestDataCategorization="Value-Test Case Fixed"/>
                   <Description>Invalid content (based on test case fixed data). The value at
                     ORDER.OBSERVATION.OBX-5.1 (Observation Value) does not match one of the expected values:
-                    '253088698300017211191030', '253088698300006611191030', '253088698300003511200401'.</Description>
+                    '253088698300017211210806', '253088698300006611210806', '253088698300003511210806'.</Description>
                   <Assertion>
                     <OR>
-                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300017211191030"/>
+                      <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300017211210806"/>
                       <OR>
-                        <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300006611191030"/>           
-                        <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300003511200401"/>
+                        <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300006611210806"/>           
+                        <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300003511210806"/>
                       </OR>
                     </OR>
                   </Assertion>
@@ -5174,9 +5174,9 @@
                     TestDataCategorization="Value-Test Case Fixed"/>
                   <Description>Invalid content (based on test case fixed data). The value at
                     ORDER.OBSERVATION.OBX-5.1 (Observation Value) does not match the expected value:
-                    '253088698300015811191030'.</Description>
+                    '253088698300015811210806'.</Description>
                   <Assertion>
-                    <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300015811191030"/>
+                    <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300015811210806"/>
                   </Assertion>
                 </Constraint>
                 <Constraint ID="Content" Target="5[1].2[1]">
