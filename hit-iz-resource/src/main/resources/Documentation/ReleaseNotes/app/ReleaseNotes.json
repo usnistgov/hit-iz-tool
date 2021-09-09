@@ -204,10 +204,16 @@
         "title": "Release notes 2.0.0"
     },
     {
-        "version": "2.0.1-SNAPSHOT",
+        "version": "2.0.1",
         "date": "2021/08/11",
-        "name": "IZ_Release_Notes.2.0.1-SNAPSHOT.docx",
-        "title": "Release notes 2.0.1-SNAPSHOT"
+        "name": "IZ_Release_Notes.2.0.1.docx",
+        "title": "Release notes 2.0.1"
+    },
+    {
+        "version": "2.0.2",
+        "date": "2021/09/09",
+        "name": "IZ_Release_Notes.2.0.2.docx",
+        "title": "Release notes 2.0.2"
     }
     
     
