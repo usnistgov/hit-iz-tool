@@ -1224,7 +1224,7 @@
 			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine .5mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="206" DisplayName="smallpox monkeypox vaccine, live attenuated, preservative free (National Stockpile)" CodeSystem="CVX"/>
 			
-			<ValueElement Value="207" DisplayName="Moderna COVID-19 Vaccine (non-US tradename is Spikevax)" CodeSystem="CVX"/>
+			<ValueElement Value="207" DisplayName="Moderna, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg or 50 mcg dose" CodeSystem="CVX"/>
 			<ValueElement Value="208" DisplayName="Pfizer-BioNTech COVID-19 Vaccine (COMIRNATY)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
@@ -1238,6 +1238,10 @@
 			
 			<ValueElement Value="215" DisplayName="VAXNEUVANCE Pneumococcal conjugate vaccine 15-valent (PCV15), polysaccharide CRM197 conjugate, adjuvant, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="216" DisplayName="Prevnar 20, Pneumococcal conjugate vaccine 20-valent (PCV20), polysaccharide CRM197 conjugate, adjuvant, preservative free" CodeSystem="CVX"/>
+			
+			<ValueElement Value="217" DisplayName="Pfizer-BioNTech, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 30 mcg/0.3 mL dose, tris-sucrose formulation" CodeSystem="CVX"/>
+			<ValueElement Value="218" DisplayName="Pfizer-BioNTech, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation" CodeSystem="CVX"/>
+			<ValueElement Value="219" DisplayName="Pfizer-BioNTech, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 3 mcg/0.2 mL dose, tris-sucrose formulation" CodeSystem="CVX"/>
 			
 			<ValueElement Value="510" DisplayName="Sinopharm (BIBP) COVID-19 Vaccine" CodeSystem="CVX"/>
 			<ValueElement Value="511" DisplayName="Coronavac (Sinovac) COVID-19 Vaccine" CodeSystem="CVX"/>
@@ -1646,7 +1650,19 @@
 			<ValueElement Value="00005-2000-02" DisplayName="Prevnar 20" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4329-03" DisplayName="VAXNEUVANCE" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4329-02" DisplayName="VAXNEUVANCE" CodeSystem="NDC"/>
+			
+			
+			<ValueElement Value="50090-1502-00" DisplayName="HAVRIX (Hep A, adult)" CodeSystem="NDC"/>
+			<ValueElement Value="59267-1025-02" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 30 mcg/0.3 mL for ages 12+, CARTON, 195 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-1025-03" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 30 mcg/0.3 mL for ages 12+, CARTON, 25 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-1025-04" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 30 mcg/0.3 mL for ages 12+, CARTON, 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-1055-02" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 10 mcg/0.2 mL for ages 5 yrs to &lt; 12 yrs, CARTON, 195 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-1055-04" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 10 mcg/0.2 mL for ages 5 yrs to &lt; 12 yrs, CARTON, 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-0078-02" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 3 mcg/0.2 mL for ages 2 yrs to &lt; 5 yrs, CARTON, 195 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-0078-04" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 3 mcg/0.2 mL for ages 2 yrs to &lt; 5 yrs, CARTON, 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			
 		</ValueSetDefinition>
+		
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
 			<ValueElement Value="00005-1970-49" DisplayName="pneumococcal conjugate PCV 7" CodeSystem="NDC"/>
@@ -2032,6 +2048,12 @@
 			<ValueElement Value="33332-0221-21" DisplayName="Afluria Quadrivalent SYRINGE, .25 ML" CodeSystem="NDC"/>
 			<ValueElement Value="00005-2000-01" DisplayName="Prevnar 20" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4329-01" DisplayName="VAXNEUVANCE" CodeSystem="NDC"/>			
+			
+			
+			<ValueElement Value="50090-1502-09" DisplayName="HAVRIX" CodeSystem="NDC"/>	
+			<ValueElement Value="59267-1025-01" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 30 mcg/0.3 mL for ages 12+, VIAL, 2.25 mL, MULTI-DOSE VIAL" CodeSystem="NDC"/>	
+			<ValueElement Value="59267-1055-01" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 10 mcg/0.2 mL for ages 5 yrs to &lt; 12 yrs, VIAL, 2 mL, MULTI-DOSE VIAL" CodeSystem="NDC"/>	
+			<ValueElement Value="59267-0078-01" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 3 mcg/0.2 mL for ages 2 yrs to &lt; 5 yrs, VIAL, 2 mL, MULTI-DOSE VIAL" CodeSystem="NDC"/>	
 		</ValueSetDefinition>
 
 
@@ -2261,7 +2283,13 @@
 			<ValueElement Value="253088698300028811210806" CodeSystem="cdcgs1vis" DisplayName="Td (Tetanus, Diphtheria) Vaccine VIS"/>
 			<ValueElement Value="253088698300029511210806" CodeSystem="cdcgs1vis" DisplayName="HPV (Human Papillomavirus) Vaccine VIS"/>
 			<ValueElement Value="253088698300030111210806" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
+			
+			<ValueElement Value="253088698300004211211015" CodeSystem="cdcgs1vis" DisplayName="Hepatitis A Vaccine VIS"/>
+			<ValueElement Value="253088698300005911211015" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine VIS"/>
+			<ValueElement Value="253088698300019611211015" CodeSystem="cdcgs1vis" DisplayName="Rotavirus Vaccine VIS"/>
+			<ValueElement Value="253088698300026411211015" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
 		</ValueSetDefinition>
+		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
 			<ValueElement Value="VXC40" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the immunization level"/>
 			<ValueElement Value="VXC41" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the visit level"/>
