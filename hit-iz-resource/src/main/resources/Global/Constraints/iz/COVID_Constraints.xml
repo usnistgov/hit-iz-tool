@@ -441,8 +441,8 @@
       <ByID ID="CQ_IZ"> 
         <Constraint ID="IZ-1" Target="1[1]"> 
           <Description>The value of CQ.1 (Quantity) SHALL be a positive integer.</Description>  
-          <Assertion> 
-            <SimpleValue Operator="GT" Path="1[1]" Type="Number" Value="0"/> 
+          <Assertion>
+            <Format Path="1[1]" Regex="^[1-9]\d*$"/>
           </Assertion> 
         </Constraint>  
         <Constraint ID="IZ-2" Target="2[1]"> 
@@ -689,8 +689,8 @@
       <ByID ID="OBX_IZ 1_5"> 
         <Constraint ID="IZ-44" Target="4[1]"> 
           <Description>The value of OBX-4 SHALL be a positive integer.</Description>  
-          <Assertion> 
-            <SimpleValue Operator="GT" Path="4[1]" Type="Number" Value="0"/> 
+          <Assertion>
+            <Format Path="4[1]" Regex="^[1-9]\d*$"/>
           </Assertion> 
         </Constraint>  
         <Constraint ID="IZ-35" Target="5[1]"> 
