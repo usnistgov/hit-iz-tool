@@ -2380,6 +2380,9 @@
 			<ValueElement Value="212" CodeSystem="CVX" DisplayName="COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL"/>
 			
 			<ValueElement Value="203" CodeSystem="CVX" DisplayName="Meningococcal ACWY Vaccine VIS"/>
+			
+			<ValueElement Value="217" CodeSystem="CVX" DisplayName="Pfizer-BioNTech, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 30 mcg/0.3 mL dose, tris-sucrose formulation"/>
+			<ValueElement Value="218" CodeSystem="CVX" DisplayName="Pfizer-BioNTech, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
