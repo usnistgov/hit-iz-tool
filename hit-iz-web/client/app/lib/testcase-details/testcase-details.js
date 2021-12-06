@@ -276,7 +276,7 @@
             $scope.supplements = null;
             $scope.eId = $scope.target + "-supplements";
             $scope.$on($scope.eId, function (event, supplements, title) {
-                console.log("new supplements catched");
+                //console.log("new supplements catched");
                 $scope.supplements = supplements;
             });
 
@@ -344,7 +344,7 @@
                         $scope.$broadcast(exampleMsgId, exampleMessage, testContext.format, testCase.name);
                     }
                 }
-                TestCaseDetailsService.details(testCase.type, testCase.id).then(function (result) {
+                TestCaseDetailsService.details(testCase.stage,testCase.type, testCase.id).then(function (result) {
                     $scope.testCase['testStory'] = result['testStory'];
                     $scope.testCase['jurorDocument'] = result['jurorDocument'];
                     $scope.testCase['testDataSpecification'] = result['testDataSpecification'];
@@ -472,7 +472,7 @@
         var TestCaseDetailsService = function () {
         };
 
-        TestCaseDetailsService.details = function (type, id) {
+        TestCaseDetailsService.details = function (stage,type, id) {
             var delay = $q.defer();
             $http.get('api/' + type.toLowerCase() + 's/' + id + '/details').then(
                 function (object) {
