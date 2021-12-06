@@ -189,7 +189,7 @@
 	<!-- Service definition -->
 	<service name="client_Service">
 		<port binding="tns:client_Binding_Soap12" name="client_Port_Soap12">
-			<soap12:address location="http://localhost:8080/iztool/ws/iisService" />
+			<soap12:address location="http://localhost:8080/iztool/ws/iisService_aaaa" />
 		</port>
 	</service>
 </definitions>

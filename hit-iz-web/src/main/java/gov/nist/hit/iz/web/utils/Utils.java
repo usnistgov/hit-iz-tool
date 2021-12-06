@@ -46,8 +46,8 @@ public class Utils {
 			host = "www-s.nist.gov";
 		} else {
 			// Yeah I know, I have no other choice
-			host = host.replaceAll("hit-2015.nist.gov:8098", "hl7v2-iz-r1.5-testing.nist.gov:8098");
-			host = host.replaceAll("hit-2015.nist.gov:19070", "hl7v2-iz-cdc-testing.nist.gov");
+			host = host.replaceAll("hit-dev.nist.gov:8098", "hl7v2-iz-r1.5-testing.nist.gov");
+			host = host.replaceAll("hit-dev.nist.gov:9009", "hl7v2-iz-cdc-testing.nist.gov");
 		}
 		return scheme + "://" + host + request.getContextPath();
 	}
