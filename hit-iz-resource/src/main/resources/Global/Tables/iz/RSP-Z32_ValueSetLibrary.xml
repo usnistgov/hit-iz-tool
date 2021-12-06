@@ -1271,7 +1271,6 @@
 			<ValueElement Value="206" DisplayName="smallpox monkeypox vaccine, live attenuated, preservative free (National Stockpile)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="207" DisplayName="Moderna, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg or 50 mcg dose" CodeSystem="CVX"/>
-			<ValueElement Value="208" DisplayName="Pfizer-BioNTech COVID-19 Vaccine (COMIRNATY)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
 			
