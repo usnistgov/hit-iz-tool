@@ -1050,6 +1050,8 @@
 			<ValueElement Value="MSP" CodeSystem="MVX" DisplayName="MSP Vaccine Company"/>
 			<ValueElement Value="SPH" CodeSystem="MVX" DisplayName="Sinopharm-Biotech"/>
 			<ValueElement Value="SNV" CodeSystem="MVX" DisplayName="Sinovac"/>
+			
+			<ValueElement Value="BBI" CodeSystem="MVX" DisplayName="Bharat Biotech International Limited"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="CVX" Name="Codes for Vaccines administered">
@@ -1291,6 +1293,8 @@
 			<ValueElement Value="511" DisplayName="Coronavac (Sinovac) COVID-19 Vaccine" CodeSystem="CVX"/>
 			
 			<ValueElement Value="208" DisplayName="Pfizer-BioNTech COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose" CodeSystem="CVX"/>
+			
+			<ValueElement Value="502" DisplayName="SARS-COV-2 COVID-19 Inactivated Virus Non-US Vaccine Product (COVAXIN)" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
