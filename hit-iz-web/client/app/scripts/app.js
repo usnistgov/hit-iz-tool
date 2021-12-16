@@ -1,3 +1,4 @@
+angular.module('hit-settings',['common']);
 angular.module('commonServices', []);
 angular.module('common', ['ngResource', 'default', 'xml', 'hl7v2-edi', 'hl7v2', 'edi', 'soap', 'hit-util']);
 angular.module('main', ['common']);
@@ -13,6 +14,9 @@ angular.module('documentation', []);
 angular.module('domains', []);
 angular.module('logs', ['common']);
 angular.module('transport', []);
+angular.module('reports', ['common','treeGrid']);
+angular.module('hit-dqa', []);
+angular.module('cache', []);
 
 var app = angular.module('hit-app', [
   'ngRoute',
@@ -66,7 +70,10 @@ var app = angular.module('hit-app', [
   'hit-edit-testcase-details',
   'domains',
   'logs',
-    'transport'
+  'angular-cache',
+  'cache',
+  'transport',
+  'LocalForageModule'
 ]);
 
 
@@ -380,23 +387,23 @@ app.run(function (Session, $rootScope, $location, $modal, TestingSettings, AppIn
 
 
   $rootScope.clearDomainSession = function () {
-    StorageService.set(StorageService.CF_SELECTED_TESTPLAN_ID_KEY, null);
-    StorageService.set(StorageService.CF_EDITOR_CONTENT_KEY, null);
-    StorageService.set(StorageService.CF_LOADED_TESTCASE_ID_KEY, null);
-    StorageService.set(StorageService.CB_EDITOR_CONTENT_KEY, null);
-    StorageService.set(StorageService.CB_SELECTED_TESTCASE_TYPE_KEY, null);
-    StorageService.set(StorageService.CB_LOADED_TESTCASE_ID_KEY, null);
-    StorageService.set(StorageService.CB_LOADED_TESTCASE_TYPE_KEY, null);
-    StorageService.set(StorageService.CB_LOADED_TESTSTEP_TYPE_KEY, null);
-    StorageService.set(StorageService.CB_LOADED_TESTSTEP_ID_KEY, null);
+  //   StorageService.set(StorageService.CF_SELECTED_TESTPLAN_ID_KEY, null);
+  //  StorageService.set(StorageService.CF_EDITOR_CONTENT_KEY, null);
+  //   StorageService.set(StorageService.CF_LOADED_TESTCASE_ID_KEY, null);
+  //  StorageService.set(StorageService.CB_EDITOR_CONTENT_KEY, null);
+   //  StorageService.set(StorageService.CB_SELECTED_TESTCASE_TYPE_KEY, null);
+   // StorageService.set(StorageService.CB_LOADED_TESTCASE_ID_KEY, null);
+   // StorageService.set(StorageService.CB_LOADED_TESTCASE_TYPE_KEY, null);
+   // StorageService.set(StorageService.CB_LOADED_TESTSTEP_TYPE_KEY, null);
+   // StorageService.set(StorageService.CB_LOADED_TESTSTEP_ID_KEY, null);
     StorageService.set(StorageService.ISOLATED_EDITOR_CONTENT_KEY, null);
     StorageService.set(StorageService.ISOLATED_SELECTED_TESTCASE_TYPE_KEY, null);
     StorageService.set(StorageService.CB_SELECTED_TESTPLAN_ID_KEY, null);
     StorageService.set(StorageService.CB_SELECTED_TESTPLAN_TYPE_KEY, null);
     StorageService.set(StorageService.CB_SELECTED_TESTPLAN_SCOPE_KEY, null);
-    StorageService.set(StorageService.CF_SELECTED_TESTPLAN_SCOPE_KEY, null);
-    StorageService.set(StorageService.CF_SELECTED_TESTPLAN_ID_KEY, null);
-    StorageService.set(StorageService.CF_SELECTED_TESTPLAN_TYPE_KEY, null);
+  // StorageService.set(StorageService.CF_SELECTED_TESTPLAN_SCOPE_KEY, null);
+   // StorageService.set(StorageService.CF_SELECTED_TESTPLAN_ID_KEY, null);
+   // StorageService.set(StorageService.CF_SELECTED_TESTPLAN_TYPE_KEY, null);
     StorageService.set(StorageService.CB_MANAGE_SELECTED_TESTCASE_ID_KEY, null);
     StorageService.set(StorageService.CB_MANAGE_SELECTED_TESTCASE_TYPE_KEY, null);
     StorageService.set(StorageService.CB_MANAGE_LOADED_TESTCASE_ID_KEY, null);
@@ -768,14 +775,29 @@ app.run(function (Session, $rootScope, $location, $modal, TestingSettings, AppIn
   };
 
 
-  $rootScope.isDomainsManagementSupported = function () {
-      return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === "true" || $rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === true) || userInfoService.isAdmin() || userInfoService.isSupervisor() || userInfoService.isDeployer();
-  };
+//  $rootScope.isDomainsManagementSupported = function () {
+//       return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === "true" || $rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === true) || userInfoService.isAdmin() || userInfoService.isSupervisor() || userInfoService.isDeployer();
+//   };
+
+    $rootScope.isDomainsManagementSupported = function () {    	
+        return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['DOMAIN_MANAGEMENT_SUPPORTED'] === "true" ) || userInfoService.isAdmin() ;
+    };
 
     $rootScope.isLoggedIn = function () {
         return userInfoService.isAuthenticated();
     };
 
+ $rootScope.isDomainSelectionSupported = function () {
+        return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['DOMAIN_SELECTON_SUPPORTED'] === "true");
+    };
+    
+    $rootScope.isUserLoginSupported = function () {
+        return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['USER_LOGIN_SUPPORTED'] === "true");
+    };
+    
+    $rootScope.isReportSavingSupported = function () {    	
+        return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['REPORT_SAVING_SUPPORTED'] === "true");
+    };
 
 
 

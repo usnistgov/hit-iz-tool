@@ -14,7 +14,7 @@
 
 .carousel .item {
     height: 450px;
-    background:white url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+    background:white; /* url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7); */
 }
 .carousel-inner > .item > img {
     /*position: absolute;*/

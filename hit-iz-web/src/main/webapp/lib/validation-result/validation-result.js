@@ -38,10 +38,10 @@
   ]);
 
   mod
-    .controller('ValidationResultCtrl', ['$scope', '$filter', '$modal', '$rootScope', 'ValidationResultHighlighter', '$sce', 'NewValidationResult', '$timeout', 'ServiceDelegator', 'Settings', 'TestExecutionService', 'StorageService', function ($scope, $filter, $modal, $rootScope, ValidationResultHighlighter, $sce, NewValidationResult, $timeout, ServiceDelegator, Settings, TestExecutionService,StorageService) {
-      $scope.validationTabs = new Array();
+    .controller('ValidationResultCtrl', ['$scope', '$filter', '$modal', '$rootScope', 'ValidationResultHighlighter', '$sce', 'NewValidationResult', '$timeout', 'ServiceDelegator', 'SettingsService', 'TestExecutionService', 'StorageService', function ($scope, $filter, $modal, $rootScope, ValidationResultHighlighter, $sce, NewValidationResult, $timeout, ServiceDelegator, SettingsService, TestExecutionService,StorageService) {
+    	$scope.validationTabs = new Array();
       $scope.currentType = null;
-      $scope.settings = Settings;
+      $scope.settings = SettingsService;
       $scope.validationResultOriginal = null;
       $scope.activeTab = 0;
       $scope.validationResult = null;
@@ -52,7 +52,8 @@
         alerts: false,
         warnings: false,
         informationals: false,
-        affirmatives: false
+        affirmatives: false,
+        specerrors: false
       };
 
       $scope.subActive = {
@@ -60,7 +61,8 @@
         alerts: {},
         warnings: {},
         informationals: {},
-        affirmatives: {}
+        affirmatives: {},
+        specerrors: {}
       };
 
       $scope.checkboxConfig = {};
@@ -90,7 +92,12 @@
           className: "failure failure-affirmatives",
           checked: false,
           active: false
-        }
+        },
+        specerrors: {
+            className: "failure failure-specerrors",
+            checked: false,
+            active: false
+          }
       };
 
       $scope.currentCategory = null;
@@ -164,7 +171,7 @@
         });
       });
 
-      var destroyEvent1 = $rootScope.$on($scope.type + ':validationResultLoaded', function (event, mvResult, testStep) {
+      var destroyEvent1 = $rootScope.$on($scope.type + ':validationResultLoaded', function (event, mvResult, testStep,testType) {
         if ($scope.format != null) {
           $scope.editorService = ServiceDelegator.getEditorService($scope.format);
           $scope.treeService = ServiceDelegator.getTreeService($scope.format);
@@ -177,14 +184,14 @@
             validationResult.init(mvResult, testStep.id).then(function (done) {
               if(done) {
                 mvResult['result'] = validationResult;
-                $scope.processValidationResult(mvResult,testStep);
+                $scope.processValidationResult(mvResult,testStep,testType);
               }else{
                 mvResult['result'] = null;
-                $scope.processValidationResult(mvResult,testStep);
+                $scope.processValidationResult(mvResult,testStep,testType);
               }
             });
           } else {
-            $scope.processValidationResult(mvResult,testStep);
+            $scope.processValidationResult(mvResult,testStep,testType);
           }
         }
       });
@@ -199,7 +206,7 @@
         return result > 0 ? 'FAILED' : result === 0 ? 'PASSED' : undefined;
       };
 
-      $scope.processValidationResult = function (mvResult, testStep) {
+      $scope.processValidationResult = function (mvResult, testStep,testType) {
         $scope.validationResult = mvResult.result;
         if ($scope.validationResult && $scope.validationResult != null) {
 
@@ -208,6 +215,7 @@
           $scope.checkboxConfig['warnings'] = {};
           $scope.checkboxConfig['affirmatives'] = {};
           $scope.checkboxConfig['informationals'] = {};
+          $scope.checkboxConfig['specerrors'] = {};
 
           // if($scope.validationResult.errors && $scope.validationResult.errors.categories) {
           //     angular.forEach($scope.validationResult.errors.categories, function (category) {
@@ -240,6 +248,7 @@
           $scope.failuresConfig.alerts.checked = false;
           $scope.failuresConfig.informationals.checked = false;
           $scope.failuresConfig.affirmatives.checked = false;
+          $scope.failuresConfig.specerrors.checked = false;
           $scope.firstLoaded = false;
           //$scope.hideAllFailures();
           $scope.active = {};
@@ -258,8 +267,8 @@
           var reportType = $scope.type;
           if ($scope.type === 'cb') { // TODO: remove dependency
             reportType = testStep.testContext && testStep.testContext != null ? 'cbValidation' : 'cbManual';
-          }
-          $rootScope.$emit(reportType + ':updateTestStepValidationReport', mvResult != null ? mvResult.reportId : null, testStep);
+          }      
+          $rootScope.$emit(reportType + ':updateTestStepValidationReport', mvResult != null ? mvResult.reportId : null, testStep,testType);
         });
 
 
@@ -292,7 +301,7 @@
       };
 
 
-      $rootScope.$on('$destroy', function () {
+      $scope.$on('$destroy', function () {
         destroyEvent1(); // remove listener.
       });
 
@@ -333,6 +342,7 @@
       this.hideFailures(this.histMarksMap['affirmatives']);
       this.hideFailures(this.histMarksMap['informationals']);
       this.hideFailures(this.histMarksMap['alerts']);
+      this.hideFailures(this.histMarksMap['specerrors']);
     };
 
     ValidationResultHighlighter.prototype.showFailures = function (type, category) {
@@ -531,6 +541,8 @@
           this.addResult(this.affirmatives, entry);
         } else if (entry['classification'] === 'Informational' || entry['classification'] === 'Info') {
           this.addResult(this.informationals, entry);
+        } else if (entry['classification'] === 'Spec Error') {
+          this.addResult(this.specerrors, entry);
         }
       } catch (error) {
         console.log(error);
@@ -572,19 +584,20 @@
       this.removeCategoryDuplicates(this.alerts);
       this.removeCategoryDuplicates(this.affirmatives);
       this.removeCategoryDuplicates(this.informationals);
+      this.removeCategoryDuplicates(this.specerrors);
       this.duplicatesRemoved = true;
     };
 
     NewValidationResult.prototype.processJson = function (json) {
       if(json && json != null && json != "null") {
         this.json = angular.fromJson(json);
-        console.log(this.json);
         if(this.json.detections) {
           this.loadDetection(this.json.detections['Error']);
           this.loadDetection(this.json.detections['Alert']);
           this.loadDetection(this.json.detections['Warning']);
           this.loadDetection(this.json.detections['Informational']);
           this.loadDetection(this.json.detections['Affirmative']);
+          this.loadDetection(this.json.detections['Spec Error']);
         }
       }else{
         this.json = null;
