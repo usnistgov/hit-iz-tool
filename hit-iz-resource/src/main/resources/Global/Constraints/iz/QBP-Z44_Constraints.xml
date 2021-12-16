@@ -138,7 +138,7 @@
                 <Constraint ID="IZ-1" Target="1[1]">
                     <Description>The value of CQ.1 (Quantity) SHALL be a positive integer.</Description>
                     <Assertion>
-                        <SimpleValue Path="1[1]" Operator="GT" Value="0" Type="Number"/>
+                        <Format Path="1[1]" Regex="^[1-9]\d*$"/>
                     </Assertion>
                 </Constraint>
                 <Constraint ID="IZ-2" Target="2[1]">
