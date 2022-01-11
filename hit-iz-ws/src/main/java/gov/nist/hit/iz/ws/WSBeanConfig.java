@@ -12,13 +12,16 @@
 
 package gov.nist.hit.iz.ws;
 
-import gov.nist.hit.iz.service.IISReceiver;
-import gov.nist.hit.iz.service.Receiver;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter;
+import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
+import org.springframework.ws.wsdl.wsdl11.SimpleWsdl11Definition;
+
+import gov.nist.hit.iz.service.IISReceiver;
+import gov.nist.hit.iz.service.Receiver;
 
 /**
  * @author Harold Affo (NIST)
@@ -29,13 +32,20 @@ import org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter;
 @ImportResource("classpath:/app-ws-context.xml")
 public class WSBeanConfig {
 
-  @Bean
-  public SimpleJaxWsServiceExporter simpleJaxWsServiceExporter() {
-    return new SimpleJaxWsServiceExporter();
-  }
+	@Bean
+	public SimpleJaxWsServiceExporter simpleJaxWsServiceExporter() {
+		return new SimpleJaxWsServiceExporter();
+	}
 
-  @Bean
-  public Receiver receiver() {
-    return new IISReceiver();
-  }
+	@Bean
+	public Receiver receiver() {
+		return new IISReceiver();
+	}
+
+	@Bean(name = "iisService")
+	public SimpleWsdl11Definition wsdl11Definition() {
+	    SimpleWsdl11Definition s = new SimpleWsdl11Definition();
+	    s.setWsdl(new ClassPathResource("/ws/iisService.wsdl"));
+	    return s;
+	}
 }

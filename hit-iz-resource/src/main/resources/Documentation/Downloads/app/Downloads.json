@@ -1,4 +1,10 @@
 [{
+	"title": "iztool-2.0.5",
+	"link": "https://hit-2015.nist.gov/wars/iztool-2.0.5.zip",
+	"date": "2022/01/11",
+	"customizable": true,
+	"order":0
+},{
 	"title": "iztool-2.0.4",
 	"link": "https://hit-2015.nist.gov/wars/iztool-2.0.4.zip",
 	"date": "2021/12/07",
