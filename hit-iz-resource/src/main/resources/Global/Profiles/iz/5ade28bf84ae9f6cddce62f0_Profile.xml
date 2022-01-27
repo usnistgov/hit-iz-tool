@@ -48,7 +48,7 @@
       <Field Binding="HL70211" BindingStrength="R" Datatype="ID" ItemNo="00692" Max="0" MaxLength="16" Min="0" MinLength="1" Name="Character Set" Usage="O"/>  
       <Field Datatype="CE" ItemNo="00693" Max="0" MaxLength="250" Min="0" MinLength="1" Name="Principal Language Of Message" Usage="O"/>  
       <Field Binding="HL70356" BindingStrength="R" Datatype="ID" ItemNo="01317" Max="0" MaxLength="20" Min="0" MinLength="1" Name="Alternate Character Set Handling Scheme" Usage="O"/>  
-      <Field Binding="PHVS_ImmunizationProfileIdentifier_IIS" BindingLocation="1" BindingStrength="R" Datatype="EI_IZ" ItemNo="01598" Max="1" MaxLength="427" Min="1" MinLength="1" Name="Message Profile Identifier" Usage="R"/>  
+      <Field Binding="PHVS_ImmunizationProfileIdentifier_IIS" BindingLocation="1" BindingStrength="R" Datatype="EI_IZ" ItemNo="01598" Max="*" MaxLength="427" Min="1" MinLength="1" Name="Message Profile Identifier" Usage="R"/>  
       <Field BindingLocation="1" BindingStrength="R" Datatype="XON_IZ" Max="1" MaxLength="*" Min="0" MinLength="1" Name="Sending Responsible Organization" Usage="RE"/>  
       <Field BindingLocation="1" BindingStrength="R" Datatype="XON_IZ" Max="1" MaxLength="*" Min="0" MinLength="1" Name="Receiving Responsible Organization" Usage="RE"/> 
     </Segment>  
