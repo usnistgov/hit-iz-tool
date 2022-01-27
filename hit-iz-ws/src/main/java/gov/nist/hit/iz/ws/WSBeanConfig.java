@@ -12,11 +12,17 @@
 
 package gov.nist.hit.iz.ws;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter;
+import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
+import org.springframework.ws.wsdl.wsdl11.SimpleWsdl11Definition;
 
+import gov.nist.hit.core.service.AccountService;
+import gov.nist.hit.core.service.AppInfoService;
 import gov.nist.hit.iz.service.IISReceiver;
 import gov.nist.hit.iz.service.Receiver;
 
@@ -28,6 +34,9 @@ import gov.nist.hit.iz.service.Receiver;
 @Configuration
 @ImportResource("classpath:/app-ws-context.xml")
 public class WSBeanConfig {
+	
+	@Autowired
+	private AppInfoService appInfoService;
 
 	@Bean
 	public SimpleJaxWsServiceExporter simpleJaxWsServiceExporter() {
@@ -37,5 +46,15 @@ public class WSBeanConfig {
 	@Bean
 	public Receiver receiver() {
 		return new IISReceiver();
+	}
+
+	@Bean(name = "iisService")
+	public DynamicUrlWsdlDefinition wsdl11Definition() {
+		DynamicUrlWsdlDefinition s = new DynamicUrlWsdlDefinition();
+//		System.out.println("couou "+ appInfoService.get().getUrl());
+	    s.setLocation(appInfoService.get().getUrl());
+		s.setWsdl(new ClassPathResource("/ws/iisService.wsdl"));
+	   
+	    return s;
 	}
 }

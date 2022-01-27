@@ -11,7 +11,8 @@
  */
 package gov.nist.hit.iz.service.soap;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import gov.nist.hit.core.domain.ValidationResult;
@@ -23,7 +24,7 @@ public class SOAPMessageValidatorImpl implements SOAPMessageValidator {
 
 	private CDCSoapValidation validator = null;
 
-	private final static Logger logger = Logger.getLogger(SOAPMessageValidatorImpl.class);
+	private final static Logger logger = LogManager.getLogger(SOAPMessageValidatorImpl.class);
 
 	public SOAPMessageValidatorImpl() {
 		validator = new CDCSoapValidation();

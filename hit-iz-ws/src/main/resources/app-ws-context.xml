@@ -19,13 +19,13 @@ http://www.springframework.org/schema/oxm http://www.springframework.org/schema/
 <!-- 
 	<context:component-scan base-package="gov.nist.hit.iz.ws" />
  -->
+ <!-- <sws:static-wsdl id="iisService" location="classpath:/ws/iisService.wsdl" /> -->
 	<bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">
 		<property name="soapVersion">
 			<util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_12" />
 		</property>
 	</bean>
 
-	<sws:static-wsdl id="iisService" location="classpath:/ws/iisService.wsdl" />
 
 	<sws:interceptors>
 

@@ -43,6 +43,7 @@ var app = angular.module('hit-app', [
   'connectivity',
   'cf',
   'cb',
+  'reports',
   'ngTreetable',
   'hit-tool-directives',
   'hit-tool-services',
@@ -73,7 +74,8 @@ var app = angular.module('hit-app', [
   'angular-cache',
   'cache',
   'transport',
-  'LocalForageModule'
+  'LocalForageModule',
+  'ngFileSaver'	
 ]);
 
 

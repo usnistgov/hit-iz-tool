@@ -31,7 +31,7 @@ public class WSAppInitializer implements WebApplicationInitializer
 		root.scan("gov.nist.hit.iz.ws");
 		// web service servlet
 		MessageDispatcherServlet dispatcher = new MessageDispatcherServlet(root);
-		dispatcher.setTransformWsdlLocations(true);
+//		dispatcher.setTransformWsdlLocations(true);
 		final Dynamic webservices = servletContext.addServlet("iztool-webservice", dispatcher);
 		webservices.setLoadOnStartup(2);
 		webservices.addMapping("/ws/*");

@@ -27,7 +27,8 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import gov.nist.hit.core.service.exception.ValidationReportException;
@@ -40,7 +41,7 @@ import gov.nist.hit.iz.service.exception.SoapValidationReportException;
 
 public abstract class SOAPValidationReportGenerator {
 
-	private final static Logger logger = Logger.getLogger(SOAPValidationReportGenerator.class);
+	private final static Logger logger = LogManager.getLogger(SOAPValidationReportGenerator.class);
 
 	private static final String HTML_XSL = "/xslt/soap-validation-report-html.xsl";
 	private static final String PDF_XSL = "/xslt/soap-validation-report-pdf.xsl";

@@ -126,12 +126,12 @@
 <distributionManagement>
 		<repository>
 			<id>releases</id>
-			<url>https://hit-dev.nist.gov:9001/repository/releases/</url>
+			<url>http://hit-dev-admin.nist.gov:9001/repository/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>Internal Snapshots</name>
-			<url>https://hit-dev.nist.gov:9001/repository/snapshots</url>
+			<url>http://hit-dev-admin.nist.gov:9001/repository/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<scm>

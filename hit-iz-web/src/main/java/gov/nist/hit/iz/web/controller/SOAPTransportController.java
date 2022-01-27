@@ -46,6 +46,7 @@ import gov.nist.hit.core.domain.TransportRequest;
 import gov.nist.hit.core.domain.TransportResponse;
 import gov.nist.hit.core.domain.util.XmlUtil;
 import gov.nist.hit.core.service.AccountService;
+import gov.nist.hit.core.service.AppInfoService;
 import gov.nist.hit.core.service.PasswordService;
 import gov.nist.hit.core.service.Streamer;
 import gov.nist.hit.core.service.TestStepService;
@@ -99,6 +100,9 @@ public class SOAPTransportController {
 
 	@Autowired
 	private Streamer streamer;
+	
+	@Autowired
+	private AppInfoService appInfoService;
 
 	private final static String PROTOCOL = "soap";
 	private final static String USERNAME = "username";
@@ -298,7 +302,8 @@ public class SOAPTransportController {
 				user.isGuestAccount() ? "fault_vendor_" + user.getId() + "_" + token : user.getUsername());
 		config.put("faultPassword",
 				user.isGuestAccount() ? "fault_vendor_" + user.getId() + "_" + token : user.getUsername());
-		config.put("endpoint", Utils.getUrl(request) + "/ws/iisService");
+//		config.put("endpoint", Utils.getUrl(request) + "/ws/iisService");
+		config.put("endpoint", this.appInfoService.get().getUrl() + "/ws/iisService");
 		return config;
 	}
 
