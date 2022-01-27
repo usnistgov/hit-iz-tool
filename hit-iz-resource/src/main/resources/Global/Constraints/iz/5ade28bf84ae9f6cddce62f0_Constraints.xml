@@ -562,7 +562,7 @@
         <Constraint ID="IZ-44" Target="4[1]"> 
           <Description>The value of OBX-4 SHALL be a positive integer.</Description>  
           <Assertion> 
-            <SimpleValue Operator="GT" Path="4[1]" Type="Number" Value="0"/> 
+            <Format Path="4[1]" Regex="^[1-9]\d*$"/> 
           </Assertion> 
         </Constraint>  
         <Constraint ID="IZ-37" Target="5[1]"> 
