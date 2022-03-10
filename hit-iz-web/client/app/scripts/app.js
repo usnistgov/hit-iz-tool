@@ -789,7 +789,7 @@ app.run(function (Session, $rootScope, $location, $modal, TestingSettings, AppIn
         return userInfoService.isAuthenticated();
     };
 
- $rootScope.isDomainSelectionSupported = function () {
+ 	$rootScope.isDomainSelectionSupported = function () {
         return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['DOMAIN_SELECTON_SUPPORTED'] === "true");
     };
     
@@ -801,6 +801,9 @@ app.run(function (Session, $rootScope, $location, $modal, TestingSettings, AppIn
         return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['REPORT_SAVING_SUPPORTED'] === "true");
     };
 
+	 $rootScope.isDevTool = function () {
+	    return $rootScope.getAppInfo().options && ($rootScope.getAppInfo().options['IS_DEV_TOOL'] === "true");
+	  };
 
 
 });
