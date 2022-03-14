@@ -34,7 +34,7 @@
 			<Field Name="Accept Acknowledgment Type" Usage="R" Min="1" Max="1" Datatype="ID" MinLength="1" MaxLength="2" Binding="HL70155_IZ" BindingStrength="R" ItemNo="00015"/>
 			<Field Name="Application Acknowledgment Type" Usage="R" Min="1" Max="1" Datatype="ID" MinLength="1" MaxLength="2" Binding="HL70155_IZ" BindingStrength="R" ItemNo="00016"/>
 			<Field Name="Country Code" Usage="O" Min="0" Max="0" Datatype="ID" MinLength="1" MaxLength="3" Binding="HL70399" BindingStrength="R" ItemNo="00017"/>
-			<Field Name="Character Set" Usage="O" Min="0" Max="0" Datatype="ID" MinLength="1" MaxLength="16" Binding="HL70211" BindingStrength="R" ItemNo="00692"/>
+			<Field Name="Character Set" Usage="O" Min="0" Max="*" Datatype="ID" MinLength="1" MaxLength="16" Binding="HL70211" BindingStrength="R" ItemNo="00692"/>
 			<Field Name="Principal Language Of Message" Usage="O" Min="0" Max="0" Datatype="CE" MinLength="1" MaxLength="250" ItemNo="00693"/>
 			<Field Name="Alternate Character Set Handling Scheme" Usage="O" Min="0" Max="0" Datatype="ID" MinLength="1" MaxLength="20" Binding="HL70356" BindingStrength="R" ItemNo="01317"/>
 			<Field Name="Message Profile Identifier" Usage="R" Min="1" Max="*" Datatype="EI_IZ_QBP_Z44" MinLength="1" MaxLength="427" Binding="PHVS_ImmunizationProfileIdentifier_IIS" BindingStrength="R" BindingLocation="1" ItemNo="01598"/>
