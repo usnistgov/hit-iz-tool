@@ -1499,7 +1499,7 @@ angular.module('doc')
       $scope.scope = scope;
       $scope.domain = domain;
 
-	  if (!$rootScope.isDomainSelectionSupported() && $rootScope.appInfo.domains.length === 1){
+	  if (!$rootScope.isDomainSelectionSupported() && $rootScope.appInfo.domains.length >= 1){
     	  $scope.domain = $rootScope.appInfo.domains[0].domain;
       }
 
