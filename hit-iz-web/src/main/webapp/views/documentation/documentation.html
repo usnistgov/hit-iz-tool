@@ -20,9 +20,9 @@
 
   <div ng-show="isAuthenticated() || !isAuthenticationRequired()">
 
-    <ul class="clearfix mainSubNav">
+    <ul class="clearfix mainSubNav" ng-if="isDomainSelectionSupported()">
       <li ng-click="selectSectionType('app')" class="jslink"><a ng-class="{'current':sectionType.key === 'app'}"> <i class="fa fa-book"></i> General Documents </a></li>
-      <li ng-click="selectSectionType(domain.name)" class="jslink"><a ng-class="{'current':sectionType.key !== 'app'}"> <i class="fa fa-book"></i> {{domain.name}}'s Documents</a></li>
+      <li ng-click="selectSectionType(domain.name)" class="jslink"><a ng-class="{'current':sectionType.key !== 'app'}" ng-if="isDomainSelectionSupported()"> <i class="fa fa-book"></i> {{domain.name}}'s Documents</a></li>
     </ul>
 
     <div>
@@ -46,7 +46,7 @@
       </div>
 
       <div ng-show="sectionType.key !== 'app'">
-        <div ng-include="'views/documentation/domain_docs.html'"></div>
+        <div ng-if="isDomainSelectionSupported()" ng-include="'views/documentation/domain_docs.html'"></div>
       </div>
 
 
@@ -189,53 +189,53 @@
 </script>
 
 <!--<script type="text/ng-template" id="ResourceDoc.html">-->
-<!--<div ng-if="error === null">-->
-<!--<div ng-if="docs != null" class="">-->
-<!--<accordion close-others="true">-->
-<!--<accordion-group panel-class="panel-info" is-open="status[data.stage]">-->
-<!--<accordion-heading>-->
-<!--<i class="fa"-->
-<!--ng-class="{'fa-caret-down': status[type], 'fa-caret-right': !status[type]}"></i>-->
-<!--{{::name}}-->
-<!--</accordion-heading>-->
+  <!--<div ng-if="error === null">-->
+    <!--<div ng-if="docs != null" class="">-->
+      <!--<accordion close-others="true">-->
+        <!--<accordion-group panel-class="panel-info" is-open="status[data.stage]">-->
+          <!--<accordion-heading>-->
+            <!--<i class="fa"-->
+               <!--ng-class="{'fa-caret-down': status[type], 'fa-caret-right': !status[type]}"></i>-->
+            <!--{{::name}}-->
+          <!--</accordion-heading>-->
 
-<!--<button title="Download All" type="button" class="btn btn-sm btn-info"-->
-<!--ng-click="downloadResourceDocs()">-->
-<!--<i class="fa fa-download"></i>-->
-<!--Download All {{::name}} (.zip)-->
-<!--</button>-->
+          <!--<button title="Download All" type="button" class="btn btn-sm btn-info"-->
+                  <!--ng-click="downloadResourceDocs()">-->
+            <!--<i class="fa fa-download"></i>-->
+            <!--Download All {{::name}} (.zip)-->
+          <!--</button>-->
 
-<!--<br/>-->
-<!--<br/>-->
+          <!--<br/>-->
+          <!--<br/>-->
 
-<!--<div class="col-md-12">-->
-<!--<table class="table table-striped table-bordered table-condensed">-->
-<!--<thead>-->
-<!--<tr class="tbl-header-1">-->
-<!--<th st-ratio="50">Document Title</th>-->
-<!--<th st-ratio="50">File (XML Format)</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody>-->
-<!--<tr ng-repeat="doc in docs | orderBy:'position'">-->
-<!--<td st-ratio="50">{{::doc.title}}</td>-->
-<!--<td st-ratio="50">-->
-<!--<span ng-if="doc.name == null">-</span>-->
-<!--<span ng-if="doc.name != null">-->
-<!--<a class="point"  ng-click="downloadDocument(doc.path)">{{::doc.name}}</a>-->
-<!--</span>-->
-<!--</td>-->
-<!--</tr>-->
-<!--</tbody>-->
-<!--</table>-->
-<!--</div>-->
-<!--</accordion-group>-->
-<!--</accordion>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div ng-if="error !== null">-->
-<!--<div class="alert alert-danger" role="alert" ng-bind="error"></div>-->
-<!--</div>-->
+          <!--<div class="col-md-12">-->
+            <!--<table class="table table-striped table-bordered table-condensed">-->
+              <!--<thead>-->
+              <!--<tr class="tbl-header-1">-->
+                <!--<th st-ratio="50">Document Title</th>-->
+                <!--<th st-ratio="50">File (XML Format)</th>-->
+              <!--</tr>-->
+              <!--</thead>-->
+              <!--<tbody>-->
+              <!--<tr ng-repeat="doc in docs | orderBy:'position'">-->
+                <!--<td st-ratio="50">{{::doc.title}}</td>-->
+                <!--<td st-ratio="50">-->
+                  <!--<span ng-if="doc.name == null">-</span>-->
+                  <!--<span ng-if="doc.name != null">-->
+                     <!--<a class="point"  ng-click="downloadDocument(doc.path)">{{::doc.name}}</a>-->
+                    <!--</span>-->
+                <!--</td>-->
+              <!--</tr>-->
+              <!--</tbody>-->
+            <!--</table>-->
+          <!--</div>-->
+        <!--</accordion-group>-->
+      <!--</accordion>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div ng-if="error !== null">-->
+    <!--<div class="alert alert-danger" role="alert" ng-bind="error"></div>-->
+  <!--</div>-->
 
 
 <!--</script>-->
@@ -252,21 +252,24 @@
       <!--</accordion-heading>-->
 
 
-      <!--<button ng-if="data.stage != 'CF'" title="Download Complete TestCase" type="button"-->
-      <!--class="btn btn-sm btn-info"-->
-      <!--ng-click="downloadCompleteTestPackage('CB')">-->
-      <!--<i class="fa fa-download"></i>-->
-      <!--Download Complete TestPackage (.zip)-->
-      <!--</button>-->
+     <button ng-if="data.stage != 'CF'" title="Download Complete TestCase" type="button"
+        class="btn btn-sm btn-info"
+        ng-click="downloadCompleteTestPackage('CB')">
+        <i class="fa fa-download"></i>
+      	Download Complete TestPackage (.zip)
+      </button>
 
-      <!--<button title="Download Example Messages" type="button" class="btn btn-sm btn-info"-->
-      <!--ng-click="downloadExampleMessages('CB')">-->
-      <!--<i class="fa fa-download"></i>-->
-      <!--Download Example Messages (.zip)-->
-      <!--</button>-->
 
-      <!--<br/>-->
-      <!--<br/>-->
+     <button title="Download Example Messages" type="button" class="btn btn-sm btn-info"
+              ng-click="downloadExampleMessages('CB')">
+        <i class="fa fa-download"></i>
+        Download Example Messages (.zip)
+      </button>
+
+
+      <br/>
+      <br/>
+
 
       <div class="col-md-12">
         <table tt-table tt-params="params"
@@ -307,68 +310,68 @@
     </td>
     <td>
       <span ng-if="!node.tsPath ||node.tsPath === null">-</span>
-      <a class="point"  ng-if="node.tsPath != null" ng-click="downloadArtifact(node.tsPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+      <a class="point"  ng-if="node.tsPath != null" ng-click="downloadArtifact(node.tsPath,node.title)"><i class="fa fa-download fa-fw"></i>Test Story</a>
     </td>
 
     <td>
       <span ng-if="!node.mcPath || node.mcPath === null">-</span>
-      <a ng-if="node.mcPath != null" class="point"  ng-click="downloadArtifact(node.mcPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+      <a ng-if="node.mcPath != null" class="point"  ng-click="downloadArtifact(node.mcPath,node.title)"><i class="fa fa-download fa-fw"></i>Message Content</a>
     </td>
     <td>
       <span ng-if="!node.tdsPath ||node.tdsPath === null">-</span>
-      <a ng-if="node.tdsPath != null" class="point"  ng-click="downloadArtifact(node.tdsPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+      <a ng-if="node.tdsPath != null" class="point"  ng-click="downloadArtifact(node.tdsPath,node.title)"><i class="fa fa-download fa-fw"></i>Test Data Specification</a>
     </td>
     <td>
       <span ng-if="!node.jdPath ||node.jdPath === null">-</span>
-      <a ng-if="node.jdPath != null" class="point"  ng-click="downloadArtifact(node.jdPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+      <a ng-if="node.jdPath != null" class="point"  ng-click="downloadArtifact(node.jdPath,node.title)"><i class="fa fa-download fa-fw"></i>Juror Document</a>
     </td>
 
     <td>
       <div ng-if="node.title === 'Context-based'">
         <a  class="point"  class="point"  title="Download Complete TestCase (.zip)"
-            ng-click="downloadCompleteTestPackage(node.stage)">
-          <i class="fa fa-download fa-fw"></i>
+                 ng-click="downloadCompleteTestPackage(node.stage)">
+          <i class="fa fa-download fa-fw"></i>Test Packages
         </a>
       </div>
       <div ng-if="node.title !== 'Context-based'">
-        <span ng-if="!node.tpPath || node.tpPath === null">-</span>
-        <a  class="point" ng-if="node.tpPath != null" class="point"  ng-click="downloadArtifact(node.tpPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+      <span ng-if="!node.tpPath || node.tpPath === null">-</span>
+      <a  class="point" ng-if="node.tpPath != null" class="point"  ng-click="downloadArtifact(node.tpPath,node.title)"><i class="fa fa-download fa-fw"></i>Test Package</a>
       </div>
     </td>
     <td>
       <span ng-if="!node.tpsPath || node.tpsPath === null">-</span>
-      <a  class="point" ng-if="node.tpsPath != null" class="point"  ng-click="downloadArtifact(node.tpsPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+      <a  class="point" ng-if="node.tpsPath != null" class="point"  ng-click="downloadArtifact(node.tpsPath,node.title)"><i class="fa fa-download fa-fw"></i>Test Plan Summary</a>
     </td>
 
     <td>
       <div ng-if="node.title === 'Context-free' || node.title === 'Context-based'">
         <a  class="point" title="Download Complete Example messages (.zip)"
-            ng-click="downloadExampleMessages(node.stage)">
-          <i class="fa fa-download fa-fw"></i>
+                 ng-click="downloadExampleMessages(node.stage)">
+          <i class="fa fa-download fa-fw"></i>Example Messages
         </a>
       </div>
       <div ng-if="node.title !== 'Context-free' && node.title !== 'Context-based'">
-        <span ng-if="!node.exMsgPresent">-</span>
-        <a  class="point" ng-if="node.exMsgPresent" class="point"  ng-click="downloadMessage(node)"><i class="fa fa-download fa-fw"></i></a>
+      <span ng-if="!node.exMsgPresent">-</span>
+        <a  class="point" ng-if="node.exMsgPresent" class="point"  ng-click="downloadMessage(node)"><i class="fa fa-download fa-fw"></i>Example Message</a>
       </div>
     </td>
 
     <td>
       <span ng-if="!node.xmlConfProfilePresent">-</span>
       <a  class="point" ng-if="node.xmlConfProfilePresent" class="point"
-          ng-click="downloadProfile(node)"><i class="fa fa-download fa-fw"></i></a>
+         ng-click="downloadProfile(node)"><i class="fa fa-download fa-fw"></i>Conformance Profile</a>
     </td>
 
     <td>
       <span ng-if="!node.xmlConstraintsPresent">-</span>
       <a  class="point" ng-if="node.xmlConstraintsPresent"
-          class="point"  ng-click="downloadConstraints(node)"><i class="fa fa-download fa-fw"></i></a>
+         class="point"  ng-click="downloadConstraints(node)"><i class="fa fa-download fa-fw"></i>Constraints</a>
     </td>
 
     <td>
       <span ng-if="!node.xmlValueSetLibraryPresent">-</span>
       <a  class="point" ng-if="node.xmlValueSetLibraryPresent"
-          class="point"  ng-click="downloadValueSetLib(node)"><i class="fa fa-download fa-fw"></i></a>
+         class="point"  ng-click="downloadValueSetLib(node)"><i class="fa fa-download fa-fw"></i>ValueSet Library</a>
     </td>
 
 
