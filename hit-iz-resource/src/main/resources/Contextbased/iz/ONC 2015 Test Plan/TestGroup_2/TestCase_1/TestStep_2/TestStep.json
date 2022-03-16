@@ -1,7 +1,7 @@
 {
   "id" : 771188,
   "name" : "IZ-QR-1.2_Response_K11_Z42",
-  "description" : "No Description",
+  "description": "Return response to query for a child with an evaluated history and forecast",
   "type" : "TA_RESPONDER",
   "position" : 2,
   "hl7v2" : {

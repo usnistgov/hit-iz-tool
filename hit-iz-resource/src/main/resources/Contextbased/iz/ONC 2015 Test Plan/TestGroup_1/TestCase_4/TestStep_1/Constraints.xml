@@ -2101,9 +2101,9 @@
                     TestDataCategorization="Value-Test Case Fixed"/>
                   <Description>Invalid content (based on test case fixed data). The value at OBX-5.1
                     (Observation Value) does not match the expected value:
-                    '253088698300029511191030'.</Description>
+                    '253088698300029511210806'.</Description>
                   <Assertion>
-                    <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300029511191030"/>
+                    <PlainText IgnoreCase="true" Path="5[1].1[1]" Text="253088698300029511210806"/>
                   </Assertion>
                 </Constraint>
                 <Constraint ID="Content" Target="5[1].2[1]">

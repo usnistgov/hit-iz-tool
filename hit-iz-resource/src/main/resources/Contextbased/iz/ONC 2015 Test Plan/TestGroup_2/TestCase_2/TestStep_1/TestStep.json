@@ -1,7 +1,7 @@
 {
   "id" : 956507,
   "name" : "IZ-QR-2.1_Query_Q11_Z44",
-  "description" : "No Description",
+  "description": "This query should return a response for an adult where an evaluated history and forecast are found",
   "type" : "SUT_INITIATOR",
   "position" : 1,
   "hl7v2" : {
