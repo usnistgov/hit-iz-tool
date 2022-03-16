@@ -284,7 +284,7 @@
 			<Field Name="Plan Effective Date" Usage="O" Min="0" Max="1" Datatype="DT" MinLength="1" MaxLength="8" ItemNo="00437"/>
 			<Field Name="Plan Expiration Date" Usage="O" Min="0" Max="1" Datatype="DT" MinLength="1" MaxLength="8" ItemNo="00438"/>
 			<Field Name="Authorization Information" Usage="O" Min="0" Max="1" Datatype="AUI" MinLength="1" MaxLength="239" ItemNo="00439"/>
-			<Field Name="Plan Type" Usage="R" Min="1" Max="1" Datatype="IS" MinLength="1" MaxLength="3" Binding="HL0086_IZ" BindingStrength="R" ItemNo="00440"/>
+			<Field Name="Plan Type" Usage="R" Min="1" Max="1" Datatype="IS" MinLength="1" MaxLength="3" Binding="HL70086_IZ" BindingStrength="R" ItemNo="00440"/>
 			<Field Name="Name Of Insured" Usage="O" Min="0" Max="*" Datatype="XPN" MinLength="1" MaxLength="250" ItemNo="00441"/>
 			<Field Name="Insured's Relationship To Patient" Usage="O" Min="0" Max="1" Datatype="CE" MinLength="1" MaxLength="250" ItemNo="00442"/>
 			<Field Name="Insured's Date Of Birth" Usage="O" Min="0" Max="1" Datatype="TS" MinLength="1" MaxLength="26" ItemNo="00443"/>
