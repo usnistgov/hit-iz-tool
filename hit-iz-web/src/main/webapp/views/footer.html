@@ -20,7 +20,7 @@
         <div>
           <h5>Application Information</h5>
           <ul>
-            <li>Date: 03/17/2022 </li>
+            <li>Date: {{appInfo.date |  date: 'MM/dd/yyyy'}} </li>
             <li>Application Version: {{appInfo.version}}</li>
             <li ng-if="domain.rsbVersion != null && domain.rsbVersion != ''">Resource Bundle Version:{{domain.rsbVersion}}</li>
             <li ng-if="domain.igVersion != null && domain.igVersion != ''">Ig Version:{{domain.igVersion}}</li>
