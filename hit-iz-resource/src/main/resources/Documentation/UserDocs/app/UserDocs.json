@@ -76,5 +76,23 @@
         "name": "NIST_IZ_Tool_SOAP_Tutorial.pdf",
         "date": "2016/08/31",
         "order": 13
+    },
+    {
+        "title": "Immunization Integration Program (IIP) Testing Requirements by Capability",
+        "name": "Overview of IIP Testing Requirements_Jan 2022_Final.pdf",
+        "date": "2022/03/16",
+        "order": 14
+    },
+    {
+        "title": "IMMUNIZATION INTEGRATION PROGRAM: IMMUNIZATION-RELATED CAPABILITIES & GUIDANCE",
+        "name": "IIP Immunization-Related Capabilities and Guidance_Jan 2022_Final.pdf",
+        "date": "2022/03/16",
+        "order": 15
+    },
+    {
+        "title": "IMMUNIZATION INTEGRATION PROGRAM: IMMUNIZATION-RELATED REQUIREMENTS TEST PLAN",
+        "name": "IIP Immunization-Related Requirements Test Plan_v10.0.10_Final.pdf",
+        "date": "2022/03/16",
+        "order": 16
     }
 ]
