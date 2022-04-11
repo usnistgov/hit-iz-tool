@@ -1255,6 +1255,11 @@
 			<ValueElement Value="220" DisplayName="Hepatitis B vaccine (recombinant), 3-antigen, Al(OH)3 adjuvanted" CodeSystem="CVX"/>
 			<ValueElement Value="221" DisplayName="Moderna, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 50 mcg/0.5 mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="207" DisplayName="Moderna, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose" CodeSystem="CVX"/>
+			
+			
+			<ValueElement Value="222" DisplayName="Tick-borne encephalitis vaccine, unspecified" CodeSystem="CVX"/>
+			<ValueElement Value="223" DisplayName="Tick-borne encephalitis vaccine, inactivated, preservative free, 0.25mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="224" DisplayName="Tick-borne encephalitis vaccine, inactivated, preservative free, 0.5mL dose" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1680,6 +1685,9 @@
 			<ValueElement Value="00069-2025-25" DisplayName="Pfizer-BioNTech COVID-19 Vaccine COMIRNATY, 30 mcg/0.3 mL for adult 16+ adult tris-sucrose formulation, GREY CAP, CARTON, 25 MULTI-DOSE VIALS" CodeSystem="NDC"/>
 			<ValueElement Value="80777-0275-99" DisplayName="Moderna COVID-19 Vaccine 50 mcg/0.50 mL for booster only, adult 18+, DARK BLUE CAP, CARTON, 10 MULTI-DOSE VIAL 2.5 mL EACH" CodeSystem="NDC"/>
 			
+			<ValueElement Value="49281-0322-50" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0339-15" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
+			
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
@@ -2080,6 +2088,9 @@
 			<ValueElement Value="49281-0564-88" DisplayName="QUADRACEL DTaP-IPV DTAP adsorbed and inactivated poliovirus vaccine, SYRINGE, .5 mL" CodeSystem="NDC"/>
 			<ValueElement Value="00069-2025-01" DisplayName="Pfizer-BioNTech COVID-19 Vaccine COMIRNATY, 30 mcg/0.3 mL for adult 16+ adult tris-sucrose formulation, GREY CAP, VIAL, 2 mL, MULTI-DOSE VIAL" CodeSystem="NDC"/>
 			<ValueElement Value="80777-0275-05" DisplayName="Moderna COVID-19 Vaccine 50 mcg/0.50 mL for booster only, adult 18+, DARK BLUE CAP, VIAL, 2.5 mL, MULTI-DOSE VIAL" CodeSystem="NDC"/>
+			
+			<ValueElement Value="49281-0322-88" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0339-78" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 
 
@@ -2415,6 +2426,8 @@
 			<ValueElement Value="218" CodeSystem="CVX" DisplayName="Pfizer-BioNTech, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation"/>
 		
 			<ValueElement Value="220" CodeSystem="CVX" DisplayName="Hepatitis B"/>
+			
+			<ValueElement Value="221" CodeSystem="CVX" DisplayName="Moderna, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 50 mcg/0.5 mL dose"/>
 		
 		</ValueSetDefinition>
 	</ValueSetDefinitions>

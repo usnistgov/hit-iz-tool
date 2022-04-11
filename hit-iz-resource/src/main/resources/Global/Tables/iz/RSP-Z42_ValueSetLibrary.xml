@@ -1216,6 +1216,10 @@
 			<ValueElement Value="221" DisplayName="Moderna, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 50 mcg/0.5 mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="207" DisplayName="Moderna, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose" CodeSystem="CVX"/>
 			
+			
+			<ValueElement Value="222" DisplayName="Tick-borne encephalitis vaccine, unspecified" CodeSystem="CVX"/>
+			<ValueElement Value="223" DisplayName="Tick-borne encephalitis vaccine, inactivated, preservative free, 0.25mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="224" DisplayName="Tick-borne encephalitis vaccine, inactivated, preservative free, 0.5mL dose" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
@@ -1551,6 +1555,8 @@
 			<ValueElement Value="218" CodeSystem="CVX" DisplayName="Pfizer-BioNTech, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation"/>
 			
 			<ValueElement Value="220" CodeSystem="CVX" DisplayName="Hepatitis B"/>
+			
+			<ValueElement Value="221" CodeSystem="CVX" DisplayName="Moderna, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 50 mcg/0.5 mL dose"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
