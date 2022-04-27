@@ -1304,6 +1304,17 @@
 			<ValueElement Value="222" DisplayName="Tick-borne encephalitis vaccine, unspecified" CodeSystem="CVX"/>
 			<ValueElement Value="223" DisplayName="Tick-borne encephalitis vaccine, inactivated, preservative free, 0.25mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="224" DisplayName="Tick-borne encephalitis vaccine, inactivated, preservative free, 0.5mL dose" CodeSystem="CVX"/>
+			
+			<ValueElement Value="227" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, pediatric 50 mcg/0.5 mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="228" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, pediatric 25 mcg/0.25 mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="512" DisplayName="SARS-COV-2 COVID-19 Virus Like Particle (VLP) Non-US Vaccine Product (Medicago, Covifenz)" CodeSystem="CVX"/>
+			<ValueElement Value="513" DisplayName="SARS-COV-2 COVID-19 Protein Subunit Non-US Vaccine Product (Anhui Zhifei Longcom, Zifivax)" CodeSystem="CVX"/>
+			<ValueElement Value="514" DisplayName="SARS-COV-2 COVID-19 DNA Non-US Vaccine Product (Zydus Cadila, ZyCoV-D)" CodeSystem="CVX"/>
+			<ValueElement Value="515" DisplayName="SARS-COV-2 COVID-19 Protein Subunit Non-US Vaccine Product (Medigen, MVC-COV1901)" CodeSystem="CVX"/>
+			<ValueElement Value="516" DisplayName="SARS-COV-2 COVID-19 Inactivated Non-US Vaccine Product (Minhai Biotechnology Co, KCONVAC)" CodeSystem="CVX"/>
+			<ValueElement Value="517" DisplayName="SARS-COV-2 COVID-19 Protein Subunit Non-US Vaccine Product (Biological E Limited, Corbevax)" CodeSystem="CVX"/>
+			<ValueElement Value="225" DisplayName="SARS-COV-2 (COVID-19) vaccine, D614, prefusion spike recombinant protein subunit (CoV2 preS dTM), AS03 adjuvant added, preservative free, 5mcg/0.5mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="###" DisplayName="xxx" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
