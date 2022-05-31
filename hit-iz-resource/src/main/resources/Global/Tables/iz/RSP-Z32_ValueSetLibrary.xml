@@ -1528,7 +1528,7 @@
 			<ValueElement Value="253088698300035611210201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 AstraZeneca Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			<ValueElement Value="253088698300034911210401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			
-			<ValueElement Value="253088698300033211210501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet"/>
+			<ValueElement Value="253088698300033211210501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet-12 years and older"/>
 			
 			<ValueElement Value="253088698300003511210806" CodeSystem="cdcgs1vis" DisplayName="DTaP (Diphtheria, Tetanus, Pertussis) Vaccine VIS"/>
 			<ValueElement Value="253088698300006611210806" CodeSystem="cdcgs1vis" DisplayName="Haemophilus Influenzae type b (Hib) Vaccine VIS"/>
@@ -1550,7 +1550,7 @@
 			<ValueElement Value="253088698300019611211015" CodeSystem="cdcgs1vis" DisplayName="Rotavirus Vaccine VIS"/>
 			<ValueElement Value="253088698300026411211015" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
 			
-			<ValueElement Value="253088698300042411211001" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech Vaccine EUA Recipient/Caregiver Fact Sheet - Pediatric"/>
+			<ValueElement Value="253088698300042411211001" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet- Pediatric 5yrs to &lt;12 yrs"/>
 			<ValueElement Value="253088698300034911210601" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient/Caregiver Fact Sheet"/>
 			
 			<ValueElement Value="253088698300046211211217" CodeSystem="cdcgs1vis" DisplayName="Dengue Vaccine VIS"/>
