@@ -1474,6 +1474,8 @@
 			<ValueElement Value="253088698300032511220204" CodeSystem="cdcgs1vis" DisplayName="Recombinant Zoster Vaccine VIS"/>
 			
 			<ValueElement Value="253088698300018911220602" CodeSystem="cdcgs1vis" DisplayName="Rabies Vaccine VIS"/>
+			
+			<ValueElement Value="253088698300053011220601" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
