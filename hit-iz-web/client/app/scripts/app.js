@@ -1,3 +1,4 @@
+angular.module('hit-settings',['common']);
 angular.module('commonServices', []);
 angular.module('common', ['ngResource', 'default', 'xml', 'hl7v2-edi', 'hl7v2', 'edi', 'soap', 'hit-util']);
 angular.module('main', ['common']);

@@ -681,10 +681,10 @@ angular.module('main').controller('MainCtrl',
             $location.path(target);
         };
 
-        $rootScope.showSettings = function () {
+         $rootScope.showSettings = function () {
             var modalInstance = $modal.open({
-                templateUrl: 'SettingsCtrl.html',
-                size: 'lg',
+                templateUrl: 'views/settings/SettingsCtrl.html',
+                windowClass: 'upload-modal',
                 keyboard: 'false',
                 controller: 'SettingsCtrl'
             });
