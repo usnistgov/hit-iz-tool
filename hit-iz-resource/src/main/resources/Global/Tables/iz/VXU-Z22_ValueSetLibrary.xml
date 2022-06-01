@@ -1700,6 +1700,15 @@
 			<ValueElement Value="49281-0339-15" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0618-20" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult, 10 MULTI-DOSE VIALS, ANTIGEN ONLY" CodeSystem="NDC"/>
 			
+			
+			
+			
+			<ValueElement Value="80777-0100-99" DisplayName="SPIKEVAX Moderna COVID-19 Vaccine (RED CAP)" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0279-99" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 mo to &lt;6 yrs (BLUE CAP)" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0277-99" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 yrs  to &lt;12 yrs (BLUE CAP)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0618-20" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult" CodeSystem="NDC"/>
+			<ValueElement Value="50632-0001-02" DisplayName="JYNNEOS – Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
+						
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
@@ -2104,6 +2113,12 @@
 			<ValueElement Value="49281-0322-88" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0339-78" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0618-78" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult, VIAL, MULTI-DOSE, ANTIGEN" CodeSystem="NDC"/>
+			
+			<ValueElement Value="80777-0100-11" DisplayName="SPIKEVAX Moderna COVID-19 Vaccine (RED CAP)" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0279-05" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 mo to &lt;6 yrs (BLUE CAP)" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0277-05" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 yrs to &lt;12 yrs (BLUE CAP)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0618-78" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult" CodeSystem="NDC"/>
+			<ValueElement Value="50632-0001-01" DisplayName="JYNNEOS – Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 
 
@@ -2317,7 +2332,7 @@
 			<ValueElement Value="253088698300035611210201" CodeSystem="cdcgs1vis" DisplayName="COVID-19 AstraZeneca Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			<ValueElement Value="253088698300034911210401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet"/>
 			
-			<ValueElement Value="253088698300033211210501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet"/>
+			<ValueElement Value="253088698300033211210501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet-12 years and older"/>
 			
 			<ValueElement Value="253088698300003511210806" CodeSystem="cdcgs1vis" DisplayName="DTaP (Diphtheria, Tetanus, Pertussis) Vaccine VIS"/>
 			<ValueElement Value="253088698300006611210806" CodeSystem="cdcgs1vis" DisplayName="Haemophilus Influenzae type b (Hib) Vaccine VIS"/>
@@ -2339,12 +2354,14 @@
 			<ValueElement Value="253088698300019611211015" CodeSystem="cdcgs1vis" DisplayName="Rotavirus Vaccine VIS"/>
 			<ValueElement Value="253088698300026411211015" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
 			
-			<ValueElement Value="253088698300042411211001" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech Vaccine EUA Recipient/Caregiver Fact Sheet - Pediatric"/>
+			<ValueElement Value="253088698300042411211001" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet- Pediatric 5yrs to &lt;12 yrs"/>
 			<ValueElement Value="253088698300034911210601" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient/Caregiver Fact Sheet"/>
 			
 			<ValueElement Value="253088698300046211211217" CodeSystem="cdcgs1vis" DisplayName="Dengue Vaccine VIS"/>
 			<ValueElement Value="253088698300049311220204" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20) VIS"/>
 			<ValueElement Value="253088698300032511220204" CodeSystem="cdcgs1vis" DisplayName="Recombinant Zoster Vaccine VIS"/>
+			
+			<ValueElement Value="253088698300018911220602" CodeSystem="cdcgs1vis" DisplayName="Rabies Vaccine VIS"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
