@@ -1556,6 +1556,8 @@
 			<ValueElement Value="253088698300046211211217" CodeSystem="cdcgs1vis" DisplayName="Dengue Vaccine VIS"/>
 			<ValueElement Value="253088698300049311220204" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20) VIS"/>
 			<ValueElement Value="253088698300032511220204" CodeSystem="cdcgs1vis" DisplayName="Recombinant Zoster Vaccine VIS"/>
+			
+			<ValueElement Value="253088698300018911220602" CodeSystem="cdcgs1vis" DisplayName="Rabies Vaccine VIS"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
