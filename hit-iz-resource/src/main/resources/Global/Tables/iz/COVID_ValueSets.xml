@@ -1270,7 +1270,6 @@
       <ValueElement Value="516" DisplayName="SARS-COV-2 COVID-19 Inactivated Non-US Vaccine Product (Minhai Biotechnology Co, KCONVAC)" CodeSystem="CVX"/>
       <ValueElement Value="517" DisplayName="SARS-COV-2 COVID-19 Protein Subunit Non-US Vaccine Product (Biological E Limited, Corbevax)" CodeSystem="CVX"/>
       <ValueElement Value="225" DisplayName="SARS-COV-2 (COVID-19) vaccine, D614, prefusion spike recombinant protein subunit (CoV2 preS dTM), AS03 adjuvant added, preservative free, 5mcg/0.5mL dose" CodeSystem="CVX"/>
-      <ValueElement Value="###" DisplayName="xxx" CodeSystem="CVX"/>
       
     </ValueSetDefinition>
     
@@ -1699,16 +1698,13 @@
 			
 			<ValueElement Value="49281-0322-50" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0339-15" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0618-20" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult, 10 MULTI-DOSE VIALS, ANTIGEN ONLY" CodeSystem="NDC"/>
-			
-			
 			
 			
 			<ValueElement Value="80777-0100-99" DisplayName="SPIKEVAX Moderna COVID-19 Vaccine (RED CAP)" CodeSystem="NDC"/>
 			<ValueElement Value="80777-0279-99" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 mo to &lt;6 yrs (BLUE CAP)" CodeSystem="NDC"/>
 			<ValueElement Value="80777-0277-99" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 yrs  to &lt;12 yrs (BLUE CAP)" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0618-20" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult" CodeSystem="NDC"/>
-			<ValueElement Value="50632-0001-02" DisplayName="JYNNEOS – Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
+			<ValueElement Value="50632-0001-02" DisplayName="JYNNEOS - Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
 						
 		</ValueSetDefinition>
     
@@ -2113,13 +2109,12 @@
 			
 			<ValueElement Value="49281-0322-88" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0339-78" DisplayName="FLUZONE QUADRIVALENT SOUTHERN HEMISPHERE" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0618-78" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult, VIAL, MULTI-DOSE, ANTIGEN" CodeSystem="NDC"/>
-			
+		
 			<ValueElement Value="80777-0100-11" DisplayName="SPIKEVAX Moderna COVID-19 Vaccine (RED CAP)" CodeSystem="NDC"/>
 			<ValueElement Value="80777-0279-05" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 mo to &lt;6 yrs (BLUE CAP)" CodeSystem="NDC"/>
 			<ValueElement Value="80777-0277-05" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 yrs to &lt;12 yrs (BLUE CAP)" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0618-78" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult" CodeSystem="NDC"/>
-			<ValueElement Value="50632-0001-01" DisplayName="JYNNEOS – Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
+			<ValueElement Value="50632-0001-01" DisplayName="JYNNEOS - Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
 		</ValueSetDefinition>
     
     <ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)"> 
@@ -2354,7 +2349,6 @@
       <ValueElement Value="253088698300005911211015" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine VIS"/>
       <ValueElement Value="253088698300019611211015" CodeSystem="cdcgs1vis" DisplayName="Rotavirus Vaccine VIS"/>
       <ValueElement Value="253088698300026411211015" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
-      
       <ValueElement Value="253088698300042411211001" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet- Pediatric 5yrs to &lt;12 yrs"/>
       <ValueElement Value="253088698300034911210601" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient/Caregiver Fact Sheet"/>
       
@@ -2365,6 +2359,11 @@
       <ValueElement Value="253088698300018911220602" CodeSystem="cdcgs1vis" DisplayName="Rabies Vaccine VIS"/>
       
       <ValueElement Value="253088698300053011220601" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
+      
+      <ValueElement Value="253088698300050911220501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6yrs to &lt;12yrs"/>
+      <ValueElement Value="253088698300051611220501" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6mo to &lt;6yrs"/>
+      <ValueElement Value="253088698300037011220101" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet"/>
+      <ValueElement Value="253088698300052311220401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Sanofi-GSK EUA Recipient-Caregiver Fact Sheet - Booster"/>
     </ValueSetDefinition>
     
     <ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)"> 
@@ -2460,6 +2459,12 @@
       <ValueElement Value="220" CodeSystem="CVX" DisplayName="Hepatitis B"/>
       
       <ValueElement Value="221" CodeSystem="CVX" DisplayName="Moderna, SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 50 mcg/0.5 mL dose"/>
+      
+      
+      <ValueElement Value="227" CodeSystem="CVX" DisplayName="Recipient-Caregiver Fact Sheet - Pediatric 6yrs to &lt;12yrs"/>
+      <ValueElement Value="228" CodeSystem="CVX" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6mo to &lt;6yrs"/>
+      <ValueElement Value="225" CodeSystem="CVX" DisplayName="COVID-19 Sanofi-GSK EUA Recipient-Caregiver Fact Sheet - Booster"/>
+      <ValueElement Value="211" CodeSystem="CVX" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Shee"/>
     </ValueSetDefinition> 
   </ValueSetDefinitions>  
   <ValueSetDefinitions Group="HL7" Order="3"> 
