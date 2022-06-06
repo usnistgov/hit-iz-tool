@@ -1055,7 +1055,6 @@ angular.module('format').factory('ValidationResult', function (ValidationResultI
     this.warnings.init(object.warnings);
     this.informationals.init(object.informationals);
     this.specerrors.init(object.specerrors);
-
     this.updateId();
   };
 
