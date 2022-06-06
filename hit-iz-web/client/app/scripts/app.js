@@ -889,6 +889,28 @@ app.filter('capitalize', function () {
   }
 });
 
+app.filter('classification', function () {
+  return function (input) {
+   switch(input)
+    {
+        case 'specerrors':
+			return 'spec errors';     
+		case 'informationals':
+			return 'informationals';     
+		case 'affirmatives':
+			return 'affirmatives';  	
+		case 'alerts':
+			return 'alerts';  
+		case 'warnings':
+			return 'warnings';  
+		case 'errors':
+			return 'errors';                 
+        default:
+			return input;
+    }
+  }
+});
+
 
 app.controller('ErrorCtrl', ['$scope', '$modalInstance', 'StorageService', '$window',
   function ($scope, $modalInstance, StorageService, $window) {
