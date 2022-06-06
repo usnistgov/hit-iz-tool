@@ -1581,7 +1581,7 @@
 			<ValueElement Value="227" CodeSystem="CVX" DisplayName="Recipient-Caregiver Fact Sheet - Pediatric 6yrs to &lt;12yrs"/>
 			<ValueElement Value="228" CodeSystem="CVX" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6mo to &lt;6yrs"/>
 			<ValueElement Value="225" CodeSystem="CVX" DisplayName="COVID-19 Sanofi-GSK EUA Recipient-Caregiver Fact Sheet - Booster"/>
-			<ValueElement Value="211" CodeSystem="CVX" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Shee"/>
+			<ValueElement Value="211" CodeSystem="CVX" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
