@@ -1270,6 +1270,9 @@
 			<ValueElement Value="516" DisplayName="SARS-COV-2 COVID-19 Inactivated Non-US Vaccine Product (Minhai Biotechnology Co, KCONVAC)" CodeSystem="CVX"/>
 			<ValueElement Value="517" DisplayName="SARS-COV-2 COVID-19 Protein Subunit Non-US Vaccine Product (Biological E Limited, Corbevax)" CodeSystem="CVX"/>
 			<ValueElement Value="225" DisplayName="SARS-COV-2 (COVID-19) vaccine, D614, prefusion spike recombinant protein subunit (CoV2 preS dTM), AS03 adjuvant added, preservative free, 5mcg/0.5mL dose" CodeSystem="CVX"/>
+			
+			<ValueElement Value="229" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 50 mcg/0.5 mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="206" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1704,7 +1707,25 @@
 			<ValueElement Value="80777-0277-99" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 yrs  to &lt;12 yrs (BLUE CAP)" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0618-20" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult" CodeSystem="NDC"/>
 			<ValueElement Value="50632-0001-02" DisplayName="JYNNEOS - Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
-						
+			
+			<ValueElement Value="58160-0855-19" DisplayName="GSK AS03 Adjuvant Solution" CodeSystem="NDC"/>
+			<ValueElement Value="71665-0330-02" DisplayName="Smallpox (Vaccinia) Vaccine, Live (National Stockpile) [ACAM2000]" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0824-15" DisplayName="Measles, Mumps, and Rubella Vaccine, Live [Priorix]" CodeSystem="NDC"/>
+			<ValueElement Value="00069-0297-10" DisplayName="Tick-borne encephalitis, inactivated, PF, 0.25mL" CodeSystem="NDC"/>
+			<ValueElement Value="00069-0297-02" DisplayName="Tick-borne encephalitis, inactivated, PF, 0.25mL" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0322-03" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0422-10" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0122-03" DisplayName="FLUAD QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0890-52" DisplayName="FLUARIX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0722-10" DisplayName="Flublok Quadrivalent Northern Hemisphere" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0322-03" DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0422-10" DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="19515-0808-52" DisplayName="Flulaval Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0122-65" DisplayName="FLUZONE High-Dose Quadrivalent Northern Hemisphere" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0422-10" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0422-50" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0637-15" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>			
+					
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
@@ -2114,6 +2135,23 @@
 			<ValueElement Value="80777-0277-05" DisplayName="Moderna COVID-19 Vaccine Pediatric Vaccine Ages 6 yrs to &lt;12 yrs (BLUE CAP)" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0618-78" DisplayName="Sanofi Pasteur COVID-19 Vaccine, booster dose, adult" CodeSystem="NDC"/>
 			<ValueElement Value="50632-0001-01" DisplayName="JYNNEOS - Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
+			
+			<ValueElement Value="58160-0855-01" DisplayName="GSK AS03 Adjuvant Solution" CodeSystem="NDC"/>
+			<ValueElement Value="71665-0330-01" DisplayName="Smallpox (Vaccinia) Vaccine, Live (National Stockpile) ACAM2000" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0831-03" DisplayName="Measles, Mumps, and Rubella Vaccine, Live [Priorix]" CodeSystem="NDC"/>
+			<ValueElement Value="00069-0297-01" DisplayName="Tick-borne encephalitis, inactivated, PF, 0.25mL" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0322-04" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0422-11" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0122-04" DisplayName="FLUAD QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0890-41" DisplayName="FLUARIX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0722-88" DisplayName="Flublok Quadrivalent Northern Hemisphere" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0322-04" DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0422-11" DisplayName="FLUCELVAX QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="19515-0808-41" DisplayName="Flulaval Quadrivalent" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0122-88" DisplayName="FLUZONE High-Dose Quadrivalent Northern Hemisphere" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0422-58" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0422-88" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0637-78" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 
 
@@ -2126,7 +2164,7 @@
 		<ValueSetDefinition BindingIdentifier="PHVS_VaccinationContraindication_IIS" Name="Vaccination Contraindication (IIS)">
 			<ValueElement Value="VXC30" CodeSystem="CDCPHINVS" DisplayName="allergy (anaphylactic)  to proteins of rodent or neural origin"/>
 			<ValueElement Value="VXC17" CodeSystem="CDCPHINVS" DisplayName="allergy (anaphylactic) to 2-phenoxyethanol"/>
-			<ValueElement Value="VXC18" CodeSystem="CDCPHINVS" DisplayName="allergy to baker’s yeast (anaphylactic)"/>
+			<ValueElement Value="VXC18" CodeSystem="CDCPHINVS" DisplayName="allergy to baker's yeast (anaphylactic)"/>
 			<ValueElement Value="91930004" CodeSystem="SCT" DisplayName="Allergy to eggs (disorder)"/>
 			<ValueElement Value="294847001" CodeSystem="SCT" DisplayName="Gelatin allergy (disorder)"/>
 			<ValueElement Value="294468006" CodeSystem="SCT" DisplayName="Neomycin allergy (disorder)"/>
@@ -2365,7 +2403,7 @@
 			<ValueElement Value="253088698300037011220101" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet"/>
 			<ValueElement Value="253088698300052311220401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Sanofi-GSK EUA Recipient-Caregiver Fact Sheet - Booster"/>
 			
-			
+			<ValueElement Value="253088698300054711220630" CodeSystem="cdcgs1vis" DisplayName="Ebola Vaccine VIS"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
@@ -2467,6 +2505,8 @@
 			<ValueElement Value="228" CodeSystem="CVX" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6mo to &lt;6yrs"/>
 			<ValueElement Value="225" CodeSystem="CVX" DisplayName="COVID-19 Sanofi-GSK EUA Recipient-Caregiver Fact Sheet - Booster"/>
 			<ValueElement Value="211" CodeSystem="CVX" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet"/>
+			
+			<ValueElement Value="204" CodeSystem="CVX" DisplayName="Ebola Zaire vaccine, live, recombinant"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
