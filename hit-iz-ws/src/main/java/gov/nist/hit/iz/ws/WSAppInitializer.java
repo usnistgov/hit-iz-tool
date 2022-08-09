@@ -27,6 +27,7 @@ public class WSAppInitializer implements WebApplicationInitializer
 	public void onStartup(final ServletContext servletContext) throws ServletException {
 
 		final AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
+		root.setConfigLocation("gov.nist.hit.iz.ws");
 		root.setServletContext(servletContext);
 		root.scan("gov.nist.hit.iz.ws");
 		// web service servlet
