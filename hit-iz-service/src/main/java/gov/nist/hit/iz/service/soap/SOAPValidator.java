@@ -14,10 +14,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.soap.SOAPException;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
 
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
@@ -132,17 +136,23 @@ public class SOAPValidator {
 
 	private static ArrayList<MessageFailureV3> validateWithSchema(String xml)
 			throws SOAPException, IOException, SAXException, ParserConfigurationException {
-		ArrayList<MessageFailureV3> failures = new ArrayList<MessageFailureV3>();
+		ArrayList<MessageFailureV3> failures = new ArrayList<MessageFailureV3>();		
 		SAXParserFactory factory = SAXParserFactory.newInstance();
-		factory.setValidating(true);
+		SchemaFactory schemafactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		Schema sc = schemafactory.newSchema(new StreamSource(SOAPValidator.class.getResourceAsStream("/schema/soap.xsd")));	
+		factory.setSchema(sc);		
+		factory.setValidating(false);
 		factory.setNamespaceAware(true);
 		SAXParser parser = factory.newSAXParser();
-		try {
-			parser.setProperty(SCHEMA_LANGUAGE, XML_SCHEMA);
-			parser.setProperty(SCHEMA_SOURCE, SOAP_SCHEMA);
-		} catch (SAXNotRecognizedException x) {
-			throw new SAXException("Your SAX parser is not JAXP 1.2 compliant.");
-		}
+		
+//		this used to work but suddenly didn't so now the schema is loaded locally and setvalidating is set to false.
+//		try {
+//			parser.setProperty(SCHEMA_LANGUAGE, XML_SCHEMA);
+//			parser.setProperty(SCHEMA_SOURCE, SOAP_SCHEMA);
+//		} catch (SAXNotRecognizedException x) {
+//			throw new SAXException("Your SAX parser is not JAXP 1.2 compliant.");
+//		}
+		
 		XMLReader reader = parser.getXMLReader();
 		reader.setErrorHandler(new ErrorHandler() {
 			@Override
@@ -181,8 +191,11 @@ public class SOAPValidator {
 				failures.add(mf);
 			}
 		});
+	
+		
 		InputSource source = new InputSource(new StringReader(xml));
-		reader.parse(source);
+		reader.parse(source);		
+		
 
 		return failures;
 	}
