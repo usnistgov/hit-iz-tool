@@ -1088,7 +1088,7 @@
 			<ValueElement Value="72" DisplayName="rheumatic fever" CodeSystem="CVX"/>
 			<ValueElement Value="73" DisplayName="Rift Valley fever" CodeSystem="CVX"/>
 			<ValueElement Value="74" DisplayName="rotavirus, tetravalent" CodeSystem="CVX"/>
-			<ValueElement Value="75" DisplayName="vaccinia (smallpox)" CodeSystem="CVX"/>
+			<ValueElement Value="75" DisplayName="orthopoxvirus" CodeSystem="CVX"/>
 			<ValueElement Value="76" DisplayName="Staphylococcus bacterio lysate" CodeSystem="CVX"/>
 			<ValueElement Value="77" DisplayName="tick-borne encephalitis" CodeSystem="CVX"/>
 			<ValueElement Value="78" DisplayName="tularemia vaccine" CodeSystem="CVX"/>
@@ -1270,8 +1270,11 @@
 			<ValueElement Value="517" DisplayName="SARS-COV-2 COVID-19 Protein Subunit Non-US Vaccine Product (Biological E Limited, Corbevax)" CodeSystem="CVX"/>
 			<ValueElement Value="225" DisplayName="SARS-COV-2 (COVID-19) vaccine, D614, prefusion spike recombinant protein subunit (CoV2 preS dTM), AS03 adjuvant added, preservative free, 5mcg/0.5mL dose" CodeSystem="CVX"/>
 			
-			<ValueElement Value="229" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 50 mcg/0.5 mL dose" CodeSystem="CVX"/>
-			<ValueElement Value="206" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="229" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 50 mcg/0.5 mL or 25mcg/0.25mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="206" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free, subcutaneous or intradermal injection" CodeSystem="CVX"/>
+			
+			<ValueElement Value="300" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older)" CodeSystem="CVX"/>
+			<ValueElement Value="301" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 5 years through 11 years)" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1723,8 +1726,13 @@
 			<ValueElement Value="49281-0122-65" DisplayName="FLUZONE High-Dose Quadrivalent Northern Hemisphere" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0422-10" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0422-50" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0637-15" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>			
-					
+			<ValueElement Value="49281-0637-15" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+
+			<ValueElement Value="80777-0282-99" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 50 mcg/0.5 mL or 25mcg/0.25mL dose (Moderna COVID-19 Vaccine Bivalent Booster) 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-0304-02" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older) 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-1404-02" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older) 10 SINGLE-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="59267-0565-02" DisplayName="59267-0565-02 for SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 5 years through 11 years) 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
+			<ValueElement Value="66019-0309-10" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
@@ -2151,6 +2159,12 @@
 			<ValueElement Value="49281-0422-58" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0422-88" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0637-78" DisplayName="FLUZONE QUADRIVALENT" CodeSystem="NDC"/>
+			
+			<ValueElement Value="80777-0282-05" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 50 mcg/0.5 mL or 25mcg/0.25mL dose (Moderna COVID-19 Vaccine Bivalent Booster)" CodeSystem="NDC"/>
+			<ValueElement Value="59267-0304-01" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older)" CodeSystem="NDC"/>
+			<ValueElement Value="59267-1404-01" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older)" CodeSystem="NDC"/>
+			<ValueElement Value="59267-0565-01" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 5 years through 11 years)" CodeSystem="NDC"/>
+			<ValueElement Value="66019-0309-01" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 
 
@@ -2403,6 +2417,8 @@
 			<ValueElement Value="253088698300052311220401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Sanofi-GSK EUA Recipient-Caregiver Fact Sheet - Booster"/>
 			
 			<ValueElement Value="253088698300054711220630" CodeSystem="cdcgs1vis" DisplayName="Ebola Vaccine VIS"/>
+			
+			<ValueElement Value="253088698300053011220823" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
@@ -2506,6 +2522,8 @@
 			<ValueElement Value="211" CodeSystem="CVX" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet"/>
 			
 			<ValueElement Value="204" CodeSystem="CVX" DisplayName="Ebola Zaire vaccine, live, recombinant"/>
+			
+			<ValueElement Value="206" CodeSystem="CVX" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
