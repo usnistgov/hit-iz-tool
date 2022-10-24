@@ -1275,6 +1275,10 @@
 			
 			<ValueElement Value="300" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older)" CodeSystem="CVX"/>
 			<ValueElement Value="301" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 5 years through 11 years)" CodeSystem="CVX"/>
+			
+			
+			<ValueElement Value="230" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 10 mcg/0.2 mL dose (Moderna COVID-19 Vaccine, Bivalent)" CodeSystem="CVX"/>
+			<ValueElement Value="302" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 3 mcg/0.2 mL dose, tris-sucrose formulation (Pfizer-BioNTech Covid-19 Vaccine, Bivalent)" CodeSystem="CVX"/>
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1733,8 +1737,12 @@
 			<ValueElement Value="59267-1404-02" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older) 10 SINGLE-DOSE VIALS" CodeSystem="NDC"/>
 			<ValueElement Value="59267-0565-02" DisplayName="59267-0565-02 for SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 5 years through 11 years) 10 MULTI-DOSE VIALS" CodeSystem="NDC"/>
 			<ValueElement Value="66019-0309-10" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
+			
+			<ValueElement Value="80777-0283-99" DisplayName="10 mcg/0.2 mL dose booster of Original and Omicron BA.4 &amp; BA.5 COVID-19 strains (Moderna)" CodeSystem="NDC"/>
+			<ValueElement Value="59267-0609-02" DisplayName="3 mcg/0.2 mL dose Original and Omicron BA.4 &amp; BA.5 COVID-19 strains (Pfizer)" CodeSystem="NDC"/>
+			<ValueElement Value="50090-6026-00" DisplayName="Pneumococcal conjugate PCV20, polysaccharide CRM197 conjugate, adjuvant, PF (Prevnar 20)" CodeSystem="NDC"/>
 		</ValueSetDefinition>
-		
+				
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
 			<ValueElement Value="00005-1970-49" DisplayName="pneumococcal conjugate PCV 7" CodeSystem="NDC"/>
@@ -2165,6 +2173,10 @@
 			<ValueElement Value="59267-1404-01" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older)" CodeSystem="NDC"/>
 			<ValueElement Value="59267-0565-01" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 5 years through 11 years)" CodeSystem="NDC"/>
 			<ValueElement Value="66019-0309-01" DisplayName="FluMist Quadrivalent" CodeSystem="NDC"/>
+			
+			<ValueElement Value="80777-0283-02" DisplayName="10 mcg/0.2 mL dose booster of Original and Omicron BA.4 &amp; BA.5 COVID-19 strains (Moderna)" CodeSystem="NDC"/>
+			<ValueElement Value="59267-0609-01" DisplayName="3 mcg/0.2 mL dose Original and Omicron BA.4 &amp; BA.5 COVID-19 strains (Pfizer)" CodeSystem="NDC"/>
+			<ValueElement Value="50090-6026-01" DisplayName="Pneumococcal conjugate PCV20, polysaccharide CRM197 conjugate, adjuvant, PF (Prevnar 20)" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 
 
