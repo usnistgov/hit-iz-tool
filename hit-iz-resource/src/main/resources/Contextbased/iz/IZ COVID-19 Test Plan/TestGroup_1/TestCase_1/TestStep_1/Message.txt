@@ -6,7 +6,7 @@ RXA|0|1|20201228||80777-0273-99^Moderna COVID-19 Vaccine^NDC^207^SARS-COV-2 (COV
 RXR|C28161^Intramuscular^NCIT|RD^Right Deltoid^HL70163
 OBX|1|CE|30963-3^Vaccine Funding Source^LN|1|VXC50^Public^CDCPHINVS||||||F|||20201228
 OBX|2|CE|64994-7^Vaccine Funding Program Eligibility^LN|2|V01^Not VFC Eligible^HL70064||||||F|||20201228|||VXC40^Eligibility captured at the immunization level^CDCPHINVS
-OBX|3|CE|69764-9^Document Type^LN|3|253088698300034911220901^COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet – 6 yrs and older^cdcgs1vis||||||F|||20201201
+OBX|3|CE|69764-9^Document Type^LN|3|253088698300034911220901^COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet - 6 yrs and older^cdcgs1vis||||||F|||20201201
 OBX|4|DT|29769-7^Date Vaccine Information Statement Presented^LN|3|20201228||||||F|||20201228
 OBX|5|ST|30973-2^dose number in series^LN|4|1||||||F|||20201228
 OBX|6|CE|59783-1^Status in immunization series^LN|4|N^No^HL70136||||||F|||20201228
