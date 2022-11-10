@@ -203,9 +203,14 @@ public class SOAPTransportController {
 			throws IOException {
 		logger.info("Searching transaction...");
 		Map<String, String> criteria = new HashMap<String, String>();
-		criteria.put(USERNAME, request.getConfig().get(USERNAME));
-		criteria.put(PASSWORD, request.getConfig().get(PASSWORD));
-		criteria.put(FACILITYID, request.getConfig().get(FACILITYID));
+		String username = request.getConfig().get(USERNAME);
+		String password = request.getConfig().get(PASSWORD);
+		String facilityID = request.getConfig().get(FACILITYID);
+		
+		criteria.put(USERNAME, username);
+		criteria.put(PASSWORD, password);
+		criteria.put(FACILITYID, facilityID);
+
 		streamer.stream(response.getOutputStream(), transactionService.findOneByProperties(criteria));
 
 	}
