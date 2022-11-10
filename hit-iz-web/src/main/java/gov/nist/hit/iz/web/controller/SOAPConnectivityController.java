@@ -18,6 +18,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -171,6 +172,11 @@ public class SOAPConnectivityController {
 			if (requ.getConfig().get("endpoint") == null || "".equals(requ.getConfig().get("endpoint"))) {
 				throw new TransportException("Failed to send the message. No endpoint specified");
 			}
+			String endpoint =  requ.getConfig().get("endpoint").replaceAll(" ","");
+			//forbid sending to internal or nist server
+			if (StringUtils.containsIgnoreCase(endpoint,"nist.gov") || endpoint.matches("129.6.\\d+.\\d+") || StringUtils.containsIgnoreCase(endpoint,"localhost") || StringUtils.containsIgnoreCase(endpoint,"127.0.0.1")) {
+				throw new TransportException("Failed to send the message. Endpoint is forbidden");
+			}
 			Long userId = SessionContext.getCurrentUserId(session);
 			if (userId == null || (accountService.findOne(userId)) == null) {
 				throw new UserNotFoundException();
@@ -191,7 +197,7 @@ public class SOAPConnectivityController {
 				outgoingMessage = ConnectivityUtil.updateConnectivityRequest(outgoingMessage);
 				soapAction = IZConstants.CONNECTIVITYTEST_SOAP_ACTION;
 			}
-			String incomingMessage = webServiceClient.send(outgoingMessage, requ.getConfig().get("endpoint"),
+			String incomingMessage = webServiceClient.send(outgoingMessage, endpoint,
 					soapAction);
 			String tmp = incomingMessage;
 			try {
@@ -207,7 +213,7 @@ public class SOAPConnectivityController {
 			streamer.stream(response.getOutputStream(), transaction);
 
 		} catch (Exception e1) {
-			throw new TransportException("Failed to send the message." + e1.getMessage());
+			throw new TransportException("Failed to send the message. " +e1.getMessage());
 		}
 	}
 
