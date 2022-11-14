@@ -20,15 +20,21 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.StringReader;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
 import org.xhtmlrenderer.pdf.ITextRenderer;
+import org.xml.sax.InputSource;
 
 import gov.nist.hit.core.service.exception.ValidationReportException;
 import gov.nist.hit.core.service.util.HtmlUtil;
@@ -135,9 +141,21 @@ public abstract class SOAPValidationReportGenerator {
 		try {
 			Transformer transformer = TransformerFactory.newInstance()
 					.newTransformer(new StreamSource(new StringReader(getHtmlXslt())));
-			StreamSource source = new StreamSource(new StringReader(xml));
+//			StreamSource source = new StreamSource(new StringReader(xml));
+			
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+			factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+			factory.setXIncludeAware(false);
+	        factory.setExpandEntityReferences(false);
+	        DocumentBuilder docBuilder = factory.newDocumentBuilder();
+	        Document doc = docBuilder.parse(new InputSource(new StringReader(xml)));
+	        Source source = new DOMSource(doc);
+	        
 			ByteArrayOutputStream resultStream = new ByteArrayOutputStream();
-			StreamResult result = new StreamResult(resultStream);
+			StreamResult result = new StreamResult(resultStream);			
 			transformer.transform(source, result);
 			String htmlReport = HtmlUtil.repairStyle(new String(resultStream.toByteArray()));
 			logger.info("HTML validation report generated");
@@ -164,7 +182,19 @@ public abstract class SOAPValidationReportGenerator {
 			bf.append(xml);
 			Transformer transformer = TransformerFactory.newInstance()
 					.newTransformer(new StreamSource(new StringReader(getPdfXslt())));
-			StreamSource source = new StreamSource(new StringReader(bf.toString()));
+//			StreamSource source = new StreamSource(new StringReader(bf.toString()));
+			
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+			factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+			factory.setXIncludeAware(false);
+	        factory.setExpandEntityReferences(false);
+	        DocumentBuilder docBuilder = factory.newDocumentBuilder();
+	        Document doc = docBuilder.parse(new InputSource(new StringReader(xml)));
+	        Source source = new DOMSource(doc);
+			
 			ByteArrayOutputStream resultStream = new ByteArrayOutputStream();
 			StreamResult result = new StreamResult(resultStream);
 			transformer.transform(source, result);
