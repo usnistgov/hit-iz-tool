@@ -135,6 +135,14 @@ public class SOAPValidator {
 			throws SOAPException, IOException, SAXException, ParserConfigurationException {
 		ArrayList<MessageFailureV3> failures = new ArrayList<MessageFailureV3>();
 		SAXParserFactory factory = SAXParserFactory.newInstance();
+		
+		factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+		factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+		factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+		factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+		factory.setXIncludeAware(false);
+		
+		
 		factory.setValidating(true);
 		factory.setNamespaceAware(true);
 		SAXParser parser = factory.newSAXParser();
