@@ -140,6 +140,14 @@ public class SOAPValidator {
 		SAXParserFactory factory = SAXParserFactory.newInstance();
 		SchemaFactory schemafactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		Schema sc = schemafactory.newSchema(new StreamSource(SOAPValidator.class.getResourceAsStream("/schema/soap.xsd")));	
+		
+		factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+		factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+		factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+		factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+		factory.setXIncludeAware(false);
+
+		
 		factory.setSchema(sc);		
 		factory.setValidating(false);
 		factory.setNamespaceAware(true);
