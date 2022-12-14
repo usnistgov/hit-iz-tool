@@ -214,7 +214,7 @@ public class SOAPConnectivityController {
 			streamer.stream(response.getOutputStream(), transaction);
 
 		} catch (Exception e1) {
-			throw new TransportException("Failed to send the message. " + e1.getMessage());
+			throw new TransportException("Failed to send the message. ");
 		}
 	}
 
