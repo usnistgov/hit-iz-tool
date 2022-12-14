@@ -227,6 +227,12 @@ public class SOAPTransportController {
 			if (request.getConfig().get("endpoint") == null || "".equals(request.getConfig().get("endpoint"))) {
 				throw new TransportException("No endpoint specified");
 			}
+			String endpoint =  requ.getConfig().get("endpoint").replaceAll(" ","");
+			//forbid sending to internal or nist server
+			if (StringUtils.containsIgnoreCase(endpoint,"nist.gov") || endpoint.matches("129.6.\\d+.\\d+") || StringUtils.containsIgnoreCase(endpoint,"localhost") || StringUtils.containsIgnoreCase(endpoint,"127.0.0.1")) {
+				throw new TransportException("Failed to send the message. Endpoint is forbidden");
+			}
+			
 			Long testStepId = request.getTestStepId();
 			TestStep testStep = testStepService.findOne(testStepId);
 			if (testStep == null)
@@ -249,7 +255,7 @@ public class SOAPTransportController {
 			transaction.setIncoming(incomingMessage);
 			streamer.stream(response.getOutputStream(), transaction);
 		} catch (Exception e1) {
-			throw new TransportException("Failed to send the message." + e1.getMessage());
+			throw new TransportException("Failed to send the message.");
 		}
 	}
 
