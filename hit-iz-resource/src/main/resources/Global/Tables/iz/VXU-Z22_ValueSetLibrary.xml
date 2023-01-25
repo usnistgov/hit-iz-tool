@@ -1279,6 +1279,12 @@
 			
 			<ValueElement Value="230" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 10 mcg/0.2 mL dose (Moderna COVID-19 Vaccine, Bivalent)" CodeSystem="CVX"/>
 			<ValueElement Value="302" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 3 mcg/0.2 mL dose, tris-sucrose formulation (Pfizer-BioNTech Covid-19 Vaccine, Bivalent)" CodeSystem="CVX"/>
+
+			<ValueElement Value="519" DisplayName="SARS-COV-2 COVID-19 mRNA, bivalent, original/Omicron BA.1, Non-US Vaccine (Spikevax Bivalent), Moderna" CodeSystem="CVX"/>
+			<ValueElement Value="520" DisplayName="SARS-COV-2 COVID-19 mRNA, bivalent, original/Omicron BA.1, Non-US Vaccine Product (Comirnaty Bivalent), Pfizer-BioNTech" CodeSystem="CVX"/>
+			<ValueElement Value="518" DisplayName="SARS-COV-2 COVID-19 Inactivated, Non-US Vaccine (VLA2001, Valneva)" CodeSystem="CVX"/>
+			<ValueElement Value="506" DisplayName="COVID-19 VVnr Non-US Vaccine (CanSino Biological Inc./Beijing Institute of Biotechnology)" CodeSystem="CVX"/>
+			
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1741,6 +1747,8 @@
 			<ValueElement Value="80777-0283-99" DisplayName="10 mcg/0.2 mL dose booster of Original and Omicron BA.4 &amp; BA.5 COVID-19 strains (Moderna)" CodeSystem="NDC"/>
 			<ValueElement Value="59267-0609-02" DisplayName="3 mcg/0.2 mL dose Original and Omicron BA.4 &amp; BA.5 COVID-19 strains (Pfizer)" CodeSystem="NDC"/>
 			<ValueElement Value="50090-6026-00" DisplayName="Pneumococcal conjugate PCV20, polysaccharide CRM197 conjugate, adjuvant, PF (Prevnar 20)" CodeSystem="NDC"/>
+
+			<ValueElement Value="58160-0827-30" DisplayName="Menveo (meningococcal oligosaccharide (groups A, C, Y and W-135) diphtheria toxoid conjugate vaccine (MCV4O))" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 				
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
@@ -2177,6 +2185,8 @@
 			<ValueElement Value="80777-0283-02" DisplayName="10 mcg/0.2 mL dose booster of Original and Omicron BA.4 &amp; BA.5 COVID-19 strains (Moderna)" CodeSystem="NDC"/>
 			<ValueElement Value="59267-0609-01" DisplayName="3 mcg/0.2 mL dose Original and Omicron BA.4 &amp; BA.5 COVID-19 strains (Pfizer)" CodeSystem="NDC"/>
 			<ValueElement Value="50090-6026-01" DisplayName="Pneumococcal conjugate PCV20, polysaccharide CRM197 conjugate, adjuvant, PF (Prevnar 20)" CodeSystem="NDC"/>
+
+			<ValueElement Value="58160-0827-03" DisplayName="Menveo (meningococcal oligosaccharide (groups A, C, Y and W-135) diphtheria toxoid conjugate vaccine (MCV4O))" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 
 
@@ -2433,6 +2443,9 @@
 			<ValueElement Value="253088698300053011220823" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
 			
 			<ValueElement Value="253088698300034911220901" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet - 6 yrs and older"/>
+
+			<ValueElement Value="253088698300053011221114" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
+			<ValueElement Value="253088698300048611220101" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet- Pediatric &lt;5 yrs"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
@@ -2539,6 +2552,8 @@
 			
 			<ValueElement Value="206" CodeSystem="CVX" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free"/>
 			<ValueElement Value="229" CodeSystem="CVX" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet - 6 yrs and older"/>
+
+			<ValueElement Value="230" CodeSystem="CVX" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6mo to &lt;6yrs VIS"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
