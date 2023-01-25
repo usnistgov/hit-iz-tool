@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -227,7 +228,7 @@ public class SOAPTransportController {
 			if (request.getConfig().get("endpoint") == null || "".equals(request.getConfig().get("endpoint"))) {
 				throw new TransportException("No endpoint specified");
 			}
-			String endpoint =  requ.getConfig().get("endpoint").replaceAll(" ","");
+			String endpoint =  request.getConfig().get("endpoint").replaceAll(" ","");
 			//forbid sending to internal or nist server
 			if (StringUtils.containsIgnoreCase(endpoint,"nist.gov") || endpoint.matches("129.6.\\d+.\\d+") || StringUtils.containsIgnoreCase(endpoint,"localhost") || StringUtils.containsIgnoreCase(endpoint,"127.0.0.1")) {
 				throw new TransportException("Failed to send the message. Endpoint is forbidden");
