@@ -1069,7 +1069,7 @@
 			<ValueElement Value="53" DisplayName="typhoid, parenteral, AKD (U.S. military)" CodeSystem="CVX"/>
 			<ValueElement Value="54" DisplayName="adenovirus, type 4" CodeSystem="CVX"/>
 			<ValueElement Value="55" DisplayName="adenovirus, type 7" CodeSystem="CVX"/>
-			<ValueElement Value="56" DisplayName="dengue fever" CodeSystem="CVX"/>
+			<ValueElement Value="56" DisplayName="dengue fever vaccine, tetravalent" CodeSystem="CVX"/>
 			<ValueElement Value="57" DisplayName="hantavirus" CodeSystem="CVX"/>
 			<ValueElement Value="58" DisplayName="Hep C" CodeSystem="CVX"/>
 			<ValueElement Value="59" DisplayName="Hep E" CodeSystem="CVX"/>
@@ -1218,15 +1218,15 @@
 
 			<ValueElement Value="196" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" CodeSystem="CVX"/>
 
-			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, .7mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, 0.7mL dose, preservative free" CodeSystem="CVX"/>
 
 
 			<ValueElement Value="200" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, pediatric 0.25mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="201" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" CodeSystem="CVX"/>
 			<ValueElement Value="202" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, with preservative" CodeSystem="CVX"/>
 			
-			<ValueElement Value="205" DisplayName="influenza, high-dose seasonal, quadrivalent, .7mL dose, preservative free" CodeSystem="CVX"/>
-			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine .5mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="205" DisplayName="influenza, high-dose seasonal, quadrivalent, 0.7mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine 0.5mL dose, preservative free" CodeSystem="CVX"/>
 		
 			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
 			
@@ -1284,6 +1284,8 @@
 			<ValueElement Value="520" DisplayName="SARS-COV-2 COVID-19 mRNA, bivalent, original/Omicron BA.1, Non-US Vaccine Product (Comirnaty Bivalent), Pfizer-BioNTech" CodeSystem="CVX"/>
 			<ValueElement Value="518" DisplayName="SARS-COV-2 COVID-19 Inactivated, Non-US Vaccine (VLA2001, Valneva)" CodeSystem="CVX"/>
 			<ValueElement Value="506" DisplayName="COVID-19 VVnr Non-US Vaccine (CanSino Biological Inc./Beijing Institute of Biotechnology)" CodeSystem="CVX"/>
+			
+			<ValueElement Value="521" DisplayName="SARS-COV-2 (COVID-19) vaccine SP, protein-based, adjuvanted, B.1.351 strain (VidPrevtyn Beta), Sanofi-GSK" CodeSystem="CVX"/>
 			
 		</ValueSetDefinition>
 
@@ -1749,6 +1751,11 @@
 			<ValueElement Value="50090-6026-00" DisplayName="Pneumococcal conjugate PCV20, polysaccharide CRM197 conjugate, adjuvant, PF (Prevnar 20)" CodeSystem="NDC"/>
 
 			<ValueElement Value="58160-0827-30" DisplayName="Menveo (meningococcal oligosaccharide (groups A, C, Y and W-135) diphtheria toxoid conjugate vaccine (MCV4O))" CodeSystem="NDC"/>
+			
+			
+			<ValueElement Value="00006-4293-02" DisplayName="ERVEBO (Ebola Zaire vaccine, live, recombinant, 1mL dose)" CodeSystem="NDC"/>
+			<ValueElement Value="80631-0102-10" DisplayName="COVID-19, subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL CARTON, 10 VIAL, MULTI-DOSE" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0740-21" DisplayName="rotavirus, live, monovalent vaccine (Rotarix)" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 				
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
@@ -2187,8 +2194,13 @@
 			<ValueElement Value="50090-6026-01" DisplayName="Pneumococcal conjugate PCV20, polysaccharide CRM197 conjugate, adjuvant, PF (Prevnar 20)" CodeSystem="NDC"/>
 
 			<ValueElement Value="58160-0827-03" DisplayName="Menveo (meningococcal oligosaccharide (groups A, C, Y and W-135) diphtheria toxoid conjugate vaccine (MCV4O))" CodeSystem="NDC"/>
+			
+			
+			<ValueElement Value="00006-4293-00" DisplayName="ERVEBO (Ebola Zaire vaccine, live, recombinant, 1mL dose)" CodeSystem="NDC"/>
+			<ValueElement Value="80631-0102-01" DisplayName="COVID-19, subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL VIAL, MULTI-DOSE, 2.5 mL" CodeSystem="NDC"/>
+			<ValueElement Value="58160-740-02" DisplayName="rotavirus, live, monovalent vaccine (Rotarix)" CodeSystem="NDC"/>		
+			
 		</ValueSetDefinition>
-
 
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds"/>
@@ -2555,6 +2567,8 @@
 
 			<ValueElement Value="230" CodeSystem="CVX" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6mo to &lt;6yrs VIS"/>
 		</ValueSetDefinition>
+	
+	
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
 		<ValueSetDefinition BindingIdentifier="HL70151" Name="Second Opinion Status">

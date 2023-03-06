@@ -1113,7 +1113,7 @@
 			<ValueElement Value="53" DisplayName="typhoid, parenteral, AKD (U.S. military)" CodeSystem="CVX"/>
 			<ValueElement Value="54" DisplayName="adenovirus, type 4" CodeSystem="CVX"/>
 			<ValueElement Value="55" DisplayName="adenovirus, type 7" CodeSystem="CVX"/>
-			<ValueElement Value="56" DisplayName="dengue fever" CodeSystem="CVX"/>
+			<ValueElement Value="56" DisplayName="dengue fever vaccine, tetravalent" CodeSystem="CVX"/>
 			<ValueElement Value="57" DisplayName="hantavirus" CodeSystem="CVX"/>
 			<ValueElement Value="58" DisplayName="Hep C" CodeSystem="CVX"/>
 			<ValueElement Value="59" DisplayName="Hep E" CodeSystem="CVX"/>
@@ -1262,15 +1262,15 @@
 			
 			<ValueElement Value="196" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" CodeSystem="CVX"/>
 			
-			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, .7mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="197" DisplayName="influenza, high-dose seasonal, quadrivalent, 0.7mL dose, preservative free" CodeSystem="CVX"/>
 			
 			
 			<ValueElement Value="200" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, pediatric 0.25mL dose, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="201" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" CodeSystem="CVX"/>
 			<ValueElement Value="202" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, with preservative" CodeSystem="CVX"/>
 			
-			<ValueElement Value="205" DisplayName="influenza, high-dose seasonal, quadrivalent, .7mL dose, preservative free" CodeSystem="CVX"/>
-			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine .5mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="205" DisplayName="influenza, high-dose seasonal, quadrivalent, 0.7mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine 0.5mL dose, preservative free" CodeSystem="CVX"/>
 			
 			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
 			
@@ -1319,13 +1319,20 @@
 			
 			<ValueElement Value="300" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older)" CodeSystem="CVX"/>
 			<ValueElement Value="301" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 5 years through 11 years)" CodeSystem="CVX"/>
-
+			
+			
+			<ValueElement Value="230" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 10 mcg/0.2 mL dose (Moderna COVID-19 Vaccine, Bivalent)" CodeSystem="CVX"/>
+			<ValueElement Value="302" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 3 mcg/0.2 mL dose, tris-sucrose formulation (Pfizer-BioNTech Covid-19 Vaccine, Bivalent)" CodeSystem="CVX"/>
+			
 			<ValueElement Value="519" DisplayName="SARS-COV-2 COVID-19 mRNA, bivalent, original/Omicron BA.1, Non-US Vaccine (Spikevax Bivalent), Moderna" CodeSystem="CVX"/>
 			<ValueElement Value="520" DisplayName="SARS-COV-2 COVID-19 mRNA, bivalent, original/Omicron BA.1, Non-US Vaccine Product (Comirnaty Bivalent), Pfizer-BioNTech" CodeSystem="CVX"/>
 			<ValueElement Value="518" DisplayName="SARS-COV-2 COVID-19 Inactivated, Non-US Vaccine (VLA2001, Valneva)" CodeSystem="CVX"/>
 			<ValueElement Value="506" DisplayName="COVID-19 VVnr Non-US Vaccine (CanSino Biological Inc./Beijing Institute of Biotechnology)" CodeSystem="CVX"/>
 			
+			<ValueElement Value="521" DisplayName="SARS-COV-2 (COVID-19) vaccine SP, protein-based, adjuvanted, B.1.351 strain (VidPrevtyn Beta), Sanofi-GSK" CodeSystem="CVX"/>
+			
 		</ValueSetDefinition>
+		
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
@@ -1689,9 +1696,11 @@
 			
 			<ValueElement Value="206" CodeSystem="CVX" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free"/>
 			<ValueElement Value="229" CodeSystem="CVX" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet - 6 yrs and older"/>
-
+			
 			<ValueElement Value="230" CodeSystem="CVX" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6mo to &lt;6yrs VIS"/>
 		</ValueSetDefinition>
+		
+		
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
 		<ValueSetDefinition BindingIdentifier="HL70480" Name="Pharmacy Order Types">
