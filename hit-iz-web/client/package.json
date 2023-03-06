@@ -2,6 +2,7 @@
   "name": "iz-tool",
   "version": "0.0.0",
   "dependencies": {
+    "bower": "^1.8.14",
     "compass": "^0.1.1",
     "npm": "^6.4.1"
   },

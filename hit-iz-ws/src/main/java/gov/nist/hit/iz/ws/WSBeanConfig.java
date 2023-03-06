@@ -54,7 +54,7 @@ public class WSBeanConfig {
 //		System.out.println("couou "+ appInfoService.get().getUrl());
 	    s.setLocation(appInfoService.get().getUrl());
 		s.setWsdl(new ClassPathResource("/ws/iisService.wsdl"));
-	   
+	
 	    return s;
 	}
 }
