@@ -1696,9 +1696,11 @@
 			
 			<ValueElement Value="206" CodeSystem="CVX" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free"/>
 			<ValueElement Value="229" CodeSystem="CVX" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet - 6 yrs and older"/>
-
+			
 			<ValueElement Value="230" CodeSystem="CVX" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6mo to &lt;6yrs VIS"/>
 		</ValueSetDefinition>
+		
+		
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
 		<ValueSetDefinition BindingIdentifier="HL70480" Name="Pharmacy Order Types">
