@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>gov.nist.hit.core.xml</groupId>
 			<artifactId>hit-core-xml-domain</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.0-LEGACY</version>
 			<exclusions>
 				<exclusion>
 					<groupId>gov.nist.hit.core</groupId>
@@ -52,7 +52,7 @@
 		<dependency>
 			<groupId>gov.nist.healthcare</groupId>
 			<artifactId>schematronValidation</artifactId>
-			<version>1.1-SNAPSHOT</version>
+			<version>1.0</version>
 		</dependency>
 		
 	
