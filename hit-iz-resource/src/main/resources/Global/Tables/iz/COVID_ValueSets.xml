@@ -1288,6 +1288,8 @@
 			
 			<ValueElement Value="521" DisplayName="SARS-COV-2 (COVID-19) vaccine SP, protein-based, adjuvanted, B.1.351 strain (VidPrevtyn Beta), Sanofi-GSK" CodeSystem="CVX"/>
 			
+			<ValueElement Value="231" DisplayName="influenza, Southern Hemisphere, high-dose, quadrivalent" CodeSystem="CVX"/>
+			
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1757,6 +1759,10 @@
 			<ValueElement Value="00006-4293-02" DisplayName="ERVEBO (Ebola Zaire vaccine, live, recombinant, 1mL dose)" CodeSystem="NDC"/>
 			<ValueElement Value="80631-0102-10" DisplayName="COVID-19, subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL CARTON, 10 VIAL, MULTI-DOSE" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0740-21" DisplayName="rotavirus, live, monovalent vaccine (Rotarix)" CodeSystem="NDC"/>
+			
+			<ValueElement Value="49281-0323-50" DisplayName="influenza, Southern Hemisphere, preservative free" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0355-15" DisplayName="influenza, Southern Hemisphere, quadrivalent, with preservative" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0379-50" DisplayName="influenza, Southern Hemisphere, high-dose, quadrivalent" CodeSystem="NDC"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
@@ -2199,8 +2205,11 @@
 			
 			<ValueElement Value="00006-4293-00" DisplayName="ERVEBO (Ebola Zaire vaccine, live, recombinant, 1mL dose)" CodeSystem="NDC"/>
 			<ValueElement Value="80631-0102-01" DisplayName="COVID-19, subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL VIAL, MULTI-DOSE, 2.5 mL" CodeSystem="NDC"/>
-			<ValueElement Value="58160-740-02" DisplayName="rotavirus, live, monovalent vaccine (Rotarix)" CodeSystem="NDC"/>		
+			<ValueElement Value="58160-740-02" DisplayName="rotavirus, live, monovalent vaccine (Rotarix)" CodeSystem="NDC"/>	
 			
+			<ValueElement Value="49281-0323-88" DisplayName="influenza, Southern Hemisphere, preservative free" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0355-78" DisplayName="influenza, Southern Hemisphere, quadrivalent, with preservative" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0379-88" DisplayName="influenza, Southern Hemisphere, high-dose, quadrivalent" CodeSystem="NDC"/>	
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
