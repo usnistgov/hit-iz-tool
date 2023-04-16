@@ -2,19 +2,23 @@
 			 "name":"Profiles",
 			  "skip": ["T22_Profile.xml","T42_Profile.xml","T44_Profile.xml"],
 			  "orders":{
-			  	"VXU-Z22_Profile.xml":1,
-			  	"ACK-Z23_Profile.xml":2,
-			  	"QBP-Z34_Profile.xml":3,
-			  	"QBP-Z44_Profile.xml":4,
-			  	"RSP-Z31_Profile.xml":5,
-			  	"RSP-Z32_Profile.xml":6,
-			  	"RSP-Z33_Profile.xml":7,
-			  	"RSP-Z42_Profile.xml":8,
-			  	"5ade28bf84ae9f6cddce62e4_Profile.xml":9,
-			  	"5ade28bf84ae9f6cddce62e8_Profile.xml": "10",
-			  	"5ade28bf84ae9f6cddce62ec_Profile.xml": "11",
-			  	"5ade28bf84ae9f6cddce62f0_Profile.xml": "12",
-			  	"5ade28bf84ae9f6cddce62f4_Profile.xml": "13"
+			  	"Z22_Profile_HIMSSv9.xml":1,
+			  	"Z22_Profile_HIMSSv10.xml":2,
+			  	"Z22_Profile_HIMSSv10.5.xml":3,
+			  	"Z23_Profile_HIMSSv9.xml":4,
+			  	"Z23_Profile_HIMSSv10.xml":5,
+			  	"Z23_Profile_HIMSSV10.5.xml":6,
+			  	"Z33_Profile_HIMSSv9.xml":7,
+			  	"Z33_Profile_HIMSSv10.xml":8,
+			  	"Z33_Profile_HIMSSv10.5.xml":9,
+			  	"Z42_Profile_HIMSSv9.xml": 10,
+			  	"Z42_Profile_HIMSSv10.xml": 11,
+			  	"Z42_Profile_HIMSSv10.5.xml": 12,
+			  	"Z44_Profile_HIMSSv9.xml": 13,
+			  	"Z44_Profile_HIMSSv10.xml": 14,
+			  	"Z44_Profile_HIMSSv10.5.xml": 15
 			  }
 }
 			
+			
+		
