@@ -1247,6 +1247,8 @@
 			
 			<ValueElement Value="521" DisplayName="SARS-COV-2 (COVID-19) vaccine SP, protein-based, adjuvanted, B.1.351 strain (VidPrevtyn Beta), Sanofi-GSK" CodeSystem="CVX"/>
 			
+			<ValueElement Value="231" DisplayName="influenza, Southern Hemisphere, high-dose, quadrivalent" CodeSystem="CVX"/>
+			
 		</ValueSetDefinition>
 		
 		
