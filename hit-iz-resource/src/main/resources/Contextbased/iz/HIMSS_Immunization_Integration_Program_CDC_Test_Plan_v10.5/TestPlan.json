@@ -1,6 +1,6 @@
 {
     "domain": "IZ",
-    "name": "HIMSS Immunization Integration Program CDC Test Plan v10.0",
+    "name": "HIMSS Immunization Integration Program CDC Test Plan v10.5",
     "description": "This test plan is to be used for the testing of the HIMSS Immunization Integration Program: Immunization-Related Capabilities and Guidance developed under a cooperative agreement with the American Immunization Registry Association (AIRA) and the Centers for Disease Control and Prevention (CDC). All test cases are required to be executed. The test plan includes both functional and interoperability tests including Vaccine Update Notifications (HL7 V2.5.1 VXU/Z22) and Query and Response (Evaluated History and Forecast Group Z44/Z42). See release notes.",
     "skip": false,
     "id": 8678931969846191643,
