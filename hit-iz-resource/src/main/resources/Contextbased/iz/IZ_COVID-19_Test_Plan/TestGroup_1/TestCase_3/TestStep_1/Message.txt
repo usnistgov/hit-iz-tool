@@ -1,6 +1,0 @@
-MSH|^~\&|NISTAPP|NISTFAC|IISAPP|IISFAC|20210123084727.655-0500||VXU^V04^VXU_V04|NIST-IZ-3.1-RE_Send_COVID|P|2.5.1|||ER|AL|||||Z22^CDCPHINVS|NISTFAC|IISFAC
-PID|1||8891^^^NIST-MPI-3^MR||Paige^Wray^Charles^^^^L||20020602|M||1002-5^Native American^CDCREC|924 Sycamore Lane^^Arroyo^PA^00714^USA^P||^PRN^PH^^^406^5555835|||||||||2186-5^Not Hispanic or Latino^CDCREC||Y|2|||||N
-PD1|||||||||||08^Reminder/recall - to provider^HL70215|N|20150624|||A|20040602|20150624
-ORC|RE|5645^NIST-AA-IZ-3|9999^NIST-AA-IZ-3|||||||7282^Prince^Janet^Suzanne^^^^^NIST-PI-1^L^^^PRN||954^Porter^Harry^James^^^^^NIST-PI-1^L^^^MD|||||NISTEHRFAC^NISTEHRFacility^HL70362
-RXA|0|1|20210123||208^COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose^CVX|999|||||^^^NIST-Clinic-3|||||||03^Patient decision^NIP002||RE|A
-
