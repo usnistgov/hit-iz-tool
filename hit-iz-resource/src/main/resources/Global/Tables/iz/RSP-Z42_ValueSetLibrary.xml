@@ -1508,6 +1508,9 @@
 
 			<ValueElement Value="253088698300053011221114" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
 			<ValueElement Value="253088698300048611220101" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet- Pediatric &lt;5 yrs"/>
+			
+			<ValueElement Value="253088698300058511230401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - all ages 6 months and older"/>
+			<ValueElement Value="253088698300059211230401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - all ages 6 months and older"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
