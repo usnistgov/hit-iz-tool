@@ -1,4 +1,10 @@
-[
+[		{
+			"title": "iztool-1.9.12",
+			"link": "http://hit-prod.nist.gov/wars/iztool-cdc-1.9.12.zip",
+			"date": "2022/05/18",
+			"customizable": true,
+			"order":1
+		},
 		{
 			"title": "iztool-1.9.11",
 			"link": "http://hit-prod.nist.gov/wars/iztool-cdc-1.9.11.zip",
