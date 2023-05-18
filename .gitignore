@@ -4,7 +4,7 @@ bower_components
 .classpath
 .project
 .settings/
-.DS_Store
+**/.DS_Store
 .idea
 *.iml
 *test/resources/outputs/*
