@@ -6,28 +6,13 @@
         "T44_ValueSetLibrary.xml"
     ],
     "orders": {
-        "VXU-Z22_ValueSetLibrary.xml":1,
-		"ACK-Z23_ValueSetLibrary.xml":2,
-		"QBP-Z34_ValueSetLibrary.xml":3,
-		"QBP-Z44_ValueSetLibrary.xml":4,
-		"RSP-Z31_ValueSetLibrary.xml":5,
-		"RSP-Z32_ValueSetLibrary.xml":6,
-		"RSP-Z33_ValueSetLibrary.xml":7,
-		"RSP-Z42_ValueSetLibrary.xml":8,
-        "Z22_ValueSets_HIMSSv9.xml": 9,
-        "Z22_ValueSets_HIMSSv10.5.xml": 10,
-        "Z22_ValueSets_HIMSSv10.xml": 11,
-        "Z23_ValueSets_HIMSSv9.xml": 12,
-        "Z23_ValueSets_HIMSSv10.5.xml": 13,
-        "Z23_ValueSets_HIMSSv10.xml": 14,
-        "Z33_ValueSets_HIMSSv9.xml": 15,
-        "Z33_ValueSets_HIMSSv10.5.xml": 16,
-        "Z33_ValueSets_HIMSSv10.xml": 17,
-        "Z42_ValueSets_HIMSSv9.xml": 18,
-        "Z42_ValueSets_HIMSSv10.5.xml": 19,
-        "Z42_ValueSets_HIMSSv10.xml": 20,
-        "Z44_ValueSets_HIMSSv9.xml": 21,
-        "Z44_ValueSets_HIMSSv10.5.xml": 22,
-        "Z44_ValueSets_HIMSSv10.xml": 23
+        "VXU-Z22_ValueSetLibrary.xml": 1,
+        "ACK-Z23_ValueSetLibrary.xml": 2,
+        "QBP-Z34_ValueSetLibrary.xml": 3,
+        "QBP-Z44_ValueSetLibrary.xml": 4,
+        "RSP-Z31_ValueSetLibrary.xml": 5,
+        "RSP-Z32_ValueSetLibrary.xml": 6,
+        "RSP-Z33_ValueSetLibrary.xml": 7,
+        "RSP-Z42_ValueSetLibrary.xml": 8
     }
 }

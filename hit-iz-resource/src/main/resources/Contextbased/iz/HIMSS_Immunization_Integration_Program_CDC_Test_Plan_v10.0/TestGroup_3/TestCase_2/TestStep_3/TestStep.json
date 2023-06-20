@@ -1,1 +1,0 @@
-{"name":"Attempt to record HepB Vaccine administration route with data validation checking","description":"The provider records the vaccine administration route in the EHR and is prevented from incorrectly documenting vaccine route.","id":-8505021315856474901,"position":3,"type":"SUT_MANUAL"}

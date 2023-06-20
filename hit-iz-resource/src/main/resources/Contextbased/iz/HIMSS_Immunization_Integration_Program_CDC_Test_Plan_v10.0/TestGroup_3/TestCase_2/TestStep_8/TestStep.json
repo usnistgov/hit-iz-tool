@@ -1,1 +1,0 @@
-{"name":"Attempt to administer DTaP vaccine and alerted that the dose is too early","description":"The provider attempts to administer a DTaP vaccine (dose 5). The EHR provides an alert that the vaccine dose is too early.","id":-755697212790898466,"position":8,"type":"SUT_MANUAL"}

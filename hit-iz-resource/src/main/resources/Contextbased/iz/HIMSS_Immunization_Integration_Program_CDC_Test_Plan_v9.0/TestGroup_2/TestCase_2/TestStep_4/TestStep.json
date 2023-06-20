@@ -1,1 +1,0 @@
-{"name":"Enter Immunization Data for MMR Given 2 Weeks Prior","description":"Patient History from the parent for the latest MMR vaccine that was given 2 weeks prior to the current visit is entered into the EHR. This is a pre-condition to the attempt to enter the varicella vaccine order.","id":-2895174976084750239,"position":4,"type":"SUT_MANUAL"}
