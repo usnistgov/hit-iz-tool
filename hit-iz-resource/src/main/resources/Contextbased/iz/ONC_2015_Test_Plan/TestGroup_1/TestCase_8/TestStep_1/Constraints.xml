@@ -1394,9 +1394,9 @@
                 </Constraint>
                 <Constraint ID="Content" Target="1[1].5[1].1[1]">
                   <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="ORDER[1].OBSERVATION[3].OBX[1].5[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
-                  <Description>Invalid content (based on test case fixed data). The value at ORDER.OBSERVATION[3].OBX-5.1 (Identifier) does not match the expected value: '253088698300005911211015'.</Description>
+                  <Description>Invalid content (based on test case fixed data). The value at ORDER.OBSERVATION[3].OBX-5.1 (Identifier) does not match the expected value: '253088698300005911230512'.</Description>
                   <Assertion>
-                    <PlainText IgnoreCase="true" Path="1[1].5[1].1[1]" Text="253088698300005911211015"/>
+                    <PlainText IgnoreCase="true" Path="1[1].5[1].1[1]" Text="253088698300005911230512"/>
                   </Assertion>
                 </Constraint>
                 <Constraint ID="Content" Target="1[1].5[1].2[1]">

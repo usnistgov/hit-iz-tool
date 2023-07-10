@@ -1314,14 +1314,14 @@
 			<ValueElement Value="517" DisplayName="SARS-COV-2 COVID-19 Protein Subunit Non-US Vaccine Product (Biological E Limited, Corbevax)" CodeSystem="CVX"/>
 			<ValueElement Value="225" DisplayName="SARS-COV-2 (COVID-19) vaccine, D614, prefusion spike recombinant protein subunit (CoV2 preS dTM), AS03 adjuvant added, preservative free, 5mcg/0.5mL dose" CodeSystem="CVX"/>
 			
-			<ValueElement Value="229" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 50 mcg/0.5 mL or 25mcg/0.25mL dose" CodeSystem="CVX"/>
+			<ValueElement Value="229" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 50 mcg/0.5 mL or 25 mcg/0.25 mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="206" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free, subcutaneous or intradermal injection" CodeSystem="CVX"/>
 			
-			<ValueElement Value="300" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 12 year and older)" CodeSystem="CVX"/>
-			<ValueElement Value="301" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 30 mcg/0.3mL dose, tris-sucrose formulation (Pfizer-BioNTech COVID-19 Vaccine Bivalent Booster 5 years through 11 years)" CodeSystem="CVX"/>
+			<ValueElement Value="300" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 30 mcg/0.3 mL dose, tris-sucrose formulation" CodeSystem="CVX"/>
+			<ValueElement Value="301" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation" CodeSystem="CVX"/>
 			
 			
-			<ValueElement Value="230" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent booster, preservative free, 10 mcg/0.2 mL dose (Moderna COVID-19 Vaccine, Bivalent)" CodeSystem="CVX"/>
+			<ValueElement Value="230" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 10 mcg/0.2 mL dose" CodeSystem="CVX"/>
 			<ValueElement Value="302" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 3 mcg/0.2 mL dose, tris-sucrose formulation (Pfizer-BioNTech Covid-19 Vaccine, Bivalent)" CodeSystem="CVX"/>
 			
 			<ValueElement Value="519" DisplayName="SARS-COV-2 COVID-19 mRNA, bivalent, original/Omicron BA.1, Non-US Vaccine (Spikevax Bivalent), Moderna" CodeSystem="CVX"/>
@@ -1333,8 +1333,10 @@
 			
 			<ValueElement Value="231" DisplayName="influenza, Southern Hemisphere, high-dose, quadrivalent" CodeSystem="CVX"/>
 			
+			<ValueElement Value="303" DisplayName="Respiratory syncytial virus (RSV), vaccine, recombinant, protein subunit RSV prefusion F, adjuvant reconstituted, 0.5 mL, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="304" DisplayName="Respiratory syncytial virus (RSV), unspecified" CodeSystem="CVX"/>
+			
 		</ValueSetDefinition>
-		
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
 			<ValueElement Value="PHC70" CodeSystem="CDCPHINVS" DisplayName="Private funds "/>
@@ -1588,19 +1590,25 @@
 			<ValueElement Value="253088698300054711220630" CodeSystem="cdcgs1vis" DisplayName="Ebola Vaccine VIS"/>
 			
 			<ValueElement Value="253088698300053011220823" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
+			
 			<ValueElement Value="253088698300034911220901" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet - 6 yrs and older"/>
-
+			
 			<ValueElement Value="253088698300053011221114" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
 			<ValueElement Value="253088698300048611220101" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet- Pediatric &lt;5 yrs"/>
 			
 			<ValueElement Value="253088698300058511230401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - all ages 6 months and older"/>
 			<ValueElement Value="253088698300059211230401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - all ages 6 months and older"/>
+			
+			<ValueElement Value="253088698300049311230512" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20) VIS"/>
+			<ValueElement Value="253088698300005911230512" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine VIS"/>
 		</ValueSetDefinition>
+		
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
 			<ValueElement Value="VXC40" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the immunization level"/>
 			<ValueElement Value="VXC41" CodeSystem="CDCPHINVS" DisplayName="Eligibility captured at the visit level"/>
 		</ValueSetDefinition>
+		
 		<ValueSetDefinition BindingIdentifier="PHVS_VISVaccines_IIS" Name="VIS Vaccines (IIS)">
 			<ValueElement Value="03" CodeSystem="CVX" DisplayName="MMR"/>
 			<ValueElement Value="08" CodeSystem="CVX" DisplayName="Hep B, adolescent or pediatric"/>
@@ -1621,7 +1629,7 @@
 			<ValueElement Value="120" CodeSystem="CVX" DisplayName="DTaP-Hib-IPV"/>
 			<ValueElement Value="121" CodeSystem="CVX" DisplayName="zoster live"/>
 			<ValueElement Value="130" CodeSystem="CVX" DisplayName="DTaP-IPV"/>
-			<ValueElement Value="133" CodeSystem="CVX" DisplayName="Pneumococcal conjugate PCV 13"/>
+			<ValueElement Value="133" CodeSystem="CVX" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20)"/>
 			<ValueElement Value="134" CodeSystem="CVX" DisplayName="Japanese Encephalitis IM"/>
 			<ValueElement Value="135" CodeSystem="CVX" DisplayName="Influenza, high dose seasonal"/>
 			<ValueElement Value="136" CodeSystem="CVX" DisplayName="Meningococcal MCV4O"/>
@@ -1703,8 +1711,10 @@
 			<ValueElement Value="229" CodeSystem="CVX" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet - 6 yrs and older"/>
 			
 			<ValueElement Value="230" CodeSystem="CVX" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - Pediatric 6mo to &lt;6yrs VIS"/>
+			
+			<ValueElement Value="215" CodeSystem="CVX" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20)"/>
+			<ValueElement Value="216" CodeSystem="CVX" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20)"/>
 		</ValueSetDefinition>
-		
 		
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
