@@ -103,10 +103,10 @@
 			<ValueElement Value="3001" CodeSystem="HL70533" DisplayName="Date of history of vaccine preventable disease is missing"/>
 			<ValueElement Value="3002" CodeSystem="HL70533" DisplayName="Ethnicity is missing"/>
 			<ValueElement Value="3003" CodeSystem="HL70533" DisplayName="History of disease/titer is missing"/>
-			<ValueElement Value="3004" CodeSystem="HL70533" DisplayName="Mother’s name: first is missing"/>
-			<ValueElement Value="3005" CodeSystem="HL70533" DisplayName="Mother’s name: middle is missing"/>
-			<ValueElement Value="3006" CodeSystem="HL70533" DisplayName="Mother’s name: last is missing"/>
-			<ValueElement Value="3007" CodeSystem="HL70533" DisplayName="Mother’s name: maiden last is missing"/>
+			<ValueElement Value="3004" CodeSystem="HL70533" DisplayName="Mother's name: first is missing"/>
+			<ValueElement Value="3005" CodeSystem="HL70533" DisplayName="Mother's name: middle is missing"/>
+			<ValueElement Value="3006" CodeSystem="HL70533" DisplayName="Mother's name: last is missing"/>
+			<ValueElement Value="3007" CodeSystem="HL70533" DisplayName="Mother's name: maiden last is missing"/>
 			<ValueElement Value="3008" CodeSystem="HL70533" DisplayName="Patient address: county of residence is missing"/>
 			<ValueElement Value="3009" CodeSystem="HL70533" DisplayName="Patient address: city is missing"/>
 			<ValueElement Value="3010" CodeSystem="HL70533" DisplayName="Patient address: country is missing"/>
@@ -171,10 +171,10 @@
 			<ValueElement Value="3501" CodeSystem="HL70533" DisplayName="Date of history of vaccine preventable disease is invalid"/>
 			<ValueElement Value="3502" CodeSystem="HL70533" DisplayName="Ethnicity is invalid"/>
 			<ValueElement Value="3503" CodeSystem="HL70533" DisplayName="History of disease/titer is invalid"/>
-			<ValueElement Value="3504" CodeSystem="HL70533" DisplayName="Mother’s name: first is invalid"/>
-			<ValueElement Value="3505" CodeSystem="HL70533" DisplayName="Mother’s name: middle is invalid"/>
-			<ValueElement Value="3506" CodeSystem="HL70533" DisplayName="Mother’s name: last is invalid"/>
-			<ValueElement Value="3507" CodeSystem="HL70533" DisplayName="Mother’s name: maiden last is invalid"/>
+			<ValueElement Value="3504" CodeSystem="HL70533" DisplayName="Mother's name: first is invalid"/>
+			<ValueElement Value="3505" CodeSystem="HL70533" DisplayName="Mother's name: middle is invalid"/>
+			<ValueElement Value="3506" CodeSystem="HL70533" DisplayName="Mother's name: last is invalid"/>
+			<ValueElement Value="3507" CodeSystem="HL70533" DisplayName="Mother's name: maiden last is invalid"/>
 			<ValueElement Value="3508" CodeSystem="HL70533" DisplayName="Patient address: county of residence is invalid"/>
 			<ValueElement Value="3509" CodeSystem="HL70533" DisplayName="Patient address: city is invalid"/>
 			<ValueElement Value="3510" CodeSystem="HL70533" DisplayName="Patient address: country is invalid"/>
