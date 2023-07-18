@@ -2211,9 +2211,7 @@
 			
 			
 			<ValueElement Value="00006-4293-00" DisplayName="ERVEBO (Ebola Zaire vaccine, live, recombinant, 1mL dose)" CodeSystem="NDC"/>
-			<ValueElement Value="80631-0102-01" DisplayName="COVID-19, subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL VIAL, MULTI-DOSE, 2.5 mL" CodeSystem="NDC"/>
-			<ValueElement Value="58160-0740-02" DisplayName="rotavirus monovalent (Rotarix) (change from rotavirus, live, monovalent vaccine (Rotarix))" CodeSystem="NDC"/>
-			
+			<ValueElement Value="80631-0102-01" DisplayName="COVID-19, subunit, rS-nanoparticle+Matrix-M1 Adjuvant, PF, 0.5 mL VIAL, MULTI-DOSE, 2.5 mL" CodeSystem="NDC"/>			
 			
 			<ValueElement Value="49281-0323-88" DisplayName="influenza, Southern Hemisphere, preservative free" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0355-78" DisplayName="influenza, Southern Hemisphere, quadrivalent, with preservative" CodeSystem="NDC"/>
