@@ -280,7 +280,13 @@
         "date": "2023/06/22",
         "name": "IZ_Release_Notes.2.0.13.docx",
         "title": "Release notes 2.0.13"
+    },    
+    {
+        "version": "2.0.14",
+        "date": "2023/07/17",
+        "name": "IZ_Release_Notes.2.0.14.docx",
+        "title": "Release notes 2.0.14"
     }
-    
+   
     
 ]
