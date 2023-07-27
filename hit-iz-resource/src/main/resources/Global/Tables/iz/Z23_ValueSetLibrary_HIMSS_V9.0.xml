@@ -24,7 +24,219 @@
       <ValueElement CodeSystem="HL70533" DisplayName="Illogical Value error" Value="3"/>  
       <ValueElement CodeSystem="HL70533" DisplayName="Invalid value" Value="4"/>  
       <ValueElement CodeSystem="HL70533" DisplayName="Table value not found" Value="5"/>  
-      <ValueElement CodeSystem="HL70533" DisplayName="Required observation missing" Value="6"/> 
+      <ValueElement CodeSystem="HL70533" DisplayName="Required observation missing" Value="6"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Required Data Missing" Value="7"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Start and End Date of Administration" Value="2000"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Administration Date and Expiration Date" Value="2001"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Date of Birth and Date of Death" Value="2002"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Codes in a Field" Value="2003"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Query Identifiers" Value="2004"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Facilities" Value="2005"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Patient IDs" Value="2006"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Patient Status and Patient Death Information" Value="2007"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Completion Status and Refusal Reason" Value="2008"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Lot Number and Funding Source" Value="2009"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting vaccine ID and Manufacturer" Value="2010"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Vaccine and Lot Number" Value="2011"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Eligibility Information" Value="2012"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Funding Source Data" Value="2013"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Vaccine and Amount Data" Value="2014"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Dose Status and Eligibility" Value="2015"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Vaccine and Route Data" Value="2016"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Vaccine and Site Data" Value="2017"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Vaccination Date and Date of Birth" Value="2018"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Vaccination Date and Submission Date" Value="2019"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Date of history of vaccine preventable disease is before birth" Value="2020"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Date of history of vaccine preventable disease is after death" Value="2021"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Conflicting Vaccination Date and Patient Death Date" Value="2022"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Delay in reporting administered vaccine" Value="2023"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Administered contraindicated vaccine to patient" Value="2024"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Future Date" Value="2100"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Future Contraindication Effective Date" Value="2101"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Future VIS Given Date" Value="2102"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Future VIS Publication Date" Value="2103"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Historical Dose Given on Submission Date" Value="2104"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Invalid Coding System" Value="2200"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Invalid Name (Baby)" Value="2201"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Invalid Address" Value="2202"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Invalid Telecommunication Number" Value="2203"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination Date Too Long Ago" Value="2204"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Unknown Profile ID" Value="2205"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Invalid Comment" Value="2206"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Invalid Value Set" Value="2207"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Invalid Assigning Authority" Value="2208"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Invalid ID Type" Value="2209"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Invalid Observation Method" Value="2210"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination Date on Birth Date" Value="2211"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination Given To Patient Too Old or Too Young" Value="2212"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination is Not Specific" Value="2213"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination is Not Expected for This Type of Practice" Value="2214"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination is Not Licensed for This Date" Value="2215"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Address type is invalid" Value="2216"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient name type code is invalid" Value="2217"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="No Matching Dose Found" Value="2300"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="No Matching Provider Found" Value="2301"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Multiple Matching Doses Found" Value="2302"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Multiple Matching Patients Found" Value="2303"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Multiple Matching Providers Found" Value="2304"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient Out of Jurisdiction" Value="2305"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient Too Old" Value="2306"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Lot Not Found" Value="2307"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Action Code Mismatch" Value="2308"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="No matching patient found, new patient record was created" Value="2309"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="No matching patient found, please establish patient record first " Value="2310"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Eligibility in PV1" Value="2400"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Unsupported Field Populated" Value="2401"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Missing Eligibility Information" Value="2500"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Missing Funding Source Information" Value="2501"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Missing Parent/Guardian/Responsible Person" Value="2502"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Missing VIS Barcode" Value="2503"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Missing VIS Given Date" Value="2504"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Missing VIS Information" Value="2505"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Missing VIS Publication Date" Value="2506"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Address type is missing" Value="2507"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient name type code is missing" Value="2508"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Data truncated" Value="2600"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Inventory Management Error" Value="2601"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Interface Cannot Delete" Value="2602"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Protected Patient Found" Value="2700"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Potentially Protected Patient Found" Value="2701"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Date of history of vaccine preventable disease is missing" Value="3001"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Ethnicity is missing" Value="3002"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="History of disease/titer is missing" Value="3003"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Mother's name: first is missing" Value="3004"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Mother's name: middle is missing" Value="3005"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Mother's name: last is missing" Value="3006"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Mother's name: maiden last is missing" Value="3007"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: county of residence is missing" Value="3008"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: city is missing" Value="3009"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: country is missing" Value="3010"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: state is missing" Value="3011"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: street is missing" Value="3012"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: zip code is missing" Value="3013"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient alias name: first is missing" Value="3014"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient alias name: middle is missing" Value="3015"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient alias name: last is missing" Value="3016"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient birth order is missing" Value="3017"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient birth state is missing" Value="3018"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient date of birth is missing" Value="3019"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient e-mail address is missing" Value="3020"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient gender is missing" Value="3021"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient ID is missing" Value="3022"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient ID: type is missing" Value="3023"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="IIS Patient ID is missing" Value="3024"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient multiple birth indicator is missing" Value="3025"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient name: first is missing" Value="3026"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient name: middle is missing" Value="3027"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient name: last is missing" Value="3028"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient primary language is missing" Value="3029"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient status indicator-provider level is missing" Value="3030"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient status-jurisdiction level is missing" Value="3031"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient telephone number is missing" Value="3032"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient telephone number type is missing" Value="3033"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Protection Indicator is missing" Value="3034"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Protection indicator effective date is missing" Value="3035"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Reminder recall status is missing" Value="3036"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Reminder recall status effective date is missing" Value="3037"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Race is missing" Value="3038"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible person name: first is missing" Value="3039"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible person name: middle is missing" Value="3040"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible person name: last is missing" Value="3041"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible person relationship to patient is missing" Value="3042"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Contraindications/precautions is missing" Value="3043"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Contraindications/precautions observation date is missing" Value="3044"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Dose level eligibility is missing" Value="3045"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Exemptions/refusals date is missing" Value="3046"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Exemptions/refusals reason is missing" Value="3047"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination administration date is missing" Value="3048"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine dose volume is missing" Value="3049"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine dose volume units is missing" Value="3050"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination event record type (administered/historical) is missing" Value="3051"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine funding source (dose level public/private indicator) is missing" Value="3052"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine expiration date is missing" Value="3053"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine lot number is missing" Value="3054"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine manufacturer name is missing" Value="3055"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine product is missing" Value="3056"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine route of administration is missing" Value="3057"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine site of administration is missing" Value="3058"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="IIS vaccination event ID is missing" Value="3059"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination event ID is missing" Value="3060"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine information statement is missing" Value="3061"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine information statement given date is missing" Value="3062"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine ordering provider (person) is missing" Value="3063"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine administering provider suffix is missing" Value="3064"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine administering provider (person) is missing" Value="3065"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Administered at location is missing" Value="3066"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Sending organization is missing" Value="3067"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible organization is missing" Value="3068"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Date of history of vaccine preventable disease is invalid" Value="3501"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Ethnicity is invalid" Value="3502"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="History of disease/titer is invalid" Value="3503"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Mother's name: first is invalid" Value="3504"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Mother's name: middle is invalid" Value="3505"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Mother's name: last is invalid" Value="3506"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Mother's name: maiden last is invalid" Value="3507"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: county of residence is invalid" Value="3508"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: city is invalid" Value="3509"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: country is invalid" Value="3510"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: state is invalid" Value="3511"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: street is invalid" Value="3512"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient address: zip code is invalid" Value="3513"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient alias name: first is invalid" Value="3514"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient alias name: middle is invalid" Value="3515"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient alias name: last is invalid" Value="3516"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient birth order is invalid" Value="3517"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient birth state is invalid" Value="3518"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient date of birth is invalid" Value="3519"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient e-mail address is invalid" Value="3520"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient gender is invalid" Value="3521"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient ID is invalid" Value="3522"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient ID: type is invalid" Value="3523"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="IIS Patient ID is invalid" Value="3524"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient multiple birth indicator is invalid" Value="3525"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient name: first is invalid" Value="3526"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient name: middle is invalid" Value="3527"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient name: last is invalid" Value="3528"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient primary language is invalid" Value="3529"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient status indicator-provider level is invalid" Value="3530"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient status-jurisdiction level is invalid" Value="3531"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient telephone number is invalid" Value="3532"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Patient telephone number type is invalid" Value="3533"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Protection Indicator is invalid" Value="3534"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Protection indicator effective date is invalid" Value="3535"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Reminder recall status is invalid" Value="3536"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Reminder recall status effective date is invalid" Value="3537"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Race is invalid" Value="3538"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible person name: first is invalid" Value="3539"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible person name: middle is invalid" Value="3540"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible person name: last is invalid" Value="3541"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible person relationship to patient is invalid" Value="3542"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Contraindications/precautions is invalid" Value="3543"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Contraindications/precautions observation date is invalid" Value="3544"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Dose level eligibility is invalid" Value="3545"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Exemptions/refusals date is invalid" Value="3546"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Exemptions/refusals reason is invalid" Value="3547"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination administration date is invalid" Value="3548"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine dose volume is invalid" Value="3549"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine dose volume units is invalid" Value="3550"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination event record type (administered/historical) is invalid" Value="3551"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine funding source (dose level public/private indicator) is invalid" Value="3552"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine expiration date is invalid" Value="3553"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine lot number is invalid" Value="3554"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine manufacturer name is invalid" Value="3555"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine product is invalid" Value="3556"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine route of administration is invalid" Value="3557"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine site of administration is invalid" Value="3558"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="IIS vaccination event ID is invalid" Value="3559"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccination event ID is invalid" Value="3560"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine information statement is invalid" Value="3561"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine information statement given date is invalid" Value="3562"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine ordering provider (person) is invalid" Value="3563"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine administering provider suffix is invalid" Value="3564"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Vaccine administering provider (person) is invalid" Value="3565"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Administered at location is invalid" Value="3566"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Sending organization is invalid" Value="3567"/>  
+      <ValueElement CodeSystem="HL70533" DisplayName="Responsible organization is invalid" Value="3568"/> 
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="HL70301_IZ" Name="Universal ID type"> 
       <ValueElement CodeSystem="HL70301" DisplayName="ISO" Value="ISO"/> 
@@ -175,7 +387,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="Japanese Image Examination Cache" Value="JJ1017"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="LanguaL" Value="LANGUAL"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Local billing code" Value="LB"/>  
-      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC®)" Value="LN"/>  
+      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC??????)" Value="LN"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medicaid" Value="MCD"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medicare" Value="MCR"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medical Device Communication" Value="MDC"/>  
@@ -377,7 +589,7 @@
       <ValueElement CodeSystem="HL70301" DisplayName="Reserved for future HL7 registration schemes" Value="HL7"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="An International Standards Organization Object Identifier" Value="ISO"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="These are reserved for locally defined coding schemes." Value="L,M,N"/>  
-      <ValueElement CodeSystem="HL70301" DisplayName="Usually a base64 encoded string of random bits.&lt;p&gt;The uniqueness depends on the length of the bits. Mail systems often generate ASCII string 창??unique names,&quot; from a combination of random bits and system names. Obviously, such identifiers will not be cons" Value="Random"/>  
+      <ValueElement CodeSystem="HL70301" DisplayName="Usually a base64 encoded string of random bits.&lt;p&gt;The uniqueness depends on the length of the bits. Mail systems often generate ASCII string ???????????unique names,&quot; from a combination of random bits and system names. Obviously, such identifiers will not be cons" Value="Random"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="Uniform Resource Identifier" Value="URI"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="The DCE Universal Unique Identifier" Value="UUID"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="An X.400 MHS format identifier" Value="x400"/>  
@@ -544,7 +756,7 @@
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="HL70356" Name="Alternate character set handling scheme"> 
       <ValueElement CodeSystem="HL70356" DisplayName="This is the default, indicating that there is no character set switching occurring in this message." Value="&lt;null&gt;"/>  
-      <ValueElement CodeSystem="HL70356" DisplayName="The character set switching mode specified in HL7 2.5, section 2.7.2, 창??Escape sequences supporting multiple character sets창?? and section 2.A.46, &quot;XPN - extended person name&quot;." Value="2.3"/>  
+      <ValueElement CodeSystem="HL70356" DisplayName="The character set switching mode specified in HL7 2.5, section 2.7.2, ???????????Escape sequences supporting multiple character sets??????????? and section 2.A.46, &quot;XPN - extended person name&quot;." Value="2.3"/>  
       <ValueElement CodeSystem="HL70356" DisplayName="This standard is titled &quot;Information Technology - Character Code Structure and Extension Technique&quot;. ." Value="ISO 2022-1994"/> 
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="HL70207" Name="Processing mode"> 
@@ -652,7 +864,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="Japanese Image Examination Cache" Value="JJ1017"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="LanguaL" Value="LANGUAL"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Local billing code" Value="LB"/>  
-      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC®)" Value="LN"/>  
+      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC??????)" Value="LN"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medicaid" Value="MCD"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medicare" Value="MCR"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medical Device Communication" Value="MDC"/>  
