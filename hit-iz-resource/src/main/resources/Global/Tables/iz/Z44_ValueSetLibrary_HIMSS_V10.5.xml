@@ -201,7 +201,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="Japanese Image Examination Cache" Value="JJ1017"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="LanguaL" Value="LANGUAL"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Local billing code" Value="LB"/>  
-      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC®)" Value="LN"/>  
+      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC??????)" Value="LN"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medicaid" Value="MCD"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medicare" Value="MCR"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medical Device Communication" Value="MDC"/>  
@@ -400,7 +400,7 @@
       <ValueElement CodeSystem="HL70301" DisplayName="Reserved for future HL7 registration schemes" Value="HL7"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="An International Standards Organization Object Identifier" Value="ISO"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="These are reserved for locally defined coding schemes." Value="L,M,N"/>  
-      <ValueElement CodeSystem="HL70301" DisplayName="Usually a base64 encoded string of random bits.&lt;p&gt;The uniqueness depends on the length of the bits. Mail systems often generate ASCII string 창??unique names,&quot; from a combination of random bits and system names. Obviously, such identifiers will not be cons" Value="Random"/>  
+      <ValueElement CodeSystem="HL70301" DisplayName="Usually a base64 encoded string of random bits.&lt;p&gt;The uniqueness depends on the length of the bits. Mail systems often generate ASCII string ???????????unique names,&quot; from a combination of random bits and system names. Obviously, such identifiers will not be cons" Value="Random"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="Uniform Resource Identifier" Value="URI"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="The DCE Universal Unique Identifier" Value="UUID"/>  
       <ValueElement CodeSystem="HL70301" DisplayName="An X.400 MHS format identifier" Value="x400"/>  
@@ -537,7 +537,7 @@
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="HL70356" Name="Alternate character set handling scheme"> 
       <ValueElement CodeSystem="HL70356" DisplayName="This is the default, indicating that there is no character set switching occurring in this message." Value="&lt;null&gt;"/>  
-      <ValueElement CodeSystem="HL70356" DisplayName="The character set switching mode specified in HL7 2.5, section 2.7.2, 창??Escape sequences supporting multiple character sets창?? and section 2.A.46, &quot;XPN - extended person name&quot;." Value="2.3"/>  
+      <ValueElement CodeSystem="HL70356" DisplayName="The character set switching mode specified in HL7 2.5, section 2.7.2, ???????????Escape sequences supporting multiple character sets??????????? and section 2.A.46, &quot;XPN - extended person name&quot;." Value="2.3"/>  
       <ValueElement CodeSystem="HL70356" DisplayName="This standard is titled &quot;Information Technology - Character Code Structure and Extension Technique&quot;. ." Value="ISO 2022-1994"/> 
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="HL70207" Name="Processing mode"> 
@@ -645,7 +645,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="Japanese Image Examination Cache" Value="JJ1017"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="LanguaL" Value="LANGUAL"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Local billing code" Value="LB"/>  
-      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC®)" Value="LN"/>  
+      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC??????)" Value="LN"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medicaid" Value="MCD"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medicare" Value="MCR"/>  
       <ValueElement CodeSystem="HL70396" DisplayName="Medical Device Communication" Value="MDC"/>  
