@@ -8,6 +8,17 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1DMLTWW4P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J1DMLTWW4P');
+</script>
+<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-xxxxxxxx-x&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> 
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
@@ -36,7 +47,6 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/angular-loading-bar/src/loading-bar.css" />
   <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.css" />
   <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.css" />
   <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
   <!-- endbower -->
@@ -64,6 +74,8 @@
   <link rel="stylesheet" href="lib/angular-bootstrap-nav-tree/abn_tree.css">
   <link rel="stylesheet" href="lib/testcase-tree/testcase-tree.css"/>
   <link rel="stylesheet" href="lib/FixedHeader/dist/fixed-header.css"/>
+  <link rel="stylesheet" href="lib/angular-ui-notification/dist/angular-ui-notification.css" />
+  
 
   <!--<link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">-->
   <!--<style>-->
@@ -126,7 +138,6 @@
   <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 
   <script src="bower_components/angular-file-upload/dist/angular-file-upload.js"></script>
-  <script src="bower_components/angular-ui-notification/dist/angular-ui-notification.js"></script>
   <script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js"></script>
   <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
   <script src="bower_components/angular-loading-overlay/dist/angular-loading-overlay.js"></script>
@@ -174,6 +185,7 @@
   <script src="lib/base-libs/xml.js"></script>
   <script src="lib/base-libs/edi.js"></script>
   <script src="lib/base-libs/soap.js"></script>
+  <script src="lib/angular-ui-notification/dist/angular-ui-notification.js"></script>
 
 
 

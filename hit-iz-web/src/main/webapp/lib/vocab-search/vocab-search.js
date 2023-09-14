@@ -127,6 +127,15 @@
           $scope.tmpSearchResults = [].concat($scope.searchResults);
         }
       };
+      
+       $scope.alphaNumComparator = function(v1, v2) {
+	    // If we have numbers compare numbers
+	    if (!isNaN(Number(v1.value)) && !isNaN(Number(v2.value)) ) {
+	      return Number(v1.value) < Number( v2.value) ? -1 : 1;
+	    }
+	    // Compare strings alphabetically, taking locale into account
+	    return v1.value.localeCompare(v2.value);
+	  };
 
       $scope.selectValueSetDefinition = function (tableDefinition, tableLibrary) {
         $scope.searchResults = [];
@@ -134,7 +143,7 @@
         $scope.searchString = null;
         $scope.selectedValueSetDefinition = tableDefinition;
         $scope.selectedTableLibrary = tableLibrary;
-        $scope.selectedValueSetDefinition.valueSetElements = $filter('orderBy')($scope.selectedValueSetDefinition.valueSetElements, 'code');
+        $scope.selectedValueSetDefinition.valueSetElements = $filter('orderBy')($scope.selectedValueSetDefinition.valueSetElements, 'value',false,$scope.alphaNumComparator);
         $scope.tmpTableElements = [].concat($scope.selectedValueSetDefinition.valueSetElements);
       };
 
@@ -148,9 +157,11 @@
 
       $scope.selectValueSetDefinition2 = function (tableDefinition) {
         $scope.selectedValueSetDefinition = tableDefinition;
-        $scope.selectedValueSetDefinition.tableElements = $filter('orderBy')($scope.selectedValueSetDefinition.tableElements, 'code');
+        $scope.selectedValueSetDefinition.tableElements = $filter('orderBy')($scope.selectedValueSetDefinition.tableElements, 'value',false,$scope.alphaNumComparator);
         $scope.tmpTableElements = [].concat($scope.selectedValueSetDefinition.tableElements);
       };
+      
+     
 
 
       $scope.isNoValidation = function () {

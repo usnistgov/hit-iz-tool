@@ -123,11 +123,11 @@ angular.module('format').factory('IZReportClass', function ($http, $q) {
       headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
       method: 'POST',
       timeout: 60000
-    }).success(function (data) {
+    }).then(function (data) {
       var res = angular.fromJson(data);
       that.html = res['htmlReport'];
       delay.resolve(that.html);
-    }).error(function (err) {
+    }, function (err) {
       that.html = null;
       delay.reject(err);
     });

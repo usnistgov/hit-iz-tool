@@ -85,7 +85,9 @@ var httpHeaders,
 //the message to be shown to the user
 var msg = {};
 
-app.config(function ($routeProvider, $httpProvider, localStorageServiceProvider, KeepaliveProvider, IdleProvider, NotificationProvider, $provide) {
+app.config(function ($routeProvider, $httpProvider, localStorageServiceProvider, KeepaliveProvider, IdleProvider, NotificationProvider, $provide, $locationProvider) {
+
+  $locationProvider.hashPrefix('');
 
   localStorageServiceProvider
     .setPrefix("hit-app")
@@ -305,8 +307,7 @@ app.factory('interceptor4', function ($q, $rootScope, $location, StorageService,
           show: true,
           manualHandle: true
         };
-      } else {
-        console.log(response.status);
+      } else {        
         msg = {
           text: response.data.text,
           type: response.data.type,
@@ -539,7 +540,7 @@ app.run(function (Session, $rootScope, $location, $modal, TestingSettings, AppIn
     httpHeaders.common['Authorization'] = 'Basic ' + base64.encode(username + ':' + password);
 //        httpHeaders.common['withCredentials']=true;
 //        httpHeaders.common['Origin']="http://localhost:9000";
-    $http.get('api/accounts/login').success(function () {
+    $http.get('api/accounts/login').then(function () {
       //If we are here in this callback, login was successfull
       //Let's get user info now
       httpHeaders.common['Authorization'] = null;
@@ -564,7 +565,7 @@ app.run(function (Session, $rootScope, $location, $modal, TestingSettings, AppIn
     httpHeaders.common['Accept'] = 'application/json';
     httpHeaders.common['Authorization'] = 'Basic ' + auth;
     console.log("logging in...");
-    $http.get('api/accounts/login').success(function () {
+    $http.get('api/accounts/login').then(function () {
        httpHeaders.common['Authorization'] = null;
       $http.get('api/accounts/cuser').then(function (result) {
         if (result.data && result.data != null) {
@@ -593,7 +594,7 @@ app.run(function (Session, $rootScope, $location, $modal, TestingSettings, AppIn
     httpHeaders.common['Authorization'] = 'Basic ' + base64.encode(username + ':' + password);
 //        httpHeaders.common['withCredentials']=true;
 //        httpHeaders.common['Origin']="http://localhost:9000";
-    $http.get('api/accounts/login').success(function () {
+    $http.get('api/accounts/login').then(function () {
       //If we are here in this callback, login was successfull
       //Let's get user info now
       httpHeaders.common['Authorization'] = null;
