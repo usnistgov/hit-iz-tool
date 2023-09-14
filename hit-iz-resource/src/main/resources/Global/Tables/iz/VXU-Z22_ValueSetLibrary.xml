@@ -1225,7 +1225,7 @@
 			<ValueElement Value="201" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" CodeSystem="CVX"/>
 			<ValueElement Value="202" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, with preservative" CodeSystem="CVX"/>
 			
-			<ValueElement Value="205" DisplayName="influenza, high-dose seasonal, quadrivalent, 0.7mL dose, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="205" DisplayName="Influenza vaccine, quadrivalent, adjuvanted preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="203" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine 0.5mL dose, preservative free" CodeSystem="CVX"/>
 		
 			<ValueElement Value="213" DisplayName="SARS-COV-2 (COVID-19) vaccine, UNSPECIFIED" CodeSystem="CVX"/>
@@ -1292,6 +1292,21 @@
 			<ValueElement Value="303" DisplayName="Respiratory syncytial virus (RSV), vaccine, recombinant, protein subunit RSV prefusion F, adjuvant reconstituted, 0.5 mL, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="304" DisplayName="Respiratory syncytial virus (RSV), unspecified" CodeSystem="CVX"/>
 			
+			<!-- 08/29/2023 -->
+			<ValueElement Value="305" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="306" DisplayName="Respiratory syncytial virus (RSV), monoclonal antibody, IgG1κ, (nirsevimab-alip), 0.5 mL, neonates and children to 24 months" CodeSystem="CVX"/>
+			<ValueElement Value="307" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG1κ, (nirsevimab-alip), 1 mL, neonates and children to 24 months" CodeSystem="CVX"/>
+			<!-- 09/13/2023 -->
+			<ValueElement Value="309" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 30 mcg/0.3 mL ages 12 years and older (COMIRNATY)" CodeSystem="CVX"/>
+			<ValueElement Value="310" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 10 mcg/0.3 mL ages 5 through 11 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="CVX"/>
+			<ValueElement Value="308" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 3 mcg/0.3 mL for Ages 6 months through 4 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="CVX"/>
+			<ValueElement Value="313" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL for ages 12 years and older (Novavax COVID-19 Vaccine, Adjuvanted)" CodeSystem="CVX"/>
+			<ValueElement Value="312" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="CVX"/>
+			<ValueElement Value="311" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL ages 6 months through 11 years (Moderna COVID-19 Vaccine)" CodeSystem="CVX"/>
+
+			<!--
+			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
+			-->
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
@@ -1770,6 +1785,38 @@
 			<ValueElement Value="58160-0848-11" DisplayName="RSV, recombinant, protein subunit RSVpreF, adjuvant reconstituted, 0.5 mL, PF (Arexvy)" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0564-10" DisplayName="DTaP-IPV (QUADRACEL)" CodeSystem="NDC"/>
 			<ValueElement Value="50090-4958-01" DisplayName="HPV9 (GARDASIL 9)" CodeSystem="NDC"/>
+			<!-- 08/29/2023 -->
+			<ValueElement Value="00069-0344-01" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free (Abrysvo)" CodeSystem="NDC"/>
+			<ValueElement Value="00069-0344-05" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free (Abrysvo)" CodeSystem="NDC"/>
+			<ValueElement Value="00069-0344-10" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free (Abrysvo)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0575-15" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG1κ, (nirsevimab-alip), 0.5 mL, neonates and children to 24 months (BEYFORTUS)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0574-15" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG1κ, (nirsevimab-alip), 1 mL, neonates and children to 24 months (BEYFORTUS)" CodeSystem="NDC"/>
+			<ValueElement Value="50090-2062-00" DisplayName="Td (adult), 5 Lf tetanus toxoid, preservative free, adsorbed (TENIVAC)" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0323-03" DisplayName="Influenza, injectable, quadrivalent, preservative free (Afluria Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0909-52" DisplayName="Influenza, injectable, quadrivalent, preservative free  (Flulaval Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0423-50" DisplayName="Influenza, injectable, quadrivalent, preservative free (Fluzone Quadrivalent Northern Hemisphere)" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0423-10" DisplayName="Influenza, injectable, quadrivalent, contains preservative (Afluria Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0639-15" DisplayName="Influenza, injectable, quadrivalent (Fluzone Quadrivalent Northern Hemisphere)" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0323-03" DisplayName="Influenza, injectable, MDCK, preservative free, quadrivalent (Flucelvax Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0723-10" DisplayName="Influenza, recombinant, quadrivalent, injectable, preservative free (Flublok Quadrivalent Northern Hemisphere)" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0423-10" DisplayName="Influenza, injectable, MDCK, quadrivalent, preservative (Flucelvax Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0123-65" DisplayName="Influenza, high-dose, quadrivalent (Fluzone High-Dose Quadrivalent Northern Hemisphere)" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0123-03" DisplayName="Influenza vaccine, quadrivalent, adjuvanted (FLUAD QUADRIVALENT)" CodeSystem="NDC"/>
+			<ValueElement Value="66019-0310-10" DisplayName="Influenza, live, intranasal, quadrivalent (FluMist Quadrivalent)" CodeSystem="NDC"/>
+			<!-- 09/13/2023 -->
+			<ValueElement Value="00069-2362-10" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 30 mcg/0.3 mL ages 12 years and older (COMIRNATY)" CodeSystem="NDC"/>
+			<ValueElement Value="00069-2392-10" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 30 mcg/0.3 mL ages 12 years and older (COMIRNATY) " CodeSystem="NDC"/>
+			<ValueElement Value="59267-4331-02" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 10 mcg/0.3 mL ages 5 through 11 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="NDC"/>
+			<ValueElement Value="59267-4315-02" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 3 mcg/0.3 mL for ages 6 months through 4 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="NDC"/>
+			<ValueElement Value="80631-0105-02" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL for ages 12 years and older (Novavax COVID-19 Vaccine, Adjuvanted)" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0102-95" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0102-96" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0102-93" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0287-92" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL ages 6 months through 11 years (Moderna COVID-19 Vaccine)" CodeSystem="NDC"/>
+
+			<!-- 
+			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
+			-->
 		</ValueSetDefinition>
 				
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
@@ -2222,6 +2269,37 @@
 			<ValueElement Value="49281-0564-58" DisplayName="DTaP-IPV (QUADRACEL)" CodeSystem="NDC"/>
 			<ValueElement Value="50090-4958-00" DisplayName="HPV9 (GARDASIL 9)" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0740-02" DisplayName="rotavirus, monovalent" CodeSystem="NDC"/>
+			<!-- 08/29/2023 -->
+			<ValueElement Value="00069-0207-01" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free (Abrysvo)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0575-00" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG1κ, (nirsevimab-alip), 0.5 mL, neonates and children to 24 months (BEYFORTUS)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0574-88" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG1κ, (nirsevimab-alip), 1 mL, neonates and children to 24 months (BEYFORTUS)" CodeSystem="NDC"/>
+			<ValueElement Value="50090-2062-01" DisplayName="Td (adult), 5 Lf tetanus toxoid, preservative free, adsorbed (TENIVAC)" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0323-04" DisplayName="Influenza, injectable, quadrivalent, preservative free (Afluria Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0909-41" DisplayName="Influenza, injectable, quadrivalent, preservative free (FLUARIX QUADRIVALENT)" CodeSystem="NDC"/>
+			<ValueElement Value="19515-0814-41" DisplayName="Influenza, injectable, quadrivalent, preservative free  (Flulaval Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0423-88" DisplayName="Influenza, injectable, quadrivalent, preservative free (Fluzone Quadrivalent Northern Hemisphere)" CodeSystem="NDC"/>
+			<ValueElement Value="33332-0423-11" DisplayName="Influenza, injectable, quadrivalent, contains preservative (Afluria Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0639-78" DisplayName="Influenza, injectable, quadrivalent (Fluzone Quadrivalent Northern Hemisphere)" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0323-04" DisplayName="Influenza, injectable, MDCK, preservative free, quadrivalent (Flucelvax Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0723-88" DisplayName="Influenza, recombinant, quadrivalent, injectable, preservative free (Flublok Quadrivalent Northern Hemisphere)" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0423-11" DisplayName="Influenza, injectable, MDCK, quadrivalent, preservative (Flucelvax Quadrivalent)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0123-88" DisplayName="Influenza, high-dose, quadrivalent (Fluzone High-Dose Quadrivalent Northern Hemisphere)" CodeSystem="NDC"/>
+			<ValueElement Value="70461-0123-04" DisplayName="Influenza vaccine, quadrivalent, adjuvanted (FLUAD QUADRIVALENT) " CodeSystem="NDC"/>
+			<ValueElement Value="66019-0310-01" DisplayName="Influenza, live, intranasal, quadrivalent (FluMist Quadrivalent)" CodeSystem="NDC"/>
+			<!-- 09/13/2023 -->
+			<ValueElement Value="00069-2362-01" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 30 mcg/0.3 mL ages 12 years and older (COMIRNATY)" CodeSystem="NDC"/> 
+			<ValueElement Value="00069-2392-01" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 30 mcg/0.3 mL ages 12 years and older (COMIRNATY) " CodeSystem="NDC"/> 
+			<ValueElement Value="59267-4331-01" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 10 mcg/0.3 mL ages 5 through 11 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="NDC"/> 
+			<ValueElement Value="59267-4315-01" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 3 mcg/0.3 mL for ages 6 months through 4 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="NDC"/> 
+			<ValueElement Value="80631-0105-01" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL for ages 12 years and older (Novavax COVID-19 Vaccine, Adjuvanted)  " CodeSystem="NDC"/> 
+			<ValueElement Value="80777-0102-04" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="NDC"/> 
+			<ValueElement Value="80777-0102-01" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="NDC"/> 
+			<ValueElement Value="80777-0287-07" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL ages 6 months through 11 years (Moderna COVID-19 Vaccine)" CodeSystem="NDC"/> 
+
+			<!-- 
+			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
+			-->
+			
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)">
@@ -2486,6 +2564,17 @@
 			
 			<ValueElement Value="253088698300049311230512" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20) VIS"/>
 			<ValueElement Value="253088698300005911230512" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine VIS"/>
+			<!-- 08/29/2023 -->
+			<ValueElement Value="253088698300060811230724" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine (adult vaccine)"/>
+			<ValueElement Value="253088698300026411230724" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
+			
+			<!-- 09/13/2023 -->
+			<ValueElement Value="253088698300058511230901" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
+			<ValueElement Value="253088698300061511230901" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
+			
+			<!--
+			<ValueElement Value="" CodeSystem="cdcgs1vis" DisplayName=""/>
+			-->
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="PHVS_FundingEligibilityObsMethod_IIS" Name="Funding Eligibility Observation Method (IIS)">
@@ -2597,6 +2686,17 @@
 			
 			<ValueElement Value="215" CodeSystem="CVX" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20)"/>
 			<ValueElement Value="216" CodeSystem="CVX" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20)"/>
+			<!-- 08/29/2023 -->
+			<ValueElement Value="303" CodeSystem="CVX" DisplayName="Respiratory syncytial virus (RSV), vaccine, recombinant, protein subunit RSV prefusion F, adjuvant reconstituted, 0.5 mL, preservative free"/>
+			<ValueElement Value="305" CodeSystem="CVX" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free"/>
+			<!-- 09/13/2023 -->
+			<ValueElement Value="308" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 3 mcg/0.3 mL for Ages 6 months through 4 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="CVX"/>
+			<ValueElement Value="310" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 10 mcg/0.3 mL ages 5 through 11 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="CVX"/>
+			<ValueElement Value="311" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL ages 6 months through 11 years (Moderna COVID-19 Vaccine)" CodeSystem="CVX"/>
+
+			<!--
+			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
+			-->
 		</ValueSetDefinition>
 	
 	
