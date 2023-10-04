@@ -1549,8 +1549,8 @@
 			<ValueElement Value="304" DisplayName="Respiratory syncytial virus (RSV), unspecified" CodeSystem="CVX"/>
 			<!-- 08/29/2023 -->
 			<ValueElement Value="305" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free" CodeSystem="CVX"/>
-			<ValueElement Value="306" DisplayName="Respiratory syncytial virus (RSV), monoclonal antibody, IgG1κ, (nirsevimab-alip), 0.5 mL, neonates and children to 24 months" CodeSystem="CVX"/>
-			<ValueElement Value="307" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG1κ, (nirsevimab-alip), 1 mL, neonates and children to 24 months" CodeSystem="CVX"/>
+			<ValueElement Value="306" DisplayName="Respiratory syncytial virus (RSV), monoclonal antibody, IgG1k, (nirsevimab-alip), 0.5 mL, neonates and children to 24 months" CodeSystem="CVX"/>
+			<ValueElement Value="307" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG1k, (nirsevimab-alip), 1 mL, neonates and children to 24 months" CodeSystem="CVX"/>
 			<!-- 09/13/2023 -->
 			<ValueElement Value="309" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 30 mcg/0.3 mL ages 12 years and older (COMIRNATY)" CodeSystem="CVX"/>
 			<ValueElement Value="310" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 10 mcg/0.3 mL ages 5 through 11 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="CVX"/>
