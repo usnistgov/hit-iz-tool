@@ -1793,7 +1793,7 @@
 			<ValueElement Value="00069-0344-01" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free (Abrysvo)" CodeSystem="NDC"/>
 			<ValueElement Value="00069-0344-05" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free (Abrysvo)" CodeSystem="NDC"/>
 			<ValueElement Value="00069-0344-10" DisplayName="Respiratory syncytial virus (RSV), vaccine, bivalent, protein subunit RSV prefusion F, diluent reconstituted, 0.5 mL, preservative free (Abrysvo)" CodeSystem="NDC"/>
-			<ValueElement Value="49281-0575-15" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG158160-0909-52k, (nirsevimab-alip), 0.5 mL, neonates and children to 24 months (BEYFORTUS)" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0575-15" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG1k, (nirsevimab-alip), 0.5 mL, neonates and children to 24 months (BEYFORTUS)" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0574-15" DisplayName="Respiratory syncytial virus (RSV) monoclonal antibody, IgG1k, (nirsevimab-alip), 1 mL, neonates and children to 24 months (BEYFORTUS)" CodeSystem="NDC"/>
 			<ValueElement Value="50090-2062-00" DisplayName="Td (adult), 5 Lf tetanus toxoid, preservative free, adsorbed (TENIVAC)" CodeSystem="NDC"/>
 			<ValueElement Value="33332-0323-03" DisplayName="Influenza, injectable, quadrivalent, preservative free (Afluria Quadrivalent)" CodeSystem="NDC"/>
