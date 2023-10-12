@@ -2780,3 +2780,17 @@ div.upload-error-table div.fixed-table-container-inner {
 ul.dropdown-menu > li.domain-selected, ul.dropdown-menu > li.domain-selected > a {
   background: #ffef8f;
 }
+
+.transportonbuttonactive{
+	font-weight: bold;
+	background-color: green !important ;
+}
+
+.transportoffbuttonactive{
+	font-weight: bold;
+	background-color: red !important ;
+}
+
+.transportbuttoninactive{
+	background-color: rgb(145, 175, 201);
+}

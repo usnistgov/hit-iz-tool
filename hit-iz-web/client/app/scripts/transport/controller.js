@@ -40,6 +40,7 @@ angular.module('transport')
             return $scope.selectedProtocol != null && $scope.selectedProtocol.key === proto;
         };
 
+
         $scope.toggleTransport = function (disabled) {
             $scope.transport.disabled = disabled;
             StorageService.set(StorageService.TRANSPORT_DISABLED, disabled);
@@ -50,6 +51,14 @@ angular.module('transport')
                 }
             }
         };
+        
+        
+        var pr = $scope.getProtocols();
+        if(pr != null && pr.length === 1){
+            $scope.selectProtocol(pr[0]);
+        }
+            
+        
     }]);
 
 

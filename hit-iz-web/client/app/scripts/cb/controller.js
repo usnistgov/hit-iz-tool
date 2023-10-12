@@ -985,7 +985,7 @@ angular.module('cb')
 
 
     $scope.toggleTransport = function (disabled) {
-      $scope.transport.disabled = disabled;
+      $scope.transport.disabled = disabled;      
       StorageService.set(StorageService.TRANSPORT_DISABLED, disabled);
       if (CB.editor.instance != null) {
         CB.editor.instance.setOption("readOnly", !disabled);
