@@ -1960,10 +1960,25 @@
   }]);
 
   mod.controller('ProfileViewerValueSetDetailsCtrl', function ($scope, $modalInstance, table, $rootScope, $filter) {
+    
+    $scope.alphaNumComparator = function(v1, v2) {
+	    // If we have numbers compare numbers
+	    if (!isNaN(Number(v1.value)) && !isNaN(Number(v2.value)) ) {
+	      return Number(v1.value) < Number( v2.value) ? -1 : 1;
+	    }
+	    // Compare strings alphabetically, taking locale into account
+	    return v1.value.localeCompare(v2.value);
+	  };
+    
     $scope.valueSet = table;
     $scope.scrollbarWidth = $rootScope.getScrollbarWidth();
     //table.valueSetElements=  $filter('orderBy')(table != null ? table.valueSetElements: [], 'bindingIdentifier');
-    $scope.tmpValueSetElements = [].concat(table != null ? table.valueSetElements : []);
+   
+	$scope.valueSetElements = $filter('orderBy')(table.valueSetElements,'value',false,$scope.alphaNumComparator);
+    $scope.tmpValueSetElements = [].concat($scope.valueSetElements);
+
+
+   // $scope.tmpValueSetElements = [].concat(table != null ? table.valueSetElements : []);
     $scope.cancel = function () {
       $modalInstance.close();
     };
