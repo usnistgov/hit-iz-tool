@@ -494,8 +494,7 @@
                   tooltip-html="getPredicatesAsMultipleLinesString(node)" tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip" ng-bind-html="getPredicatesAsOneLineString(node)" tooltip-trigger
                   tooltip-animation="false" tooltip-placement="left"></span>
-            <span ng-repeat="predicate in  node.selfPredicates" ng-if="!options.concise">
-				heyho
+            <span ng-repeat="predicate in  node.selfPredicates" ng-if="!options.concise">				
                 <span class="expanded-view">
                     {{::predicate.description}}
                 </span>
@@ -507,7 +506,6 @@
                   tooltip-class="constraints-tooltip" ng-bind-html="getConfStatementsAsOneLineString(node)"
                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"></span>
             <span ng-repeat="confStatement in node.selfConformanceStatements" ng-if="!options.concise">
-heyho
                 <span class="expanded-view">
                    {{::confStatement.constraintId}} : {{::confStatement.description}}
                 </span>
