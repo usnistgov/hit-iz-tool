@@ -1308,6 +1308,11 @@
 			<ValueElement Value="314" DisplayName="Respiratory syncytial virus (RSV) vaccine, unspecified" CodeSystem="CVX"/>
 			<ValueElement Value="315" DisplayName="Respiratory syncytial virus (RSV) MAB, unspecified" CodeSystem="CVX"/>
 
+			<!-- 01/17/2024 -->
+			<ValueElement Value="313" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL (Novavax)" CodeSystem="CVX"/>
+			<ValueElement Value="316" DisplayName="meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF" CodeSystem="CVX"/>
+			<ValueElement Value="317" DisplayName="Chikungunya, live attenuated vaccine, 0.5 mL, preservative free" CodeSystem="CVX"/>
+
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->
@@ -1818,7 +1823,12 @@
 			<ValueElement Value="80777-0102-96" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="NDC"/>
 			<ValueElement Value="80777-0102-93" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="NDC"/>
 			<ValueElement Value="80777-0287-92" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL ages 6 months through 11 years (Moderna COVID-19 Vaccine)" CodeSystem="NDC"/>
-
+			<!-- 01/17/2024 -->
+			<ValueElement Value="71665-0001-02" DisplayName="anthrax (CYFENDUS)" CodeSystem="NDC"/> 
+			<ValueElement Value="00069-0600-01" DisplayName="MenB recombinant component for reconstitution with MenACWY, 0.5 mL (PENBRAYA)" CodeSystem="NDC"/> 
+			<ValueElement Value="00069-0600-05" DisplayName="MenACWY lyophilized component for reconstitution with MenB, 0.5 mL (PENBRAYA)" CodeSystem="NDC"/> 
+			<ValueElement Value="00069-0600-10" DisplayName="MenACWY lyophilized component for reconstitution with MenB, 0.5 mL (PENBRAYA)" CodeSystem="NDC"/> 
+			<ValueElement Value="00069-2377-10" DisplayName="COMIRNATY (COVID-19 Vaccine, mRNA, 2023-2024 Formula), no freeze formulation" CodeSystem="NDC"/> 
 			<!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
 			-->
@@ -2300,6 +2310,11 @@
 			<ValueElement Value="80777-0102-04" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="NDC"/> 
 			<ValueElement Value="80777-0102-01" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="NDC"/> 
 			<ValueElement Value="80777-0287-07" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL ages 6 months through 11 years (Moderna COVID-19 Vaccine)" CodeSystem="NDC"/> 
+			<!-- 01/17/2024 -->
+			<ValueElement Value="71665-0001-01" DisplayName="anthrax (CYFENDUS)" CodeSystem="NDC"/> 
+			<ValueElement Value="00069-0332-01" DisplayName="MenB recombinant component for reconstitution with MenACWY, 0.5 mL (PENBRAYA)" CodeSystem="NDC"/> 
+			<ValueElement Value="00069-0271-01" DisplayName="MenACWY lyophilized component for reconstitution with MenB, 0.5 mL (PENBRAYA)" CodeSystem="NDC"/> 
+			<ValueElement Value="00069-2377-01" DisplayName="COMIRNATY (COVID-19 Vaccine, mRNA, 2023-2024 Formula), no freeze formulation" CodeSystem="NDC"/> 
 
 			<!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
@@ -2580,6 +2595,12 @@
 			<!-- 09/22/2023 -->
 			<ValueElement Value="253088698300062211230925" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) preventative antibody IIS VIS"/>
 
+			<!-- 01/17/2024 -->
+			<ValueElement Value="253088698300037011230901" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older"/>
+			<ValueElement Value="253088698300063911231019" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older"/>
+			<ValueElement Value="253088698300060811231019" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>
+			<ValueElement Value="253088698300064611231207" CodeSystem="cdcgs1vis" DisplayName="Tick-borne Encephalitis Vaccine VIS"/>
+
 			<!--
 			<ValueElement Value="" CodeSystem="cdcgs1vis" DisplayName=""/>
 			-->
@@ -2704,7 +2725,13 @@
 			<!-- 09/22/2023 -->
 			<ValueElement Value="306" DisplayName="RSV (Respiratory Syncytial Virus) preventative antibody IIS VIS" CodeSystem="CVX"/>				
 			<ValueElement Value="307" DisplayName="RSV (Respiratory Syncytial Virus) preventative antibody IIS VIS" CodeSystem="CVX"/>
-						
+			<!-- 01/17/2024 -->
+			<ValueElement Value="313" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older" CodeSystem="CVX"/>
+			<ValueElement Value="309" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older" CodeSystem="CVX"/>
+			<ValueElement Value="312" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older" CodeSystem="CVX"/>
+			<ValueElement Value="223" DisplayName="Tick-borne Encephalitis Vaccine VIS" CodeSystem="CVX"/>
+			<ValueElement Value="224" DisplayName="Tick-borne Encephalitis Vaccine VIS" CodeSystem="CVX"/>
+			
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->
