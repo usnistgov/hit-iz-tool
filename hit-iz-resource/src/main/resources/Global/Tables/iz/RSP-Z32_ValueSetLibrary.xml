@@ -1555,14 +1555,14 @@
 			<ValueElement Value="309" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 30 mcg/0.3 mL ages 12 years and older (COMIRNATY)" CodeSystem="CVX"/>
 			<ValueElement Value="310" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 10 mcg/0.3 mL ages 5 through 11 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="CVX"/>
 			<ValueElement Value="308" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 3 mcg/0.3 mL for Ages 6 months through 4 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="CVX"/>
-			<!-- <ValueElement Value="313" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL for ages 12 years and older (Novavax COVID-19 Vaccine, Adjuvanted)" CodeSystem="CVX"/> -->
+			<ValueElement Value="313" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL for ages 12 years and older (Novavax COVID-19 Vaccine, Adjuvanted)" CodeSystem="CVX"/>
 			<ValueElement Value="312" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="CVX"/>
 			<ValueElement Value="311" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL ages 6 months through 11 years (Moderna COVID-19 Vaccine)" CodeSystem="CVX"/>
 			<!-- 09/22/2023 -->
 			<ValueElement Value="314" DisplayName="Respiratory syncytial virus (RSV) vaccine, unspecified" CodeSystem="CVX"/>				
 			<ValueElement Value="315" DisplayName="Respiratory syncytial virus (RSV) MAB, unspecified" CodeSystem="CVX"/>
 			<!-- 01/17/2024 -->
-			<ValueElement Value="313" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL (Novavax)" CodeSystem="CVX"/>
+			<!-- <ValueElement Value="313" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL (Novavax)" CodeSystem="CVX"/> -->
 			<ValueElement Value="316" DisplayName="meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF" CodeSystem="CVX"/>
 			<ValueElement Value="317" DisplayName="Chikungunya, live attenuated vaccine, 0.5 mL, preservative free" CodeSystem="CVX"/>
 			<!--
