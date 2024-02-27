@@ -18,7 +18,8 @@ import java.util.Iterator;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.soap.SOAPException;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import gov.nist.hit.core.domain.ValidationResult;
 import gov.nist.hit.core.domain.ValidationResultItem;
@@ -31,7 +32,7 @@ import gov.nist.hit.iz.domain.soap.SoapValidationResult;
  */
 public class SOAPValidationResult extends ValidationResult {
 
-	private static Logger logger = Logger.getLogger(SOAPValidationResult.class);
+	private static Logger logger = LoggerFactory.getLogger(SOAPValidationResult.class);
 
 	public SOAPValidationResult() {
 	}

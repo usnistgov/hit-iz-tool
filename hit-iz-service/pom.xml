@@ -25,17 +25,7 @@
 		</dependency>
 
 
-			 <dependency>
- 			<groupId>gov.nist.hit.core.xml</groupId>
- 			<artifactId>hit-core-xml-domain</artifactId>
- 			<version>1.0.0.IZTOOLNIST</version>
-			<exclusions>
-				<exclusion>
-					<groupId>gov.nist.hit.core</groupId>
-					<artifactId>hit-core-domain</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+		
 
  
 		<!-- <dependency>
@@ -81,11 +71,11 @@
 			<version>1.0.0</version>
 		</dependency>
 
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.openimmunizationsoftware.dqa.nist</groupId>
 			<artifactId>ois-dqa-core</artifactId>
 			<version>1.0.0</version>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>gov.nist.healthcare</groupId>

@@ -1,8 +1,6 @@
 package gov.nist.hit.iz.service;
 
 import org.json.JSONObject;
-import org.openimmunizationsoftware.dqa.nist.CompactReportModel;
-import org.openimmunizationsoftware.dqa.nist.ProcessMessageHL7;
 
 import gov.nist.healthcare.unified.expressions.Action;
 import gov.nist.healthcare.unified.expressions.Exp;
@@ -24,12 +22,14 @@ public class IZHL7V2MessageValidatorImpl extends HL7V2MessageValidator {
 		try {
 			EnhancedReport report = super.generateReport(testContext, command);
 			if (report != null) {
-				if (command.getDqaCodes() != null && !command.getDqaCodes().isEmpty()) {
-					// Perform a DQA validation
-					CompactReportModel dqaResults = ProcessMessageHL7.getInstance().process(command.getContent(),
-							command.getFacilityId());
-					report.put(dqaResults.toSections(command.getDqaCodes()));
-				}
+				
+				//no longer support dqacondes (data quality analysis)
+//				if (command.getDqaCodes() != null && !command.getDqaCodes().isEmpty()) {
+//					// Perform a DQA validation
+//					CompactReportModel dqaResults = ProcessMessageHL7.getInstance().process(command.getContent(),
+//							command.getFacilityId());
+//					report.put(dqaResults.toSections(command.getDqaCodes()));
+//				}
 				// Create a restriction
 				Restriction restriction = new Restriction();
 				restriction.add(new Condition("path", Exp.Format, "RXA\\[[1-9]+[0-9]*\\]-9\\[2\\](\\.[1-9]+[0-9]*)*"));

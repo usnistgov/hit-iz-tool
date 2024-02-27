@@ -31,7 +31,8 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import org.xml.sax.InputSource;
@@ -46,7 +47,8 @@ import gov.nist.hit.iz.service.exception.SoapValidationReportException;
 
 public abstract class SOAPValidationReportGenerator {
 
-	private final static Logger logger = Logger.getLogger(SOAPValidationReportGenerator.class);
+//	static final Logger logger = LoggerFactory.getLogger(CBManagementController.class);
+	private final static Logger logger = LoggerFactory.getLogger(SOAPValidationReportGenerator.class);
 
 	private static final String HTML_XSL = "/xslt/soap-validation-report-html.xsl";
 	private static final String PDF_XSL = "/xslt/soap-validation-report-pdf.xsl";
@@ -88,7 +90,6 @@ public abstract class SOAPValidationReportGenerator {
 			return xslt;
 
 		} catch (IOException e) {
-			logger.error(e, e);
 			throw new SoapValidationReportException(e.getMessage());
 		}
 	}
@@ -99,7 +100,6 @@ public abstract class SOAPValidationReportGenerator {
 			return xslt;
 
 		} catch (IOException e) {
-			logger.error(e, e);
 			throw new SoapValidationReportException(e.getMessage());
 		}
 	}
