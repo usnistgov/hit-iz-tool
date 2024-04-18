@@ -1209,7 +1209,7 @@
 			<ValueElement Value="21" DisplayName="varicella" CodeSystem="CVX"/>
 			<ValueElement Value="22" DisplayName="DTP-Hib" CodeSystem="CVX"/>
 			<ValueElement Value="23" DisplayName="plague" CodeSystem="CVX"/>
-			<ValueElement Value="24" DisplayName="anthrax" CodeSystem="CVX"/>
+			<!-- <ValueElement Value="24" DisplayName="anthrax" CodeSystem="CVX"/> -->
 			<ValueElement Value="25" DisplayName="typhoid, oral" CodeSystem="CVX"/>
 			<ValueElement Value="26" DisplayName="cholera, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="27" DisplayName="botulinum antitoxin" CodeSystem="CVX"/>
@@ -1481,6 +1481,13 @@
 			<!-- <ValueElement Value="313" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL (Novavax)" CodeSystem="CVX"/> -->
 			<ValueElement Value="316" DisplayName="meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF" CodeSystem="CVX"/>
 			<ValueElement Value="317" DisplayName="Chikungunya, live attenuated vaccine, 0.5 mL, preservative free" CodeSystem="CVX"/>
+			<!-- 04/18/2024 -->
+			<ValueElement Value="318" DisplayName="Anthrax vaccine, adsorbed, adjuvanted, post-exposure prophylaxis" CodeSystem="CVX"/> 
+			<ValueElement Value="503" DisplayName="SARS-COV-2 COVID-19 Live Attenuated Virus Non-US Vaccine Product (COVIVAC)" CodeSystem="CVX"/> 
+			<ValueElement Value="508" DisplayName="SARS-COV-2 COVID-19 Protein Subunit Non-US Vaccine Product (Jiangsu Province Centers for Disease Control and Prevention)" CodeSystem="CVX"/> 
+			<ValueElement Value="319" DisplayName="Anthrax vaccine, unspecified" CodeSystem="CVX"/> 
+			<ValueElement Value="24" DisplayName="Anthrax vaccine, adsorbed, pre-exposure and post-exposure prophylaxis" CodeSystem="CVX"/> 
+
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->
@@ -1898,6 +1905,11 @@
 			<ValueElement Value="312" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older" CodeSystem="CVX"/>
 			<ValueElement Value="223" DisplayName="Tick-borne Encephalitis Vaccine VIS" CodeSystem="CVX"/>
 			<ValueElement Value="224" DisplayName="Tick-borne Encephalitis Vaccine VIS" CodeSystem="CVX"/>			
+			<!-- 04/18/2024 -->
+			<ValueElement Value="318" DisplayName="Anthrax Vaccine VIS" CodeSystem="CVX"/> 
+			<ValueElement Value="316" DisplayName="Meningococcal polysaccharide (groups A, C, Y, W) tetanus toxoid conjugate, meningococcal B recombinant vaccine, 0.5mL, preservative free" CodeSystem="CVX"/> 
+
+
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->
