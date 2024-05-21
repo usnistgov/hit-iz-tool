@@ -332,16 +332,25 @@
                 </Constraint>
             </ByID>
             <ByID ID="QPD_IZ1_5">
-                <Constraint ID="IZ-67" Target="1[1]">
-                    <Description>The value of QPD-1 (Message Query Name) SHALL be 'Z34^Request Immunization History^CDCPHINVS'.</Description>
+                <Constraint ID="IZ-67-NIST" Target="1[1]">
+                    <Description>The value of QPD-1 (Message Query Name) SHALL be 'Z34^Request Immunization History^CDCPHINVS' OR 'Z44^Request Evaluated History and Forecast^CDCPHINVS'.</Description>
                     <Assertion>
-                        <AND>
-                            <PlainText Path="1[1].1[1]" Text="Z34" IgnoreCase="false"/>
-                            <AND>
-                                <PlainText Path="1[1].2[1]" Text="Request Immunization History" IgnoreCase="false"/>
-                                <PlainText Path="1[1].3[1]" Text="CDCPHINVS" IgnoreCase="false"/>
-                            </AND>
-                        </AND>
+                        <OR>
+							<AND>
+								<PlainText Path="1[1].1[1]" Text="Z34" IgnoreCase="false"/>
+								<AND>
+									<PlainText Path="1[1].2[1]" Text="Request Immunization History" IgnoreCase="false"/>
+									<PlainText Path="1[1].3[1]" Text="CDCPHINVS" IgnoreCase="false"/>
+								</AND>
+							</AND>
+							<AND>
+								<PlainText Path="1[1].1[1]" Text="Z44" IgnoreCase="false"/>
+								<AND>
+									<PlainText Path="1[1].2[1]" Text="Request Evaluated History and Forecast" IgnoreCase="false"/>
+									<PlainText Path="1[1].3[1]" Text="CDCPHINVS" IgnoreCase="false"/>
+								</AND>
+							</AND>
+						</OR>
                     </Assertion>
                 </Constraint>
                 <Constraint ID="IZ-TS_NZ" Target="6[1]">
