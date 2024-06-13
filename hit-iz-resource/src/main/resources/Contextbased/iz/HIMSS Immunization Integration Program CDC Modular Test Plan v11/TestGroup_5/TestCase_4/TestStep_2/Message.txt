@@ -1,0 +1,2 @@
+MSH|^~\&|IIP-IIS-APP|IIP|SUT-APP|OFM|20240405114221-0500||ACK^V04^ACK|IIP-ACK-1|P|2.5.1|||NE|NE|||||Z23^CDCPHINVS|Immunization Integration Program|Oregon Family Medicine
+MSA|AA|IIP-Transmit-8
