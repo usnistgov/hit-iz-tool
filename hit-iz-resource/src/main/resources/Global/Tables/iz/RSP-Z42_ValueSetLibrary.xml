@@ -1488,6 +1488,8 @@
 			<ValueElement Value="319" DisplayName="Anthrax vaccine, unspecified" CodeSystem="CVX"/> 
 			<ValueElement Value="24" DisplayName="Anthrax vaccine, adsorbed, pre-exposure and post-exposure prophylaxis" CodeSystem="CVX"/> 
 
+			<!-- 06/21/2024 -->
+			<ValueElement Value="320" DisplayName="Influenza, MDCK, trivalent, preservative" CodeSystem="CVX"/>
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->
@@ -1909,7 +1911,9 @@
 			<ValueElement Value="318" DisplayName="Anthrax Vaccine VIS" CodeSystem="CVX"/> 
 			<ValueElement Value="316" DisplayName="Meningococcal polysaccharide (groups A, C, Y, W) tetanus toxoid conjugate, meningococcal B recombinant vaccine, 0.5mL, preservative free" CodeSystem="CVX"/> 
 
-
+			<!-- 06/21/2024 -->
+			<ValueElement Value="320" DisplayName="Influenza (Flu) Vaccine (Inactivated or Recombinant) VIS" CodeSystem="CVX"/>
+			
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->
