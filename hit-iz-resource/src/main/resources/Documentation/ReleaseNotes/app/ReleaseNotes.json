@@ -172,5 +172,11 @@
         "date": "2023/05/18",
         "name": "HIMSS_IIP_Release_Notes.1.9.12.docx",
         "title": "Release notes 1.9.12"
+    },
+    {
+        "version": "1.9.13",
+        "date": "2023/06/13",
+        "name": "HIMSS_IIP_Release_Notes.1.9.13.docx",
+        "title": "Release notes 1.9.13"
     }
 ]
