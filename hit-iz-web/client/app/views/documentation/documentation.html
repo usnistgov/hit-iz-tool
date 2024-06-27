@@ -9,31 +9,37 @@
     top.location = self.location;
   }
 </script>
-<div id="subNavBar" class="subNavBar" ng-controller="DocumentationCtrl" ng-init="initDocumentation()">
+<div id="subNavBar" class="subNavBar"  ng-controller="DocumentationCtrl" ng-init="initDocumentation()">
 
   <div class="login-required-page" ng-show="isAuthenticationRequired() && !isAuthenticated()">
-    <p>Please <a class="point" href="" ng-click="loginReq()"><i class="fa fa-sign-in"></i>&nbsp;login</a> to access this page. You can
+    <p>Please <a  class="point" href="" ng-click="loginReq()"><i class="fa fa-sign-in"></i>&nbsp;login</a> to access this page. You can
       also
-      <a class="point" href="#/registration"><i class="fa fa-chevron-circle-right"></i>&nbsp;register</a></p>
+      <a  class="point" href="#/registration"><i class="fa fa-chevron-circle-right"></i>&nbsp;register</a></p>
   </div>
 
 
   <div ng-show="isAuthenticated() || !isAuthenticationRequired()">
 
-    <ul class="clearfix mainSubNav" ng-if="isDomainSelectionSupported()">
-      <li ng-click="selectSectionType('app')" class="jslink"><a ng-class="{'current':sectionType.key === 'app'}"> <i class="fa fa-book"></i> General Documents </a></li>
-      <li ng-click="selectSectionType(domain.name)" class="jslink"><a ng-class="{'current':sectionType.key !== 'app'}" ng-if="isDomainSelectionSupported()"> <i class="fa fa-book"></i> {{domain.name}}'s Documents</a></li>
+    <ul class="clearfix mainSubNav">
+      <li ng-click="selectSectionType('app')" class="jslink" ><a
+        ng-class="{'current':sectionType.key === 'app'}"> <i class="fa fa-book"></i> General Documents </a></li>
+      <li ng-click="selectSectionType(domain.name)" class="jslink"><a
+        ng-class="{'current':sectionType.key !== 'app'}" ng-if="isDomainSelectionSupported()"> <i class="fa fa-book"></i> {{domain.name}}'s Documents</a></li>
     </ul>
 
     <div>
       <!--<div documentation-viewer></div>-->
-      <div class="row test-plan-select-container" style="margin:10px" ng-show="documentsScopes.length > 1">
+      <div class="row test-plan-select-container" style="margin:10px;" ng-show="documentsScopes.length > 1">
         <div class="col-md-12">
           <form class="form-inline">
             <div class="form-group">
-              <label class="control-label" style="text-align:left" for="selectedScope">Documents Type: </label>
-              <div class="btn-group btn-group-md" id="selectedScope" role="group" aria-label="..." style="margin-right: 10px">
-                <button class="btn btn-cf-outline" ng-repeat="tpScope in documentsScopes" ng-click="selectedScope.key = tpScope.key; selectScope();" ng-class="{'active':tpScope.key == selectedScope.key}">{{::tpScope.name}}
+              <label class="control-label" style="text-align:left;" for="selectedScope">Documents Type: </label>
+              <div class="btn-group btn-group-md" id="selectedScope" role="group" aria-label="..."
+                   style="margin-right: 10px;">
+                <button class="btn btn-cf-outline" ng-repeat="tpScope in documentsScopes"
+                        ng-click="selectedScope.key = tpScope.key; selectScope();"
+                        ng-class="{'active':tpScope.key == selectedScope.key}"
+                >{{::tpScope.name}}
                 </button>
               </div>
             </div>
@@ -286,7 +292,10 @@
             <th>Example Message</th>
             <th>Conformance Profile</th>
             <th>Constraints</th>
+			<th>CoConstraints</th>
             <th>ValueSet Library</th>
+			<th>ValueSet Bindings</th>
+			<th>Slicings</th>
           </tr>
           </thead>
           <tbody class=""></tbody>
@@ -305,74 +314,94 @@
 <script type="text/ng-template" id="TestCaseDocumentationNode.html">
   <tr tt-node
       is-branch="node.children != null && node.children.length > 0">
-    <td style="white-space: nowrap">
+    <td>
       {{::node.title}}
     </td>
     <td>
       <span ng-if="!node.tsPath ||node.tsPath === null">-</span>
-      <a class="point"  ng-if="node.tsPath != null" ng-click="downloadArtifact(node.tsPath,node.title)"><i class="fa fa-download fa-fw"></i>Test Story</a>
+      <a class="point"  ng-if="node.tsPath != null" ng-click="downloadArtifact(node.tsPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
     </td>
 
     <td>
       <span ng-if="!node.mcPath || node.mcPath === null">-</span>
-      <a ng-if="node.mcPath != null" class="point"  ng-click="downloadArtifact(node.mcPath,node.title)"><i class="fa fa-download fa-fw"></i>Message Content</a>
+      <a ng-if="node.mcPath != null" class="point"  ng-click="downloadArtifact(node.mcPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
     </td>
     <td>
       <span ng-if="!node.tdsPath ||node.tdsPath === null">-</span>
-      <a ng-if="node.tdsPath != null" class="point"  ng-click="downloadArtifact(node.tdsPath,node.title)"><i class="fa fa-download fa-fw"></i>Test Data Specification</a>
+      <a ng-if="node.tdsPath != null" class="point"  ng-click="downloadArtifact(node.tdsPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
     </td>
     <td>
       <span ng-if="!node.jdPath ||node.jdPath === null">-</span>
-      <a ng-if="node.jdPath != null" class="point"  ng-click="downloadArtifact(node.jdPath,node.title)"><i class="fa fa-download fa-fw"></i>Juror Document</a>
+      <a ng-if="node.jdPath != null" class="point"  ng-click="downloadArtifact(node.jdPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
     </td>
 
     <td>
       <div ng-if="node.title === 'Context-based'">
         <a  class="point"  class="point"  title="Download Complete TestCase (.zip)"
                  ng-click="downloadCompleteTestPackage(node.stage)">
-          <i class="fa fa-download fa-fw"></i>Test Packages
+          <i class="fa fa-download fa-fw"></i>
         </a>
       </div>
       <div ng-if="node.title !== 'Context-based'">
       <span ng-if="!node.tpPath || node.tpPath === null">-</span>
-      <a  class="point" ng-if="node.tpPath != null" class="point"  ng-click="downloadArtifact(node.tpPath,node.title)"><i class="fa fa-download fa-fw"></i>Test Package</a>
+      <a  class="point" ng-if="node.tpPath != null" class="point"  ng-click="downloadArtifact(node.tpPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
       </div>
     </td>
     <td>
       <span ng-if="!node.tpsPath || node.tpsPath === null">-</span>
-      <a  class="point" ng-if="node.tpsPath != null" class="point"  ng-click="downloadArtifact(node.tpsPath,node.title)"><i class="fa fa-download fa-fw"></i>Test Plan Summary</a>
+      <a  class="point" ng-if="node.tpsPath != null" class="point"  ng-click="downloadArtifact(node.tpsPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
     </td>
 
     <td>
       <div ng-if="node.title === 'Context-free' || node.title === 'Context-based'">
-        <a  class="point" title="Download Complete Example messages (.zip)"
+		<span ng-if="!node.exMsgPresent">-</span>
+        <a  class="point" ng-if="node.exMsgPresent" title="Download Complete Example messages (.zip)"
                  ng-click="downloadExampleMessages(node.stage)">
-          <i class="fa fa-download fa-fw"></i>Example Messages
+          <i class="fa fa-download fa-fw"></i>
         </a>
       </div>
       <div ng-if="node.title !== 'Context-free' && node.title !== 'Context-based'">
       <span ng-if="!node.exMsgPresent">-</span>
-        <a  class="point" ng-if="node.exMsgPresent" class="point"  ng-click="downloadMessage(node)"><i class="fa fa-download fa-fw"></i>Example Message</a>
+        <a  class="point" ng-if="node.exMsgPresent" class="point"  ng-click="downloadMessage(node)"><i class="fa fa-download fa-fw"></i></a>
       </div>
     </td>
 
     <td>
       <span ng-if="!node.xmlConfProfilePresent">-</span>
       <a  class="point" ng-if="node.xmlConfProfilePresent" class="point"
-         ng-click="downloadProfile(node)"><i class="fa fa-download fa-fw"></i>Conformance Profile</a>
+         ng-click="downloadProfile(node)"><i class="fa fa-download fa-fw"></i></a>
     </td>
 
     <td>
       <span ng-if="!node.xmlConstraintsPresent">-</span>
       <a  class="point" ng-if="node.xmlConstraintsPresent"
-         class="point"  ng-click="downloadConstraints(node)"><i class="fa fa-download fa-fw"></i>Constraints</a>
+         class="point"  ng-click="downloadConstraints(node)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+	<td>
+      <span ng-if="!node.xmlCoConstraintsPresent">-</span>
+      <a  class="point" ng-if="node.xmlCoConstraintsPresent"
+         class="point"  ng-click="downloadCoConstraints(node)"><i class="fa fa-download fa-fw"></i></a>
     </td>
 
     <td>
       <span ng-if="!node.xmlValueSetLibraryPresent">-</span>
       <a  class="point" ng-if="node.xmlValueSetLibraryPresent"
-         class="point"  ng-click="downloadValueSetLib(node)"><i class="fa fa-download fa-fw"></i>ValueSet Library</a>
+         class="point"  ng-click="downloadValueSetLib(node)"><i class="fa fa-download fa-fw"></i></a>
     </td>
+
+	<td>
+      <span ng-if="!node.xmlValueSetBindingsPresent">-</span>
+      <a  class="point" ng-if="node.xmlValueSetBindingsPresent"
+         class="point"  ng-click="downloadValueSetBindings(node)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+	<td>
+      <span ng-if="!node.xmlSlicingsPresent">-</span>
+      <a  class="point" ng-if="node.xmlSlicingsPresent"
+         class="point"  ng-click="downloadSlicings(node)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
 
 
   </tr>
@@ -536,7 +565,7 @@
                 <span ng-if="doc.path != null">
                     <a class="point"  ng-if="isLink(doc.path)" target="_blank"
                        ng-href="{{::doc.path}}">{{::doc.title}}</a>
-                    <a class="point"  ng-if="!isLink(doc.path)" ng-click="downloadDocument(doc.path)">{{::doc.name}}</a>
+                    <a class="point"  ng-if="!isLink(doc.path)" ng-click="downloadTool(doc.path)">{{::doc.name}}</a>
                     </span>
               </td>
               <td st-ratio="15">
