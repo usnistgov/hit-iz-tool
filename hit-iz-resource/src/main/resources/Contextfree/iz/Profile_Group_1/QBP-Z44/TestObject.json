@@ -2,9 +2,10 @@
   "id" : 1218436,
   "name" : "QBP-Z44",
   "hl7v2" : {
-    "messageId" : "b760d322-9afd-439e-96f5-43db66937c4e",
-    "constraintId" : "689b43b7-f088-479f-8ba1-551618d13ea3",
-    "valueSetLibraryId" : "c01bbec1-cf6a-4748-8a6c-2dae2e4b8d0e"
+    "messageId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e863a",
+    "constraintId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_C",
+    "valueSetLibraryId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_VS",
+    "valueSetBindingsId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_B"
    },
   "position" : 4,
   "description" : "No Description"
