@@ -673,7 +673,7 @@
             	     
 	            $http.get('api/'+stage.toLowerCase()+ '/' + type.toLowerCase() + 's/' + id + "/updateDate", { timeout: 180000}).then(
 						function (date) {	
-							$localForage.getItem('api/'+stage.toLowerCase()+ '/' + type.toLowerCase() + 's/' + id + '/details',true).then(function(data) {
+							$localForage.getItem('api/'+stage.toLowerCase()+ '/' + type.toLowerCase() + 's/' + id + '/details'+"-dev",true).then(function(data) {
 								//cache found
 //								console.log("cache found for " + 'api/'+stage.toLowerCase()+ '/' + type.toLowerCase() + 's/' + id + '/details' )
 					            var cacheData = data;																						
@@ -683,7 +683,7 @@
 									$http.get('api/'+stage.toLowerCase()+ '/' + type.toLowerCase() + 's/' + id + '/details').then(
 											function (object) {
 												try {
-													$localForage.setItem('api/'+stage.toLowerCase() +'/' + type.toLowerCase() + 's/' + id + '/details',angular.fromJson(object.data)).then(function() {});
+													$localForage.setItem('api/'+stage.toLowerCase() +'/' + type.toLowerCase() + 's/' + id + '/details'+"-dev",angular.fromJson(object.data)).then(function() {});
 													delay.resolve(angular.fromJson(object.data));
 												} catch (e) {
 													delay.reject("Invalid character");
@@ -701,7 +701,7 @@
 							$http.get('api/'+stage.toLowerCase()+ '/' + type.toLowerCase() + 's/' + id + '/details').then(
 									function (object) {
 										try {
-											$localForage.setItem('api/'+stage.toLowerCase() +'/' + type.toLowerCase() + 's/' + id + '/details',angular.fromJson(object.data)).then(function() {});
+											$localForage.setItem('api/'+stage.toLowerCase() +'/' + type.toLowerCase() + 's/' + id + '/details'+"-dev",angular.fromJson(object.data)).then(function() {});
 											delay.resolve(angular.fromJson(object.data));
 										} catch (e) {
 											delay.reject("Invalid character");
@@ -718,7 +718,7 @@
 							$http.get('api/'+stage.toLowerCase()+ '/' + type.toLowerCase() + 's/' + id + '/details').then(
 									function (object) {
 										try {
-											$localForage.setItem('api/'+stage.toLowerCase() +'/' + type.toLowerCase() + 's/' + id + '/details',angular.fromJson(object.data)).then(function() {});
+											$localForage.setItem('api/'+stage.toLowerCase() +'/' + type.toLowerCase() + 's/' + id + '/details'+"-dev",angular.fromJson(object.data)).then(function() {});
 											delay.resolve(angular.fromJson(object.data));
 										} catch (e) {
 											delay.reject("Invalid character");

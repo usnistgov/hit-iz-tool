@@ -211,7 +211,7 @@ angular.module('main').controller('MainCtrl',
 
         $scope.addToHiddenList = function (id) {
             var hiddenIds;
-            $localForage.getItem('hiddenNotifications', true).then(function (hiddenIdsResults) {
+            $localForage.getItem('hiddenNotifications'+"-dev", true).then(function (hiddenIdsResults) {
                 hiddenIds = hiddenIdsResults;
                 if (hiddenIds.indexOf(id) === -1) {
                     hiddenIds.push(id);
@@ -222,7 +222,7 @@ angular.module('main').controller('MainCtrl',
                 hiddenIds = [];
                 hiddenIds[0] = id;
             }).finally(function () {
-                $localForage.setItem("hiddenNotifications", hiddenIds).then(function (err) {
+                $localForage.setItem("hiddenNotifications"+"-dev", hiddenIds).then(function (err) {
                     $scope.updateNotifications($scope.rawNotifications);
                 });
             });
@@ -233,7 +233,7 @@ angular.module('main').controller('MainCtrl',
         $scope.updateNotifications = function (result) {
             //filtering hidden ones
             var filteredData = angular.copy(result);
-            $localForage.getItem('hiddenNotifications', true).then(function (hiddenIds) {
+            $localForage.getItem('hiddenNotifications'+"-dev", true).then(function (hiddenIds) {
                 if (hiddenIds !== null) {
                     filteredData = filteredData.filter(function (noti) {
                         return (noti.dismissable === false ||  hiddenIds.indexOf(noti.id) === -1); // keep non dismissable and those not on the list of hidden 

@@ -18,7 +18,7 @@
 	
 
  <build>
-		<finalName>iztool</finalName>
+		<finalName>iztool-dev</finalName>
 		<pluginManagement>
 			<plugins>
  

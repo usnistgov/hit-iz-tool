@@ -54,7 +54,7 @@ angular.module('cb').factory('CBTestPlanLoader', ['$q', '$http', '$rootScope','C
 
 		$http.get("api/cb/testplans/" + id+"/updateDate", { timeout: 180000}).then(
 				function (date) {	
-					$localForage.getItem("api/cb/testplans/" + id,true).then(function(data) {
+					$localForage.getItem("api/cb/testplans/" + id +"-dev",true).then(function(data) {
 						//cache found
 			            var cacheData = data;
 			            if (cacheData && cacheData.updateDate === date.data) {
@@ -62,7 +62,7 @@ angular.module('cb').factory('CBTestPlanLoader', ['$q', '$http', '$rootScope','C
 						} else {
 							$http.get("api/cb/testplans/" + id, { timeout: 180000}).then(
 									function (object) {	
-										$localForage.setItem("api/cb/testplans/" + id,angular.fromJson(object.data)).then(function() {});
+										$localForage.setItem("api/cb/testplans/" + id+"-dev",angular.fromJson(object.data)).then(function() {});
 										delay.resolve(angular.fromJson(object.data));
 									},
 									function (response) {
@@ -74,7 +74,7 @@ angular.module('cb').factory('CBTestPlanLoader', ['$q', '$http', '$rootScope','C
 			        	//no cache found
 			        	$http.get("api/cb/testplans/" + id, { timeout: 180000}).then(
 			        			function (object) {	
-			        				$localForage.setItem("api/cb/testplans/" + id,angular.fromJson(object.data)).then(function() {});
+			        				$localForage.setItem("api/cb/testplans/" + id+"-dev",angular.fromJson(object.data)).then(function() {});
 			        				delay.resolve(angular.fromJson(object.data));
 			        			},
 			        			function (response) {
@@ -87,7 +87,7 @@ angular.module('cb').factory('CBTestPlanLoader', ['$q', '$http', '$rootScope','C
 				function (error) {
 					$http.get("api/cb/testplans/" + id, { timeout: 180000}).then(
 		        			function (object) {	
-		        				$localForage.setItem("api/cb/testplans/" + id,angular.fromJson(object.data)).then(function() {});
+		        				$localForage.setItem("api/cb/testplans/" + id+"-dev",angular.fromJson(object.data)).then(function() {});
 		        				delay.resolve(angular.fromJson(object.data));
 		        			},
 		        			function (response) {
