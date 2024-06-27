@@ -2,9 +2,10 @@
   "id" : 449426,
   "name" : "QBP-Z34",
   "hl7v2" : {
-    "messageId" : "89df2062-96c4-4cbc-9ef2-817e4b4bc4f1",
-    "constraintId" : "6d5f5874-1d67-4252-be33-d55a0a39da32",
-    "valueSetLibraryId" : "17a7b337-3043-4118-9212-ee39ef5365e9"
+    "messageId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e8635",
+    "constraintId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_C",
+    "valueSetLibraryId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_VS",
+    "valueSetBindingsId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_B"
   },
   "position" : 3,
   "description" : "No Description"

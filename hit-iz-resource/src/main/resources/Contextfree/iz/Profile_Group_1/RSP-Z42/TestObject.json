@@ -2,9 +2,10 @@
   "id" : 1169796,
   "name" : "RSP-Z42",
   "hl7v2" : {
-    "messageId" : "e13dfbab-8832-4c3f-bfa5-0e9c18e644c4",
-    "constraintId" : "95c4f44d-7da8-4914-bce0-23c31a310115",
-    "valueSetLibraryId" : "1fa6401d-2060-486a-872b-1c064b606587"
+    "messageId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e863c",
+    "constraintId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_C",
+    "valueSetLibraryId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_VS",
+    "valueSetBindingsId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_B"
   },
   "position" : 8,
   "description" : "No Description"

@@ -2,10 +2,10 @@
   "id" : 559934,
   "name" : "VXU-Z22",
   "hl7v2" : {
-    "messageId" : "aa72383a-7b48-46e5-a74a-82e019591fe7",
-    "constraintId" : "2decb2ea-0b10-4c4c-9906-14e41392da67",
-    "valueSetLibraryId" : "5674a4b2-0e26-4f6a-9dc8-ba78a4727c83",
-    "dqa":true
+    "messageId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e863b",
+    "constraintId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_C",
+    "valueSetLibraryId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_VS",
+    "valueSetBindingsId" : "65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_B"
   },
   "position" : 1,
   "description" : "No Description",
