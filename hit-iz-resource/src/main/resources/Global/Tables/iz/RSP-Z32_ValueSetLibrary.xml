@@ -1572,6 +1572,15 @@
 			<ValueElement Value="319" DisplayName="Anthrax vaccine, unspecified" CodeSystem="CVX"/> 
 			<ValueElement Value="24" DisplayName="Anthrax vaccine, adsorbed, pre-exposure and post-exposure prophylaxis" CodeSystem="CVX"/> 
 
+			<!-- 06/21/2024 -->
+			<ValueElement Value="320" DisplayName="Influenza, MDCK, trivalent, preservative" CodeSystem="CVX"/>
+			
+			<!-- 07/08/2024 -->
+			<ValueElement Value="326" DisplayName="Respiratory syncytial virus (RSV), mRNA, injectable, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="324" DisplayName="Poliovirus, inactivated, fractional-dose (fIPV)" CodeSystem="CVX"/>
+			<ValueElement Value="321" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="322" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, contains preservative" CodeSystem="CVX"/>
+			<ValueElement Value="323" DisplayName="Influenza-avian, H5, unspecified formulation" CodeSystem="CVX"/>
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->		
@@ -1991,7 +2000,9 @@
 			<!-- 04/18/2024 -->
 			<ValueElement Value="318" DisplayName="Anthrax Vaccine VIS" CodeSystem="CVX"/> 
 			<ValueElement Value="316" DisplayName="Meningococcal polysaccharide (groups A, C, Y, W) tetanus toxoid conjugate, meningococcal B recombinant vaccine, 0.5mL, preservative free" CodeSystem="CVX"/> 
-		
+			
+			<!-- 06/21/2024 -->
+			<ValueElement Value="320" DisplayName="Influenza (Flu) Vaccine (Inactivated or Recombinant) VIS" CodeSystem="CVX"/>		
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->
