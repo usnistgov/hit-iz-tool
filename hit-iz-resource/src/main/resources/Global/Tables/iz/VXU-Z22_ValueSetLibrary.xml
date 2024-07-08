@@ -1323,7 +1323,12 @@
 			<!-- 06/21/2024 -->
 			<ValueElement Value="320" DisplayName="Influenza, MDCK, trivalent, preservative" CodeSystem="CVX"/>
 
-
+			<!-- 07/08/2024 -->
+			<ValueElement Value="326" DisplayName="Respiratory syncytial virus (RSV), mRNA, injectable, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="324" DisplayName="Poliovirus, inactivated, fractional-dose (fIPV)" CodeSystem="CVX"/>
+			<ValueElement Value="321" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, preservative free" CodeSystem="CVX"/>
+			<ValueElement Value="322" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, contains preservative" CodeSystem="CVX"/>
+			<ValueElement Value="323" DisplayName="Influenza-avian, H5, unspecified formulation" CodeSystem="CVX"/>
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->
