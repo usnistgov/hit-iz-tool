@@ -242,7 +242,7 @@
                     tooltip-append-to-body="true"
                     tooltip-class="constraints-tooltip"
                     ng-bind-html="model.datatypes[node.datatype].id" tooltip-trigger
-                    tooltip-animation="false" tooltip-placement="left"/>
+                    tooltip-animation="false" tooltip-placement="left"> </span>
         </td>
         <td class="col-xs-1 col-fixed-150">
             <div>
@@ -254,7 +254,7 @@
                        tooltip-append-to-body="true"
                        tooltip-class="constraints-tooltip"
                        ng-bind-html="valueSet"
-                       tooltip-trigger tooltip-animation="false" tooltip-placement="left"/></a>
+                       tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
                 </span>
             </div>
         </td>
@@ -339,7 +339,7 @@
                    tooltip-append-to-body="true"
                    tooltip-class="constraints-tooltip"
                    ng-bind-html="valueSet"
-                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"/></a>
+                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
 
             </div>
         </td>
@@ -647,7 +647,7 @@
                     tooltip-append-to-body="true"
                     tooltip-class="constraints-tooltip"
                     ng-bind-html="model.datatypes[node.datatype].id" tooltip-trigger
-                    tooltip-animation="false" tooltip-placement="left"/>
+                    tooltip-animation="false" tooltip-placement="left"></span>
         </td>
 
         <td class="col-xs-1 col-fixed-150">
@@ -660,7 +660,7 @@
                        tooltip-append-to-body="true"
                        tooltip-class="constraints-tooltip"
                        ng-bind-html="valueSet"
-                       tooltip-trigger tooltip-animation="false" tooltip-placement="left"/></a>
+                       tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
                 </div>
             </div>
         </td>
@@ -728,7 +728,7 @@
                     tooltip-append-to-body="true"
                     tooltip-class="constraints-tooltip"
                     ng-bind-html="model.datatypes[node.datatype].id" tooltip-trigger
-                    tooltip-animation="false" tooltip-placement="left"/>
+                    tooltip-animation="false" tooltip-placement="left"></span>
         </td>
 
         <td class="col-xs-1 col-fixed-150">
@@ -740,7 +740,7 @@
                    tooltip-append-to-body="true"
                    tooltip-class="constraints-tooltip"
                    ng-bind-html="valueSet"
-                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"/></a>
+                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
 
             </div>
         </td>
@@ -751,7 +751,7 @@
                   tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip"
                   ng-bind-html="getPredicatesAsOneLineString(node)" tooltip-trigger
-                  tooltip-animation="false" tooltip-placement="left"/>
+                  tooltip-animation="false" tooltip-placement="left"></span>
             <span ng-repeat="predicate in node.selfPredicates"
                   ng-if="!options.concise">
                 <span class="expanded-view">
@@ -765,7 +765,7 @@
                   tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip"
                   ng-bind-html="getConfStatementsAsOneLineString(node)"
-                  tooltip-trigger tooltip-animation="false" tooltip-placement="left"/>
+                  tooltip-trigger tooltip-animation="false" tooltip-placement="left"> </span>
             <span ng-repeat="confStatement in node.selfConformanceStatements"
                   ng-if="!options.concise">
                 <span class="expanded-view">
@@ -849,7 +849,7 @@
                      tooltip-append-to-body="true"
                      tooltip-class="constraints-tooltip"
                      ng-bind-html="model.datatypes[node.datatype].id" tooltip-trigger
-                     tooltip-animation="false" tooltip-placement="left"/>
+                     tooltip-animation="false" tooltip-placement="left"></span>
         </td>
         <td class="col-xs-1 col-fixed-150">
             <div ng-if="node.table != undefined  && node.table !== null">
@@ -933,7 +933,7 @@
                      tooltip-append-to-body="true"
                      tooltip-class="constraints-tooltip"
                      ng-bind-html="model.datatypes[node.datatype].id" tooltip-trigger
-                     tooltip-animation="false" tooltip-placement="left"/>
+                     tooltip-animation="false" tooltip-placement="left"></span>
         </td>
         <td class="col-xs-1 col-fixed-150">
             <div ng-if="node.table != undefined  && node.table !== null">
@@ -944,7 +944,7 @@
                    tooltip-append-to-body="true"
                    tooltip-class="constraints-tooltip"
                    ng-bind-html="valueSet"
-                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"/></a>
+                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
             </div>
         </td>
 
@@ -954,7 +954,7 @@
                   tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip"
                   ng-bind-html="getPredicatesAsOneLineString(node)" tooltip-trigger
-                  tooltip-animation="false" tooltip-placement="left"/>
+                  tooltip-animation="false" tooltip-placement="left"></span>
             <span ng-repeat="predicate in node.selfPredicates"
                   ng-if="!options.concise">
                 <span class="expanded-view">
@@ -968,7 +968,7 @@
                   tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip"
                   ng-bind-html="getConfStatementsAsOneLineString(node)"
-                  tooltip-trigger tooltip-animation="false" tooltip-placement="left"/>
+                  tooltip-trigger tooltip-animation="false" tooltip-placement="left"></span>
             <span ng-repeat="confStatement in node.selfConformanceStatements"
                   ng-if="!options.concise">
                 <span class="expanded-view">
@@ -1010,7 +1010,7 @@
             <span class="predicate-concise-view concise-view" ng-if="options.concise"
                   tooltip-html="getPredicatesAsMultipleLinesString(node)" tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip" ng-bind-html="getPredicatesAsOneLineString(node)" tooltip-trigger
-                  tooltip-animation="false" tooltip-placement="left"/>
+                  tooltip-animation="false" tooltip-placement="left"> </span>
             <span ng-repeat="predicate in node.selfPredicates" ng-if="!options.concise">
                 <span class="expanded-view">
                     {{::predicate.description}}
@@ -1021,7 +1021,7 @@
             <span class="cs-concise-view concise-view" ng-if="options.concise"
                   tooltip-html="getConfStatementsAsMultipleLinesString(node)" tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip" ng-bind-html="getConfStatementsAsOneLineString(node)"
-                  tooltip-trigger tooltip-animation="false" tooltip-placement="left"/>
+                  tooltip-trigger tooltip-animation="false" tooltip-placement="left"></span>
             <span ng-repeat="confStatement in node.selfConformanceStatements" ng-if="!options.concise">
                 <span class="expanded-view">
                    {{::confStatement.constraintId}} : {{::confStatement.description}}
