@@ -1,3 +1,0 @@
-MSH|^~\&|IIP|IIP-IIS-APP|SUT-APP|OFM|20240115083738-0500||ACK^V04^ACK|IIP-ACK-1|P|2.5.1|||NE|NE|||||Z23^CDCPHINVS|Immunization Integration Program||
-MSA|AE|IIP-Transmit-2
-ERR||RXA^1^5^4|103^Application error^HL70357|E|5^Table value not found^HL70533^IIP-ACK-ERROR-1^Fields conflict^L|||NDC not recognized -  data was not saved.

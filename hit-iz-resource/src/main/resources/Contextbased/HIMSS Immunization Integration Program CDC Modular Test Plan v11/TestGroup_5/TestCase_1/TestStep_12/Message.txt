@@ -1,3 +1,0 @@
-MSH|^~\&|IIP-IIS-APP|IIP|SUT-APP|OFM|20240115083738-0500||ACK^V04^ACK|IIP-ACK-1|P|2.5.1|||NE|NE|||||Z23^CDCPHINVS|Immunization Integration Program|Oregon Family Medicine
-MSA|AR|IIP-Transmit-2
-ERR||RXA^1^5^4|207^Application internal error^HL70357|E|5^Unable to be processed^HL70533^IIP-ACK-ERROR-1^System Error^L|||Message unable to be processed for reasons unrelated to format or content-  message rejected

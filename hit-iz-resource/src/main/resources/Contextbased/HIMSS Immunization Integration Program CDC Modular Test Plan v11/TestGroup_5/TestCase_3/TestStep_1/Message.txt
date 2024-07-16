@@ -1,7 +1,0 @@
-MSH|^~\&|SUT-APP|OFM|IIP-IIS-APP|IIP|20240405111648-0500||VXU^V04^VXU_V04|IIP-Transmit-10|P|2.5.1|||ER|AL|||||Z22^CDCPHINVS|Oregon Family Medicine|Immunization Integration Program
-PID|1||1111^^^IIP-MPI-1^MR||Duncan^Lance^Gaige^Jr.^^^L|King^^^^^^M|20240215|M||1002-5^American Indian or Alaska Native^CDCREC|749 Evergreen Ter.^Unit A^Springfield^OR^97477^USA^P||^PRN^CP^^^541^5551111~^NET^X.400^IIPMP@gmail.com|||||||||2186-5^Not Hispanic or Latino^CDCREC||N|1|||||N
-PD1|||||||||||02^Reminder/recall - any method^HL70215|N|20240405|||A|20240126|20240405
-NK1|1|Duncan^Ingrid^Stacy^^^^L|MTH^Mother^HL70063|749 Evergreen Ter.^Unit A^Springfield^OR^97477^USA^P|^PRN^CP^^^541^5551111~^NET^X.400^IIPMP@gmail.com
-NK1|2|Duncan^Simon^Isaiah^Sr.^^^L|FTH^Father^HL70063|749 Evergreen Ter.^Unit A^Springfield^OR^97477^USA^P|^PRN^CP^^^541^5551233
-ORC|RE|1115^OFM|2226^OFM|||||||7824^Wyatt^Daniela^Jennifer^^^^^OFM-PI-1^L^^^PRN||^^^^^^^^^^^^|||||197028^Oregon Family Medicine^HL70362
-RXA|0|1|20240405||45^Hep B, unspecified formulation^CVX^^^|999|^^||02^Historical information - from other provider^NIP001|^^^^^^^^^^^^|^^^||||||^^|||CP|A
