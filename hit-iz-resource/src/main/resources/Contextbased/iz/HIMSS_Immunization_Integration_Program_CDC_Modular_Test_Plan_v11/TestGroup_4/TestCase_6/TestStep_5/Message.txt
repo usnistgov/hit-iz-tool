@@ -1,0 +1,3 @@
+MSH|^~\&|SUT-APP|OFM|IIP-IIS-APP|IIP|20240405093021-0500||QBP^Q11^QBP_Q11|IIP4102|P|2.5.1|||ER|AL|||||Z44^CDCPHINVS|Oregon Family Medicine^^^^^OFM^XX^^^197028|Immunization Integration Program^^^^^IIP^XX^^^197027
+QPD|Z44^Request Evaluated History and Forecast^CDCPHINVS|IIPQUERY4|5555^^^IIP-MPI-1^MR|Nesbitt^Franklin^Mayhew^^^^L||19840405|M|400 Fir Rd.^^Springfield^OR^97477^USA^P|^PRN^PH^^^541^5551209|N|1
+RCP|I|1^RD&Records&HL70126

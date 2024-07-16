@@ -1,0 +1,17 @@
+MSH|^~\&|SUT-APP^2.16.840.1.113883.3.72.5.40.1^ISO|OFM^2.16.840.1.113883.3.72.5.40.2^ISO|IIP-IIS-APP^2.16.840.1.113883.3.72.5.40.3^ISO|IIP^2.16.840.1.113883.3.72.5.40.4^ISO|20240405115441-0500||VXU^V04^VXU_V04|IIP-Transmit-11|P|2.5.1|||ER|AL|||||Z22^CDCPHINVS|Oregon Family Medicine^^^^^OFM&2.16.840.1.113883.3.72.5.40.8&ISO^XX^^^197028|Immunization Integration Program^^^^^IIP&2.16.840.1.113883.3.72.5.40.9&ISO^XX^^^197027
+PID|1||7777^^^IIP-MPI-1&2.16.840.1.113883.3.72.5.40.5&ISO^MR||Nash^Finley^Ira^^^^L|^^^^^^^^|19660405|M||2028-9^Asian^CDCREC|700 Locust Ln^^Springfield^OR^97477^USA^P||^PRN^CP^^^541^5550007|||||||||2135-2^Hispanic or Latino^CDCREC||N|1|||||N
+PD1|||||||||||02^Reminder/recall - any method^HL70215|N|20240405|||A|20240126|20240405
+ORC|RE|1119^OFM^2.16.840.1.113883.3.72.5.40.10^ISO|3000^OFM^2.16.840.1.113883.3.72.5.40.10^ISO|||||||7824^Wyatt^Daniela^Jennifer^^^^^OFM-PI-1&2.16.840.1.113883.3.72.5.40.7&ISO^L^^^PRN||654^Bradshaw^Ramon^Michael^^^^^OFM-PI-1&2.16.840.1.113883.3.72.5.40.7&ISO^L^^^MD|||||197028^Oregon Family Medicine^HL70362
+RXA|0|1|20240405||8077-0743-15^Heartland-24_mRNA^NDC^234^HVV^CVX|0.5|mL^mL^UCUM||00^New immunization record^NIP001|7824^Wyatt^Daniela^Jennifer^^^^^OFM-PI-1&2.16.840.1.113883.3.72.5.40.7&ISO^L^^^PRN|^^^OFM&2.16.840.1.113883.3.72.5.40.12&ISO||||HVV8071524|20290927|MOD^Moderna^MVX|||CP|A
+RXR|C28161^INTRAMUSCULAR^NCIT|LD^Left Deltoid^HL70163
+OBX|1|CE|30963-3^Vaccine funding source^LN|1|VXC50^Public^CDCPHINVS||||||F|||20240405
+OBX|2|CE|64994-7^Vaccine funding program eligibility category^LN|1|IIP024^HeartlandVV-Program^HL70064||||||F|||20240405|||VXC40^Eligibility captured at the immunization level^CDCPHINVS
+OBX|3|CE|69764-9^Document type^LN|3|253088698300023411240207^Heartland-24 Vaccine 03-28-2024 VIS^cdcgs1vis||||||F|||20240405
+OBX|4|DT|29769-7^Date Vaccine Information Statement Presented^LN|3|20240405||||||F|||20240405
+ORC|RE|1120^OFM^2.16.840.1.113883.3.72.5.40.10^ISO|3001^OFM^2.16.840.1.113883.3.72.5.40.10^ISO|||||||7824^Wyatt^Daniela^Jennifer^^^^^OFM-PI-1&2.16.840.1.113883.3.72.5.40.7&ISO^L^^^PRN||654^Bradshaw^Ramon^Michael^^^^^OFM-PI-1&2.16.840.1.113883.3.72.5.40.7&ISO^L^^^MD|||||197028^Oregon Family Medicine^HL70362
+RXA|0|1|20240405||58160-0821-05^ENGERIX-B^NDC^43^Hep B, adult^CVX|0.5|mL^mL^UCUM||00^New immunization record^NIP001|7824^Wyatt^Daniela^Jennifer^^^^^OFM-PI-1&2.16.840.1.113883.3.72.5.40.7&ISO^L^^^PRN|^^^OFM&2.16.840.1.113883.3.72.5.40.12&ISO||||IIPVAXN03|20290927|SKB^GlaxoSmithKline^MVX|||CP|A
+RXR|C28161^INTRAMUSCULAR^NCIT|RD^Right Deltoid^HL70163
+OBX|1|CE|30963-3^Vaccine funding source^LN|1|PHC70^Private funds^CDCPHINVS||||||F|||20240405
+OBX|2|CE|64994-7^Vaccine funding program eligibility category^LN|1|V01^Not VFC eligible^HL70064||||||F|||20240405|||VXC40^Eligibility captured at the immunization level^CDCPHINVS
+OBX|3|CE|69764-9^Document type^LN|3|253088698300005911230512^Hepatitis B Vaccine VIS ^cdcgs1vis||||||F|||20240405
+OBX|4|DT|29769-7^Date Vaccine Information Statement Presented^LN|3|20240405||||||F|||20240405
