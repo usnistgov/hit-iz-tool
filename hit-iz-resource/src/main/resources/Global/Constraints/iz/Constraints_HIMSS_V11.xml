@@ -4,6 +4,142 @@
   <MetaData Date="No Date Info" Name="IIP IG Cloned from The Interim, Computable HL7 v2.5.1 Implementation Guide for Immunization Messaging" OrgName="American Immunization Registry Association and the Centers for Disease Control and Prevention" Version="2.5.1"/>
   <Predicates>
     <Datatype>
+      <ByID ID="XTN_IZ01">
+        <Predicate FalseUsage="X" Target="4[1]" TrueUsage="R">
+          <Description>If XTN.2 (Telecommunication Use Code) contain the value 'NET'.</Description>
+          <Condition>
+            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NET"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="6[1]" TrueUsage="RE">
+          <Description>If XTN.2 (Telecommunication Use Code) does not contain the value 'NET'.</Description>
+          <Condition>
+            <NOT>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NET"/>
+            </NOT>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="7[1]" TrueUsage="R">
+          <Description>If XTN.2 (Telecommunication Use Code) does not contain the value 'NET'.</Description>
+          <Condition>
+            <NOT>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NET"/>
+            </NOT>
+          </Condition>
+        </Predicate>
+      </ByID>
+      <ByID ID="HD_IZ01">
+        <Predicate FalseUsage="O" Target="1[1]" TrueUsage="R">
+          <Description>If HD.2 (Universal ID) is not valued</Description>
+          <Condition>
+            <NOT>
+              <Presence Path="2[1]"/>
+            </NOT>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="O" Target="2[1]" TrueUsage="R">
+          <Description>If HD.1 (Namespace ID) is not valued</Description>
+          <Condition>
+            <NOT>
+              <Presence Path="1[1]"/>
+            </NOT>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="3[1]" TrueUsage="R">
+          <Description>If HD.2 (Universal ID) is valued</Description>
+          <Condition>
+            <Presence Path="2[1]"/>
+          </Condition>
+        </Predicate>
+      </ByID>
+      <ByID ID="CE_IZ01">
+        <Predicate FalseUsage="X" Target="5[1]" TrueUsage="RE">
+          <Description>If CE.4 (Alternate Identifier) is valued</Description>
+          <Condition>
+            <Presence Path="4[1]"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="6[1]" TrueUsage="R">
+          <Description>If CE.4 (Alternate Identifier) is valued</Description>
+          <Condition>
+            <Presence Path="4[1]"/>
+          </Condition>
+        </Predicate>
+      </ByID>
+      <ByID ID="CWE_IZ01">
+        <Predicate FalseUsage="X" Target="3[1]" TrueUsage="R">
+          <Description>If CWE.1 (Identifier) is valued</Description>
+          <Condition>
+            <Presence Path="1[1]"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="5[1]" TrueUsage="RE">
+          <Description>If CWE.4 (Alternate Identifier) is valued</Description>
+          <Condition>
+            <Presence Path="4[1]"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="6[1]" TrueUsage="R">
+          <Description>If CWE.4 (Alternate Identifier) is valued</Description>
+          <Condition>
+            <Presence Path="4[1]"/>
+          </Condition>
+        </Predicate>
+      </ByID>
+      <ByID ID="CX_IZ01">
+        <Predicate FalseUsage="X" Target="3[1]" TrueUsage="O">
+          <Description>If CX.2 (Check Digit) is valued</Description>
+          <Condition>
+            <Presence Path="2[1]"/>
+          </Condition>
+        </Predicate>
+      </ByID>
+      <ByID ID="EI_IZ01">
+        <Predicate FalseUsage="O" Target="2[1]" TrueUsage="R">
+          <Description>If EI.3 (Universal ID) is not valued</Description>
+          <Condition>
+            <NOT>
+              <Presence Path="3[1]"/>
+            </NOT>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="O" Target="3[1]" TrueUsage="R">
+          <Description>If EI.2 (Namespace ID) is not valued</Description>
+          <Condition>
+            <NOT>
+              <Presence Path="2[1]"/>
+            </NOT>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="4[1]" TrueUsage="R">
+          <Description>If EI.3 (Universal ID) is valued</Description>
+          <Condition>
+            <Presence Path="3[1]"/>
+          </Condition>
+        </Predicate>
+      </ByID>
+      <ByID ID="XON_IZ01">
+        <Predicate FalseUsage="O" Target="6[1]" TrueUsage="R">
+          <Description>If XON.10 (Organization Identifier) is valued</Description>
+          <Condition>
+            <Presence Path="10[1]"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="7[1]" TrueUsage="R">
+          <Description>If XON.10 (Organization Identifier) is valued</Description>
+          <Condition>
+            <Presence Path="10[1]"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="RE" Target="10[1]" TrueUsage="R">
+          <Description>If XON.1 (Organization Name) is not valued</Description>
+          <Condition>
+            <NOT>
+              <Presence Path="1[1]"/>
+            </NOT>
+          </Condition>
+        </Predicate>
+      </ByID>
       <ByID ID="XCN_IZ01">
         <Predicate FalseUsage="X" Target="12[1]" TrueUsage="O">
           <Description>If XCN.11 (Identifier Check Digit) is valued</Description>
@@ -37,134 +173,6 @@
           </Condition>
         </Predicate>
       </ByID>
-      <ByID ID="HD_IZ01">
-        <Predicate FalseUsage="O" Target="1[1]" TrueUsage="R">
-          <Description>If HD.2 (Universal ID) is not valued</Description>
-          <Condition>
-            <NOT>
-              <Presence Path="2[1]"/>
-            </NOT>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="O" Target="2[1]" TrueUsage="R">
-          <Description>If HD.1 (Namespace ID) is not valued</Description>
-          <Condition>
-            <NOT>
-              <Presence Path="1[1]"/>
-            </NOT>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="3[1]" TrueUsage="R">
-          <Description>If HD.2 (Universal ID) is valued</Description>
-          <Condition>
-            <Presence Path="2[1]"/>
-          </Condition>
-        </Predicate>
-      </ByID>
-      <ByID ID="EI_IZ01">
-        <Predicate FalseUsage="O" Target="2[1]" TrueUsage="R">
-          <Description>If EI.3 (Universal ID) is not valued</Description>
-          <Condition>
-            <NOT>
-              <Presence Path="3[1]"/>
-            </NOT>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="O" Target="3[1]" TrueUsage="R">
-          <Description>If EI.2 (Namespace ID) is not valued</Description>
-          <Condition>
-            <NOT>
-              <Presence Path="2[1]"/>
-            </NOT>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="4[1]" TrueUsage="R">
-          <Description>If EI.3 (Universal ID) is valued</Description>
-          <Condition>
-            <Presence Path="3[1]"/>
-          </Condition>
-        </Predicate>
-      </ByID>
-      <ByID ID="CE_IZ01">
-        <Predicate FalseUsage="X" Target="5[1]" TrueUsage="RE">
-          <Description>If CE.4 (Alternate Identifier) is valued</Description>
-          <Condition>
-            <Presence Path="4[1]"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="6[1]" TrueUsage="R">
-          <Description>If CE.4 (Alternate Identifier) is valued</Description>
-          <Condition>
-            <Presence Path="4[1]"/>
-          </Condition>
-        </Predicate>
-      </ByID>
-      <ByID ID="XTN_IZ01">
-        <Predicate FalseUsage="X" Target="4[1]" TrueUsage="R">
-          <Description>If XTN.2 (Telecommunication Use Code) contain the value 'NET'.</Description>
-          <Condition>
-            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NET"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="6[1]" TrueUsage="RE">
-          <Description>If XTN.2 (Telecommunication Use Code) does not contain the value 'NET'.</Description>
-          <Condition>
-            <NOT>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NET"/>
-            </NOT>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="7[1]" TrueUsage="R">
-          <Description>If XTN.2 (Telecommunication Use Code) does not contain the value 'NET'.</Description>
-          <Condition>
-            <NOT>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NET"/>
-            </NOT>
-          </Condition>
-        </Predicate>
-      </ByID>
-      <ByID ID="XON_IZ01">
-        <Predicate FalseUsage="O" Target="6[1]" TrueUsage="R">
-          <Description>If XON.10 (Organization Identifier) is valued</Description>
-          <Condition>
-            <Presence Path="10[1]"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="7[1]" TrueUsage="R">
-          <Description>If XON.10 (Organization Identifier) is valued</Description>
-          <Condition>
-            <Presence Path="10[1]"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="RE" Target="10[1]" TrueUsage="R">
-          <Description>If XON.1 (Organization Name) is not valued</Description>
-          <Condition>
-            <NOT>
-              <Presence Path="1[1]"/>
-            </NOT>
-          </Condition>
-        </Predicate>
-      </ByID>
-      <ByID ID="CWE_IZ01">
-        <Predicate FalseUsage="X" Target="3[1]" TrueUsage="R">
-          <Description>If CWE.1 (Identifier) is valued</Description>
-          <Condition>
-            <Presence Path="1[1]"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="5[1]" TrueUsage="RE">
-          <Description>If CWE.4 (Alternate Identifier) is valued</Description>
-          <Condition>
-            <Presence Path="4[1]"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="6[1]" TrueUsage="R">
-          <Description>If CWE.4 (Alternate Identifier) is valued</Description>
-          <Condition>
-            <Presence Path="4[1]"/>
-          </Condition>
-        </Predicate>
-      </ByID>
       <ByID ID="ERL_IZ01">
         <Predicate FalseUsage="RE" Target="3[1]" TrueUsage="R">
           <Description>If ERL.4 (Field Repetition) is valued</Description>
@@ -185,50 +193,8 @@
           </Condition>
         </Predicate>
       </ByID>
-      <ByID ID="CX_IZ01">
-        <Predicate FalseUsage="X" Target="3[1]" TrueUsage="O">
-          <Description>If CX.2 (Check Digit) is valued</Description>
-          <Condition>
-            <Presence Path="2[1]"/>
-          </Condition>
-        </Predicate>
-      </ByID>
     </Datatype>
     <Segment>
-      <ByID ID="OBX_IZ02">
-        <Predicate FalseUsage="O" Target="17[1]" TrueUsage="RE">
-          <Description>If OBX-3.1 (Identifier) contain the value '64994-7'.</Description>
-          <Condition>
-            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="3[1].1[1]" Text="64994-7"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="O" Target="6[1]" TrueUsage="R">
-          <Description>If OBX-2 (Value Type) contain the value 'NM'.</Description>
-          <Condition>
-            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NM"/>
-          </Condition>
-        </Predicate>
-      </ByID>
-      <ByID ID="PD1_IZ">
-        <Predicate FalseUsage="X" Target="13[1]" TrueUsage="RE">
-          <Description>If PD1-12 (Protection Indicator) is valued</Description>
-          <Condition>
-            <Presence Path="12[1]"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="17[1]" TrueUsage="RE">
-          <Description>If PD1-16 (Immunization Registry Status) is valued</Description>
-          <Condition>
-            <Presence Path="16[1]"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="18[1]" TrueUsage="RE">
-          <Description>If PD1-11.1 (Identifier) is valued</Description>
-          <Condition>
-            <Presence Path="11[1].1[1]"/>
-          </Condition>
-        </Predicate>
-      </ByID>
       <ByID ID="OBX_IZ01">
         <Predicate FalseUsage="O" Target="17[1]" TrueUsage="RE">
           <Description>If OBX-3.1 (Identifier) contain the value '64994-7'.</Description>
@@ -240,6 +206,55 @@
           <Description>If OBX-2 (Value Type) contain the value 'NM'.</Description>
           <Condition>
             <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NM"/>
+          </Condition>
+        </Predicate>
+      </ByID>
+      <ByID ID="RXA_IZ03">
+        <Predicate FalseUsage="O" Target="11[1]" TrueUsage="RE">
+          <Description>If ( RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. AND The first occurrence of RXA-9.1 (Identifier) contain the value '00'. )</Description>
+          <Condition>
+            <AND>
+              <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]"/>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="9[1].1[1]" Text="00"/>
+            </AND>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="O" Target="17[1]" TrueUsage="R">
+          <Description>If ( RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. AND The first occurrence of RXA-9.1 (Identifier) contain the value '00'. )</Description>
+          <Condition>
+            <AND>
+              <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]"/>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="9[1].1[1]" Text="00"/>
+            </AND>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="7[1]" TrueUsage="R">
+          <Description>If RXA-6 (Administered Amount) does not contain the value '999'.</Description>
+          <Condition>
+            <NOT>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="6[1]" Text="999"/>
+            </NOT>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="18[1]" TrueUsage="R">
+          <Description>If RXA-20 (Completion Status) contain the value 'RE'.</Description>
+          <Condition>
+            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]" Text="RE"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="O" Target="9[1]" TrueUsage="R">
+          <Description>If RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA'].</Description>
+          <Condition>
+            <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="O" Target="10[1]" TrueUsage="RE">
+          <Description>If ( The first occurrence of RXA-9.1 (Identifier) contain the value '00'. AND RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. )</Description>
+          <Condition>
+            <AND>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="9[1].1[1]" Text="00"/>
+              <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]"/>
+            </AND>
           </Condition>
         </Predicate>
       </ByID>
@@ -344,6 +359,48 @@
           </Condition>
         </Predicate>
       </ByID>
+      <ByID ID="OBX_IZ03">
+        <Predicate FalseUsage="O" Target="6[1]" TrueUsage="R">
+          <Description>If OBX-2 (Value Type) contain the value 'NM'.</Description>
+          <Condition>
+            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NM"/>
+          </Condition>
+        </Predicate>
+      </ByID>
+      <ByID ID="PD1_IZ">
+        <Predicate FalseUsage="X" Target="13[1]" TrueUsage="RE">
+          <Description>If PD1-12 (Protection Indicator) is valued</Description>
+          <Condition>
+            <Presence Path="12[1]"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="17[1]" TrueUsage="RE">
+          <Description>If PD1-16 (Immunization Registry Status) is valued</Description>
+          <Condition>
+            <Presence Path="16[1]"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="X" Target="18[1]" TrueUsage="RE">
+          <Description>If PD1-11.1 (Identifier) is valued</Description>
+          <Condition>
+            <Presence Path="11[1].1[1]"/>
+          </Condition>
+        </Predicate>
+      </ByID>
+      <ByID ID="OBX_IZ02">
+        <Predicate FalseUsage="O" Target="17[1]" TrueUsage="RE">
+          <Description>If OBX-3.1 (Identifier) contain the value '64994-7'.</Description>
+          <Condition>
+            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="3[1].1[1]" Text="64994-7"/>
+          </Condition>
+        </Predicate>
+        <Predicate FalseUsage="O" Target="6[1]" TrueUsage="R">
+          <Description>If OBX-2 (Value Type) contain the value 'NM'.</Description>
+          <Condition>
+            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NM"/>
+          </Condition>
+        </Predicate>
+      </ByID>
       <ByID ID="RXA_IZ02">
         <Predicate FalseUsage="O" Target="11[1]" TrueUsage="RE">
           <Description>If ( RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. AND The first occurrence of RXA-9.1 (Identifier) contain the value '00'. )</Description>
@@ -411,76 +468,8 @@
           </Condition>
         </Predicate>
       </ByID>
-      <ByID ID="OBX_IZ03">
-        <Predicate FalseUsage="O" Target="6[1]" TrueUsage="R">
-          <Description>If OBX-2 (Value Type) contain the value 'NM'.</Description>
-          <Condition>
-            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1]" Text="NM"/>
-          </Condition>
-        </Predicate>
-      </ByID>
-      <ByID ID="RXA_IZ03">
-        <Predicate FalseUsage="O" Target="11[1]" TrueUsage="RE">
-          <Description>If ( RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. AND The first occurrence of RXA-9.1 (Identifier) contain the value '00'. )</Description>
-          <Condition>
-            <AND>
-              <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]"/>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="9[1].1[1]" Text="00"/>
-            </AND>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="O" Target="17[1]" TrueUsage="R">
-          <Description>If ( RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. AND The first occurrence of RXA-9.1 (Identifier) contain the value '00'. )</Description>
-          <Condition>
-            <AND>
-              <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]"/>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="9[1].1[1]" Text="00"/>
-            </AND>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="7[1]" TrueUsage="R">
-          <Description>If RXA-6 (Administered Amount) does not contain the value '999'.</Description>
-          <Condition>
-            <NOT>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="6[1]" Text="999"/>
-            </NOT>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="X" Target="18[1]" TrueUsage="R">
-          <Description>If RXA-20 (Completion Status) contain the value 'RE'.</Description>
-          <Condition>
-            <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]" Text="RE"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="O" Target="9[1]" TrueUsage="R">
-          <Description>If RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA'].</Description>
-          <Condition>
-            <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]"/>
-          </Condition>
-        </Predicate>
-        <Predicate FalseUsage="O" Target="10[1]" TrueUsage="RE">
-          <Description>If ( The first occurrence of RXA-9.1 (Identifier) contain the value '00'. AND RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. )</Description>
-          <Condition>
-            <AND>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="9[1].1[1]" Text="00"/>
-              <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]"/>
-            </AND>
-          </Condition>
-        </Predicate>
-      </ByID>
     </Segment>
     <Group>
-      <ByID ID="65bcfce68b87bc00063e8638-12">
-        <Predicate FalseUsage="O" Target="1[1].12[1]" TrueUsage="RE">
-          <Description>If ( Order.RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. AND The first occurrence of Order.RXA-9.1 (Identifier) contain the value '00'. )</Description>
-          <Condition>
-            <AND>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1].9[1].1[1]" Text="00"/>
-              <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1].20[1]"/>
-            </AND>
-          </Condition>
-        </Predicate>
-      </ByID>
       <ByID ID="65bcfce68b87bc00063e863b-9">
         <Predicate FalseUsage="O" Target="1[1].12[1]" TrueUsage="RE">
           <Description>If ( ORDER.RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. AND The first occurrence of ORDER.RXA-9.1 (Identifier) contain the value '00'. )</Description>
@@ -492,16 +481,35 @@
           </Condition>
         </Predicate>
       </ByID>
+      <ByID ID="65bcfce68b87bc00063e8638-12">
+        <Predicate FalseUsage="O" Target="1[1].12[1]" TrueUsage="RE">
+          <Description>If ( Order.RXA-20 (Completion Status) contain one of the values in the list: ['CP','PA']. AND The first occurrence of Order.RXA-9.1 (Identifier) contain the value '00'. )</Description>
+          <Condition>
+            <AND>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1].9[1].1[1]" Text="00"/>
+              <StringList CSV="CP,PA" IgnoreCase="false" NotPresentBehavior="FAIL" Path="2[1].20[1]"/>
+            </AND>
+          </Condition>
+        </Predicate>
+      </ByID>
     </Group>
     <Message/>
   </Predicates>
   <Constraints>
     <Datatype>
-      <ByID ID="DTM">
-        <Constraint ID="DTM_DateTimeConstraint">
-          <Description>The value SHALL follow the Date/Time pattern 'YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ]'.</Description>
+      <ByID ID="DT_D">
+        <Constraint ID="DT_D_DateTimeConstraint">
+          <Description>Element 'xxx' SHALL follow the Date/Time pattern 'YYYYMMDD'.</Description>
           <Assertion>
-            <Format Path="." Regex="^(\d{4}|\d{6}|\d{8}|\d{10}|\d{12}|\d{14}|\d{14}\.\d|\d{14}\.\d{2}|\d{14}\.\d{3}|\d{14}\.\d{4})([+-]\d{4})?$"/>
+            <Format Path="." Regex="^(\d{8})$"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="DT">
+        <Constraint ID="DT_DateTimeConstraint">
+          <Description>The value SHALL follow the Date/Time pattern 'YYYY[MM[DD]]'.</Description>
+          <Assertion>
+            <Format Path="." Regex="^(\d{4}|\d{6}|\d{8})$"/>
           </Assertion>
         </Constraint>
       </ByID>
@@ -519,41 +527,11 @@
           </Assertion>
         </Constraint>
       </ByID>
-      <ByID ID="DTM_NZ">
-        <Constraint ID="DTM_NZ_DateTimeConstraint">
-          <Description>Element 'xxx' SHALL follow the Date/Time pattern 'YYYYMMDD[HH[MM[SS[.S[S[S[S]]]]]]]'.</Description>
-          <Assertion>
-            <Format Path="." Regex="^(\d{8}|\d{10}|\d{12}|\d{14}|\d{14}\.\d|\d{14}\.\d{2}|\d{14}\.\d{3}|\d{14}\.\d{4})$"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
       <ByID ID="VID_IZ01">
         <Constraint ID="IZ-7" Strength="SHALL">
           <Description>VID.1 (Version ID) shall contain the value '2.5.1'.</Description>
           <Assertion>
             <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="2.5.1"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="EI_IZ01">
-        <Constraint ID="IZ-3" Strength="SHALL">
-          <Description>EI.3 (Universal ID) shall be valued with an ISO-compliant OID.</Description>
-          <Assertion>
-            <Format NotPresentBehavior="PASS" Path="3[1]" Regex="[0-2](\.(0|[1-9][0-9]*))*"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-4" Strength="SHALL">
-          <Description>EI.4 (Universal ID Type) shall contain the value 'ISO'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="4[1]" Text="ISO"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="XPN_IZ_M">
-        <Constraint ID="XPN_7 (Name Type Code)" Strength="SHALL">
-          <Description>XPN.7 (Name Type Code) shall contain the value 'M'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="7[1]" Text="M"/>
           </Assertion>
         </Constraint>
       </ByID>
@@ -565,19 +543,19 @@
           </Assertion>
         </Constraint>
       </ByID>
+      <ByID ID="DTM">
+        <Constraint ID="DTM_DateTimeConstraint">
+          <Description>The value SHALL follow the Date/Time pattern 'YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ]'.</Description>
+          <Assertion>
+            <Format Path="." Regex="^(\d{4}|\d{6}|\d{8}|\d{10}|\d{12}|\d{14}|\d{14}\.\d|\d{14}\.\d{2}|\d{14}\.\d{3}|\d{14}\.\d{4})([+-]\d{4})?$"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
       <ByID ID="TM">
         <Constraint ID="TM_DateTimeConstraint">
           <Description>The value SHALL follow the Date/Time pattern 'HH[MM[SS[.S[S[S[S]]]]]][+/-ZZZZ]'.</Description>
           <Assertion>
             <Format Path="." Regex="^(\d{2}|\d{4}|\d{6}|\d{6}\.\d|\d{6}\.\d{2}|\d{6}\.\d{3}|\d{6}\.\d{4})([+-]\d{4})?$"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="DTM_Z">
-        <Constraint ID="DTM_Z_DateTimeConstraint">
-          <Description>Element 'xxx' SHALL follow the Date/Time pattern 'YYYYMMDDHHMMSS[.S[S[S[S]]]]+/-ZZZZ'.</Description>
-          <Assertion>
-            <Format Path="." Regex="^(\d{14}|\d{14}\.\d|\d{14}\.\d{2}|\d{14}\.\d{3}|\d{14}\.\d{4})([+-]\d{4})$"/>
           </Assertion>
         </Constraint>
       </ByID>
@@ -595,19 +573,17 @@
           </Assertion>
         </Constraint>
       </ByID>
-      <ByID ID="DT">
-        <Constraint ID="DT_DateTimeConstraint">
-          <Description>The value SHALL follow the Date/Time pattern 'YYYY[MM[DD]]'.</Description>
+      <ByID ID="EI_IZ01">
+        <Constraint ID="IZ-3" Strength="SHALL">
+          <Description>EI.3 (Universal ID) shall be valued with an ISO-compliant OID.</Description>
           <Assertion>
-            <Format Path="." Regex="^(\d{4}|\d{6}|\d{8})$"/>
+            <Format NotPresentBehavior="PASS" Path="3[1]" Regex="[0-2](\.(0|[1-9][0-9]*))*"/>
           </Assertion>
         </Constraint>
-      </ByID>
-      <ByID ID="DT_D">
-        <Constraint ID="DT_D_DateTimeConstraint">
-          <Description>Element 'xxx' SHALL follow the Date/Time pattern 'YYYYMMDD'.</Description>
+        <Constraint ID="IZ-4" Strength="SHALL">
+          <Description>EI.4 (Universal ID Type) shall contain the value 'ISO'.</Description>
           <Assertion>
-            <Format Path="." Regex="^(\d{8})$"/>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="4[1]" Text="ISO"/>
           </Assertion>
         </Constraint>
       </ByID>
@@ -619,100 +595,32 @@
           </Assertion>
         </Constraint>
       </ByID>
+      <ByID ID="DTM_Z">
+        <Constraint ID="DTM_Z_DateTimeConstraint">
+          <Description>Element 'xxx' SHALL follow the Date/Time pattern 'YYYYMMDDHHMMSS[.S[S[S[S]]]]+/-ZZZZ'.</Description>
+          <Assertion>
+            <Format Path="." Regex="^(\d{14}|\d{14}\.\d|\d{14}\.\d{2}|\d{14}\.\d{3}|\d{14}\.\d{4})([+-]\d{4})$"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="DTM_NZ">
+        <Constraint ID="DTM_NZ_DateTimeConstraint">
+          <Description>Element 'xxx' SHALL follow the Date/Time pattern 'YYYYMMDD[HH[MM[SS[.S[S[S[S]]]]]]]'.</Description>
+          <Assertion>
+            <Format Path="." Regex="^(\d{8}|\d{10}|\d{12}|\d{14}|\d{14}\.\d|\d{14}\.\d{2}|\d{14}\.\d{3}|\d{14}\.\d{4})$"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="XPN_IZ_M">
+        <Constraint ID="XPN_7 (Name Type Code)" Strength="SHALL">
+          <Description>XPN.7 (Name Type Code) shall contain the value 'M'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="7[1]" Text="M"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
     </Datatype>
     <Segment>
-      <ByID ID="ORC_IZ02">
-        <Constraint ID="IZ-25" Strength="SHALL">
-          <Description>ORC-1 (Order Control) shall contain the value 'RE'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="RE"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="MSH_#ConsolidatedIG_IZ">
-        <Constraint ID="IZ-12" Strength="SHALL">
-          <Description>MSH-1 (Field Separator) shall contain the value '|'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="|"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-13" Strength="SHALL">
-          <Description>MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="2[1]" Text="^~\&amp;"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-15" Strength="SHALL">
-          <Description>MSH-12.1 (Version ID) shall contain the value '2.5.1'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="12[1].1[1]" Text="2.5.1"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="OBX_IZ02">
-        <Constraint ID="IZ-35" Strength="SHALL">
-          <Description>If The value of OBX-3.1 (Identifier) is '64994-7' and the value of OBX-2 (Value Type) is 'CE' then the value of OBX-5.1 (Observation Value) SHALL be one of codes listed in the Value Set: HL70064_IZ.</Description>
-          <Assertion>
-            <OR>
-              <NOT>
-                <AND>
-                  <PlainText IgnoreCase="false" Path="3[1].1[1]" Text="64994-7"/>
-                  <PlainText IgnoreCase="false" Path="2[1]" Text="CE"/>
-                </AND>
-              </NOT>
-              <ValueSet BindingLocation="1" BindingStrength="R" Path="5[1]" ValueSetID="HL70064_IZ"/>
-            </OR>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-37" Strength="SHALL">
-          <Description>If The value of OBX-3.1 (Identifier) is '30956-7' and the value of OBX-2 (Value Type) is 'CE' then the value of OBX-5.1 (Observation Value) SHALL be one of codes listed in the Value Set: CVX</Description>
-          <Assertion>
-            <OR>
-              <NOT>
-                <AND>
-                  <PlainText IgnoreCase="false" Path="3[1].1[1]" Text="30956-7"/>
-                  <PlainText IgnoreCase="false" Path="2[1]" Text="CE"/>
-                </AND>
-              </NOT>
-              <ValueSet BindingLocation="1" BindingStrength="R" Path="5[1]" ValueSetID="CVX_01"/>
-            </OR>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-36" Strength="SHALL">
-          <Description>If The value of OBX-3.1 (Identifier) is '69764-9' and the value of OBX-2 (Value Type) is 'CE' then the value of OBX-5.1 (Observation Value) SHALL be one of codes listed in the Value Set: PHVS_VISBarcodes_IIS</Description>
-          <Assertion>
-            <OR>
-              <NOT>
-                <AND>
-                  <PlainText IgnoreCase="false" Path="3[1].1[1]" Text="69764-9"/>
-                  <PlainText IgnoreCase="false" Path="2[1]" Text="CE"/>
-                </AND>
-              </NOT>
-              <ValueSet BindingLocation="1" BindingStrength="R" Path="5[1]" ValueSetID="PHVS_VISBarcodes_IIS"/>
-            </OR>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-22" Strength="SHALL">
-          <Description>OBX-11 (Observation Result Status) shall contain the value 'F'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="11[1]" Text="F"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-44" Strength="SHALL">
-          <Description>OBX-4 (Observation Sub-ID) shall contain a positive integer.</Description>
-          <Assertion>
-            <Format NotPresentBehavior="PASS" Path="4[1]" Regex="^[1-9]\d*$"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="PID_IZ02">
-        <Constraint ID="IZ-46" Strength="SHALL">
-          <Description>PID-1 (Set ID - PID) shall contain the value '1'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="1"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
       <ByID ID="OBX_IZ01">
         <Constraint ID="IZ-35" Strength="SHALL">
           <Description>If The value of OBX-3.1 (Identifier) is '64994-7' and the value of OBX-2 (Value Type) is 'CE' then the value of OBX-5.1 (Observation Value) SHALL be one of codes listed in the Value Set: HL70064_IZ.</Description>
@@ -769,19 +677,87 @@
           </Assertion>
         </Constraint>
       </ByID>
-      <ByID ID="RCP_IZ">
-        <Constraint ID="IZ-27" Strength="SHALL">
-          <Description>RCP-1 (Query Priority) shall contain the value 'I'.</Description>
+      <ByID ID="RXA_IZ03">
+        <Constraint ID="IZ-30" Strength="SHALL">
+          <Description>If RXA-4.1 (Time) is valued then RXA-4.1 (Time) shall be identical to RXA-3.1 (Time)</Description>
           <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="I"/>
+            <IMPLY>
+              <Presence Path="4[1].1[1]"/>
+              <PathValue IdenticalEquality="true" NotPresentBehavior="FAIL" Operator="EQ" Path1="4[1].1[1]" Path2="3[1].1[1]" Truncated="false"/>
+            </IMPLY>
           </Assertion>
         </Constraint>
-      </ByID>
-      <ByID ID="NK1_IZ">
-        <Constraint ID="IZ-70" Strength="SHALL">
-          <Description>NK1-1 (Set ID - NK1) shall be valued sequentially starting with the value '1'.</Description>
+        <Constraint ID="IZ-49" Strength="SHALL">
+          <Description>If RXA-5.1 (Identifier) contain the value '998'. then RXA-6 (Administered Amount) shall contain the value '999'.</Description>
           <Assertion>
-            <SetID Path="1[1]"/>
+            <IMPLY>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="5[1].1[1]" Text="998"/>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="6[1]" Text="999"/>
+            </IMPLY>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-28" Strength="SHALL">
+          <Description>RXA-1 (Give Sub-ID Counter) shall contain the value '0'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="0"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-47" Strength="SHALL">
+          <Description>If RXA-20 (Completion Status) is not valued or the value of RXA-20 (Completion Status) is not one of List Values: 'CP','PA' then RXA-9.1 (Identifier) SHALL NOT be valued</Description>
+          <Assertion>
+            <OR>
+              <NOT>
+                <OR>
+                  <NOT>
+                    <Presence Path="20[1]"/>
+                  </NOT>
+                  <NOT>
+                    <StringList CSV="CP,PA" Path="20[1]"/>
+                  </NOT>
+                </OR>
+              </NOT>
+              <NOT>
+                <Presence Path="9[1].1[1]"/>
+              </NOT>
+            </OR>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-31" Strength="SHALL">
+          <Description>If RXA-20 (Completion Status) is valued and the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' then the value of RXA-9.1 (Identifier) SHALL be one of codes listed in the Value Set: NIP001</Description>
+          <Assertion>
+            <OR>
+              <NOT>
+                <AND>
+                  <Presence Path="20[1]"/>
+                  <StringList CSV="CP,PA" Path="20[1]"/>
+                </AND>
+              </NOT>
+              <StringList CSV="00,01,02,03,04,05,06,07,08" Path="9[1].1[1]"/>
+            </OR>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-32" Strength="SHALL">
+          <Description>If At least one occurrence of RXA-18.1 (Identifier) is valued then RXA-20 (Completion Status) shall contain the value 'RE'.</Description>
+          <Assertion>
+            <IMPLY>
+              <Presence Path="18[*].1[1]"/>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]" Text="RE"/>
+            </IMPLY>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-48" Strength="SHALL">
+          <Description>If RXA-20 (Completion Status) contain the value 'RE'. then RXA-6 (Administered Amount) shall contain the value '999'.</Description>
+          <Assertion>
+            <IMPLY>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]" Text="RE"/>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="6[1]" Text="999"/>
+            </IMPLY>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-29" Strength="SHALL">
+          <Description>RXA-2 (Administration Sub-ID Counter) shall contain the value '1'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="2[1]" Text="1"/>
           </Assertion>
         </Constraint>
       </ByID>
@@ -869,6 +845,150 @@
                 <Presence Path="9[1].1[1]"/>
               </NOT>
             </OR>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="RCP_IZ">
+        <Constraint ID="IZ-27" Strength="SHALL">
+          <Description>RCP-1 (Query Priority) shall contain the value 'I'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="I"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="MSH_#ConsolidatedIG_IZ">
+        <Constraint ID="IZ-12" Strength="SHALL">
+          <Description>MSH-1 (Field Separator) shall contain the value '|'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="|"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-13" Strength="SHALL">
+          <Description>MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="2[1]" Text="^~\&amp;"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-15" Strength="SHALL">
+          <Description>MSH-12.1 (Version ID) shall contain the value '2.5.1'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="12[1].1[1]" Text="2.5.1"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="OBX_IZ03">
+        <Constraint ID="IZ-37" Strength="SHALL">
+          <Description>If The value of OBX-3.1 (Identifier) is '30956-7' and the value of OBX-2 (Value Type) is 'CE' then the value of OBX-5.1 (Observation Value) SHALL be one of codes listed in the Value Set: CVX</Description>
+          <Assertion>
+            <OR>
+              <NOT>
+                <AND>
+                  <PlainText IgnoreCase="false" Path="3[1].1[1]" Text="30956-7"/>
+                  <PlainText IgnoreCase="false" Path="2[1]" Text="CE"/>
+                </AND>
+              </NOT>
+              <ValueSet BindingLocation="1" BindingStrength="R" Path="5[1]" ValueSetID="CVX_01"/>
+            </OR>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-22" Strength="SHALL">
+          <Description>OBX-11 (Observation Result Status) shall contain the value 'F'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="11[1]" Text="F"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-44" Strength="SHALL">
+          <Description>OBX-4 (Observation Sub-ID) shall contain a positive integer.</Description>
+          <Assertion>
+            <Format NotPresentBehavior="PASS" Path="4[1]" Regex="^[1-9]\d*$"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="PID_IZ02">
+        <Constraint ID="IZ-46" Strength="SHALL">
+          <Description>PID-1 (Set ID - PID) shall contain the value '1'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="1"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="NK1_IZ">
+        <Constraint ID="IZ-70" Strength="SHALL">
+          <Description>NK1-1 (Set ID - NK1) shall be valued sequentially starting with the value '1'.</Description>
+          <Assertion>
+            <SetID Path="1[1]"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="ORC_IZ02">
+        <Constraint ID="IZ-25" Strength="SHALL">
+          <Description>ORC-1 (Order Control) shall contain the value 'RE'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="RE"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="IN1_IZ">
+        <Constraint ID="IZ-69" Strength="SHALL">
+          <Description>IN1-1 (Set ID - IN1) shall contain the value '1'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="1"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="OBX_IZ02">
+        <Constraint ID="IZ-35" Strength="SHALL">
+          <Description>If The value of OBX-3.1 (Identifier) is '64994-7' and the value of OBX-2 (Value Type) is 'CE' then the value of OBX-5.1 (Observation Value) SHALL be one of codes listed in the Value Set: HL70064_IZ.</Description>
+          <Assertion>
+            <OR>
+              <NOT>
+                <AND>
+                  <PlainText IgnoreCase="false" Path="3[1].1[1]" Text="64994-7"/>
+                  <PlainText IgnoreCase="false" Path="2[1]" Text="CE"/>
+                </AND>
+              </NOT>
+              <ValueSet BindingLocation="1" BindingStrength="R" Path="5[1]" ValueSetID="HL70064_IZ"/>
+            </OR>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-37" Strength="SHALL">
+          <Description>If The value of OBX-3.1 (Identifier) is '30956-7' and the value of OBX-2 (Value Type) is 'CE' then the value of OBX-5.1 (Observation Value) SHALL be one of codes listed in the Value Set: CVX</Description>
+          <Assertion>
+            <OR>
+              <NOT>
+                <AND>
+                  <PlainText IgnoreCase="false" Path="3[1].1[1]" Text="30956-7"/>
+                  <PlainText IgnoreCase="false" Path="2[1]" Text="CE"/>
+                </AND>
+              </NOT>
+              <ValueSet BindingLocation="1" BindingStrength="R" Path="5[1]" ValueSetID="CVX_01"/>
+            </OR>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-36" Strength="SHALL">
+          <Description>If The value of OBX-3.1 (Identifier) is '69764-9' and the value of OBX-2 (Value Type) is 'CE' then the value of OBX-5.1 (Observation Value) SHALL be one of codes listed in the Value Set: PHVS_VISBarcodes_IIS</Description>
+          <Assertion>
+            <OR>
+              <NOT>
+                <AND>
+                  <PlainText IgnoreCase="false" Path="3[1].1[1]" Text="69764-9"/>
+                  <PlainText IgnoreCase="false" Path="2[1]" Text="CE"/>
+                </AND>
+              </NOT>
+              <ValueSet BindingLocation="1" BindingStrength="R" Path="5[1]" ValueSetID="PHVS_VISBarcodes_IIS"/>
+            </OR>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-22" Strength="SHALL">
+          <Description>OBX-11 (Observation Result Status) shall contain the value 'F'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="11[1]" Text="F"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-44" Strength="SHALL">
+          <Description>OBX-4 (Observation Sub-ID) shall contain a positive integer.</Description>
+          <Assertion>
+            <Format NotPresentBehavior="PASS" Path="4[1]" Regex="^[1-9]\d*$"/>
           </Assertion>
         </Constraint>
       </ByID>
@@ -964,126 +1084,6 @@
           </Assertion>
         </Constraint>
       </ByID>
-      <ByID ID="IN1_IZ">
-        <Constraint ID="IZ-69" Strength="SHALL">
-          <Description>IN1-1 (Set ID - IN1) shall contain the value '1'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="1"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="OBX_IZ03">
-        <Constraint ID="IZ-37" Strength="SHALL">
-          <Description>If The value of OBX-3.1 (Identifier) is '30956-7' and the value of OBX-2 (Value Type) is 'CE' then the value of OBX-5.1 (Observation Value) SHALL be one of codes listed in the Value Set: CVX</Description>
-          <Assertion>
-            <OR>
-              <NOT>
-                <AND>
-                  <PlainText IgnoreCase="false" Path="3[1].1[1]" Text="30956-7"/>
-                  <PlainText IgnoreCase="false" Path="2[1]" Text="CE"/>
-                </AND>
-              </NOT>
-              <ValueSet BindingLocation="1" BindingStrength="R" Path="5[1]" ValueSetID="CVX_01"/>
-            </OR>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-22" Strength="SHALL">
-          <Description>OBX-11 (Observation Result Status) shall contain the value 'F'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="11[1]" Text="F"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-44" Strength="SHALL">
-          <Description>OBX-4 (Observation Sub-ID) shall contain a positive integer.</Description>
-          <Assertion>
-            <Format NotPresentBehavior="PASS" Path="4[1]" Regex="^[1-9]\d*$"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="RXA_IZ03">
-        <Constraint ID="IZ-30" Strength="SHALL">
-          <Description>If RXA-4.1 (Time) is valued then RXA-4.1 (Time) shall be identical to RXA-3.1 (Time)</Description>
-          <Assertion>
-            <IMPLY>
-              <Presence Path="4[1].1[1]"/>
-              <PathValue IdenticalEquality="true" NotPresentBehavior="FAIL" Operator="EQ" Path1="4[1].1[1]" Path2="3[1].1[1]" Truncated="false"/>
-            </IMPLY>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-49" Strength="SHALL">
-          <Description>If RXA-5.1 (Identifier) contain the value '998'. then RXA-6 (Administered Amount) shall contain the value '999'.</Description>
-          <Assertion>
-            <IMPLY>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="5[1].1[1]" Text="998"/>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="6[1]" Text="999"/>
-            </IMPLY>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-28" Strength="SHALL">
-          <Description>RXA-1 (Give Sub-ID Counter) shall contain the value '0'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1]" Text="0"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-47" Strength="SHALL">
-          <Description>If RXA-20 (Completion Status) is not valued or the value of RXA-20 (Completion Status) is not one of List Values: 'CP','PA' then RXA-9.1 (Identifier) SHALL NOT be valued</Description>
-          <Assertion>
-            <OR>
-              <NOT>
-                <OR>
-                  <NOT>
-                    <Presence Path="20[1]"/>
-                  </NOT>
-                  <NOT>
-                    <StringList CSV="CP,PA" Path="20[1]"/>
-                  </NOT>
-                </OR>
-              </NOT>
-              <NOT>
-                <Presence Path="9[1].1[1]"/>
-              </NOT>
-            </OR>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-31" Strength="SHALL">
-          <Description>If RXA-20 (Completion Status) is valued and the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' then the value of RXA-9.1 (Identifier) SHALL be one of codes listed in the Value Set: NIP001</Description>
-          <Assertion>
-            <OR>
-              <NOT>
-                <AND>
-                  <Presence Path="20[1]"/>
-                  <StringList CSV="CP,PA" Path="20[1]"/>
-                </AND>
-              </NOT>
-              <StringList CSV="00,01,02,03,04,05,06,07,08" Path="9[1].1[1]"/>
-            </OR>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-32" Strength="SHALL">
-          <Description>If At least one occurrence of RXA-18.1 (Identifier) is valued then RXA-20 (Completion Status) shall contain the value 'RE'.</Description>
-          <Assertion>
-            <IMPLY>
-              <Presence Path="18[*].1[1]"/>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]" Text="RE"/>
-            </IMPLY>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-48" Strength="SHALL">
-          <Description>If RXA-20 (Completion Status) contain the value 'RE'. then RXA-6 (Administered Amount) shall contain the value '999'.</Description>
-          <Assertion>
-            <IMPLY>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="20[1]" Text="RE"/>
-              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="6[1]" Text="999"/>
-            </IMPLY>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-29" Strength="SHALL">
-          <Description>RXA-2 (Administration Sub-ID Counter) shall contain the value '1'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="2[1]" Text="1"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
     </Segment>
     <Group>
       <ByID ID="65bcfce68b87bc00063e8639-7">
@@ -1137,89 +1137,6 @@
       </ByID>
     </Group>
     <Message>
-      <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e8638">
-        <Constraint ID="IZ-52" Strength="SHALL">
-          <Description>MSH-16 (Application Acknowledgment Type) shall contain the value 'NE'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].16[1]" Text="NE"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-67a" Strength="SHALL">
-          <Description>QPD-1.1 (Identifier) shall contain the value 'Z34'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="6[1].1[1].1[1]" Text="Z34"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-59c" Strength="SHALL">
-          <Description>MSH-9.3 (Message Structure) shall contain the value 'RSP_K11'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].3[1]" Text="RSP_K11"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-59b" Strength="SHALL">
-          <Description>MSH-9.2 (Trigger Event) shall contain the value 'K11'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].2[1]" Text="K11"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-53" Strength="SHALL">
-          <Description>MSH-15 (Accept Acknowledgment Type) shall contain the value 'NE'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].15[1]" Text="NE"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-46" Strength="SHALL">
-          <Description>PID-1 (Set ID - PID) shall contain the value '1'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="7[1].1[1]" Text="1"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-59a" Strength="SHALL">
-          <Description>MSH-9.1 (Message Code) shall contain the value 'RSP'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].1[1]" Text="RSP"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-20" Strength="SHALL">
-          <Description>The value of OBX-1 (Set ID-OBX) SHALL be valued sequentially starting with the value "1" within a message or for each group</Description>
-          <Assertion>
-            <IZSetID Element="5[*].1[*].1[*]" Parent="9[*]"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-45" Strength="SHALL">
-          <Description>If At least one occurrence of Order.RXA-20 (Completion Status) contains one of the values in the list: ['NA','RE'] (Case Sensitive). then at least one occurrence of Order.ORC-3.1 (Entity Identifier) shall contain the value '9999' (Case Sensitive).</Description>
-          <Assertion>
-            <IMPLY>
-              <StringList AtLeastOnce="true" CSV="NA,RE" IgnoreCase="false" NotPresentBehavior="FAIL" Path="12[*].2[1].20[1]"/>
-              <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="FAIL" Path="12[*].1[1].3[1].1[1]" Text="9999"/>
-            </IMPLY>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-60a" Strength="SHALL">
-          <Description>At least one occurrence of MSH-21.1 (Entity Identifier) shall contain the value 'Z32'.</Description>
-          <Assertion>
-            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].1[1]" Text="Z32"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-67b" Strength="SHALL">
-          <Description>QPD-1.2 (Text) shall contain the value 'Request Immunization History'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="6[1].1[1].2[1]" Text="Request Immunization History"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-60b" Strength="SHALL">
-          <Description>At least one occurrence of MSH-21.2 (Namespace ID) shall contain the value 'CDCPHINVS'.</Description>
-          <Assertion>
-            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].2[1]" Text="CDCPHINVS"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-67c" Strength="SHALL">
-          <Description>QPD-1.3 (Name of Coding System) shall contain the value 'CDCPHINVS'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="6[1].1[1].3[1]" Text="CDCPHINVS"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
       <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e8639">
         <Constraint ID="IZ-67a" Strength="SHALL">
           <Description>QPD-1.1 (Identifier) shall contain the value 'Z34'.</Description>
@@ -1279,6 +1196,68 @@
           <Description>All occurrences of MSH-21.2 (Namespace ID) shall contain the value 'CDCPHINVS'.</Description>
           <Assertion>
             <PlainText AtLeastOnce="false" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].2[1]" Text="CDCPHINVS"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e8635">
+        <Constraint ID="IZ-67b" Strength="SHALL">
+          <Description>QPD-1.2 (Text) shall contain the value 'Request Immunization History'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].2[1]" Text="Request Immunization History"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-67a" Strength="SHALL">
+          <Description>QPD-1.1 (Identifier) shall contain the value 'Z34'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].1[1]" Text="Z34"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-57" Strength="SHALL">
+          <Description>MSH-15 (Accept Acknowledgment Type) shall contain the value 'ER'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].15[1]" Text="ER"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-58" Strength="SHALL">
+          <Description>MSH-16 (Application Acknowledgment Type) shall contain the value 'AL'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].16[1]" Text="AL"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-56b" Strength="SHALL">
+          <Description>At least one occurrence of MSH-21.2 (Namespace ID) shall contain the value 'CDCPHINVS' (Case Sensitive).</Description>
+          <Assertion>
+            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].2[1]" Text="CDCPHINVS"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-56a" Strength="SHALL">
+          <Description>At least one occurrence of MSH-21.1 (Entity Identifier) shall contain the value 'Z34' (Case Sensitive).</Description>
+          <Assertion>
+            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].1[1]" Text="Z34"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-55c" Strength="SHALL">
+          <Description>MSH-9.3 (Message Structure) shall contain the value 'QBP_Q11'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].3[1]" Text="QBP_Q11"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-55b" Strength="SHALL">
+          <Description>MSH-9.2 (Trigger Event) shall contain the value 'Q11'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].2[1]" Text="Q11"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-55a" Strength="SHALL">
+          <Description>MSH-9.1 (Message Code) shall contain the value 'QBP'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].1[1]" Text="QBP"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-67c" Strength="SHALL">
+          <Description>QPD-1.3 (Name of Coding System) shall contain the value 'CDCPHINVS'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].3[1]" Text="CDCPHINVS"/>
           </Assertion>
         </Constraint>
       </ByID>
@@ -1356,6 +1335,68 @@
           <Description>MSH-9.2 (Trigger Event) shall contain the value 'K11'.</Description>
           <Assertion>
             <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].2[1]" Text="K11"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+      <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e863a">
+        <Constraint ID="IZ-64b" Strength="SHALL">
+          <Description>At least one occurrence of MSH-21.2 (Namespace ID) shall contain the value 'CDCPHINVS' (Case Sensitive).</Description>
+          <Assertion>
+            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].2[1]" Text="CDCPHINVS"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-64a" Strength="SHALL">
+          <Description>At least one occurrence of MSH-21.1 (Entity Identifier) shall contain the value 'Z44' (Case Sensitive).</Description>
+          <Assertion>
+            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].1[1]" Text="Z44"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-57" Strength="SHALL">
+          <Description>MSH-15 (Accept Acknowledgment Type) shall contain the value 'ER'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].15[1]" Text="ER"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-58" Strength="SHALL">
+          <Description>MSH-16 (Application Acknowledgment Type) shall contain the value 'AL'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].16[1]" Text="AL"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-68b" Strength="SHALL">
+          <Description>QPD-1.2 (Text) shall contain the value 'Request Evaluated History and Forecast'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].2[1]" Text="Request Evaluated History and Forecast"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-68c" Strength="SHALL">
+          <Description>QPD-1.3 (Name of Coding System) shall contain the value 'CDCPHINVS'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].3[1]" Text="CDCPHINVS"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-55c" Strength="SHALL">
+          <Description>MSH-9.3 (Message Structure) shall contain the value 'QBP_Q11'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].3[1]" Text="QBP_Q11"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-68a" Strength="SHALL">
+          <Description>QPD-1.1 (Identifier) shall contain the value 'Z44'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].1[1]" Text="Z44"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-55b" Strength="SHALL">
+          <Description>MSH-9.2 (Trigger Event) shall contain the value 'Q11'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].2[1]" Text="Q11"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-55a" Strength="SHALL">
+          <Description>MSH-9.1 (Message Code) shall contain the value 'QBP'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].1[1]" Text="QBP"/>
           </Assertion>
         </Constraint>
       </ByID>
@@ -1471,6 +1512,89 @@
           </Assertion>
         </Constraint>
       </ByID>
+      <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e8638">
+        <Constraint ID="IZ-52" Strength="SHALL">
+          <Description>MSH-16 (Application Acknowledgment Type) shall contain the value 'NE'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].16[1]" Text="NE"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-67a" Strength="SHALL">
+          <Description>QPD-1.1 (Identifier) shall contain the value 'Z34'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="6[1].1[1].1[1]" Text="Z34"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-59c" Strength="SHALL">
+          <Description>MSH-9.3 (Message Structure) shall contain the value 'RSP_K11'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].3[1]" Text="RSP_K11"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-59b" Strength="SHALL">
+          <Description>MSH-9.2 (Trigger Event) shall contain the value 'K11'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].2[1]" Text="K11"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-53" Strength="SHALL">
+          <Description>MSH-15 (Accept Acknowledgment Type) shall contain the value 'NE'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].15[1]" Text="NE"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-46" Strength="SHALL">
+          <Description>PID-1 (Set ID - PID) shall contain the value '1'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="7[1].1[1]" Text="1"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-59a" Strength="SHALL">
+          <Description>MSH-9.1 (Message Code) shall contain the value 'RSP'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].1[1]" Text="RSP"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-20" Strength="SHALL">
+          <Description>The value of OBX-1 (Set ID-OBX) SHALL be valued sequentially starting with the value "1" within a message or for each group</Description>
+          <Assertion>
+            <IZSetID Element="5[*].1[*].1[*]" Parent="9[*]"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-45" Strength="SHALL">
+          <Description>If At least one occurrence of Order.RXA-20 (Completion Status) contains one of the values in the list: ['NA','RE'] (Case Sensitive). then at least one occurrence of Order.ORC-3.1 (Entity Identifier) shall contain the value '9999' (Case Sensitive).</Description>
+          <Assertion>
+            <IMPLY>
+              <StringList AtLeastOnce="true" CSV="NA,RE" IgnoreCase="false" NotPresentBehavior="FAIL" Path="12[*].2[1].20[1]"/>
+              <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="FAIL" Path="12[*].1[1].3[1].1[1]" Text="9999"/>
+            </IMPLY>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-60a" Strength="SHALL">
+          <Description>At least one occurrence of MSH-21.1 (Entity Identifier) shall contain the value 'Z32'.</Description>
+          <Assertion>
+            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].1[1]" Text="Z32"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-67b" Strength="SHALL">
+          <Description>QPD-1.2 (Text) shall contain the value 'Request Immunization History'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="6[1].1[1].2[1]" Text="Request Immunization History"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-60b" Strength="SHALL">
+          <Description>At least one occurrence of MSH-21.2 (Namespace ID) shall contain the value 'CDCPHINVS'.</Description>
+          <Assertion>
+            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].2[1]" Text="CDCPHINVS"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="IZ-67c" Strength="SHALL">
+          <Description>QPD-1.3 (Name of Coding System) shall contain the value 'CDCPHINVS'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="6[1].1[1].3[1]" Text="CDCPHINVS"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
       <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e8636">
         <Constraint ID="IZ-63b" Strength="SHALL">
           <Description>At least one occurrence of MSH-21.2 (Namespace ID) shall contain the value 'CDCPHINVS' (Case Sensitive).</Description>
@@ -1536,130 +1660,6 @@
           <Description>QPD-1.3 (Name of Coding System) shall contain the value 'CDCPHINVS'.</Description>
           <Assertion>
             <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="6[1].1[1].3[1]" Text="CDCPHINVS"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e863a">
-        <Constraint ID="IZ-64b" Strength="SHALL">
-          <Description>At least one occurrence of MSH-21.2 (Namespace ID) shall contain the value 'CDCPHINVS' (Case Sensitive).</Description>
-          <Assertion>
-            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].2[1]" Text="CDCPHINVS"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-64a" Strength="SHALL">
-          <Description>At least one occurrence of MSH-21.1 (Entity Identifier) shall contain the value 'Z44' (Case Sensitive).</Description>
-          <Assertion>
-            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].1[1]" Text="Z44"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-57" Strength="SHALL">
-          <Description>MSH-15 (Accept Acknowledgment Type) shall contain the value 'ER'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].15[1]" Text="ER"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-58" Strength="SHALL">
-          <Description>MSH-16 (Application Acknowledgment Type) shall contain the value 'AL'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].16[1]" Text="AL"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-68b" Strength="SHALL">
-          <Description>QPD-1.2 (Text) shall contain the value 'Request Evaluated History and Forecast'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].2[1]" Text="Request Evaluated History and Forecast"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-68c" Strength="SHALL">
-          <Description>QPD-1.3 (Name of Coding System) shall contain the value 'CDCPHINVS'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].3[1]" Text="CDCPHINVS"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-55c" Strength="SHALL">
-          <Description>MSH-9.3 (Message Structure) shall contain the value 'QBP_Q11'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].3[1]" Text="QBP_Q11"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-68a" Strength="SHALL">
-          <Description>QPD-1.1 (Identifier) shall contain the value 'Z44'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].1[1]" Text="Z44"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-55b" Strength="SHALL">
-          <Description>MSH-9.2 (Trigger Event) shall contain the value 'Q11'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].2[1]" Text="Q11"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-55a" Strength="SHALL">
-          <Description>MSH-9.1 (Message Code) shall contain the value 'QBP'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].1[1]" Text="QBP"/>
-          </Assertion>
-        </Constraint>
-      </ByID>
-      <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e8635">
-        <Constraint ID="IZ-67b" Strength="SHALL">
-          <Description>QPD-1.2 (Text) shall contain the value 'Request Immunization History'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].2[1]" Text="Request Immunization History"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-67a" Strength="SHALL">
-          <Description>QPD-1.1 (Identifier) shall contain the value 'Z34'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].1[1]" Text="Z34"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-57" Strength="SHALL">
-          <Description>MSH-15 (Accept Acknowledgment Type) shall contain the value 'ER'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].15[1]" Text="ER"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-58" Strength="SHALL">
-          <Description>MSH-16 (Application Acknowledgment Type) shall contain the value 'AL'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].16[1]" Text="AL"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-56b" Strength="SHALL">
-          <Description>At least one occurrence of MSH-21.2 (Namespace ID) shall contain the value 'CDCPHINVS' (Case Sensitive).</Description>
-          <Assertion>
-            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].2[1]" Text="CDCPHINVS"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-56a" Strength="SHALL">
-          <Description>At least one occurrence of MSH-21.1 (Entity Identifier) shall contain the value 'Z34' (Case Sensitive).</Description>
-          <Assertion>
-            <PlainText AtLeastOnce="true" IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].21[*].1[1]" Text="Z34"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-55c" Strength="SHALL">
-          <Description>MSH-9.3 (Message Structure) shall contain the value 'QBP_Q11'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].3[1]" Text="QBP_Q11"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-55b" Strength="SHALL">
-          <Description>MSH-9.2 (Trigger Event) shall contain the value 'Q11'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].2[1]" Text="Q11"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-55a" Strength="SHALL">
-          <Description>MSH-9.1 (Message Code) shall contain the value 'QBP'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="1[1].9[1].1[1]" Text="QBP"/>
-          </Assertion>
-        </Constraint>
-        <Constraint ID="IZ-67c" Strength="SHALL">
-          <Description>QPD-1.3 (Name of Coding System) shall contain the value 'CDCPHINVS'.</Description>
-          <Assertion>
-            <PlainText IgnoreCase="false" NotPresentBehavior="PASS" Path="3[1].1[1].3[1]" Text="CDCPHINVS"/>
           </Assertion>
         </Constraint>
       </ByID>
