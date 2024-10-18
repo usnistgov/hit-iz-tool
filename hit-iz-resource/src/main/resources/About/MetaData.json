@@ -2,13 +2,24 @@
 	"domains": [
 		{
 			"key": "iz",
-			"position": 1,
-			"rsbVersion"	:"1.9.16",
-    		"version"		: "1.9.16",
-    		"igVersion"		:"",
+			"position": 0,
+			"rsbVersion"	:"2.0.19",
+    		"version"		: "2.0.19",
+    		"igVersion"		:"2.0.19",
     		"scope": "GLOBAL",
-			"name": "Immunization",
+			"name": "ONC Health IT Certification",
 			"homeTitle": "Welcome to the NIST Immunization Test Suite!",
+			"authorUsername":"nico"
+ 		},
+ 		{
+			"key": "iz-hti-1-svap",
+			"position": 1,
+			"rsbVersion"	:"1.0.0",
+    		"version"		: "1.0.0",
+    		"igVersion"		:"1.0.0",
+    		"scope": "GLOBAL",
+			"name": "HTI-1 SVAP Immunization",
+			"homeTitle": "Welcome to the HTI-1 SVAP Immunization Test Suite!",
 			"authorUsername":"nico"
  		}
 	]

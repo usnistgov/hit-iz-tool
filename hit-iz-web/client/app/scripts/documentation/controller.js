@@ -29,9 +29,10 @@ angular.module('doc')
       }
     };
 
-    $scope.initDocumentation = function () {
-      $scope.selectSectionType('app');
-    };
+	$scope.initDocumentation = function () {
+		//not app
+	  $scope.selectSectionType($rootScope.domain);
+	};
 
     $scope.selectScope = function () {
       $scope.error = null;
@@ -68,7 +69,7 @@ angular.module('doc')
     $scope.actionError = null;
     $scope.type = "USERDOC";
 
-    $scope.sectionType = 'app';
+    $scope.sectionType = $rootScope.domain;
 
 
     $scope.loadDocs = function (scope, domain) {
@@ -386,7 +387,7 @@ angular.module('doc')
     $scope.error = null;
     $scope.scrollbarWidth = $rootScope.getScrollbarWidth();
     $scope.type = "RELEASENOTE";
-    $scope.sectionType = 'app';
+    $scope.sectionType = $rootScope.domain;
     $scope.scope = null;
 
     $scope.loadDocs = function (scope, domain) {
@@ -603,7 +604,7 @@ angular.module('doc')
     $scope.error = null;
     $scope.type = 'KNOWNISSUE';
     $scope.scope = null;
-    $scope.sectionType = 'app';
+    $scope.sectionType = $rootScope.domain;
 
 
     $scope.downloadDocument = function (path) {
@@ -1049,7 +1050,7 @@ angular.module('doc')
     $scope.docs = [];
     $scope.canEdit = false;
 
-    $scope.sectionType = 'app';
+    $scope.sectionType = $rootScope.domain;
 
     $scope.loadDocs = function (scope, domain) {
       if (domain != null) {
@@ -1095,17 +1096,53 @@ angular.module('doc')
       }, wait);
     };
 
+
+    $scope.initDocs(null, 3000);
+
     $scope.isLink = function (path) {
         return path && path != null && path.startsWith("http");
       };
 
-    $scope.initDocs(null, 3000);
-
+      $scope.downloadTool = function (path) {
+        if (path != null) {
+          var form = document.createElement("form");
+          form.action = "api/documentation/downloadDocument";
+          form.method = "POST";
+          form.target = "_target";
+          var input = document.createElement("input");
+          input.name = "path";
+          input.value = path;
+          form.appendChild(input);
+          form.style.display = 'none';
+          document.body.appendChild(form);
+          form.submit();
+        }
+      };
 
     $scope.$on('event:doc:scopeChangedEvent', function (event, scope, sectionType) {
       $scope.sectionType = sectionType;
       $scope.initDocs(scope, 500);
     });
+
+    $scope.isLink = function(path) {
+    	return path && path != null && path.startsWith("http");
+	};
+	
+	$scope.downloadDocument = function(path) {
+		if (path != null) {
+			var form = document.createElement("form");
+			form.action = "api/documentation/downloadDocument";
+			form.method = "POST";
+			form.target = "_target";
+			var input = document.createElement("input");
+			input.name = "path";
+			input.value = path;
+			form.appendChild(input);
+			form.style.display = 'none';
+			document.body.appendChild(form);
+			form.submit();
+		}
+	};
 
 
     $scope.addDocument = function () {
@@ -1266,7 +1303,7 @@ angular.module('doc')
     $scope.loading = false;
     $scope.scope = null;
     $scope.type = "INSTALLATION";
-    $scope.sectionType = 'app';
+    $scope.sectionType = $rootScope.domain;
 
 
     $scope.loadDocs = function (scope, domain) {
@@ -1323,21 +1360,25 @@ angular.module('doc')
     });
 
 
-    $scope.downloadDocument = function (path) {
-      if (path != null) {
-        var form = document.createElement("form");
-        form.action = "api/documentation/downloadDocument";
-        form.method = "POST";
-        form.target = "_target";
-        var input = document.createElement("input");
-        input.name = "path";
-        input.value = path;
-        form.appendChild(input);
-        form.style.display = 'none';
-        document.body.appendChild(form);
-        form.submit();
-      }
-    };
+    $scope.isLink = function(path) {
+    	return path && path != null && path.startsWith("http");
+	};
+	
+	$scope.downloadDocument = function(path) {
+		if (path != null) {
+			var form = document.createElement("form");
+			form.action = "api/documentation/downloadDocument";
+			form.method = "POST";
+			form.target = "_target";
+			var input = document.createElement("input");
+			input.name = "path";
+			input.value = path;
+			form.appendChild(input);
+			form.style.display = 'none';
+			document.body.appendChild(form);
+			form.submit();
+		}
+	};
 
 
     $scope.addDocument = function () {
@@ -1487,7 +1528,7 @@ angular.module('doc')
     $scope.error = null;
     $scope.tree = {};
 
-    $scope.sectionType = 'app';
+    $scope.sectionType = $rootScope.domain;
 
     $scope.loadDocs = function (scope, domain) {
       $scope.loading = true;
@@ -1499,11 +1540,11 @@ angular.module('doc')
       $scope.scope = scope;
       $scope.domain = domain;
 
-	  if (!$rootScope.isDomainSelectionSupported() && $rootScope.appInfo.domains.length >= 1){
+      if (!$rootScope.isDomainSelectionSupported() && $rootScope.appInfo.domains.length === 1){
     	  $scope.domain = $rootScope.appInfo.domains[0].domain;
       }
-
-      DocumentationManager.getTestCaseDocuments($scope.domain, scope).then(function (data) {
+               
+      DocumentationManager.getTestCaseDocuments($scope.domain, 'GLOBALANDUSER').then(function (data) {
         $scope.error = null;
         $scope.context = data;
         $scope.data = [];
@@ -1663,10 +1704,22 @@ angular.module('doc')
       $scope.downloadContextFile(row.id, row.type, $scope.formatUrl(row.format) + "valueset.xml", row.title);
     };
 
-
     $scope.downloadConstraints = function (row) {
       $scope.downloadContextFile(row.id, row.type, $scope.formatUrl(row.format) + "constraints.zip", row.title);
     };
+    
+    $scope.downloadCoConstraints = function (row) {
+      $scope.downloadContextFile(row.id, row.type, $scope.formatUrl(row.format) + "coconstraints.xml", row.title);
+    };
+    
+    $scope.downloadValueSetBindings = function (row) {
+      $scope.downloadContextFile(row.id, row.type, $scope.formatUrl(row.format) + "valuesetbindings.xml", row.title);
+    };
+    
+    $scope.downloadSlicings = function (row) {
+      $scope.downloadContextFile(row.id, row.type, $scope.formatUrl(row.format) + "slicings.xml", row.title);
+    };
+    
 
     $scope.downloadContextFile = function (targetId, targetType, targetUrl, targetTitle) {
       if (targetId != null && targetType != null && targetUrl != null) {
