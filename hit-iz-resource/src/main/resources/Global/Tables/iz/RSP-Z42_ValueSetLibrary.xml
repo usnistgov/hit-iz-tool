@@ -1175,6 +1175,9 @@
 		<ValueSetDefinition BindingIdentifier="CDCREC_E_IZ" Name="Ethnic Group">
 			<ValueElement Value="2135-2" CodeSystem="CDCREC" DisplayName="Hispanic or Latino"/>
 			<ValueElement Value="2186-5" CodeSystem="CDCREC" DisplayName="not Hispanic or Latino"/>
+			<ValueElement Value="UNK" CodeSystem="CDCREC" DisplayName="Unknown"/>
+			<ValueElement Value="ASKU" CodeSystem="CDCREC" DisplayName="Asked but unknown"/>
+			<ValueElement Value="PHC1175" CodeSystem="CDCREC" DisplayName="Refused to answer"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="CDCREC_R_IZ" Name="Race">
 			<ValueElement Value="1002-5" CodeSystem="CDCREC" DisplayName="American Indian or Alaska Native"/>
@@ -1183,6 +1186,9 @@
 			<ValueElement Value="2054-5" CodeSystem="CDCREC" DisplayName="Black or African-American"/>
 			<ValueElement Value="2106-3" CodeSystem="CDCREC" DisplayName="White"/>
 			<ValueElement Value="2131-1" CodeSystem="CDCREC" DisplayName="Other Race"/>
+			<ValueElement Value="UNK" CodeSystem="CDCREC" DisplayName="Unknown"/>
+			<ValueElement Value="ASKU" CodeSystem="CDCREC" DisplayName="Asked but unknown"/>
+			<ValueElement Value="PHC1175" CodeSystem="CDCREC" DisplayName="Refused to answer"/>
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="CVX" Name="Codes for Vaccines administered">
