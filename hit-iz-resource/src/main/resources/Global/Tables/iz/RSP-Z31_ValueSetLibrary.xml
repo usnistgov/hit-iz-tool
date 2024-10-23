@@ -321,6 +321,8 @@
 			<ValueElement Value="EMR" CodeSystem="HL70201" DisplayName="Emergency number"/>
 			<ValueElement Value="NET" CodeSystem="HL70201" DisplayName="Network (email) address"/>
 			<ValueElement Value="BPN" CodeSystem="HL70201" DisplayName="Beeper number"/>
+			<!-- added 10/23/2024 -->
+			<ValueElement Value="PRN" CodeSystem="HL70201" DisplayName="Personal"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="HL70202_IZ" Name="Telecommunication equipment type">
 			<ValueElement Value="PH" CodeSystem="HL70202" DisplayName="Telephone"/>
