@@ -369,5 +369,12 @@
         "name": "IZ_Release_Notes.2.0.19.docx",
         "title": "Release notes 2.0.19",
         "order": 1
+    },
+    {
+        "version": "2.2.0",
+        "date": "2024/10/23",
+        "name": "IZ_Release_Notes.2.2.0.docx",
+        "title": "Release notes 2.2.0",
+        "order": 1
     }
 ]
