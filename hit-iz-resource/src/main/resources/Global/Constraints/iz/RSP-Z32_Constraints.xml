@@ -619,7 +619,7 @@
                         </OR>
                     </Assertion>
                 </Constraint>
-                <Constraint ID="IZ-31" Target="9[1]">
+                <!-- <Constraint ID="IZ-31" Target="9[1]">
                     <Description>If RXA-20 (Completion Status) is valued and the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' then the value of RXA-9.1 (Identifier) SHALL be one of codes listed in the Value Set: NIP001.</Description>
                     <Assertion>
                         <OR>
@@ -632,8 +632,8 @@
                             <StringList Path="9[1].1[1]" CSV="00,01,02,03,04,05,06,07,08"/>
                         </OR>
                     </Assertion>
-                </Constraint>
-                <Constraint ID="IZ-47" Target="9[1]">
+                </Constraint> -->
+                <!-- <Constraint ID="IZ-47" Target="9[1]">
                     <Description>If RXA-20 (Completion Status) is not valued or the value of RXA-20 (Completion Status) is not one of List Values: 'CP','PA' then RXA-9.1 (Identifier) SHALL NOT be valued.</Description>
                     <Assertion>
                         <OR>
@@ -655,7 +655,7 @@
                             </NOT>
                         </OR>
                     </Assertion>
-                </Constraint>
+                </Constraint> -->
                 <Constraint ID=" IZ-TS_M" Target="16[1]">
                     <Description>The value of RXA-16.1 (Time) SHALL be formatted with YYYYMM.</Description>
                     <Assertion>
