@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="626af92d1252ce194e63a773" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
-  <MetaData Date="Thu Apr 28 16:29:33 EDT 2022" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
+<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="672943bde4b03f26ac6eaf05" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
+  <MetaData Date="Mon Nov 04 21:59:25 UTC 2024" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
   <Constraints>
     <Message>
-      <ByID ID="aa72383a-7b48-46e5-a74a-82e019591fe7">
+      <ByID ID="672916a4e4b03f26ac6e8d3c_5e149f222db0253035824cee_aa72383a-7b48-46e5-a74a-82e019591fe7">
         <Constraint ID="Content" Target="1[1].3[1].1[1]">
           <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="MSH[1].3[1].1[1]" Source="testcase" TestDataCategorization="Presence-Configuration"/>
           <Description>Expected content is missing. The empty value at MSH-3.1 (Namespace ID) is expected to be present.</Description>
@@ -665,13 +665,13 @@
       </Pattern>
     </Context>
     <Context List="9[*]">
-      <Pattern Ref="%9[1]%[#Value-Test Case Fixed List#3[1].5[1].1[1]#49281-0544-58,49281-0545-15,49281-0561-01,49281-0511-05,49281-0560-05,49281-0510-05]">
+      <Pattern Ref="%9[1]%[#Value-Test Case Fixed List#3[1].5[1].1[1]#49281-0544-58,49281-0561-01,49281-0511-05]">
         <Trigger>
-          <ErrorMessage>OrderIndifferent Trigger ERROR: RXA.5.1 should be one of '49281-0544-58,49281-0545-15,49281-0561-01,49281-0511-05,49281-0560-05,49281-0510-05' is expected</ErrorMessage>
+          <ErrorMessage>OrderIndifferent Trigger ERROR: RXA.5.1 should be one of '49281-0544-58,49281-0561-01,49281-0511-05' is expected</ErrorMessage>
           <Assertion>
             <AND>
               <Presence Path="3[1].5[1].1[1]"/>
-              <StringList CSV="49281-0544-58,49281-0545-15,49281-0561-01,49281-0511-05,49281-0560-05,49281-0510-05" IgnoreCase="true" Path="3[1].5[1].1[1]"/>
+              <StringList CSV="49281-0544-58,49281-0561-01,49281-0511-05" IgnoreCase="true" Path="3[1].5[1].1[1]"/>
             </AND>
           </Assertion>
         </Trigger>
@@ -860,9 +860,9 @@
           </Constraint>
           <Constraint ID="Content" Target="3[1].5[1].1[1]">
             <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="ORDER[1].RXA[1].5[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed List"/>
-            <Description>Invalid content (based on test case fixed data). The value at ORDER.RXA-5.1 (Identifier) does not match one of the expected values: 49281-0544-58,49281-0545-15,49281-0561-01,49281-0511-05,49281-0560-05,49281-0510-05</Description>
+            <Description>Invalid content (based on test case fixed data). The value at ORDER.RXA-5.1 (Identifier) does not match one of the expected values: 49281-0544-58,49281-0561-01,49281-0511-05</Description>
             <Assertion>
-              <StringList CSV="49281-0544-58,49281-0545-15,49281-0561-01,49281-0511-05,49281-0560-05,49281-0510-05" Path="3[1].5[1].1[1]"/>
+              <StringList CSV="49281-0544-58,49281-0561-01,49281-0511-05" Path="3[1].5[1].1[1]"/>
             </Assertion>
           </Constraint>
           <Constraint ID="Content" Target="3[1].5[1].2[1]">
