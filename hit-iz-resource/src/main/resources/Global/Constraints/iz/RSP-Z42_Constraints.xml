@@ -287,7 +287,7 @@
                         </AND>
                     </Condition>
                 </Predicate> -->
-		<Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="RE" FalseUsage="O">
+		<Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="RE" FalseUsage="X">
                     <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
                     <Condition>
                             <AND>
