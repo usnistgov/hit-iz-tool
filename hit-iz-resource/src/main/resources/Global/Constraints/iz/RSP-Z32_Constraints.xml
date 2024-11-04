@@ -264,7 +264,7 @@
                         </AND>
                     </Condition>
                 </Predicate> -->
-                <Predicate ID="[RXA_IZ 1_5]10[1]" Target="10[1]" TrueUsage="RE" FalseUsage="O">
+                <!-- <Predicate ID="[RXA_IZ 1_5]10[1]" Target="10[1]" TrueUsage="RE" FalseUsage="O">
                     <Description>If the value of RXA-9.1 (Identifier) is '00' AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
                     <Condition>
                         <AND>
@@ -278,8 +278,17 @@
                             </AND>
                         </AND>
                     </Condition>
+                </Predicate> -->
+		<Predicate ID="[RXA_IZ 1_5]10[1]" Target="10[1]" TrueUsage="RE" FalseUsage="O">
+                    <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+                    <Condition>
+                            <AND>
+                                <Presence Path="20[1]"/>
+                                <StringList Path="20[1]" CSV="CP,PA"/>
+                            </AND>
+                    </Condition>
                 </Predicate>
-                <Predicate ID="[RXA_IZ 1_5]11[1]" Target="11[1]" TrueUsage="RE" FalseUsage="O">
+                <!-- <Predicate ID="[RXA_IZ 1_5]11[1]" Target="11[1]" TrueUsage="RE" FalseUsage="O">
                     <Description>If the value of RXA-9.1 (Identifier) is '00' AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
                     <Condition>
                         <AND>
@@ -293,8 +302,17 @@
                             </AND>
                         </AND>
                     </Condition>
+                </Predicate> -->
+		<Predicate ID="[RXA_IZ 1_5]11[1]" Target="11[1]" TrueUsage="RE" FalseUsage="O">
+                    <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+                    <Condition>
+                            <AND>
+                                <Presence Path="20[1]"/>
+                                <StringList Path="20[1]" CSV="CP,PA"/>
+                            </AND>
+                    </Condition>
                 </Predicate>
-                <Predicate ID="[RXA_IZ 1_5]15[1]" Target="15[1]" TrueUsage="R" FalseUsage="O">
+                <!-- <Predicate ID="[RXA_IZ 1_5]15[1]" Target="15[1]" TrueUsage="R" FalseUsage="O">
                     <Description>If RXA-9.1 (Identifier) is valued AND if RXA-20 (Completion Status) is valued AND if the value of RXA-9.1 (Identifier) is '00' AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
                     <Condition>
                         <AND>
@@ -308,6 +326,15 @@
                             </AND>
                         </AND>
                     </Condition>
+                </Predicate> -->
+		<Predicate ID="[RXA_IZ 1_5]15[1]" Target="15[1]" TrueUsage="R" FalseUsage="O">
+                    <Description>If RXA-20 (Completion Status) is valued AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+                    <Condition>
+			    <AND>
+				    <Presence Path="20[1]"/>
+                                    <StringList Path="20[1]" CSV="CP,PA"/>
+			    </AND>
+                    </Condition>
                 </Predicate>
                 <Predicate ID="[RXA_IZ 1_5]16[1]" Target="16[1]" TrueUsage="RE" FalseUsage="O">
                     <Description>If RXA-15 (Substance Lot Number) is valued.</Description>
@@ -315,13 +342,22 @@
                         <Presence Path="15[1]"/>
                     </Condition>
                 </Predicate>
-                <Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="R" FalseUsage="O">
+                <!-- <Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="R" FalseUsage="O">
                     <Description>If RXA-9.1 (Identifier) is valued AND if the value of RXA-9.1 (Identifier) is '00'.</Description>
                     <Condition>
                         <AND>
                             <Presence Path="9[1].1[1]"/>
                             <PlainText Path="9[1].1[1]" Text="00" IgnoreCase="false"/>
                         </AND>
+                    </Condition>
+                </Predicate> -->
+	       <Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="R" FalseUsage="O">
+                    <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+                    <Condition>
+                            <AND>
+                                <Presence Path="20[1]"/>
+                                <StringList Path="20[1]" CSV="CP,PA"/>
+                            </AND>
                     </Condition>
                 </Predicate>
                 <Predicate ID="[RXA_IZ 1_5]18[1]" Target="18[1]" TrueUsage="R" FalseUsage="X">
@@ -356,7 +392,7 @@
             </ByID>
             <ByID ID="ORC_IZ 1_5">
                 <Predicate ID="[ORC_IZ 1_5]12[1]-Display" Target="12[1]" TrueUsage="RE" FalseUsage="O">
-                    <Description>If the value of RXA-9.1 (Identifier) is '00' AND if RXA-9.1 (Identifier) is valued AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is valued.</Description>
+                    <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is valued.</Description>
                     <Condition>
                         <OR>
                             <Presence Path="12[1]"/>
@@ -371,18 +407,12 @@
         <Group>
             <ByName Name="VXU_V04.ORDER">
                 <Predicate ID="[ORC_IZ 1_5]12[1]" Target="1[1].12[1]" TrueUsage="RE" FalseUsage="O">
-                    <Description>If the value of RXA-9.1 (Identifier) is '00' AND if RXA-9.1 (Identifier) is valued AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is valued.</Description>
+                    <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' AND if RXA-20 (Completion Status) is valued.</Description>
                     <Condition>
-                        <AND>
-                            <PlainText Path="3[1].9[1].1[1]" Text="00" IgnoreCase="false"/>
-                            <AND>
-                                <Presence Path="3[1].9[1].1[1]"/>
-                                <AND>
-                                    <StringList Path="3[1].20[1]" CSV="CP,PA"/>
+			    <AND>
+				    <StringList Path="3[1].20[1]" CSV="CP,PA"/>
                                     <Presence Path="3[1].20[1]"/>
-                                </AND>
-                            </AND>
-                        </AND>
+			    </AND>
                     </Condition>
                 </Predicate>
             </ByName>
