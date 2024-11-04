@@ -170,12 +170,12 @@
 			<Field Name="Duplicate Patient" Usage="O" Min="0" Max="*" Datatype="CX" MinLength="1" MaxLength="250" ItemNo="00762"/>
 			<Field Name="Publicity Code" Usage="RE" Min="0" Max="1" Datatype="CE_IZ" MinLength="1" MaxLength="250" Binding="HL70215" BindingStrength="R" BindingLocation="1" ItemNo="00743"/>
 			<Field Name="Protection Indicator" Usage="RE" Min="0" Max="1" Datatype="ID" MinLength="1" MaxLength="1" ItemNo="00744"/>
-			<Field Name="Protection Indicator Effective Date" Usage="C" Min="0" Max="1" Datatype="DT" MinLength="1" MaxLength="8" ItemNo="01566"/>
+			<Field Name="Protection Indicator Effective Date" Usage="C" Min="0" Max="1" Datatype="DT_D" MinLength="1" MaxLength="8" ItemNo="01566"/>
 			<Field Name="Place of Worship" Usage="O" Min="0" Max="*" Datatype="XON" MinLength="1" MaxLength="250" ItemNo="01567"/>
 			<Field Name="Advance Directive Code" Usage="O" Min="0" Max="*" Datatype="CE" MinLength="1" MaxLength="250" Binding="HL70435" BindingStrength="R" BindingLocation="1" ItemNo="01568"/>
 			<Field Name="Immunization Registry Status" Usage="RE" Min="0" Max="1" Datatype="IS" MinLength="1" MaxLength="1" Binding="HL70441_IZ" BindingStrength="R" ItemNo="01569"/>
-			<Field Name="Immunization Registry Status Effective Date" Usage="C" Min="0" Max="1" Datatype="DT" MinLength="1" MaxLength="8" ItemNo="01570"/>
-			<Field Name="Publicity Code Effective Date" Usage="C" Min="0" Max="1" Datatype="DT" MinLength="1" MaxLength="8" ItemNo="01571"/>
+			<Field Name="Immunization Registry Status Effective Date" Usage="C" Min="0" Max="1" Datatype="DT_D" MinLength="1" MaxLength="8" ItemNo="01570"/>
+			<Field Name="Publicity Code Effective Date" Usage="C" Min="0" Max="1" Datatype="DT_D" MinLength="1" MaxLength="8" ItemNo="01571"/>
 			<Field Name="Military Branch" Usage="O" Min="0" Max="1" Datatype="IS" MinLength="1" MaxLength="5" Binding="HL70140" BindingStrength="R" ItemNo="01572"/>
 			<Field Name="Military Rank/Grade" Usage="O" Min="0" Max="1" Datatype="IS" MinLength="1" MaxLength="2" Binding="HL70141" BindingStrength="R" ItemNo="00486"/>
 			<Field Name="Military Status" Usage="O" Min="0" Max="1" Datatype="IS" MinLength="1" MaxLength="3" Binding="HL70142" BindingStrength="R" ItemNo="01573"/>
