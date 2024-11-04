@@ -488,6 +488,7 @@
 			<Component Name="Unformatted Telephone number" Usage="O" Datatype="ST" MinLength="1" MaxLength="199"/>
 		</Datatype>
 		<Datatype ID="DT" Label="DT" Name="DT" Description="Date"/>
+		<Datatype ID="DT_D" Label="DT_D" Name="DT" Description="Date"/>
 		<Datatype ID="XON" Label="XON" Name="XON" Description="Extended Composite Name and Identification Number for Organizations">
 			<Component Name="Organization Name" Usage="O" Datatype="ST" MinLength="1" MaxLength="50"/>
 			<Component Name="Organization Name Type Code" Usage="O" Datatype="IS" MinLength="1" MaxLength="20" Binding="HL70204" BindingStrength="R"/>
