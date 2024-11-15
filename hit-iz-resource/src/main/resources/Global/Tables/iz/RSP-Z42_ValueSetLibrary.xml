@@ -1800,9 +1800,6 @@
 			<ValueElement Value="253088698300058511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
 			<ValueElement Value="253088698300061511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
 			<ValueElement Value="253088698300037011240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older"/>
-			<ValueElement Value="253088698300031811241017" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
-			<ValueElement Value="253088698300063911241017" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older"/>
-			<ValueElement Value="253088698300060811241017" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>
 			<!--
 			<ValueElement Value="" CodeSystem="cdcgs1vis" DisplayName=""/>
 			-->
