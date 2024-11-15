@@ -1295,6 +1295,8 @@
       <ValueElement CodeSystem="CVX" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, preservative free" Value="321"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, contains preservative" Value="322"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Influenza-avian, H5, unspecified formulation" Value="323"/>  
+      <!-- 11/15/2024 -->  
+      <ValueElement CodeSystem="CVX" DisplayName="Pneumococcal conjugate vaccine, 21 valent (PCV21), polysaccharide CRM197 conjugate, preservative free" Value="327"/>  
       <!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			--> 
@@ -1783,6 +1785,36 @@
       <ValueElement CodeSystem="NDC" DisplayName="RSV, mRNA, injectable, PF (mRESVIA)" Value="80777-0345-90"/>  
       <ValueElement CodeSystem="NDC" DisplayName="RSV, mRNA, injectable, PF (mRESVIA)" Value="80777-0345-96"/>  
       <ValueElement CodeSystem="NDC" DisplayName="cholera, live attenuated (Vaxchora)" Value="50632-0015-02"/>  
+      <!-- 11/15/2024 -->  
+      <ValueElement CodeSystem="NDC" DisplayName="Pneumococcal Conjugate 21 Valent Vaccine (PCV 21) (CAPVAXIVE)" Value="00006-4347-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Pneumococcal Conjugate 21 Valent Vaccine (PCV 21) (CAPVAXIVE)" Value="00006-4347-02"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (FLUARIX)" Value="58160-0884-52"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (ccIIV3), derived from cell cultures, subunit, antibiotic free, 0.5 mL dosage, for intramuscular use (Flucelvax)" Value="70461-0654-03"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, 0.5 mL dosage, for intramuscular use and Influenza virus vaccine, trivalent (IIV3), split virus, 0.25 mL dosage, for intramuscular use (Afluria)" Value="33332-0124-10"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (FLULAVAL)" Value="19515-0810-52"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, 0.5 mL dosage, for intramuscular use and Influenza virus vaccine, trivalent (IIV3), split virus, 0.25 mL dosage, for intramuscular use (FLUZONE TRIVALENT NORTHERN HEMISPHERE)" Value="49281-0641-15"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (FLUZONE TRIVALENT NORTHERN HEMISPHERE)" Value="49281-0424-50"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (RIV3), derived from recombinant DNA, hemagglutinin (HA) protein only, preservative and antibiotic free, for intramuscular use (FLUBLOK TRIVALENT NORTHERN HEMISPHERE)" Value="49281-0724-10"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine (IIV), split virus, preservative free, enhanced immunogenicity via increased antigen content, for intramuscular use (FLUZONE HIGH DOSE NORTHERN HEMISPHERE)" Value="49281-0124-65"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (ccIIV3), derived from cell cultures, subunit, antibiotic free, 0.5 mL dosage, for intramuscular use (Flucelvax)" Value="70461-0554-10"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (Afluria)" Value="33332-0024-03"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza vaccine, inactivated (IIV), subunit, adjuvanted, for intramuscular use (FLUAD)" Value="70461-0024-03"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Hepatitis A vaccine (HepA), pediatric/adolescent dosage-2 dose schedule, for intramuscular use (HAVRIX)" Value="50090-3781-00"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Typhoid vaccine, live, oral (Vivotif)" Value="50632-0016-02"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF (Abrysvo)" Value="00069-2465-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF (Abrysvo)" Value="00069-2465-10"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="NOVAVAX COVID-19 VACCINE, ADJUVANTED" Value="80631-0107-10"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Spikevax (Moderna)" Value="80777-0110-96"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Spikevax (Moderna)" Value="80777-0110-93"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Comirnaty (Pfizer)" Value="00069-2432-10"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Moderna COVID-19 Vaccine" Value="80777-0291-81"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech Covid-19 Vaccine" Value="59267-4438-02"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech Covid-19 Vaccine" Value="59267-4426-02"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Moderna COVID-19 Vaccine" Value="80777-0291-80"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="FluMist (MedImmune, Inc. AstraZeneca)" Value="66019-0311-10"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Smallpox/Monkeypox vaccine Bavarian Nordic A/S (JYNNEOS)" Value="50632-0001-03"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="cholera, live attenuated (Vaxchora)" Value="70460-0004-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="typhoid, oral (Vivotif)" Value="69401-0000-02"/>  
       <!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
 			--> 
@@ -2238,6 +2270,30 @@
       <!-- 07/08/2024 -->  
       <ValueElement CodeSystem="NDC" DisplayName="for RSV, mRNA, injectable, PF (mRESVIA)" Value="80777-0345-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="cholera, live attenuated (Vaxchora)" Value="50632-0015-02"/>  
+      <!-- 11/15/2024 -->  
+      <ValueElement CodeSystem="NDC" DisplayName="Pneumococcal Conjugate 21 Valent Vaccine (PCV 21) (CAPVAXIVE)" Value="00006-4347-99"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (FLUARIX)" Value="58160-0884-52"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (ccIIV3), derived from cell cultures, subunit, antibiotic free, 0.5 mL dosage, for intramuscular use (Flucelvax)" Value="70461-0654-04"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, 0.5 mL dosage, for intramuscular use and Influenza virus vaccine, trivalent (IIV3), split virus, 0.25 mL dosage, for intramuscular use (Afluria)" Value="33332-0124-11"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (FLULAVAL)" Value="19515-0810-41"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, 0.5 mL dosage, for intramuscular use and Influenza virus vaccine, trivalent (IIV3), split virus, 0.25 mL dosage, for intramuscular use (FLUZONE TRIVALENT NORTHERN HEMISPHERE)" Value="49281-0641-78"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (FLUZONE TRIVALENT NORTHERN HEMISPHERE)" Value="49281-0424-88"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (RIV3), derived from recombinant DNA, hemagglutinin (HA) protein only, preservative and antibiotic free, for intramuscular use (FLUBLOK TRIVALENT NORTHERN HEMISPHERE)" Value="49281-0724-88"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine (IIV), split virus, preservative free, enhanced immunogenicity via increased antigen content, for intramuscular use (FLUZONE HIGH DOSE NORTHERN HEMISPHERE)" Value="49281-0124-88"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (ccIIV3), derived from cell cultures, subunit, antibiotic free, 0.5 mL dosage, for intramuscular use (Flucelvax)" Value="70461-0554-11"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (Afluria)" Value="33332-0024-04"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Influenza vaccine, inactivated (IIV), subunit, adjuvanted, for intramuscular use (FLUAD)" Value="70461-0024-04"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Hepatitis A vaccine (HepA), pediatric/adolescent dosage-2 dose schedule, for intramuscular use (HAVRIX)" Value="50090-3781-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Typhoid vaccine, live, oral (Vivotif)" Value="50632-0016-04"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF (Abrysvo)" Value="00069-2465-19"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF (Abrysvo)" Value="00069-2465-19"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="NOVAVAX COVID-19 VACCINE, ADJUVANTED" Value="80631-0107-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Spikevax (Moderna)" Value="80777-0110-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Comirnaty (Pfizer)" Value="00069-2432-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Moderna COVID-19 Vaccine" Value="80777-0291-09"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech Covid-19 Vaccine" Value="59267-4438-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech Covid-19 Vaccine" Value="59267-4426-01"/>  
+      <ValueElement CodeSystem="NDC" DisplayName="FluMist (MedImmune, Inc. AstraZeneca)" Value="66019-311-00"/>  
       <!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
 			--> 
@@ -2489,6 +2545,13 @@
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS" Value="253088698300060811231019"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="Tick-borne Encephalitis Vaccine VIS" Value="253088698300064611231207"/>  
       <!-- 10/18/2024 -->  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS" Value="253088698300031811241017"/>  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older" Value="253088698300063911241017"/>  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS" Value="253088698300060811241017"/>  
+      <!-- 11/15/2024 -->  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years" Value="253088698300058511240801"/>  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years" Value="253088698300061511240801"/>  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older" Value="253088698300037011240801"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS" Value="253088698300031811241017"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older" Value="253088698300063911241017"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS" Value="253088698300060811241017"/>  

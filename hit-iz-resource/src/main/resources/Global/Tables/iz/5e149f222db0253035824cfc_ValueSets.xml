@@ -1466,6 +1466,8 @@
       <ValueElement CodeSystem="CVX" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, preservative free" Value="321"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, contains preservative" Value="322"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Influenza-avian, H5, unspecified formulation" Value="323"/>  
+      <!-- 11/15/2024 -->  
+      <ValueElement CodeSystem="CVX" DisplayName="Pneumococcal conjugate vaccine, 21 valent (PCV21), polysaccharide CRM197 conjugate, preservative free" Value="327"/>  
       <!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			--> 
@@ -1717,6 +1719,13 @@
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS" Value="253088698300060811231019"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="Tick-borne Encephalitis Vaccine VIS" Value="253088698300064611231207"/>  
       <!-- 10/18/2024 -->  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS" Value="253088698300031811241017"/>  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older" Value="253088698300063911241017"/>  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS" Value="253088698300060811241017"/>  
+      <!-- 11/15/2024 -->  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years" Value="253088698300058511240801"/>  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years" Value="253088698300061511240801"/>  
+      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older" Value="253088698300037011240801"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS" Value="253088698300031811241017"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older" Value="253088698300063911241017"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS" Value="253088698300060811241017"/>  
