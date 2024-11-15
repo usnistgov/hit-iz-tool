@@ -1589,6 +1589,9 @@
 			<ValueElement Value="321" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="322" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, contains preservative" CodeSystem="CVX"/>
 			<ValueElement Value="323" DisplayName="Influenza-avian, H5, unspecified formulation" CodeSystem="CVX"/>
+
+			<!-- 11/15/2024 -->
+			<ValueElement Value="327" DisplayName="Pneumococcal conjugate vaccine, 21 valent (PCV21), polysaccharide CRM197 conjugate, preservative free" CodeSystem="CVX"/>
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->		
@@ -1878,6 +1881,13 @@
 			<ValueElement Value="253088698300063911241017" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older"/>
 			<ValueElement Value="253088698300060811241017" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>
 			
+			<!-- 11/15/2024 -->
+			<ValueElement Value="253088698300058511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
+			<ValueElement Value="253088698300061511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
+			<ValueElement Value="253088698300037011240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older"/>
+			<ValueElement Value="253088698300031811241017" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
+			<ValueElement Value="253088698300063911241017" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older"/>
+			<ValueElement Value="253088698300060811241017" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>			
 			<!--
 			<ValueElement Value="" CodeSystem="cdcgs1vis" DisplayName=""/>
 			-->
