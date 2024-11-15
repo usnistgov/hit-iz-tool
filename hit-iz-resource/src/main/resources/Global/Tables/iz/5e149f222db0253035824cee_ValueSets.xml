@@ -539,8 +539,7 @@
       <ValueElement CodeSystem="HL70064" DisplayName="CHIP" Value="V22"/>  
       <ValueElement CodeSystem="HL70064" DisplayName="317" Value="V23"/>  
       <ValueElement CodeSystem="HL70064" DisplayName="Medicare" Value="V24"/>  
-      <ValueElement CodeSystem="HL70064" DisplayName="State program eligibility" Value="V25"/>  
-      <ValueElement CodeSystem="HL70064" DisplayName="Specific state codes" Value="***"/> 
+      <ValueElement CodeSystem="HL70064" DisplayName="State program eligibility" Value="V25"/> 
     </ValueSetDefinition> 
   </ValueSetDefinitions>  
   <ValueSetDefinitions Group="CDC-IZ" Order="2"> 
@@ -2286,7 +2285,6 @@
       <ValueElement CodeSystem="NDC" DisplayName="Hepatitis A vaccine (HepA), pediatric/adolescent dosage-2 dose schedule, for intramuscular use (HAVRIX)" Value="50090-3781-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Typhoid vaccine, live, oral (Vivotif)" Value="50632-0016-04"/>  
       <ValueElement CodeSystem="NDC" DisplayName="RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF (Abrysvo)" Value="00069-2465-19"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF (Abrysvo)" Value="00069-2465-19"/>  
       <ValueElement CodeSystem="NDC" DisplayName="NOVAVAX COVID-19 VACCINE, ADJUVANTED" Value="80631-0107-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Spikevax (Moderna)" Value="80777-0110-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Comirnaty (Pfizer)" Value="00069-2432-01"/>  
@@ -2552,9 +2550,6 @@
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years" Value="253088698300058511240801"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years" Value="253088698300061511240801"/>  
       <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older" Value="253088698300037011240801"/>  
-      <ValueElement CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS" Value="253088698300031811241017"/>  
-      <ValueElement CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older" Value="253088698300063911241017"/>  
-      <ValueElement CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS" Value="253088698300060811241017"/>  
       <!--
 			<ValueElement Value="" CodeSystem="cdcgs1vis" DisplayName=""/>
 			--> 

@@ -194,7 +194,7 @@
       <Field Datatype="ST" ItemNo="00354" Max="1" MaxLength="20" Min="0" MinLength="1" Name="Administered Per (Time Unit)" Usage="O"/>  
       <Field Datatype="NM" ItemNo="01134" Max="1" MaxLength="20" Min="0" MinLength="1" Name="Administered Strength" Usage="O"/>  
       <Field Datatype="CE" ItemNo="01135" Max="1" MaxLength="250" Min="0" MinLength="1" Name="Administered Strength Units" Usage="O"/>  
-      <Field Datatype="ST" ItemNo="01129" Max="*" MaxLength="20" Min="0" MinLength="1" Name="Substance Lot Number" Usage="O"/>  
+      <Field Datatype="ST" ItemNo="01129" Max="*" MaxLength="20" Min="0" MinLength="1" Name="Substance Lot Number" Usage="C"/>  
       <Field Datatype="TS" ItemNo="01130" Max="1" MaxLength="26" Min="0" MinLength="1" Name="Substance Expiration Date" Usage="O"/>  
       <Field Binding="MVX" BindingLocation="1" BindingStrength="R" Datatype="CE_IZ" ItemNo="01131" Max="1" MaxLength="250" Min="0" MinLength="1" Name="Substance Manufacturer Name" Usage="C"/>  
       <Field Binding="NIP002" BindingLocation="1" BindingStrength="R" Datatype="CE_IZ" ItemNo="01136" Max="*" MaxLength="250" Min="0" MinLength="1" Name="Substance/Treatment Refusal Reason" Usage="C"/>  
