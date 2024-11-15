@@ -287,6 +287,15 @@
                         </AND>
                     </Condition>
                 </Predicate> -->
+		<Predicate ID="[RXA_IZ 1_5]15[1]" Target="15[1]" TrueUsage="RE" FalseUsage="X">
+                    <Description>If RXA-20 (Completion Status) is valued AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+                    <Condition>
+			    <AND>
+				    <Presence Path="20[1]"/>
+                                    <StringList Path="20[1]" CSV="CP,PA"/>
+			    </AND>
+                    </Condition>
+                </Predicate>
 		<Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="RE" FalseUsage="X">
                     <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
                     <Condition>
