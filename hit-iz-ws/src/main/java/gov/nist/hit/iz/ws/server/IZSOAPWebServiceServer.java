@@ -68,7 +68,7 @@ public class IZSOAPWebServiceServer implements TransportServer {
 	@Override
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "submitSingleMessage")
 	@ResponsePayload
-	public SubmitSingleMessageResponseType handle(@RequestPayload SubmitSingleMessageRequestType request) {
+	public SubmitSingleMessageResponseType handle(@RequestPayload SubmitSingleMessageRequestType request) {		
 		validateRequest(request);
 		String hl7Message = request.getHl7Message();
 		if (hl7Message == null || hl7Message.equals("")) {
