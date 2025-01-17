@@ -13,6 +13,9 @@
 package gov.nist.hit.iz.web.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -168,50 +171,55 @@ public class SOAPConnectivityController {
 			@ApiParam(value = "the request of the transaction", required = true) @RequestBody TransportRequest requ,
 			HttpSession session) throws TransportClientException {
 		logger.info("Sending message ");
-		try {
+			
 			if (requ.getConfig().get("endpoint") == null || "".equals(requ.getConfig().get("endpoint"))) {
 				throw new TransportException("Failed to send the message. No endpoint specified");
 			}
 			String endpoint =  requ.getConfig().get("endpoint").replaceAll(" ","");
 			//forbid sending to internal or nist server
-			if (StringUtils.containsIgnoreCase(endpoint,"nist.gov") || endpoint.matches("129.6.\\d+.\\d+") || StringUtils.containsIgnoreCase(endpoint,"localhost") || StringUtils.containsIgnoreCase(endpoint,"127.0.0.1")) {
+			try {
+				endpoint = URLDecoder.decode(endpoint, StandardCharsets.UTF_8.name());
+			} catch (UnsupportedEncodingException e2) {
 				throw new TransportException("Failed to send the message. Endpoint is forbidden");
 			}
-
-			Long userId = SessionContext.getCurrentUserId(session);
-			if (userId == null || (accountService.findOne(userId)) == null) {
-				throw new UserNotFoundException();
+			if (StringUtils.containsIgnoreCase(endpoint,"nist.gov") || endpoint.matches("129.6.\\d+.\\d+")  || endpoint.matches("132.163.\\d+.\\d+") || StringUtils.containsIgnoreCase(endpoint,"localhost") || StringUtils.containsIgnoreCase(endpoint,"127.0.0.1")) {
+				throw new TransportException("Failed to send the message. Endpoint is forbidden");
 			}
-			Long testCaseId = requ.getTestStepId();
-			IZConnectivityTestCase testCase = testCaseRepository.findOne(testCaseId);
-			String soapAction = null;
-			if (testCase == null)
-				throw new TestCaseException("Unknown testcase with id=" + testCaseId);
-			// String outgoingMessage = requ.getMessage();
-			String outgoingMessage = testCase.getTestContext().getMessage();
-			if (!IZTestType.RECEIVER_CONNECTIVITY.toString().equals(testCase.getTestType())) {
-				outgoingMessage = ConnectivityUtil.updateSubmitSingleMessageRequest(outgoingMessage,
-						requ.getConfig().get("hl7Message"), requ.getConfig().get("username"),
-						requ.getConfig().get("password"), requ.getConfig().get("facilityID"));
-				soapAction = IZConstants.SUBMITSINGLEMESSAGE_SOAP_ACTION;
-			} else if (IZTestType.RECEIVER_CONNECTIVITY.toString().equals(testCase.getTestType())) {
-				outgoingMessage = ConnectivityUtil.updateConnectivityRequest(outgoingMessage);
-				soapAction = IZConstants.CONNECTIVITYTEST_SOAP_ACTION;
-			}
-			String incomingMessage = webServiceClient.send(outgoingMessage, endpoint,
-					soapAction);
-			String tmp = incomingMessage;
 			try {
-				incomingMessage = XmlUtil.prettyPrint(incomingMessage);
-			} catch (Exception e) {
-				incomingMessage = tmp;
-			}
-
-			Transaction transaction = new Transaction();
-			transaction.setOutgoing(outgoingMessage);
-			transaction.setIncoming(incomingMessage);
-
-			streamer.stream(response.getOutputStream(), transaction);
+				Long userId = SessionContext.getCurrentUserId(session);
+				if (userId == null || (accountService.findOne(userId)) == null) {
+					throw new UserNotFoundException();
+				}
+				Long testCaseId = requ.getTestStepId();
+				IZConnectivityTestCase testCase = testCaseRepository.findOne(testCaseId);
+				String soapAction = null;
+				if (testCase == null)
+					throw new TestCaseException("Unknown testcase with id=" + testCaseId);
+				// String outgoingMessage = requ.getMessage();
+				String outgoingMessage = testCase.getTestContext().getMessage();
+				if (!IZTestType.RECEIVER_CONNECTIVITY.toString().equals(testCase.getTestType())) {
+					outgoingMessage = ConnectivityUtil.updateSubmitSingleMessageRequest(outgoingMessage,
+							requ.getConfig().get("hl7Message"), requ.getConfig().get("username"),
+							requ.getConfig().get("password"), requ.getConfig().get("facilityID"));
+					soapAction = IZConstants.SUBMITSINGLEMESSAGE_SOAP_ACTION;
+				} else if (IZTestType.RECEIVER_CONNECTIVITY.toString().equals(testCase.getTestType())) {
+					outgoingMessage = ConnectivityUtil.updateConnectivityRequest(outgoingMessage);
+					soapAction = IZConstants.CONNECTIVITYTEST_SOAP_ACTION;
+				}
+				String incomingMessage = webServiceClient.send(outgoingMessage, endpoint,
+						soapAction);
+				String tmp = incomingMessage;
+				try {
+					incomingMessage = XmlUtil.prettyPrint(incomingMessage);
+				} catch (Exception e) {
+					incomingMessage = tmp;
+				}
+				
+				Transaction transaction = new Transaction();
+				transaction.setOutgoing(outgoingMessage);
+				transaction.setIncoming(incomingMessage);
+	
+				streamer.stream(response.getOutputStream(), transaction);
 
 		} catch (Exception e1) {
 			throw new TransportException("Failed to send the message. ");
