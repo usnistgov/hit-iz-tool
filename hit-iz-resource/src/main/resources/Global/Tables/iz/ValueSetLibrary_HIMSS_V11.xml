@@ -153,7 +153,7 @@
       <ValueElement CodeSystem="HL70335" DisplayName="repeats on a particular day of the week," Usage="P" Value="Q&lt;integer&gt;J&lt;day#&gt;"/>
       <ValueElement CodeSystem="HL70335" DisplayName="Inter" Usage="P" Value="I"/>
       <ValueElement CodeSystem="HL70335" DisplayName="every &lt;integer&gt; weeks" Usage="P" Value="Q&lt;integer&gt;W"/>
-      <ValueElement CodeSystem="HL70335" DisplayName="&quot;X&quot;?????? times per day at institution-specified times, where X is a numeral 5 or greater." Usage="P" Value="xID"/>
+      <ValueElement CodeSystem="HL70335" DisplayName="&quot;X&quot;�� times per day at institution-specified times, where X is a numeral 5 or greater." Usage="P" Value="xID"/>
     </ValueSetDefinition>
     <ValueSetDefinition BindingIdentifier="HL70360" ContentDefinition="Extensional" Description="Degree/license/certificate" Extensibility="Closed" Name="Degree/license/certificate" Stability="Static" Version="2.5.1">
       <ValueElement CodeSystem="HL70360" DisplayName="Master of Divinity" Usage="P" Value="MDI"/>
@@ -648,7 +648,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="International Classification of Disease for Oncology Second Edition" Value="ICDO2"/>
       <ValueElement CodeSystem="HL70396" DisplayName="VIP Indicator " Value="HL70099"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Transfer To Bad Debt Code " Value="HL70110"/>
-      <ValueElement CodeSystem="HL70396" DisplayName="COSMIC ????????? Simple variants" Value="COSMIC-Smpl"/>
+      <ValueElement CodeSystem="HL70396" DisplayName="COSMIC ��� Simple variants" Value="COSMIC-Smpl"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Institution " Value="HL70531"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Specimen Child Role " Value="HL70494"/>
       <ValueElement CodeSystem="HL70396" DisplayName="CN ID Source " Value="HL70297"/>
@@ -1024,7 +1024,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="National Provider Identifier" Value="NPI"/>
       <ValueElement CodeSystem="HL70396" DisplayName="ICCS" Value="ICS"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Device Safety" Value="HL70963"/>
-      <ValueElement CodeSystem="HL70396" DisplayName="Signatory?????????S Relationship To Subject " Value="HL70548"/>
+      <ValueElement CodeSystem="HL70396" DisplayName="Signatory���S Relationship To Subject " Value="HL70548"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Practitioner Group " Value="HL70358"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Unified Medical Language" Value="UML"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Shipment Confidentiality " Value="HL70907"/>
@@ -1043,10 +1043,10 @@
       <ValueElement CodeSystem="HL70396" DisplayName="ClinVar Variant ID" Value="CLINVAR-V"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Relational Operator " Value="HL70209"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Carrier Type " Value="HL70378"/>
-      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC??????)" Value="LN"/>
+      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC��)" Value="LN"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Treatment" Value="HL70373"/>
       <ValueElement CodeSystem="HL70396" DisplayName="International Classification of Diseases, 9th Revision, Clinical Modification (ICD-9-CM)" Value="I9C"/>
-      <ValueElement CodeSystem="HL70396" DisplayName="Patient?????????S Relationship To Insured " Value="HL70344"/>
+      <ValueElement CodeSystem="HL70396" DisplayName="Patient���S Relationship To Insured " Value="HL70344"/>
       <ValueElement CodeSystem="HL70396" DisplayName="CDC Analyte Codes" Value="CDCA"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Invoice Reason Codes " Value="HL70554"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Side Of Body " Value="HL70894"/>
@@ -1190,7 +1190,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="Acknowledgment Code " Value="HL70008"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Indirect Exposure Mechanism " Value="HL70253"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Status Of Evaluation " Value="HL70247"/>
-      <ValueElement CodeSystem="HL70396" DisplayName="Driver?????????S License Issuing Authority " Value="HL70333"/>
+      <ValueElement CodeSystem="HL70396" DisplayName="Driver���S License Issuing Authority " Value="HL70333"/>
       <ValueElement CodeSystem="HL70396" DisplayName="ISO 639 Language" Value="ISO639"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Local/Remote Control State " Value="HL70366"/>
       <ValueElement CodeSystem="HL70396" DisplayName="VIS Bar Codes (IIS)" Value="cdcgs1vis"/>
@@ -2839,14 +2839,14 @@
       <ValueElement CodeSystem="HL70215" DisplayName="Only reminder to provider, no recall" Usage="R" Value="10"/>
     </ValueSetDefinition>
     <ValueSetDefinition BindingIdentifier="HL70064_IZ" ContentDefinition="Extensional" Description="Financial class" Extensibility="Open" Name="Financial class" Stability="Dynamic" Version="2.5.1">
-      <ValueElement CodeSystem="HL70064" Comments="All of the following are true: ????????? Client is a member of a federally recognized tribe ????????? Client is &lt; 19 years old The type of vaccine administered is eligible for VFC funding" DisplayName="VFC eligible -American Indian/Alaska native" Usage="R" Value="V04"/>
+      <ValueElement CodeSystem="HL70064" Comments="All of the following are true: ��� Client is a member of a federally recognized tribe ��� Client is &lt; 19 years old The type of vaccine administered is eligible for VFC funding" DisplayName="VFC eligible -American Indian/Alaska native" Usage="R" Value="V04"/>
       <ValueElement CodeSystem="HL70064" Comments="Client is eligible to receive vaccines under the state/program immunization policy and the vaccine administered is eligible for 317 funding" DisplayName="317" Usage="R" Value="V23"/>
       <ValueElement CodeSystem="HL70064" Comments="Client is eligible for a state vaccine program" DisplayName="State program eligibility" Usage="R" Value="V25"/>
       <ValueElement CodeSystem="HL70064" Comments="Client does not qualify for VFC because they do not have one of the statuses below. (V02-V05)" DisplayName="Not VFC eligible" Usage="R" Value="V01"/>
       <ValueElement CodeSystem="HL70064" Comments="Client is part of IIP Vaccine Program" DisplayName="HeartlandVV-Program" Usage="R" Value="IIP024"/>
-      <ValueElement CodeSystem="HL70064" Comments="All of the following are true: ????????? Client is currently eligible for Medicaid or Medicaid managed care ????????? Client is &lt; 19 years old The type of vaccine administered is eligible for VFC funding" DisplayName="VFC eligible -Medicaid/Medicaid Managed Care" Usage="R" Value="V02"/>
-      <ValueElement CodeSystem="HL70064" Comments="All of the following are true: ????????? Client has insurance but insurance does not cover vaccines, limits the vaccines covered or caps vaccine coverage at a certain amount ????????? Client is receiving care at an FQHC, RHC or deputized provider ????????? Client is &lt; 19 years old The type of vaccine administered is eligible for VFC funding" DisplayName="VFC eligible- underinsured at FQHC/RHC/deputized provider" Usage="R" Value="V05"/>
-      <ValueElement CodeSystem="HL70064" Comments="All of the following are true: ????????? Client does not have health insurance ????????? Client is &lt; 19 years old The type of vaccine administered is eligible for VFC funding" DisplayName="VFC eligible -Uninsured" Usage="R" Value="V03"/>
+      <ValueElement CodeSystem="HL70064" Comments="All of the following are true: ��� Client is currently eligible for Medicaid or Medicaid managed care ��� Client is &lt; 19 years old The type of vaccine administered is eligible for VFC funding" DisplayName="VFC eligible -Medicaid/Medicaid Managed Care" Usage="R" Value="V02"/>
+      <ValueElement CodeSystem="HL70064" Comments="All of the following are true: ��� Client has insurance but insurance does not cover vaccines, limits the vaccines covered or caps vaccine coverage at a certain amount ��� Client is receiving care at an FQHC, RHC or deputized provider ��� Client is &lt; 19 years old The type of vaccine administered is eligible for VFC funding" DisplayName="VFC eligible- underinsured at FQHC/RHC/deputized provider" Usage="R" Value="V05"/>
+      <ValueElement CodeSystem="HL70064" Comments="All of the following are true: ��� Client does not have health insurance ��� Client is &lt; 19 years old The type of vaccine administered is eligible for VFC funding" DisplayName="VFC eligible -Uninsured" Usage="R" Value="V03"/>
       <ValueElement CodeSystem="HL70064" Comments="Client is enrolled in Medicare" DisplayName="Medicare" Usage="R" Value="V24"/>
       <ValueElement CodeSystem="HL70064" Comments="Client is eligible for the CHIP program, a separate state health insurance that is NOT a Medicaid expansion program" DisplayName="CHIP" Usage="R" Value="V22"/>
     </ValueSetDefinition>
@@ -3884,7 +3884,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="Reporting Priority " Usage="P" Value="HL70169"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Admission Type " Usage="P" Value="HL70007"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Confidentiality Code " Usage="P" Value="HL70177"/>
-      <ValueElement CodeSystem="HL70396" DisplayName="Driver?????????S License Issuing Authority " Usage="P" Value="HL70333"/>
+      <ValueElement CodeSystem="HL70396" DisplayName="Driver���S License Issuing Authority " Usage="P" Value="HL70333"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Acquisition Modality " Usage="P" Value="HL70910"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Container Common Name" Usage="P" Value="HL70969"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Site Administered" Usage="P" Value="HL70034"/>
@@ -4160,7 +4160,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="VAERS Report type" Usage="P" Value="NIP010"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Euclides Lab method codes" Usage="P" Value="E6"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Result Status " Usage="P" Value="HL70123"/>
-      <ValueElement CodeSystem="HL70396" DisplayName="Patient?????????S Relationship To Insured " Usage="P" Value="HL70344"/>
+      <ValueElement CodeSystem="HL70396" DisplayName="Patient���S Relationship To Insured " Usage="P" Value="HL70344"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Mode Of Arrival Code " Usage="P" Value="HL70430"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Interpretation Codes " Usage="P" Value="HL70078"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Occurrence Span " Usage="P" Value="HL70351"/>
@@ -4235,7 +4235,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="Transport Arranged " Usage="P" Value="HL70224"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Process Control Code " Usage="P" Value="HL70915"/>
       <ValueElement CodeSystem="HL70396" DisplayName="National Provider Identifier" Usage="P" Value="NPI"/>
-      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC??????)" Usage="R" Value="LN"/>
+      <ValueElement CodeSystem="HL70396" DisplayName="Logical Observation Identifier Names and Codes (LOINC��)" Usage="R" Value="LN"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Query Name " Usage="P" Value="HL70471"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Disabled Person Code " Usage="P" Value="HL70334"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Labor Calculation Type " Usage="P" Value="HL70651"/>
@@ -4452,7 +4452,7 @@
       <ValueElement CodeSystem="HL70396" DisplayName="Institution " Usage="P" Value="HL70531"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Document Completion Status " Usage="P" Value="HL70271"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Referral Type " Usage="P" Value="HL70281"/>
-      <ValueElement CodeSystem="HL70396" DisplayName="Signatory?????????S Relationship To Subject " Usage="P" Value="HL70548"/>
+      <ValueElement CodeSystem="HL70396" DisplayName="Signatory���S Relationship To Subject " Usage="P" Value="HL70548"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Which Date/Time Qualifier" Usage="P" Value="HL70156"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Bed " Usage="P" Value="HL70304"/>
       <ValueElement CodeSystem="HL70396" DisplayName="Completion Status " Usage="P" Value="HL70322"/>
@@ -4694,7 +4694,7 @@
     </ValueSetDefinition>
     <ValueSetDefinition BindingIdentifier="HL70008_IZ" ContentDefinition="Extensional" Description="Acknowledgment code" Extensibility="Closed" Name="Acknowledgment code" Stability="Static" Version="2.5.1">
       <ValueElement CodeSystem="HL70008" Comments="Not supported in this Implementation Guide" DisplayName="Enhanced mode: Accept acknowledgment: Commit Reject" Usage="E" Value="CR"/>
-      <ValueElement CodeSystem="HL70008" Comments="Message was rejected because one of the following occurred: ????????? Unsupported message type ????????? Unsupported event code ????????? Unsupported processing ID ????????? Unable to process for reasons unrelated for format or content" DisplayName="Original mode: Application Reject - Enhanced mode: Application acknowledgment: Reject" Usage="R" Value="AR"/>
+      <ValueElement CodeSystem="HL70008" Comments="Message was rejected because one of the following occurred: ��� Unsupported message type ��� Unsupported event code ��� Unsupported processing ID ��� Unable to process for reasons unrelated for format or content" DisplayName="Original mode: Application Reject - Enhanced mode: Application acknowledgment: Reject" Usage="R" Value="AR"/>
       <ValueElement CodeSystem="HL70008" Comments="Not supported in this Implementation Guide" DisplayName="Enhanced mode: Accept acknowledgment: Commit Error" Usage="E" Value="CE"/>
       <ValueElement CodeSystem="HL70008" Comments="Not supported in this Implementation Guide" DisplayName="Enhanced mode: Accept acknowledgment: Commit Accept" Usage="E" Value="CA"/>
       <ValueElement CodeSystem="HL70008" Comments="Message was accepted without error.Message was accepted without error." DisplayName="Original mode: Application Accept - Enhanced mode: Application acknowledgment: Accept" Usage="R" Value="AA"/>
