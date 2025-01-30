@@ -1272,7 +1272,7 @@
 			
 			<ValueElement Value="BBI" CodeSystem="MVX" DisplayName="Bharat Biotech International Limited"/>
 			
-			<ValueElement Value="VBI" CodeSystem="MVX" DisplayName="VBI Vaccines, Inc"/>
+			<!-- <ValueElement Value="VBI" CodeSystem="MVX" DisplayName="VBI Vaccines, Inc"/>-->
 			<ValueElement Value="BN" CodeSystem="MVX" DisplayName="Bavarian Nordic A/S"/>
 		</ValueSetDefinition>
 		
@@ -1320,7 +1320,7 @@
 			<ValueElement Value="41" DisplayName="typhoid, parenteral" CodeSystem="CVX"/>
 			<ValueElement Value="42" DisplayName="Hep B, adolescent/high risk infant" CodeSystem="CVX"/>
 			<ValueElement Value="43" DisplayName="Hep B, adult" CodeSystem="CVX"/>
-			<ValueElement Value="44" DisplayName="Hep B, dialysis" CodeSystem="CVX"/>
+			<ValueElement Value="44" DisplayName="Hep B, high-dosage, dialysis, or IC" CodeSystem="CVX"/>
 			<ValueElement Value="45" DisplayName="Hep B, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="46" DisplayName="Hib (PRP-D)" CodeSystem="CVX"/>
 			<ValueElement Value="47" DisplayName="Hib (HbOC)" CodeSystem="CVX"/>
@@ -1961,7 +1961,7 @@
 			<ValueElement Value="33" CodeSystem="CVX" DisplayName="pneumococcal polysaccharide PPV23"/>
 			<ValueElement Value="35" CodeSystem="CVX" DisplayName="tetanus toxoid, adsorbed"/>
 			<ValueElement Value="37" CodeSystem="CVX" DisplayName="yellow fever"/>
-			<ValueElement Value="41" CodeSystem="CVX" DisplayName="typhoid, parenteral"/>
+			<!-- <ValueElement Value="41" CodeSystem="CVX" DisplayName="typhoid, parenteral"/> -->
 			<ValueElement Value="42" CodeSystem="CVX" DisplayName="Hep B, adolescent/high risk infant"/>
 			<ValueElement Value="43" CodeSystem="CVX" DisplayName="Hep B, adult"/>
 			<ValueElement Value="44" CodeSystem="CVX" DisplayName="Hep B, dialysis"/>

@@ -1166,7 +1166,7 @@
       <ValueElement CodeSystem="MVX" DisplayName="Sinopharm-Biotech" Value="SPH"/>  
       <ValueElement CodeSystem="MVX" DisplayName="Sinovac" Value="SNV"/>  
       <ValueElement CodeSystem="MVX" DisplayName="Bharat Biotech International Limited" Value="BBI"/>  
-      <ValueElement CodeSystem="MVX" DisplayName="VBI Vaccines, Inc" Value="VBI"/>  
+      <!-- <ValueElement Value="VBI" CodeSystem="MVX" DisplayName="VBI Vaccines, Inc"/> -->  
       <ValueElement CodeSystem="MVX" DisplayName="Bavarian Nordic A/S" Value="BN"/> 
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="CDCREC_E_IZ" Name="Ethnic Group"> 
@@ -1231,7 +1231,7 @@
       <ValueElement CodeSystem="CVX" DisplayName="typhoid, parenteral" Value="41"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adolescent/high risk infant" Value="42"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adult" Value="43"/>  
-      <ValueElement CodeSystem="CVX" DisplayName="Hep B, dialysis" Value="44"/>  
+      <ValueElement CodeSystem="CVX" DisplayName="Hep B, high-dosage, dialysis, or IC" Value="44"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, unspecified formulation" Value="45"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hib (PRP-D)" Value="46"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hib (HbOC)" Value="47"/>  
@@ -1800,7 +1800,7 @@
       <ValueElement CodeSystem="CVX" DisplayName="pneumococcal polysaccharide PPV23" Value="33"/>  
       <ValueElement CodeSystem="CVX" DisplayName="tetanus toxoid, adsorbed" Value="35"/>  
       <ValueElement CodeSystem="CVX" DisplayName="yellow fever" Value="37"/>  
-      <ValueElement CodeSystem="CVX" DisplayName="typhoid, parenteral" Value="41"/>  
+      <!-- <ValueElement Value="41" CodeSystem="CVX" DisplayName="typhoid, parenteral"/> -->  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adolescent/high risk infant" Value="42"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adult" Value="43"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, dialysis" Value="44"/>  

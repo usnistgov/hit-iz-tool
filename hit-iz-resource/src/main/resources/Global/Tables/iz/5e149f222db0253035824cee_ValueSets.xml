@@ -994,7 +994,7 @@
       <ValueElement CodeSystem="MVX" DisplayName="Sinopharm-Biotech" Value="SPH"/>  
       <ValueElement CodeSystem="MVX" DisplayName="Sinovac" Value="SNV"/>  
       <ValueElement CodeSystem="MVX" DisplayName="Bharat Biotech International Limited" Value="BBI"/>  
-      <ValueElement CodeSystem="MVX" DisplayName="VBI Vaccines, Inc" Value="VBI"/>  
+      <!-- <ValueElement Value="VBI" CodeSystem="MVX" DisplayName="VBI Vaccines, Inc"/> -->  
       <ValueElement CodeSystem="MVX" DisplayName="Bavarian Nordic A/S" Value="BN"/> 
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="CDCREC_E_IZ" Name="Ethnic Group"> 
@@ -1059,7 +1059,7 @@
       <ValueElement CodeSystem="CVX" DisplayName="typhoid, parenteral" Value="41"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adolescent/high risk infant" Value="42"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adult" Value="43"/>  
-      <ValueElement CodeSystem="CVX" DisplayName="Hep B, dialysis" Value="44"/>  
+      <ValueElement CodeSystem="CVX" DisplayName="Hep B, high-dosage, dialysis, or ICw" Value="44"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, unspecified formulation" Value="45"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hib (PRP-D)" Value="46"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hib (HbOC)" Value="47"/>  
@@ -1410,7 +1410,7 @@
       <ValueElement CodeSystem="NDC" DisplayName="Influenza, seasonal, injectable, preservative free" Value="49281-0113-25"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Td (adult) preservative free" Value="49281-0215-10"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Td (adult) preservative free" Value="49281-0215-15"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="DT (pediatric)" Value="49281-0225-10"/>  
+      <!-- <ValueElement Value="49281-0225-10" DisplayName="DT (pediatric)" CodeSystem="NDC"/> -->  
       <ValueElement CodeSystem="NDC" DisplayName="DT (pediatric)" Value="49281-0278-10"/>  
       <ValueElement CodeSystem="NDC" DisplayName="DTaP, 5 pertussis antigens" Value="49281-0286-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="DTaP, 5 pertussis antigens" Value="49281-0286-05"/>  
@@ -1688,7 +1688,7 @@
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 3 mcg/0.2 mL for ages 2 yrs to &lt; 5 yrs, CARTON, 10 MULTI-DOSE VIALS" Value="59267-0078-04"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Tick-borne encephalitis (TicoVac) vaccine, carton of 10 syringes" Value="00069-0411-10"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Tick-borne encephalitis (TicoVac) vaccine, carton of 1 syringe" Value="00069-0411-02"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="PREHEVBRIO Hepatitis B Vaccine (Recombinant), HepB recombinant, 3-antigen, Al(OH)3, CARTON, 10 VIAL" Value="75052-0001-10"/>  
+      <!-- <ValueElement Value="75052-0001-10" DisplayName="PREHEVBRIO Hepatitis B Vaccine (Recombinant), HepB recombinant, 3-antigen, Al(OH)3, CARTON, 10 VIAL" CodeSystem="NDC"/> -->  
       <ValueElement CodeSystem="NDC" DisplayName="QUADRACEL DTaP-IPV DTAP adsorbed and inactivated poliovirus vaccine, PACKAGE 10 SYRINGE" Value="49281-0564-15"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech COVID-19 Vaccine COMIRNATY, 30 mcg/0.3 mL for adult 16+ adult tris-sucrose formulation, GREY CAP, CARTON, 10 MULTI-DOSE VIALS" Value="00069-2025-10"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech COVID-19 Vaccine COMIRNATY, 30 mcg/0.3 mL for adult 16+ adult tris-sucrose formulation, GREY CAP, CARTON, 25 MULTI-DOSE VIALS" Value="00069-2025-25"/>  
@@ -1814,6 +1814,8 @@
       <ValueElement CodeSystem="NDC" DisplayName="Smallpox/Monkeypox vaccine Bavarian Nordic A/S (JYNNEOS)" Value="50632-0001-03"/>  
       <ValueElement CodeSystem="NDC" DisplayName="cholera, live attenuated (Vaxchora)" Value="70460-0004-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="typhoid, oral (Vivotif)" Value="69401-0000-02"/>  
+      <!-- 01/30/2025 -->  
+      <ValueElement CodeSystem="NDC" DisplayName="Moderna Respiratory Syncytial Virus (RSV) vaccine (mRESVIA)" Value="80777-0345-89"/>  
       <!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
 			--> 
@@ -1914,7 +1916,7 @@
       <ValueElement CodeSystem="NDC" DisplayName="Influenza, seasonal, injectable, preservative free" Value="49281-0113-00"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Td (adult) preservative free" Value="49281-0215-58"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Td (adult) preservative free" Value="49281-0215-88"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="DT (pediatric)" Value="49281-0225-58"/>  
+      <!-- <ValueElement Value="49281-0225-58" DisplayName="DT (pediatric)" CodeSystem="NDC"/> -->  
       <ValueElement CodeSystem="NDC" DisplayName="DT (pediatric)" Value="49281-0278-10"/>  
       <ValueElement CodeSystem="NDC" DisplayName="DTaP, 5 pertussis antigens" Value="49281-0286-58"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Td (adult) preservative free" Value="49281-0291-10"/>  
@@ -2182,7 +2184,7 @@
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 10 mcg/0.2 mL for ages 5 yrs to &lt; 12 yrs, VIAL, 2 mL, MULTI-DOSE VIAL" Value="59267-1055-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech COVID-19 Vaccine, Tris-sucrose formula, 3 mcg/0.2 mL for ages 2 yrs to &lt; 5 yrs, VIAL, 2 mL, MULTI-DOSE VIAL" Value="59267-0078-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Tick-borne encephalitis (TicoVac) vaccine" Value="00069-0411-01"/>  
-      <ValueElement CodeSystem="NDC" DisplayName="PREHEVBRIO Hepatitis B Vaccine (Recombinant), HepB recombinant, 3-antigen, Al(OH)3, VIAL, 1 mL" Value="75052-0001-01"/>  
+      <!-- <ValueElement Value="75052-0001-01" DisplayName="PREHEVBRIO Hepatitis B Vaccine (Recombinant), HepB recombinant, 3-antigen, Al(OH)3, VIAL, 1 mL" CodeSystem="NDC"/> -->  
       <ValueElement CodeSystem="NDC" DisplayName="QUADRACEL DTaP-IPV DTAP adsorbed and inactivated poliovirus vaccine, SYRINGE, .5 mL" Value="49281-0564-88"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech COVID-19 Vaccine COMIRNATY, 30 mcg/0.3 mL for adult 16+ adult tris-sucrose formulation, GREY CAP, VIAL, 2 mL, MULTI-DOSE VIAL" Value="00069-2025-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Moderna COVID-19 Vaccine 50 mcg/0.50 mL for booster only, adult 18+, DARK BLUE CAP, VIAL, 2.5 mL, MULTI-DOSE VIAL" Value="80777-0275-05"/>  
@@ -2292,6 +2294,8 @@
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech Covid-19 Vaccine" Value="59267-4438-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="Pfizer-BioNTech Covid-19 Vaccine" Value="59267-4426-01"/>  
       <ValueElement CodeSystem="NDC" DisplayName="FluMist (MedImmune, Inc. AstraZeneca)" Value="66019-311-00"/>  
+      <!-- 01/30/2025-->  
+      <ValueElement CodeSystem="NDC" DisplayName="Moderna Respiratory Syncytial Virus (RSV) vaccine (mRESVIA)" Value="80777-0345-01"/>  
       <!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
 			--> 
@@ -2624,7 +2628,7 @@
       <ValueElement CodeSystem="CVX" DisplayName="pneumococcal polysaccharide PPV23" Value="33"/>  
       <ValueElement CodeSystem="CVX" DisplayName="tetanus toxoid, adsorbed" Value="35"/>  
       <ValueElement CodeSystem="CVX" DisplayName="yellow fever" Value="37"/>  
-      <ValueElement CodeSystem="CVX" DisplayName="typhoid, parenteral" Value="41"/>  
+      <!-- <ValueElement Value="41" CodeSystem="CVX" DisplayName="typhoid, parenteral"/> -->  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adolescent/high risk infant" Value="42"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adult" Value="43"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, dialysis" Value="44"/>  
