@@ -1059,7 +1059,7 @@
       <ValueElement CodeSystem="CVX" DisplayName="typhoid, parenteral" Value="41"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adolescent/high risk infant" Value="42"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, adult" Value="43"/>  
-      <ValueElement CodeSystem="CVX" DisplayName="Hep B, high-dosage, dialysis, or ICw" Value="44"/>  
+      <ValueElement CodeSystem="CVX" DisplayName="Hep B, high-dosage, dialysis, or IC" Value="44"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hep B, unspecified formulation" Value="45"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hib (PRP-D)" Value="46"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hib (HbOC)" Value="47"/>  
@@ -2269,7 +2269,7 @@
       <ValueElement CodeSystem="NDC" DisplayName="influenza, Southern Hemisphere, high-dose, quadrivalent" Value="49281-0933-88"/>  
       <ValueElement CodeSystem="NDC" DisplayName="pneumococcal polysaccharide PPV23" Value="50090-7036-01"/>  
       <!-- 07/08/2024 -->  
-      <ValueElement CodeSystem="NDC" DisplayName="for RSV, mRNA, injectable, PF (mRESVIA)" Value="80777-0345-01"/>  
+      <!-- <ValueElement Value="80777-0345-01" DisplayName="for RSV, mRNA, injectable, PF (mRESVIA)" CodeSystem="NDC"/> -->  
       <ValueElement CodeSystem="NDC" DisplayName="cholera, live attenuated (Vaxchora)" Value="50632-0015-02"/>  
       <!-- 11/15/2024 -->  
       <ValueElement CodeSystem="NDC" DisplayName="Pneumococcal Conjugate 21 Valent Vaccine (PCV 21) (CAPVAXIVE)" Value="00006-4347-99"/>  
