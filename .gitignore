@@ -11,3 +11,6 @@ bower_components
 /bin/
 .sass-cache
 .tmp
+/hit-iz-web/src/
+package-lock.json
+
