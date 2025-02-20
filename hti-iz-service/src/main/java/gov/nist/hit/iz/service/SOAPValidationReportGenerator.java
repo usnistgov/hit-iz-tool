@@ -1,0 +1,211 @@
+/**
+ * This software was developed at the National Institute of Standards and Technology by employees of
+ * the Federal Government in the course of their official duties. Pursuant to title 17 Section 105
+ * of the United States Code this software is not subject to copyright protection and is in the
+ * public domain. This is an experimental system. NIST assumes no responsibility whatsoever for its
+ * use by other parties, and makes no guarantees, expressed or implied, about its quality,
+ * reliability, or any other characteristic. We would appreciate acknowledgement if the software is
+ * used. This software can be redistributed and/or modified freely provided that any derivative
+ * works bear some notice that they are derived from it, and any modified versions bear some notice
+ * that they have been modified.
+ */
+package gov.nist.hit.iz.service;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.StringReader;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+
+import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.xhtmlrenderer.pdf.ITextRenderer;
+import org.xml.sax.InputSource;
+
+import gov.nist.hit.core.service.exception.ValidationReportException;
+import gov.nist.hit.core.service.util.HtmlUtil;
+import gov.nist.hit.iz.service.exception.SoapValidationReportException;
+
+/**
+ * @author Harold Affo (NIST)
+ */
+
+public abstract class SOAPValidationReportGenerator {
+
+//	static final Logger logger = LoggerFactory.getLogger(CBManagementController.class);
+	private final static Logger logger = LoggerFactory.getLogger(SOAPValidationReportGenerator.class);
+
+	private static final String HTML_XSL = "/xslt/soap-validation-report-html.xsl";
+	private static final String PDF_XSL = "/xslt/soap-validation-report-pdf.xsl";
+
+	public SOAPValidationReportGenerator() {
+
+	}
+
+	/**
+	 * @param htmlReport
+	 * @return
+	 */
+	public String addStyleSheet(String htmlReport) {
+		StringBuffer sb = new StringBuffer();
+		sb.append("<html xmlns='http://www.w3.org/1999/xhtml'>");
+		sb.append("<head>");
+		sb.append("<title>SOAP Validation Report</title>");
+		sb.append("<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />");
+		sb.append("<style>.row4 a, .row3 a {color: #003399; text-decoration: underline;}");
+		sb.append(".row4 a:hover, .row3 a:hover { color: #000000; text-decoration: underline;}");
+		sb.append(".headerReport {width: 250px;}");
+		sb.append(".row1 {vertical-align: top;background-color: #EFEFEF;width: 100px;}");
+		sb.append(".row2 {background-color: #DEE3E7;width: 100px;}");
+		sb.append(".row3 {background-color: #D1D7DC;vertical-align: top;}");
+		sb.append(".row4 { background-color: #EFEFEF;vertical-align: top;}");
+		sb.append(".row5 { background-color: #FFEC9D;vertical-align: top;}");
+		sb.append(".forumline { background-color:#FFFFFF;border: 2px #006699 solid;width: 700px;}");
+		sb.append(".maintitle {font-weight: bold;font-size: 22px;"
+				+ "font-family: Georgia, Verdana;text-decoration: none;line-height : 120%;color : #000000;}");
+		sb.append("</style></head><body>");
+		sb.append(htmlReport);
+		sb.append("</body></html>");
+		return sb.toString();
+	}
+
+	public String getHtmlXslt() {
+		try {
+			String xslt = IOUtils.toString(SOAPValidationReportGenerator.class.getResourceAsStream(HTML_XSL));
+			return xslt;
+
+		} catch (IOException e) {
+			throw new SoapValidationReportException(e.getMessage());
+		}
+	}
+
+	public String getPdfXslt() {
+		try {
+			String xslt = IOUtils.toString(SOAPValidationReportGenerator.class.getResourceAsStream(PDF_XSL));
+			return xslt;
+
+		} catch (IOException e) {
+			throw new SoapValidationReportException(e.getMessage());
+		}
+	}
+
+	/**
+	 * convert xml to pdf
+	 * 
+	 * @param xmlReport
+	 * @return
+	 */
+	public InputStream toPDF(String xml) throws ValidationReportException {
+		try {
+			String xhtml = toXHTML(xml).replaceAll("<br>", "<br/>");
+			ITextRenderer renderer = new ITextRenderer();
+			renderer.setDocumentFromString(xhtml);
+			renderer.layout();
+			File temp = File.createTempFile("MessageValidationReport", ".pdf");
+			temp.deleteOnExit();
+			OutputStream os;
+			os = new FileOutputStream(temp);
+			renderer.createPDF(os);
+			os.close();
+			return new FileInputStream(temp);
+		} catch (Exception e) {
+			throw new ValidationReportException(e);
+		} catch (TransformerFactoryConfigurationError e) {
+			throw new ValidationReportException(e.getMessage());
+		}
+	}
+
+	/**
+	 * convert xml to html report
+	 * 
+	 * @param validationReport
+	 * @return
+	 * @throws Exception
+	 */
+	public String toHTML(String xml) throws ValidationReportException {
+		try {
+			Transformer transformer = TransformerFactory.newInstance()
+					.newTransformer(new StreamSource(new StringReader(getHtmlXslt())));
+//			StreamSource source = new StreamSource(new StringReader(xml));
+			
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+			factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+			factory.setXIncludeAware(false);
+	        factory.setExpandEntityReferences(false);
+	        DocumentBuilder docBuilder = factory.newDocumentBuilder();
+	        Document doc = docBuilder.parse(new InputSource(new StringReader(xml)));
+	        Source source = new DOMSource(doc);
+	        
+			ByteArrayOutputStream resultStream = new ByteArrayOutputStream();
+			StreamResult result = new StreamResult(resultStream);			
+			transformer.transform(source, result);
+			String htmlReport = HtmlUtil.repairStyle(new String(resultStream.toByteArray()));
+			logger.info("HTML validation report generated");
+			return addStyleSheet(htmlReport);
+		} catch (Exception e) {
+			throw new ValidationReportException(e);
+		} catch (TransformerFactoryConfigurationError e) {
+			throw new ValidationReportException(e.getMessage());
+		}
+	}
+
+	/**
+	 * convert xml to xhtml report
+	 * 
+	 * @param xmlReport
+	 * @return
+	 * @throws Exception
+	 */
+	public String toXHTML(String xml) throws ValidationReportException {
+		try {
+			StringBuffer bf = new StringBuffer();
+			if (!xml.startsWith("<?xml"))
+				bf.append("<?xml version='1.0' encoding='UTF-8'?>");
+			bf.append(xml);
+			Transformer transformer = TransformerFactory.newInstance()
+					.newTransformer(new StreamSource(new StringReader(getPdfXslt())));
+//			StreamSource source = new StreamSource(new StringReader(bf.toString()));
+			
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+			factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+			factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+			factory.setXIncludeAware(false);
+	        factory.setExpandEntityReferences(false);
+	        DocumentBuilder docBuilder = factory.newDocumentBuilder();
+	        Document doc = docBuilder.parse(new InputSource(new StringReader(xml)));
+	        Source source = new DOMSource(doc);
+			
+			ByteArrayOutputStream resultStream = new ByteArrayOutputStream();
+			StreamResult result = new StreamResult(resultStream);
+			transformer.transform(source, result);
+			String html = HtmlUtil.repairStyle(new String(resultStream.toByteArray()));
+			logger.info("XHTML validation report generated");
+			return addStyleSheet(html);
+		} catch (Exception e) {
+			throw new ValidationReportException(e);
+		} catch (TransformerFactoryConfigurationError e) {
+			throw new ValidationReportException(e.getMessage());
+		}
+	}
+
+}

@@ -1,0 +1,310 @@
+<style id="antiClickjack">body{display:none !important;}</style>
+<script type="text/javascript">
+    if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+        top.location = self.location;
+    }
+</script>
+<div ng-controller="EnvelopeValidatorCtrl" ng-init="initValidation()">
+<div class="panel panel-info">
+<div class="panel-body">
+<div ng-show="testCase != null">
+<div class="row">
+    <div class="col-md-10" >
+        <div ng-show="uploadError != null">
+        <div class="alert alert-danger" role="alert" ng-bind="uploadError"></div>
+</div>
+        <div ng-show="eError != null">
+            <div class="alert alert-danger" role="alert" ng-bind="eError"></div>
+        </div>
+        <div ng-show="tError != null">
+            <div class="alert alert-danger" role="alert" ng-bind="tError"></div>
+        </div>
+
+        <div ng-show="vError != null">
+            <div class="alert alert-danger" role="alert" ng-bind="vError"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+<div class="col-md-3">
+    <div class="panel panel-info">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><i class="glyphicon glyphicon-list"></i>SOAP Tree
+            <button  ng-show="envelopeTree != null && hasContent()" title="Collapse All" class="btn btn-xs btn-info pull-right"
+                     ng-click="collapseAll()">
+                <i class="point fa fa-compress"></i>
+            </button>
+            <button   ng-show="envelopeTree != null && hasContent()" title="Expand All" class="btn btn-xs btn-info pull-right" style="margin-right:5px"
+                      ng-click="expandAll()">
+                <i class="point fa fa-expand"></i>
+            </button>
+
+        </div>
+        <div class="panel-body">
+            <div ng-show="!tLoading">
+                <div ng-show="tError == null">
+                    <div ng-show="hasContent()">
+                        <abn-tree tree-control="envelopeTree" icon-leaf=""
+                                  on-select="onEnvelopeNodeSelect(branch)"></abn-tree>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="tLoading" style="text-align:center">
+                <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-9">
+<div class="panel panel-info">
+<div class="panel-body">
+<div class="">
+<div id="messagePanel" class="panel panel-info">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+        <form  role="form"
+              class="form-inline">
+            <span><i class="glyphicon glyphicon-file"></i> SOAP Envelope</span>
+                            <span class="row fileupload-buttonbar  pull-right">
+                                 <button title="Validate" type="button" class="btn btn-xs btn-success"
+                                         ng-click="validate()"
+                                         >
+                                     <i class="fa fa-check-circle"></i>Validate
+                                 </button>
+
+                                 <button title="Load Example" type="button" class="btn btn-xs btn-info"
+                                         ng-click="loadExampleMessage()"
+                                         ng-show="testCase.testContext.exampleMessage!= null"
+                                         >
+                                     <i class="fa fa-arrow-circle-down"></i>Load Example
+                                 </button>
+
+                                <!--<span title="Browse" class="btn btn-xs btn-info fileinput-button"-->
+                                      <!--ng-class="{disabled: disabled}">-->
+                        <!--<i class="fa fa-folder-open"></i>Browse-->
+                        <!--<span></span>-->
+                        <!--<input type="file" name="file" id="file" multiple="false" ng-disabled="disabled">-->
+                         <!--</span>-->
+
+
+                            <button class="btn btn-xs btn-info" type="file" name="file" id="file" ngf-select="uploadMessage($file, $invalidFiles)"
+                                    ngf-accept="appInfo.uploadContentTypes"
+                                    ngf-pattern="appInfo.uploadContentTypes" ngf-max-size="appInfo.uploadMaxSize">
+      <i class="fa fa-folder-open"></i>Browse</button>
+
+                                <!--<span class="" ng-bind="fileName"></span>-->
+                                <button title="Download" type="button" class="btn btn-xs btn-info"
+                                        ng-click="saveMessage()">
+                                    <i class="fa fa-download"></i>Download
+                                </button>
+
+                                  <button title="Clear" type="button" class="btn btn-xs btn-warning"
+                                          ng-click="clearMessage()">
+                                      <i class="fa fa-times"></i>Clear
+                                  </button>
+
+                            </span>
+        </form>
+    </div>
+    <div class="panel-body message-content">
+        <div ng-show="eLoading" style="text-align:center">
+            <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+        </div>
+        <div id="editor_container form-group">
+            <textarea class="form-control" type="envelope" id="envelopeTextArea"
+                      wrap="off" style="overflow:auto;"></textarea>
+        </div>
+    </div>
+</div>
+<div class="panel panel-info">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+        <span><i class="glyphicon glyphicon-ok"></i></span>
+        SOAP Validation Result
+    </div>
+    <div class="panel-body result-container">
+
+        <div ng-show="!vLoading">
+            <div ng-show="!vError || vError == null">
+                <tabset>
+                    <tab>
+                        <tab-heading>
+                            <span class="badge alert-danger">{{validationResult.errors.data.length}}</span> Errors
+                        </tab-heading>
+                        <div class="panel panel-info">
+                            <div class="panel-body">
+                                <div class="validation-result-table-container fixed-table-container">
+                                <table st-table="errorsCollection" st-safe-src="validationResult.errors.data"
+                                       class="table table-condensed  table-bordered table-striped ng-table-text" oci-fixed-header>
+                                    <thead>
+                                    <tr class="">
+                                        <th st-sort="path" st-ratio="30">Path</th>
+                                        <th st-ratio="60">Description</th>
+                                        <th st-sort="line" st-ratio="10">Line #</th>
+                                    </tr>
+                                    <!--<tr>-->
+                                    <!--&lt;!&ndash;<th>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input st-search="'path'" placeholder="search for path" class="input-sm form-control" type="search"/>&ndash;&gt;
+                                    -->
+                                    <!--&lt;!&ndash;</th>&ndash;&gt;-->
+                                    <!--<th colspan="6">-->
+                                    <!--<input st-search placeholder="Search" class="input-sm form-control" type="search"/>-->
+                                    <!--</th>-->
+                                    <!--</tr>-->
+                                    </thead>
+                                    <tbody>
+
+                                    <tr ng-repeat="row in errorsCollection">
+                                        <td st-ratio="30">
+                                            <a class="point" ng-show="row.path" ng-click="select(row)"
+                                               ng-bind="row.path"></a>
+                                            <span ng-show="row.path == null">N/A</span>
+                                        </td>
+                                        <td st-ratio="60" compile="row.description"></td>
+                                        <td st-ratio="10">
+                                            <span ng-show="row.line" ng-bind="row.line"></span>
+                                            <span ng-show="row.line == null">N/A</span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+
+                                    <!--<tfoot>-->
+                                    <!--<tr>-->
+                                    <!--<td colspan="6" class="text-center">-->
+                                    <!--<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>-->
+                                    <!--</td>-->
+                                    <!--</tr>-->
+                                    <!--</tfoot>-->
+
+                                </table>
+                                    </div>
+                            </div>
+                        </div>
+                    </tab>
+                    <tab>
+                        <tab-heading>
+                                             <span
+                                                     class="badge alert-warning">{{validationResult.warnings.data.length}}</span>
+                            Warnings
+                        </tab-heading>
+                        <div class="panel panel-info">
+                            <div class="panel-body">
+                                <div class="validation-result-table-container fixed-table-container">
+                                <table st-table="warningsCollection" st-safe-src="validationResult.warnings.data"
+                                       class="table table-condensed  table-bordered table-striped ng-table-text" oci-fixed-header>
+                                    <thead>
+                                    <tr class="">
+                                        <th st-sort="path" st-ratio="30">Path</th>
+                                        <th st-ratio="60">Description</th>
+                                        <th st-sort="line" st-ratio="10">Line #</th>
+                                    </tr>
+                                    <!--<tr>-->
+                                    <!--&lt;!&ndash;<th>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input st-search="'path'" placeholder="search for path" class="input-sm form-control" type="search"/>&ndash;&gt;
+                                    -->
+                                    <!--&lt;!&ndash;</th>&ndash;&gt;-->
+                                    <!--<th colspan="6">-->
+                                    <!--<input st-search placeholder="Search" class="input-sm form-control" type="search"/>-->
+                                    <!--</th>-->
+                                    <!--</tr>-->
+                                    </thead>
+                                    <tbody>
+
+                                    <tr ng-repeat="row in warningsCollection">
+                                        <td st-ratio="30">
+                                            <a class="point" ng-show="row.path" ng-click="select(row)"
+                                               ng-bind="row.path"></a>
+                                            <span ng-show="row.path == null">N/A</span>
+                                        </td>
+                                        <td st-ratio="60" compile="row.description"></td>
+                                        <td st-ratio="10">
+                                            <span ng-show="row.line" ng-bind="row.line"></span>
+                                            <span ng-show="row.line == null">N/A</span>
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+
+                                    <!--<tfoot>-->
+                                    <!--<tr>-->
+                                    <!--<td colspan="6" class="text-center">-->
+                                    <!--<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>-->
+                                    <!--</td>-->
+                                    <!--</tr>-->
+                                    <!--</tfoot>-->
+
+                                </table>
+                                    </div>
+                            </div>
+                        </div>
+                    </tab>
+                    <tab>
+                        <tab-heading>
+                                            <span
+                                                    class="badge alert-danger">{{validationResult.alerts.data.length}}</span>
+                            Alerts
+                        </tab-heading>
+                        <!--<validation-result-viewer results="validationResult.alerts"/>-->
+                        <div class="panel panel-info">
+                            <div class="panel-body">
+                                <div class="validation-result-table-container fixed-table-container">
+                                <table
+                                        st-table="alertsCollection" st-safe-src="validationResult.alerts.data"
+                                        class="table table-condensed  table-bordered table-striped ng-table-text" oci-fixed-header>
+                                    <thead>
+                                    <tr class="">
+                                        <th st-sort="path" st-ratio="30">Path</th>
+                                        <th st-ratio="60">Description</th>
+                                        <th st-sort="line" st-ratio="10">Line #</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr ng-repeat="row in alertsCollection">
+                                        <td st-ratio="30">
+                                            <a class="point" ng-show="row.path" ng-click="select(row)"
+                                               ng-bind="row.path"></a>
+                                            <span ng-show="row.path == null">N/A</span>
+                                        </td>
+                                        <td st-ratio="60" compile="row.description"></td>
+                                        <td st-ratio="10">
+                                            <span ng-show="row.line" ng-bind="row.line"></span>
+                                            <span ng-show="row.line == null">N/A</span>
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                    </div>
+                            </div>
+                        </div>
+                    </tab>
+
+                </tabset>
+            </div>
+        </div>
+        <div ng-show="vLoading" style="text-align:center">
+            <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div ng-show="testCase.id == null">
+    No test case selected.
+</div>
+
+</div>
+</div>
+</div>
