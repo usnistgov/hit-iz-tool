@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<submitSingleMessageResponse xmlns="urn:cdc:iisb:2011">
-	<return>
-<![CDATA[MSH|^~\&|NIST_SENDER_APP|NIST_SENDER_FAC|GENERIC|GENERIC|20120701082240-0500||ACK^V04^ACK|<msgControlID>|P|2.5.1|||NE
-MSA|AA|NIST-101004144709009|]]>
-	</return>
-</submitSingleMessageResponse>
