@@ -9,7 +9,10 @@
     		"scope": "GLOBAL",
 			"name": "ONC Health IT Certification",
 			"homeTitle": "Welcome to the NIST Immunization Test Suite!",
-			"authorUsername":"nico"
+			"authorUsername":"nico",
+			"options":{
+					"DEFAULT_HL7V2_VALIDATION_VERSION":	"1.2.2"
+				}
  		},
  		{
 			"key": "iz-hti-1-svap",
@@ -20,7 +23,10 @@
     		"scope": "GLOBAL",
 			"name": "HTI-1 SVAP Immunization",
 			"homeTitle": "Welcome to the HTI-1 SVAP Immunization Test Suite!",
-			"authorUsername":"nico"
+			"authorUsername":"nico",
+			"options":{
+					"DEFAULT_HL7V2_VALIDATION_VERSION":	"1.7.0-SNAPSHOT"
+				}
  		}
 	]
 }

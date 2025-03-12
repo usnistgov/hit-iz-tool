@@ -29,6 +29,20 @@
 		<BindingIdentifier>HL70448</BindingIdentifier>
 	</NoValidation>
 	<ValueSetDefinitions Group="CDC-HL7-IZ" Order="1">
+		<ValueSetDefinition BindingIdentifier="HL70215_IZ" Name="Publicity Code">
+			<ValueElement Value="01" CodeSystem="HL70215" DisplayName="No reminder/recall"/>
+			<ValueElement Value="02" CodeSystem="HL70215" DisplayName="Reminder/recall - any method"/>
+			<ValueElement Value="03" CodeSystem="HL70215" DisplayName="Reminder/recall - no calls"/>
+			<ValueElement Value="04" CodeSystem="HL70215" DisplayName="Reminder only - any method"/>
+			<ValueElement Value="05" CodeSystem="HL70215" DisplayName="Reminder only - no calls"/>
+			<ValueElement Value="06" CodeSystem="HL70215" DisplayName="Recall only - any method"/>
+			<ValueElement Value="07" CodeSystem="HL70215" DisplayName="Recall only - no calls"/>
+			<ValueElement Value="08" CodeSystem="HL70215" DisplayName="Reminder/recall - to provider"/>
+			<ValueElement Value="09" CodeSystem="HL70215" DisplayName="Reminder to provider"/>
+			<ValueElement Value="10" CodeSystem="HL70215" DisplayName="Only reminder to provider, no recall"/>
+			<ValueElement Value="11" CodeSystem="HL70215" DisplayName="Recall to provider"/>
+			<ValueElement Value="12" CodeSystem="HL70215" DisplayName="Only recall to provider, no reminder"/>
+		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="HL70003_IZ" Name="Event type">
 			<ValueElement Value="V04" CodeSystem="HL70003" DisplayName="V04"/>
 			<ValueElement Value="K11" CodeSystem="HL70003" DisplayName="K11"/>
@@ -321,6 +335,8 @@
 			<ValueElement Value="EMR" CodeSystem="HL70201" DisplayName="Emergency number"/>
 			<ValueElement Value="NET" CodeSystem="HL70201" DisplayName="Network (email) address"/>
 			<ValueElement Value="BPN" CodeSystem="HL70201" DisplayName="Beeper number"/>
+			<!-- added 10/23/2024 -->
+			<ValueElement Value="PRS" CodeSystem="HL70201" DisplayName="Personal"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="HL70202_IZ" Name="Telecommunication equipment type">
 			<ValueElement Value="PH" CodeSystem="HL70202" DisplayName="Telephone"/>
@@ -673,6 +689,9 @@
 		<ValueSetDefinition BindingIdentifier="CDCREC_E_IZ" Name="Ethnic Group">
 			<ValueElement Value="2135-2" CodeSystem="CDCREC" DisplayName="Hispanic or Latino"/>
 			<ValueElement Value="2186-5" CodeSystem="CDCREC" DisplayName="not Hispanic or Latino"/>
+			<ValueElement Value="UNK" CodeSystem="CDCREC" DisplayName="Unknown"/>
+			<ValueElement Value="ASKU" CodeSystem="CDCREC" DisplayName="Asked but unknown"/>
+			<ValueElement Value="PHC1175" CodeSystem="CDCREC" DisplayName="Refused to answer"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="CDCREC_R_IZ" Name="Race">
 			<ValueElement Value="1002-5" CodeSystem="CDCREC" DisplayName="American Indian or Alaska Native"/>
@@ -681,6 +700,9 @@
 			<ValueElement Value="2054-5" CodeSystem="CDCREC" DisplayName="Black or African-American"/>
 			<ValueElement Value="2106-3" CodeSystem="CDCREC" DisplayName="White"/>
 			<ValueElement Value="2131-1" CodeSystem="CDCREC" DisplayName="Other Race"/>
+			<ValueElement Value="UNK" CodeSystem="CDCREC" DisplayName="Unknown"/>
+			<ValueElement Value="ASKU" CodeSystem="CDCREC" DisplayName="Asked but unknown"/>
+			<ValueElement Value="PHC1175" CodeSystem="CDCREC" DisplayName="Refused to answer"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="PHVS_ImmunizationProfileIdentifier_IIS" Name="Immunization Profile Identifier (IIS)">
 			<ValueElement Value="Z44" CodeSystem="CDCPHINVS" DisplayName="Request Evaluated History and Forecast"/>

@@ -55,6 +55,8 @@
 			<ValueElement Value="EMR" CodeSystem="HL70201" DisplayName="Emergency number"/>
 			<ValueElement Value="NET" CodeSystem="HL70201" DisplayName="Network (email) address"/>
 			<ValueElement Value="BPN" CodeSystem="HL70201" DisplayName="Beeper number"/>
+			<!-- added 10/23/2024 -->
+			<ValueElement Value="PRS" CodeSystem="HL70201" DisplayName="Personal"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="HL70076_IZ" Name="Message type">
 			<ValueElement Value="ACK" CodeSystem="HL70076" DisplayName="General acknowledgment"/>

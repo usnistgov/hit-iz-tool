@@ -376,6 +376,8 @@
 			<ValueElement Value="EMR" CodeSystem="HL70201" DisplayName="Emergency number"/>
 			<ValueElement Value="NET" CodeSystem="HL70201" DisplayName="Network (email) address"/>
 			<ValueElement Value="BPN" CodeSystem="HL70201" DisplayName="Beeper number"/>
+			<!-- added 10/23/2024 -->
+			<ValueElement Value="PRS" CodeSystem="HL70201" DisplayName="Personal"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="HL70202_IZ" Name="Telecommunication equipment type">
 			<ValueElement Value="PH" CodeSystem="HL70202" DisplayName="Telephone"/>
@@ -792,13 +794,15 @@
 			<ValueElement Value="V23" DisplayName="317" CodeSystem="HL70064"/>
 			<ValueElement Value="V24" DisplayName="Medicare" CodeSystem="HL70064"/>
 			<ValueElement Value="V25" DisplayName="State program eligibility" CodeSystem="HL70064"/>
-			<ValueElement Value="***" DisplayName="Specific state codes" CodeSystem="HL70064"/>
 		</ValueSetDefinition>
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="CDC-IZ" Order="2">
 		<ValueSetDefinition BindingIdentifier="CDCREC_E_IZ" Name="Ethnic Group">
 			<ValueElement Value="2135-2" CodeSystem="CDCREC" DisplayName="Hispanic or Latino"/>
 			<ValueElement Value="2186-5" CodeSystem="CDCREC" DisplayName="not Hispanic or Latino"/>
+			<ValueElement Value="UNK" CodeSystem="CDCREC" DisplayName="Unknown"/>
+			<ValueElement Value="ASKU" CodeSystem="CDCREC" DisplayName="Asked but unknown"/>
+			<ValueElement Value="PHC1175" CodeSystem="CDCREC" DisplayName="Refused to answer"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="CDCREC_R_IZ" Name="Race">
 			<ValueElement Value="1002-5" CodeSystem="CDCREC" DisplayName="American Indian or Alaska Native"/>
@@ -807,6 +811,9 @@
 			<ValueElement Value="2054-5" CodeSystem="CDCREC" DisplayName="Black or African-American"/>
 			<ValueElement Value="2106-3" CodeSystem="CDCREC" DisplayName="White"/>
 			<ValueElement Value="2131-1" CodeSystem="CDCREC" DisplayName="Other Race"/>
+			<ValueElement Value="UNK" CodeSystem="CDCREC" DisplayName="Unknown"/>
+			<ValueElement Value="ASKU" CodeSystem="CDCREC" DisplayName="Asked but unknown"/>
+			<ValueElement Value="PHC1175" CodeSystem="CDCREC" DisplayName="Refused to answer"/>
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="NCIT" Name="Route of administration">
 			<ValueElement Value="C38238" CodeSystem="NCIT" DisplayName="Intradermal"/>
@@ -1265,7 +1272,7 @@
 			
 			<ValueElement Value="BBI" CodeSystem="MVX" DisplayName="Bharat Biotech International Limited"/>
 			
-			<ValueElement Value="VBI" CodeSystem="MVX" DisplayName="VBI Vaccines, Inc"/>
+			<!-- <ValueElement Value="VBI" CodeSystem="MVX" DisplayName="VBI Vaccines, Inc"/>-->
 			<ValueElement Value="BN" CodeSystem="MVX" DisplayName="Bavarian Nordic A/S"/>
 		</ValueSetDefinition>
 		
@@ -1313,7 +1320,7 @@
 			<ValueElement Value="41" DisplayName="typhoid, parenteral" CodeSystem="CVX"/>
 			<ValueElement Value="42" DisplayName="Hep B, adolescent/high risk infant" CodeSystem="CVX"/>
 			<ValueElement Value="43" DisplayName="Hep B, adult" CodeSystem="CVX"/>
-			<ValueElement Value="44" DisplayName="Hep B, dialysis" CodeSystem="CVX"/>
+			<ValueElement Value="44" DisplayName="Hep B, high-dosage, dialysis, or IC" CodeSystem="CVX"/>
 			<ValueElement Value="45" DisplayName="Hep B, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="46" DisplayName="Hib (PRP-D)" CodeSystem="CVX"/>
 			<ValueElement Value="47" DisplayName="Hib (HbOC)" CodeSystem="CVX"/>
@@ -1581,6 +1588,9 @@
 			<ValueElement Value="321" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, preservative free" CodeSystem="CVX"/>
 			<ValueElement Value="322" DisplayName="Influenza-avian, H5N8, viral-vector, monovalent, injectable, contains preservative" CodeSystem="CVX"/>
 			<ValueElement Value="323" DisplayName="Influenza-avian, H5, unspecified formulation" CodeSystem="CVX"/>
+
+			<!-- 11/15/2024 -->
+			<ValueElement Value="327" DisplayName="Pneumococcal conjugate vaccine, 21 valent (PCV21), polysaccharide CRM197 conjugate, preservative free" CodeSystem="CVX"/>
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->		
@@ -1863,7 +1873,17 @@
 			<ValueElement Value="253088698300037011230901" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older"/>
 			<ValueElement Value="253088698300063911231019" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older"/>
 			<ValueElement Value="253088698300060811231019" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>
-			<ValueElement Value="253088698300064611231207" CodeSystem="cdcgs1vis" DisplayName="Tick-borne Encephalitis Vaccine VIS"/>			
+			<ValueElement Value="253088698300064611231207" CodeSystem="cdcgs1vis" DisplayName="Tick-borne Encephalitis Vaccine VIS"/>
+
+			<!-- 10/18/2024 -->
+			<ValueElement Value="253088698300031811241017" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
+			<ValueElement Value="253088698300063911241017" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older"/>
+			<ValueElement Value="253088698300060811241017" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>
+			
+			<!-- 11/15/2024 -->
+			<ValueElement Value="253088698300058511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
+			<ValueElement Value="253088698300061511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
+			<ValueElement Value="253088698300037011240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older"/>
 			<!--
 			<ValueElement Value="" CodeSystem="cdcgs1vis" DisplayName=""/>
 			-->
@@ -1941,7 +1961,7 @@
 			<ValueElement Value="33" CodeSystem="CVX" DisplayName="pneumococcal polysaccharide PPV23"/>
 			<ValueElement Value="35" CodeSystem="CVX" DisplayName="tetanus toxoid, adsorbed"/>
 			<ValueElement Value="37" CodeSystem="CVX" DisplayName="yellow fever"/>
-			<ValueElement Value="41" CodeSystem="CVX" DisplayName="typhoid, parenteral"/>
+			<!-- <ValueElement Value="41" CodeSystem="CVX" DisplayName="typhoid, parenteral"/> -->
 			<ValueElement Value="42" CodeSystem="CVX" DisplayName="Hep B, adolescent/high risk infant"/>
 			<ValueElement Value="43" CodeSystem="CVX" DisplayName="Hep B, adult"/>
 			<ValueElement Value="44" CodeSystem="CVX" DisplayName="Hep B, dialysis"/>

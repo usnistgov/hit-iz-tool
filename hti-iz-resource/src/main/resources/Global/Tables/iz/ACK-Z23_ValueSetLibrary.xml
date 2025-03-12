@@ -546,9 +546,9 @@
 			<ValueElement Value="AA" CodeSystem="HL70008" DisplayName="Original mode: Application Accept, Enhanced mode: Application acknowledgment: Accept"/>
 			<ValueElement Value="AE" CodeSystem="HL70008" DisplayName="Original mode: Application Error, Enhanced mode: Application acknowledgment: Error"/>
 			<ValueElement Value="AR" CodeSystem="HL70008" DisplayName="Original mode: Application Reject, Enhanced mode: Application acknowledgment: Reject"/>
-			<ValueElement Value="CA" CodeSystem="HL70008" DisplayName="Enhanced mode: Accept acknowledgment: Commit Accept"/>
+			<!-- <ValueElement Value="CA" CodeSystem="HL70008" DisplayName="Enhanced mode: Accept acknowledgment: Commit Accept"/>
 			<ValueElement Value="CE" CodeSystem="HL70008" DisplayName="Enhanced mode: Accept acknowledgment: Commit Error"/>
-			<ValueElement Value="CR" CodeSystem="HL70008" DisplayName="Enhanced mode: Accept acknowledgment: Commit Reject"/>
+			<ValueElement Value="CR" CodeSystem="HL70008" DisplayName="Enhanced mode: Accept acknowledgment: Commit Reject"/> -->
 		</ValueSetDefinition>
 		<ValueSetDefinition BindingIdentifier="HL70361_IZ" Name="Application"/>
 		<ValueSetDefinition BindingIdentifier="HL70104_IZ" Name="Version ID">

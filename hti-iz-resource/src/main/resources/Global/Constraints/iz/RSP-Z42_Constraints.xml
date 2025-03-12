@@ -215,7 +215,7 @@
                         </NOT>
                     </Condition>
                 </Predicate>
-                <Predicate ID="[RXA_IZ 1_5]9[1]" Target="9[1]" TrueUsage="R" FalseUsage="O">
+                <!-- <Predicate ID="[RXA_IZ 1_5]9[1]" Target="9[1]" TrueUsage="R" FalseUsage="O">
                     <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
                     <Condition>
                         <AND>
@@ -223,8 +223,8 @@
                             <Presence Path="20[1]"/>
                         </AND>
                     </Condition>
-                </Predicate>
-                <Predicate ID="[RXA_IZ 1_5]10[1]" Target="10[1]" TrueUsage="RE" FalseUsage="O">
+                </Predicate> -->
+                <!-- <Predicate ID="[RXA_IZ 1_5]10[1]" Target="10[1]" TrueUsage="RE" FalseUsage="O">
                     <Description>If the value of RXA-9.1 (Identifier) is '00' AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
                     <Condition>
                         <AND>
@@ -238,8 +238,17 @@
                             </AND>
                         </AND>
                     </Condition>
+                </Predicate> -->
+	        <Predicate ID="[RXA_IZ 1_5]10[1]" Target="10[1]" TrueUsage="RE" FalseUsage="O">
+                    <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+                    <Condition>
+			    <AND>
+                                <StringList Path="20[1]" CSV="CP,PA"/>
+                                <Presence Path="20[1]"/>                                
+                            </AND>
+                    </Condition>
                 </Predicate>
-                <Predicate ID="[RXA_IZ 1_5]11[1]" Target="11[1]" TrueUsage="RE" FalseUsage="O">
+                <!-- <Predicate ID="[RXA_IZ 1_5]11[1]" Target="11[1]" TrueUsage="RE" FalseUsage="O">
                     <Description>If the value of RXA-9.1 (Identifier) is '00' AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
                     <Condition>
                         <AND>
@@ -253,8 +262,17 @@
                             </AND>
                         </AND>
                     </Condition>
+                </Predicate> -->
+		<Predicate ID="[RXA_IZ 1_5]11[1]" Target="11[1]" TrueUsage="RE" FalseUsage="O">
+                    <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+                    <Condition>
+                            <AND>
+                                <StringList Path="20[1]" CSV="CP,PA"/>
+                                <Presence Path="20[1]"/>
+                            </AND>
+                    </Condition>
                 </Predicate>
-                <Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="R" FalseUsage="O">
+                <!-- <Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="R" FalseUsage="O">
                     <Description>If the value of RXA-9.1 (Identifier) is '00' AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
                     <Condition>
                         <AND>
@@ -267,6 +285,24 @@
                                 <Presence Path="20[1]"/>
                             </AND>
                         </AND>
+                    </Condition>
+                </Predicate> -->
+		<Predicate ID="[RXA_IZ 1_5]15[1]" Target="15[1]" TrueUsage="RE" FalseUsage="X">
+                    <Description>If RXA-20 (Completion Status) is valued AND if the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+                    <Condition>
+			    <AND>
+				    <Presence Path="20[1]"/>
+                                    <StringList Path="20[1]" CSV="CP,PA"/>
+			    </AND>
+                    </Condition>
+                </Predicate>
+		<Predicate ID="[RXA_IZ 1_5]17[1]" Target="17[1]" TrueUsage="RE" FalseUsage="X">
+                    <Description>If the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA'.</Description>
+                    <Condition>
+                            <AND>
+                                <StringList Path="20[1]" CSV="CP,PA"/>
+                                <Presence Path="20[1]"/>
+                            </AND>
                     </Condition>
                 </Predicate>
                 <Predicate ID="[RXA_IZ 1_5]18[1]" Target="18[1]" TrueUsage="R" FalseUsage="X">
@@ -482,7 +518,7 @@
                         </OR>
                     </Assertion>
                 </Constraint>
-                <Constraint ID="IZ-31" Target="9[1]">
+                <!-- <Constraint ID="IZ-31" Target="9[1]">
                     <Description>If RXA-20 (Completion Status) is valued and the value of RXA-20 (Completion Status) is one of List Values: 'CP','PA' then the value of RXA-9.1 (Identifier) SHALL be one of codes listed in the Value Set: NIP001.</Description>
                     <Assertion>
                         <OR>
@@ -495,8 +531,8 @@
                             <StringList Path="9[1].1[1]" CSV="00,01,02,03,04,05,06,07,08"/>
                         </OR>
                     </Assertion>
-                </Constraint>
-                <Constraint ID="IZ-47" Target="9[1]">
+                </Constraint> -->
+                <!-- <Constraint ID="IZ-47" Target="9[1]">
                     <Description>If RXA-20 (Completion Status) is not valued or the value of RXA-20 (Completion Status) is not one of List Values: 'CP','PA' then RXA-9.1 (Identifier) SHALL NOT be valued.</Description>
                     <Assertion>
                         <OR>
@@ -518,7 +554,7 @@
                             </NOT>
                         </OR>
                     </Assertion>
-                </Constraint>
+                </Constraint> -->
                 <Constraint ID="IZ-TS_M" Target="16[1]">
                     <Description>The value of RXA-16.1 (Time) SHALL be formatted with YYYYMM.</Description>
                     <Assertion>
