@@ -31,6 +31,7 @@
       $scope.searchString = null;
       $scope.selectionCriteria = 'TableId';
       $scope.valueSetDefinitionGroups = [];
+	  $scope.externalValueSetDefinitions = [];
       $scope.valueSetIds = null;
       $scope.vocabularyLibrary = null;
       $scope.loading = false;
@@ -96,7 +97,9 @@
           VocabularyService.getJson(vocabularyLibrary.id).then(function (obj) {
             vocabularyLibrary['json'] = angular.fromJson(obj);
             var all = angular.fromJson(vocabularyLibrary.json).valueSetDefinitions;
+			var allExternal = angular.fromJson(vocabularyLibrary.json).externalValueSetDefinitions;
             $scope.valueSetDefinitionGroups = VocabularyService.initValueSetDefinitionGroups(all);
+			$scope.externalValueSetDefinitions = VocabularyService.initExternalValueSetDefinitions(allExternal);
             $scope.loading = false;
           }, function (error) {
             $scope.error = "Sorry, Cannot load the vocabulary.";
@@ -120,15 +123,15 @@
           if ($scope.searchResults.length == 0) {
             $scope.vocabResError = "No results found for entered search criteria.";
           }
-          else if ($scope.searchResults.length === 1 && ($scope.selectionCriteria === 'TableId' || $scope.selectionCriteria === 'ValueSetName' || $scope.selectionCriteria === 'ValueSetCode')) {
+          else if ($scope.searchResults.length === 1 && ($scope.selectionCriteria === 'TableId' || $scope.selectionCriteria === 'ValueSetName' || $scope.selectionCriteria === 'ValueSetCode' )) {
             $scope.selectValueSetDefinition2($scope.searchResults[0]);
           }
 
           $scope.tmpSearchResults = [].concat($scope.searchResults);
         }
       };
-      
-       $scope.alphaNumComparator = function(v1, v2) {
+	  
+	   $scope.alphaNumComparator = function(v1, v2) {
 	    // If we have numbers compare numbers
 	    if (!isNaN(Number(v1.value)) && !isNaN(Number(v2.value)) ) {
 	      return Number(v1.value) < Number( v2.value) ? -1 : 1;
@@ -137,13 +140,15 @@
 	    return v1.value.localeCompare(v2.value);
 	  };
 
+
       $scope.selectValueSetDefinition = function (tableDefinition, tableLibrary) {
         $scope.searchResults = [];
         $scope.selectionCriteria = "TableId";
         $scope.searchString = null;
         $scope.selectedValueSetDefinition = tableDefinition;
         $scope.selectedTableLibrary = tableLibrary;
-        $scope.selectedValueSetDefinition.valueSetElements = $filter('orderBy')($scope.selectedValueSetDefinition.valueSetElements, 'value',false,$scope.alphaNumComparator);
+        $scope.selectedValueSetDefinition.valueSetElements = $filter('orderBy')($scope.selectedValueSetDefinition.valueSetElements, 'code');
+//		$scope.selectedValueSetDefinition.valueSetElements = $filter('orderBy')($scope.selectedValueSetDefinition.valueSetElements, 'code',false,$scope.alphaNumComparator);
         $scope.tmpTableElements = [].concat($scope.selectedValueSetDefinition.valueSetElements);
       };
 
@@ -157,16 +162,19 @@
 
       $scope.selectValueSetDefinition2 = function (tableDefinition) {
         $scope.selectedValueSetDefinition = tableDefinition;
-        $scope.selectedValueSetDefinition.tableElements = $filter('orderBy')($scope.selectedValueSetDefinition.tableElements, 'value',false,$scope.alphaNumComparator);
+        $scope.selectedValueSetDefinition.tableElements = $filter('orderBy')($scope.selectedValueSetDefinition.tableElements, 'code');
+//		$scope.selectedValueSetDefinition.valueSetElements = $filter('orderBy')($scope.selectedValueSetDefinition.valueSetElements, 'code',false,$scope.alphaNumComparator);
         $scope.tmpTableElements = [].concat($scope.selectedValueSetDefinition.tableElements);
       };
-      
-     
 
 
       $scope.isNoValidation = function () {
         return $scope.selectedValueSetDefinition != null && $scope.selectedTableLibrary && $scope.selectedTableLibrary.noValidation && $scope.selectedTableLibrary.noValidation.ids && $scope.selectedTableLibrary.noValidation.ids.indexOf($scope.selectedValueSetDefinition.bindingIdentifier) > 0;
       };
+	  
+	  $scope.isExternal = function () {
+	         return $scope.selectedValueSetDefinition != null && $scope.selectedTableLibrary && $scope.selectedTableLibrary.noValidation && $scope.selectedTableLibrary.noValidation.ids && $scope.selectedTableLibrary.noValidation.ids.indexOf($scope.selectedValueSetDefinition.bindingIdentifier) > 0;
+	   };
 
       $scope.isNoCodeFound = function (id) {
         for (var i = 0; i < $scope.selectedTableLibrary.noValidation.ids.length; i++) {
@@ -216,12 +224,31 @@
         }
       };
     }]);
+	
+	angular.module('hit-vocab-search')
+	  .controller('ExternalVocabCtrl', ['$scope', '$timeout', '$rootScope', '$filter', '$modalStack', function ($scope, $timeout, $rootScope, $filter, $modalStack) {
+	    $scope.tableList = [];
+	    $scope.tmpList = [].concat($scope.tableList);
+	    $scope.error = null;
+	    $scope.tableLibrary = null;
+	    $scope.scrollbarWidth = $rootScope.getScrollbarWidth();
+
+	    $scope.init = function (valueSetDefinitions) {
+	      if (valueSetDefinitions) {
+	        $scope.tableLibrary = valueSetDefinitions[0];
+	        $scope.tableList = $filter('orderBy')($scope.tableLibrary.valueSetDefinitions, 'bindingIdentifier');
+	        $scope.tmpList = [].concat($scope.tableList);
+
+	      }
+	    };
+	  }]);
 
 
   mod.factory('VocabularyService', function ($http, $q, $filter) {
 
     var VocabularyService = {
       valueSetDefinitionGroups: [],
+	  externalValueSetDefinitions: [],
       searchTableValues: function (searchString, selectionCriteria) {
         var searchResults = [];
         if (searchString != null) {
@@ -233,6 +260,15 @@
                 }
               });
             });
+			angular.forEach(VocabularyService.externalValueSetDefinitions, function (valueSetDefinitionsGroup) {
+              angular.forEach(valueSetDefinitionsGroup.valueSetDefinitions, function (valueSetDefinition) {
+                if (valueSetDefinition.bindingIdentifier && valueSetDefinition.bindingIdentifier.indexOf(searchString) !== -1) {
+                  searchResults.push(valueSetDefinition);
+                }
+              });
+            });
+			
+			
           } else if (selectionCriteria === 'Value') {
             angular.forEach(VocabularyService.valueSetDefinitionGroups, function (valueSetDefinitionsGroup) {
               angular.forEach(valueSetDefinitionsGroup.valueSetDefinitions, function (valueSetDefinition) {
@@ -297,6 +333,14 @@
 
           });
         });
+		//search external
+		angular.forEach(VocabularyService.externalValueSetDefinitions, function (valueSetDefinitionsGroup) {
+          angular.forEach(valueSetDefinitionsGroup.valueSetDefinitions, function (valueSetDefinition) {
+            if (valueSetDefinition.bindingIdentifier && valueSetDefinition.bindingIdentifier === bindingIdentifier) {
+              valueSetDefinitions.push(valueSetDefinition);
+            }
+          });
+        });
         return valueSetDefinitions;
       },
 
@@ -310,6 +354,11 @@
         });
         return that.valueSetDefinitionGroups;
       },
+	  initExternalValueSetDefinitions: function (all) {
+	          var that = this;
+	          VocabularyService.externalValueSetDefinitions = $filter('orderBy')(all, 'position');
+	          return that.externalValueSetDefinitions;
+	        },
 
       findValueSetDefinition: function (tableId) {
         var tables = VocabularyService.searchTableById(tableId, VocabularyService.valueSetDefinitionGroups);
