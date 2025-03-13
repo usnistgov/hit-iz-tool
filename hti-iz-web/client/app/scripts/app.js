@@ -14,6 +14,8 @@ angular.module('documentation', []);
 angular.module('domains', []);
 angular.module('logs', ['common']);
 angular.module('transport', []);
+angular.module('reports', ['common','treeGrid']);
+angular.module('cache', []);
 
 var app = angular.module('hit-app', [
 	'ngRoute',
@@ -67,7 +69,10 @@ var app = angular.module('hit-app', [
 	'hit-edit-testcase-details',
 	'domains',
 	'logs',
-	'transport'
+	'transport',
+	'angular-cache',
+	'cache',
+	'LocalForageModule'
 ]);
 
 
@@ -738,7 +743,7 @@ app.run(function(myService, $rootScope, $location, StorageService, userInfoServi
 		httpHeaders.common['Authorization'] = 'Basic ' + base64.encode(username + ':' + password);
 		//        httpHeaders.common['withCredentials']=true;
 		//        httpHeaders.common['Origin']="http://localhost:9000";
-		$http.get('api/accounts/login').then(function() {
+		$http.post('api/accounts/login').then(function() {
 			//If we are here in this callback, login was successfull
 			//Let's get user info now
 			httpHeaders.common['Authorization'] = null;
@@ -761,7 +766,7 @@ app.run(function(myService, $rootScope, $location, StorageService, userInfoServi
 	$rootScope.$on('event:loginRequestWithAuth', function(event, auth, path, loadApp) {
 		httpHeaders.common['Accept'] = 'application/json';
 		httpHeaders.common['Authorization'] = 'Basic ' + auth;
-		$http.get('api/accounts/login').success(function() {
+		$http.post('api/accounts/login').success(function() {
 			//            console.log("logging success...");
 			httpHeaders.common['Authorization'] = null;
 			$http.get('api/accounts/cuser').then(function(result) {
@@ -798,7 +803,7 @@ app.run(function(myService, $rootScope, $location, StorageService, userInfoServi
 		httpHeaders.common['Authorization'] = 'Basic ' + base64.encode(username + ':' + password);
 		//        httpHeaders.common['withCredentials']=true;
 		//        httpHeaders.common['Origin']="http://localhost:9000";
-		$http.get('api/accounts/login').then(function() {
+		$http.post('api/accounts/login').then(function() {
 			//If we are here in this callback, login was successfull
 			//Let's get user info now
 			httpHeaders.common['Authorization'] = null;

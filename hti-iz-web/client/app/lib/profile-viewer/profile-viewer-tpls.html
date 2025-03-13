@@ -1,6 +1,8 @@
-<style id="antiClickjack">body {
-    display: none !important;
-}</style>
+<style id="antiClickjack">
+    body {
+        display: none !important;
+    }
+</style>
 <script type="text/javascript">
     if (self === top) {
         var antiClickjack = document.getElementById("antiClickjack");
@@ -21,8 +23,8 @@
             <div ng-show="profile != null && model != null">
                 <div class="" style="margin-bottom: 10px;">
                     <div class="btn-group btn-group-sm" role="group" aria-label="..." style="margin-right: 10px;">
-                        <button  class="btn btn-cf-outline"  ng-click="setAllRelevance(true);loadContent();" ng-class="{'active': options.relevance}">R,RE,C (only)</button>
-                        <button  class="btn btn-cf-outline"  ng-click="setAllRelevance(false);loadContent();" ng-class="{'active': !options.relevance}">R,RE,C,O,X (All)</button>
+                        <button  class="btn btn-cf-outline"  ng-click="setAllRelevance(true);loadContent();" ng-class="{'active': options.relevance}">R,RE,C(A/B) (only)</button>
+                        <button  class="btn btn-cf-outline"  ng-click="setAllRelevance(false);loadContent();" ng-class="{'active': !options.relevance}">R,RE,C(A/B),C,O,X (All)</button>
                      </div>
 
                     <!--<div class="btn-group btn-group-sm" data-toggle="buttons" style="margin-right: 10px;">-->
@@ -135,7 +137,7 @@
                                         <th class="col-xs-1 col-fixed-80">Data type</th>
                                         <th class="col-xs-1 col-fixed-150">ValueSet</th>
                                         <th class="col-xs-2" ng-style="predWidth">Predicate</th>
-                                        <th class="col-xs-4" ng-style="csWidth">Conf. Statement</th>
+                                        <th class="col-xs-4" ng-style="csWidth">Conf. Statement -</th>
                                     </tr>
 
                                     <tr class="tbl-header"
@@ -146,7 +148,7 @@
                                         <th class="col-xs-1 col-fixed-80">Data type</th>
                                         <th class="col-xs-1 col-fixed-150">ValueSet</th>
                                         <th class="col-xs-2" ng-style="predWidth">Predicate</th>
-                                        <th class="col-xs-4" ng-style="csWidth">Conf. Statement</th>
+                                        <th class="col-xs-4" ng-style="csWidth">Conf. Statement - dt</th>
                                     </tr>
 
                                     <!--<tr class="tbl-header" style="margin-right:{{scrollbarWidth}}px"-->
@@ -159,11 +161,9 @@
                                     <!--<th class="col-xs-4" ng-style="csWidth">Conformance Statement</th>-->
                                     <!--</tr>-->
                                     </thead>
-<tbody>
-</tbody>
                                 </table>
                             </div>
-							
+
                         <div ng-if="confStatementsActive" class="confstatement-table-container fixed-table-container">
 
                           <div style="margin-bottom: 10px"><i># Conf. Statements : </i><span class="badge">{{model.tmpConfStatementList.length}}</span></div>
@@ -201,7 +201,7 @@
     </div>
 </script>
 
-
+<!-- full view -->
 <script type="text/ng-template" id="MessageFieldViewTree.html">
     <tr pv-node  is-branch="hasRelevantChild(node)" node="node">
         <td class="col-xs-2 col-fixed-350"
@@ -242,19 +242,41 @@
                     tooltip-append-to-body="true"
                     tooltip-class="constraints-tooltip"
                     ng-bind-html="model.datatypes[node.datatype].id" tooltip-trigger
-                    tooltip-animation="false" tooltip-placement="left"> </span>
+                    tooltip-animation="false" tooltip-placement="left"></span>
         </td>
         <td class="col-xs-1 col-fixed-150">
-            <div>
-				<span ng-if="node.table != undefined && node.table != null">
-                    <a ng-repeat="valueSet in getValueSet(node.table)" class="point valueset"
-                       ng-click="showValueSetDefinition(valueSet)"
-                       class="cs-concise-view concise-view"
-                       tooltip-html="valueSet"
-                       tooltip-append-to-body="true"
-                       tooltip-class="constraints-tooltip"
-                       ng-bind-html="valueSet"
-                       tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
+			<div ng-if="(node.table != undefined  && node.table !== null)">
+				<a ng-repeat="valueSet in getValueSet(node)" class="point valueset"
+                   ng-click="showValueSetDefinition(valueSet)"
+                   class="cs-concise-view concise-view"
+                   tooltip-html="valueSet"
+                   tooltip-append-to-body="true"
+                   tooltip-class="constraints-tooltip"
+                   ng-bind-html=""
+                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
+			</div>
+            <div ng-if="(node.selfValueSetBindings != undefined && node.selfValueSetBindings.length >0)">
+                <span ng-repeat="vsb in getValueSetBindings(node)">
+					<a ng-repeat="v in vsb.bindingList" class="point valueset"    
+				   		ng-click="showValueSetDefinition(v.bindingIdentifier)"               
+                   		class="cs-concise-view concise-view"
+                   		tooltip-html="(v.isExternal? 'External Code Set <br>' : '') + ' ' +getValueSetBindingLocations(vsb)"
+                   		tooltip-append-to-body="true"
+                   		tooltip-class="constraints-tooltip"                
+                   		tooltip-trigger tooltip-animation="false" tooltip-placement="left"> <i ng-if="v.isExternal" class="fa fa-link" aria-hidden="true"></i> {{v.bindingIdentifier}}</a>
+				</span>
+            </div>
+				<span ng-if="(node.selfSingleCodeBindings != undefined && node.selfSingleCodeBindings.length >0)">
+                    <span ng-repeat="scb in getSingleCodes(node)">
+						<a class="point valueset"                      
+                       		class="cs-concise-view concise-view"
+                       		tooltip-html="getSingleCodeBindingLocation(scb)"
+                       		tooltip-append-to-body="true"
+                       		tooltip-class="constraints-tooltip"
+                       		ng-bind-html="scb.singleCodeBindingCode"
+                       		tooltip-trigger tooltip-animation="false" tooltip-placement="left">
+						</a>					
+					</span>
                 </span>
             </div>
         </td>
@@ -299,7 +321,7 @@
                      tooltip-enable="options.concise"
                      tooltip-html="getComponentNodeName(node)" tooltip-append-to-body="true"
                      tooltip-class="constraints-tooltip"
-                     tooltip-trigger tooltip-animation="false" tooltip-placement="left"></span>
+                     tooltip-trigger tooltip-animation="false" tooltip-placement="left">
                               <span class="label label-sub-component label-icon" ng-if="node.type === 'SUBCOMPONENT'">S</span>
                 <span class="label label-component label-icon" ng-if="node.type === 'COMPONENT'">C</span>
 <span>{{::getComponentNodeName(node)}}</span>
@@ -331,16 +353,35 @@
                     tooltip-animation="false" tooltip-placement="left"></span>
         </td>
         <td class="col-xs-1 col-fixed-150">
-            <div ng-if="node.table != undefined  && node.table !== null">
-                <a ng-repeat="valueSet in getValueSet(node.table)" class="point valueset"
+			<div ng-if="(node.table != undefined  && node.table !== null)">
+				<a ng-repeat="valueSet in getValueSet(node)" class="point valueset"
                    ng-click="showValueSetDefinition(valueSet)"
                    class="cs-concise-view concise-view"
                    tooltip-html="valueSet"
                    tooltip-append-to-body="true"
                    tooltip-class="constraints-tooltip"
-                   ng-bind-html="valueSet"
+                   ng-bind-html=""
                    tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
-
+			</div>
+            <div ng-if="(node.selfValueSetBindings != undefined && node.selfValueSetBindings.length >0)">
+                <span ng-repeat="vsb in getValueSetBindings(node)">
+					<a ng-repeat="v in vsb.bindingList" class="point valueset"    
+				   		ng-click="showValueSetDefinition(v.bindingIdentifier)"               
+                   		class="cs-concise-view concise-view"
+                   		tooltip-html="(v.isExternal? 'External Code Set <br>' : '') + ' ' +getValueSetBindingLocations(vsb)"
+                   		tooltip-append-to-body="true"
+                   		tooltip-class="constraints-tooltip"                
+                   		tooltip-trigger tooltip-animation="false" tooltip-placement="left"> <i ng-if="v.isExternal" class="fa fa-link" aria-hidden="true"></i> {{v.bindingIdentifier}}</a>
+				</span>
+            </div>
+			<div ng-if="(node.selfSingleCodeBindings != undefined && node.selfSingleCodeBindings.length >0)">
+                <a ng-repeat="scb in getSingleCodes(node)" class="point valueset"                   
+                   class="cs-concise-view concise-view"
+                   tooltip-html="scb"
+                   tooltip-append-to-body="true"
+                   tooltip-class="constraints-tooltip"
+                   ng-bind-html="getValueSetIdentifier(valueSet)"
+                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
             </div>
         </td>
         <td class="col-xs-2 col-predicate" ng-style="predWidth">
@@ -404,7 +445,7 @@
             <span class="predicate-concise-view concise-view" ng-if="options.concise"
                   tooltip-html="getPredicatesAsMultipleLinesString(node)" tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip" ng-bind-html="getPredicatesAsOneLineString(node)" tooltip-trigger
-                  tooltip-animation="false" tooltip-placement="left"></span>					
+                  tooltip-animation="false" tooltip-placement="left"></span>
             <span ng-repeat="predicate in node.selfPredicates" ng-if="!options.concise">
                 <span class="expanded-view">
                     {{::predicate.description}}
@@ -494,7 +535,7 @@
                   tooltip-html="getPredicatesAsMultipleLinesString(node)" tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip" ng-bind-html="getPredicatesAsOneLineString(node)" tooltip-trigger
                   tooltip-animation="false" tooltip-placement="left"></span>
-            <span ng-repeat="predicate in  node.selfPredicates" ng-if="!options.concise">				
+            <span ng-repeat="predicate in  node.selfPredicates" ng-if="!options.concise">
                 <span class="expanded-view">
                     {{::predicate.description}}
                 </span>
@@ -524,7 +565,7 @@
                         tooltip-enable="options.concise"
                         tooltip-html="getGroupNodeName(node)" tooltip-append-to-body="true"
                         tooltip-class="constraints-tooltip"
-                        tooltip-trigger tooltip-animation="false" tooltip-placement="left"></span>
+                        tooltip-trigger tooltip-animation="false" tooltip-placement="left">
                                     <span class="label label-success label-icon">G</span>
 <span>{{::getGroupNodeName(node)}}</span>
                   </span>
@@ -622,7 +663,7 @@
                      tooltip-enable="options.concise"
                      tooltip-html="getComponentNodeName2(node)" tooltip-append-to-body="true"
                      tooltip-class="constraints-tooltip"
-                     tooltip-trigger tooltip-animation="false" tooltip-placement="left"></span>
+                     tooltip-trigger tooltip-animation="false" tooltip-placement="left">
                                     <span class="label label-component label-icon">C</span>
 <span>{{::getComponentNodeName2(node)}}</span>
                   </span>
@@ -651,16 +692,38 @@
         </td>
 
         <td class="col-xs-1 col-fixed-150">
-            <div>
-                <div ng-if="node.table != undefined  && node.table !== null">
-                    <a ng-repeat="valueSet in getValueSet(node.table)" class="point valueset"
-                       ng-click="showValueSetDefinition(valueSet)"
-                       class="cs-concise-view concise-view"
-                       tooltip-html="::valueSet"
-                       tooltip-append-to-body="true"
-                       tooltip-class="constraints-tooltip"
-                       ng-bind-html="valueSet"
-                       tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
+            <div ng-if="(node.table != undefined  && node.table !== null)">
+				<a ng-repeat="valueSet in getValueSet(node)" class="point valueset"
+                   ng-click="showValueSetDefinition(valueSet)"
+                   class="cs-concise-view concise-view"
+                   tooltip-html="valueSet"
+                   tooltip-append-to-body="true"
+                   tooltip-class="constraints-tooltip"
+                   ng-bind-html=""
+                   tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
+			</div>
+            <div ng-if="(node.selfValueSetBindings != undefined && node.selfValueSetBindings.length >0)">
+                <span ng-repeat="vsb in getValueSetBindings(node)">
+					<a ng-repeat="v in vsb.bindingList" class="point valueset"    
+				   		ng-click="showValueSetDefinition(v.bindingIdentifier)"               
+                   		class="cs-concise-view concise-view"
+                   		tooltip-html="(v.isExternal? 'External Code Set <br>' : '') + ' ' +getValueSetBindingLocations(vsb)"
+                   		tooltip-append-to-body="true"
+                   		tooltip-class="constraints-tooltip"                
+                   		tooltip-trigger tooltip-animation="false" tooltip-placement="left"> <i ng-if="v.isExternal" class="fa fa-link" aria-hidden="true"></i> {{v.bindingIdentifier}}</a>
+				</span>
+            </div>
+				<div ng-if="(node.selfSingleCodeBindings != undefined && node.selfSingleCodeBindings.length >0)">
+					<span ng-repeat="scb in getSingleCodes(node)">
+						<a class="point valueset"                      
+                       		class="cs-concise-view concise-view"
+                       		tooltip-html="getSingleCodeBindingLocation(scb)"
+                       		tooltip-append-to-body="true"
+                       		tooltip-class="constraints-tooltip"
+                       		ng-bind-html="scb.singleCodeBindingCode"
+                       		tooltip-trigger tooltip-animation="false" tooltip-placement="left">
+						</a>					
+					</span>
                 </div>
             </div>
         </td>
@@ -671,7 +734,7 @@
                   tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip"
                   ng-bind-html="getPredicatesAsOneLineString(node)" tooltip-trigger
-                  tooltip-animation="false" tooltip-placement="left"> </span>
+                  tooltip-animation="false" tooltip-placement="left"></span>
             <span ng-repeat="predicate in node.selfPredicates"
                   ng-if="!options.concise">
                 <span class="expanded-view">
@@ -732,16 +795,38 @@
         </td>
 
         <td class="col-xs-1 col-fixed-150">
-            <div ng-if="node.table != undefined  && node.table !== null">
-                <a ng-repeat="valueSet in getValueSet(node.table)" class="point valueset"
+            <div ng-if="(node.table != undefined  && node.table !== null)">
+				<a ng-repeat="valueSet in getValueSet(node)" class="point valueset"
                    ng-click="showValueSetDefinition(valueSet)"
                    class="cs-concise-view concise-view"
-                   tooltip-html="::valueSet"
+                   tooltip-html="valueSet"
                    tooltip-append-to-body="true"
                    tooltip-class="constraints-tooltip"
-                   ng-bind-html="valueSet"
+                   ng-bind-html=""
                    tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
-
+			</div>
+            <div ng-if="(node.selfValueSetBindings != undefined && node.selfValueSetBindings.length >0)">
+                <span ng-repeat="vsb in getValueSetBindings(node)">
+					<a ng-repeat="v in vsb.bindingList" class="point valueset"    
+				   		ng-click="showValueSetDefinition(v.bindingIdentifier)"               
+                   		class="cs-concise-view concise-view"
+                   		tooltip-html="(v.isExternal? 'External Code Set <br>' : '') + ' ' +getValueSetBindingLocations(vsb)"
+                   		tooltip-append-to-body="true"
+                   		tooltip-class="constraints-tooltip"                
+                   		tooltip-trigger tooltip-animation="false" tooltip-placement="left"> <i ng-if="v.isExternal" class="fa fa-link" aria-hidden="true"></i> {{v.bindingIdentifier}}</a>
+				</span>
+            </div>
+			<div ng-if="(node.selfSingleCodeBindings != undefined && node.selfSingleCodeBindings.length >0)">
+					<span ng-repeat="scb in getSingleCodes(node)">
+						<a class="point valueset"                      
+                       		class="cs-concise-view concise-view"
+                       		tooltip-html="getSingleCodeBindingLocation(scb)"
+                       		tooltip-append-to-body="true"
+                       		tooltip-class="constraints-tooltip"
+                       		ng-bind-html="scb.singleCodeBindingCode"
+                       		tooltip-trigger tooltip-animation="false" tooltip-placement="left">
+						</a>					
+					</span>
             </div>
         </td>
 
@@ -765,7 +850,7 @@
                   tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip"
                   ng-bind-html="getConfStatementsAsOneLineString(node)"
-                  tooltip-trigger tooltip-animation="false" tooltip-placement="left"> </span>
+                  tooltip-trigger tooltip-animation="false" tooltip-placement="left"></span>
             <span ng-repeat="confStatement in node.selfConformanceStatements"
                   ng-if="!options.concise">
                 <span class="expanded-view">
@@ -776,6 +861,7 @@
     </tr>
 </script>
 
+<!-- not used? -->
 <script type="text/ng-template" id="SegmentReadTree.html">
     <tr pv-node  is-branch="hasRelevantChild(node)" node="node">
         <td class="col-xs-2 col-fixed-350"
@@ -852,17 +938,38 @@
                      tooltip-animation="false" tooltip-placement="left"></span>
         </td>
         <td class="col-xs-1 col-fixed-150">
-            <div ng-if="node.table != undefined  && node.table !== null">
-                <a ng-repeat="valueSet in getValueSet(node.table)" class="point valueset"
+            <div ng-if="(node.table != undefined  && node.table !== null)">
+				<a ng-repeat="valueSet in getValueSet(node)" class="point valueset"
                    ng-click="showValueSetDefinition(valueSet)"
                    class="cs-concise-view concise-view"
-                   tooltip-html="::valueSet"
+                   tooltip-html="valueSet"
                    tooltip-append-to-body="true"
                    tooltip-class="constraints-tooltip"
-                   ng-bind-html="valueSet"
+                   ng-bind-html=""
                    tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
-
-					
+			</div>
+            <div ng-if="(node.selfValueSetBindings != undefined && node.selfValueSetBindings.length >0)">
+                <span ng-repeat="vsb in getValueSetBindings(node)">
+					<a ng-repeat="v in vsb.bindingList" class="point valueset"    
+				   		ng-click="showValueSetDefinition(v.bindingIdentifier)"               
+                   		class="cs-concise-view concise-view"
+                   		tooltip-html="(v.isExternal? 'External Code Set <br>' : '') + ' ' +getValueSetBindingLocations(vsb)"
+                   		tooltip-append-to-body="true"
+                   		tooltip-class="constraints-tooltip"                
+                   		tooltip-trigger tooltip-animation="false" tooltip-placement="left"> <i ng-if="v.isExternal" class="fa fa-link" aria-hidden="true"></i> {{v.bindingIdentifier}}</a>
+				</span>
+            </div>
+			<div ng-if="(node.selfSingleCodeBindings != undefined && node.selfSingleCodeBindings.length >0)">
+					<span ng-repeat="scb in getSingleCodes(node)">
+						<a class="point valueset"                      
+                       		class="cs-concise-view concise-view"
+                       		tooltip-html="getSingleCodeBindingLocation(scb)"
+                       		tooltip-append-to-body="true"
+                       		tooltip-class="constraints-tooltip"
+                       		ng-bind-html="scb.singleCodeBindingCode"
+                       		tooltip-trigger tooltip-animation="false" tooltip-placement="left">
+						</a>					
+					</span>
             </div>
         </td>
         <td class="col-xs-2 col-predicate" ng-style="predWidth">
@@ -936,15 +1043,38 @@
                      tooltip-animation="false" tooltip-placement="left"></span>
         </td>
         <td class="col-xs-1 col-fixed-150">
-            <div ng-if="node.table != undefined  && node.table !== null">
-                <a ng-repeat="valueSet in getValueSet(node.table)" class="point valueset"
+            <div ng-if="(node.table != undefined  && node.table !== null)">
+				<a ng-repeat="valueSet in getValueSet(node)" class="point valueset"
                    ng-click="showValueSetDefinition(valueSet)"
                    class="cs-concise-view concise-view"
-                   tooltip-html="::valueSet"
+                   tooltip-html="valueSet"
                    tooltip-append-to-body="true"
                    tooltip-class="constraints-tooltip"
-                   ng-bind-html="valueSet"
+                   ng-bind-html=""
                    tooltip-trigger tooltip-animation="false" tooltip-placement="left"></a>
+			</div>
+            <div ng-if="(node.selfValueSetBindings != undefined && node.selfValueSetBindings.length >0)">
+                <span ng-repeat="vsb in getValueSetBindings(node)">
+					<a ng-repeat="v in vsb.bindingList" class="point valueset"    
+				   		ng-click="showValueSetDefinition(v.bindingIdentifier)"               
+                   		class="cs-concise-view concise-view"
+                   		tooltip-html="(v.isExternal? 'External Code Set <br>' : '') + ' ' +getValueSetBindingLocations(vsb)"
+                   		tooltip-append-to-body="true"
+                   		tooltip-class="constraints-tooltip"                
+                   		tooltip-trigger tooltip-animation="false" tooltip-placement="left"> <i ng-if="v.isExternal" class="fa fa-link" aria-hidden="true"></i> {{v.bindingIdentifier}}</a>
+				</span>
+            </div>
+			<div ng-if="(node.selfSingleCodeBindings != undefined && node.selfSingleCodeBindings.length >0)">
+					<span ng-repeat="scb in getSingleCodes(node)">
+						<a class="point valueset"                      
+                       		class="cs-concise-view concise-view"
+                       		tooltip-html="getSingleCodeBindingLocation(scb)"
+                       		tooltip-append-to-body="true"
+                       		tooltip-class="constraints-tooltip"
+                       		ng-bind-html="scb.singleCodeBindingCode"
+                       		tooltip-trigger tooltip-animation="false" tooltip-placement="left">
+						</a>					
+					</span>
             </div>
         </td>
 
@@ -1010,7 +1140,7 @@
             <span class="predicate-concise-view concise-view" ng-if="options.concise"
                   tooltip-html="getPredicatesAsMultipleLinesString(node)" tooltip-append-to-body="true"
                   tooltip-class="constraints-tooltip" ng-bind-html="getPredicatesAsOneLineString(node)" tooltip-trigger
-                  tooltip-animation="false" tooltip-placement="left"> </span>
+                  tooltip-animation="false" tooltip-placement="left"></span>
             <span ng-repeat="predicate in node.selfPredicates" ng-if="!options.concise">
                 <span class="expanded-view">
                     {{::predicate.description}}

@@ -107,31 +107,11 @@ angular.module('cb')
       "Invalid message Sent. Please see console for more details."
     ];
 
-    var parseRequest = function (incoming, protocol) {
-		if (protocol === "soap"){			
-		      if (incoming != null && incoming != '') {
-		        var x2js = new X2JS();
-		        var json = x2js.xml_str2json(incoming);
-		        if (json.Envelope.Body.submitSingleMessage && json.Envelope.Body.submitSingleMessage.hl7Message) {
-		          var hl7Message = SOAPEscaper.decodeXml(json.Envelope.Body.submitSingleMessage.hl7Message.toString());
-		          return hl7Message;
-		        }
-		      }		 			
-		}
-		return incoming;		  
+    var parseRequest = function (incoming) {
+      return incoming;
     };
 
-    var parseResponse = function (outbound, protocol) {
-		if (protocol === "soap"){			
-		      if (outbound != null && outbound != '') {
-		        var x2js = new X2JS();
-		        var json = x2js.xml_str2json(outbound);
-		        if (json.Envelope.Body.submitSingleMessageResponse && json.Envelope.Body.submitSingleMessageResponse.return) {
-		          var hl7Message = SOAPEscaper.decodeXml(json.Envelope.Body.submitSingleMessageResponse.return.toString());
-		          return hl7Message;
-		        }
-		      }		 			
-		}
+    var parseResponse = function (outbound) {
       return outbound;
     };
 
@@ -580,7 +560,7 @@ angular.module('cb')
             if (received != null && received != "") {
               try {
                 $scope.completeStep($scope.testStep);
-                var rspMessage = parseResponse(received,$scope.protocol);
+                var rspMessage = parseResponse(received);
                 $scope.logger.log(received);
                 var nextStep = $scope.findNextStep($scope.testStep.position);
                 if (nextStep != null && nextStep.testingType === 'SUT_RESPONDER') {
@@ -749,7 +729,7 @@ angular.module('cb')
                     $scope.logger.log("Inbound message received <-------------------------------------- ");
                     if (incoming != null && incoming != '') {
                       try {
-                        var receivedMessage = parseRequest(incoming,$scope.protocol);
+                        var receivedMessage = parseRequest(incoming);
                         $scope.log(receivedMessage);
                         $scope.testExecutionService.setTestStepExecutionMessage($scope.testStep, receivedMessage);
                         $scope.$broadcast('cb:loadEditorContent', receivedMessage);
@@ -763,7 +743,7 @@ angular.module('cb')
                     $scope.logger.log("Outbound message sent --------------------------------------> ");
                     if (outbound != null && outbound != '') {
                       try {
-                        var sentMessage = parseResponse(outbound,$scope.protocol);
+                        var sentMessage = parseResponse(outbound);
                         $scope.log(sentMessage);
                         var nextStep = $scope.findNextStep($scope.testStep.position);
                         if (nextStep != null && nextStep.testingType === 'TA_RESPONDER') {
@@ -985,7 +965,7 @@ angular.module('cb')
 
 
     $scope.toggleTransport = function (disabled) {
-      $scope.transport.disabled = disabled;      
+      $scope.transport.disabled = disabled;
       StorageService.set(StorageService.TRANSPORT_DISABLED, disabled);
       if (CB.editor.instance != null) {
         CB.editor.instance.setOption("readOnly", !disabled);
@@ -2323,8 +2303,60 @@ angular.module('cb')
         }, function (result) {
 
         });
-
     };
+	
+
+	  $scope.editAPIKeys = function(testPlan) {
+		  $modalStack.dismissAll('close');
+		  var modalInstance = $modal.open({
+			  templateUrl: 'views/cb/manage/apikeys.html',
+			  controller: 'CBManageAPIKeysCtrl',
+			  controllerAs: 'ctrl',
+			  windowClass: 'upload-modal',
+			  backdrop: 'static',
+			  keyboard: false,
+			  resolve: {
+				  testPlan: function() {
+					  return testPlan;
+				  }
+			  }
+		  });
+
+		  modalInstance.opened.then(function() {
+//call the getTestStepsWithExternalValueSets function from the CBManageAPIKeysCtrl  controller
+//        modalInstance.controller.getTestStepsWithExternalValueSets();
+
+
+		  });
+
+		  modalInstance.result.then(
+			  function(externalVS) {
+//				  item.externalVS = externalVS;
+			  },
+			  function(result) {
+			  }
+		  );
+	  };
+
+		// $scope.getApiKeys = function (testPlan) {				
+		// 	CBTestPlanManager.getTestStepsWithExternalValueSets(testPlan.id).then(function (testSteps) {
+	  //           console.log(testSteps);
+	  //           $scope.loading = false;
+	  //         }, function (error) {
+	  //           $scope.error = "Sorry, Cannot load the test steps. Please try again";
+	  //       });
+	 	// };
+
+   
+
+	 function dig(obj, target) {
+	   return target in obj
+	     ? obj[target]
+	     : Object.values(obj).reduce(function(acc, val) {
+	         if (acc !== undefined) return acc;
+	         if (typeof val === 'object') return dig(val, target);
+	       }, undefined);
+	 }
 
 
     $scope.editNodeName = function (node) {
@@ -2579,6 +2611,53 @@ angular.module('cb')
 
 
   });
+  
+angular.module('cb')
+	.controller('CBManageAPIKeysCtrl', function($scope, $http, $window, $modal, $filter, $rootScope, $timeout, StorageService, FileUploader, Notification, $modalInstance, CBTestPlanManager, testPlan) {
+
+		$scope.testPlan = testPlan;
+		$scope.testSteps;
+
+		$scope.save = function() {
+			//for each teststep that changed, save
+			for (var i = 0; i < $scope.testSteps.length; i++) {
+				var hasEditedKeys = $scope.testSteps[i].testContext.apikeys.find(function(obj) {
+				  return obj.editBindingKey === true;
+				});
+						
+				if (hasEditedKeys){
+					CBTestPlanManager.updateTestContextApiKeys($scope.testSteps[i].testContext.id,$scope.testSteps[i].testContext.apikeys).then(function(response) {
+										console.log(response);
+									}, function(error) {
+										$scope.error = "Sorry, Cannot load the test steps. Please try again";
+									});
+				}				
+			}
+			$modalInstance.close($scope.testPlan);
+		};
+
+		$scope.cancel = function() {
+			$modalInstance.dismiss();
+		};
+
+		$scope.getTestStepsWithExternalValueSets = function(testPlan) {
+			CBTestPlanManager.getTestStepsWithExternalValueSets(testPlan.id).then(function(testSteps) {
+				$scope.loading = false;
+				//set all as not being edited to start
+				for (var i = 0; i < testSteps.length; i++) {
+					for(var j =0; j< testSteps[i].testContext.apikeys.length; j++ )		
+					testSteps[i].testContext.apikeys[j].editBindingKey = false;
+				}
+				$scope.testSteps = testSteps;
+				
+			}, function(error) {
+				$scope.error = "Sorry, Cannot load the test steps. Please try again";
+			});
+		};
+
+		$scope.getTestStepsWithExternalValueSets($scope.testPlan)
+
+	});
 
 
 angular.module('cb')
@@ -2612,11 +2691,11 @@ angular.module('cb')
         if (response.status === "SUCCESS") {
         	if (response.token !== undefined){
         		CBTestPlanManager.saveZip(response.token,$scope.domain.domain).then(function (response) {
+				  console.log("$scope.loading",$scope.loading);
       	          $scope.loading = false;
       	           if (response.status == "FAILURE") {
              	   			$scope.step = 1;
-      	        	   		$scope.error = "Could not saved the zip, please try again";
-      	        	   		
+      	        	   		$scope.error = "Could not saved the zip, please try again";      	        	   		      	        	   		
       	          } else {
       	        	  	
      	 	        	 if (response.action === "ADD") {
@@ -2640,23 +2719,23 @@ angular.module('cb')
       	         	        	
       	          }
       	          }, function (error) {
-      	        	  	$scope.step = 1;
+					console.log(error);
+					 Notification.error({
+     	 	 	            message: error.message,
+     	 	 	            templateUrl: "NotificationErrorTemplate.html",
+     	 	 	            scope: $rootScope,
+     	 	 	            delay: 5000
+     	 	 	          });
+	 				$scope.loading = false;
+      	        	$scope.step = 1;
       	            $scope.error = "Could not saved the zip, please try again";
       	          });
         	}else{
         		$scope.step = 1;
-  	        $scope.error = "Could not saved the zip, no token was received, please try again";
+  	        	$scope.error = "Could not saved the zip, no token was received, please try again";
         	}
         	
-        
-        	
-        
-        	
-        	
-        
-          
-          
-          
+       
           
         }
         
@@ -2730,8 +2809,7 @@ angular.module('cb').controller('UploadCBTokenCheckCtrl', ['$scope', '$http', 'C
                   });
 	        		modalInstance.close();        
 	           $location.url('/cb?scope=USER&group='+response.id);
-	        		//set private
-	//                		$scope.selectedScope.key = $scope.testPlanScopes[1].key;
+	        		
 	          }
 	          }, function (error) {
 	            $scope.error = "Could not saved the zip, please try again";

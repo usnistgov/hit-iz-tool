@@ -10,45 +10,86 @@ angular.module('cf').factory('CF',
             testCase: null,
             selectedTestCase: null,
             message: new Message(),
-            searchTableId: 0
+            searchTableId: 0,
+            savedReports: [],
+            selectedSavedReport: null
         };
         return CF;
 }]);
 
 
 
-angular.module('cf').factory('CFTestPlanExecutioner', ['$q', '$http',
-  function ($q, $http) {
-    var manager = {
-      getTestPlan:  function (id) {
-        var delay = $q.defer();
-        $http.get("api/cf/testplans/" + id, {timeout: 180000}).then(
-          function (object) {
-            delay.resolve(angular.fromJson(object.data));
-          },
-          function (response) {
-            delay.reject(response.data);
-          }
-        );
 
-        return delay.promise;
-      },
 
-      getTestPlans: function (scope,domain) {
-        var delay = $q.defer();
-        $http.get("api/cf/testplans", {timeout: 180000, params: {"scope": scope, "domain":domain}}).then(
-          function (object) {
-            delay.resolve(angular.fromJson(object.data));
-          },
-          function (response) {
-            delay.reject(response.data);
-          }
-        );
-        return delay.promise;
-      }
-    };
-    return manager;
-  }
+angular.module('cf').factory('CFTestPlanExecutioner', ['$q', '$http', '$rootScope', 'CacheFactory','$localForage',
+	function ($q, $http, $rootScope, CacheFactory,$localForage) {
+	var manager = {
+			getTestPlan:  function (id) {
+				var delay = $q.defer();
+
+
+
+				$http.get("api/cf/testplans/" + id +"/updateDate", { timeout: 180000}).then(
+						function (date) {	
+							$localForage.getItem("api/cf/testplans/" + id,true).then(function(data) {
+								//cache found
+					            var cacheData = data;
+					            if (cacheData && cacheData.updateDate === date.data) {
+									delay.resolve(data);
+								} else {							
+									$http.get("api/cf/testplans/" + id, {timeout: 180000}).then(
+										function (object) {
+											$localForage.setItem("api/cf/testplans/" + id,angular.fromJson(object.data)).then(function() {});
+											delay.resolve(angular.fromJson(object.data));
+										},
+										function (response) {
+											delay.reject(response.data);
+										}
+								);
+							}
+							 },function(error){
+                      //no cache found
+						        	$http.get("api/cf/testplans/" + id, { timeout: 180000}).then(
+						        			function (object) {	
+						        				$localForage.setItem("api/cf/testplans/" + id,angular.fromJson(object.data)).then(function() {});
+						        				delay.resolve(angular.fromJson(object.data));
+						        			},
+						        			function (response) {
+						        				delay.reject(response.data);
+						        			}
+						        	);
+						        });
+						},
+						function (error) {
+							$http.get("api/cf/testplans/" + id, { timeout: 180000}).then(
+				        			function (object) {	
+				        				$localForage.setItem("api/cf/testplans/" + id,angular.fromJson(object.data)).then(function() {});
+				        				delay.resolve(angular.fromJson(object.data));
+				        			},
+				        			function (response) {
+				        				delay.reject(response.data);
+				        			}
+				        	);
+						}
+				);
+				return delay.promise;
+			},
+
+			getTestPlans: function (scope,domain) {
+				var delay = $q.defer();
+				$http.get("api/cf/testplans", {timeout: 180000, params: {"scope": scope, "domain":domain}}).then(
+						function (object) {
+							delay.resolve(angular.fromJson(object.data));
+						},
+						function (response) {
+							delay.reject(response.data);
+						}
+				);
+				return delay.promise;
+			}
+	};
+	return manager;
+}
 ]);
 
 
@@ -334,9 +375,6 @@ angular.module('cf').factory('CFTestPlanManager', ['$q', '$http',
         return delay.promise;
       },
 
-
-
-
       publishTestPlan:  function (groupId) {
         var delay = $q.defer();
         $http.post('api/cf/management/testPlans/'+ groupId + '/publish').then(
@@ -348,7 +386,21 @@ angular.module('cf').factory('CFTestPlanManager', ['$q', '$http',
           }
         );
         return delay.promise;
-      }
+      },
+      
+      unPublishTestPlan:  function (groupId) {
+          var delay = $q.defer();
+          $http.post('api/cf/management/testPlans/'+ groupId + '/unPublish').then(
+            function (object) {
+              delay.resolve(angular.fromJson(object.data));
+            },
+            function (response) {
+              delay.reject(response.data);
+            }
+          );
+          return delay.promise;
+        }
+
 
     };
     return manager;
@@ -356,31 +408,38 @@ angular.module('cf').factory('CFTestPlanManager', ['$q', '$http',
 ]);
 
 angular.module('cf').service('modalService', ['$modal',	function ($modal) {
+
     var modalDefaults = {
         backdrop: true,
         keyboard: true,
         modalFade: true,
         templateUrl: 'views/cf/modal.html'
     };
+
     var modalOptions = {
         closeButtonText: 'Close',
         actionButtonText: 'OK',
         headerText: 'Proceed?',
         bodyText: 'Perform this action?'
     };
+
     this.showModal = function (customModalDefaults, customModalOptions) {
         if (!customModalDefaults) customModalDefaults = {};
         customModalDefaults.backdrop = 'static';
         return this.show(customModalDefaults, customModalOptions);
     };
+
     this.show = function (customModalDefaults, customModalOptions) {
         //Create temp objects to work with since we're in a singleton service
         var tempModalDefaults = {};
         var tempModalOptions = {};
+
         //Map angular-ui modal custom defaults to modal defaults defined in service
         angular.extend(tempModalDefaults, modalDefaults, customModalDefaults);
+
         //Map modal.html $scope custom properties to defaults defined in service
         angular.extend(tempModalOptions, modalOptions, customModalOptions);
+
         if (!tempModalDefaults.controller) {
             tempModalDefaults.controller = ['$scope','$modalInstance',function ($scope, $modalInstance) {
                 $scope.modalOptions = tempModalOptions;
@@ -392,8 +451,10 @@ angular.module('cf').service('modalService', ['$modal',	function ($modal) {
                 };
             }];
         }
+
         return $modal.open(tempModalDefaults).result;
     };
+
 }]);
 
 
