@@ -1,0 +1,63 @@
+services:
+  tomcat:
+    image:  nist775hit/hti-iz-tool
+    platform: linux/amd64
+    build:      
+      context: ./
+      dockerfile: ./dockerConfigs/webapp/Dockerfile    
+    ports:
+      - "8889:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+        restart: true
+      hl7v2validationvervice-122:
+        restart: true
+        condition: service_started
+      hl7v2validationvervice-168:
+        restart: true
+        condition: service_started
+      hl7v2validationvervice-170:
+        restart: true
+        condition: service_started
+    environment:
+      - JAVA_OPTS=-Xmx4096m -Xms4096m -DRELOAD_DB=true
+    links:
+      - mysql:container-mysql
+    command: bash -c "rm -rf /usr/local/tomcat/webapps.dist && catalina.sh run"
+    restart: always
+
+  mysql:
+    image: nist775hit/hti-iz-mysql
+    platform: linux/amd64
+    build:
+      context: ./
+      dockerfile: ./dockerConfigs/mysql/Dockerfile
+    ports:
+      - "3309:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password    
+    healthcheck:
+      test: ["CMD", 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-p$$MYSQL_ROOT_PASSWORD' ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s  
+    
+
+  hl7v2validationvervice-170:
+    image:  nist775hit/hl7v2validationvervice-170
+    platform: linux/amd64
+    restart: unless-stopped
+
+  hl7v2validationvervice-168:
+    image:  nist775hit/hl7v2validationvervice-168
+    platform: linux/amd64
+    restart: unless-stopped
+
+  hl7v2validationvervice-122:
+    image:  nist775hit/hl7v2validationvervice-122
+    platform: linux/amd64
+    restart: unless-stopped
+
+  

@@ -11,7 +11,8 @@
 			"homeTitle": "Welcome to the NIST Immunization Test Suite!",
 			"authorUsername":"nico",
 			"options":{
-					"DEFAULT_HL7V2_VALIDATION_VERSION":	"1.2.2"
+					"DEFAULT_HL7V2_VALIDATION_VERSION":	"1.2.2",
+					"REPORT_SAVING_SUPPORTED": false
 				}
  		},
  		{
@@ -25,7 +26,8 @@
 			"homeTitle": "Welcome to the HTI-1 SVAP Immunization Test Suite!",
 			"authorUsername":"nico",
 			"options":{
-					"DEFAULT_HL7V2_VALIDATION_VERSION":	"1.7.0-SNAPSHOT"
+					"DEFAULT_HL7V2_VALIDATION_VERSION":	"1.7.0-SNAPSHOT",
+					"REPORT_SAVING_SUPPORTED": false
 				}
  		}
 	]

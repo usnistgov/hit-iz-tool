@@ -304,8 +304,9 @@ angular.module('account').factory('userInfoService', ['StorageService', 'userLoa
             return '0';
         };
 
+		//check if current user is admin, if not check if currentuser has email admin
         var isAdmin = function() {
-          if (!admin && currentUser != null  && $rootScope.appInfo.adminEmails != null && $rootScope.appInfo.adminEmails) {
+          if (!admin && currentUser != null && $rootScope.appInfo && $rootScope.appInfo.adminEmails != null && $rootScope.appInfo.adminEmails) {
             if (Array.isArray($rootScope.appInfo.adminEmails)) {
               admin = $rootScope.appInfo.adminEmails.indexOf(currentUser.email) >= 0;
             } else {

@@ -1,0 +1,63 @@
+services:
+  hti-iz-tomcat:
+    image:  nist775hit/hti-iz-tool:latest
+    platform: linux/amd64
+    ports:
+      - "8889:8080"
+    depends_on:
+      hti-iz-mysql:
+        condition: service_healthy
+        restart: true
+      hl7v2validationvervice-122:
+        restart: true
+        condition: service_started
+      hl7v2validationvervice-168:
+        restart: true
+        condition: service_started
+      hl7v2validationvervice-170:
+        restart: true
+        condition: service_started
+    environment:
+      - JAVA_OPTS=-Xmx4096m -Xms4096m -DRELOAD_DB=true -DIS_DEV_TOOL=false -Dvalidation_propfile=/tool_config/validation-service-config.properties
+    restart: unless-stopped
+    volumes:
+      - ./tool_upload/:/tool_upload
+      - type: bind
+        source: ./app-config.properties
+        target: /tool_config/app-config.properties
+        read_only: true      
+    links:
+      - hti-iz-mysql:container-mysql
+
+  hti-iz-mysql:
+    image: nist775hit/hti-iz-mysql:latest
+    platform: linux/amd64
+    ports:
+      - "3309:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD=root_password
+    restart: unless-stopped
+    volumes:
+      - ./db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-p$$MYSQL_ROOT_PASSWORD' ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  hl7v2validationvervice-170:
+    image:  nist775hit/hl7v2validationvervice-170
+    platform: linux/amd64
+    restart: unless-stopped
+
+  hl7v2validationvervice-168:
+    image:  nist775hit/hl7v2validationvervice-168
+    platform: linux/amd64
+    restart: unless-stopped
+
+  hl7v2validationvervice-122:
+    image:  nist775hit/hl7v2validationvervice-122
+    platform: linux/amd64
+    restart: unless-stopped
+
