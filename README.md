@@ -1,2 +1,2 @@
-# hit-iz-tool
-This is immunization tool repository. The iz tool is also used for the ONC Meaningful use stage 3 certification program
+# hti-iz-tool
+This is immunization tool repository. The iz tool is also used for the ONC Meaningful use stage 3 certification program and Standards Version Advancement Process (SVAP) 
