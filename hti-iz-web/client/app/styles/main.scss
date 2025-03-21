@@ -639,6 +639,13 @@ select.form-control:checked {
   max-width: 80px;
 }
 
+.col-fixed-85 {
+  float: left;
+  width: 85px;
+  min-width: 85px;
+  max-width: 85px;
+}
+
 .col-fixed-150 {
   float: left;
   width: 150px;
