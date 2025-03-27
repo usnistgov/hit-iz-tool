@@ -1,0 +1,10 @@
+{
+    "domain": "iz",
+    "name": "ONC Immunization SVAP 2025 Test Plan TESTING",
+    "description": "This test plan is to be used for ONC Certification Testing of Health IT modules. All test cases are required to be executed. The test plan includes a set of Administered Immunization test cases (Administration Group) and a set of Query and Response test cases (Evaluated History and Forecast Group).",
+    "skip": false,
+    "id": 6016405760359510013,
+    "position": 1,
+    "transport": true,
+    "type": "Isolated"
+}
