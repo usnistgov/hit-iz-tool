@@ -1,1 +1,1 @@
-{"name":"9.1.3 - Alert a user when data entered indicates the patient received a vaccine before birth (DOD (PID-30) before DOB (PID-7))","description":"","id":423777322860204651,"position":3,"type":"SUT_MANUAL"}
+{"name":"9.1.3 - Alert a user when data entered indicates the patient received a vaccine before birth (Administered (RXA-3) before DOB (PID-7))","description":"","id":-3822241960234907613,"position":3,"type":"SUT_MANUAL"}

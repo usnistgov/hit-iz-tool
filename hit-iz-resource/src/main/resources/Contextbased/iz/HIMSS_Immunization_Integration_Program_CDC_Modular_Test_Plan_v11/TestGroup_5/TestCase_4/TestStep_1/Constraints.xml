@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="678a7654e4b06103abc7051c" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
-  <MetaData Date="Fri Jan 17 15:25:08 UTC 2025" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
+<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="680913b7e4b0d97f2132ddc0" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
+  <MetaData Date="Wed Apr 23 16:22:15 UTC 2025" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
   <Constraints>
     <Message>
       <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e863b">
@@ -1524,6 +1524,27 @@
                   <Description>Expected content is missing. The empty value at ORDER.OBSERVATION[2].OBX-14.1 (Time) is expected to be present.</Description>
                   <Assertion>
                     <Presence Path="1[1].14[1].1[1]"/>
+                  </Assertion>
+                </Constraint>
+                <Constraint ID="Content" Target="1[1].17[1].1[1]">
+                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="ORDER[1].OBSERVATION[2].OBX[1].17[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
+                  <Description>Expected content is missing. The empty value at ORDER.OBSERVATION[2].OBX-17.1 (Identifier) is expected to be present.</Description>
+                  <Assertion>
+                    <Presence Path="1[1].17[1].1[1]"/>
+                  </Assertion>
+                </Constraint>
+                <Constraint ID="Content" Target="1[1].17[1].1[1]">
+                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="ORDER[1].OBSERVATION[2].OBX[1].17[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
+                  <Description>Invalid content (based on test case fixed data). The value at ORDER.OBSERVATION[2].OBX-17.1 (Identifier) does not match the expected value: 'VXC40'.</Description>
+                  <Assertion>
+                    <PlainText IgnoreCase="true" Path="1[1].17[1].1[1]" Text="VXC40"/>
+                  </Assertion>
+                </Constraint>
+                <Constraint ID="Content" Target="1[1].17[1].2[1]">
+                  <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="ORDER[1].OBSERVATION[2].OBX[1].17[1].2[1]" Source="testcase" TestDataCategorization="Presence-Test Case Proper"/>
+                  <Description>Expected content is missing. The empty value at ORDER.OBSERVATION[2].OBX-17.2 (Text) is expected to be present.</Description>
+                  <Assertion>
+                    <Presence Path="1[1].17[1].2[1]"/>
                   </Assertion>
                 </Constraint>
               </Constraints>

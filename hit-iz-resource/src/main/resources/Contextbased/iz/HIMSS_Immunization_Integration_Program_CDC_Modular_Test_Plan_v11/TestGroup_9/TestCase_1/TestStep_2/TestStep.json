@@ -1,1 +1,1 @@
-{"name":"9.1.2 Attestation: Alert a user when a date of birth (PID-30) is entered which indicates a patient is more than 150 years of age (TODAY-DOB > 150 Years)","description":"","id":-7926528494064699704,"position":2,"type":"SUT_MANUAL"}
+{"name":"9.1.2 Attestation: Alert a user when a date of birth (PID-7) is entered which indicates a patient is more than 150 years of age (TODAY-DOB > 150 Years)","description":"","id":2068935472069518935,"position":2,"type":"SUT_MANUAL"}

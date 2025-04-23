@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="678a7653e4b06103abc704e0" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
-  <MetaData Date="Fri Jan 17 15:25:07 UTC 2025" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
+<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="680913b6e4b0d97f2132dd84" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
+  <MetaData Date="Wed Apr 23 16:22:14 UTC 2025" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
   <Constraints>
     <Message>
       <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e863b">
@@ -4371,9 +4371,9 @@
           </Constraint>
           <Constraint ID="Content" Target="3[1].17[1].1[1]">
             <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="ORDER[4].RXA[1].17[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
-            <Description>Invalid content (based on test case fixed data). The value at ORDER[4].RXA-17.1 (Identifier) does not match the expected value: 'PMC'.</Description>
+            <Description>Invalid content (based on test case fixed data). The value at ORDER[4].RXA-17.1 (Identifier) does not match the expected value: 'PFR'.</Description>
             <Assertion>
-              <PlainText IgnoreCase="true" Path="3[1].17[1].1[1]" Text="PMC"/>
+              <PlainText IgnoreCase="true" Path="3[1].17[1].1[1]" Text="PFR"/>
             </Assertion>
           </Constraint>
           <Constraint ID="Content" Target="3[1].17[1].2[1]">

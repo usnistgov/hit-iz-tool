@@ -118,7 +118,7 @@ OBX|2|ID|59781-5^Dose Validity^LN|1|Y||||||F|||20240205
 OBX|3|NM|30973-2^Dose Number in Series^LN|1|4|NA^Not Applicable^HL70353|||||F|||20240205
 OBX|4|CE|59779-9^Immunization Schedule Used^LN|1|VXC16^ACIP^CDCPHINVS||||||F|||20240205
 ORC|RE||3098^WOP||||||||||||||WOP^Western Oregon Pediatrics^HL70362
-RXA|0|1|20240205|20240205|149^Hib PRP-OMP^CVX|999|||01^Historical Information - Source Unspecified^NIP001||IIPIISUNKN^^^UKN^^^unknown|||||||||CP|A
+RXA|0|1|20240205|20240205|49^Hib PRP-OMP^CVX|999|||01^Historical Information - Source Unspecified^NIP001||IIPIISUNKN^^^UKN^^^unknown|||||||||CP|A
 OBX|1|CE|30956-7^Vaccine Type^LN|1|17^Hib NOS^CVX||||||F|||20240205
 OBX|2|ID|59781-5^Dose Validity^LN|1|Y||||||F|||20240205
 OBX|3|NM|30973-2^Dose Number in Series^LN|1|4|NA^Not Applicable^HL70353|||||F|||20240205
