@@ -148,7 +148,7 @@ angular.module('doc')
       }
     };
 
-    $scope.initDocs(null, 3000);
+    $scope.initDocs(null, 0);
 
     $scope.$on('event:doc:scopeChangedEvent', function (event, scope, sectionType) {
       $scope.sectionType = sectionType;
@@ -380,7 +380,7 @@ angular.module('doc').controller('CreateOrEditDocumentCtrl', function ($scope, $
 
 
 angular.module('doc')
-  .controller('ReleaseNotesCtrl', function ($scope, $rootScope, $http, $filter, $cookies, $sce, $timeout, DocumentationManager, StorageService, $modal, Notification) {
+  .controller('ReleaseNotesCtrl', function ($scope, $rootScope, $http, $filter, $cookies, $sce, $timeout, DocumentationManager, StorageService, $modal, Notification,modalService, $modalStack) {
     $scope.docs = [];
     $scope.loading = false;
     $scope.error = null;
@@ -408,6 +408,33 @@ angular.module('doc')
       }
     };
 
+	
+	$scope.openMarkdownModal = function(doc) {
+		DocumentationManager.getDocumentContent(doc.id).then(function (result) {
+		  $scope.html = result;
+		  $scope.doc = doc;
+		  $modalStack.dismissAll('close');
+  		  var modalInstance = $modal.open({
+  			  templateUrl: 'views/documentation/markdownViewer.html',			  	  			  
+  			  scope: $scope,
+  			  controllerAs: 'ctrl',
+  			  windowClass: 'upload-modal',
+  			  backdrop: 'static',
+  			  keyboard: true
+  		  });
+
+  		  $scope.close = function(params) {
+  			  modalInstance.close(params);
+  		  };
+
+  		  $scope.dismissModal = function() {
+  			  modalInstance.dismiss('cancel');
+  		  };	
+		  
+		}, function (error) {
+		  $scope.error = "Sorry, failed to load the docker files";
+		});				  	  
+  };
 
     $scope.initDocs = function (scope, wait) {
       if ($scope.sectionType !== 'app') {
@@ -450,7 +477,7 @@ angular.module('doc')
     };
 
 
-    $scope.initDocs(null, 3000);
+    $scope.initDocs(null, 0);
 
 
     $scope.$on('event:doc:scopeChangedEvent', function (event, scope, sectionType) {
@@ -666,7 +693,7 @@ angular.module('doc')
     };
 
 
-    $scope.initDocs(null, 3000);
+    $scope.initDocs(null, 0);
 
 
     $scope.$on('event:doc:scopeChangedEvent', function (event, scope, sectionType) {
@@ -1038,15 +1065,17 @@ angular.module('doc')
 //   });
 
 angular.module('doc')
-  .controller('ToolDownloadListCtrl', function ($scope, $rootScope, $http, $filter, $cookies, $sce, $timeout, DocumentationManager, StorageService, $modal, Notification) {
+  .controller('ToolDownloadListCtrl', function ($scope, $rootScope, $http, $filter, $cookies, $sce, $timeout, DocumentationManager, StorageService, $modal, Notification,modalService, $modalStack) {
     $scope.loading = false;
     $scope.error = null;
     $scope.scrollbarWidth = $rootScope.getScrollbarWidth();
     $scope.loading = true;
     $scope.type = "DELIVERABLE";
+	$scope.typeDocker = "DOCKER";
     $scope.scope = null;
     $scope.actionError = null;
     $scope.docs = [];
+	$scope.docsDocker = [];
     $scope.canEdit = false;
 
     $scope.sectionType = 'app';
@@ -1065,12 +1094,50 @@ angular.module('doc')
           $scope.loading = false;
         }, function (error) {
           $scope.loading = false;
-          $scope.error = "Sorry, failed to load the files";
+          $scope.error = "Sorry, failed to load the deliverable files";
           $scope.data = [];
         });
+		
+		DocumentationManager.getDocuments(domain, scope, $scope.typeDocker).then(function (result) {
+         $scope.error = null;
+         $scope.docsDocker = result;
+         $scope.loading = false;
+       }, function (error) {
+         $scope.loading = false;
+         $scope.error = "Sorry, failed to load the docker files";
+         $scope.data = [];
+       });
+	   
       }
     };
 
+	
+	  $scope.openMarkdownModal = function(doc) {
+			DocumentationManager.getDocumentContent(doc.id).then(function (result) {
+			  $scope.html = result;
+			  $scope.doc = doc;
+			  $modalStack.dismissAll('close');
+	  		  var modalInstance = $modal.open({
+	  			  templateUrl: 'views/documentation/markdownViewer.html',			  	  			  
+	  			  scope: $scope,
+	  			  controllerAs: 'ctrl',
+	  			  windowClass: 'upload-modal',
+	  			  backdrop: 'static',
+	  			  keyboard: true
+	  		  });
+
+	  		  $scope.close = function(params) {
+	  			  modalInstance.close(params);
+	  		  };
+
+	  		  $scope.dismissModal = function() {
+	  			  modalInstance.dismiss('cancel');
+	  		  };	
+			  
+			}, function (error) {
+			  $scope.error = "Sorry, failed to load the docker files";
+			});				  	  
+	  };
 
     $scope.initDocs = function (scope, wait) {
       if ($scope.sectionType !== 'app') {
@@ -1096,7 +1163,7 @@ angular.module('doc')
     };
 
 
-    $scope.initDocs(null, 3000);
+    $scope.initDocs(null, 0);
 
     $scope.isLink = function (path) {
         return path && path != null && path.startsWith("http");
@@ -1350,7 +1417,7 @@ angular.module('doc')
     };
 
 
-    $scope.initDocs(null, 3000);
+    $scope.initDocs(null, 0);
 
 
     $scope.$on('event:doc:scopeChangedEvent', function (event, scope, sectionType) {
@@ -1542,7 +1609,8 @@ angular.module('doc')
       if (!$rootScope.isDomainSelectionSupported() && $rootScope.appInfo.domains.length === 1){
     	  $scope.domain = $rootScope.appInfo.domains[0].domain;
       }
-               
+      
+	  $scope.loading = true;
       DocumentationManager.getTestCaseDocuments($scope.domain, 'GLOBALANDUSER').then(function (data) {
         $scope.error = null;
         $scope.context = data;
@@ -1586,7 +1654,7 @@ angular.module('doc')
     };
 
 
-    $scope.initDocs(null, 3000);
+    $scope.initDocs(null, 0);
 
 
     $scope.$on('event:doc:scopeChangedEvent', function (event, scope, sectionType) {
@@ -1606,6 +1674,24 @@ angular.module('doc')
         initialState: 'expanded'
       }
     });
+	
+	$scope.anyTestPackageButton = function(){
+		for (i=0;i<$scope.data.length ; i++){
+			if ($scope.data[i].stage === "CB"){
+				return $scope.anyTestPackage($scope.data[i]);
+			}
+		}
+		return false;
+	};
+	
+	$scope.anyTestPackage = function(node){
+		for (i=0;i<node.children.length ; i++){
+			if (node.children[i].tpPath){
+				return true;
+			}
+		}
+		return false;
+	};
 
 
     $scope.downloadCompleteTestPackage = function (stage) {
