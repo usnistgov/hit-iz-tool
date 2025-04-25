@@ -10,7 +10,16 @@ angular.module('domains')
         $scope.loadingAction = false;
         $scope.loadingDomains = false;
         $scope.domainsErrors = null;
+        
+        
+        $scope.getAppInfo = function(){
+                return $rootScope.appInfo;
+        };
 
+		$scope.getAppURL = function () {
+        	return $rootScope.appInfo.url;
+    	};
+        
         $scope.hasDomainAccess = function (domain) {
             return userInfoService.isAuthenticated() && (userInfoService.isAdmin() || (domain != null && domain.owner === userInfoService.getUsername()));
         };
@@ -21,7 +30,7 @@ angular.module('domains')
         };
 
         $scope.viewDomain = function (domain, waitingTime) {
-            waitingTime = waitingTime == undefined ? 3000: waitingTime;
+            waitingTime = waitingTime == undefined ? 1000: waitingTime;
             $scope.loadingDomain = true;
             $scope.errorDomain = null;
             $scope.originalUserDomain = null;
@@ -33,6 +42,7 @@ angular.module('domains')
                         $scope.errorDomain = null;
                         $scope.userDomain = angular.copy(domain);
                         $scope.originalUserDomain = angular.copy($scope.userDomain);
+						$scope.domainForm.$setPristine();
                         $scope.loadingDomain = false;
                     } else {
                         $scope.loadingDomain = false;
@@ -41,11 +51,16 @@ angular.module('domains')
                     $scope.loadingDomain = false;
                 }
             }, waitingTime);
+            
+            
         };
 
-        $scope.openDomain = function (domain) {
-            var url = $window.location.protocol + "//" + $window.location.host + $window.location.pathname + "#/home?d="+ domain.domain;
-            $window.open(url, "open_toolscope_page",'_blank');
+        $scope.getDomainUrl = function (domain) {
+			if(domain && domain.options){
+				return $scope.getAppURL() + "/#/?d="+ domain.options.DOMAIN_CUSTOM_URL;
+			}else{
+				return null;
+			}
         };
 
         $scope.displayScope = function(scope){
@@ -204,7 +219,7 @@ angular.module('domains')
 
 
         $scope.saveAndPublishDomain = function () {
-            if ($rootScope.canPublish()) {
+            if ($scope.canPublish($scope.userDomain)) {
                 var modalInstance = $modal.open({
                     templateUrl: 'views/domains/confirm-publish.html',
                     controller: 'ConfirmDialogCtrl',
@@ -236,7 +251,7 @@ angular.module('domains')
         };
 
         $scope.publishDomain = function (dom) {
-            if ($rootScope.canPublish()) {
+            if ($scope.canPublish(dom)) {
                 var modalInstance = $modal.open({
                     templateUrl: 'views/domains/confirm-publish.html',
                     controller: 'ConfirmDialogCtrl',
@@ -261,8 +276,18 @@ angular.module('domains')
             }
         };
 
+        $scope.hasWriteAccess = function (dom) {
+            return userInfoService.isAuthenticated() && (userInfoService.isAdmin() || (dom != null && dom.owner === userInfoService.getUsername()));
+        };
+
+
+        $scope.canPublish = function (dom) {
+            return $scope.hasWriteAccess(dom) && (userInfoService.isAdmin() || userInfoService.isPublisher());
+        };
+
+
         $scope.unpublishDomain = function (dom) {
-            if ($rootScope.canPublish()) {
+            if ($scope.canPublish(dom)) {
                 var modalInstance = $modal.open({
                     templateUrl: 'views/domains/confirm-unpublish.html',
                     controller: 'ConfirmDialogCtrl',
@@ -292,7 +317,7 @@ angular.module('domains')
 
 
         $scope.saveAndUnpublishDomain = function () {
-            if ($rootScope.canPublish()) {
+            if ($scope.canPublish($scope.userDomain)) {
                 var modalInstance = $modal.open({
                     templateUrl: 'views/domains/confirm-unpublish.html',
                     controller: 'ConfirmDialogCtrl',
