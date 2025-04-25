@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>gov.nist.hit.core.xml</groupId>
 			<artifactId>hit-core-xml-domain</artifactId>
-			<version>1.0.2.ex-SNAPSHOT</version>
+			<version>1.1.0</version>
 			<exclusions>
 				<exclusion>
 					<groupId>gov.nist.hit.core</groupId>

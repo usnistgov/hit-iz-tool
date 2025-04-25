@@ -1,0 +1,32 @@
+services:
+  iz-himss-tomcat:
+    image:  nist775hit/hit-iz-himss-tool:1.9.14
+    platform: linux/amd64
+    ports:
+      - "13102:8080"
+    depends_on:
+      iz-himss-mysql:
+        condition: service_healthy
+        restart: true
+    environment:
+      - JAVA_OPTS=-DRELOAD_DB=true -DCACHE_AT_STARTUP=false -Dhttps.protocols=TLSv1.1,TLSv1.2 -Xms4096m -Xmx4096m
+    restart: unless-stopped
+    links:
+      - iz-himss-mysql:container-mysql
+
+  iz-himss-mysql:
+    image: nist775hit/hit-iz-himss-mysql:1.9.14
+    platform: linux/amd64
+    ports:
+      - "3310:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD=root_password
+    restart: unless-stopped
+    volumes:
+      - ./db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-p$$MYSQL_ROOT_PASSWORD' ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s

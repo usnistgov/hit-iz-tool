@@ -1,4 +1,33 @@
-[		{
+[		
+		{
+		    "title":"Installation Guide",
+		    "name" :"README.md",
+		    "path":"docker/README.md",
+		    "type":"docker",
+		    "position": 1
+		},
+		{
+		    "title":"Application Configuration File",
+		    "name" :"app-config.properties",
+		    "path":"docker/app-config.properties",
+		    "type":"docker",
+		    "position": 2
+		},
+		{
+		    "title":"Docker Compose File",
+		    "name" :"docker-compose.yml",
+		    "path":"docker/docker-compose.yml",
+		    "type":"docker",
+		    "position": 3
+		},
+		{
+			"title": "iztool-1.9.14",
+			"link": "http://hit-prod.nist.gov/wars/iztool-cdc-1.9.14.zip",
+			"date": "2025/04/25",
+			"customizable": true,
+			"order":1
+		},
+		{
 			"title": "iztool-1.9.13",
 			"link": "http://hit-prod.nist.gov/wars/iztool-cdc-1.9.13.zip",
 			"date": "2024/06/28",

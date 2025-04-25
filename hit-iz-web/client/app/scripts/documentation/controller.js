@@ -391,7 +391,6 @@ angular.module('doc')
 
     $scope.loadDocs = function (scope, domain) {
       $scope.loading = true;
-      if ($rootScope.domain != null) {
         if (scope === null || scope === undefined) {
           scope = StorageService.get('DOC_MANAGE_SELECTED_SCOPE_KEY');
           scope = scope && scope != null ? scope : 'GLOBAL';
@@ -405,7 +404,7 @@ angular.module('doc')
           $scope.error = null;
           $scope.docs = [];
         });
-      }
+      
     };
 
 	
