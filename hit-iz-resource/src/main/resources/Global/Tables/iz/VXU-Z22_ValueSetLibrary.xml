@@ -1207,6 +1207,10 @@
 			<ValueElement Value="187" DisplayName="zoster vaccine recombinant" CodeSystem="CVX"/>
 			<ValueElement Value="188" DisplayName="zoster vaccine, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="189" DisplayName="Hepatitis B vaccine (recombinant), CpG adjuvanted" CodeSystem="CVX"/>
+			<!-- added 5/5/2025 -->
+			<ValueElement Value="328" DisplayName="Meningococcal oligosaccharide (MenACWY), (MenB), PF" CodeSystem="CVX"/>
+			<!-- added 5/5/2025 -->
+			<ValueElement Value="329" DisplayName="Chikungunya, VLP, recombinant, 0.8 mL, PF" CodeSystem="CVX"/>
 			<ValueElement Value="801" DisplayName="AS03 Adjuvant" CodeSystem="CVX"/>
 			<ValueElement Value="998" DisplayName="no vaccine administered" CodeSystem="CVX"/>
 			<ValueElement Value="999" DisplayName="unknown" CodeSystem="CVX"/>
@@ -1523,6 +1527,10 @@
 			<ValueElement Value="49281-0860-55" DisplayName="IPV" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0915-01" DisplayName="yellow fever" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0915-05" DisplayName="yellow fever" CodeSystem="NDC"/>
+			<!-- added 5/5/2025 -->
+			<ValueElement Value="50632-0022-02" DisplayName="Vaccinia, smallpox Mpox vaccine live, PF, SQ or ID injection" CodeSystem="NDC"/>
+			<!-- added 5/5/2025 -->
+			<ValueElement Value="50632-0023-02" DisplayName="Vaccinia, smallpox Mpox vaccine live, PF, SQ or ID injection" CodeSystem="NDC"/>
 			<ValueElement Value="51285-0138-50" DisplayName="Adenovirus types 4 and 7" CodeSystem="NDC"/>
 			<ValueElement Value="54868-0980-00" DisplayName="MMR" CodeSystem="NDC"/>
 			<ValueElement Value="54868-3339-01" DisplayName="pneumococcal polysaccharide PPV23" CodeSystem="NDC"/>
@@ -1547,7 +1555,9 @@
 			<ValueElement Value="58160-0820-11" DisplayName="Hep B, adolescent or pediatric" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0820-52" DisplayName="Hep B, adolescent or pediatric" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0821-11" DisplayName="Hep B, adult" CodeSystem="NDC"/>
+			<!-- 5/5/2025 retired sale			
 			<ValueElement Value="58160-0821-34" DisplayName="Hep B, adult" CodeSystem="NDC"/>
+			-->
 			<ValueElement Value="58160-0821-52" DisplayName="Hep B, adult" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0823-11" DisplayName="zoster vaccine subunit" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0825-11" DisplayName="Hep A, ped/adol, 2 dose" CodeSystem="NDC"/>
@@ -1561,7 +1571,9 @@
 			<ValueElement Value="58160-0842-34" DisplayName="Tdap" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0842-51" DisplayName="Tdap" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0842-52" DisplayName="Tdap" CodeSystem="NDC"/>
+			<!-- 5/5/2025 retired sale					
 			<ValueElement Value="58160-0854-52" DisplayName="rotavirus, monovalent" CodeSystem="NDC"/>
+			-->			
 			<ValueElement Value="58160-0879-52" DisplayName="Influenza, seasonal, injectable, preservative free" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0880-52" DisplayName="Influenza, seasonal, injectable, preservative free" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0881-52" DisplayName="Influenza, seasonal, injectable, preservative free" CodeSystem="NDC"/>
@@ -1778,7 +1790,11 @@
 			<ValueElement Value="50632-0001-02" DisplayName="JYNNEOS - Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
 			
 			<ValueElement Value="58160-0855-19" DisplayName="GSK AS03 Adjuvant Solution" CodeSystem="NDC"/>
+
+			<!-- 5/5/2025 retired sale
 			<ValueElement Value="71665-0330-02" DisplayName="Smallpox (Vaccinia) Vaccine, Live (National Stockpile) [ACAM2000]" CodeSystem="NDC"/>
+			-->
+			
 			<ValueElement Value="58160-0824-15" DisplayName="Measles, Mumps, and Rubella Vaccine, Live [Priorix]" CodeSystem="NDC"/>
 			<ValueElement Value="00069-0297-10" DisplayName="Tick-borne encephalitis, inactivated, PF, 0.25mL" CodeSystem="NDC"/>
 			<ValueElement Value="00069-0297-02" DisplayName="Tick-borne encephalitis, inactivated, PF, 0.25mL" CodeSystem="NDC"/>
@@ -1859,10 +1875,12 @@
 			<ValueElement Value="58160-0726-15" DisplayName="Haemophilus influenzae type b vaccine, PRP-T conjugate (Hiberix)" CodeSystem="NDC"/> 
 			<ValueElement Value="49281-0590-10" DisplayName="meningococcal conjugate quadrivalent, MenACWY-TT (MCV4) (MenQuadfi)" CodeSystem="NDC"/> 
 			<ValueElement Value="49281-0590-01" DisplayName="meningococcal conjugate quadrivalent, MenACWY-TT (MCV4) (MenQuadfi)" CodeSystem="NDC"/> 
-			<ValueElement Value="42515-0003-01" DisplayName="Chikungunya live attenuated vaccine, 0.5 mL, PF (IXCHIQ)" CodeSystem="NDC"/> 
+			<ValueElement Value="42515-0003-01" DisplayName="Chikungunya live attenuated vaccine, 0.5 mL, PF (IXCHIQ)" CodeSystem="NDC"/>
+			<!-- 5/5/2025 retired sale
 			<ValueElement Value="49281-0324-50" DisplayName="influenza, Southern Hemisphere, preservative free" CodeSystem="NDC"/> 
-			<ValueElement Value="49281-0398-15" DisplayName="influenza, Southern Hemisphere, quadrivalent, with preservative" CodeSystem="NDC"/> 
+			<ValueElement Value="49281-0398-15" DisplayName="influenza, Southern Hemisphere, quadrivalent, with preservative" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0933-50" DisplayName="influenza, Southern Hemisphere, high-dose, quadrivalent" CodeSystem="NDC"/> 
+			-->
 			<ValueElement Value="50090-7036-00" DisplayName="pneumococcal polysaccharide PPV23" CodeSystem="NDC"/> 
 			<!-- 07/08/2024 -->
 			<ValueElement Value="80777-0345-90" DisplayName="RSV, mRNA, injectable, PF (mRESVIA)" CodeSystem="NDC"/> 
@@ -2067,6 +2085,10 @@
 			<ValueElement Value="49281-0860-88" DisplayName="IPV" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0915-58" DisplayName="yellow fever" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0915-68" DisplayName="yellow fever" CodeSystem="NDC"/>
+			<!-- added 5/5/2025 -->
+			<ValueElement Value="50632-0022-04" DisplayName="Vaccinia, smallpox Mpox vaccine live, PF, SQ or ID injection" CodeSystem="NDC"/>
+			<!-- added 5/5/2025 -->
+			<ValueElement Value="50632-0023-04" DisplayName="Vaccinia, smallpox Mpox vaccine live, PF, SQ or ID injection" CodeSystem="NDC"/>
 			<ValueElement Value="51285-0174-02" DisplayName="Adenovirus types 4 and 7" CodeSystem="NDC"/>
 			<ValueElement Value="51285-0175-02" DisplayName="Adenovirus types 4 and 7" CodeSystem="NDC"/>
 			<ValueElement Value="54868-0980-00" DisplayName="MMR" CodeSystem="NDC"/>
@@ -2091,7 +2113,9 @@
 			<ValueElement Value="58160-0820-01" DisplayName="Hep B, adolescent or pediatric" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0820-43" DisplayName="Hep B, adolescent or pediatric" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0821-01" DisplayName="Hep B, adult" CodeSystem="NDC"/>
+			<!-- 5/5/2025 retired use
 			<ValueElement Value="58160-0821-05" DisplayName="Hep B, adult" CodeSystem="NDC"/>
+			-->
 			<ValueElement Value="58160-0821-43" DisplayName="Hep B, adult" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0825-01" DisplayName="Hep A, ped/adol, 2 dose" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0825-43" DisplayName="Hep A, ped/adol, 2 dose" CodeSystem="NDC"/>
@@ -2106,7 +2130,9 @@
 			<ValueElement Value="58160-0842-05" DisplayName="Tdap" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0842-41" DisplayName="Tdap" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0842-43" DisplayName="Tdap" CodeSystem="NDC"/>
+			<!-- 5/5/2025 retired use
 			<ValueElement Value="58160-0851-01" DisplayName="rotavirus, monovalent" CodeSystem="NDC"/>
+			-->
 			<ValueElement Value="58160-0879-41" DisplayName="Influenza, seasonal, injectable, preservative free" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0880-41" DisplayName="Influenza, seasonal, injectable, preservative free" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0881-41" DisplayName="Influenza, seasonal, injectable, preservative free" CodeSystem="NDC"/>
@@ -2315,7 +2341,9 @@
 			<ValueElement Value="50632-0001-01" DisplayName="JYNNEOS - Smallpox/Monkeypox vaccine Bavarian Nordic A/S" CodeSystem="NDC"/>
 			
 			<ValueElement Value="58160-0855-01" DisplayName="GSK AS03 Adjuvant Solution" CodeSystem="NDC"/>
+			<!-- 5/5/2025 retired use
 			<ValueElement Value="71665-0330-01" DisplayName="Smallpox (Vaccinia) Vaccine, Live (National Stockpile) ACAM2000" CodeSystem="NDC"/>
+			-->
 			<ValueElement Value="58160-0831-03" DisplayName="Measles, Mumps, and Rubella Vaccine, Live [Priorix]" CodeSystem="NDC"/>
 			<ValueElement Value="00069-0297-01" DisplayName="Tick-borne encephalitis, inactivated, PF, 0.25mL" CodeSystem="NDC"/>
 			<ValueElement Value="33332-0322-04" DisplayName="Afluria Quadrivalent" CodeSystem="NDC"/>
@@ -2389,10 +2417,12 @@
 			<ValueElement Value="00069-2377-01" DisplayName="COMIRNATY (COVID-19 Vaccine, mRNA, 2023-2024 Formula), no freeze formulation" CodeSystem="NDC"/> 
 			<!-- 04/18/2024 -->
 			<ValueElement Value="58160-0816-03" DisplayName="Haemophilus influenzae type b vaccine, PRP-T conjugate (Hiberix)" CodeSystem="NDC"/> 
-			<ValueElement Value="42515-0003-00" DisplayName="Chikungunya live attenuated vaccine, 0.5 mL, PF (IXCHIQ)" CodeSystem="NDC"/> 
-			<ValueElement Value="49281-0324-88" DisplayName="influenza, Southern Hemisphere, preservative free" CodeSystem="NDC"/> 
+			<ValueElement Value="42515-0003-00" DisplayName="Chikungunya live attenuated vaccine, 0.5 mL, PF (IXCHIQ)" CodeSystem="NDC"/>
+			<!-- 5/5/2025 retired use
+			<ValueElement Value="49281-0324-88" DisplayName="influenza, Southern Hemisphere, preservative free" CodeSystem="NDC"/>
 			<ValueElement Value="49281-0398-78" DisplayName="influenza, Southern Hemisphere, quadrivalent, with preservative" CodeSystem="NDC"/> 
 			<ValueElement Value="49281-0933-88" DisplayName="influenza, Southern Hemisphere, high-dose, quadrivalent" CodeSystem="NDC"/> 
+			-->
 			<ValueElement Value="50090-7036-01" DisplayName="pneumococcal polysaccharide PPV23" CodeSystem="NDC"/> 
 			<!-- 07/08/2024 -->
 			<!-- <ValueElement Value="80777-0345-01" DisplayName="for RSV, mRNA, injectable, PF (mRESVIA)" CodeSystem="NDC"/> -->
@@ -2642,20 +2672,10 @@
 			
 			<ValueElement Value="253088698300003511210806" CodeSystem="cdcgs1vis" DisplayName="DTaP (Diphtheria, Tetanus, Pertussis) Vaccine VIS"/>
 			<ValueElement Value="253088698300006611210806" CodeSystem="cdcgs1vis" DisplayName="Haemophilus Influenzae type b (Hib) Vaccine VIS"/>
-			<ValueElement Value="253088698300009711210806" CodeSystem="cdcgs1vis" DisplayName="Influenza (Flu) Vaccine (Live, Intranasal) VIS"/>
-			<ValueElement Value="253088698300010311210806" CodeSystem="cdcgs1vis" DisplayName="Influenza (Flu) Vaccine (Inactivated or Recombinant) VIS"/>
-			<ValueElement Value="253088698300012711210806" CodeSystem="cdcgs1vis" DisplayName="MMR Vaccine (Measles, Mumps, and Rubella) VIS"/>
-			<ValueElement Value="253088698300013411210806" CodeSystem="cdcgs1vis" DisplayName="MMRV Vaccine (Measles, Mumps, Rubella, and Varicella) VIS"/>
-			<ValueElement Value="253088698300014111210806" CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccine VIS"/>
 			<ValueElement Value="253088698300015811210806" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13) VIS"/>
-			<ValueElement Value="253088698300017211210806" CodeSystem="cdcgs1vis" DisplayName="Polio Vaccine VIS"/>
-			<ValueElement Value="253088698300024011210806" CodeSystem="cdcgs1vis" DisplayName="Varicella (Chickenpox) Vaccine VIS"/>
-			<ValueElement Value="253088698300027111210806" CodeSystem="cdcgs1vis" DisplayName="Tdap (Tetanus, Diphtheria, Pertussis) Vaccine VIS"/>
 			<ValueElement Value="253088698300028811210806" CodeSystem="cdcgs1vis" DisplayName="Td (Tetanus, Diphtheria) Vaccine VIS"/>
 			<ValueElement Value="253088698300029511210806" CodeSystem="cdcgs1vis" DisplayName="HPV (Human Papillomavirus) Vaccine VIS"/>
-			<ValueElement Value="253088698300030111210806" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
 			
-			<ValueElement Value="253088698300004211211015" CodeSystem="cdcgs1vis" DisplayName="Hepatitis A Vaccine VIS"/>
 			<ValueElement Value="253088698300005911211015" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine VIS"/>
 			<ValueElement Value="253088698300019611211015" CodeSystem="cdcgs1vis" DisplayName="Rotavirus Vaccine VIS"/>
 			<ValueElement Value="253088698300026411211015" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
@@ -2663,7 +2683,6 @@
 			<ValueElement Value="253088698300042411211001" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet- Pediatric 5yrs to &lt;12 yrs"/>
 			<ValueElement Value="253088698300034911210601" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient/Caregiver Fact Sheet"/>
 			
-			<ValueElement Value="253088698300046211211217" CodeSystem="cdcgs1vis" DisplayName="Dengue Vaccine VIS"/>
 			<ValueElement Value="253088698300049311220204" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20) VIS"/>
 			<ValueElement Value="253088698300032511220204" CodeSystem="cdcgs1vis" DisplayName="Recombinant Zoster Vaccine VIS"/>
 			
@@ -2676,20 +2695,16 @@
 			<ValueElement Value="253088698300037011220101" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet"/>
 			<ValueElement Value="253088698300052311220401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Sanofi-GSK EUA Recipient-Caregiver Fact Sheet - Booster"/>
 			
-			<ValueElement Value="253088698300054711220630" CodeSystem="cdcgs1vis" DisplayName="Ebola Vaccine VIS"/>
-			
 			<ValueElement Value="253088698300053011220823" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
 			
 			<ValueElement Value="253088698300034911220901" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna Vaccine EUA Recipient-Caregiver Fact Sheet - 6 yrs and older"/>
 
-			<ValueElement Value="253088698300053011221114" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
 			<ValueElement Value="253088698300048611220101" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet- Pediatric &lt;5 yrs"/>
 			
 			<ValueElement Value="253088698300058511230401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - all ages 6 months and older"/>
 			<ValueElement Value="253088698300059211230401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - all ages 6 months and older"/>
 			
 			<ValueElement Value="253088698300049311230512" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20) VIS"/>
-			<ValueElement Value="253088698300005911230512" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine VIS"/>
 			<!-- 08/29/2023 -->
 			<ValueElement Value="253088698300060811230724" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine (adult vaccine)"/>
 			<ValueElement Value="253088698300026411230724" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
@@ -2707,15 +2722,29 @@
 			<ValueElement Value="253088698300060811231019" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>
 			<ValueElement Value="253088698300064611231207" CodeSystem="cdcgs1vis" DisplayName="Tick-borne Encephalitis Vaccine VIS"/>
 			
-			<!-- 10/18/2024 -->
-			<ValueElement Value="253088698300031811241017" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
-			<ValueElement Value="253088698300063911241017" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older"/>
-			<ValueElement Value="253088698300060811241017" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>
-
 			<!-- 11/15/2024 -->
 			<ValueElement Value="253088698300058511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
 			<ValueElement Value="253088698300061511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
 			<ValueElement Value="253088698300037011240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older"/>
+
+			<!-- added 5/5/2025 vis barcodes-->
+			<ValueElement Value="253088698300004211250131" CodeSystem="cdcgs1vis" DisplayName="Hepatitis A Vaccine VIS"/>
+			<ValueElement Value="253088698300005911250131" CodeSystem="cdcgs1vis" DisplayName="Hepatitis B Vaccine VIS"/>
+			<ValueElement Value="253088698300009711250131" CodeSystem="cdcgs1vis" DisplayName="Influenza (Flu) Vaccine (Live, Intranasal) VIS"/>
+			<ValueElement Value="253088698300010311250131" CodeSystem="cdcgs1vis" DisplayName="Influenza (Flu) Vaccine (Inactivated or Recombinant) VIS"/>
+			<ValueElement Value="253088698300012711250131" CodeSystem="cdcgs1vis" DisplayName="MMR Vaccine (Measles, Mumps, and Rubella) VIS"/>
+			<ValueElement Value="253088698300013411250131" CodeSystem="cdcgs1vis" DisplayName="MMRV Vaccine (Measles, Mumps, Rubella, and Varicella) VIS"/>
+			<ValueElement Value="253088698300014111250131" CodeSystem="cdcgs1vis" DisplayName="Meningococcal ACWY Vaccine VIS"/>
+			<ValueElement Value="253088698300017211250131" CodeSystem="cdcgs1vis" DisplayName="Polio Vaccine VIS"/>
+			<ValueElement Value="253088698300024011250131" CodeSystem="cdcgs1vis" DisplayName="Varicella (Chickenpox) Vaccine VIS"/>
+			<ValueElement Value="253088698300027111250131" CodeSystem="cdcgs1vis" DisplayName="Tdap (Tetanus, Diphtheria, Pertussis) Vaccine VIS"/>
+			<ValueElement Value="253088698300030111250131" CodeSystem="cdcgs1vis" DisplayName="Meningococcal B Vaccine VIS"/>
+			<ValueElement Value="253088698300031811250131" CodeSystem="cdcgs1vis" DisplayName="Cholera Vaccine VIS"/>
+			<ValueElement Value="253088698300046211250131" CodeSystem="cdcgs1vis" DisplayName="Dengue Vaccine VIS"/>
+			<ValueElement Value="253088698300053011250131" CodeSystem="cdcgs1vis" DisplayName="Smallpox-Monkeypox Vaccine VIS"/>
+			<ValueElement Value="253088698300054711250131" CodeSystem="cdcgs1vis" DisplayName="Ebola Vaccine VIS"/>
+			<ValueElement Value="253088698300060811250131" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>
+			<ValueElement Value="253088698300063911250131" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older"/>
 
 			<!--
 			<ValueElement Value="" CodeSystem="cdcgs1vis" DisplayName=""/>
