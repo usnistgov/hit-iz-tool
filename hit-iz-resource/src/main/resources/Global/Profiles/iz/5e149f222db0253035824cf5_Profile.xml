@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- edited with XMLSpy v2015 rel. 3 (x64) (http://www.altova.com) by ww (NIST) -->
-<ConformanceProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" HL7Version="2.5.1" ID="672916a4e4b03f26ac6e8d3c_5e149f222db0253035824cf5" Type="Constrainable" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/Profile.xsd">  
+<ConformanceProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" HL7Version="2.5.1" ID="681a34f7e4b0d97f8adceec4_5e149f222db0253035824cf5" Type="Constrainable" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/Profile.xsd">  
   <MetaData Date="20200902" Name="Z33 Message profile" OrgName="NIST" SpecificationName="Implementation Guide for Immunization Messaging, Release 1.5 October 1 2014" Version="1.9.11"/>  
   <Encodings> 
     <Encoding>ER7</Encoding>  
     <Encoding>XML</Encoding> 
   </Encodings>  
   <Messages> 
-    <Message Description="Z33:Return an acknowledgement with no person records" Event="K11" ID="672916a4e4b03f26ac6e8d3c_5e149f222db0253035824cf5_6a54b5a1-3d50-423e-9f84-8a721ad76342" Identifier="Z33" Name="Return an acknowledgement with no person records" StructID="RSP_K11" Type="RSP"> 
+    <Message Description="Z33:Return an acknowledgement with no person records" Event="K11" ID="681a34f7e4b0d97f8adceec4_5e149f222db0253035824cf5_6a54b5a1-3d50-423e-9f84-8a721ad76342" Identifier="Z33" Name="Return an acknowledgement with no person records" StructID="RSP_K11" Type="RSP"> 
       <Segment Max="1" Min="1" Ref="MSH_IZ 1_5_Z33" Usage="R"/>  
       <Segment Max="*" Min="0" Ref="SFT_IZ_V_5_RSP_Z32_146" Usage="X"/>  
       <Segment Max="1" Min="1" Ref="MSA_IZ1_5" Usage="R"/>  

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- edited with XMLSpy v2015 rel. 3 (x64) (http://www.altova.com) by ww (NIST) -->
-<ConformanceProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" HL7Version="2.5.1" ID="672916a4e4b03f26ac6e8d3c_5e149f222db0253035824cee" Type="Constrainable" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/Profile.xsd">  
+<ConformanceProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" HL7Version="2.5.1" ID="681a34f7e4b0d97f8adceec4_5e149f222db0253035824cee" Type="Constrainable" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/Profile.xsd">  
   <MetaData Date="20200902" Name="Z22 Message profile" OrgName="NIST" SpecificationName="Implementation Guide for Immunization Messaging, Release 1.5 October 1 2014" Version="1.9.11"/>  
   <Encodings> 
     <Encoding>ER7</Encoding>  
     <Encoding>XML</Encoding> 
   </Encodings>  
   <Messages> 
-    <Message Description="Z22: Unsolicited Immunization Update" Event="V04" ID="672916a4e4b03f26ac6e8d3c_5e149f222db0253035824cee_aa72383a-7b48-46e5-a74a-82e019591fe7" Identifier="Z22" Name="Unsolicited Immunization Update" StructID="VXU_V04" Type="VXU"> 
+    <Message Description="Z22: Unsolicited Immunization Update" Event="V04" ID="681a34f7e4b0d97f8adceec4_5e149f222db0253035824cee_aa72383a-7b48-46e5-a74a-82e019591fe7" Identifier="Z22" Name="Unsolicited Immunization Update" StructID="VXU_V04" Type="VXU"> 
       <Segment Max="1" Min="1" Ref="MSH_IZ 1_5_Z22" Usage="R"/>  
       <Segment Max="*" Min="0" Ref="SFT_219" Usage="O"/>  
       <Segment Max="1" Min="1" Ref="PID_IZ 1_5" Usage="R"/>  

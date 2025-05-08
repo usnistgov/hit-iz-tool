@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- edited with XMLSpy v2015 rel. 3 (x64) (http://www.altova.com) by ww (NIST) -->
-<ValueSetLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="672916a4e4b03f26ac6e8d3c_5e149f222db0253035824ce0_VS" ValueSetLibraryIdentifier="672916a4e4b03f26ac6e8d3c_5e149f222db0253035824ce0_VS" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ValueSets.xsd">  
+<ValueSetLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="681a34f7e4b0d97f8adceec4_5e149f222db0253035824ce0_VS" ValueSetLibraryIdentifier="681a34f7e4b0d97f8adceec4_5e149f222db0253035824ce0_VS" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ValueSets.xsd">  
   <MetaData Date="20200902" Name="Z23 Message ValueSets" OrgName="NIST" SpecificationName="Implementation Guide for Immunization Messaging, Release 1.5 October 1 2014" Version="1.9.11"/>  
   <NoValidation> 
     <BindingIdentifier>HL70363</BindingIdentifier>  

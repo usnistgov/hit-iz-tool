@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- edited with XMLSpy v2015 rel. 3 (x64) (http://www.altova.com) by ww (NIST) -->
-<ConformanceProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" HL7Version="2.5.1" ID="672916a4e4b03f26ac6e8d3c_5e149f222db0253035824ce7" Type="Constrainable" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/Profile.xsd">  
+<ConformanceProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" HL7Version="2.5.1" ID="681a34f7e4b0d97f8adceec4_5e149f222db0253035824ce7" Type="Constrainable" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/Profile.xsd">  
   <MetaData Date="20200902" Name="Z44 Message profile" OrgName="NIST" SpecificationName="Implementation Guide for Immunization Messaging, Release 1.5 October 1 2014" Version="1.9.11"/>  
   <Encodings> 
     <Encoding>ER7</Encoding>  
     <Encoding>XML</Encoding> 
   </Encodings>  
   <Messages> 
-    <Message Description="Z44: Request Evaluated Immunization History and Forecast Query" Event="Q11" ID="672916a4e4b03f26ac6e8d3c_5e149f222db0253035824ce7_b760d322-9afd-439e-96f5-43db66937c4e" Identifier="Z44" Name="Request Evaluated Immunization History and Forecast Query" StructID="QBP_Q11" Type="QBP"> 
+    <Message Description="Z44: Request Evaluated Immunization History and Forecast Query" Event="Q11" ID="681a34f7e4b0d97f8adceec4_5e149f222db0253035824ce7_b760d322-9afd-439e-96f5-43db66937c4e" Identifier="Z44" Name="Request Evaluated Immunization History and Forecast Query" StructID="QBP_Q11" Type="QBP"> 
       <Segment Max="1" Min="1" Ref="MSH_IZ_Z44" Usage="R"/>  
       <Segment Max="*" Min="0" Ref="SFT_IZ_Z34" Usage="O"/>  
       <Segment Max="1" Min="1" Ref="QPD_IZ" Usage="R"/>  
