@@ -1374,6 +1374,10 @@
       <ValueElement CodeSystem="CVX" DisplayName="zoster vaccine recombinant" Value="187"/>  
       <ValueElement CodeSystem="CVX" DisplayName="zoster vaccine, unspecified formulation" Value="188"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hepatitis B vaccine (recombinant), CpG adjuvanted" Value="189"/>  
+      <!-- added 5/9/2025 -->  
+      <ValueElement CodeSystem="CVX" DisplayName="Vaccinia (smallpox, mpox), unspecified" Value="325"/>  
+      <ValueElement CodeSystem="CVX" DisplayName="Dengue fever, unspecified" Value="330"/>  
+      <ValueElement CodeSystem="CVX" DisplayName="Influenza, Southern Hemisphere, trivalent, PF" Value="331"/>  
       <!-- added 5/5/2025 -->  
       <ValueElement CodeSystem="CVX" DisplayName="Meningococcal oligosaccharide (MenACWY), (MenB), PF" Value="328"/>  
       <!-- added 5/5/2025 -->  
@@ -1390,7 +1394,8 @@
       <ValueElement CodeSystem="CVX" DisplayName="tetanus and diphtheria toxoids, adsorbed, preservative free, for adult use, Lf unspecified" Value="196"/>  
       <ValueElement CodeSystem="CVX" DisplayName="influenza, high-dose seasonal, quadrivalent, 0.7mL dose, preservative free" Value="197"/>  
       <ValueElement CodeSystem="CVX" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, pediatric 0.25mL dose, preservative free" Value="200"/>  
-      <ValueElement CodeSystem="CVX" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" Value="201"/>  
+      <!-- updated description 5/9/2025 -->  
+      <ValueElement CodeSystem="CVX" DisplayName="Influenza, Southern Hemisphere, quadrivalent, PF" Value="201"/>  
       <ValueElement CodeSystem="CVX" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, with preservative" Value="202"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Influenza vaccine, quadrivalent, adjuvanted preservative free" Value="205"/>  
       <ValueElement CodeSystem="CVX" DisplayName="meningococcal polysaccharide (groups A, C, Y, W-135) tetanus toxoid conjugate vaccine 0.5mL dose, preservative free" Value="203"/>  
