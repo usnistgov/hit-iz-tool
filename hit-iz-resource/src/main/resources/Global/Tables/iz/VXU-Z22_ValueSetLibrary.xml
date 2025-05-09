@@ -1207,6 +1207,10 @@
 			<ValueElement Value="187" DisplayName="zoster vaccine recombinant" CodeSystem="CVX"/>
 			<ValueElement Value="188" DisplayName="zoster vaccine, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="189" DisplayName="Hepatitis B vaccine (recombinant), CpG adjuvanted" CodeSystem="CVX"/>
+			<!-- added 5/9/2025 -->
+			<ValueElement Value="325" DisplayName="Vaccinia (smallpox, mpox), unspecified" CodeSystem="CVX"/>
+			<ValueElement Value="330" DisplayName="Dengue fever, unspecified" CodeSystem="CVX"/>
+			<ValueElement Value="331" DisplayName="Influenza, Southern Hemisphere, trivalent, PF" CodeSystem="CVX"/>
 			<!-- added 5/5/2025 -->
 			<ValueElement Value="328" DisplayName="Meningococcal oligosaccharide (MenACWY), (MenB), PF" CodeSystem="CVX"/>
 			<!-- added 5/5/2025 -->
@@ -1214,9 +1218,6 @@
 			<ValueElement Value="801" DisplayName="AS03 Adjuvant" CodeSystem="CVX"/>
 			<ValueElement Value="998" DisplayName="no vaccine administered" CodeSystem="CVX"/>
 			<ValueElement Value="999" DisplayName="unknown" CodeSystem="CVX"/>
-
-
-
 			<ValueElement Value="190" DisplayName="Typhoid conjugate vaccine (non-US)" CodeSystem="CVX"/>
 			<ValueElement Value="191" DisplayName="meningococcal A polysaccharide vaccine (non-US)" CodeSystem="CVX"/>
 			<ValueElement Value="192" DisplayName="meningococcal AC polysaccharide vaccine (non-US)" CodeSystem="CVX"/>
@@ -1233,7 +1234,10 @@
 
 
 			<ValueElement Value="200" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, pediatric 0.25mL dose, preservative free" CodeSystem="CVX"/>
-			<ValueElement Value="201" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" CodeSystem="CVX"/>
+			
+			<!-- updated description 5/9/2025 -->
+			<ValueElement Value="201" DisplayName="Influenza, Southern Hemisphere, quadrivalent, PF" CodeSystem="CVX"/>
+			
 			<ValueElement Value="202" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, with preservative" CodeSystem="CVX"/>
 			
 			<ValueElement Value="205" DisplayName="Influenza vaccine, quadrivalent, adjuvanted preservative free" CodeSystem="CVX"/>
@@ -1394,8 +1398,10 @@
 			<ValueElement Value="00006-4995-00" DisplayName="Hep B, adult" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4995-41" DisplayName="Hep B, adult" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4999-00" DisplayName="MMRV" CodeSystem="NDC"/>
+			<!-- 5/9/2025 retired sale			
 			<ValueElement Value="13533-0131-01" DisplayName="TDVAX" CodeSystem="NDC"/>
 			<ValueElement Value="14362-0111-04" DisplayName="TDVAX" CodeSystem="NDC"/>
+			-->
 			<ValueElement Value="17478-0131-01" DisplayName="Td (adult), adsorbed" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0845-11" DisplayName="Influenza, seasonal, injectable" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0850-52" DisplayName="Influenza, seasonal, injectable" CodeSystem="NDC"/>
@@ -1917,7 +1923,15 @@
 			<ValueElement Value="70460-0004-01" DisplayName="cholera, live attenuated (Vaxchora)" CodeSystem="NDC"/> 
 			<ValueElement Value="69401-0000-02" DisplayName="typhoid, oral (Vivotif)" CodeSystem="NDC"/> 
 			<!-- 01/30/2025 -->
-			<ValueElement Value="80777-0345-89" DisplayName="Moderna Respiratory Syncytial Virus (RSV) vaccine (mRESVIA)" CodeSystem="NDC"/> 
+			<ValueElement Value="80777-0345-89" DisplayName="Moderna Respiratory Syncytial Virus (RSV) vaccine (mRESVIA)" CodeSystem="NDC"/>
+
+			<!-- added 5/9/2025 -->			
+			<ValueElement Value="50090-4526-00" DisplayName="HepB-CpG" CodeSystem="NDC"/>
+			<ValueElement Value="50632-0002-02" DisplayName="Vaccinia, smallpox Mpox vaccine live, PF, SQ or ID injection" CodeSystem="NDC"/>
+			<ValueElement Value="71665-0430-02" DisplayName="Vaccinia (smallpox, mpox), live" CodeSystem="NDC"/>
+			<ValueElement Value="71665-0330-03" DisplayName="Vaccinia (smallpox, mpox), live" CodeSystem="NDC"/>
+			<ValueElement Value="71665-0330-02" DisplayName="Vaccinia (smallpox, mpox), live" CodeSystem="NDC"/> 			
+			<ValueElement Value="71665-0430-03" DisplayName="Vaccinia (smallpox, mpox), live" CodeSystem="NDC"/>
 
 			<!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
@@ -1955,8 +1969,10 @@
 			<ValueElement Value="00006-4992-01" DisplayName="Hep B, dialysis" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4995-01" DisplayName="Hep B, adult" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4999-01" DisplayName="MMRV" CodeSystem="NDC"/>
+			<!-- 5/9/2025 retired use
 			<ValueElement Value="13533-0131-00" DisplayName="TDVAX" CodeSystem="NDC"/>
 			<ValueElement Value="14362-0111-03" DisplayName="TDVAX" CodeSystem="NDC"/>
+			-->
 			<ValueElement Value="17478-0131-00" DisplayName="Td (adult), adsorbed" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0845-01" DisplayName="Influenza, seasonal, injectable" CodeSystem="NDC"/>
 			<ValueElement Value="19515-0850-41" DisplayName="Influenza, seasonal, injectable" CodeSystem="NDC"/>
@@ -2451,7 +2467,14 @@
 			<ValueElement Value="59267-4426-01" DisplayName="Pfizer-BioNTech Covid-19 Vaccine" CodeSystem="NDC"/> 
 			<ValueElement Value="66019-311-00" DisplayName="FluMist (MedImmune, Inc. AstraZeneca)" CodeSystem="NDC"/> 
 			<!-- 01/30/2025-->
-			<ValueElement Value="80777-0345-01" DisplayName="Moderna Respiratory Syncytial Virus (RSV) vaccine (mRESVIA)" CodeSystem="NDC"/> 
+			<ValueElement Value="80777-0345-01" DisplayName="Moderna Respiratory Syncytial Virus (RSV) vaccine (mRESVIA)" CodeSystem="NDC"/>
+
+			<!-- added 5/9/2025 -->
+			<ValueElement Value="50632-0002-01" DisplayName="Vaccinia, smallpox Mpox vaccine live, PF, SQ or ID injection" CodeSystem="NDC"/>
+			<ValueElement Value="50090-4526-01" DisplayName="HepB-CpG" CodeSystem="NDC"/>
+			<ValueElement Value="71665-0430-01" DisplayName="Vaccinia (smallpox, mpox), live" CodeSystem="NDC"/>
+			<ValueElement Value="71665-0330-01" DisplayName="Vaccinia (smallpox, mpox), live" CodeSystem="NDC"/>
+
 			<!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
 			-->

@@ -1380,6 +1380,10 @@
 			<ValueElement Value="187" DisplayName="zoster vaccine recombinant" CodeSystem="CVX"/>
 			<ValueElement Value="188" DisplayName="zoster vaccine, unspecified formulation" CodeSystem="CVX"/>
 			<ValueElement Value="189" DisplayName="Hepatitis B vaccine (recombinant), CpG adjuvanted" CodeSystem="CVX"/>
+                        <!-- added 5/9/2025 -->
+                        <ValueElement Value="325" DisplayName="Vaccinia (smallpox, mpox), unspecified" CodeSystem="CVX"/>
+                        <ValueElement Value="330" DisplayName="Dengue fever, unspecified" CodeSystem="CVX"/>
+                        <ValueElement Value="331" DisplayName="Influenza, Southern Hemisphere, trivalent, PF" CodeSystem="CVX"/>
 			<!-- added 5/5/2025 -->
                         <ValueElement Value="328" DisplayName="Meningococcal oligosaccharide (MenACWY), (MenB), PF" CodeSystem="CVX"/>
 			<!-- added 5/5/2025 -->
@@ -1387,9 +1391,6 @@
 			<ValueElement Value="801" DisplayName="AS03 Adjuvant" CodeSystem="CVX"/>
 			<ValueElement Value="998" DisplayName="no vaccine administered" CodeSystem="CVX"/>
 			<ValueElement Value="999" DisplayName="unknown" CodeSystem="CVX"/>
-			
-			
-			
 			<ValueElement Value="190" DisplayName="Typhoid conjugate vaccine (non-US)" CodeSystem="CVX"/>
 			<ValueElement Value="191" DisplayName="meningococcal A polysaccharide vaccine (non-US)" CodeSystem="CVX"/>
 			<ValueElement Value="192" DisplayName="meningococcal AC polysaccharide vaccine (non-US)" CodeSystem="CVX"/>
@@ -1406,7 +1407,10 @@
 			
 			
 			<ValueElement Value="200" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, pediatric 0.25mL dose, preservative free" CodeSystem="CVX"/>
-			<ValueElement Value="201" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, no preservative" CodeSystem="CVX"/>
+
+                        <!-- updated description 5/9/2025 -->
+                        <ValueElement Value="201" DisplayName="Influenza, Southern Hemisphere, quadrivalent, PF" CodeSystem="CVX"/>			
+			
 			<ValueElement Value="202" DisplayName="influenza, seasonal, Southern Hemisphere, quadrivalent, 0.5mL dose, with preservative" CodeSystem="CVX"/>
 			
 			<ValueElement Value="205" DisplayName="Influenza vaccine, quadrivalent, adjuvanted preservative free" CodeSystem="CVX"/>
