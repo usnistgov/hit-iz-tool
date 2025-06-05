@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="680bbe09e4b0d97f2133997b" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
-  <MetaData Date="Fri Apr 25 16:53:29 UTC 2025" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
+<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="6841aa1ee4b0d97f18898077" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
+  <MetaData Date="Thu Jun 05 14:30:54 UTC 2025" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
   <Constraints>
     <Message>
       <ByID ID="65bbb6102d8670360bc30cd8_65bd02412d8670360bc31ede_65bcfce68b87bc00063e863a">
@@ -174,10 +174,17 @@
           </Assertion>
         </Constraint>
         <Constraint ID="Content" Target="3[1].6[1].1[1]">
-          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="QPD[1].6[1].1[1]" Source="testcase" TestDataCategorization="Presence-System Generated"/>
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="QPD[1].6[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
           <Description>Expected content is missing. The empty value at QPD-6.1 (Time) is expected to be present.</Description>
           <Assertion>
             <Presence Path="3[1].6[1].1[1]"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="Content" Target="3[1].6[1].1[1]">
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="QPD[1].6[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
+          <Description>Invalid content (based on test case fixed data). The value at QPD-6.1 (Time) does not match the expected value: '19840405'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="true" Path="3[1].6[1].1[1]" Text="19840405"/>
           </Assertion>
         </Constraint>
         <Constraint ID="Content" Target="3[1].7[1]">
