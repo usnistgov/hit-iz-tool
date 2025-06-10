@@ -1,6 +1,6 @@
 services:
   tomcat:
-    image:  nist775hit/hti-iz-tool
+    image:  nist775hit/hti-iz-svap-tool
     platform: linux/amd64
     build:      
       context: ./
@@ -11,15 +11,6 @@ services:
       mysql:
         condition: service_healthy
         restart: true
-      hl7v2validationvervice-122:
-        restart: true
-        condition: service_started
-      hl7v2validationvervice-168:
-        restart: true
-        condition: service_started
-      hl7v2validationvervice-170:
-        restart: true
-        condition: service_started
     environment:
       - JAVA_OPTS=-Xmx4096m -Xms4096m -DRELOAD_DB=true
     links:
@@ -28,7 +19,7 @@ services:
     restart: always
 
   mysql:
-    image: nist775hit/hti-iz-mysql
+    image: nist775hit/hti-iz-svap-mysql
     platform: linux/amd64
     build:
       context: ./
@@ -45,19 +36,3 @@ services:
       start_period: 5s  
     
 
-  hl7v2validationvervice-170:
-    image:  nist775hit/hl7v2validationvervice-170
-    platform: linux/amd64
-    restart: unless-stopped
-
-  hl7v2validationvervice-168:
-    image:  nist775hit/hl7v2validationvervice-168
-    platform: linux/amd64
-    restart: unless-stopped
-
-  hl7v2validationvervice-122:
-    image:  nist775hit/hl7v2validationvervice-122
-    platform: linux/amd64
-    restart: unless-stopped
-
-  

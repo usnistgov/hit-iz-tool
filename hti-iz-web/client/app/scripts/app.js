@@ -103,67 +103,64 @@ app.config(function($routeProvider, $httpProvider, localStorageServiceProvider, 
 
 	$routeProvider
 		.when('/', {
-			templateUrl: 'views/welcome.html'
-		})
-		.when('/:domain/home', {
 			templateUrl: 'views/home.html'
 		})
-		.when('/onc', {
-			redirectTo: '/onc/home'
-		})
-		.when('/svap', {
-			redirectTo: '/svap/home'
-		})
-		//		.when('/home', {
-		//			templateUrl: 'views/home.html',
-		//			controller: function($rootScope) {
-		//				$rootScope.isWelcomePage = false;
-		//			}
-		//		})
-		.when('/:domain/doc', {
+//		.when('/:domain/home', {
+//			templateUrl: 'views/home.html'
+//		})
+//		.when('/onc', {
+//			redirectTo: '/onc/home'
+//		})
+//		.when('/svap', {
+//			redirectTo: '/svap/home'
+//		})
+				.when('/home', {
+					templateUrl: 'views/home.html',					
+				})
+		.when('/doc', {
 			templateUrl: 'views/documentation/documentation.html'
 		})
-		.when('/:domain/setting', {
+		.when('/setting', {
 			templateUrl: 'views/setting.html'
 		})
-		.when('/:domain/about', {
+		.when('/about', {
 			templateUrl: 'views/about.html'
 		})
-		.when('/:domain/contact', {
+		.when('/contact', {
 			templateUrl: 'views/contact.html'
 		})
-		.when('/:domain/soapEnv', {
+		.when('/soapEnv', {
 			templateUrl: 'views/envelope/envelope.html'
 		})
-		.when('/:domain/soapConn', {
+		.when('/soapConn', {
 			templateUrl: 'views/connectivity/connectivity.html'
 		})
-		.when('/:domain/cf', {
+		.when('/cf', {
 			templateUrl: 'views/cf/cf.html'
 		})
-		.when('/:domain/cb', {
+		.when('/cb', {
 			templateUrl: 'views/cb/cb.html'
 		})
-		.when('/:domain/blank', {
+		.when('/blank', {
 			templateUrl: 'blank.html'
 		})
-		.when('/:domain/error', {
+		.when('/error', {
 			templateUrl: 'error.html'
 		})
-		.when('/:domain/transport', {
+		.when('/transport', {
 			templateUrl: 'views/transport/transport.html'
 		})
-		.when('/:domain/forgotten', {
+		.when('/forgotten', {
 			templateUrl: 'views/account/forgotten.html',
 			controller: 'ForgottenCtrl'
-		}).when('/:domain/registration', {
+		}).when('/registration', {
 			templateUrl: 'views/account/registration.html',
 			controller: 'RegistrationCtrl'
-		}).when('/:domain/useraccount', {
+		}).when('/useraccount', {
 			templateUrl: 'views/account/userAccount.html'
-		}).when('/:domain/glossary', {
+		}).when('/glossary', {
 			templateUrl: 'views/glossary.html'
-		}).when('/:domain/resetPassword', {
+		}).when('/resetPassword', {
 			templateUrl: 'views/account/registerResetPassword.html',
 			controller: 'RegisterResetPasswordCtrl',
 			resolve: {
@@ -171,28 +168,28 @@ app.config(function($routeProvider, $httpProvider, localStorageServiceProvider, 
 					return false;
 				}
 			}
-		}).when('/:domain/registrationSubmitted', {
+		}).when('/registrationSubmitted', {
 			templateUrl: 'views/account/registrationSubmitted.html'
 		})
-		.when('/:domain/uploadTokens', {
+		.when('/uploadTokens', {
 			templateUrl: 'views/home.html',
 			controller: 'UploadTokenCheckCtrl'
 		})
-		.when('/:domain/addprofiles', {
+		.when('/addprofiles', {
 			redirectTo: '/cf'
 		})
-		.when('/:domain/saveCBTokens', {
+		.when('/saveCBTokens', {
 			templateUrl: 'views/home.html',
 			controller: 'UploadCBTokenCheckCtrl'
 		})
-		.when('/:domain/addcbprofiles', {
+		.when('/addcbprofiles', {
 			templateUrl: 'views/home.html',
 			controller: 'UploadCBTokenCheckCtrl'
 		})
-		.when('/:domain/domains', {
+		.when('/domains', {
 			templateUrl: 'views/domains/domains.html'
 		})
-		.when('/:domain/logs', {
+		.when('/logs', {
 			templateUrl: 'views/logs/logs.html'
 		})
 		.otherwise({
@@ -590,14 +587,14 @@ app.run(function(myService, $rootScope, $location, StorageService, userInfoServi
 	$rootScope.clearDomainSession();
 
 
-	$rootScope.domainIdToName = function(domainId) {
-		if (domainId === 'iz') {
-			return "onc";
-		} else if (domainId === 'iz-hti-1-svap') {
-			return "svap"
-		}
-
-	}
+//	$rootScope.domainIdToName = function(domainId) {
+//		if (domainId === 'iz') {
+//			return "onc";
+//		} else if (domainId === 'iz-hti-1-svap') {
+//			return "svap"
+//		}
+//
+//	}
 
 	$rootScope.stackPosition = 0;
 	$rootScope.transportSupported = false;
@@ -1028,41 +1025,42 @@ app.run(function(myService, $rootScope, $location, StorageService, userInfoServi
 
 
 	//only init with a domain on not the welcome page.
-	$rootScope.$on('$routeChangeStart', function(event, next, current) {
-		if (next && next['$$route']) {
-			var route = next['$$route']['originalPath'];
-			if (route === '/') {
-				$rootScope.isWelcomePage = true;
-				myService.initData(null);
-			} else if (route.includes("/:domain")) {
-				var domain = next.params.domain;
-				if (domain === "onc") {
-					$rootScope.isWelcomePage = false;
-					if (StorageService.get(StorageService.APP_SELECTED_DOMAIN) !== 'iz') {
-						myService.initData('iz');
-					}
-				} else if (domain === 'svap') {
-					$rootScope.isWelcomePage = false;
-					if (StorageService.get(StorageService.APP_SELECTED_DOMAIN) !== 'iz-hti-1-svap') {
-						myService.initData('iz-hti-1-svap');
-					}
-				} else {
-					$location.path('/');
-				}
-			}
-		}
-	});
+//	$rootScope.$on('$routeChangeStart', function(event, next, current) {
+//		if (next && next['$$route']) {
+//			var route = next['$$route']['originalPath'];
+//			if (route === '/') {
+//				$rootScope.isWelcomePage = true;
+//				myService.initData(null);
+//			} else if (route.includes("/:domain")) {
+//				var domain = next.params.domain;
+//				if (domain === "onc") {
+//					$rootScope.isWelcomePage = false;
+//					if (StorageService.get(StorageService.APP_SELECTED_DOMAIN) !== 'iz') {
+//						myService.initData('iz');
+//					}
+//				} else if (domain === 'svap') {
+//					$rootScope.isWelcomePage = false;
+//					if (StorageService.get(StorageService.APP_SELECTED_DOMAIN) !== 'iz-hti-1-svap') {
+//						myService.initData('iz-hti-1-svap');
+//					}
+//				} else {
+//					$location.path('/');
+//				}
+//			}
+//		}
+//	});
 
+myService.initData('iz-hti-1-svap');
 
 
 });
 
 
-angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
-	.controller('CarouselController', ['$scope', '$timeout', '$transition', '$q', function($scope, $timeout, $transition, $q) {
-	}]).directive('carousel', [function() {
-		return {}
-	}]);
+//angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
+//	.controller('CarouselController', ['$scope', '$timeout', '$transition', '$q', function($scope, $timeout, $transition, $q) {
+//	}]).directive('carousel', [function() {
+//		return {}
+//	}]);
 
 
 angular.module('hit-tool-services').factory('TabSettings',

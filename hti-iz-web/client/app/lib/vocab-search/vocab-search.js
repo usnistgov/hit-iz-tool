@@ -130,16 +130,6 @@
           $scope.tmpSearchResults = [].concat($scope.searchResults);
         }
       };
-	  
-//	   $scope.alphaNumComparator = function(v1, v2) {
-//	    // If we have numbers compare numbers
-//	    if (!isNaN(Number(v1.value)) && !isNaN(Number(v2.value)) ) {
-//	      return Number(v1.value) < Number( v2.value) ? -1 : 1;
-//	    }
-//	    // Compare strings alphabetically, taking locale into account
-//	    return v1.value.localeCompare(v2.value);
-//	  };
-
 
       $scope.selectValueSetDefinition = function (tableDefinition, tableLibrary) {
         $scope.searchResults = [];

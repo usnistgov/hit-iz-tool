@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ProfileSlicing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="67e3079be4b0dfd1adef7b29_67ab57a7e4b0a4d63f76a630_S" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/usnistgov/hl7-v2-schemas/1.7.0/src/main/resources/hl7-v2-schemas/ProfileSlicing.xsd">
-  <FieldSlicing>
-    <SegmentContext ID="RXA_IZ01">
-      <OccurrenceSlicing Position="9">
-        <Slice Occurrence="1" Ref="CE_IZ"/>
-      </OccurrenceSlicing>
-    </SegmentContext>
-  </FieldSlicing>
+<ProfileSlicing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="6838ae64e4b0d97f1887d073_67ab57a7e4b0a4d63f76a630_S" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/usnistgov/hl7-v2-schemas/1.7.0/src/main/resources/hl7-v2-schemas/ProfileSlicing.xsd">
+  <SegmentSlicing>
+    <Message ID="6838ae64e4b0d97f1887d073_67ab57a7e4b0a4d63f76a630_66eaf715857aba00062a5436">
+      <GroupContext ID="66eaf715857aba00062a5436-9">
+        <AssertionSlicing Position="3">
+          <Slice Ref="RXA_IZ01_NDC">
+            <Description>If The first occurrence of RXA-9.1 (Identifier) contains the value '00' (Case Sensitive).</Description>
+            <Assertion>
+              <PlainText IgnoreCase="false" NotPresentBehavior="FAIL" Path="9[1].1[1]" Text="00"/>
+            </Assertion>
+          </Slice>
+          <Slice Ref="RXA_IZ01_CVX">
+            <Description>If The first occurrence of RXA-9.1 (Identifier) contains one of the values in the list: ['01','02','03','04','05','06','07','08'] (Case Sensitive).</Description>
+            <Assertion>
+              <StringList CSV="01,02,03,04,05,06,07,08" IgnoreCase="false" NotPresentBehavior="FAIL" Path="9[1].1[1]"/>
+            </Assertion>
+          </Slice>
+          <Slice Ref="RXA_IZ01_CVX">
+            <Description>If The first occurrence of RXA-9.1 (Identifier) is not valued</Description>
+            <Assertion>
+              <NOT>
+                <Presence Path="9[1].1[1]"/>
+              </NOT>
+            </Assertion>
+          </Slice>
+        </AssertionSlicing>
+      </GroupContext>
+    </Message>
+  </SegmentSlicing>
 </ProfileSlicing>

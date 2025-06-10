@@ -1,22 +1,14 @@
 services:
-  hti-iz-tomcat:
-    image:  nist775hit/hti-iz-tool:latest
+  hti-iz-svap-tomcat:
+    image:  nist775hit/hti-iz-svap-tool:latest
     platform: linux/amd64
     ports:
       - "8889:8080"
     depends_on:
-      hti-iz-mysql:
+      hti-iz-svap-mysql:
         condition: service_healthy
         restart: true
-      hl7v2validationvervice-122:
-        restart: true
-        condition: service_started
-      hl7v2validationvervice-168:
-        restart: true
-        condition: service_started
-      hl7v2validationvervice-170:
-        restart: true
-        condition: service_started
+
     environment:
       - JAVA_OPTS=-Xmx4096m -Xms4096m -DRELOAD_DB=true -DIS_DEV_TOOL=false -Dvalidation_propfile=/tool_config/validation-service-config.properties
     restart: unless-stopped
@@ -27,10 +19,10 @@ services:
         target: /tool_config/app-config.properties
         read_only: true      
     links:
-      - hti-iz-mysql:container-mysql
+      - hti-iz-svap-mysql:container-mysql
 
-  hti-iz-mysql:
-    image: nist775hit/hti-iz-mysql:latest
+  hti-iz-svap-mysql:
+    image: nist775hit/hti-iz-svap-mysql:latest
     platform: linux/amd64
     ports:
       - "3309:3306"
@@ -46,18 +38,4 @@ services:
       retries: 5
       start_period: 5s
 
-  hl7v2validationvervice-170:
-    image:  nist775hit/hl7v2validationvervice-170
-    platform: linux/amd64
-    restart: unless-stopped
-
-  hl7v2validationvervice-168:
-    image:  nist775hit/hl7v2validationvervice-168
-    platform: linux/amd64
-    restart: unless-stopped
-
-  hl7v2validationvervice-122:
-    image:  nist775hit/hl7v2validationvervice-122
-    platform: linux/amd64
-    restart: unless-stopped
 

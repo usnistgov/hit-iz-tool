@@ -36,3 +36,8 @@
     border: 1px solid  #777;
     border-radius: 15px;
  }
+ 
+ #myCarousel.carousel.slide .item {
+  -webkit-transition: none;
+  transition: none;
+}

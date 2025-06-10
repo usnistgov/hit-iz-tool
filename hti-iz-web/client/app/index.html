@@ -99,7 +99,7 @@
   </script>
   <!--<link rel="stylesheet" href="lib/tree-grid/treeGrid.css">-->
 </head>
-<body class="body"  ng-controller="MainCtrl" ng-app="hit-app" window-exit>
+<body   ng-controller="MainCtrl" ng-app="hit-app" window-exit>
 <div id="wrapper">
   <!--[if lt IE 7]>
   selectDomainNoReload('iz-hti-1-svap')
@@ -112,18 +112,22 @@
   <script src="bower_components/json3/lib/json3.min.js"></script>
   <![endif]-->
 
-  <div ng-if="isWelcomePage != true" ng-include="'views/header.html'">
-  </div>
+<!--   <div ng-if="isWelcomePage != true" ng-include="'views/header.html'"> -->
+<!--   </div> -->
 <!--   <div ng-if="domain.domain === 'iz'" ></div> -->
 <!-- 	  <div ng-if="domain.domain === 'iz'" ng-include="'views/header_onc.html'"></div> -->
 <!-- 	  <div ng-if="domain.domain === 'iz-hti-1-svap'" ng-include="'views/header_svap.html'"></div> -->
 <!--   </div> -->
   <!-- Add your site or application content here -->
+  <div ng-if="domain != null">
+  <div ng-include="'views/header.html'"></div>
+  <!-- Add your site or application content here -->
   <div id="appcontainer">
     <div ng-view=""></div>
   </div>
 
-  <div ng-show="!isWelcomePage" ng-include="'views/footer.html'"></div>
+  <div ng-include="'views/footer.html'"></div>
+  </div>
   
 
   <!-- build:js scripts/vendor.js -->

@@ -21,8 +21,7 @@ body {
 				appInfo.options.ORGANIZATION_NAME: 'NIST'}} <span
 					style='color: white;'>{{domain.name}}</span><span
 					style='color: red; font-size: 12px'> {{domain.igVersion}}</span> <span
-					ng-if="isDevTool()" ng-click = "changeDomain('iz-hti-1-svap')" style='color: red; font-size: 60px'>ONC
-					DEV TOOL!</span>
+					ng-if="isDevTool()" ng-click = "changeDomain('iz-hti-1-svap')" style='color: red; padding-left: 100px; font-size: 60px'>DEV TOOL</span>
 			</div>
 			<div id="appsubtitle">{{appInfo.subTitle}}</div>
 		</a> <span ng-if="isDomainSelectionSupported()"> <span
@@ -94,25 +93,25 @@ body {
 	</div>
 	<div class="navbar-collapse collapse" id="appnavi">
 		<ul class="nav navbar-nav">
-			<li ng-class="{'active':isActive('/home')}"><a href="#/{{domainIdToName(domain.domain)}}/home"><i
+			<li ng-class="{'active':isActive('/home')}"><a href="#/home"><i
 					class="fa fa-home"></i> Home</a></li>
 			<li ng-class="{'active':isActive('/soapEnv')}"><a
-				href="#/{{domainIdToName(domain.domain)}}/soapEnv"><span class="badge">1</span> <i
+				href="#/soapEnv"><span class="badge">1</span> <i
 					class="fa fa-envelope"></i> SOAP Envelope</a></li>
 			<li ng-class="{'active':isActive('/soapConn')}"><a
-				href="#/{{domainIdToName(domain.domain)}}/soapConn"> <span class="badge">2</span> <i
+				href="#/soapConn"> <span class="badge">2</span> <i
 					class="fa fa-exchange"></i> SOAP Connectivity
 			</a></li>
-			<li ng-class="{'active':isActive('/cf')}"><a href="#/{{domainIdToName(domain.domain)}}/cf"> <span
+			<li ng-class="{'active':isActive('/cf')}"><a href="#/cf"> <span
 					class="badge">3</span> <i class="fa fa-check-square-o"></i> HL7
 					Context-free
 			</a></li>
-			<li ng-class="{'active':isActive('/cb')}"><a href="#/{{domainIdToName(domain.domain)}}/cb"><span
+			<li ng-class="{'active':isActive('/cb')}"><a href="#/cb"><span
 					class="badge">4</span> <i class="fa fa-th-list"></i> HL7
 					Context-based</a></li>
-			<li ng-class="{'active':isActive('/doc')}"><a href="#/{{domainIdToName(domain.domain)}}/doc"><i
+			<li ng-class="{'active':isActive('/doc')}"><a href="#/doc"><i
 					class="fa fa-book"></i>Documentation</a></li>
-			<li ng-class="{'active':isActive('/about')}"><a href="#/{{domainIdToName(domain.domain)}}/about"><i
+			<li ng-class="{'active':isActive('/about')}"><a href="#/about"><i
 					class="fa fa-question-circle"></i>About</a></li>
 		</ul>
 
@@ -124,12 +123,12 @@ body {
 					{{getUsername()}}<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li ng-class="isActive('/useraccount')"><a class="point"
-						href="#/{{domainIdToName(domain.domain)}}/useraccount"><i class="fa fa-user"></i>&nbsp;My
+						href="#/useraccount"><i class="fa fa-user"></i>&nbsp;My
 							Profile</a></li>
 					<li role="separator" class="divider"></li>
 
 					<li ng-class="{'active':isActive('/transport')}"
-						ng-show="transportSupported"><a href="#/{{domainIdToName(domain.domain)}}/transport"> <i
+						ng-show="transportSupported"><a href="#/transport"> <i
 							title="Transport Configuration"
 							class="label label-danger label-icon2">T</i> Transport Settings
 					</a></li>
@@ -140,12 +139,12 @@ body {
 						class="divider"></li>
 					<li ng-if="isDomainsManagementSupported()"
 						ng-class="isActive('/domains')"><a class="point"
-						href="#/{{domainIdToName(domain.domain)}}/domains"><i class="fa fa-cog"></i>&nbsp; Tool Scopes
+						href="#/domains"><i class="fa fa-cog"></i>&nbsp; Tool Scopes
 							Settings</a></li>
 					<li role="separator" class="divider"></li>
 
 					<li ng-show="isAdmin()" ng-class="isActive('/logs')"><a
-						class="point" href="#/{{domainIdToName(domain.domain)}}/logs"><i class="fa fa-cog"></i>&nbsp;Admin
+						class="point" href="#/logs"><i class="fa fa-cog"></i>&nbsp;Admin
 							Logs</a></li>
 					<li ng-show="isAdmin()" role="separator" class="divider"></li>
 
@@ -166,17 +165,17 @@ body {
 							class="fa fa-sign-in"></i>&nbsp; <span class="msg">Login</span></a></li>
 					<li role="separator" class="divider"></li>
 					<li ng-class="isActive('/registration')"><a
-						href="#/{{domainIdToName(domain.domain)}}/registration"> <i class="fa fa-user-plus"></i>&nbsp;Register
+						href="#/registration"> <i class="fa fa-user-plus"></i>&nbsp;Register
 					</a></li>
 					<li role="separator" class="divider"></li>
-					<li ng-class="isActive('/forgotten')"><a href="#/{{domainIdToName(domain.domain)}}/forgotten">
+					<li ng-class="isActive('/forgotten')"><a href="#/forgotten">
 							<i class="fa fa-repeat"></i>&nbsp;Reset Password
 					</a></li>
 					<li ng-if="!isAuthenticationRequired()" role="separator"
 						class="divider"></li>
 					<li ng-class="{'active':isActive('/transport')}"
 						ng-show="transportSupported && !isAuthenticationRequired()"><a
-						href="#/{{domainIdToName(domain.domain)}}/transport"> <i title="Transport Configuration"
+						href="#/transport"> <i title="Transport Configuration"
 							class="label label-danger label-icon2">T</i> Transport Settings
 					</a></li>
 					<li ng-if="!isAuthenticationRequired()" role="separator"
