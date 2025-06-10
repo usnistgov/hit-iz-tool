@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="684055ece4b0d97f18894728" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
+  <MetaData Date="Wed Jun 04 14:19:24 UTC 2025" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
+  <Constraints>
+    <Message>
+      <ByID ID="6838ae64e4b0d97f1887d073_67ab57a7e4b0a4d63f76a630_66eaf715857aba00062a5c31"/>
+    </Message>
+  </Constraints>
+</ConformanceContext>
