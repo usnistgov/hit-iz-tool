@@ -14,7 +14,6 @@ angular.module('hit-tool-directives').directive('compile', function ($compile) {
                 // when the 'compile' expression changes
                 // assign it into the current DOM
                 element.html(value);
-
                 // compile the new DOM and link it to the current
                 // scope.
                 // NOTE: we only compile .childNodes so that
@@ -25,6 +24,24 @@ angular.module('hit-tool-directives').directive('compile', function ($compile) {
     };
 });
 
+angular.module('hit-tool-directives').directive('compileHtml', function($compile) {
+  return {
+    restrict: 'A',
+    scope: {
+      compileHtml: '='
+    },
+    link: function(scope, element) {
+      scope.$watch('compileHtml', function(newHtml) {
+        if (newHtml) {
+          // Remove old content
+          element.html(newHtml);
+          // Compile and link the new content
+          $compile(element.contents())(scope.$parent);
+        }
+      });
+    }
+  };
+});
 
 angular.module('hit-tool-directives').directive('stRatio',function(){
     return {

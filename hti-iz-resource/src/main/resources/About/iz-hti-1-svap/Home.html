@@ -152,7 +152,7 @@
 
 
 
-<div id="myCarousel" class="carousel container slide" data-ride="carousel"
+<div id="myCarousel" class="carousel container slide" data-ride="carousel" data-interval="10000"
 	style="margin-top: 20px;">
 	<ol class="carousel-indicators">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -179,4 +179,13 @@
 		aria-hidden="true"></span> <span class="sr-only">Next</span>
 	</a>
 </div>
+
+<script>
+$(document).ready(function() {
+	//start carousel here as it doesn't always launch on page change 
+    $('#myCarousel').carousel();
+  });
+</script>
+	
+
 

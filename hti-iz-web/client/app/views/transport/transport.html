@@ -147,30 +147,43 @@
                                      style="padding-top: 20px">
 
                                   <div ng-show="selectedProtocol['forms']['taInitiatorForm'] && selectedProtocol['forms']['taInitiatorForm'] != null">
-                                    <form name="taInitiatorForm_{{dom}}_{{proto}}"
-                                          id="taInitiatorForm_{{dom}}_{{proto}}"
+                                    <form name="taForm"
+                                          id="taForm"
                                           novalidate
                                           class="form-horizontal">
                                       <div class="row">
                                         <div class="col-md-12">
-                                          <div compile="selectedProtocol['forms']['taInitiatorForm']"/>
+<!--                                           <div compile="selectedProtocol['forms']['taInitiatorForm']"/> -->
+												<div compile="selectedProtocol.forms.taInitiatorForm"></div>
                                         </div>
                                         <div class="col-md-12">
                                           <div class="form-group">
                                             <div class="col-md-offset-2 col-md-6">
                                               <button class="btn btn-sm btn-danger"
                                                       ng-click='reset()'
-                                                      ng-disabled="taInitiatorForm_{{dom}}_{{proto}}.$pristine">
+                                                      ng-disabled="taForm.$pristine">
                                                 <i class="fa fa-times"></i>
                                                 Reset
                                               </button>
                                               <button class="btn btn-md btn-success"
                                                       ng-click='save()'
-                                                      ng-disabled='taInitiatorForm_{{dom}}_{{proto}}.$invalid || taInitiatorForm_{{dom}}_{{proto}}.$pristine'>
+                                                      ng-disabled='taForm.$invalid'>
                                                 <i class="fa fa-check"></i>
                                                 Save
                                               </button>
                                             </div>
+                                            <div class="col-md-offset-2 col-md-6" ng-show="taForm.$invalid && taForm.$dirty">
+  <div class="alert alert-danger" style="margin-top: 10px;">
+    <strong>Please correct the following:</strong>
+    <ul>
+      <li ng-show="taForm.usernameInput.$invalid">Username is required.</li>
+      <li ng-show="taForm.passwordInput.$invalid">Password is required.</li>
+      <li ng-show="taForm.facilityIDInput.$invalid">Facility ID is required.</li>
+      <li ng-show="taForm.endpointInput.$error.required">Endpoint is required.</li>
+      <li ng-show="taForm.endpointInput.$error.pattern">Endpoint must be a valid URL (http:// or https://).</li>
+    </ul>
+  </div>
+</div>
                                           </div>
                                         </div>
                                       </div>

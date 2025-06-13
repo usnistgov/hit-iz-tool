@@ -192,7 +192,7 @@ angular.module('commonServices').factory('SOAPConnectivityTransport', function (
                     },
                     function (response) {
                         self.transactions[testCaseId] = null;
-                        delay.reject(self.transactions[testCaseId]);
+                        delay.reject(response);
                     }
                 );
 //        $http.get('../../resources/cb/send.json').then(

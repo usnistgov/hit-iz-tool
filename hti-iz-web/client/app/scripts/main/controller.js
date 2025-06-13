@@ -1,35 +1,17 @@
 'use strict';
 
 angular.module('main').controller('MainCtrl',
-    function ($scope, $rootScope, i18n, $location, userInfoService, $modal, $filter, base64, $http, Idle, Notification, IdleService, StorageService, TestingSettings, Session, AppInfo, User, $templateCache, $window, $sce,DomainsManager,$timeout,Transport,myService) {
+    function ($scope, $rootScope, i18n, $location, userInfoService, $modal, $filter, base64, $http, Idle, Notification, IdleService, StorageService, TestingSettings, Session, AppInfo, User, $templateCache, $window, $sce, DomainsManager, Transport, $timeout, CBTestPlanListLoader,CBTestPlanLoader,$localForage,$route) {
         //This line fetches the info from the server if the user is currently logged in.
         //If success, the app is updated according to the role.
         $rootScope.loginDialog = null;
         $rootScope.started = false;
+        $scope.notifications = [];
+        $scope.showNotificationPanel = false;
 
-		$scope.isMainPage= function(){			
-			return !$location.url().includes("/onc") && !$location.url().includes("/svap");
-				
-		};
-		
-		
-		$scope.setDisplayApp = function (val) {
-		           $scope.displayApp = val;
-		};
-		
-		$scope.changeDomain = function (domain){
-			if(domain === "iz"){
-				$location.path("/onc");
-			}else if(domain === "iz-hti-1-svap"){
-				$location.path("/svap");	
-			}
-			
-		}
-		
-
-		$scope.displayApp = false;
-		
         var domainParam = $location.search()['d'] ? decodeURIComponent($location.search()['d']) : null;
+
+        
 
         $scope.language = function () {
             return i18n.language;
@@ -84,11 +66,16 @@ angular.module('main').controller('MainCtrl',
         };
 
         $scope.execLogout = function () {
+			
             userInfoService.setCurrentUser(null);
             $scope.username = $scope.password = null;
             $scope.$emit('event:logoutRequest');
-            $location.url('/home');
-            $window.location.reload();
+			if ($location.url()=== '/home'){
+				$route.reload();
+			}else{
+				$location.path('/home'); 
+			}
+            
         };
 
         $scope.cancel = function () {
@@ -108,17 +95,15 @@ angular.module('main').controller('MainCtrl',
             return userInfoService.isSupervisor();
         };
 
-        $scope.isPublisher = function () {
-            return userInfoService.isPublisher();
-        };
-
-
         $scope.isTester = function () {
             return userInfoService.isTester();
         };
 
         $scope.isAdmin = function () {
             return userInfoService.isAdmin();
+        };
+        $scope.isPublisher = function () {
+            return userInfoService.isPublisher();
         };
 
         $scope.getRoleAsString = function () {
@@ -228,16 +213,73 @@ angular.module('main').controller('MainCtrl',
             }
         });
 
+
+        $scope.addToHiddenList = function (id) {
+            var hiddenIds;
+            $localForage.getItem('hiddenNotifications', true).then(function (hiddenIdsResults) {
+                hiddenIds = hiddenIdsResults;
+                if (hiddenIds.indexOf(id) === -1) {
+                    hiddenIds.push(id);
+                }
+
+            }, function (error) {
+                //no cache found
+                hiddenIds = [];
+                hiddenIds[0] = id;
+            }).finally(function () {
+                $localForage.setItem("hiddenNotifications", hiddenIds).then(function (err) {
+                    $scope.updateNotifications($scope.rawNotifications);
+                });
+            });
+
+
+        };
+
+        $scope.updateNotifications = function (result) {
+            //filtering hidden ones
+            var filteredData = angular.copy(result);
+            $localForage.getItem('hiddenNotifications', true).then(function (hiddenIds) {
+                if (hiddenIds !== null) {
+                    filteredData = filteredData.filter(function (noti) {
+                        return (noti.dismissable === false ||  hiddenIds.indexOf(noti.id) === -1); // keep non dismissable and those not on the list of hidden 
+                    });
+                }
+            }, function (error) {
+                //no cache found
+            }).finally(function () {
+
+                if (angular.equals(filteredData, $scope.notifications)) {
+                    //equal, do nothing 
+                } else {
+                    //different, update!
+                    $scope.notifications = angular.copy(filteredData);
+
+                }
+                if ($scope.notifications.length >0){
+                	$scope.showNotificationPanel = true;
+                }else{
+                	$scope.showNotificationPanel = false;
+                }
+            });
+        };
+
         $scope.$on('Keepalive', function () {
-            if ($scope.isAuthenticated()) {
-                IdleService.keepAlive();
-            }
+            IdleService.keepAlive().then(function (result) {
+                $scope.rawNotifications = angular.copy(result);
+                $scope.updateNotifications(result);
+            });
+
+
         });
 
-        $rootScope.$on('Keepalive', function () {
-            IdleService.keepAlive();
-        });
+        // $rootScope.$on('Keepalive', function () {
+        //     IdleService.keepAlive();
+        // });
 
+        IdleService.keepAlive().then(function (result) {
+                $scope.rawNotifications = angular.copy(result);
+                $scope.updateNotifications(result);
+            });
 
         $rootScope.$on('event:execLogout', function () {
             $scope.execLogout();
@@ -493,8 +535,6 @@ angular.module('main').controller('MainCtrl',
         };
 
 
-
-
         $rootScope.selectTestingType = function (value) {
             $rootScope.tabs[0] = false;
             $rootScope.tabs[1] = false;
@@ -604,7 +644,11 @@ angular.module('main').controller('MainCtrl',
                     }
                 }
             }).result.then(function (newDomain) {
-                $rootScope.selectDomain(newDomain);
+                if (newDomain !== 'New') {
+                    $rootScope.selectDomain(newDomain);
+                } else {
+                    $rootScope.createDomain();
+                }
             }, function () {
 
             });
@@ -694,7 +738,7 @@ angular.module('main').controller('MainCtrl',
             }
         };
 
-        $rootScope.getDomain = function(){
+        $rootScope.getDomain = function () {
             return $rootScope.domain;
         };
 
@@ -703,7 +747,7 @@ angular.module('main').controller('MainCtrl',
             $location.path(target);
         };
 
-         $rootScope.showSettings = function () {
+        $rootScope.showSettings = function () {
             var modalInstance = $modal.open({
                 templateUrl: 'views/settings/SettingsCtrl.html',
                 windowClass: 'upload-modal',
@@ -724,17 +768,17 @@ angular.module('main').controller('MainCtrl',
         };
 
 
-        $rootScope.isEditable = function(){
+        $rootScope.isEditable = function () {
             return (userInfoService.isAuthenticated() && (userInfoService.isAdmin() || userInfoService.isSupervisor()) && $rootScope.domain != null && $rootScope.domain.owner === userInfoService.getUsername());
         };
 
-        $rootScope.hasWriteAccess = function(){
+        $rootScope.hasWriteAccess = function () {
             return userInfoService.isAuthenticated() && (userInfoService.isAdmin() || ($rootScope.domain != null && $rootScope.domain.owner === userInfoService.getUsername()));
         };
 
 
-        $rootScope.canPublish = function(){
-            return userInfoService.isAuthenticated() && userInfoService.isAdmin();
+        $rootScope.canPublish = function () {
+            return $rootScope.hasWriteAccess() && (userInfoService.isAdmin() || userInfoService.isPublisher());
         };
 
         $rootScope.createDomain = function () {
@@ -755,13 +799,12 @@ angular.module('main').controller('MainCtrl',
                 function (newDomain) {
                     if (newDomain) {
                         $rootScope.selectDomain(newDomain.domain);
-                    }else if($rootScope.domain === null || $rootScope.domain === undefined){
+                    } else if ($rootScope.domain === null || $rootScope.domain === undefined) {
                         $rootScope.reloadPage();
                     }
-                }, function(){
+                }, function () {
                     $rootScope.reloadPage();
                 });
-
         };
 
         $rootScope.domainsByOwner = {
@@ -771,6 +814,10 @@ angular.module('main').controller('MainCtrl',
 
 
         $rootScope.initDomainsByOwner = function(){
+			$rootScope.domainsByOwner = {
+			            'my': [],
+			            'others':[]
+			        };
             for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
                 if ($rootScope.appInfo.domains[i].owner === userInfoService.getUsername()) {
                     $rootScope.domainsByOwner['my'].push($rootScope.appInfo.domains[i]);
@@ -779,115 +826,126 @@ angular.module('main').controller('MainCtrl',
                 }
             }
         };
+/*
+		console.log("get info");
+        AppInfo.get().then(function (appInfo) {
+                $rootScope.loadingDomain = true;
+                $rootScope.appInfo = appInfo;
+                $rootScope.apiLink = $rootScope.appInfo.url + $rootScope.appInfo.apiDocsPath;
+                httpHeaders.common['rsbVersion'] = appInfo.rsbVersion;
+                var previousToken = StorageService.get(StorageService.APP_STATE_TOKEN);
+                if (previousToken != null && previousToken !== appInfo.rsbVersion) {
+                    $rootScope.openVersionChangeDlg();
+                }
+                StorageService.set(StorageService.APP_STATE_TOKEN, appInfo.rsbVersion);
 
-//        AppInfo.get().then(function (appInfo) {
-//                $rootScope.loadingDomain = true;
-//                $rootScope.appInfo = appInfo;
-////        $rootScope.apiLink = $window.location.protocol + "//" + $window.location.host + getContextPath() + $rootScope.appInfo.apiDocsPath;
-//                $rootScope.apiLink = $rootScope.appInfo.url + $rootScope.appInfo.apiDocsPath;
-//                httpHeaders.common['rsbVersion'] = appInfo.rsbVersion;
-//                var previousToken = StorageService.get(StorageService.APP_STATE_TOKEN);
-//                if (previousToken != null && previousToken !== appInfo.rsbVersion) {
-//                    $rootScope.openVersionChangeDlg();
-//                }
-//                StorageService.set(StorageService.APP_STATE_TOKEN, appInfo.rsbVersion);
-//
-//                if (domainParam != undefined && domainParam != null) {
-//                    StorageService.set(StorageService.APP_SELECTED_DOMAIN, domainParam);
-//                }
-//                var storedDomain = StorageService.get(StorageService.APP_SELECTED_DOMAIN);
-//
-//                var domainFound = null;
-//                $rootScope.domain = null;
-//                $rootScope.appInfo.selectedDomain = null;
-//                $rootScope.domainsByOwner = {
-//                    'my': [],
-//                    'others':[]
-//                };
-//
-//
-//                DomainsManager.getDomains().then(function (domains) {
-//                    $rootScope.appInfo.domains = domains;
-//                    if ($rootScope.appInfo.domains != null) {
-//                        $rootScope.initDomainsByOwner(domains);
-//                        if ($rootScope.appInfo.domains.length === 1) {
-//                            domainFound = $rootScope.appInfo.domains[0].domain;
-//                        } else if (storedDomain != null) {
-//                            $rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position');
-//                            for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
-//                                if ($rootScope.appInfo.domains[i].domain === storedDomain) {
-//                                    domainFound = $rootScope.appInfo.domains[i].domain;
-//                                    break;
-//                                }
+                if (domainParam != undefined && domainParam != null) {
+                    StorageService.set(StorageService.APP_SELECTED_DOMAIN, domainParam);
+                }
+                var storedDomain = StorageService.get(StorageService.APP_SELECTED_DOMAIN);
+
+                var domainFound = null;
+                $rootScope.domain = null;
+                $rootScope.appInfo.selectedDomain = null;
+                $rootScope.domainsByOwner = {
+                    'my': [],
+                    'others':[]
+                };
+                DomainsManager.getDomains().then(function (domains) {
+                    $rootScope.appInfo.domains = domains;
+                    if ($rootScope.appInfo.domains != null) {                    
+                		$rootScope.initDomainsByOwner();
+                    if ($rootScope.appInfo.domains.length === 1) {
+                        domainFound = $rootScope.appInfo.domains[0].domain;
+                    } else if (storedDomain != null) {
+                        $rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position'); //sorting by position but position doesn't exist...
+                        for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
+                            if ($rootScope.appInfo.domains[i].domain === storedDomain) {
+                                domainFound = $rootScope.appInfo.domains[i].domain;
+                                break;
+                            }
+                        }
+                    }
+                    if (domainFound == null) {                        	
+                    	for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
+                            if ($rootScope.appInfo.domains[i].domain === "default") {
+                                domainFound = $rootScope.appInfo.domains[i].domain;
+                                break;
+                            }
+                        }
+                    	if (domainFound == null) {                        	
+                            $rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position'); //sorting by position but position doesn't exist...
+                            domainFound = $rootScope.appInfo.domains[0].domain;
+                    	}
+                    }
+
+                        $rootScope.clearDomainSession();
+                        DomainsManager.getDomainByKey(domainFound).then(function (result) {
+                            $rootScope.appInfo.selectedDomain = result.domain;
+                            StorageService.set(StorageService.APP_SELECTED_DOMAIN, result.domain);
+                            $rootScope.domain = result;
+                            $rootScope.loadingDomain = false;
+                            
+                            
+                            
+                            //CACHE preload thingies.                           
+//                            CachingService.cacheCBTestPlans("GLOBAL",$rootScope.domain.domain);
+//                            CachingService.cacheCFTestPlans("GLOBAL",$rootScope.domain.domain);
+//                            if (userInfoService.isAuthenticated() === true) { 
+//                            	CachingService.cacheCBTestPlans("USER",$rootScope.domain.domain);
+//                                CachingService.cacheCFTestPlans("USER",$rootScope.domain.domain);
 //                            }
-//                        }
-//
-//
-//                        if(domainFound == null){
-//                            $rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position');
-//                            domainFound = $rootScope.appInfo.domains[0].domain;
-//                        }
-//
-//                        if (domainFound == null) {
-//                            //$rootScope.openUnknownDomainDlg();
-//                            domainFound = "default";
-//                        }
-//
-//                        $rootScope.clearDomainSession();
-//                        DomainsManager.getDomainByKey(domainFound).then(function (result) {
-//                            $rootScope.appInfo.selectedDomain = result.domain;
-//                            StorageService.set(StorageService.APP_SELECTED_DOMAIN, result.domain);
-//                            $rootScope.domain = result;
-//                            $rootScope.loadingDomain = false;
-//                            $timeout(function () {
-//                                Transport.configs = {};
-//                                Transport.getDomainForms($rootScope.domain.domain).then(function (transportForms) {
-//                                    $rootScope.transportSupported = transportForms != null && transportForms.length > 0;
-//                                    if ($rootScope.transportSupported) {
-//                                        angular.forEach(transportForms, function (transportForm) {
-//                                            var protocol = transportForm.protocol;
-//                                            if (!Transport.configs[protocol]) {
-//                                                Transport.configs[protocol] = {};
-//                                            }
-//                                            if (!Transport.configs[protocol]['forms']) {
-//                                                Transport.configs[protocol]['forms'] = {};
-//                                            }
-//                                            Transport.configs[protocol]['forms'] = transportForm;
-//                                            Transport.configs[protocol]['error'] = null;
-//                                            Transport.configs[protocol]['description'] = transportForm.description;
-//                                            Transport.configs[protocol]['key'] = transportForm.protocol;
-//                                            Transport.getConfigData($rootScope.domain.domain, protocol).then(function (data) {
-//                                                Transport.configs[protocol]['data'] = data;
-//                                                Transport.configs[protocol]['open'] = {
-//                                                    ta: true,
-//                                                    sut: false
-//                                                };
-//                                            }, function (error) {
-//                                                Transport.configs[protocol]['error'] = error.data;
-//                                            });
-//                                        });
-//                                    }
-//                                }, function (error) {
-//                                    //$scope.error = "No transport configs found.";
-//                                });
-//                            }, 500);
-//                        }, function (error) {
-//                            $rootScope.loadingDomain = true;
-//                            $rootScope.openUnknownDomainDlg();
-//                        });
-//                    } else {
-//                        $rootScope.openCriticalErrorDlg("No Tool scope found. Please contact the administrator");
-//                    }
-//                }, function (error) {
-//                    $rootScope.openCriticalErrorDlg("No Tool scope found. Please contact the administrator");
-//                });
-//            }
-//            , function (error) {
-//                $rootScope.loadingDomain = true;
-//                $rootScope.appInfo = {};
-//                $rootScope.openCriticalErrorDlg("Failed to fetch the server. Please try again");
-//            });
-
+                                 
+                            
+                            $timeout(function () {
+                                Transport.configs = {};
+                                Transport.getDomainForms($rootScope.domain.domain).then(function (transportForms) {
+                                    $rootScope.transportSupported = transportForms != null && transportForms.length > 0;
+                                    if ($rootScope.transportSupported) {
+                                        angular.forEach(transportForms, function (transportForm) {
+                                            var protocol = transportForm.protocol;
+                                            if (!Transport.configs[protocol]) {
+                                                Transport.configs[protocol] = {};
+                                            }
+                                            if (!Transport.configs[protocol]['forms']) {
+                                                Transport.configs[protocol]['forms'] = {};
+                                            }
+                                            Transport.configs[protocol]['forms'] = transportForm;
+                                            Transport.configs[protocol]['error'] = null;
+                                            Transport.configs[protocol]['description'] = transportForm.description;
+                                            Transport.configs[protocol]['key'] = transportForm.protocol;
+                                            Transport.getConfigData($rootScope.domain.domain, protocol).then(function (data) {
+                                                Transport.configs[protocol]['data'] = data;
+                                                Transport.configs[protocol]['open'] = {
+                                                    ta: true,
+                                                    sut: false
+                                                };
+                                            }, function (error) {
+                                                Transport.configs[protocol]['error'] = error.data;
+                                            });
+                                        });
+                                    }
+                                }, function (error) {
+                                    $scope.error = "No transport configs found.";
+                                });
+                            }, 500);
+                        }, function (error) {
+                            $rootScope.loadingDomain = true;
+                            $rootScope.openUnknownDomainDlg();
+                        });
+                    } else {
+                        $rootScope.openCriticalErrorDlg("No Tool scope found. Please contact the administrator");
+                    }
+                }, function (error) {
+                    $rootScope.openCriticalErrorDlg("No Tool scope found. Please contact the administrator");
+                });
+            }
+            , function (error) {
+                $rootScope.loadingDomain = true;
+                $rootScope.appInfo = {};
+                $rootScope.openCriticalErrorDlg("Failed to fetch the server. Please try again");
+            });
+*/
 
         $rootScope.displayOwnership = function(dom){
             return dom.owner === userInfoService.getUsername() ? "My Tool Scopes": "Others Tool Scopes";
@@ -901,18 +959,14 @@ angular.module('main').controller('MainCtrl',
 
 
 
-
     });
 
 
 
 
-
-angular.module('main').controller('LoginCtrl', ['$scope', '$modalInstance', 'user','$rootScope', function ($scope, $modalInstance, user,$rootScope) {
+angular.module('main').controller('LoginCtrl', ['$scope', '$modalInstance', 'user', '$location', function ($scope, $modalInstance, user, $location) {
     $scope.user = user;
 
-	$scope.appInfo = $rootScope.appInfo;
-	
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     };
@@ -925,10 +979,6 @@ angular.module('main').controller('LoginCtrl', ['$scope', '$modalInstance', 'use
     $scope.cancelAndRedirect = function (path) {
         $modalInstance.dismiss('cancel');
         $location.url(path);
-    }
-
-    $scope.login = function () {
-        $modalInstance.close($scope.user);
     };
 
     $scope.loginAndRedirect = function (path) {
@@ -964,6 +1014,7 @@ angular.module('main').controller('UnknownDomainCtrl', ['$scope', '$modalInstanc
 
     }
 ]);
+
 
 angular.module('main').controller('RichTextCtrl', ['$scope', '$modalInstance', 'editorTarget', function ($scope, $modalInstance, editorTarget) {
     $scope.editorTarget = editorTarget;
@@ -1040,6 +1091,17 @@ angular.module('main').controller('ConfirmDialogCtrl', function ($scope, $modalI
         $modalInstance.dismiss('cancel');
     };
 });
+
+
+angular.module('main').controller('HeaderCtrl', ['$scope', function ($scope ) {
+
+
+
+}]);
+
+angular.module('main').controller('HomeCtrl', ['$scope', '$rootScope', function ($scope,$rootScope ) {
+
+}]);
 
 
 

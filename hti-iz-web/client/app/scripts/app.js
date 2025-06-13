@@ -100,22 +100,24 @@ app.config(function($routeProvider, $httpProvider, localStorageServiceProvider, 
 	localStorageServiceProvider
 		.setPrefix("hit-app")
 		.setStorageType('sessionStorage');
+		
+	var originalWhen = $routeProvider.when;
+	$routeProvider.when = function(path, route) {
+		route.resolve || (route.resolve = {});
+
+		angular.extend(route.resolve, {
+			preRouteLoading: preRouteLoading
+
+		});
+		return originalWhen.call($routeProvider, path, route);
+	};
 
 	$routeProvider
 		.when('/', {
 			templateUrl: 'views/home.html'
 		})
-//		.when('/:domain/home', {
-//			templateUrl: 'views/home.html'
-//		})
-//		.when('/onc', {
-//			redirectTo: '/onc/home'
-//		})
-//		.when('/svap', {
-//			redirectTo: '/svap/home'
-//		})
-				.when('/home', {
-					templateUrl: 'views/home.html',					
+		.when('/home', {
+			templateUrl: 'views/home.html',					
 				})
 		.when('/doc', {
 			templateUrl: 'views/documentation/documentation.html'
@@ -233,6 +235,183 @@ app.config(function($routeProvider, $httpProvider, localStorageServiceProvider, 
 
 
 });
+
+var preRouteLoading = function(User, StorageService, $q, DomainsManager, userInfoService, $rootScope, $filter, AppInfo, $location,Transport) {
+	var domainParam = $location.search()['d'] ? decodeURIComponent($location.search()['d']) : null;
+	if (domainParam != undefined && domainParam != null) {
+		StorageService.set(StorageService.APP_SELECTED_DOMAIN, domainParam);
+	}
+	var tasks = [];
+	$rootScope.loadingDomain = true;
+	if ($rootScope.appInfo == null || Object.keys($rootScope.appInfo).length === 0 || userInfoService.getCurrentUser() === undefined || userInfoService.getCurrentUser() === null) {
+		tasks.push(
+			//1	
+			function() {
+				return AppInfo.get().then(function(appInfo) {
+					var domainParam = $location.search()['d'] ? decodeURIComponent($location.search()['d']) : null;
+					$rootScope.appInfo = appInfo;
+					$rootScope.apiLink = $rootScope.appInfo.url + $rootScope.appInfo.apiDocsPath;
+					StorageService.set(StorageService.APP_STATE_TOKEN, appInfo.rsbVersion);
+
+					$rootScope.appInfo.selectedDomain = null;
+					$rootScope.domainsByOwner = {
+						'my': [],
+						'others': []
+					};
+					return "load appinfo";
+				});
+			}
+		);
+	}
+
+	// 2) Load user‐info task
+	if (userInfoService.getCurrentUser() === undefined || userInfoService.getCurrentUser() === null) {
+		tasks.push(
+			function() {
+				return userInfoService.loadFromServer().then(function(response) {
+					if (response !== null && response.accountId != null && response.accountId !== undefined) {
+						userInfoService.setCurrentUser(response);
+						User.initUser(response);
+					} else {
+						$rootScope.createGuestIfNotExist();
+					}
+					return "load userinfo";
+				})
+			});
+	}
+
+	// 3) Domain‐lookup task
+	if ($rootScope.domain == null || $rootScope.appInfo.domains == null || $rootScope.domain.domain !== StorageService.get(StorageService.APP_SELECTED_DOMAIN) || userInfoService.getCurrentUser() === undefined || userInfoService.getCurrentUser() === null) {
+		tasks.push(
+			function() {
+				return DomainsManager.getDomains().then(function(domains) {
+					var storedDomain = StorageService.get(StorageService.APP_SELECTED_DOMAIN) ? StorageService.get(StorageService.APP_SELECTED_DOMAIN) : 'default';
+					var domainFound = null;
+					$rootScope.appInfo.domains = domains;
+					if ($rootScope.appInfo.domains != null) {
+						$rootScope.initDomainsByOwner();
+						if ($rootScope.appInfo.domains.length === 1) {
+							domainFound = $rootScope.appInfo.domains[0].domain;
+						} else if (storedDomain != null) {
+							$rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position'); //sorting by position but position doesn't exist...
+							for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
+								if ($rootScope.appInfo.domains[i].domain === storedDomain) {
+									domainFound = $rootScope.appInfo.domains[i].domain;
+									break;
+								}
+							}
+						}
+						if (domainFound == null) {
+							for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
+								if ($rootScope.appInfo.domains[i].domain === "default") {
+									domainFound = $rootScope.appInfo.domains[i].domain;
+									break;
+								}
+							}
+							if (domainFound == null) {
+								$rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position'); //sorting by position but position doesn't exist...
+								domainFound = $rootScope.appInfo.domains[0].domain;
+							}
+						}
+						return DomainsManager.getDomainByKey(domainFound);
+					}
+				}).then(function(result) {
+					$rootScope.clearDomainSession();
+					$rootScope.appInfo.selectedDomain = result.domain;
+					StorageService.set(StorageService.APP_SELECTED_DOMAIN, result.domain);
+					$rootScope.domain = result;
+					
+					return  Transport.getDomainForms($rootScope.domain.domain);
+					
+				}, function(error) {
+					$rootScope.openUnknownDomainDlg();
+				}).then(function(transportForms) {
+					$rootScope.transportSupported = transportForms != null && transportForms.length > 0;
+					if ($rootScope.transportSupported) {
+						var configPromises = [];
+						angular.forEach(transportForms, function(transportForm) {
+							var protocol = transportForm.protocol;
+							if (!Transport.configs[protocol]) {
+								Transport.configs[protocol] = {};
+							}
+							if (!Transport.configs[protocol]['forms']) {
+								Transport.configs[protocol]['forms'] = {};
+							}
+							Transport.configs[protocol]['forms'] = transportForm;
+							Transport.configs[protocol]['error'] = null;
+							Transport.configs[protocol]['description'] = transportForm.description;
+							Transport.configs[protocol]['key'] = transportForm.protocol;
+							
+							var promise = Transport.getConfigData($rootScope.domain.domain, protocol).then(function(data) {
+								Transport.configs[protocol]['data'] = data;
+								Transport.configs[protocol]['open'] = {
+									ta: true,
+									sut: false
+								};
+							}, function(error) {
+								Transport.configs[protocol]['error'] = error.data;
+							});
+							configPromises.push(promise);							
+						});
+						
+						return $q.all(configPromises).then(function() {
+							return "domain and transport";
+						});
+					}else{
+						return "domain and transport";
+					}
+
+					
+				}, function(error) {
+					//$scope.error = "No transport configs found.";
+				});				
+			});
+	}
+
+	function runInSeries(taskFns) {
+		var results = [];
+		// Start with a “already-resolved” $q promise
+		return taskFns.reduce(function(prevPromise, taskFn) {
+			return prevPromise
+				.then(function() {
+					// Call the next task — this returns a $q promise
+					return taskFn();
+				})
+				.then(function(response) {
+					// Collect each resolved value
+					results.push(response);
+					// Return nothing (or return results if you like), 
+					// but what matters is that the next .then doesn’t get a rejected value.
+					return;
+				});
+		}, $q.when()) // initial resolved promise
+			.then(function() {
+				// All tasks have run; resolve with the full results array
+//				console.log(results);
+				return results;
+			});
+	}
+
+	// If there are no tasks, resolve immediately:
+	if (tasks.length === 0) {
+		$rootScope.loadingDomain = false;
+
+	} else {
+		// Wait for all tasks to finish:
+
+		return runInSeries(tasks.splice(0))
+			.then(function(allResponses) {
+				$rootScope.loadingDomain = false;
+				//							  console.log("all done tasks");
+			})
+			.catch(function(err) {
+				// If any single promise rejects, you land here immediately.
+				console.error('Sequence aborted due to:', err);
+			});
+
+
+	}
+};
 
 
 app.factory('interceptor1', function($q, $rootScope, $location, StorageService, $window) {
@@ -370,159 +549,30 @@ app.factory('interceptor4', function($q, $rootScope, $location, StorageService, 
 	};
 });
 
-app.factory('myService', function(Session, $rootScope, $location, $modal, TestingSettings, AppInfo, $q, $sce, $templateCache, $compile, StorageService, $window, $route, $timeout, $http, User, Idle, Transport, IdleService, userInfoService, base64, Notification, $filter, $routeParams, DomainsManager) {
-	//	console.log("myService");
 
-	return {
-		initData: function(domainChosen) {
-			//			console.log("initData");
+app.run(function($rootScope, $location, StorageService, userInfoService, User, $route, $window, base64, $http, Notification) {
 
+	
+	StorageService.set(StorageService.ACTIVE_SUB_TAB_KEY,null);
 
+		$rootScope.appInfo = {};
 
+		$rootScope.stackPosition = 0;
+		$rootScope.transportSupported = false;
+		$rootScope.scrollbarWidth = null;
+		$rootScope.vcModalInstance = null;
+		$rootScope.sessionExpiredModalInstance = null;
+		$rootScope.errorModalInstanceInstance = null;
 
-			StorageService.set(StorageService.ACTIVE_SUB_TAB_KEY, null);
-
-
-			$rootScope.appLoad = function(domainParam) {
-				if (domainParam === undefined) {
-					domainParam = $location.search()['d'] ? decodeURIComponent($location.search()['d']) : null;
-				}
-				AppInfo.get().then(function(appInfo) {
-					$rootScope.loadingDomain = true;
-					$rootScope.appInfo = appInfo;
-					$rootScope.apiLink = $rootScope.appInfo.url + $rootScope.appInfo.apiDocsPath;
-					httpHeaders.common['rsbVersion'] = appInfo.rsbVersion;
-					var previousToken = StorageService.get(StorageService.APP_STATE_TOKEN);
-					if (previousToken != null && previousToken !== appInfo.rsbVersion) {
-						$rootScope.openVersionChangeDlg();
-					}
-					StorageService.set(StorageService.APP_STATE_TOKEN, appInfo.rsbVersion);
-
-					if (domainParam != undefined && domainParam != null) {
-						StorageService.set(StorageService.APP_SELECTED_DOMAIN, domainParam);
-					}
-					var storedDomain = StorageService.get(StorageService.APP_SELECTED_DOMAIN);
-
-					var domainFound = null;
-					$rootScope.domain = null;
-					$rootScope.appInfo.selectedDomain = null;
-					$rootScope.domainsByOwner = {
-						'my': [],
-						'others': []
-					};
-					DomainsManager.getDomains().then(function(domains) {
-						$rootScope.appInfo.domains = domains;
-						if ($rootScope.appInfo.domains != null) {
-							$rootScope.initDomainsByOwner();
-							if ($rootScope.appInfo.domains.length === 1) {
-								domainFound = $rootScope.appInfo.domains[0].domain;
-							} else if (storedDomain != null) {
-								$rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position'); //sorting by position but position doesn't exist...
-								for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
-									if ($rootScope.appInfo.domains[i].domain === storedDomain) {
-										domainFound = $rootScope.appInfo.domains[i].domain;
-										break;
-									}
-								}
-							}
-							if (domainFound == null) {
-								for (var i = 0; i < $rootScope.appInfo.domains.length; i++) {
-									if ($rootScope.appInfo.domains[i].domain === "default") {
-										domainFound = $rootScope.appInfo.domains[i].domain;
-										break;
-									}
-								}
-								if (domainFound == null) {
-									$rootScope.appInfo.domains = $filter('orderBy')($rootScope.appInfo.domains, 'position'); //sorting by position but position doesn't exist...
-									domainFound = $rootScope.appInfo.domains[0].domain;
-								}
-							}
-
-							$rootScope.clearDomainSession();
-							DomainsManager.getDomainByKey(domainFound).then(function(result) {
-								$rootScope.appInfo.selectedDomain = result.domain;
-								StorageService.set(StorageService.APP_SELECTED_DOMAIN, result.domain);
-								$rootScope.domain = result;
-								$rootScope.loadingDomain = false;
-
-
-
-
-								$timeout(function() {
-									Transport.configs = {};
-									Transport.getDomainForms($rootScope.domain.domain).then(function(transportForms) {
-										$rootScope.transportSupported = transportForms != null && transportForms.length > 0;
-										if ($rootScope.transportSupported) {
-											angular.forEach(transportForms, function(transportForm) {
-												var protocol = transportForm.protocol;
-												if (!Transport.configs[protocol]) {
-													Transport.configs[protocol] = {};
-												}
-												if (!Transport.configs[protocol]['forms']) {
-													Transport.configs[protocol]['forms'] = {};
-												}
-												Transport.configs[protocol]['forms'] = transportForm;
-												Transport.configs[protocol]['error'] = null;
-												Transport.configs[protocol]['description'] = transportForm.description;
-												Transport.configs[protocol]['key'] = transportForm.protocol;
-												Transport.getConfigData($rootScope.domain.domain, protocol).then(function(data) {
-													Transport.configs[protocol]['data'] = data;
-													Transport.configs[protocol]['open'] = {
-														ta: true,
-														sut: false
-													};
-												}, function(error) {
-													Transport.configs[protocol]['error'] = error.data;
-												});
-											});
-										}
-									}, function(error) {
-										$scope.error = "No transport configs found.";
-									});
-								}, 500);
-							}, function(error) {
-								$rootScope.loadingDomain = true;
-								$rootScope.openUnknownDomainDlg();
-							});
-						} else {
-							$rootScope.openCriticalErrorDlg("No Tool scope found. Please contact the administrator");
-						}
-					}, function(error) {
-						$rootScope.openCriticalErrorDlg("No Tool scope found. Please contact the administrator");
-					});
-				}
-					, function(error) {
-						$rootScope.loadingDomain = true;
-						$rootScope.appInfo = {};
-						$rootScope.openCriticalErrorDlg("Failed to fetch the server. Please try again");
-					});
-
-			};
-
-			if (domainChosen !== null) {
-
-				var domainParam;
-				if (domainChosen === undefined) {
-					domainParam = $location.search()['d'] ? decodeURIComponent($location.search()['d']) : null;
-				} else {
-					domainParam = domainChosen;
-				}
-
-				$rootScope.appLoad(domainParam);
-			}
-
-
-
-
-
-
+		function getContextPath() {
+		    return $window.location.pathname.substring(0, $window.location.pathname.indexOf("/", 2));
 		}
-	};
-});
 
-
-app.run(function(myService, $rootScope, $location, StorageService, userInfoService, User, $route, $window, base64, $http, Notification) {
-
+		var initUser = function (user) {
+		    userInfoService.setCurrentUser(user);
+		    User.initUser(user);
+		};
+	
 	$rootScope.clearDomainSession = function() {
 		StorageService.set(StorageService.ISOLATED_EDITOR_CONTENT_KEY, null);
 		StorageService.set(StorageService.ISOLATED_SELECTED_TESTCASE_TYPE_KEY, null);
@@ -584,33 +634,8 @@ app.run(function(myService, $rootScope, $location, StorageService, userInfoServi
 		StorageService.set(StorageService.TEST_CASE_VALIDATION_RESULTS_KEY, null);
 	};
 
-	$rootScope.clearDomainSession();
+	
 
-
-//	$rootScope.domainIdToName = function(domainId) {
-//		if (domainId === 'iz') {
-//			return "onc";
-//		} else if (domainId === 'iz-hti-1-svap') {
-//			return "svap"
-//		}
-//
-//	}
-
-	$rootScope.stackPosition = 0;
-	$rootScope.transportSupported = false;
-	$rootScope.scrollbarWidth = null;
-	$rootScope.vcModalInstance = null;
-	$rootScope.sessionExpiredModalInstance = null;
-	$rootScope.errorModalInstanceInstance = null;
-
-	function getContextPath() {
-		return $window.location.pathname.substring(0, $window.location.pathname.indexOf("/", 2));
-	}
-
-	var initUser = function(user) {
-		userInfoService.setCurrentUser(user);
-		User.initUser(user);
-	};
 
 
 
@@ -619,8 +644,11 @@ app.run(function(myService, $rootScope, $location, StorageService, userInfoServi
 	$rootScope.selectDomain = function(domain) {
 		if (domain != null) {
 			StorageService.set(StorageService.APP_SELECTED_DOMAIN, domain);
-			$location.search('d', domain);
-			$rootScope.reloadPage();
+			if ($location.url() === '/home') {
+				$route.reload();
+			} else {
+				$location.path('/home');
+			}
 		}
 	};
 
@@ -829,7 +857,6 @@ app.run(function(myService, $rootScope, $location, StorageService, userInfoServi
 		httpHeaders.common['Authorization'] = null;
 		userInfoService.setCurrentUser(null);
 		$http.get('j_spring_security_logout').then(function(result) {
-			$rootScope.createGuestIfNotExist();
 			$rootScope.$broadcast('event:logoutConfirmed');
 		});
 	});
@@ -1050,7 +1077,7 @@ app.run(function(myService, $rootScope, $location, StorageService, userInfoServi
 //		}
 //	});
 
-myService.initData('iz-hti-1-svap');
+
 
 
 });

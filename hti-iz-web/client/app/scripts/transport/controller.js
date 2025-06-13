@@ -187,8 +187,8 @@ angular.module('transport').controller('SutInitiatorConfigCtrl', function ($scop
         $scope.loadData();
     });
 
+		
     $scope.initSutInitiatorConfig = function (domain, protocol) {
-
         if (protocol && protocol != null && domain && domain != null) {
             $scope.proto = protocol;
             $scope.dom = domain;

@@ -7,7 +7,7 @@
     		"version"		: "1.0.0",
     		"igVersion"		:"1.0.0",
     		"scope": "GLOBAL",
-			"name": "NIST Immunization Test Suite Edition 2",
+			"name": "Immunization Test Suite Edition 2",
 			"homeTitle": "Welcome to the NIST Immunization Test Suite Edition 2!",
 			"authorUsername":"nico",
 			"options":{
