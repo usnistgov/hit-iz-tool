@@ -5,3 +5,7 @@ NK1|1|McKay^Angeline^Ingrid^^^^L|MTH^Mother^HL70063|600 Cherry Rd.^^Springfield^
 ORC|RE|1116^OFM|2227^OFM|||||||7824^Wyatt^Daniela^Jennifer^^^^^OFM-PI-1^L^^^PRN||654^Bradshaw^Ramon^Michael^^^^^OFM-PI-1^L^^^MD|||||197028^Oregon Family Medicine^HL70362
 RXA|0|1|20240405||58160-0825-43^HAVRIX^NDC^83^Hep A, ped/adol, 2 dose^CVX|0.5|mL^mL^UCUM||00^New immunization record^NIP001^|7824^Wyatt^Daniela^Jennifer^^^^^OFM-PI-1^L^^^PRN|^^^OFM||||IIPVAXN11|20290927|SKB^GlaxoSmithKline^MVX|||CP|D
 RXR|C28161^INTRAMUSCULAR^NCIT|LVL^Left Vastus Lateralis^HL70163
+OBX|1|CE|30963-3^Vaccine funding source^LN|1|PHC70^Private funds^CDCPHINVS||||||F|||20240405
+OBX|2|CE|64994-7^Vaccine funding program eligibility category^LN|1|V01^Not VFC eligible^HL70064||||||F|||20240405|||VXC40^Eligibility captured at the immunization level^CDCPHINVS
+OBX|3|CE|69764-9^Document type^LN|3|253088698300004211211015^Hepatitis A Vaccine VIS - 10/15/2021^cdcgs1vis||||||F|||20240405
+OBX|4|DT|29769-7^Date Vaccine Information Statement Presented^LN|3|20240405||||||F|||20240405
