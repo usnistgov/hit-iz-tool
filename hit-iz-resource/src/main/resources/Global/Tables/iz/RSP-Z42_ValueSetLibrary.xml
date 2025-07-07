@@ -29,8 +29,32 @@
 		<BindingIdentifier>HL70447</BindingIdentifier>
 		<BindingIdentifier>HL70446</BindingIdentifier>
 		<BindingIdentifier>HL70448</BindingIdentifier>
+		<BindingIdentifier>HL70295</BindingIdentifier>
+		<BindingIdentifier>HL70327</BindingIdentifier>
+		<BindingIdentifier>HL70222</BindingIdentifier>
+		<BindingIdentifier>HL70099</BindingIdentifier>
+		<BindingIdentifier>HL70328</BindingIdentifier>
+
 	</NoValidation>
 	<ValueSetDefinitions Group="CDC-HL7-IZ" Order="1">
+		<ValueSetDefinition BindingIdentifier="HL70063_IZ" Name="Relationship">
+			<ValueElement Value="BRO" CodeSystem="HL70063" DisplayName="Brother"/>
+			<ValueElement Value="CGV" CodeSystem="HL70063" DisplayName="Care giver"/>
+			<ValueElement Value="CHD" CodeSystem="HL70063" DisplayName="Child"/>
+			<ValueElement Value="FCH" CodeSystem="HL70063" DisplayName="Foster child"/>
+			<ValueElement Value="FTH" CodeSystem="HL70063" DisplayName="Father"/>
+			<ValueElement Value="GRD" CodeSystem="HL70063" DisplayName="Guardian"/>
+			<ValueElement Value="GRP" CodeSystem="HL70063" DisplayName="Grandparent"/>
+			<ValueElement Value="MTH" CodeSystem="HL70063" DisplayName="Mother"/>
+			<ValueElement Value="OTH" CodeSystem="HL70063" DisplayName="Other"/>
+			<ValueElement Value="PAR" CodeSystem="HL70063" DisplayName="Parent"/>
+			<ValueElement Value="SCH" CodeSystem="HL70063" DisplayName="Stepchild"/>
+			<ValueElement Value="SEL" CodeSystem="HL70063" DisplayName="Self"/>
+			<ValueElement Value="SIB" CodeSystem="HL70063" DisplayName="Sibling"/>
+			<ValueElement Value="SIS" CodeSystem="HL70063" DisplayName="Sister"/>
+			<ValueElement Value="SPO" CodeSystem="HL70063" DisplayName="Spouse"/>
+		</ValueSetDefinition>
+	
 		<ValueSetDefinition BindingIdentifier="HL70003_IZ" Name="Event type">
 			<ValueElement Value="V04" CodeSystem="HL70003" DisplayName="V04"/>
 			<ValueElement Value="K11" CodeSystem="HL70003" DisplayName="K11"/>
@@ -1958,6 +1982,115 @@
 		
 	</ValueSetDefinitions>
 	<ValueSetDefinitions Group="HL7" Order="3">
+		<ValueSetDefinition BindingIdentifier="HL70223" Name="Living Dependency">
+			<ValueElement Value="C" CodeSystem="HL70223" DisplayName="Small Children Dependent"/>
+			<ValueElement Value="M" CodeSystem="HL70223" DisplayName="Medical Supervision Required"/>
+			<ValueElement Value="O" CodeSystem="HL70223" DisplayName="Other"/>
+			<ValueElement Value="S" CodeSystem="HL70223" DisplayName="Spouse Dependent"/>
+			<ValueElement Value="U" CodeSystem="HL70223" DisplayName="Unknown"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70220" Name="Living Arrangement">
+			<ValueElement Value="A" CodeSystem="HL70220" DisplayName="Alone"/>
+			<ValueElement Value="F" CodeSystem="HL70220" DisplayName="Family"/>
+			<ValueElement Value="I" CodeSystem="HL70220" DisplayName="Institution"/>
+			<ValueElement Value="R" CodeSystem="HL70220" DisplayName="Relative"/>
+			<ValueElement Value="S" CodeSystem="HL70220" DisplayName="Spouse Only"/>
+			<ValueElement Value="U" CodeSystem="HL70220" DisplayName="Unknown"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70231" Name="Student Status">
+			<ValueElement Value="F" CodeSystem="HL70231" DisplayName="Full-time student"/>
+			<ValueElement Value="N" CodeSystem="HL70231" DisplayName="Not a student"/>
+			<ValueElement Value="P" CodeSystem="HL70231" DisplayName="Part-time student"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70295" Name="Handicap">
+			<ValueElement Value="..." CodeSystem="HL70295" DisplayName="No suggested values defined"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70315" Name="Living Will Code">
+			<ValueElement Value="F" CodeSystem="HL70315" DisplayName="Yes, patient has a living will but it is not on file"/>
+			<ValueElement Value="I" CodeSystem="HL70315" DisplayName="No, patient does not have a living will but information was provided"/>
+			<ValueElement Value="N" CodeSystem="HL70315" DisplayName="No, patient does not have a living will and no information was provided"/>
+			<ValueElement Value="U" CodeSystem="HL70315" DisplayName="Unknown"/>
+			<ValueElement Value="Y" CodeSystem="HL70315" DisplayName="Yes, patient has a living will"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70316" Name="Organ Donor Code">
+			<ValueElement Value="F" CodeSystem="HL70316" DisplayName="Yes, patient is a documented donor, but documentation is not on file"/>
+			<ValueElement Value="I" CodeSystem="HL70316" DisplayName="No, patient is not a documented donor, but information was provided"/>
+			<ValueElement Value="N" CodeSystem="HL70316" DisplayName="No, patient has not agreed to be a donor"/>
+			<ValueElement Value="P" CodeSystem="HL70316" DisplayName="Patient leaves organ donation decision to a specific person"/>
+			<ValueElement Value="R" CodeSystem="HL70316" DisplayName="Patient leaves organ donation decision to relatives"/>
+			<ValueElement Value="U" CodeSystem="HL70316" DisplayName="Unknown"/>
+			<ValueElement Value="Y" CodeSystem="HL70316" DisplayName="Yes, patient is a documented donor and documentation is on file"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70131" Name="Contact Role">
+			<ValueElement Value="C" CodeSystem="HL70131" DisplayName="Emergency Contact"/>
+			<ValueElement Value="E" CodeSystem="HL70131" DisplayName="Employer"/>
+			<ValueElement Value="F" CodeSystem="HL70131" DisplayName="Federal Agency"/>
+			<ValueElement Value="I" CodeSystem="HL70131" DisplayName="Insurance Company"/>
+			<ValueElement Value="N" CodeSystem="HL70131" DisplayName="Next-of-Kin"/>
+			<ValueElement Value="O" CodeSystem="HL70131" DisplayName="Other"/>
+			<ValueElement Value="S" CodeSystem="HL70131" DisplayName="State Agency"/>
+			<ValueElement Value="U" CodeSystem="HL70131" DisplayName="Unknown"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70327" Name="Job code">
+			<ValueElement Value="..." CodeSystem="HL70327" DisplayName="No suggested values defined"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70001" Name="Administrative Sex">
+			<ValueElement Value="A" CodeSystem="HL70001" DisplayName="Ambiguous"/>
+			<ValueElement Value="F" CodeSystem="HL70001" DisplayName="Female"/>
+			<ValueElement Value="M" CodeSystem="HL70001" DisplayName="Male"/>
+			<ValueElement Value="N" CodeSystem="HL70001" DisplayName="Not applicable"/>
+			<ValueElement Value="O" CodeSystem="HL70001" DisplayName="Other"/>
+			<ValueElement Value="U" CodeSystem="HL70001" DisplayName="Unknown"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70009" Name="Ambulatory Status">
+			<ValueElement Value="A0" CodeSystem="HL70009" DisplayName="No functional limitations"/>
+			<ValueElement Value="A1" CodeSystem="HL70009" DisplayName="Ambulates with assistive device"/>
+			<ValueElement Value="A2" CodeSystem="HL70009" DisplayName="Wheelchair/stretcher bound"/>
+			<ValueElement Value="A3" CodeSystem="HL70009" DisplayName="Comatose; non-responsive"/>
+			<ValueElement Value="A4" CodeSystem="HL70009" DisplayName="Disoriented"/>
+			<ValueElement Value="A5" CodeSystem="HL70009" DisplayName="Vision impaired"/>
+			<ValueElement Value="A6" CodeSystem="HL70009" DisplayName="Hearing impaired"/>
+			<ValueElement Value="A7" CodeSystem="HL70009" DisplayName="Speech impaired"/>
+			<ValueElement Value="A8" CodeSystem="HL70009" DisplayName="Non-English speaking"/>
+			<ValueElement Value="A9" CodeSystem="HL70009" DisplayName="Functional level unknown"/>
+			<ValueElement Value="B1" CodeSystem="HL70009" DisplayName="Oxygen therapy"/>
+			<ValueElement Value="B2" CodeSystem="HL70009" DisplayName="Special equipment (tubes, IVs, catheters)"/>
+			<ValueElement Value="B3" CodeSystem="HL70009" DisplayName="Amputee"/>
+			<ValueElement Value="B4" CodeSystem="HL70009" DisplayName="Mastectomy"/>
+			<ValueElement Value="B5" CodeSystem="HL70009" DisplayName="Paraplegic"/>
+			<ValueElement Value="B6" CodeSystem="HL70009" DisplayName="Pregnant"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70215" Name="Publicity Code">
+			<ValueElement Value="F" CodeSystem="HL70215" DisplayName="Family only"/>
+			<ValueElement Value="N" CodeSystem="HL70215" DisplayName="No Publicity"/>
+			<ValueElement Value="O" CodeSystem="HL70215" DisplayName="Other"/>
+			<ValueElement Value="U" CodeSystem="HL70215" DisplayName="Unknown"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70136" Name="Yes/no indicator">
+			<ValueElement Value="N" CodeSystem="HL70136" DisplayName="No"/>
+			<ValueElement Value="Y" CodeSystem="HL70136" DisplayName="Yes"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70189" Name="Ethnic Group">
+			<ValueElement Value="H" CodeSystem="HL70189" DisplayName="Hispanic or Latino"/>
+			<ValueElement Value="N" CodeSystem="HL70189" DisplayName="Not Hispanic or Latino"/>
+			<ValueElement Value="U" CodeSystem="HL70189" DisplayName="Unknown"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70222" Name="Contact Reason">
+			<ValueElement Value="..." CodeSystem="HL70222" DisplayName="No suggested values defined"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70311" Name="Job Status">
+			<ValueElement Value="O" CodeSystem="HL70311" DisplayName="Other"/>
+			<ValueElement Value="P" CodeSystem="HL70311" DisplayName="Permanent"/>
+			<ValueElement Value="T" CodeSystem="HL70311" DisplayName="Temporary"/>
+			<ValueElement Value="U" CodeSystem="HL70311" DisplayName="Unknown"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70099" Name="VIP Indicator">
+			<ValueElement Value="..." CodeSystem="HL70099" DisplayName="no suggested values"/>
+		</ValueSetDefinition>
+		<ValueSetDefinition BindingIdentifier="HL70328" Name="Employee classification">
+			<ValueElement Value="..." CodeSystem="HL70328" DisplayName="No suggested values defined"/>
+		</ValueSetDefinition>
+		
 		<ValueSetDefinition BindingIdentifier="HL70339" Name="Advanced Beneficiary Notice Code">
 			<ValueElement Value="1" CodeSystem="HL70339" DisplayName="Service is subject to medical necessity procedures"/>
 			<ValueElement Value="2" CodeSystem="HL70339" DisplayName="Patient has been informed of responsibility, and agrees to pay for service"/>
