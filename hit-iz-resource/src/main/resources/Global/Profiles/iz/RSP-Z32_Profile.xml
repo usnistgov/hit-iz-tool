@@ -15,8 +15,8 @@
 			<Segment Ref="QAK_IZ1_5" Usage="R" Min="1" Max="1"/>
 			<Segment Ref="QPD_IZ1_5" Usage="R" Min="1" Max="1"/>
 			<Segment Ref="PID_IZ 1_5_IZ_Z32_281" Usage="R" Min="1" Max="1"/>
-			<Segment Ref="PD1_IZ 1_5_IZ_Z32_63" Usage="RE" Min="0" Max="1"/>
-			<Segment Ref="NK1_IZ 1_5_IZ_Z32_235" Usage="RE" Min="0" Max="*"/>
+			<Segment Ref="PD1_IZ 1_5_IZ_Z32_63" Usage="O" Min="0" Max="1"/>
+			<Segment Ref="NK1_IZ 1_5_IZ_Z32_235" Usage="O" Min="0" Max="*"/>
 			<Segment Ref="PV1_IZ_1_5" Usage="O" Min="0" Max="1"/>
 			<Segment Ref="IN1_IZ 1_5_IZ_Z32_132" Usage="O" Min="0" Max="1"/>
 			<Group ID="VXU_V04.ORDER" Name="VXU_V04.ORDER" Usage="RE" Min="0" Max="*">
