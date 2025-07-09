@@ -287,6 +287,14 @@
     <ValueSetDefinition BindingIdentifier="HL70301_IZ" Name="Universal ID type"> 
       <ValueElement CodeSystem="HL70301" DisplayName="ISO" Value="ISO"/> 
     </ValueSetDefinition>  
+    <ValueSetDefinition BindingIdentifier="HL70441_IZ" Name="Immunization registry status"> 
+      <ValueElement CodeSystem="HL70441" DisplayName="Active" Value="A"/>  
+      <ValueElement CodeSystem="HL70441" DisplayName="Inactive--Unspecified" Value="I"/>  
+      <ValueElement CodeSystem="HL70441" DisplayName="Inactive-Lost to follow-up (cannot contact)" Value="L"/>  
+      <ValueElement CodeSystem="HL70441" DisplayName="Inactive-Moved or gone elsewhere (transferred)" Value="M"/>  
+      <ValueElement CodeSystem="HL70441" DisplayName="Inactive-Permanently inactive (do not re-activate or add new entries to this record)" Value="P"/>  
+      <ValueElement CodeSystem="HL70441" DisplayName="Unknown" Value="U"/> 
+    </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="HL70001_IZ" Name="Sex"> 
       <ValueElement CodeSystem="HL70001" DisplayName="Female" Value="F"/>  
       <ValueElement CodeSystem="HL70001" DisplayName="Male" Value="M"/>  
