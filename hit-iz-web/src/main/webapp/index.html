@@ -18,11 +18,6 @@
   <meta name="description" content="NIST Immunization Tool">
   <meta name="author" content="NIST">
   <link rel="shortcut icon" href="assets/ico/favicon.ico">
-  <style>
-    [ng\: cloak]
-    ,
-    [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ncd ..g-cloak {display: none !important;}
-  </style>
   <meta name="viewport" content="width=device-width">
   <link href="styles/58a49b36.bootstrap.min.css" rel="stylesheet">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -33,6 +28,9 @@
   <!-- Custom styles for this template -->
   <link href="styles/d741712d.carousel.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/4083f5d3.font-awesome.min.css">
+
+  <!--   GTAG -->
+  <script src="lib/gtag/gtag-init.js"></script>
 
   <script src="lib/codemirror/lib/codemirror.js"></script>
   <script src="lib/codemirror/lib/formating.js"></script>
@@ -55,18 +53,6 @@
   <!--</style>-->
   <link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
   <link rel="stylesheet" href="lib/codemirror/theme/elegant.css">
-
-  <style id="antiClickjack">body {
-    display: none !important;
-  }</style>
-  <script type="text/javascript">
-    if (self === top) {
-      var antiClickjack = document.getElementById("antiClickjack");
-      antiClickjack.parentNode.removeChild(antiClickjack);
-    } else {
-      top.location = self.location;
-    }
-  </script>
 </head>
 <body ng-controller="MainCtrl" ng-app="hit-app" window-exit="">
 <div id="wrapper">
@@ -116,7 +102,7 @@
   <script src="lib/base-libs/edi.js"></script>
   <script src="lib/base-libs/soap.js"></script>
   
-  <script src="scripts/c339ccd3.scripts.js"></script>
+  <script src="scripts/4c5a083b.scripts.js"></script>
 
   <div ng-include="'views/error.html'"></div>
   <div ng-include="'views/templates.html'"></div>

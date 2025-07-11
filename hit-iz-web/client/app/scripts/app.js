@@ -314,7 +314,6 @@ app.factory('interceptor4', function ($q, $rootScope, $location, StorageService,
           manualHandle: true
         };
       } else {
-        console.log(response.status);
         msg = {
           text: response.data.text,
           type: response.data.type,
