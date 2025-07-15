@@ -906,21 +906,21 @@ app.run(function($rootScope, $location, StorageService, userInfoService, User, $
 			if (type === "danger") {
 				Notification.error({
 					message: message,
-					templateUrl: "NotificationErrorTemplate.html",
+					templateUrl: "views/templates/NotificationErrorTemplate.html",
 					scope: $rootScope,
 					delay: 10000
 				});
 			} else if (type === 'warning') {
 				Notification.warning({
 					message: message,
-					templateUrl: "NotificationWarningTemplate.html",
+					templateUrl: "views/templates/NotificationWarningTemplate.html",
 					scope: $rootScope,
 					delay: 5000
 				});
 			} else if (type === 'success') {
 				Notification.success({
 					message: message,
-					templateUrl: "NotificationSuccessTemplate.html",
+					templateUrl: "views/templates/NotificationSuccessTemplate.html",
 					scope: $rootScope,
 					delay: 5000
 				});

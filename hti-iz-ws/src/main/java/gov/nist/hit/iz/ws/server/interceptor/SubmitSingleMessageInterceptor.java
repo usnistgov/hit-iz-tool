@@ -91,9 +91,10 @@ public class SubmitSingleMessageInterceptor implements EndpointInterceptor {
 
 	private String toString(final WebServiceMessage message) {
 		try {
-			final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-			message.writeTo(outputStream);
-			return new String(outputStream.toByteArray());
+			try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+				message.writeTo(outputStream);
+				return new String(outputStream.toByteArray());
+			}
 		} catch (final Exception e) {
 			throw new RuntimeException(e);
 		}

@@ -187,7 +187,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document added successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -222,7 +222,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document saved successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -248,7 +248,7 @@ angular.module('doc')
             DocumentationManager.deleteDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document deleted successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });
@@ -277,7 +277,7 @@ angular.module('doc')
             DocumentationManager.publishDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document published successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });
@@ -515,7 +515,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document added successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -550,7 +550,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document saved successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -576,7 +576,7 @@ angular.module('doc')
             DocumentationManager.deleteDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document deleted successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });
@@ -605,7 +605,7 @@ angular.module('doc')
             DocumentationManager.publishDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document published successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });
@@ -731,7 +731,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document added successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -766,7 +766,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document saved successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -792,7 +792,7 @@ angular.module('doc')
             DocumentationManager.deleteDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document deleted successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });
@@ -821,7 +821,7 @@ angular.module('doc')
             DocumentationManager.publishDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document published successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });
@@ -960,7 +960,7 @@ angular.module('doc')
 //           if (document && document != null) {
 //             Notification.success({
 //               message: "Document added successfully !",
-//               templateUrl: "NotificationSuccessTemplate.html",
+//               templateUrl: "views/templates/NotificationSuccessTemplate.html",
 //               scope: $rootScope,
 //               delay: 5000
 //             });
@@ -992,7 +992,7 @@ angular.module('doc')
 //           if (document && document != null) {
 //             Notification.success({
 //               message: "Document saved successfully !",
-//               templateUrl: "NotificationSuccessTemplate.html",
+//               templateUrl: "views/templates/NotificationSuccessTemplate.html",
 //               scope: $rootScope,
 //               delay: 5000
 //             });
@@ -1018,7 +1018,7 @@ angular.module('doc')
 //             DocumentationManager.deleteDocument(document.id).then(function (result) {
 //               Notification.success({
 //                 message: "Document deleted successfully !",
-//                 templateUrl: "NotificationSuccessTemplate.html",
+//                 templateUrl: "views/templates/NotificationSuccessTemplate.html",
 //                 scope: $rootScope,
 //                 delay: 5000
 //               });
@@ -1047,7 +1047,7 @@ angular.module('doc')
 //             DocumentationManager.publishDocument(document.id).then(function (result) {
 //               Notification.success({
 //                 message: "Document published successfully !",
-//                 templateUrl: "NotificationSuccessTemplate.html",
+//                 templateUrl: "views/templates/NotificationSuccessTemplate.html",
 //                 scope: $rootScope,
 //                 delay: 5000
 //               });
@@ -1240,7 +1240,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document added successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -1275,7 +1275,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document saved successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -1301,7 +1301,7 @@ angular.module('doc')
             DocumentationManager.deleteDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document deleted successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });
@@ -1330,7 +1330,7 @@ angular.module('doc')
             DocumentationManager.publishDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document published successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });
@@ -1476,7 +1476,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document added successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -1511,7 +1511,7 @@ angular.module('doc')
           if (document && document != null) {
             Notification.success({
               message: "Document saved successfully !",
-              templateUrl: "NotificationSuccessTemplate.html",
+              templateUrl: "views/templates/NotificationSuccessTemplate.html",
               scope: $rootScope,
               delay: 5000
             });
@@ -1537,7 +1537,7 @@ angular.module('doc')
             DocumentationManager.deleteDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document deleted successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });
@@ -1566,7 +1566,7 @@ angular.module('doc')
             DocumentationManager.publishDocument(document.id).then(function (result) {
               Notification.success({
                 message: "Document published successfully !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
               });

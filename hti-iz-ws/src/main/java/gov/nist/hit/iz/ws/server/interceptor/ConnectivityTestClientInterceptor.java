@@ -50,8 +50,7 @@ public class ConnectivityTestClientInterceptor implements ClientInterceptor {
 	}
 
 	private String toString(final WebServiceMessage message) {
-		try {
-			final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
 			message.writeTo(outputStream);
 			return new String(outputStream.toByteArray());
 		} catch (final Exception e) {

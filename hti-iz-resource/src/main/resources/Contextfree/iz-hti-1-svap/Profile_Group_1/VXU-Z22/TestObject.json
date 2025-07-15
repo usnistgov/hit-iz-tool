@@ -1,0 +1,15 @@
+{
+  "id": 1234783178,
+  "name": "VXU-Z22",
+  "hl7v2": {
+    "messageId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_66eaf715857aba00062a5436",
+    "constraintId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_C",
+    "valueSetLibraryId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_VS",
+    "valueSetBindingsId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_B",
+    "slicingsId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_S",
+    "coConstraintsId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_CC"
+  },
+  "position": 1,
+  "description": "No Description",
+  "skip": false
+}

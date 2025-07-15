@@ -10,15 +10,7 @@
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1DMLTWW4P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-J1DMLTWW4P');
-</script>
-<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-xxxxxxxx-x&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script> 
-
+<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-xxxxxxxx-x&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c" integrity="sha384-82qlSi5fMvffF7y6/MUn+dRl2qnfgNEnL3GM0p3qw0ltZT2WQjipu0NlCpdvvW7V" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
@@ -30,15 +22,6 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="shortcut icon" href="assets/ico/favicon.ico">
-  <style>
-    [ng\: cloak
-
-    ]
-    ,
-    [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
-      display: none !important;
-    }
-  </style>
   <meta name="viewport" content="width=device-width">
     <link href="styles/bootstrap.min.css" rel="stylesheet">
 
@@ -62,6 +45,9 @@
   <!-- Custom styles for this template -->
   <link href="styles/carousel.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/font-awesome.min.css"/>
+  
+<!--   GTAG -->
+  <script src="lib/gtag/gtag-init.js"></script>
 
   <script src="lib/codemirror/lib/codemirror.js"></script>
   <script src="lib/codemirror/lib/formating.js"></script>
@@ -86,17 +72,6 @@
   <!--</style>-->
   <link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
   <link rel="stylesheet" href="lib/codemirror/theme/elegant.css">
-  <style id="antiClickjack">body {
-    display: none !important;
-  }</style>
-  <script type="text/javascript">
-    if (self === top) {
-      var antiClickjack = document.getElementById("antiClickjack");
-      antiClickjack.parentNode.removeChild(antiClickjack);
-    } else {
-      top.location = self.location;
-    }
-  </script>
   <!--<link rel="stylesheet" href="lib/tree-grid/treeGrid.css">-->
 </head>
 <body   ng-controller="MainCtrl" ng-app="hit-app" window-exit>
@@ -231,19 +206,18 @@
 
   <!-- endbuild -->
 
-  <div ng-include="'views/error.html'"></div>
-  <div ng-include="'lib/dqa/dqa-tpls.html'"></div>
-  <div ng-include="'lib/angular-bootstrap-nav-tree/abn_tree_template.html'"></div>
-  <div ng-include="'lib/vocab-search/vocab-search-tpls.html'"></div>
-  <div ng-include="'lib/settings/settings-tpls.html'"></div>
-  <div ng-include="'lib/profile-viewer/profile-viewer-tpls.html'"></div>
-  <div ng-include="'lib/validation-result/validation-result-tpls.html'"></div>
-  <div ng-include="'lib/testcase-details/testcase-details-tpls.html'"></div>
-  <div ng-include="'lib/edit-testcase-details/edit-testcase-details-tpls.html'"></div>
-  <div ng-include="'lib/report-viewer/report-viewer-tpls.html'"></div>
-  <div ng-include="'lib/testcase-tree/testcase-tree-tpls.html'"></div>
-  <div ng-include="'lib/manual-report-viewer/manual-report-viewer-tpls.html'"></div>
-  <div ng-include="'views/templates.html'"></div>
+<!--   <div ng-include="'views/error.html'"></div> -->
+<!--   <div ng-include="'lib/dqa/dqa-tpls.html'"></div> -->
+<!--   <div ng-include="'lib/angular-bootstrap-nav-tree/abn_tree_template.html'"></div> -->
+<!--   <div ng-include="'lib/vocab-search/vocab-search-tpls.html'"></div> -->
+<!--   <div ng-include="'lib/settings/settings-tpls.html'"></div> -->
+<!--   <div ng-include="'lib/profile-viewer/profile-viewer-tpls.html'"></div> -->
+<!--   <div ng-include="'lib/validation-result/validation-result-tpls.html'"></div> -->
+<!--   <div ng-include="'lib/testcase-details/testcase-details-tpls.html'"></div> -->
+<!--   <div ng-include="'lib/edit-testcase-details/edit-testcase-details-tpls.html'"></div> -->
+<!--   <div ng-include="'lib/report-viewer/report-viewer-tpls.html'"></div> -->
+<!--   <div ng-include="'lib/testcase-tree/testcase-tree-tpls.html'"></div> -->
+<!--   <div ng-include="'lib/manual-report-viewer/manual-report-viewer-tpls.html'"></div> -->
 
 
   <!--<input style="display:none" name="_csrf" ng-value="{{appInfo.csrfValue}}"/>-->

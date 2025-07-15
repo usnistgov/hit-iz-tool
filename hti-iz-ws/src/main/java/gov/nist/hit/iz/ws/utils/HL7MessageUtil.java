@@ -9,19 +9,16 @@ import java.util.regex.Pattern;
 
 public class HL7MessageUtil {
 
-	private static List<String> getSegments(String message) {
-		List<String> segments = new ArrayList<String>();
-		BufferedReader er7 = new BufferedReader(new StringReader(message));
-		String tmp;
-		try {
-			while (((tmp = er7.readLine()) != null)) {
-				segments.add(tmp);
-			}
-		} catch (IOException e) {
-			throw new IllegalArgumentException(e.getMessage());
-		}
-		return segments;
-	}
+	private static List<String> getSegments(String message) throws IOException {
+    List<String> segments = new ArrayList<String>();
+    try (BufferedReader er7 = new BufferedReader(new StringReader(message))) {
+        String tmp;
+        while ((tmp = er7.readLine()) != null) {
+            segments.add(tmp);
+        }
+    }
+    return segments;
+}
 
 	private static String getMessage(List<String> segments) {
 		StringBuffer buff = new StringBuffer();
@@ -56,8 +53,9 @@ public class HL7MessageUtil {
 	 * @param m2:
 	 *            message 2
 	 * @return
+	 * @throws IOException 
 	 */
-	public static String updateOutgoing(String m1, String m2) {
+	public static String updateOutgoing(String m1, String m2) throws IOException {
 		if (m1 != null && m2 != null) {
 			List<String> segments_1 = getSegments(m1);
 			String[] fields_1 = getFields(segments_1.get(0));

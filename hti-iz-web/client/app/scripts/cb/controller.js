@@ -962,7 +962,7 @@ angular.module('cb')
         	ReportService.saveTestCaseValidationReport($scope.testCase.id,testStepReportIds,result,comments,$scope.testCase.nav['testPlan'],$scope.testCase.nav['testGroup']).then(function (response) {
     	  		Notification.success({
                     message: "Report saved successfully!",
-                    templateUrl: "NotificationSuccessTemplate.html",
+                    templateUrl: "views/templates/NotificationSuccessTemplate.html",
                     scope: $rootScope,
                     delay: 5000
                   });
@@ -970,7 +970,7 @@ angular.module('cb')
               }, function (error) {
             	  Notification.error({
 	                    message: "Report could not be saved! <br>If error persists, please contact the website administrator." ,
-	                    templateUrl: "NotificationErrorTemplate.html",
+	                    templateUrl: "views/templates/NotificationErrorTemplate.html",
 	                    scope: $rootScope,
 	                    delay: 10000
 	                  });
@@ -1435,14 +1435,14 @@ angular.module('cb').controller('CBSavedReportCtrl', ['$scope', '$sce', '$http',
  	    	          		}
  	    	          		Notification.success({
  	    	                    message: "Report deleted successfully!",
- 	    	                    templateUrl: "NotificationSuccessTemplate.html",
+ 	    	                    templateUrl: "views/templates/NotificationSuccessTemplate.html",
  	    	                    scope: $rootScope,
  	    	                    delay: 5000
  	    	                  });
  	    	          	}, function (error) {
  	    	          		Notification.error({
  	    	                    message: "Report deletion failed! <br>If error persists, please contact the website administrator." ,
- 	    	                    templateUrl: "NotificationErrorTemplate.html",
+ 	    	                    templateUrl: "views/templates/NotificationErrorTemplate.html",
  	    	                    scope: $rootScope,
  	    	                    delay: 10000
  	    	                  });
@@ -1490,7 +1490,7 @@ angular.module('cb')
 
     $scope.showDQAOptions = function () {
       var modalInstance = $modal.open({
-        templateUrl: 'DQAConfig.html',
+        templateUrl: 'lib/dqa/dqa-tpls.html',
         controller: 'DQAConfigCtrl',
         windowClass: 'dq-modal',
         animation: true,
@@ -1546,7 +1546,7 @@ angular.module('cb')
           $scope.execute();
           Notification.success({
             message: "File " + fileName + " successfully uploaded!",
-            templateUrl: "NotificationSuccessTemplate.html",
+            templateUrl: "views/templates/NotificationSuccessTemplate.html",
             scope: $rootScope,
             delay: 30000
           });
@@ -1835,7 +1835,7 @@ angular.module('cb')
 
     $scope.showMessageWithHexadecimal = function () {
       var modalInstance = $modal.open({
-        templateUrl: 'MessageWithHexadecimal.html',
+        templateUrl: 'views/templates/MessageWithHexadecimal.html',
         controller: 'MessageWithHexadecimalDlgCtrl',
         windowClass: 'valueset-modal',
         animation: false,
@@ -2240,7 +2240,7 @@ angular.module('cb')
                 $scope.afterDelete(testStep);
                 Notification.success({
                   message: "Test Step deleted successfully !",
-                  templateUrl: "NotificationSuccessTemplate.html",
+                  templateUrl: "views/templates/NotificationSuccessTemplate.html",
                   scope: $rootScope,
                   delay: 5000
                 });
@@ -2275,7 +2275,7 @@ angular.module('cb')
                 $scope.afterDelete(testCase);
                 Notification.success({
                   message: "Test Case deleted successfully !",
-                  templateUrl: "NotificationSuccessTemplate.html",
+                  templateUrl: "views/templates/NotificationSuccessTemplate.html",
                   scope: $rootScope,
                   delay: 5000
                 });
@@ -2309,7 +2309,7 @@ angular.module('cb')
                 $scope.afterDelete(testCaseGroup);
                 Notification.success({
                   message: "Test Case Group deleted successfully !",
-                  templateUrl: "NotificationSuccessTemplate.html",
+                  templateUrl: "views/templates/NotificationSuccessTemplate.html",
                   scope: $rootScope,
                   delay: 5000
                 });
@@ -2358,7 +2358,7 @@ angular.module('cb')
 
                 Notification.success({
                   message: "Test Plan deleted successfully !",
-                  templateUrl: "NotificationSuccessTemplate.html",
+                  templateUrl: "views/templates/NotificationSuccessTemplate.html",
                   scope: $rootScope,
                   delay: 5000
                 });
@@ -2379,14 +2379,14 @@ angular.module('cb')
 	        CBTestPlanManager.refreshTestPlanTestContextModels(testPlan).then(function (result) {
 				Notification.success({
                    message: "Test Plan TestContext model successfully updated",
-                   templateUrl: "NotificationSuccessTemplate.html",
+                   templateUrl: "views/templates/NotificationSuccessTemplate.html",
                    scope: $rootScope,
                    delay: 5000
                });
 			}, function (error) {
 				Notification.error({
 	                message: "There was an error while refreshing " + error.data,
-	                templateUrl: "NotificationErrorTemplate.html",
+	                templateUrl: "views/templates/NotificationErrorTemplate.html",
 	                scope: $rootScope,
 	                delay: 5000
 	            });	
@@ -2549,7 +2549,7 @@ angular.module('cb')
                 $scope.selectedScope.key = 'GLOBAL';
                 Notification.success({
                   message: "Test Plan successfully published !",
-                  templateUrl: "NotificationSuccessTemplate.html",
+                  templateUrl: "views/templates/NotificationSuccessTemplate.html",
                   scope: $rootScope,
                   delay: 5000
                 });
@@ -2560,7 +2560,7 @@ angular.module('cb')
               } else {
                 Notification.error({
                   message: result.message,
-                  templateUrl: "NotificationErrorTemplate.html",
+                  templateUrl: "views/templates/NotificationErrorTemplate.html",
                   scope: $rootScope,
                   delay: 10000
                 });
@@ -2570,7 +2570,7 @@ angular.module('cb')
               $scope.loading = false;
               Notification.error({
                 message: error.data,
-                templateUrl: "NotificationErrorTemplate.html",
+                templateUrl: "views/templates/NotificationErrorTemplate.html",
                 scope: $rootScope,
                 delay: 10000
               });
@@ -2596,7 +2596,7 @@ angular.module('cb')
                               $scope.selectedScope.key = 'USER';
                               Notification.success({
                                   message: "Test Plan successfully unpublished !",
-                                  templateUrl: "NotificationSuccessTemplate.html",
+                                  templateUrl: "views/templates/NotificationSuccessTemplate.html",
                                   scope: $rootScope,
                                   delay: 5000
                               });
@@ -2607,7 +2607,7 @@ angular.module('cb')
                           } else {
                               Notification.error({
                                   message: result.message,
-                                  templateUrl: "NotificationErrorTemplate.html",
+                                  templateUrl: "views/templates/NotificationErrorTemplate.html",
                                   scope: $rootScope,
                                   delay: 10000
                               });
@@ -2617,7 +2617,7 @@ angular.module('cb')
                           $scope.loading = false;
                           Notification.error({
                               message: error.data,
-                              templateUrl: "NotificationErrorTemplate.html",
+                              templateUrl: "views/templates/NotificationErrorTemplate.html",
                               scope: $rootScope,
                               delay: 10000
                           });
@@ -2793,7 +2793,7 @@ angular.module('cb')
      	 	        	 if (response.action === "ADD") {
      	 	        		Notification.success({
      	  	                   message: "Test Plan Added Successfully !",
-     	  	                   templateUrl: "NotificationSuccessTemplate.html",
+     	  	                   templateUrl: "views/templates/NotificationSuccessTemplate.html",
      	  	                   scope: $rootScope,
      	  	                   delay: 5000
      	  	                 });
@@ -2801,7 +2801,7 @@ angular.module('cb')
      	 	        }else if (response.action === "UPDATE") {
      	 	        	 Notification.success({
      	 	 	            message: "Test Plan Updated Successfully !",
-     	 	 	            templateUrl: "NotificationSuccessTemplate.html",
+     	 	 	            templateUrl: "views/templates/NotificationSuccessTemplate.html",
      	 	 	            scope: $rootScope,
      	 	 	            delay: 5000
      	 	 	          });
@@ -2814,7 +2814,7 @@ angular.module('cb')
 					console.log(error);
 					 Notification.error({
      	 	 	            message: error.message,
-     	 	 	            templateUrl: "NotificationErrorTemplate.html",
+     	 	 	            templateUrl: "views/templates/NotificationErrorTemplate.html",
      	 	 	            scope: $rootScope,
      	 	 	            delay: 5000
      	 	 	          });
@@ -2900,7 +2900,7 @@ angular.module('cb').controller('UploadCBTokenCheckCtrl', ['$scope', '$http', 'C
 	           if (response.status == "FAILURE") {
 		        	   Notification.error({
 		                   message: "An error occured while adding the Test Plan. Please try again or contact the administator for help",
-		                   templateUrl: "NotificationErrorTemplate.html",
+		                   templateUrl: "views/templates/NotificationErrorTemplate.html",
 		                   scope: $rootScope,
 		                   delay: 10000
 		             });
@@ -2909,7 +2909,7 @@ angular.module('cb').controller('UploadCBTokenCheckCtrl', ['$scope', '$http', 'C
 	          } else {
 	        	  Notification.success({
                       message: "Test Plan added successfully!",
-                      templateUrl: "NotificationSuccessTemplate.html",
+                      templateUrl: "views/templates/NotificationSuccessTemplate.html",
                       scope: $rootScope,
                       delay: 5000
                   });

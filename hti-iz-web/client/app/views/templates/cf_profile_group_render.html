@@ -1,0 +1,9 @@
+  <div ui-tree-handle class="tree-node tree-node-content">
+    <a ng-class="{'selected': selectedTP != null && selectedTP.id === node.id}" data-nodrag ng-click="selectGroup(node)"
+       class="point">{{node.name}}</a>
+    <a title="Delete Group" class="point pull-right btn btn-danger btn-xs" data-nodrag
+       ng-click="deleteGroup(node.id)"><span
+      class="fa fa-trash"></span></a>
+    <!--<a class="pull-right btn btn-primary btn-xs" data-nodrag ng-click="newSubItem(this)" style="margin-right: 8px;"><span-->
+    <!--class="glyphicon glyphicon-plus"></span></a>-->
+  </div>

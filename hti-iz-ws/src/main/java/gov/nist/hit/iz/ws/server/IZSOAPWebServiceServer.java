@@ -1,6 +1,7 @@
 package gov.nist.hit.iz.ws.server;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -25,7 +26,6 @@ import gov.nist.hit.core.repo.MessageRepository;
 import gov.nist.hit.core.service.AccountService;
 import gov.nist.hit.core.service.TransactionService;
 import gov.nist.hit.core.service.TransportMessageService;
-import gov.nist.hit.core.service.util.GCUtil;
 import gov.nist.hit.core.transport.exception.TransportServerException;
 import gov.nist.hit.iz.ws.IZWSConstant;
 import gov.nist.hit.iz.ws.jaxb.ConnectivityTestRequestType;
@@ -59,34 +59,42 @@ public class IZSOAPWebServiceServer implements TransportServer {
 	@ResponsePayload
 	public ConnectivityTestResponseType handle(@RequestPayload ConnectivityTestRequestType request) {
 		logger.info("connectivityTest request received");
-		ConnectivityTestResponseType response = new ConnectivityTestResponseType();
-		response.setReturn(request.getEchoBack());
-		GCUtil.performGC();
-		return response;
+		try {
+			ConnectivityTestResponseType response = new ConnectivityTestResponseType();
+			response.setReturn(request.getEchoBack());
+			return response;
+		} catch (Exception e) {
+			logger.error("Error handling connectivity test", e);
+			throw new TransportServerException("Error handling connectivity test: " + e.getMessage());
+		}
 	}
 
 	@Override
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "submitSingleMessage")
 	@ResponsePayload
 	public SubmitSingleMessageResponseType handle(@RequestPayload SubmitSingleMessageRequestType request) {
-		validateRequest(request);
-		String hl7Message = request.getHl7Message();
-		if (hl7Message == null || hl7Message.equals("")) {
-			throw new TransportServerException("No Hl7 Message Provided");
-		}
-		Map<String, String> properties = getProperties(request.getUsername(), request.getPassword(),
-				request.getFacilityID());
-		TransportMessage message = transportMessageService.findOneByProperties(properties);
-		if (message != null
-				&& IZWSConstant.LISTENER_STARTED.equals(message.getProperties().get(IZWSConstant.LISTENER_STATUS))) {
-			String responseMessage = getResponseMessage(message.getMessageId());
-			SubmitSingleMessageResponseType response = getSubmitSingleMessageResponse(hl7Message, responseMessage);
-			GCUtil.performGC();
-			return response;
-		} else {
-			throw new TransportServerException("Listener not started");
+		try {
+			validateRequest(request);
+			String hl7Message = request.getHl7Message();
+			if (hl7Message == null || hl7Message.equals("")) {
+				throw new TransportServerException("No Hl7 Message Provided");
+			}
+			Map<String, String> properties = getProperties(request.getUsername(), request.getPassword(),
+					request.getFacilityID());
+			TransportMessage message = transportMessageService.findOneByProperties(properties);
+			if (message != null
+					&& IZWSConstant.LISTENER_STARTED.equals(message.getProperties().get(IZWSConstant.LISTENER_STATUS))) {
+				String responseMessage = getResponseMessage(message.getMessageId());
+				return getSubmitSingleMessageResponse(hl7Message, responseMessage);
+			} else {
+				throw new TransportServerException("Listener not started");
+			}
+		} catch (Exception e) {
+			logger.error("Error handling submitSingleMessage", e);
+			throw new TransportServerException("Error handling message: " + e.getMessage());
 		}
 	}
+	
 
 	public String getResponseMessage(Long messageId) {
 		if (messageId != null) {
@@ -131,7 +139,12 @@ public class IZSOAPWebServiceServer implements TransportServer {
 	}
 
 	private String updateOutboundMessage(String inboundMessage, String outboundMessage) {
-		return HL7MessageUtil.updateOutgoing(outboundMessage, inboundMessage);
+		try {
+			return HL7MessageUtil.updateOutgoing(outboundMessage, inboundMessage);
+		} catch (IOException e) {
+			logger.error("Error updating outbound message", e);
+			throw new TransportServerException("Error updating outbound message: " + e.getMessage());
+		}
 	}
 
 	private SubmitSingleMessageResponseType getSubmitSingleMessageResponse(String inboundMessage,
@@ -144,21 +157,19 @@ public class IZSOAPWebServiceServer implements TransportServer {
 				response = new SubmitSingleMessageResponseType();
 				response.setReturn(outboundMessage);
 			} else {
-				String outboundSoap = IOUtils.toString(IZSOAPWebServiceServer.class
-						.getResourceAsStream("/ws/messages/SubmitSingleMessageResponse_Precanned.xml"));
-				response = WsdlUtil.toSubmitSingleMessageResponse(outboundSoap);
-				outboundMessage = response.getReturn();
-				outboundMessage = getHL7MessageString(outboundMessage);
-				outboundMessage = updateOutboundMessage(inboundMessage, outboundMessage);
-				response.setReturn(outboundMessage);
+				try (InputStream inputStream = IZSOAPWebServiceServer.class
+						.getResourceAsStream("/ws/messages/SubmitSingleMessageResponse_Precanned.xml")) {
+					String outboundSoap = IOUtils.toString(inputStream);
+					response = WsdlUtil.toSubmitSingleMessageResponse(outboundSoap);
+					outboundMessage = response.getReturn();
+					outboundMessage = updateOutboundMessage(inboundMessage, outboundMessage);
+					response.setReturn(outboundMessage);
+				}
 			}
 			return response;
-		} catch (XmlMappingException e) {
-			throw new TransportServerException(
-					"ERROR: We were unable to generate the outbound message: " + e.getMessage());
-		} catch (IOException e) {
-			throw new TransportServerException(
-					"ERROR: We were unable to generate the outbound message." + e.getMessage());
+		} catch (XmlMappingException | IOException e) {
+			logger.error("Error generating outbound message", e);
+			throw new TransportServerException("Error generating outbound message: " + e.getMessage());
 		} catch (JAXBException e) {
 			throw new TransportServerException(
 					"ERROR: We were unable to generate the outbound message." + e.getMessage());

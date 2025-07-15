@@ -91,7 +91,7 @@ angular.module('upload')
         profileUploader.onErrorItem = function (fileItem, response, status, headers) {
             Notification.error({
                 message: "There was an error while uploading " + fileItem.file.name,
-                templateUrl: "NotificationErrorTemplate.html",
+                templateUrl: "views/templates/NotificationErrorTemplate.html",
                 scope: $rootScope,
                 delay: 10000
             });
@@ -102,7 +102,7 @@ angular.module('upload')
             if (response.success == false) {
                 Notification.error({
                     message: "The value set file you uploaded is not valid, please check and correct the error(s) and try again",
-                    templateUrl: "NotificationErrorTemplate.html",
+                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                     scope: $rootScope,
                     delay: 10000
                 });
@@ -115,7 +115,7 @@ angular.module('upload')
             if (response.success == false) {
                 Notification.error({
                     message: "The constraint file you uploaded is not valid, please check and correct the error(s) and try again",
-                    templateUrl: "NotificationErrorTemplate.html",
+                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                     scope: $rootScope,
                     delay: 10000
                 });
@@ -128,7 +128,7 @@ angular.module('upload')
             if (response.success == false) {
                 Notification.error({
                     message: "The profile file you uploaded is not valid, please check and correct the error(s) and try again",
-                    templateUrl: "NotificationErrorTemplate.html",
+                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                     scope: $rootScope,
                     delay: 10000
                 });
@@ -160,7 +160,7 @@ angular.module('upload')
                 if (response.debugError === undefined) {
                     Notification.error({
                         message: "The zip file you uploaded is not valid, please check and correct the error(s) and try again",
-                        templateUrl: "NotificationErrorTemplate.html",
+                        templateUrl: "views/templates/NotificationErrorTemplate.html",
                         scope: $rootScope,
                         delay: 10000
                     });
@@ -173,7 +173,7 @@ angular.module('upload')
                     $scope.executionError = response.message;
                     Notification.error({
                         message: "The tool could not upload and process your file.<br>" + response.message + '<br>' + response.debugError,
-                        templateUrl: "NotificationErrorTemplate.html",
+                        templateUrl: "views/templates/NotificationErrorTemplate.html",
                         scope: $rootScope,
                         delay: 10000
                     });
@@ -187,7 +187,7 @@ angular.module('upload')
                             if (response.data.debugError === undefined) {
                                 Notification.error({
                                     message: "The zip file you uploaded is not valid, please check and correct the error(s)",
-                                    templateUrl: "NotificationErrorTemplate.html",
+                                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                                     scope: $rootScope,
                                     delay: 10000
                                 });
@@ -198,7 +198,7 @@ angular.module('upload')
                             } else {
                                 Notification.error({
                                     message: "  " + response.data.message + '<br>' + response.data.debugError,
-                                    templateUrl: "NotificationErrorTemplate.html",
+                                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                                     scope: $rootScope,
                                     delay: 10000
                                 });
@@ -347,7 +347,7 @@ angular.module('upload')
                 if (result.data.status === "SUCCESS") {
                     Notification.success({
                         message: "Profile Added !",
-                        templateUrl: "NotificationSuccessTemplate.html",
+                        templateUrl: "views/templates/NotificationSuccessTemplate.html",
                         scope: $rootScope,
                         delay: 5000
                     });
@@ -355,7 +355,7 @@ angular.module('upload')
                 } else {
                     Notification.error({
                         message: result.data.message + '<br><br>Debug message:<br>' + result.data.debugError,
-                        templateUrl: "NotificationErrorTemplate.html",
+                        templateUrl: "views/templates/NotificationErrorTemplate.html",
                         scope: $rootScope,
                         delay: 20000
                     });
@@ -365,7 +365,7 @@ angular.module('upload')
                 $scope.loading = false;
                 Notification.error({
                     message: error.data,
-                    templateUrl: "NotificationErrorTemplate.html",
+                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                     scope: $rootScope,
                     delay: 10000
                 });
@@ -385,14 +385,14 @@ angular.module('upload')
                 $scope.existingTP.selected = undefined;
                 Notification.success({
                     message: "Profiles cleared!",
-                    templateUrl: "NotificationSuccessTemplate.html",
+                    templateUrl: "views/templates/NotificationSuccessTemplate.html",
                     scope: $rootScope,
                     delay: 5000
                 });
             }, function (error) {
                 Notification.error({
                     message: error.data,
-                    templateUrl: "NotificationErrorTemplate.html",
+                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                     scope: $rootScope,
                     delay: 10000
                 });
@@ -513,7 +513,7 @@ angular.module('upload').controller('UploadTokenCtrl', ['$scope', '$http', 'CF',
                             if (response.data.debugError === undefined) {
                                 Notification.error({
                                     message: "The zip file you uploaded is not valid, please check and correct the error(s)",
-                                    templateUrl: "NotificationErrorTemplate.html",
+                                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                                     scope: $rootScope,
                                     delay: 10000
                                 });
@@ -523,7 +523,7 @@ angular.module('upload').controller('UploadTokenCtrl', ['$scope', '$http', 'CF',
                             } else {
                                 Notification.error({
                                     message: "  " + response.data.message + '<br>' + response.data.debugError,
-                                    templateUrl: "NotificationErrorTemplate.html",
+                                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                                     scope: $rootScope,
                                     delay: 10000
                                 });
@@ -574,7 +574,7 @@ angular.module('upload').controller('UploadTokenCtrl', ['$scope', '$http', 'CF',
             if (result.data.status === "SUCCESS") {
                 Notification.success({
                     message: "Profile saved !",
-                    templateUrl: "NotificationSuccessTemplate.html",
+                    templateUrl: "views/templates/NotificationSuccessTemplate.html",
                     scope: $rootScope,
                     delay: 5000
                 });
@@ -582,7 +582,7 @@ angular.module('upload').controller('UploadTokenCtrl', ['$scope', '$http', 'CF',
             } else {
                 Notification.error({
                     message: result.data.message,
-                    templateUrl: "NotificationErrorTemplate.html",
+                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                     scope: $rootScope,
                     delay: 10000
                 });
@@ -592,7 +592,7 @@ angular.module('upload').controller('UploadTokenCtrl', ['$scope', '$http', 'CF',
             $scope.loading = false;
             Notification.error({
                 message: error.data,
-                templateUrl: "NotificationErrorTemplate.html",
+                templateUrl: "views/templates/NotificationErrorTemplate.html",
                 scope: $rootScope,
                 delay: 10000
             });

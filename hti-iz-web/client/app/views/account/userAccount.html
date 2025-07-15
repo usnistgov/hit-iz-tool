@@ -1,12 +1,5 @@
-<style id="antiClickjack">body{display:none !important;}</style>
-<script type="text/javascript">
-    if (self === top) {
-        var antiClickjack = document.getElementById("antiClickjack");
-        antiClickjack.parentNode.removeChild(antiClickjack);
-    } else {
-        top.location = self.location;
-    }
-</script>
+
+
 <div ng-controller="UserAccountCtrl" ng-init="initAccount()">
     <div class="container" style="margin-top: 20px"  ng-show="isAuthenticated() && !isPending()">
 
@@ -21,12 +14,29 @@
           </div>
         </tab>
 
-        <tab ng-show="isAdmin()">
+        <tab ng-if="isAdmin()">
           <tab-heading>
             <i class="fa fa-cog"></i>&nbsp;<span msg key="navbar.manage"></span>
           </tab-heading>
           <div id="accounts" class="accountMgt">
             <div ng-include="'views/account/accountsList.html'"></div>
+          </div>
+        </tab>
+
+        <tab ng-if="isAdmin()">
+          <tab-heading>
+            <i class="fa fa-cog"></i>&nbsp;<span msg key="navbar.manage.notifications"></span>
+          </tab-heading>
+          <div id="nofitications" class="accountMgt">
+            <div ng-include="'views/account/notifications.html'"></div>
+          </div>
+        </tab>
+        <tab>
+          <tab-heading>
+            <i class="fa fa-user"></i>&nbsp;<span msg key="navbar.manage.apikeys"></span></a>
+          </tab-heading>
+          <div id="account" class="accountMgt">
+            <div ng-include="'views/account/apikeys.html'"></div>
           </div>
         </tab>
 

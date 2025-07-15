@@ -1,12 +1,5 @@
-<style id="antiClickjack">body{display:none !important;}</style>
-<script type="text/javascript">
-    if (self === top) {
-        var antiClickjack = document.getElementById("antiClickjack");
-        antiClickjack.parentNode.removeChild(antiClickjack);
-    } else {
-        top.location = self.location;
-    }
-</script>
+
+
 <form name="loginForm" id="loginForm" novalidate class="form-horizontal">
     <div class="modal-header">
         <a class="close" data-dismiss="modal"></a>
@@ -42,7 +35,7 @@
             </label>
 
             <div class="col-md-10">
-                <input type="password"   autocomplete="off" class="form-control immediate-help account-input focus"  id="password" name="password"
+                <input type="password" autocomplete="off" class="form-control immediate-help account-input focus"  id="password" name="password"
                        ng-model="user.password" ng-minlength="4" required>
             </div>
         </div>
@@ -60,13 +53,13 @@
             </div>
 
         <div clas="col-md-12" >
-            <a href="#/{{domainIdToName(appInfo.selectedDomain)}}/forgotten" ng-click="cancel()" style="text-align:center">
+            <a href="#/forgotten" ng-click="cancel()" style="text-align:center">
                 <span msg key="login.forgotPwd"></span>
             </a>
         </div>
 
-        <div clas="col-md-12">       
-            <a href="#/{{domainIdToName(appInfo.selectedDomain)}}/registration" ng-click="cancel()" style="text-align:center">
+        <div clas="col-md-12">
+            <a href="#/registration" ng-click="cancel()" style="text-align:center">
                 <span msg key="login.newAccount"></span>
             </a>
         </div>

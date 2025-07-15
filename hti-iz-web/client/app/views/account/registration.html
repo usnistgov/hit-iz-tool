@@ -1,14 +1,5 @@
-<style id="antiClickjack">body {
-    display: none !important;
-}</style>
-<script type="text/javascript">
-    if (self === top) {
-        var antiClickjack = document.getElementById("antiClickjack");
-        antiClickjack.parentNode.removeChild(antiClickjack);
-    } else {
-        top.location = self.location;
-    }
-</script>
+
+
 <div class="container">
 <div class="row">
 <div class="col-md-10">
@@ -167,7 +158,7 @@
     </label>
 
     <div class="controls col-md-5">
-        <input type="password" class="form-control immediate-help account-input" name="inputPassword"
+        <input type="password"  autocomplete="off" class="form-control immediate-help account-input" name="inputPassword"
                id="inputPassword" ng-model='account.password' ng-minlength="7" ng-maxlength="20"
                ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" password-validate required>
 
@@ -202,7 +193,7 @@
     </label>
 
     <div class="controls col-md-5">
-        <input type="password" class="form-control immediate-help account-input"
+        <input autocomplete="off" type="password" class="form-control immediate-help account-input"
                name="inputPasswordConfirm" id="inputPasswordConfirm" ng-model='account.passwordConfirm'
                check-password="inputPassword" required>
 

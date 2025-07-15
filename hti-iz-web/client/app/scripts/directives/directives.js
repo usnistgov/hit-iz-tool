@@ -104,6 +104,7 @@ angular.module('hit-tool-directives').directive('windowExit', function($window, 
             var myEvent = $window.attachEvent || $window.addEventListener,
                 chkevent = $window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compatable
             myEvent(chkevent, function (e) { // For >=IE7, Chrome, Firefox
+				console.log("clear template");
                 $templateCache.removeAll();
             });
         }

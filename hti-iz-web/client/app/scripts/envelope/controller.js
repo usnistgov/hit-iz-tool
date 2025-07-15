@@ -339,7 +339,7 @@ angular.module('envelope')
                     $scope.message(result.content);
                     $scope.uploadError = null;
                     $scope.fileName = fileName;
-                    Notification.success({message: "File " + fileName + " successfully uploaded!", templateUrl: "NotificationSuccessTemplate.html", scope: $rootScope, delay: 30000});
+                    Notification.success({message: "File " + fileName + " successfully uploaded!", templateUrl: "views/templates/NotificationSuccessTemplate.html", scope: $rootScope, delay: 30000});
                 });
             }, function(response){
                 $scope.uploadError = response.data;

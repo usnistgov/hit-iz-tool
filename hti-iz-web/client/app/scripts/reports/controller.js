@@ -105,14 +105,14 @@ angular.module('reports')
     	    	          		}
     	    	          		Notification.success({
     	    	                    message: "Report deleted successfully!",
-    	    	                    templateUrl: "NotificationSuccessTemplate.html",
+    	    	                    templateUrl: "views/templates/NotificationSuccessTemplate.html",
     	    	                    scope: $rootScope,
     	    	                    delay: 5000
     	    	                  });
     	    	          	}, function (error) {
     	    	          		Notification.error({
     	    	                    message: "Report deletion failed! <br>If error persists, please contact the website administrator." ,
-    	    	                    templateUrl: "NotificationErrorTemplate.html",
+    	    	                    templateUrl: "views/templates/NotificationErrorTemplate.html",
     	    	                    scope: $rootScope,
     	    	                    delay: 10000
     	    	                  });
@@ -125,14 +125,14 @@ angular.module('reports')
     	    	          		}
     	    	          		Notification.success({
     	    	                    message: "Report deleted successfully!",
-    	    	                    templateUrl: "NotificationSuccessTemplate.html",
+    	    	                    templateUrl: "views/templates/NotificationSuccessTemplate.html",
     	    	                    scope: $rootScope,
     	    	                    delay: 5000
     	    	                  });
     	    	          	}, function (error) {
     	    	          		Notification.error({
     	    	          			 message: "Report deletion failed! <br>If error persists, please contact the website administrator." ,
-    	    	                    templateUrl: "NotificationErrorTemplate.html",
+    	    	                    templateUrl: "views/templates/NotificationErrorTemplate.html",
     	    	                    scope: $rootScope,
     	    	                    delay: 10000
     	    	                  });
@@ -159,7 +159,7 @@ angular.module('reports').controller('ReportDetailsCtrl', function ($scope, $mod
           }, function (error) {
               Notification.error({
        			 message: "Report could not be loaded! <br>If error persists, please contact the website administrator." ,
-                 templateUrl: "NotificationErrorTemplate.html",
+                 templateUrl: "views/templates/NotificationErrorTemplate.html",
                  scope: $rootScope,
                  delay: 10000
                });
@@ -172,7 +172,7 @@ angular.module('reports').controller('ReportDetailsCtrl', function ($scope, $mod
           }, function (error) {
               Notification.error({
             	  message: "Report could not be loaded! <br>If error persists, please contact the website administrator." ,
-                  templateUrl: "NotificationErrorTemplate.html",
+                  templateUrl: "views/templates/NotificationErrorTemplate.html",
                   scope: $rootScope,
                   delay: 10000
                 });

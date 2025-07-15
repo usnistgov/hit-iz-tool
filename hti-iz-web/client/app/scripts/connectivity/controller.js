@@ -179,7 +179,7 @@ angular.module('connectivity')
       $scope.openReceiverConfig = function () {
         $scope.logger.init();
         var modalInstance = $modal.open({
-          templateUrl: 'TransactionReceiver.html',
+          templateUrl: 'views/templates/TransactionReceiver.html',
           controller: 'ConnectivityReceiverCtrl',
           windowClass: 'app-modal-window',
           resolve: {
@@ -217,7 +217,7 @@ angular.module('connectivity')
           $scope.connecting = true;
           $scope.logger.init();
           var modalInstance = $modal.open({
-            templateUrl: 'SOAPConnectivityConsole.html',
+            templateUrl: 'views/templates/SOAPConnectivityConsole.html',
             controller: 'SOAPConnectivityConsoleCtrl',
             size: 'lg',
             backdrop: 'static',
@@ -266,7 +266,7 @@ angular.module('connectivity')
 
       $scope.configureReceiver = function () {
         var modalInstance = $modal.open({
-          templateUrl: 'TransactionConfigureReceiver.html',
+          templateUrl: 'views/templates/TransactionConfigureReceiver.html',
           controller: 'ConnectivityConfigureReceiverCtrl',
           windowClass: 'app-modal-window',
           backdrop: 'static',

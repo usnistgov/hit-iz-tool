@@ -76,65 +76,43 @@ public class IZSOAPWebServiceClientImpl extends IZSOAPWebServiceClient {
 			}, new WebServiceMessageExtractor<Object>() {
 				@Override
 				public Object extractData(WebServiceMessage response) throws IOException {
-					return format(response);
+					try {
+						return format(response);
+					} catch (TransportClientException e) {
+						throw new IOException(e);
+					}
 				}
 			});
 
 			return res;
 		} catch (SoapFaultClientException e) {
-			logger.error("Failed to send message:\n" + e.getMessage());
+			logger.error("Failed to send message", e);
 			return toString(e);
 		} catch (WebServiceTransportException e) {
-			logger.error("Failed to send message:\n" + e.getMessage());
-			throw new TransportClientException(e);
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-			logger.error("Failed to send message:\n" + e.getMessage());
+			logger.error("Failed to send message", e);
 			throw new TransportClientException(e);
 		} catch (Exception e) {
-			logger.error("Failed to send message:\n" + e.getMessage());
-			e.printStackTrace();
+			logger.error("Failed to send message", e);
 			throw new TransportClientException(e);
 		}
 	}
 
-	private String toString(SoapFaultClientException e) throws TransportClientException {
+	public static String toString(SoapFaultClientException e) throws TransportClientException {
 		try {
-			// StringWriter stringWriter = new StringWriter();
-			// StreamResult xmlOutput = new StreamResult(stringWriter);
-			// Transformer trn =
-			// TransformerFactory.newInstance().newTransformer();
-			// trn.transform(e.getWebServiceMessage(), xmlOutput);
-			String error = format(e.getWebServiceMessage());
-			return error;
-		} catch (XmlMappingException e1) {
-			logger.error("problem with XML transform: ", e1);
-			throw new TransportClientException(e);
+			return format(e.getWebServiceMessage());
+		} catch (Exception e1) {
+			logger.error("Failed to transform SOAP fault", e1);
+			throw new TransportClientException("Failed to transform SOAP fault: " + e1.getMessage());
 		}
 	}
 
-	// public static String toString(FaultAwareWebServiceMessage fault)
-	// throws JAXBException, XmlMappingException, IOException {
-	// ObjectFactory of = new ObjectFactory();
-	// JAXBElement<SecurityFaultType> jaxbElement =
-	// of.createSecurityFault(fault);
-	// StringWriter stringWriter = new StringWriter();
-	// StreamResult xmlOutput = new StreamResult(stringWriter);
-	// // serialise to xml
-	// JAXBContext context = JAXBContext.newInstance(SecurityFaultType.class);
-	// context.createMarshaller().marshal(jaxbElement, xmlOutput);
-	// // output string to console
-	// String theXML = stringWriter.toString();
-	// return theXML;
-	// }
-
-	public static String format(final WebServiceMessage message) {
-		try {
-			final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+	private static String format(final WebServiceMessage message) throws TransportClientException {
+		try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
 			message.writeTo(outputStream);
-			return new String(outputStream.toByteArray());
-		} catch (final Exception e) {
-			throw new RuntimeException(e);
+			return new String(outputStream.toByteArray(), java.nio.charset.StandardCharsets.UTF_8);
+		} catch (IOException e) {
+			logger.error("Failed to format message", e);
+			throw new TransportClientException("Failed to format message: " + e.getMessage());
 		}
 	}
 

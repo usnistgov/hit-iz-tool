@@ -168,7 +168,7 @@ angular.module('main').controller('MainCtrl',
         $rootScope.$on('IdleStart', function () {
             closeModals();
             $rootScope.warning = $modal.open({
-                templateUrl: 'warning-dialog.html',
+                templateUrl: 'views/templates/warning-dialog.html',
                 windowClass: 'modal-danger'
             });
         });
@@ -182,7 +182,7 @@ angular.module('main').controller('MainCtrl',
             if ($scope.isAuthenticated()) {
                 $rootScope.$emit('event:execLogout');
                 $rootScope.timedout = $modal.open({
-                    templateUrl: 'timedout-dialog.html',
+                    templateUrl: 'views/templates/timedout-dialog.html',
                     windowClass: 'modal-danger'
                 });
             } else {
@@ -190,7 +190,7 @@ angular.module('main').controller('MainCtrl',
                 Session.delete().then(
                     function (response) {
                         $rootScope.timedout = $modal.open({
-                            templateUrl: 'timedout-dialog.html',
+                            templateUrl: 'views/templates/timedout-dialog.html',
                             windowClass: 'modal-danger',
                             backdrop: true,
                             keyboard: 'false',
@@ -452,7 +452,7 @@ angular.module('main').controller('MainCtrl',
 
         $rootScope.showError = function (error) {
             var modalInstance = $modal.open({
-                templateUrl: 'ErrorDlgDetails.html',
+                templateUrl: 'views/error.html',
                 controller: 'ErrorDetailsCtrl',
                 resolve: {
                     error: function () {
@@ -510,7 +510,7 @@ angular.module('main').controller('MainCtrl',
 
         $rootScope.showError = function (error) {
             var modalInstance = $modal.open({
-                templateUrl: 'ErrorDlgDetails.html',
+                templateUrl: 'views/error.html',
                 controller: 'ErrorDetailsCtrl',
                 resolve: {
                     error: function () {
@@ -574,7 +574,7 @@ angular.module('main').controller('MainCtrl',
 
         $rootScope.openValidationResultInfo = function () {
             var modalInstance = $modal.open({
-                templateUrl: 'ValidationResultInfoCtrl.html',
+                templateUrl: 'views/templates/ValidationResultInfoCtrl.html',
                 windowClass: 'profile-modal',
                 controller: 'ValidationResultInfoCtrl'
             });
@@ -584,7 +584,7 @@ angular.module('main').controller('MainCtrl',
             StorageService.clearAll();
             if (!$rootScope.vcModalInstance || $rootScope.vcModalInstance === null || !$rootScope.vcModalInstance.opened) {
                 $rootScope.vcModalInstance = $modal.open({
-                    templateUrl: 'VersionChanged.html',
+                    templateUrl: 'views/templates/VersionChanged.html',
                     size: 'lg',
                     backdrop: 'static',
                     keyboard: 'false',
@@ -609,7 +609,7 @@ angular.module('main').controller('MainCtrl',
             StorageService.clearAll();
             if (!$rootScope.errorModalInstance || $rootScope.errorModalInstance === null || !$rootScope.errorModalInstance.opened) {
                 $rootScope.errorModalInstance = $modal.open({
-                    templateUrl: 'CriticalError.html',
+                    templateUrl: 'views/templates/CriticalError.html',
                     size: 'lg',
                     backdrop: true,
                     keyboard: 'true',
@@ -633,7 +633,7 @@ angular.module('main').controller('MainCtrl',
         $rootScope.openUnknownDomainDlg = function (domain) {
             StorageService.clearAll();
             $modal.open({
-                templateUrl: 'UnknownDomain.html',
+                templateUrl: 'views/templates/UnknownDomain.html',
                 size: 'lg',
                 backdrop: false,
                 keyboard: 'false',
@@ -659,7 +659,7 @@ angular.module('main').controller('MainCtrl',
             StorageService.clearAll();
             if (!$rootScope.sessionExpiredModalInstance || $rootScope.sessionExpiredModalInstance === null || !$rootScope.sessionExpiredModalInstance.opened) {
                 $rootScope.sessionExpiredModalInstance = $modal.open({
-                    templateUrl: 'timedout-dialog.html',
+                    templateUrl: 'views/templates/timedout-dialog.html',
                     size: 'lg',
                     backdrop: true,
                     keyboard: 'true',
@@ -682,6 +682,7 @@ angular.module('main').controller('MainCtrl',
 
 
         $rootScope.clearTemplate = function () {
+			console.log("clear template");
             $templateCache.removeAll();
         };
 
@@ -696,7 +697,7 @@ angular.module('main').controller('MainCtrl',
         $rootScope.openInvalidReqDlg = function () {
             if (!$rootScope.errorModalInstance || $rootScope.errorModalInstance === null || !$rootScope.errorModalInstance.opened) {
                 $rootScope.errorModalInstance = $modal.open({
-                    templateUrl: 'InvalidReqCtrl.html',
+                    templateUrl: 'views/templates/InvalidReqCtrl.html',
                     size: 'lg',
                     backdrop: true,
                     keyboard: 'false',
@@ -718,7 +719,7 @@ angular.module('main').controller('MainCtrl',
         $rootScope.openNotFoundDlg = function () {
             if (!$rootScope.errorModalInstance || $rootScope.errorModalInstance === null || !$rootScope.errorModalInstance.opened) {
                 $rootScope.errorModalInstance = $modal.open({
-                    templateUrl: 'NotFoundCtrl.html',
+                    templateUrl: 'views/templates/NotFoundCtrl.html',
                     size: 'lg',
                     backdrop: true,
                     keyboard: 'false',
@@ -1099,8 +1100,22 @@ angular.module('main').controller('HeaderCtrl', ['$scope', function ($scope ) {
 
 }]);
 
-angular.module('main').controller('HomeCtrl', ['$scope', '$rootScope', function ($scope,$rootScope ) {
+angular.module('main').controller('HomeCtrl', ['$scope', '$rootScope','$timeout', function ($scope,$rootScope,$timeout) {
 
+//	$(document).ready(function() {
+//		//start carousel here as it doesn't always launch on page change 
+//	    $('#myCarousel').carousel();
+//	  });
+//console.log("yo");
+//	$timeout(function () {
+	$timeout(function () {
+	       if ($('#myCarousel').length) {
+	           $('#myCarousel').carousel();
+	       }
+	   }, 1000);
+//	   console.log("timeout",$('#myCarousel').carousel());	   
+//   });
+	
 }]);
 
 

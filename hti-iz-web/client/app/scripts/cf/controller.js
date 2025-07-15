@@ -401,7 +401,7 @@ angular.module('cf')
 
         $scope.showDQAOptions = function () {
             var modalInstance = $modal.open({
-                templateUrl: 'DQAConfig.html',
+                templateUrl: 'lib/dqa/dqa-tpls.html',
                 controller: 'DQAConfigCtrl',
                 windowClass: 'dq-modal',
                 animation: true,
@@ -441,7 +441,7 @@ angular.module('cf')
                     $scope.execute();
                     Notification.success({
                         message: "File " + fileName + " successfully uploaded!",
-                        templateUrl: "NotificationSuccessTemplate.html",
+                        templateUrl: "views/templates/NotificationSuccessTemplate.html",
                         scope: $rootScope,
                         delay: 30000
                     });
@@ -745,7 +745,7 @@ angular.module('cf')
 
         $scope.showMessageWithHexadecimal = function () {
             var modalInstance = $modal.open({
-                templateUrl: 'MessageWithHexadecimal.html',
+                templateUrl: 'views/templates/MessageWithHexadecimal.html',
                 controller: 'MessageWithHexadecimalDlgCtrl',
                 windowClass: 'valueset-modal',
                 animation: false,
@@ -834,14 +834,14 @@ angular.module('cf').controller('CFSavedReportCtrl', ['$scope', '$sce', '$http',
  	    	          		}
  	    	          		Notification.success({
  	    	                    message: "Report deleted successfully!",
- 	    	                    templateUrl: "NotificationSuccessTemplate.html",
+ 	    	                    templateUrl: "views/templates/NotificationSuccessTemplate.html",
  	    	                    scope: $rootScope,
  	    	                    delay: 5000
  	    	                  });
  	    	          	}, function (error) {
  	    	          		Notification.error({
  	    	                    message: "Report deletion failed! <br>If error persists, please contact the website administrator." ,
- 	    	                    templateUrl: "NotificationErrorTemplate.html",
+ 	    	                    templateUrl: "views/templates/NotificationErrorTemplate.html",
  	    	                    scope: $rootScope,
  	    	                    delay: 10000
  	    	                  });
@@ -1000,7 +1000,7 @@ angular.module('cf')
                                         if (response.debugError === undefined) {
                                             Notification.error({
                                                 message: "The zip file you uploaded is not valid, please check and correct the error(s)",
-                                                templateUrl: "NotificationErrorTemplate.html",
+                                                templateUrl: "views/templates/NotificationErrorTemplate.html",
                                                 scope: $rootScope,
                                                 delay: 10000
                                             });
@@ -1010,7 +1010,7 @@ angular.module('cf')
                                         } else {
                                             Notification.error({
                                                 message: "  " + response.message + '<br>' + response.debugError,
-                                                templateUrl: "NotificationErrorTemplate.html",
+                                                templateUrl: "views/templates/NotificationErrorTemplate.html",
                                                 scope: $rootScope,
                                                 delay: 10000
                                             });
@@ -1244,7 +1244,7 @@ angular.module('cf')
                                 $scope.testCases = null;
                                 Notification.success({
                                     message: "Profile group deleted successfully !",
-                                    templateUrl: "NotificationSuccessTemplate.html",
+                                    templateUrl: "views/templates/NotificationSuccessTemplate.html",
                                     scope: $rootScope,
                                     delay: 5000
                                 });
@@ -1280,7 +1280,7 @@ angular.module('cf')
                             if (result.status === "SUCCESS") {
                                 Notification.success({
                                     message: "Profile group deleted successfully !",
-                                    templateUrl: "NotificationSuccessTemplate.html",
+                                    templateUrl: "views/templates/NotificationSuccessTemplate.html",
                                     scope: $rootScope,
                                     delay: 5000
                                 });
@@ -1533,7 +1533,7 @@ angular.module('cf')
                                             testPlan.description = $scope.testcase['description'];
                                             Notification.success({
                                                 message: "Profile Group saved successfully!",
-                                                templateUrl: "NotificationSuccessTemplate.html",
+                                                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                                                 scope: $rootScope,
                                                 delay: 5000
                                             });
@@ -1553,7 +1553,7 @@ angular.module('cf')
                                             $scope.selectGroup($scope.selectedNode);
                                             Notification.success({
                                                 message: "Profile Group has been successfully published !",
-                                                templateUrl: "NotificationSuccessTemplate.html",
+                                                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                                                 scope: $rootScope,
                                                 delay: 5000
                                             });
@@ -1608,7 +1608,7 @@ angular.module('cf')
                                             testPlan.description = $scope.testcase['description'];
                                             Notification.success({
                                                 message: "Profile Group saved successfully!",
-                                                templateUrl: "NotificationSuccessTemplate.html",
+                                                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                                                 scope: $rootScope,
                                                 delay: 5000
                                             });
@@ -1628,7 +1628,7 @@ angular.module('cf')
                                             $scope.selectGroup($scope.selectedNode);
                                             Notification.success({
                                                 message: "Profile Group has been successfully published !",
-                                                templateUrl: "NotificationSuccessTemplate.html",
+                                                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                                                 scope: $rootScope,
                                                 delay: 5000
                                             });
@@ -1683,7 +1683,7 @@ angular.module('cf')
                                             testPlan.description = $scope.testcase['description'];
                                             Notification.success({
                                                 message: "Profile Group saved successfully!",
-                                                templateUrl: "NotificationSuccessTemplate.html",
+                                                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                                                 scope: $rootScope,
                                                 delay: 5000
                                             });
@@ -1703,7 +1703,7 @@ angular.module('cf')
                                             $scope.selectGroup($scope.selectedNode);
                                             Notification.success({
                                                 message: "Profile Group has been successfully published !",
-                                                templateUrl: "NotificationSuccessTemplate.html",
+                                                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                                                 scope: $rootScope,
                                                 delay: 5000
                                             });
@@ -1751,7 +1751,7 @@ angular.module('cf')
                         testPlan.description = $scope.testcase['description'];
                         Notification.success({
                             message: "Profile Group saved successfully!",
-                            templateUrl: "NotificationSuccessTemplate.html",
+                            templateUrl: "views/templates/NotificationSuccessTemplate.html",
                             scope: $rootScope,
                             delay: 5000
                         });
@@ -1793,7 +1793,7 @@ angular.module('cf')
 
                         Notification.success({
                             message: "Profile Group saved successfully!",
-                            templateUrl: "NotificationSuccessTemplate.html",
+                            templateUrl: "views/templates/NotificationSuccessTemplate.html",
                             scope: $rootScope,
                             delay: 5000
                         });
@@ -1829,14 +1829,14 @@ angular.module('cf')
 		        CFTestPlanManager.refreshTestPlanTestContextModels("hl7v2",node.id).then(function (result) {
 					Notification.success({
                        message: "Test Plan TestContext model successfully updated",
-                       templateUrl: "NotificationSuccessTemplate.html",
+                       templateUrl: "views/templates/NotificationSuccessTemplate.html",
                        scope: $rootScope,
                        delay: 5000
                    });
 				}, function (error) {
 					Notification.error({
 		                message: "There was an error while refreshing " + error.data,
-		                templateUrl: "NotificationErrorTemplate.html",
+		                templateUrl: "views/templates/NotificationErrorTemplate.html",
 		                scope: $rootScope,
 		                delay: 5000
 		            });	
@@ -1845,14 +1845,14 @@ angular.module('cf')
 				CFTestPlanManager.refreshTestStepGroupTestContextModels("hl7v2",node.id).then(function (result) {
 					Notification.success({
                        message: "Test Plan TestContext model successfully updated",
-                       templateUrl: "NotificationSuccessTemplate.html",
+                       templateUrl: "views/templates/NotificationSuccessTemplate.html",
                        scope: $rootScope,
                        delay: 5000
                    });
 				}, function (error) {	               
 					Notification.error({
 		                message: "There was an error while refreshing " + error.data,
-		                templateUrl: "NotificationErrorTemplate.html",
+		                templateUrl: "views/templates/NotificationErrorTemplate.html",
 		                scope: $rootScope,
 		                delay: 5000
 		            });
@@ -1861,14 +1861,14 @@ angular.module('cf')
 		        CFTestPlanManager.refreshTestStepTestContextModels("hl7v2",node.id).then(function (result) {
 					Notification.success({
                        message: "Test Step TestContext model successfully updated",
-                       templateUrl: "NotificationSuccessTemplate.html",
+                       templateUrl: "views/templates/NotificationSuccessTemplate.html",
                        scope: $rootScope,
                        delay: 5000
                    });
 				}, function (error) {
 					Notification.error({
 		                message: "There was an error while refreshing " + error.data,
-		                templateUrl: "NotificationErrorTemplate.html",
+		                templateUrl: "views/templates/NotificationErrorTemplate.html",
 		                scope: $rootScope,
 		                delay: 5000
 		            });	
@@ -1941,7 +1941,7 @@ angular.module('cf')
                     $scope.executionError = [];
                     Notification.success({
                         message: "Changes removed successfully!",
-                        templateUrl: "NotificationSuccessTemplate.html",
+                        templateUrl: "views/templates/NotificationSuccessTemplate.html",
                         scope: $rootScope,
                         delay: 5000
                     });
@@ -1951,7 +1951,7 @@ angular.module('cf')
                 }, function (error) {
                     // Notification.error({
                     //   message: error.data,
-                    //   templateUrl: "NotificationErrorTemplate.html",
+                    //   templateUrl: "views/templates/NotificationErrorTemplate.html",
                     //   scope: $rootScope,
                     //   delay: 10000
                     // });
@@ -2332,7 +2332,7 @@ angular.module('cf')
         profileUploader.onErrorItem = function (fileItem, response, status, headers) {
             Notification.error({
                 message: "There was an error while uploading " + fileItem.file.name,
-                templateUrl: "NotificationErrorTemplate.html",
+                templateUrl: "views/templates/NotificationErrorTemplate.html",
                 scope: $rootScope,
                 delay: 10000
             });
@@ -2532,7 +2532,7 @@ angular.module('cf')
                 if (response.debugError === undefined) {
                     Notification.error({
                         message: "The zip file you uploaded is not valid, please check and correct the error(s) and try again",
-                        templateUrl: "NotificationErrorTemplate.html",
+                        templateUrl: "views/templates/NotificationErrorTemplate.html",
                         scope: $rootScope,
                         delay: 10000
                     });
@@ -2550,7 +2550,7 @@ angular.module('cf')
                             if (response.debugError === undefined) {
                                 Notification.error({
                                     message: "The zip file you uploaded is not valid, please check and correct the error(s)",
-                                    templateUrl: "NotificationErrorTemplate.html",
+                                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                                     scope: $rootScope,
                                     delay: 10000
                                 });
@@ -2559,7 +2559,7 @@ angular.module('cf')
                             } else {
                                 Notification.error({
                                     message: "  " + response.message + '<br>' + response.debugError,
-                                    templateUrl: "NotificationErrorTemplate.html",
+                                    templateUrl: "views/templates/NotificationErrorTemplate.html",
                                     scope: $rootScope,
                                     delay: 10000
                                 });
@@ -2635,7 +2635,7 @@ angular.module('cf')
 			                            if (response.debugError === undefined) {
 			                                Notification.error({
 			                                    message: "The profiles could not be retrieved.",
-			                                    templateUrl: "NotificationErrorTemplate.html",
+			                                    templateUrl: "views/templates/NotificationErrorTemplate.html",
 			                                    scope: $rootScope,
 			                                    delay: 10000
 			                                });
@@ -2644,7 +2644,7 @@ angular.module('cf')
 			                            } else {
 			                                Notification.error({
 			                                    message: "  " + response.message + '<br>' + response.debugError,
-			                                    templateUrl: "NotificationErrorTemplate.html",
+			                                    templateUrl: "views/templates/NotificationErrorTemplate.html",
 			                                    scope: $rootScope,
 			                                    delay: 10000
 			                                });
@@ -2760,7 +2760,7 @@ angular.module('cf')
             $scope.loading = true;
             Notification.success({
                 message: "Profile Added !",
-                templateUrl: "NotificationSuccessTemplate.html",
+                templateUrl: "views/templates/NotificationSuccessTemplate.html",
                 scope: $rootScope,
                 delay: 5000
             });

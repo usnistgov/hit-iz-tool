@@ -12,7 +12,7 @@
         scope: {
           type: '@'
         },
-        templateUrl: 'ReportViewer.html',
+        templateUrl: 'lib/report-viewer/report-viewer-tpls.html',
         replace: false,
         controller: 'ReportViewerCtrl'
       };
@@ -42,7 +42,7 @@
       //             $scope.report = null;
       //             $scope.compile();
       //             $scope.loading = false;
-      //             //Notification.error({message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
+      //             //Notification.error({message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
       //         });
       //     } else {
       //         $scope.report = null;
@@ -69,7 +69,7 @@
               $scope.compile();
               $scope.loading = false;
 
-              //Notification.error({message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
+              //Notification.error({message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
             });
           } else {
             $scope.report = report;
@@ -249,7 +249,7 @@
           delay.resolve(res);
         },
         function (response) {
-//                    Notification.error({message: "Failed to generate the report. Please try again", templateUrl: "NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
+//                    Notification.error({message: "Failed to generate the report. Please try again", templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
           delay.reject(response.data);
         }
       );
@@ -271,7 +271,7 @@
           delay.resolve(res);
         },
         function (response) {
-//                    Notification.error({message: "Sorry, failed to generate the report. Please try again", templateUrl: "NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
+//                    Notification.error({message: "Sorry, failed to generate the report. Please try again", templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
           delay.reject(response.data);
         }
       );
@@ -320,7 +320,7 @@
           delay.resolve(res);
         },
         function (response) {
-//                    Notification.error({message: "Sorry, failed to generate the report. Please try again", templateUrl: "NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
+//                    Notification.error({message: "Sorry, failed to generate the report. Please try again", templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $rootScope, delay: 30000});
           delay.reject(response.data);
         }
       );

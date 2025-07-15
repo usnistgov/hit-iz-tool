@@ -19,7 +19,7 @@ angular.module('account')
 				//TODO: Add call back?
 				new Account($scope.account).$save().then(function() {
 				}, function(error) {
-					Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+					Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 				});
 
 				$scope.accountOrig = angular.copy($scope.account);
@@ -45,7 +45,7 @@ angular.module('account')
 				user.$save().then(function(result) {
 					$scope.msg = angular.fromJson(result);
 				}, function(error) {
-					Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+					Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 				});
 			};
 
@@ -85,7 +85,7 @@ angular.module('account')
 				},
 				function(error) {
 					//                console.log('Error fetching account information');
-					Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+					Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 				}
 			);
 		}
@@ -328,7 +328,7 @@ angular.module('account')
 				new Account($scope.account).$save(function(data) {
 
 				}, function(error) {
-					Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+					Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 				});
 				$scope.accountOrig = angular.copy($scope.account);
 			};
@@ -355,7 +355,7 @@ angular.module('account')
 				user.$save().then(function(result) {
 					$scope.msg = angular.fromJson(result);
 				}, function(error) {
-					Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+					Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 				});
 			};
 
@@ -381,7 +381,7 @@ angular.module('account')
 				authorityChange.$save().then(function(result) {
 					$scope.msg = angular.fromJson(result);
 				}, function(error) {
-					Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+					Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 				});
 			};
 
@@ -393,7 +393,7 @@ angular.module('account')
 						$scope.accountList = response;
 						$scope.tmpAccountList = [].concat($scope.accountList);
 					}, function(error) {
-						Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+						Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 					});
 				}
 			};
@@ -441,7 +441,7 @@ angular.module('account')
 					$scope.tmpAccountList = [].concat($scope.accountList);
 					$scope.account = null;
 				}, function(error) {
-					Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+					Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 				});
 			};
 
@@ -453,7 +453,7 @@ angular.module('account')
 			//         $scope.account.pending = false;
 			//         $scope.msg = angular.fromJson(result);
 			//     },function(error){
-			//         Notification.error({message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000});
+			//         Notification.error({message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000});
 			//     });
 			// };
 			//
@@ -465,7 +465,7 @@ angular.module('account')
 			//         $scope.account.pending = true;
 			//         $scope.msg = angular.fromJson(result);
 			//     },function(error){
-			//         Notification.error({message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000});
+			//         Notification.error({message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000});
 			//     });
 			// };
 
@@ -493,23 +493,23 @@ angular.module('account')
 				if (notification.id !== undefined) {
 					notificationService.updateNotification(notification).then(function(result) {
 						if (result.type === "success") {
-							Notification.error({ message: result.text, templateUrl: "NotificationSuccessTemplate.html", scope: $scope, delay: 50000 });
+							Notification.error({ message: result.text, templateUrl: "views/templates/NotificationSuccessTemplate.html", scope: $scope, delay: 50000 });
 						} else {
-							Notification.error({ message: result.text, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+							Notification.error({ message: result.text, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 						}
 					}, function(error) {
-						Notification.error({ message: "Unabled to update a notification.", templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+						Notification.error({ message: "Unabled to update a notification.", templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 					});
 				} else {
 					notificationService.saveNotification(notification).then(function(result) {
 						if (result.type === "success") {
-							Notification.error({ message: result.text, templateUrl: "NotificationSuccessTemplate.html", scope: $scope, delay: 50000 });
+							Notification.error({ message: result.text, templateUrl: "views/templates/NotificationSuccessTemplate.html", scope: $scope, delay: 50000 });
 							$scope.notificationList.unshift(result.data);
 						} else {
-							Notification.error({ message: result.text, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+							Notification.error({ message: result.text, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 						}
 					}, function(error) {
-						Notification.error({ message: "Unabled to add a notification.", templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+						Notification.error({ message: "Unabled to add a notification.", templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 					});
 
 				}
@@ -520,7 +520,7 @@ angular.module('account')
 				notificationService.getAllNotifications().then(function(result) {
 					$scope.notificationList = result;
 				}, function(error) {
-					Notification.error({ message: "Unabled to load notifications.", templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+					Notification.error({ message: "Unabled to load notifications.", templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 				});
 
 			};
@@ -540,7 +540,7 @@ angular.module('account').controller('ConfirmAccountDeleteCtrl', function($scope
 				$modalInstance.close($scope.accountToDelete);
 			},
 			function(error) {
-				Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+				Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 			}
 		);
 	};
@@ -558,7 +558,7 @@ angular.module('account').controller('ConfirmAccountDisableCtrl', function($scop
 		Account.disableAccount($scope.accountToDisable.id).then(function(result) {
 			$modalInstance.close($scope.accountToDisable.id);
 		}, function(error) {
-			Notification.error({ message: "An error occured, unable to disable user.", templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+			Notification.error({ message: "An error occured, unable to disable user.", templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 		});
 	};
 
@@ -582,7 +582,7 @@ angular.module('account')
 						$scope.username = '';
 					}
 				}, function(error) {
-					Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+					Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 				});
 			};
 
@@ -630,7 +630,7 @@ angular.module('account')
 								//should unfreeze the form
 								$scope.registered = true;
 								$location.path('/home');
-								Notification.success({ message: $rootScope.appInfo.registrationSubmittedContent, templateUrl: "NotificationSuccessTemplate.html", scope: $rootScope, delay: 30000 });
+								Notification.success({ message: $rootScope.appInfo.registrationSubmittedContent, templateUrl: "views/templates/NotificationSuccessTemplate.html", scope: $rootScope, delay: 30000 });
 							} else {
 								$scope.registered = false;
 							}
@@ -725,7 +725,7 @@ angular.module('account')
 						$scope.user.password = '';
 						$scope.user.passwordConfirm = '';
 					}, function(error) {
-						Notification.error({ message: error.data, templateUrl: "NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
+						Notification.error({ message: error.data, templateUrl: "views/templates/NotificationErrorTemplate.html", scope: $scope, delay: 50000 });
 					});
 				}
 			};

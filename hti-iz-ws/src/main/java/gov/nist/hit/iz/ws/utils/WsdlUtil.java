@@ -45,69 +45,74 @@ public class WsdlUtil {
 
   public static String toString(SecurityFaultType fault) throws JAXBException, XmlMappingException,
       IOException {
-    ObjectFactory of = new ObjectFactory();
-    JAXBElement<SecurityFaultType> jaxbElement = of.createSecurityFault(fault);
-    StringWriter stringWriter = new StringWriter();
-    StreamResult xmlOutput = new StreamResult(stringWriter);
-    // serialise to xml
-    JAXBContext context = JAXBContext.newInstance(SecurityFaultType.class);
-    context.createMarshaller().marshal(jaxbElement, xmlOutput);
-    // output string to console
-    String theXML = stringWriter.toString();
-    return theXML;
+    try (StringWriter stringWriter = new StringWriter()) {
+      ObjectFactory of = new ObjectFactory();
+      JAXBElement<SecurityFaultType> jaxbElement = of.createSecurityFault(fault);
+      StreamResult xmlOutput = new StreamResult(stringWriter);
+      // serialise to xml
+      JAXBContext context = JAXBContext.newInstance(SecurityFaultType.class);
+      context.createMarshaller().marshal(jaxbElement, xmlOutput);
+      // output string to console
+      String theXML = stringWriter.toString();
+      return theXML;
+    }
   }
 
   public static String toString(UnsupportedOperationFaultType fault) throws JAXBException,
       XmlMappingException, IOException {
-    ObjectFactory of = new ObjectFactory();
-    JAXBElement<UnsupportedOperationFaultType> jaxbElement =
-        of.createUnsupportedOperationFault(fault);
-    StringWriter stringWriter = new StringWriter();
-    StreamResult xmlOutput = new StreamResult(stringWriter);
-    // serialise to xml
-    JAXBContext context = JAXBContext.newInstance(UnsupportedOperationFaultType.class);
-    context.createMarshaller().marshal(jaxbElement, xmlOutput);
-    // output string to console
-    String theXML = stringWriter.toString();
-    return theXML;
+    try (StringWriter stringWriter = new StringWriter()) {
+      ObjectFactory of = new ObjectFactory();
+      JAXBElement<UnsupportedOperationFaultType> jaxbElement =
+          of.createUnsupportedOperationFault(fault);
+      StreamResult xmlOutput = new StreamResult(stringWriter);
+      // serialise to xml
+      JAXBContext context = JAXBContext.newInstance(UnsupportedOperationFaultType.class);
+      context.createMarshaller().marshal(jaxbElement, xmlOutput);
+      // output string to console
+      String theXML = stringWriter.toString();
+      return theXML;
+    }
   }
 
   public static String toString(MessageTooLargeFaultType fault) throws JAXBException,
       XmlMappingException, IOException {
-    ObjectFactory of = new ObjectFactory();
-    JAXBElement<MessageTooLargeFaultType> jaxbElement = of.createMessageTooLargeFault(fault);
-    StringWriter stringWriter = new StringWriter();
-    StreamResult xmlOutput = new StreamResult(stringWriter);
-    // serialise to xml
-    JAXBContext context = JAXBContext.newInstance(MessageTooLargeFaultType.class);
-    context.createMarshaller().marshal(jaxbElement, xmlOutput);
-    // output string to console
-    String theXML = stringWriter.toString();
-    return theXML;
+    try (StringWriter stringWriter = new StringWriter()) {
+      ObjectFactory of = new ObjectFactory();
+      JAXBElement<MessageTooLargeFaultType> jaxbElement = of.createMessageTooLargeFault(fault);
+      StreamResult xmlOutput = new StreamResult(stringWriter);
+      // serialise to xml
+      JAXBContext context = JAXBContext.newInstance(MessageTooLargeFaultType.class);
+      context.createMarshaller().marshal(jaxbElement, xmlOutput);
+      // output string to console
+      String theXML = stringWriter.toString();
+      return theXML;
+    }
   }
 
   public static String toString(SoapFaultType fault) throws JAXBException, XmlMappingException,
       IOException {
-    StringWriter stringWriter = new StringWriter();
-    StreamResult xmlOutput = new StreamResult(stringWriter);
-    // serialise to xml
-    JAXBContext context = JAXBContext.newInstance(SoapFaultType.class);
-    context.createMarshaller().marshal(fault, xmlOutput);
-    // output string to console
-    String theXML = stringWriter.toString();
-    return theXML;
+    try (StringWriter stringWriter = new StringWriter()) {
+      StreamResult xmlOutput = new StreamResult(stringWriter);
+      // serialise to xml
+      JAXBContext context = JAXBContext.newInstance(SoapFaultType.class);
+      context.createMarshaller().marshal(fault, xmlOutput);
+      // output string to console
+      String theXML = stringWriter.toString();
+      return theXML;
+    }
   }
 
   public static String toString(ConnectivityTestResponseType obj) throws JAXBException,
       XmlMappingException, IOException {
-    StringWriter stringWriter = new StringWriter();
-    StreamResult xmlOutput = new StreamResult(stringWriter);
+    try (StringWriter stringWriter = new StringWriter()) {
+        StreamResult xmlOutput = new StreamResult(stringWriter);
     // serialise to xml
     JAXBContext context = JAXBContext.newInstance(ConnectivityTestResponseType.class);
     context.createMarshaller().marshal(obj, xmlOutput);
     // output string to console
     String theXML = stringWriter.toString();
     return theXML;
+    }
   }
 
 
@@ -141,44 +146,40 @@ public class WsdlUtil {
 
 
 
+  private static final DocumentBuilderFactory documentBuilderFactory = getDocumentBuilderFactory();
+  private static final TransformerFactory transformerFactory = getTransformerFactory();
+
+    private static DocumentBuilderFactory getDocumentBuilderFactory() {
+      DocumentBuilderFactory factory = XMLUtils.getDocumentBuilderFactory();
+      factory.setNamespaceAware(true);
+      return factory;
+    }
+
+    private static TransformerFactory getTransformerFactory() {
+      return XMLUtils.getTransformerFactory();
+    }
+
+
+
   public static String getPayload(String requestContent) {
     try {
-      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-      factory.setNamespaceAware(true);
-      DocumentBuilder builder = factory.newDocumentBuilder();
-      Document doc =
-          builder
-              .parse(new InputSource(new ByteArrayInputStream(requestContent.getBytes("utf-8"))));
+      DocumentBuilder builder = documentBuilderFactory.newDocumentBuilder();
+      Document doc = builder.parse(new InputSource(new ByteArrayInputStream(requestContent.getBytes("utf-8"))));
       XPathFactory xPathfactory = XPathFactory.newInstance();
       XPath xpath = xPathfactory.newXPath();
       XPathExpression expr = xpath.compile("//*[local-name()='Envelope']/*[local-name()='Body']/*");
       NodeList nodes = (NodeList) expr.evaluate(doc, XPathConstants.NODESET);
       Element el = (Element) nodes.item(0);
 
-      TransformerFactory transFactory = TransformerFactory.newInstance();
-      Transformer transformer = transFactory.newTransformer();
+      Transformer transformer = transformerFactory.newTransformer();
       transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
       StringWriter buffer = new StringWriter();
       transformer.transform(new DOMSource(el), new StreamResult(buffer));
       String str = buffer.toString();
       return str;
-    } catch (XPathExpressionException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    } catch (SAXException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
-    } catch (ParserConfigurationException e) {
-      e.printStackTrace();
-    } catch (TransformerConfigurationException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    } catch (TransformerException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+    } catch (XPathExpressionException | SAXException | IOException | ParserConfigurationException |      TransformerException e) {
+      throw new RuntimeException("Failed to process XML payload", e);
     }
-    return null;
   }
 
   public static Document getDocument(String content) {

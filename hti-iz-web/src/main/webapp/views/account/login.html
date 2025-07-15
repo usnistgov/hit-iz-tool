@@ -1,12 +1,3 @@
-<style id="antiClickjack">body{display:none !important;}</style>
-<script type="text/javascript">
-    if (self === top) {
-        var antiClickjack = document.getElementById("antiClickjack");
-        antiClickjack.parentNode.removeChild(antiClickjack);
-    } else {
-        top.location = self.location;
-    }
-</script>
 <form name="loginForm" id="loginForm" novalidate="" class="form-horizontal">
     <div class="modal-header">
         <a class="close" data-dismiss="modal"></a>
@@ -55,13 +46,13 @@
             </div>
 
         <div clas="col-md-12">
-            <a href="#/{{domainIdToName(appInfo.selectedDomain)}}/forgotten" ng-click="cancel()" style="text-align:center">
+            <a href="#/forgotten" ng-click="cancel()" style="text-align:center">
                 <span msg="" key="login.forgotPwd"></span>
             </a>
         </div>
 
-        <div clas="col-md-12">       
-            <a href="#/{{domainIdToName(appInfo.selectedDomain)}}/registration" ng-click="cancel()" style="text-align:center">
+        <div clas="col-md-12">
+            <a href="#/registration" ng-click="cancel()" style="text-align:center">
                 <span msg="" key="login.newAccount"></span>
             </a>
         </div>

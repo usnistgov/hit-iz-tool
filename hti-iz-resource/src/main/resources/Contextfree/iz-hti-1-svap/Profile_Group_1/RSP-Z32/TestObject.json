@@ -1,0 +1,14 @@
+{
+  "id": 1234298228,
+  "name": "RSP-Z32",
+  "hl7v2": {
+    "messageId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_673e2d478b87bc00073a188f",
+    "constraintId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_C",
+    "valueSetLibraryId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_VS",
+    "valueSetBindingsId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_B",
+    "slicingsId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_S",
+    "coConstraintsId": "686d86a8e4b0d97f07abb8ad_67ab57a7e4b0a4d63f76a630_CC"
+  },
+  "position": 6,
+  "description": "No Description"
+}
