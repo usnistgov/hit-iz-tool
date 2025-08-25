@@ -1,0 +1,61 @@
+<div ng-if="error === null">
+    <div ng-if="data != null" class="">
+      <!--<accordion close-others="true">-->
+      <!--<accordion-group panel-class="panel-info" is-open="status[data.stage]">-->
+      <!--<accordion-heading>-->
+      <!--<i class="fa"-->
+      <!--ng-class="{'fa-caret-down': status[data.stage], 'fa-caret-right': !status[data.stage]}"></i>-->
+      <!--{{::data.title}}-->
+      <!--</accordion-heading>-->
+
+<div class="col-md-12" style="padding-bottom: 5px;">
+     <button ng-if="anyTestPackageButton()"  title="Download Complete TestCase" type="button"
+        class="btn btn-sm btn-info"
+        ng-click="downloadCompleteTestPackage('CB')">
+        <i class="fa fa-download"></i>
+      	Download Complete TestPackage (.zip)
+      </button>
+
+<!--
+     <button  title="Download Example Messages" type="button" class="btn btn-sm btn-info"
+              ng-click="downloadExampleMessages('CB')">
+        <i class="fa fa-download"></i>
+        Download Example Messages (.zip)
+      </button>
+-->
+</div>
+
+		<div ng-show="loading" class="col-md-12">
+		Loading test case documentation...
+		</div>
+      <div ng-show="!loading" class="col-md-12">
+        <table tt-table tt-params="params"
+               class="table table-striped table-bordered table-condensed">
+          <thead>
+          <tr class="tbl-header-1">
+            <th>Test Case Name</th>
+            <th>Test Story</th>
+            <th>Message Content</th>
+            <th>Test Data Specification</th>
+            <th>Juror Document</th>
+            <th>Test Package</th>
+            <th>Test Plan Summary</th>
+            <th>Example Message</th>
+            <th>Conformance Profile</th>
+            <th>Constraints</th>
+			<th>CoConstraints</th>
+            <th>ValueSet Library</th>
+			<th>ValueSet Bindings</th>
+			<th>Slicings</th>
+          </tr>
+          </thead>
+          <tbody class=""></tbody>
+        </table>
+      </div>
+      <!--</accordion-group>-->
+      <!--</accordion>-->
+    </div>
+  </div>
+  <div ng-if="error !== null">
+    <div class="alert alert-danger" role="alert" ng-bind="error"></div>
+  </div>

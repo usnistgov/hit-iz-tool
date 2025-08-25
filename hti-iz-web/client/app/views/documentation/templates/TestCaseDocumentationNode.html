@@ -1,0 +1,94 @@
+<tr tt-node
+      is-branch="node.children != null && node.children.length > 0">
+    <td style="white-space: nowrap">
+      {{::node.title}}
+    </td>
+    <td>
+      <span ng-if="!node.tsPath ||node.tsPath === null">-</span>
+      <a class="point"  ng-if="node.tsPath != null" ng-click="downloadArtifact(node.tsPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+    <td>
+      <span ng-if="!node.mcPath || node.mcPath === null">-</span>
+      <a ng-if="node.mcPath != null" class="point"  ng-click="downloadArtifact(node.mcPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+    <td>
+      <span ng-if="!node.tdsPath ||node.tdsPath === null">-</span>
+      <a ng-if="node.tdsPath != null" class="point"  ng-click="downloadArtifact(node.tdsPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+    <td>
+      <span ng-if="!node.jdPath ||node.jdPath === null">-</span>
+      <a ng-if="node.jdPath != null" class="point"  ng-click="downloadArtifact(node.jdPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+    <td>
+      <div ng-if="node.title === 'Context-based'">
+		<span ng-if="!anyTestPackage(node)">-</span>
+        <a  ng-if="anyTestPackage(node)" class="point"  class="point"  title="Download Complete TestCase (.zip)"
+                 ng-click="downloadCompleteTestPackage(node.stage)">
+          <i class="fa fa-download fa-fw"></i>
+        </a>
+      </div>
+      <div ng-if="node.title !== 'Context-based'">
+      <span ng-if="!node.tpPath || node.tpPath === null">-</span>
+      <a  class="point" ng-if="node.tpPath != null" class="point"  ng-click="downloadArtifact(node.tpPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+      </div>
+    </td>
+    <td>
+      <span ng-if="!node.tpsPath || node.tpsPath === null">-</span>
+      <a  class="point" ng-if="node.tpsPath != null" class="point"  ng-click="downloadArtifact(node.tpsPath,node.title)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+    <td>
+      <div ng-if="node.title === 'Context-free' || node.title === 'Context-based'">
+		<span ng-if="!node.exMsgPresent">-</span>
+        <a  class="point" ng-if="node.exMsgPresent" title="Download Complete Example messages (.zip)"
+                 ng-click="downloadExampleMessages(node.stage)">
+          <i class="fa fa-download fa-fw"></i>
+        </a>
+      </div>
+      <div ng-if="node.title !== 'Context-free' && node.title !== 'Context-based'">
+      <span ng-if="!node.exMsgPresent">-</span>
+        <a  class="point" ng-if="node.exMsgPresent" class="point"  ng-click="downloadMessage(node)"><i class="fa fa-download fa-fw"></i></a>
+      </div>
+    </td>
+
+    <td>
+      <span ng-if="!node.xmlConfProfilePresent">-</span>
+      <a  class="point" ng-if="node.xmlConfProfilePresent" class="point"
+         ng-click="downloadProfile(node)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+    <td>
+      <span ng-if="!node.xmlConstraintsPresent">-</span>
+      <a  class="point" ng-if="node.xmlConstraintsPresent"
+         class="point"  ng-click="downloadConstraints(node)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+	<td>
+      <span ng-if="!node.xmlCoConstraintsPresent">-</span>
+      <a  class="point" ng-if="node.xmlCoConstraintsPresent"
+         class="point"  ng-click="downloadCoConstraints(node)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+    <td>
+      <span ng-if="!node.xmlValueSetLibraryPresent">-</span>
+      <a  class="point" ng-if="node.xmlValueSetLibraryPresent"
+         class="point"  ng-click="downloadValueSetLib(node)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+	<td>
+      <span ng-if="!node.xmlValueSetBindingsPresent">-</span>
+      <a  class="point" ng-if="node.xmlValueSetBindingsPresent"
+         class="point"  ng-click="downloadValueSetBindings(node)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+	<td>
+      <span ng-if="!node.xmlSlicingsPresent">-</span>
+      <a  class="point" ng-if="node.xmlSlicingsPresent"
+         class="point"  ng-click="downloadSlicings(node)"><i class="fa fa-download fa-fw"></i></a>
+    </td>
+
+
+
+  </tr>

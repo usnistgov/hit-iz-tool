@@ -162,8 +162,38 @@
       $scope.downloadAs = function (format) {
         return ReportService.downloadTestStepValidationReport($scope.report.id, format);
       };
+	  	 
+
+//	        // Track which categories and messages are visible
+//	        $scope.categoryVisible = {
+//	          'error': true,
+//	          'alert': false,
+//	          'warning': false
+//	        };
+//
+//	        $scope.separatorVisible = {};
+//
+//	        // Toggle category visibility
+//	        $scope.toggleCategory = function(category, isVisible) {
+//	          $scope.categoryVisible[category] = isVisible;
+//	        };
+//
+//	        // Toggle separator visibility for a message (msgId is a string, e.g., 'abc123')
+//	        $scope.toggleSeparator = function(msgId, showSeparators) {
+//	          $scope.separatorVisible[msgId] = !!showSeparators;
+//	        };
+//	  
     }]);
 
+	
+	
+	mod.controller('ValidationReportController', function($scope, $element) {
+		var vm = this;
+		    vm.categoryVisible = {error:true, alert:false, warning:false};
+		    vm.groupVisible = {};
+		    vm.separatorVisible = {};
+		    vm.failureVisible = {};
+	   });
 
   mod.factory('ReportService', function ($rootScope, $http, $q, $filter, Notification) {
     var ReportService = function () {

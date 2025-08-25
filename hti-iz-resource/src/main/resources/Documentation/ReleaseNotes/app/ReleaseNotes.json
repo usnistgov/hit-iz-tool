@@ -1,8 +1,10 @@
 [
 	{
-		"title": "NIST Immunization Test Suite Edition 2 CHANGELOG.md",
-		"name": "CHANGELOG.md",
-		"order":0
-	}
+	       "version":"1.0.0",
+	       "date": "2025/08/19",
+	       "name": "IZ-2_Release_Notes.1.0.0.docx",
+	       "title": "Release notes 1.0.0",
+	       "order": 1
+	   }
 ]
 

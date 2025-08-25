@@ -760,17 +760,40 @@ angular.module('cf')
         };
 		
 		$scope.hasExternalValueSet = function(){
-			 var ctx = $scope.cf;
-			  if (!ctx || !ctx.testCase || !ctx.testCase.testContext) {
-			    return false;
-			  }
-			  var vocab = ctx.testCase.testContext.vocabularyLibrary;
-			  if (!vocab || !vocab.json || !vocab.json.externalValueSetDefinitions) {
-			    return false;
-			  }
-			  return Array.isArray(vocab.json.externalValueSetDefinitions)
-			         && vocab.json.externalValueSetDefinitions.length > 0;
-			};
+							 var ctx = $scope.cf;
+							  if (!ctx || !ctx.testCase || !ctx.testCase.testContext) {
+							    return false;
+							  }
+							  var vocab = ctx.testCase.testContext.vocabularyLibrary;
+				              if (!vocab || !vocab.json ) {
+				                return false;
+				              }
+							  
+							  if (vocab.json.hasExternal){
+								return true;
+							  }
+							  
+				              //old version
+							  if (vocab.json.externalValueSetDefinitions && vocab.json.externalValueSetDefinitions.length > 0) {
+							    return true;
+							  }
+
+				              //new version
+				              if (vocab.json.valueSetDefinitions && vocab.json.valueSetDefinitions.length > 0){
+				                for (var i = 0; i < vocab.json.valueSetDefinitions.length; i++) {
+				                    var valueSetDefinition = vocab.json.valueSetDefinitions[i];
+				                    for (var j = 0; j < valueSetDefinition.valueSetDefinitions.length; j++) {
+				                        var valueSet = valueSetDefinition.valueSetDefinitions[j];
+				                        if (valueSet.external) {
+				                          return true;
+				                        }
+				                    }
+				                }
+				              }
+
+				              return false;
+
+							};
 
 			$scope.useHttp = function(){
 				if ($scope.hasExternalValueSet() && $scope.options.useHttp ){
@@ -792,6 +815,10 @@ angular.module('cf')
 
 angular.module('cf').controller('CFReportCtrl', ['$scope', '$sce', '$http', 'CF', function ($scope, $sce, $http, CF) {
         $scope.cf = CF;
+		
+		
+		
+		
     }]);
 
 angular.module('cf').controller('CFSavedReportCtrl', ['$scope', '$sce', '$http', 'CF','ReportService','$modal', function ($scope, $sce, $http, CF,ReportService,$modal) {

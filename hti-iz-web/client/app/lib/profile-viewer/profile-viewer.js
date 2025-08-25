@@ -237,7 +237,7 @@
         $modalStack.dismissAll('close');
         var t = VocabularyService.findValueSetDefinition(tableId);
         $modal.open({
-          templateUrl: 'lib/profile-viewer/templates/TableFoundCtrl.html',
+          templateUrl: 'lib/vocab-search/templates/TableFoundCtrl.html',
           controller: 'ProfileViewerValueSetDetailsCtrl',
           windowClass: 'valueset-modal',
           animation: false,
@@ -742,10 +742,12 @@
 		console.time('completeMessageExecution');
 		$scope.numberOfElement = 0;
 		$scope.allElementsModel = structuredClone($scope.model);
+		$scope.allElementsModel.slicingList = parseSlicingContexts($scope.allElementsModel);
 		$scope.allElementsModel.message = completeMessage($scope.allElementsModel.message);
 		$scope.allElementsModel.message.children = sortByPosition($scope.allElementsModel.message.children);
 		$scope.allElementsModel.datatypeList  = processDataTypeList($scope.allElementsModel);
 		$scope.allElementsModel.confStatementList.sort((a, b) => a.constraintId.localeCompare(b.constraintId));		
+		
 		console.timeEnd('completeMessageExecution');
 		
 		console.time('filtering only relevant ');
@@ -761,7 +763,57 @@
 	  
 	
 	  
-	  
+	  function parseSlicingContexts(data) {
+	      // Create maps to hold the context by id
+	      const groupContextMap = new Map();
+	      const segmentContextMap = new Map();
+	      const fieldContextMap = new Map();
+
+	      // Handle groupContexts from segmentSlicing
+	      if (
+	          data.profileSlicing &&
+	          data.profileSlicing.segmentSlicing &&
+	          Array.isArray(data.profileSlicing.segmentSlicing.messages)
+	      ) {
+	          for (const message of data.profileSlicing.segmentSlicing.messages) {
+	              if (Array.isArray(message.groupContexts)) {
+	                  for (const groupContext of message.groupContexts) {
+	                      groupContextMap.set(groupContext.id, groupContext);
+	                  }
+	              }
+	          }
+	      }
+
+	      // Handle segmentContexts from segmentSlicing (messages)
+	      if (
+	          data.profileSlicing &&
+	          data.profileSlicing.segmentSlicing &&
+	          Array.isArray(data.profileSlicing.segmentSlicing.messages)
+	      ) {
+	          for (const message of data.profileSlicing.segmentSlicing.messages) {
+	              // You may want to map segmentContexts here, if they exist in your structure
+	              segmentContextMap.set(message.id, message);
+	          }
+	      }
+
+	      // Handle fieldContexts from fieldSlicing (segmentContexts)
+	      if (
+	          data.profileSlicing &&
+	          data.profileSlicing.fieldSlicing &&
+	          Array.isArray(data.profileSlicing.fieldSlicing.segmentContexts)
+	      ) {
+	          for (const fieldContext of data.profileSlicing.fieldSlicing.segmentContexts) {
+	              fieldContextMap.set(fieldContext.id, fieldContext);
+	          }
+	      }
+
+	      // Return an object with all maps
+	      return {
+	          groupContextMap,
+	          segmentContextMap,
+	          fieldContextMap
+	      };
+	  }
 	  
 	  
 	  
@@ -3191,7 +3243,7 @@
 	  $scope.showValueSetDefinition = function (tableId) {
 	          var t = VocabularyService.findValueSetDefinition(tableId);
 	          $modal.open({
-	            templateUrl: 'lib/profile-viewer/templates/TableFoundCtrl.html',
+	            templateUrl: 'lib/vocab-search/templates/TableFoundCtrl.html',
 	            controller: 'ProfileViewerValueSetDetailsCtrl',
 	            windowClass: 'valueset-modal',
 	            animation: false,

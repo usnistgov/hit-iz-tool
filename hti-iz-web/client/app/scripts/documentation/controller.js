@@ -1666,7 +1666,7 @@ angular.module('doc')
         return parent ? parent.children : $scope.data != null ? $scope.data : [];
       },
       getTemplate: function (node) {
-        return 'TestCaseDocumentationNode.html';
+        return 'views/documentation/templates/TestCaseDocumentationNode.html';
       },
       options: {
         initialState: 'expanded'
