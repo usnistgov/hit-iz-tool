@@ -1277,8 +1277,9 @@
 		</ValueSetDefinition>
 		
 		<ValueSetDefinition BindingIdentifier="CVX" Name="Codes for Vaccines administered">
-			<ValueElement Value="01" DisplayName="DTP" CodeSystem="CVX"/>
-			<ValueElement Value="02" DisplayName="OPV" CodeSystem="CVX"/>
+		        <ValueElement Value="01" DisplayName="DTP" CodeSystem="CVX"/>
+		        <!-- updated 9/29/2025 -->
+			<ValueElement Value="02" DisplayName="OPV, trivalent" CodeSystem="CVX"/>		  
 			<ValueElement Value="03" DisplayName="MMR" CodeSystem="CVX"/>
 			<ValueElement Value="04" DisplayName="M/R" CodeSystem="CVX"/>
 			<ValueElement Value="05" DisplayName="measles" CodeSystem="CVX"/>
@@ -1542,6 +1543,10 @@
 			<ValueElement Value="225" DisplayName="SARS-COV-2 (COVID-19) vaccine, D614, prefusion spike recombinant protein subunit (CoV2 preS dTM), AS03 adjuvant added, preservative free, 5mcg/0.5mL dose" CodeSystem="CVX"/>
 			
 			<ValueElement Value="229" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 50 mcg/0.5 mL or 25 mcg/0.25 mL dose" CodeSystem="CVX"/>
+			
+         	        <!-- updated 9/29/2025 -->
+			<ValueElement Value="206" DisplayName="Vaccinia, smallpox Mpox vaccine live, PF, SQ or ID injection" CodeSystem="CVX"/>
+			
 			<ValueElement Value="206" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free, subcutaneous or intradermal injection" CodeSystem="CVX"/>
 			
 			<ValueElement Value="300" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 30 mcg/0.3 mL dose, tris-sucrose formulation" CodeSystem="CVX"/>
@@ -1572,7 +1577,10 @@
 			<ValueElement Value="308" DisplayName="COVID-19, mRNA, LNP-S, PF, tris-sucrose, 3 mcg/0.3 mL for Ages 6 months through 4 years (Pfizer-BioNTech COVID-19 Vaccine)" CodeSystem="CVX"/>
 			<ValueElement Value="313" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL for ages 12 years and older (Novavax COVID-19 Vaccine, Adjuvanted)" CodeSystem="CVX"/>
 			<ValueElement Value="312" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL ages 12 years and older (Moderna Spikevax)" CodeSystem="CVX"/>
-			<ValueElement Value="311" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL ages 6 months through 11 years (Moderna COVID-19 Vaccine)" CodeSystem="CVX"/>
+
+         	        <!-- updated 9/29/2025 -->
+			<ValueElement Value="311" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL" CodeSystem="CVX"/>
+			
 			<!-- 09/22/2023 -->
 			<ValueElement Value="314" DisplayName="Respiratory syncytial virus (RSV) vaccine, unspecified" CodeSystem="CVX"/>				
 			<ValueElement Value="315" DisplayName="Respiratory syncytial virus (RSV) MAB, unspecified" CodeSystem="CVX"/>
@@ -1599,6 +1607,13 @@
 
 			<!-- 11/15/2024 -->
 			<ValueElement Value="327" DisplayName="Pneumococcal conjugate vaccine, 21 valent (PCV21), polysaccharide CRM197 conjugate, preservative free" CodeSystem="CVX"/>
+
+			<!-- added 9/29/2025 -->
+			<ValueElement Value="332" DisplayName="RSV, mAb, clesrovimab-cfor, 0.7 mL, neonate and infant, PF" CodeSystem="CVX"/>
+			<ValueElement Value="333" DisplayName="Influenza, live, trivalent, intranasal, self/caregiver admin, PF" CodeSystem="CVX"/>
+			<ValueElement Value="334" DisplayName="COVID-19, mRNA, LNP-S, PF, 10 mcg/0.2 mL" CodeSystem="CVX"/>
+			<ValueElement Value="500" DisplayName="COVID-19 Non-US Vaccine, UNSPECIFIED" CodeSystem="CVX"/>	
+			
 			<!--
 			<ValueElement Value="" DisplayName="" CodeSystem="CVX"/>
 			-->		
@@ -1788,7 +1803,6 @@
 			<ValueElement Value="253088698300032511191030" CodeSystem="cdcgs1vis" DisplayName="Recombinant Zoster Vaccine VIS"/>
 			<ValueElement Value="253088698300006611191030" CodeSystem="cdcgs1vis" DisplayName="Hib Vaccine VIS"/>
 			<ValueElement Value="253088698300015811191030" CodeSystem="cdcgs1vis" DisplayName="PCV13 VIS"/>
-			<ValueElement Value="253088698300016511191030" CodeSystem="cdcgs1vis" DisplayName="PPSV23 VIS"/>
 			<ValueElement Value="253088698300017211191030" CodeSystem="cdcgs1vis" DisplayName="Polio Vaccine VIS"/>
 			<ValueElement Value="253088698300019611191030" CodeSystem="cdcgs1vis" DisplayName="Rotavirus Vaccine VIS"/>
 			<ValueElement Value="253088698300020211191030" CodeSystem="cdcgs1vis" DisplayName="Live Zoster Vaccine VIS"/>
@@ -1852,7 +1866,6 @@
 			<ValueElement Value="253088698300058511230401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - all ages 6 months and older"/>
 			<ValueElement Value="253088698300059211230401" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - all ages 6 months and older"/>
 			
-			<ValueElement Value="253088698300049311230512" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20) VIS"/>
 			<!-- 08/29/2023 -->
 			<ValueElement Value="253088698300060811230724" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine (adult vaccine)"/>
 			<ValueElement Value="253088698300026411230724" CodeSystem="cdcgs1vis" DisplayName="Multi Pediatric Vaccines VIS"/>
@@ -1871,10 +1884,11 @@
 
 			<!-- 10/18/2024 -->
 			
-			<!-- 11/15/2024 -->
+			<!-- 11/15/2024
 			<ValueElement Value="253088698300058511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
 			<ValueElement Value="253088698300061511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>
 			<ValueElement Value="253088698300037011240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older"/>
+			**now retired see below-->
 
                         <!-- added 5/5/2025 vis barcodes-->
                         <ValueElement Value="253088698300004211250131" CodeSystem="cdcgs1vis" DisplayName="Hepatitis A Vaccine VIS"/>
@@ -1894,6 +1908,20 @@
                         <ValueElement Value="253088698300054711250131" CodeSystem="cdcgs1vis" DisplayName="Ebola Vaccine VIS"/>
                         <ValueElement Value="253088698300060811250131" CodeSystem="cdcgs1vis" DisplayName="RSV (Respiratory Syncytial Virus) Vaccine VIS"/>
                         <ValueElement Value="253088698300063911250131" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Vaccine VIS - mRNA vaccine for 12 years and older"/>
+
+                        <!-- added 9/29/2025 -->
+			<ValueElement Value="253088698300049311250529" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV) VIS"/>
+                        <ValueElement Value="253088698300016511250529" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Polysaccharide Vaccine (PPSV23) VIS"/>
+
+                        <!-- retired 9/29/2025                                                                                                                                                                                                                                                         
+                             <ValueElement Value="253088698300049311230512" CodeSystem="cdcgs1vis" DisplayName="Pneumococcal Conjugate Vaccine (PCV13_PCV15_PCV20) VIS"/>                                                                                                                              
+                             <ValueElement Value="253088698300016511191030" CodeSystem="cdcgs1vis" DisplayName="PPSV23 VIS"/>                                                                                                                                                                          
+                             <ValueElement Value="253088698300058511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Pfizer BioNTech EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>                                                                                             
+                             <ValueElement Value="253088698300061511240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Moderna EUA Recipient-Caregiver Fact Sheet - 6 months through 11 years"/>                                                                                                     
+                             <ValueElement Value="253088698300037011240801" CodeSystem="cdcgs1vis" DisplayName="COVID-19 Novavax EUA Recipient-Caregiver Fact Sheet - 12 years and older"/>                                                                                                            
+                        -->
+
+
 			
 			<!--
 			<ValueElement Value="" CodeSystem="cdcgs1vis" DisplayName=""/>
