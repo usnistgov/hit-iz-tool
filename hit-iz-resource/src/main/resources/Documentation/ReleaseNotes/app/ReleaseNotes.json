@@ -390,5 +390,12 @@
         "name": "IZ_Release_Notes.2.1.2.docx",
         "title": "Release notes 2.1.2",
         "order": -2
+    },
+	{
+        "version": "2.1.3",
+        "date": "2025/07/09",
+        "name": "IZ_Release_Notes.2.1.3.docx",
+        "title": "Release notes 2.1.3",
+        "order": -2
     }
  ]
