@@ -1,6 +1,6 @@
 services:
   iz-himss-tomcat:
-    image:  nist775hit/hit-iz-himss-tool:1.9.14
+    image:  nist775hit/hit-iz-himss-tool:1.9.14e
     platform: linux/amd64
     ports:
       - "13102:8080"
@@ -15,7 +15,7 @@ services:
       - iz-himss-mysql:container-mysql
 
   iz-himss-mysql:
-    image: nist775hit/hit-iz-himss-mysql:1.9.14
+    image: nist775hit/hit-iz-himss-mysql:1.9.14e
     platform: linux/amd64
     ports:
       - "3310:3306"
