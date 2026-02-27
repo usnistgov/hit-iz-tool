@@ -11,4 +11,5 @@ bower_components
 /bin/
 .sass-cache
 .tmp
-hti-iz-web/src/*
+hti-iz-web/src/main/webapp/*
+

@@ -1,10 +1,12 @@
-[
-	{
-	       "version":"1.0.0",
-	       "date": "2025/08/19",
-	       "name": "IZ-2_Release_Notes.1.0.0.docx",
-	       "title": "Release notes 1.0.0",
-	       "order": 1
+[	
+	   {
+		"title": "Release notes 1.0.0",
+				"link": "https://hit-dev.nist.gov/tooldocs/IZ_SVAP/1.0.0/Release Notes/app/IZ-2_Release_Notes.1.0.0.pdf",
+				"name": "IZ-2_Release_Notes.1.0.0.pdf",	
+				"date": "2025/11/20",
+				"order": 1
 	   }
 ]
+
+
 
