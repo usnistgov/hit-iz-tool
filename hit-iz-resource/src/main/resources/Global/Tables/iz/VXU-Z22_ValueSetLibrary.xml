@@ -1363,13 +1363,10 @@
 		</ValueSetDefinition>
 
 		<ValueSetDefinition BindingIdentifier="NDC_Sale" Name="NDC Unit of Sale">
-			<ValueElement Value="00005-0100-02" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
 			<ValueElement Value="00005-0100-05" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
 			<ValueElement Value="00005-0100-10" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
 			<ValueElement Value="00005-1970-50" DisplayName="pneumococcal conjugate PCV 7" CodeSystem="NDC"/>
-			<ValueElement Value="00005-1971-02" DisplayName="Pneumococcal conjugate PCV 13" CodeSystem="NDC"/>
 			<ValueElement Value="00005-1971-04" DisplayName="Pneumococcal conjugate PCV 13" CodeSystem="NDC"/>
-			<ValueElement Value="00005-1971-05" DisplayName="Pneumococcal conjugate PCV 13" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4045-00" DisplayName="HPV, quadrivalent" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4045-41" DisplayName="HPV, quadrivalent" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4047-20" DisplayName="rotavirus, pentavalent" CodeSystem="NDC"/>
@@ -1905,7 +1902,6 @@
 			<ValueElement Value="50632-0016-02" DisplayName="Typhoid vaccine, live, oral (Vivotif)" CodeSystem="NDC"/> 
 			<ValueElement Value="00069-2465-01" DisplayName="RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF (Abrysvo)" CodeSystem="NDC"/> 
 			<ValueElement Value="00069-2465-10" DisplayName="RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF (Abrysvo)" CodeSystem="NDC"/> 
-			<ValueElement Value="00069-2432-10" DisplayName="Comirnaty (Pfizer)" CodeSystem="NDC"/> 
 			<ValueElement Value="50632-0001-03" DisplayName="Smallpox/Monkeypox vaccine Bavarian Nordic A/S (JYNNEOS)" CodeSystem="NDC"/> 
 			<!-- 01/30/2025 -->
 			<ValueElement Value="80777-0345-89" DisplayName="Moderna Respiratory Syncytial Virus (RSV) vaccine (mRESVIA)" CodeSystem="NDC"/>
@@ -1940,6 +1936,18 @@
 			<ValueElement Value="66019-0112-51" DisplayName="Influenza, live, trivalent, intranasal, self/caregiver admin, PF" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0849-52" DisplayName="zoster recombinant" CodeSystem="NDC"/>
 
+			<!-- added 05/04/2026 -->
+			<ValueElement Value="80777-0112-96" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0113-87" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0400-60" DisplayName="COVID-19, mRNA, LNP-S, PF, 10 mcg/0.2 mL" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0113-80" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL" CodeSystem="NDC"/>
+			<ValueElement Value="80777-0112-88" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL" CodeSystem="NDC"/>
+			<ValueElement Value="80631-0207-10" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL" CodeSystem="NDC"/>
+			<ValueElement Value="58160-0757-15" DisplayName="Meningococcal oligosaccharide (MenACWY), (MenB), PF" CodeSystem="NDC"/>
+			<ValueElement Value="50632-0024-02" DisplayName="Vaccinia, smallpox monkeypox vaccine live, PF, SQ or ID injection" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0016-50" DisplayName="Influenza, Southern Hemisphere, high-dose, trivalent, PF" CodeSystem="NDC"/>
+			<ValueElement Value="49281-0626-50" DisplayName="Influenza, Southern Hemisphere, trivalent, PF" CodeSystem="NDC"/>
+
 
 			<!-- 9/29/2025 retired sale
      			<ValueElement Value="19515-0810-52" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (FLULAVAL)" CodeSystem="NDC"/> 
@@ -1968,7 +1976,13 @@
 			<ValueElement Value="80777-0291-80" DisplayName="Moderna COVID-19 Vaccine" CodeSystem="NDC"/> 
 			<ValueElement Value="80777-0291-81" DisplayName="Moderna COVID-19 Vaccine" CodeSystem="NDC"/> 
 			-->
-
+			<!-- 05/04/2025 retired sale -->
+			<!--
+			<ValueElement Value="00005-1971-05" DisplayName="Pneumococcal conjugate PCV 13" CodeSystem="NDC"/>
+			<ValueElement Value="00005-1971-02" DisplayName="Pneumococcal conjugate PCV 13" CodeSystem="NDC"/>
+			<ValueElement Value="00069-2432-10" DisplayName="Comirnaty (Pfizer)" CodeSystem="NDC"/> 
+			<ValueElement Value="00005-0100-02" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
+			-->
 			
 			<!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
@@ -1978,7 +1992,6 @@
 		<ValueSetDefinition BindingIdentifier="NDC_Use" Name="NDC Unit of Use">
 			<ValueElement Value="00005-0100-01" DisplayName="meningococcal B, recombinant" CodeSystem="NDC"/>
 			<ValueElement Value="00005-1970-49" DisplayName="pneumococcal conjugate PCV 7" CodeSystem="NDC"/>
-			<ValueElement Value="00005-1971-01" DisplayName="Pneumococcal conjugate PCV 13" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4045-01" DisplayName="HPV, quadrivalent" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4047-01" DisplayName="rotavirus, pentavalent" CodeSystem="NDC"/>
 			<ValueElement Value="00006-4093-01" DisplayName="Hep B, adolescent or pediatric" CodeSystem="NDC"/>
@@ -2481,7 +2494,6 @@
 			<ValueElement Value="50090-3781-01" DisplayName="Hepatitis A vaccine (HepA), pediatric/adolescent dosage-2 dose schedule, for intramuscular use (HAVRIX)" CodeSystem="NDC"/> 
 			<ValueElement Value="50632-0016-04" DisplayName="Typhoid vaccine, live, oral (Vivotif)" CodeSystem="NDC"/> 
 			<ValueElement Value="00069-2465-19" DisplayName="RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF (Abrysvo)" CodeSystem="NDC"/> 
-			<ValueElement Value="00069-2432-01" DisplayName="Comirnaty (Pfizer)" CodeSystem="NDC"/> 
 			<ValueElement Value="66019-311-00" DisplayName="FluMist (MedImmune, Inc. AstraZeneca)" CodeSystem="NDC"/> 
 			<!-- 01/30/2025-->
 			<ValueElement Value="80777-0345-01" DisplayName="Moderna Respiratory Syncytial Virus (RSV) vaccine (mRESVIA)" CodeSystem="NDC"/>
@@ -2511,6 +2523,16 @@
 			<ValueElement Value="66019-0112-51" DisplayName="Influenza, live, trivalent, intranasal, self/caregiver admin, PF" CodeSystem="NDC"/>
 			<ValueElement Value="58160-0849-43" DisplayName="zoster recombinant" CodeSystem="NDC"/>
 
+			<!-- added 05/04/2026 -->
+			<ValueElement Value="80777-0112-01" DisplayName="COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL" CodeSystem="NDC"/> 
+			<ValueElement Value="80777-0113-09" DisplayName="COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL" CodeSystem="NDC"/> 
+			<ValueElement Value="80777-0400-17" DisplayName="COVID-19, mRNA, LNP-S, PF, 10 mcg/0.2 mL" CodeSystem="NDC"/> 
+			<ValueElement Value="80631-0207-01" DisplayName="COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL" CodeSystem="NDC"/> 
+			<ValueElement Value="50632-0024-04" DisplayName="Vaccinia, smallpox monkeypox vaccine live, PF, SQ or ID injection" CodeSystem="NDC"/> 
+			<ValueElement Value="49281-0016-88" DisplayName="Influenza, Southern Hemisphere, high-dose, trivalent, PF" CodeSystem="NDC"/> 
+			<ValueElement Value="49281-0626-88" DisplayName="Influenza, Southern Hemisphere, trivalent, PF" CodeSystem="NDC"/> 
+
+			
 			<!-- 9/2025 retired use
      			<ValueElement Value="19515-0810-41" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (FLULAVAL)" CodeSystem="NDC"/> 
 			<ValueElement Value="33332-0024-04" DisplayName="Influenza virus vaccine, trivalent (IIV3), split virus, preservative free, 0.5 mL dosage, for intramuscular use (Afluria)" CodeSystem="NDC"/> 
@@ -2534,7 +2556,11 @@
 			<ValueElement Value="80777-0291-09" DisplayName="Moderna COVID-19 Vaccine" CodeSystem="NDC"/> 
 			-->
 			
-			
+			<!-- 05/04/2026 retired use -->
+			<!-- 
+			<ValueElement Value="00005-1971-01" DisplayName="Pneumococcal conjugate PCV 13" CodeSystem="NDC"/>
+			<ValueElement Value="00069-2432-01" DisplayName="Comirnaty (Pfizer)" CodeSystem="NDC"/> 
+			-->
 			<!-- 
 			<ValueElement Value="" DisplayName="" CodeSystem="NDC"/> 
 			-->
