@@ -1547,7 +1547,7 @@
          	        <!-- updated 9/29/2025 -->
 			<ValueElement Value="206" DisplayName="Vaccinia, smallpox monkeypox vaccine live, PF, SQ or ID injection" CodeSystem="CVX"/>
 			
-			<ValueElement Value="206" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free, subcutaneous or intradermal injection" CodeSystem="CVX"/>
+			<!-- <ValueElement Value="206" DisplayName="Vaccinia, smallpox monkeypox vaccine, live attenuated, preservative free, subcutaneous or intradermal injection" CodeSystem="CVX"/> -->
 			
 			<ValueElement Value="300" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 30 mcg/0.3 mL dose, tris-sucrose formulation" CodeSystem="CVX"/>
 			<ValueElement Value="301" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation" CodeSystem="CVX"/>
