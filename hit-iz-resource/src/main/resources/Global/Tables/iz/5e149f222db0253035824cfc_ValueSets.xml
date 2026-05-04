@@ -1293,7 +1293,7 @@
       <ValueElement CodeSystem="CVX" DisplayName="rheumatic fever" Value="72"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Rift Valley fever" Value="73"/>  
       <ValueElement CodeSystem="CVX" DisplayName="rotavirus, tetravalent" Value="74"/>  
-      <ValueElement CodeSystem="CVX" DisplayName="orthopoxvirus" Value="75"/>  
+      <ValueElement CodeSystem="CVX" DisplayName="Vaccinia (smallpox, monkeypox), live" Value="75"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Staphylococcus bacterio lysate" Value="76"/>  
       <ValueElement CodeSystem="CVX" DisplayName="tick-borne encephalitis" Value="77"/>  
       <ValueElement CodeSystem="CVX" DisplayName="tularemia vaccine" Value="78"/>  
@@ -1406,7 +1406,7 @@
       <ValueElement CodeSystem="CVX" DisplayName="zoster vaccine, unspecified formulation" Value="188"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Hepatitis B vaccine (recombinant), CpG adjuvanted" Value="189"/>  
       <!-- added 5/9/2025 -->  
-      <ValueElement CodeSystem="CVX" DisplayName="Vaccinia (smallpox, mpox), unspecified" Value="325"/>  
+      <ValueElement CodeSystem="CVX" DisplayName="Vaccinia (smallpox, monkeypox), unspecified" Value="325"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Dengue fever, unspecified" Value="330"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Influenza, Southern Hemisphere, trivalent, PF" Value="331"/>  
       <!-- added 5/5/2025 -->  
@@ -1462,7 +1462,7 @@
       <ValueElement CodeSystem="CVX" DisplayName="SARS-COV-2 (COVID-19) vaccine, D614, prefusion spike recombinant protein subunit (CoV2 preS dTM), AS03 adjuvant added, preservative free, 5mcg/0.5mL dose" Value="225"/>  
       <ValueElement CodeSystem="CVX" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 50 mcg/0.5 mL or 25 mcg/0.25 mL dose" Value="229"/>  
       <!-- updated 9/29/2025 -->  
-      <ValueElement CodeSystem="CVX" DisplayName="Vaccinia, smallpox Mpox vaccine live, PF, SQ or ID injection" Value="206"/>  
+      <ValueElement CodeSystem="CVX" DisplayName="Vaccinia, smallpox monkeypox vaccine live, PF, SQ or ID injection" Value="206"/>  
       <ValueElement CodeSystem="CVX" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 30 mcg/0.3 mL dose, tris-sucrose formulation" Value="300"/>  
       <ValueElement CodeSystem="CVX" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 10 mcg/0.2 mL dose, tris-sucrose formulation" Value="301"/>  
       <ValueElement CodeSystem="CVX" DisplayName="SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, bivalent, preservative free, 10 mcg/0.2 mL dose" Value="230"/>  
@@ -1517,7 +1517,9 @@
       <ValueElement CodeSystem="CVX" DisplayName="RSV, mAb, clesrovimab-cfor, 0.7 mL, neonate and infant, PF" Value="332"/>  
       <ValueElement CodeSystem="CVX" DisplayName="Influenza, live, trivalent, intranasal, self/caregiver admin, PF" Value="333"/>  
       <ValueElement CodeSystem="CVX" DisplayName="COVID-19, mRNA, LNP-S, PF, 10 mcg/0.2 mL" Value="334"/>  
-      <ValueElement CodeSystem="CVX" DisplayName="COVID-19 Non-US Vaccine, UNSPECIFIED" Value="500"/> 
+      <ValueElement CodeSystem="CVX" DisplayName="COVID-19 Non-US Vaccine, UNSPECIFIED" Value="500"/>  
+      <!-- 05/04/2026 -->  
+      <ValueElement CodeSystem="CVX" DisplayName="Influenza, Southern Hemisphere, high-dose, trivalent, PF" Value="337"/> 
     </ValueSetDefinition>  
     <ValueSetDefinition BindingIdentifier="PHVS_ImmunizationFundingSource_IIS" Name="Immunization Funding Source (IIS)"> 
       <ValueElement CodeSystem="CDCPHINVS" DisplayName="Private funds " Value="PHC70"/>  
