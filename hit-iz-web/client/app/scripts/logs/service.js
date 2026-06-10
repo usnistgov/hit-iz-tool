@@ -34,7 +34,18 @@ angular.module('logs').factory('ValidationLogService', ['$q', '$http',
 
         return delay.promise;
       },
-
+	  getLogsByDateRange: function (domain, startDate, endDate) {
+	      var delay = $q.defer();
+	      $http.get("api/logs/validation/" + domain + "/range?startDate=" + startDate + "&endDate=" + endDate, {timeout: 180000}).then(
+	        function (object) {
+	          delay.resolve(angular.fromJson(object.data));
+	        },
+	        function (response) {
+	          delay.reject(response.data);
+	        }
+	      );
+	      return delay.promise;
+	  },
       getById: function (logId) {
         var delay = $q.defer();
         $http.get("api/logs/validation/" + logId, {timeout: 180000}).then(
@@ -99,6 +110,18 @@ angular.module('logs').factory('TransportLogService', ['$q', '$http',
 
         return delay.promise;
       },
+	  getLogsByDateRange: function (domain, startDate, endDate) {
+	          var delay = $q.defer();
+	          $http.get("api/logs/transport/" + domain + "/range?startDate=" + startDate + "&endDate=" + endDate, {timeout: 180000}).then(
+	            function (object) {
+	              delay.resolve(angular.fromJson(object.data));
+	            },
+	            function (response) {
+	              delay.reject(response.data);
+	            }
+	          );
+	          return delay.promise;
+	        },
 
       getById: function (logId) {
         var delay = $q.defer();

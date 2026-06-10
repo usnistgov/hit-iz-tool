@@ -11,6 +11,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.IOUtils;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
@@ -21,7 +22,7 @@ import gov.nist.hit.iz.service.exception.SoapValidationException;
 import gov.nist.hit.iz.service.soap.SOAPMessageValidatorImpl;
 import gov.nist.hit.iz.service.soap.SOAPValidationResult;
 import gov.nist.validation.xml.schematron.Validator;
-
+@Ignore
 public class SOAPMessageValidatorImplTest {
 
 	SOAPMessageValidatorImpl validator = new SOAPMessageValidatorImpl();

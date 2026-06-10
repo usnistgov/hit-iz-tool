@@ -15,6 +15,12 @@ angular.module('logs')
 
       $scope.currentDate = new Date();
 
+	  var firstDay = new Date($scope.currentDate.getFullYear(), $scope.currentDate.getMonth(), 1);
+      var lastDay = new Date($scope.currentDate.getFullYear(), $scope.currentDate.getMonth() + 1, 0);
+
+      $scope.logValidationDateQuery = { after: firstDay, before: lastDay };
+      $scope.logTransportDateQuery = { after: firstDay, before: lastDay };
+	  
       $scope.selectedType = null;
 
       $scope.initLogs = function () {
@@ -76,8 +82,29 @@ angular.module('logs')
       $scope.userType = "*";
       $scope.resultType = "*";
 
+	  
+
+	        $scope.$watch('logValidationDateQuery', function (newVal, oldVal) {
+	          // Fetch new logs if the date filter changes
+	          if (newVal && (newVal.before || newVal.after) && newVal !== oldVal) {
+	              // Default to start of epoch if no "after" date, or current date if no "before" date
+	              var start = newVal.after ? new Date(newVal.after).getTime() : new Date(0).getTime();
+	              var end = newVal.before ? new Date(newVal.before).getTime() : new Date().getTime();
+
+	              $scope.loadingAll = true;
+	              ValidationLogService.getLogsByDateRange($rootScope.domain.domain, start, end).then(function (logs) {
+	                  $scope.allLogs = logs;
+	                  $scope.filterBy();
+	                  $scope.loadingAll = false;
+	              }, function (error) {
+	                  $scope.loadingAll = false;
+	                  $scope.error = "Sorry, Cannot load the validation logs for this date range. \n DEBUG:" + error;
+	              });
+	          }
+	        }, true);
 
       $scope.initValidationLogs = function () {
+		  // initialize default date range to the current month         
           $scope.loadingAll = true;
           $timeout(function() {
               ValidationLogService.getAll($rootScope.domain.domain).then(function (logs) {
@@ -169,8 +196,29 @@ angular.module('logs')
       $scope.userType = "*";
       $scope.transportTypes = [];
       $scope.protocols = [];
+	  
+
+	    $scope.$watch('logTransportDateQuery', function (newVal, oldVal) {
+	      if (newVal && (newVal.before || newVal.after) && newVal !== oldVal) {
+	          var start = newVal.after ? new Date(newVal.after).getTime() : new Date(0).getTime();
+	          var end = newVal.before ? new Date(newVal.before).getTime() : new Date().getTime();
+	
+	          $scope.loadingAll = true;
+	          TransportLogService.getLogsByDateRange($rootScope.domain.domain, start, end).then(function (logs) {
+	              $scope.allLogs = logs;
+	              $scope.protocols = _(logs).chain().flatten().pluck('protocol').unique().value();
+	              $scope.transportTypes = _(logs).chain().flatten().pluck('testingType').unique().value();
+	              $scope.filterBy();
+	              $scope.loadingAll = false;
+	          }, function (error) {
+	              $scope.loadingAll = false;
+	              $scope.error = "Sorry, Cannot load the transport logs for this date range. \n DEBUG:" + error;
+	          });
+	      }
+	    }, true);
 
       $scope.initTransportLogs = function () {
+		 
           $scope.loadingAll = true;
           $timeout(function() {
               TransportLogService.getAll($rootScope.domain.domain).then(function (logs) {
